@@ -338,6 +338,9 @@ begin
   TreeViewOutputStructure.Items.Clear;
   TemporalExpression.BuildTreeNodes(TreeViewOutputStructure.Items);
 
+  TemporalExpression.MakeOutputMCSSList(StringGridMCSS);
+  TemporalExpression.MakeOutputMCSSList(StringGridMCSSsl,false);
+
   { print the eventlist }
   {$IFDEF TESTMODE}MenuItemSaveOutAsClick(Sender); {$ENDIF}
 

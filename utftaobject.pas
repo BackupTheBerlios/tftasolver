@@ -200,6 +200,7 @@ type
     VType: TTFTAOperatorType;     { what type am I? }
 
     function  CheckIsCommutative : boolean;
+    function  CheckIsMCSS        : boolean;
     function  CheckIsTypeAND     : boolean;
     function  CheckIsTypePAND    : boolean;
     function  CheckIsTypeSAND    : boolean;
@@ -266,6 +267,7 @@ type
     property  IsEventSequence : boolean read VIsEventSequence write VIsEventSequence;
     property  IsExtendedSequence : boolean read VIsExtendedSequence write VIsExtendedSequence  ;
     property  IsFalse : boolean read CheckLogicFalse;
+    property  IsMCSSForm : boolean read CheckIsMCSS;
     property  IsNegated : boolean read VIsNegated  write VIsNegated ;
     property  IsNotCompletelyBuildYet : boolean read VIsNotCompletelyBuildYet write VIsNotCompletelyBuildYet;
     property  IsSorted : boolean read VIsSorted write VIsSorted;

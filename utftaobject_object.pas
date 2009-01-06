@@ -315,6 +315,28 @@ begin
                (self.IsTypeXOR) or
                (self.IsTypeSAND);     }
 end;
+
+function TTFTAObject.CheckIsMCSS : boolean;
+var i : integer;
+    numberOfChildren : integer;
+begin
+  if self.IsBasicEvent       or
+     self.IsEventSequence    or
+     self.IsExtendedSequence then
+  begin
+    Result := True;
+  end else
+  begin
+    Result := self.IsTypeOR or self.IsTypeXOR;
+    i := 0;
+    numberOfChildren := self.Count;
+    repeat
+      Result := Result and ( self[i].IsEventSequence or self[i].IsExtendedSequence );
+      inc(i);
+    until (not Result) or (i = numberOfChildren);
+  end;
+end;
+
 {------------------------------------------------------------------------------
   true if operator = XXX
 ------------------------------------------------------------------------------}

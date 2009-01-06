@@ -34,7 +34,7 @@ interface
 
 uses
   Forms, Classes, SysUtils, Dialogs, ComCtrls, StdCtrls, strutils, utftaobject
-  , sjspointertools, utftalogic;
+  , sjspointertools, utftalogic, Grids;
 
 { ############################################################################ }
 { ############################################################################ }
@@ -72,6 +72,7 @@ type
     destructor  Destroy;
 
     procedure BuildTreeNodes(theTree : TTreeNodes);
+    procedure MakeOutputMCSSList(theStringGrid : TStringGrid; withSAND : boolean = true);
     procedure ParseInput(theTree : TTreeNodes);
     procedure Reset;
     {$IfDef TESTMODE}
@@ -295,6 +296,64 @@ begin
 
   Result := MakeNewGenericTreeElement(OutputTree,theLevel,theName,theObject);
 
+end;
+
+
+
+
+procedure TTFTAExpression.MakeOutputMCSSList(theStringGrid : TStringGrid; withSAND : boolean = true);
+var theTerm          : TTFTAObject;
+    numberOfChildren : integer;
+    currentRow       : integer;
+    i                : integer;
+    tempString       : ansistring;
+begin
+  if assigned(theStringGrid) then
+  begin
+    theTerm := self.TemporalTerm[0];
+    theStringGrid.Clean(1,1,1,theStringGrid.RowCount-1,[]);
+    theStringGrid.RowCount := 2;
+    { check whether the temporal term is in MCSS form }
+    if not theTerm.IsMCSSForm then
+    begin
+      theStringGrid.Cells[1,1] := 'Output temporal term is not in MCSS form';
+    end else
+    begin
+      { is MCSS form }
+      if theTerm.IsTypeOR or theTerm.IsTypeXOR then
+      begin
+        { for all children do }
+        numberOfChildren := theTerm.Count;
+        currentRow := 1;
+        theStringGrid.RowCount := numberOfChildren + 1;
+        i := 0;
+        repeat
+          tempString := theTerm[i].TemporalExpr;
+          if withSAND then
+          begin
+            theStringGrid.Cells[1,currentRow] := tempString;
+            theStringGrid.Cells[0,currentRow] := IntToStr(currentRow);
+            inc(currentRow);
+          end else
+          begin
+            if ( not AnsiContainsStr(tempString,'SAND[') ) then
+            begin
+              theStringGrid.Cells[1,currentRow] := tempString;
+              theStringGrid.Cells[0,currentRow] := IntToStr(currentRow);
+              inc(currentRow);
+            end else
+            begin
+              theStringGrid.RowCount := theStringGrid.RowCount - 1;
+            end;
+          end;
+          inc(i);
+        until i =  numberOfChildren;
+      end else
+      begin { theTerm is Basic, of (extended) eventsequence ) }
+        theStringGrid.Cells[1,1] := theTerm.TemporalExpr;
+      end;
+    end;
+  end;
 end;
 
 

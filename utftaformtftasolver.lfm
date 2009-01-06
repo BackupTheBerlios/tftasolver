@@ -1,7 +1,7 @@
 object TFTAMainWindow: TTFTAMainWindow
-  Left = 211
+  Left = 193
   Height = 732
-  Top = 235
+  Top = 259
   Width = 1000
   ActiveControl = PageControl1
   BorderIcons = [biSystemMenu, biMinimize]
@@ -206,13 +206,13 @@ object TFTAMainWindow: TTFTAMainWindow
     Height = 635
     Top = 30
     Width = 496
-    ActivePage = TabSheetOutString
-    TabIndex = 0
+    ActivePage = TabSheetOutMCSSsl
+    TabIndex = 3
     TabOrder = 5
     object TabSheetOutString: TTabSheet
       Caption = 'String'
-      ClientHeight = 597
-      ClientWidth = 492
+      ClientHeight = 635
+      ClientWidth = 496
       object MemoOutputString: TMemo
         Height = 598
         Hint = 'Ein temporallogischer Ausdruck besteht '#10'aus folgenden Konstrukten, die auch '#10'geschachtet sein können:'#10#10'OPERATOREN:'#10'and, or, xor, pand, sand, not'#10'Bis auf not haben alle Operatoren'#10'zwei oder mehr Operanden; not hat'#10'genau einen Operanden.'#10#10'Es gelten die all'
@@ -333,10 +333,8 @@ object TFTAMainWindow: TTFTAMainWindow
     end
     object TabSheetOutMCSSsl: TTabSheet
       Caption = 'MCSS (without SAND)'
-      ClientHeight = 635
-      ClientWidth = 496
-      Enabled = False
-      TabVisible = False
+      ClientHeight = 597
+      ClientWidth = 492
       object StringGridMCSSsl: TStringGrid
         Left = 3
         Height = 526
@@ -390,8 +388,8 @@ object TFTAMainWindow: TTFTAMainWindow
         ChildSizing.ShrinkVertical = crsScaleChilds
         ChildSizing.Layout = cclTopToBottomThenLeftToRight
         ChildSizing.ControlsPerLine = 1
-        ClientHeight = 30
-        ClientWidth = 488
+        ClientHeight = 26
+        ClientWidth = 484
         ColumnLayout = clVerticalThenHorizontal
         Columns = 2
         ItemIndex = 0
