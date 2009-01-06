@@ -7,7 +7,6 @@
       <MainUnit Value="0"/>
       <IconPath Value="./"/>
       <TargetFileExt Value=""/>
-      <ActiveEditorIndexAtStart Value="7"/>
     </General>
     <VersionInfo>
       <ProjectVersion Value=""/>
@@ -35,7 +34,7 @@
         <PackageName Value="LCL"/>
       </Item2>
     </RequiredPackages>
-    <Units Count="23">
+    <Units Count="24">
       <Unit0>
         <Filename Value="tftasolver.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -47,7 +46,6 @@
       <Unit1>
         <Filename Value="utftasolver.pas"/>
         <ComponentName Value="Hauptfenster"/>
-        <IsPartOfProject Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <ResourceFilename Value="utftasolver.lrs"/>
         <UnitName Value="utftasolver"/>
@@ -60,7 +58,7 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="sjspointertools"/>
         <CursorPos X="1" Y="42"/>
-        <TopLine Value="9"/>
+        <TopLine Value="1"/>
         <UsageCount Value="301"/>
       </Unit2>
       <Unit3>
@@ -81,11 +79,9 @@
         <Filename Value="utftaexpression.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="utftaexpression"/>
-        <CursorPos X="44" Y="325"/>
-        <TopLine Value="307"/>
-        <EditorIndex Value="1"/>
+        <CursorPos X="44" Y="1"/>
+        <TopLine Value="1"/>
         <UsageCount Value="301"/>
-        <Loaded Value="True"/>
       </Unit5>
       <Unit6>
         <Filename Value="utftaformabout.pas"/>
@@ -95,8 +91,8 @@
         <ResourceBaseClass Value="Form"/>
         <ResourceFilename Value="utftaformabout.lrs"/>
         <UnitName Value="utftaformabout"/>
-        <CursorPos X="3" Y="48"/>
-        <TopLine Value="10"/>
+        <CursorPos X="1" Y="27"/>
+        <TopLine Value="1"/>
         <UsageCount Value="301"/>
       </Unit6>
       <Unit7>
@@ -107,7 +103,7 @@
         <ResourceBaseClass Value="Form"/>
         <ResourceFilename Value="utftaformdebugmessages.lrs"/>
         <UnitName Value="utftaformdebugmessages"/>
-        <CursorPos X="64" Y="28"/>
+        <CursorPos X="1" Y="27"/>
         <TopLine Value="1"/>
         <UsageCount Value="301"/>
       </Unit7>
@@ -119,8 +115,8 @@
         <ResourceBaseClass Value="Form"/>
         <ResourceFilename Value="utftaformtftasolver.lrs"/>
         <UnitName Value="utftaformtftasolver"/>
-        <CursorPos X="32" Y="86"/>
-        <TopLine Value="48"/>
+        <CursorPos X="1" Y="1"/>
+        <TopLine Value="1"/>
         <UsageCount Value="301"/>
       </Unit8>
       <Unit9>
@@ -133,25 +129,20 @@
         <Filename Value="utftalogic.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="utftalogic"/>
-        <CursorPos X="1" Y="606"/>
-        <TopLine Value="576"/>
-        <EditorIndex Value="5"/>
+        <CursorPos X="1" Y="1"/>
+        <TopLine Value="1"/>
         <UsageCount Value="301"/>
-        <Loaded Value="True"/>
       </Unit10>
       <Unit11>
         <Filename Value="utftaobject_object.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="utftaobject_object"/>
-        <CursorPos X="3" Y="566"/>
-        <TopLine Value="529"/>
-        <EditorIndex Value="3"/>
+        <CursorPos X="1" Y="1"/>
+        <TopLine Value="1"/>
         <UsageCount Value="301"/>
-        <Loaded Value="True"/>
       </Unit11>
       <Unit12>
         <Filename Value="utftasolver.lfm"/>
-        <IsPartOfProject Value="True"/>
         <UsageCount Value="301"/>
         <SyntaxHighlighter Value="LFM"/>
       </Unit12>
@@ -188,47 +179,37 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="utftastringlist"/>
         <CursorPos X="1" Y="152"/>
-        <TopLine Value="129"/>
-        <EditorIndex Value="6"/>
+        <TopLine Value="1"/>
         <UsageCount Value="217"/>
-        <Loaded Value="True"/>
       </Unit17>
       <Unit18>
         <Filename Value="testmode.conf"/>
         <IsPartOfProject Value="True"/>
         <CursorPos X="3" Y="24"/>
         <TopLine Value="1"/>
-        <EditorIndex Value="7"/>
         <UsageCount Value="232"/>
-        <Loaded Value="True"/>
         <SyntaxHighlighter Value="None"/>
       </Unit18>
       <Unit19>
         <Filename Value="utftaobject_list.pas"/>
         <UnitName Value="utftaobject_list"/>
-        <CursorPos X="1" Y="144"/>
-        <TopLine Value="121"/>
-        <EditorIndex Value="4"/>
+        <CursorPos X="1" Y="1"/>
+        <TopLine Value="1"/>
         <UsageCount Value="100"/>
-        <Loaded Value="True"/>
       </Unit19>
       <Unit20>
         <Filename Value="utftaobject_lookuplist.pas"/>
         <UnitName Value="utftaobject_lookuplist"/>
-        <CursorPos X="5" Y="125"/>
-        <TopLine Value="111"/>
-        <EditorIndex Value="2"/>
+        <CursorPos X="1" Y="1"/>
+        <TopLine Value="1"/>
         <UsageCount Value="100"/>
-        <Loaded Value="True"/>
       </Unit20>
       <Unit21>
         <Filename Value="utftaobject.pas"/>
         <UnitName Value="utftaobject"/>
-        <CursorPos X="55" Y="214"/>
-        <TopLine Value="198"/>
-        <EditorIndex Value="0"/>
+        <CursorPos X="1" Y="1"/>
+        <TopLine Value="1"/>
         <UsageCount Value="100"/>
-        <Loaded Value="True"/>
       </Unit21>
       <Unit22>
         <Filename Value="../../../../../../../usr/lib/lazarus/lcl/include/treeview.inc"/>
@@ -236,6 +217,13 @@
         <TopLine Value="884"/>
         <UsageCount Value="3"/>
       </Unit22>
+      <Unit23>
+        <Filename Value="utftaeventlookuplist.pas"/>
+        <UnitName Value="utftaeventlookuplist"/>
+        <CursorPos X="1" Y="1"/>
+        <TopLine Value="1"/>
+        <UsageCount Value="10"/>
+      </Unit23>
     </Units>
     <JumpHistory Count="0" HistoryIndex="-1"/>
   </ProjectOptions>

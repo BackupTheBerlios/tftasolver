@@ -1,7 +1,7 @@
 object FormAbout: TFormAbout
-  Left = 426
+  Left = 430
   Height = 400
-  Top = 407
+  Top = 431
   Width = 600
   ActiveControl = PageControl1
   BorderIcons = [biSystemMenu]

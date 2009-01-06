@@ -1,5 +1,5 @@
 object FormDebugMessage: TFormDebugMessage
-  Left = 430
+  Left = 434
   Height = 800
   Top = 221
   Width = 900

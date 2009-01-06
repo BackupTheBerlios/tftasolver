@@ -1,8 +1,8 @@
 { Das ist eine automatisch erzeugte Lazarus-Ressourcendatei }
 
 LazarusResources.Add('TTFTAMainWindow','FORMDATA',[
-  'TPF0'#15'TTFTAMainWindow'#14'TFTAMainWindow'#4'Left'#3#203#0#6'Height'#3#220
-  +#2#3'Top'#3#187#0#5'Width'#3#232#3#13'ActiveControl'#7#12'PageControl1'#11'B'
+  'TPF0'#15'TTFTAMainWindow'#14'TFTAMainWindow'#4'Left'#3#211#0#6'Height'#3#220
+  +#2#3'Top'#3#235#0#5'Width'#3#232#3#13'ActiveControl'#7#12'PageControl1'#11'B'
   +'orderIcons'#11#12'biSystemMenu'#10'biMinimize'#0#11'BorderStyle'#7#8'bsDial'
   +'og'#7'Caption'#6#18'TFTA Solver (v0.1)'#12'ClientHeight'#3#188#2#11'ClientW'
   +'idth'#3#232#3#4'Menu'#7#15'MainMenuOverall'#10'ParentFont'#8#10'LCLVersion'
@@ -80,15 +80,15 @@ LazarusResources.Add('TTFTAMainWindow','FORMDATA',[
   +#0#11'TStaticText'#11'StaticText1'#6'Height'#2#30#3'Top'#2#190#5'Width'#2'd'
   +#7'Caption'#6#6'Output'#10'Font.Style'#11#6'fsBold'#0#10'ParentFont'#8#8'Tab'
   +'Order'#2#1#0#0#0#9'TTabSheet'#15'TabSheetOutTree'#7'Caption'#6#4'Tree'#12'C'
-  +'lientHeight'#3'U'#2#11'ClientWidth'#3#236#1#0#9'TTreeView'#23'TreeViewOutpu'
+  +'lientHeight'#3'{'#2#11'ClientWidth'#3#240#1#0#9'TTreeView'#23'TreeViewOutpu'
   +'tStructure'#6'Height'#3'V'#2#5'Width'#3#234#1#10'AutoExpand'#9#15'Backgroun'
   +'dColor'#4#179#255#179#0#11'BorderStyle'#7#6'bsNone'#11'BorderWidth'#2#2#5'C'
   +'olor'#7#7'clWhite'#5'Ctl3D'#9#17'DefaultItemHeight'#2#18#10'ScrollBars'#7#10
   +'ssAutoBoth'#8'TabOrder'#2#0#7'Options'#11#13'tvoAutoExpand'#17'tvoAutoItemH'
   +'eight'#16'tvoHideSelection'#21'tvoKeepCollapsedNodes'#14'tvoShowButtons'#12
   +'tvoShowLines'#11'tvoShowRoot'#11'tvoToolTips'#0#0#0#0#9'TTabSheet'#15'TabSh'
-  +'eetOutMCSS'#7'Caption'#6#4'MCSS'#12'ClientHeight'#3'U'#2#11'ClientWidth'#3
-  +#236#1#0#11'TStringGrid'#14'StringGridMCSS'#4'Left'#2#3#6'Height'#3#14#2#3'T'
+  +'eetOutMCSS'#7'Caption'#6#4'MCSS'#12'ClientHeight'#3'{'#2#11'ClientWidth'#3
+  +#240#1#0#11'TStringGrid'#14'StringGridMCSS'#4'Left'#2#3#6'Height'#3#14#2#3'T'
   +'op'#2'&'#5'Width'#3#232#1#8'ColCount'#2#2#7'Columns'#14#1#13'Title.Caption'
   +#6#4'MCSS'#5'Width'#3#168#1#0#0#14'ExtendedSelect'#9#10'FixedColor'#7#9'clBt'
   +'nFace'#7'Options'#11#15'goFixedVertLine'#15'goFixedHorzLine'#10'goVertLine'
@@ -108,7 +108,7 @@ LazarusResources.Add('TTFTAMainWindow','FORMDATA',[
   +'utton'#14'ButtonMCCSCopy'#4'Left'#2#3#6'Height'#2#25#3'Top'#3'9'#2#5'Width'
   +#3#232#1#7'Caption'#6#21'Copy all to clipboard'#7'Enabled'#8#8'TabOrder'#2#2
   +#0#0#0#9'TTabSheet'#17'TabSheetOutMCSSsl'#7'Caption'#6#19'MCSS (without SAND'
-  +')'#12'ClientHeight'#3'U'#2#11'ClientWidth'#3#236#1#7'Enabled'#8#10'TabVisib'
+  +')'#12'ClientHeight'#3'{'#2#11'ClientWidth'#3#240#1#7'Enabled'#8#10'TabVisib'
   +'le'#8#0#11'TStringGrid'#16'StringGridMCSSsl'#4'Left'#2#3#6'Height'#3#14#2#3
   +'Top'#2'&'#5'Width'#3#232#1#8'ColCount'#2#2#7'Columns'#14#1#13'Title.Caption'
   +#6#4'MCSS'#5'Width'#3#168#1#0#0#14'ExtendedSelect'#9#10'FixedColor'#7#9'clBt'

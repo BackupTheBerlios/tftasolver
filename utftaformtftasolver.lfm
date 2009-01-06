@@ -1,7 +1,7 @@
 object TFTAMainWindow: TTFTAMainWindow
-  Left = 203
+  Left = 211
   Height = 732
-  Top = 187
+  Top = 235
   Width = 1000
   ActiveControl = PageControl1
   BorderIcons = [biSystemMenu, biMinimize]
@@ -236,8 +236,8 @@ object TFTAMainWindow: TTFTAMainWindow
     end
     object TabSheetOutTree: TTabSheet
       Caption = 'Tree'
-      ClientHeight = 597
-      ClientWidth = 492
+      ClientHeight = 635
+      ClientWidth = 496
       object TreeViewOutputStructure: TTreeView
         Height = 598
         Width = 490
@@ -255,8 +255,8 @@ object TFTAMainWindow: TTFTAMainWindow
     end
     object TabSheetOutMCSS: TTabSheet
       Caption = 'MCSS'
-      ClientHeight = 597
-      ClientWidth = 492
+      ClientHeight = 635
+      ClientWidth = 496
       object StringGridMCSS: TStringGrid
         Left = 3
         Height = 526
@@ -333,8 +333,8 @@ object TFTAMainWindow: TTFTAMainWindow
     end
     object TabSheetOutMCSSsl: TTabSheet
       Caption = 'MCSS (without SAND)'
-      ClientHeight = 597
-      ClientWidth = 492
+      ClientHeight = 635
+      ClientWidth = 496
       Enabled = False
       TabVisible = False
       object StringGridMCSSsl: TStringGrid
