@@ -1,0 +1,25 @@
+object FormDebugMessage: TFormDebugMessage
+  Left = 430
+  Height = 800
+  Top = 221
+  Width = 900
+  ActiveControl = MemoOutput
+  Caption = 'TFTASolver - Debug-Messages'
+  ClientHeight = 800
+  ClientWidth = 900
+  ParentFont = False
+  LCLVersion = '0.9.26'
+  object MemoOutput: TMemo
+    Height = 800
+    Width = 900
+    Color = 12255231
+    Font.Height = -10
+    Lines.Strings = (
+      ''
+    )
+    ParentFont = False
+    ReadOnly = True
+    ScrollBars = ssAutoVertical
+    TabOrder = 0
+  end
+end
