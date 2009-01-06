@@ -7,7 +7,7 @@
       <MainUnit Value="0"/>
       <IconPath Value="./"/>
       <TargetFileExt Value=""/>
-      <ActiveEditorIndexAtStart Value="8"/>
+      <ActiveEditorIndexAtStart Value="7"/>
     </General>
     <VersionInfo>
       <ProjectVersion Value=""/>
@@ -96,10 +96,8 @@
         <ResourceFilename Value="utftaformabout.lrs"/>
         <UnitName Value="utftaformabout"/>
         <CursorPos X="3" Y="48"/>
-        <TopLine Value="14"/>
-        <EditorIndex Value="9"/>
+        <TopLine Value="10"/>
         <UsageCount Value="301"/>
-        <Loaded Value="True"/>
       </Unit6>
       <Unit7>
         <Filename Value="utftaformdebugmessages.pas"/>
@@ -123,9 +121,7 @@
         <UnitName Value="utftaformtftasolver"/>
         <CursorPos X="32" Y="86"/>
         <TopLine Value="48"/>
-        <EditorIndex Value="8"/>
         <UsageCount Value="301"/>
-        <Loaded Value="True"/>
       </Unit8>
       <Unit9>
         <Filename Value="utftalist.pas"/>
@@ -241,128 +237,7 @@
         <UsageCount Value="3"/>
       </Unit22>
     </Units>
-    <JumpHistory Count="30" HistoryIndex="29">
-      <Position1>
-        <Filename Value="utftaformtftasolver.pas"/>
-        <Caret Line="76" Column="26" TopLine="52"/>
-      </Position1>
-      <Position2>
-        <Filename Value="utftaformtftasolver.pas"/>
-        <Caret Line="92" Column="39" TopLine="52"/>
-      </Position2>
-      <Position3>
-        <Filename Value="utftaformtftasolver.pas"/>
-        <Caret Line="93" Column="40" TopLine="52"/>
-      </Position3>
-      <Position4>
-        <Filename Value="utftaformtftasolver.pas"/>
-        <Caret Line="293" Column="5" TopLine="267"/>
-      </Position4>
-      <Position5>
-        <Filename Value="utftaformtftasolver.pas"/>
-        <Caret Line="77" Column="26" TopLine="76"/>
-      </Position5>
-      <Position6>
-        <Filename Value="utftaformtftasolver.pas"/>
-        <Caret Line="78" Column="26" TopLine="76"/>
-      </Position6>
-      <Position7>
-        <Filename Value="utftaformtftasolver.pas"/>
-        <Caret Line="51" Column="20" TopLine="50"/>
-      </Position7>
-      <Position8>
-        <Filename Value="utftaformtftasolver.pas"/>
-        <Caret Line="50" Column="46" TopLine="50"/>
-      </Position8>
-      <Position9>
-        <Filename Value="utftaformtftasolver.pas"/>
-        <Caret Line="74" Column="30" TopLine="50"/>
-      </Position9>
-      <Position10>
-        <Filename Value="utftaformtftasolver.pas"/>
-        <Caret Line="49" Column="22" TopLine="48"/>
-      </Position10>
-      <Position11>
-        <Filename Value="utftaformtftasolver.pas"/>
-        <Caret Line="48" Column="33" TopLine="48"/>
-      </Position11>
-      <Position12>
-        <Filename Value="utftaformtftasolver.pas"/>
-        <Caret Line="51" Column="20" TopLine="48"/>
-      </Position12>
-      <Position13>
-        <Filename Value="utftaformtftasolver.pas"/>
-        <Caret Line="50" Column="46" TopLine="48"/>
-      </Position13>
-      <Position14>
-        <Filename Value="utftaformtftasolver.pas"/>
-        <Caret Line="75" Column="30" TopLine="48"/>
-      </Position14>
-      <Position15>
-        <Filename Value="utftaformtftasolver.pas"/>
-        <Caret Line="51" Column="24" TopLine="48"/>
-      </Position15>
-      <Position16>
-        <Filename Value="utftaformtftasolver.pas"/>
-        <Caret Line="50" Column="46" TopLine="48"/>
-      </Position16>
-      <Position17>
-        <Filename Value="utftaformtftasolver.pas"/>
-        <Caret Line="77" Column="19" TopLine="33"/>
-      </Position17>
-      <Position18>
-        <Filename Value="utftaformtftasolver.pas"/>
-        <Caret Line="82" Column="26" TopLine="37"/>
-      </Position18>
-      <Position19>
-        <Filename Value="utftaformtftasolver.pas"/>
-        <Caret Line="111" Column="60" TopLine="110"/>
-      </Position19>
-      <Position20>
-        <Filename Value="utftaformtftasolver.pas"/>
-        <Caret Line="308" Column="104" TopLine="293"/>
-      </Position20>
-      <Position21>
-        <Filename Value="utftaformtftasolver.pas"/>
-        <Caret Line="111" Column="61" TopLine="110"/>
-      </Position21>
-      <Position22>
-        <Filename Value="utftaformtftasolver.pas"/>
-        <Caret Line="336" Column="60" TopLine="298"/>
-      </Position22>
-      <Position23>
-        <Filename Value="utftaformtftasolver.pas"/>
-        <Caret Line="81" Column="26" TopLine="81"/>
-      </Position23>
-      <Position24>
-        <Filename Value="utftaformtftasolver.pas"/>
-        <Caret Line="74" Column="25" TopLine="73"/>
-      </Position24>
-      <Position25>
-        <Filename Value="utftaformtftasolver.pas"/>
-        <Caret Line="82" Column="26" TopLine="73"/>
-      </Position25>
-      <Position26>
-        <Filename Value="utftaformtftasolver.pas"/>
-        <Caret Line="327" Column="1" TopLine="288"/>
-      </Position26>
-      <Position27>
-        <Filename Value="utftaformtftasolver.pas"/>
-        <Caret Line="110" Column="15" TopLine="87"/>
-      </Position27>
-      <Position28>
-        <Filename Value="utftaformabout.pas"/>
-        <Caret Line="25" Column="44" TopLine="3"/>
-      </Position28>
-      <Position29>
-        <Filename Value="utftaformtftasolver.pas"/>
-        <Caret Line="82" Column="20" TopLine="48"/>
-      </Position29>
-      <Position30>
-        <Filename Value="utftaformtftasolver.pas"/>
-        <Caret Line="50" Column="21" TopLine="48"/>
-      </Position30>
-    </JumpHistory>
+    <JumpHistory Count="0" HistoryIndex="-1"/>
   </ProjectOptions>
   <CompilerOptions>
     <Version Value="8"/>
