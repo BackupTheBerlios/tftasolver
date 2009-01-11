@@ -35,7 +35,7 @@
         <PackageName Value="LCL"/>
       </Item2>
     </RequiredPackages>
-    <Units Count="25">
+    <Units Count="22">
       <Unit0>
         <Filename Value="tftasolver.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -52,7 +52,7 @@
         <UnitName Value="utftasolver"/>
         <CursorPos X="51" Y="28"/>
         <TopLine Value="1"/>
-        <UsageCount Value="301"/>
+        <UsageCount Value="278"/>
       </Unit1>
       <Unit2>
         <Filename Value="sjspointertools.pas"/>
@@ -150,7 +150,7 @@
       </Unit11>
       <Unit12>
         <Filename Value="utftasolver.lfm"/>
-        <UsageCount Value="301"/>
+        <UsageCount Value="278"/>
         <SyntaxHighlighter Value="LFM"/>
       </Unit12>
       <Unit13>
@@ -202,14 +202,14 @@
         <UnitName Value="utftaobject_list"/>
         <CursorPos X="1" Y="1"/>
         <TopLine Value="1"/>
-        <UsageCount Value="100"/>
+        <UsageCount Value="77"/>
       </Unit19>
       <Unit20>
         <Filename Value="utftaobject_lookuplist.pas"/>
         <UnitName Value="utftaobject_lookuplist"/>
         <CursorPos X="1" Y="1"/>
         <TopLine Value="1"/>
-        <UsageCount Value="100"/>
+        <UsageCount Value="77"/>
       </Unit20>
       <Unit21>
         <Filename Value="utftaobject.pas"/>
@@ -220,26 +220,6 @@
         <UsageCount Value="100"/>
         <Loaded Value="True"/>
       </Unit21>
-      <Unit22>
-        <Filename Value="../../../../../../../usr/lib/lazarus/lcl/include/treeview.inc"/>
-        <CursorPos X="51" Y="909"/>
-        <TopLine Value="884"/>
-        <UsageCount Value="3"/>
-      </Unit22>
-      <Unit23>
-        <Filename Value="utftaeventlookuplist.pas"/>
-        <UnitName Value="utftaeventlookuplist"/>
-        <CursorPos X="1" Y="1"/>
-        <TopLine Value="1"/>
-        <UsageCount Value="10"/>
-      </Unit23>
-      <Unit24>
-        <Filename Value="../../../../../../../../usr/lib/lazarus/lcl/grids.pas"/>
-        <UnitName Value="Grids"/>
-        <CursorPos X="1" Y="7067"/>
-        <TopLine Value="7044"/>
-        <UsageCount Value="10"/>
-      </Unit24>
     </Units>
     <JumpHistory Count="9" HistoryIndex="8">
       <Position1>
