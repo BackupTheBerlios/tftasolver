@@ -1,7 +1,7 @@
 object TFTAMainWindow: TTFTAMainWindow
-  Left = 193
+  Left = 201
   Height = 732
-  Top = 259
+  Top = 289
   Width = 1000
   ActiveControl = PageControl1
   BorderIcons = [biSystemMenu, biMinimize]
@@ -409,6 +409,15 @@ object TFTAMainWindow: TTFTAMainWindow
         TabOrder = 2
       end
     end
+  end
+  object Button1: TButton
+    Left = 106
+    Height = 25
+    Top = 219
+    Width = 75
+    Caption = 'Button1'
+    OnClick = Button1Click
+    TabOrder = 6
   end
   object MainMenuOverall: TMainMenu
     Images = ImageListMenuOverall

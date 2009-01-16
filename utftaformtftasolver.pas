@@ -61,6 +61,7 @@ type
   { TTFTAMainWindow }
 
   TTFTAMainWindow = class(TForm)
+    Button1: TButton;
     ButtonMCCSCopy: TButton;
     ButtonMCCSCopysl: TButton;
     ImageListMenuOverall: TImageList;
@@ -116,6 +117,7 @@ type
     ToolButtonHelp: TToolButton;
     TreeViewInputStructure: TTreeView;
     TreeViewOutputStructure: TTreeView;
+    procedure Button1Click(Sender: TObject);
     procedure MenuItemAboutClick(Sender: TObject);
     procedure MenuItemClearClick(Sender: TObject);
     procedure MenuItemExitClick(Sender: TObject);
@@ -221,6 +223,16 @@ begin
   finally
     FormAbout.Release;
   end;
+end;
+
+procedure TTFTAMainWindow.Button1Click(Sender: TObject);
+begin
+  MenuItemScanClick(Sender);
+  ShowMessage('Basic-Event:  ' + BoolToStr(self.TemporalExpression.TemporalTerm[0].IsBasicEvent) + sLineBreak +
+              'Core-Event:   ' + BoolToStr(self.TemporalExpression.TemporalTerm[0].IsCoreEvent) + sLineBreak +
+              'negated:      ' + BoolToStr(self.TemporalExpression.TemporalTerm[0].IsNegated) + sLineBreak +
+              'Event-Sequ.:  ' + BoolToStr(self.TemporalExpression.TemporalTerm[0].IsEventSequence) + sLineBreak +
+              'Extended-Sequ:' + BoolToStr(self.TemporalExpression.TemporalTerm[0].IsExtendedSequence) + sLineBreak);
 end;
 
 procedure TTFTAMainWindow.MenuItemExitClick(Sender: TObject);
