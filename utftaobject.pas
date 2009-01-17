@@ -183,17 +183,14 @@ type
     VEventLookupList : TTFTAEventLookuplist;
     VExpr : ansistring;           { if I'm a BasicEvent, I have to carry my event name }
 
-    VIsBasicEvent                  : boolean;
-
-    VIsBasicANDTerm                : boolean;
-    VIsCoreEvent                   : boolean;
-    VIsDisjunct                    : boolean;
-    VIsEventSequence               : boolean;
-    VIsEventSequenceWithNegated    : boolean;
-    VIsExtendedSequence            : boolean;
-    VIsExtendedSequenceWithNegated : boolean;
-    VIsNegatedANDTerm              : boolean;
-    VIsNegatedCoreEvent            : boolean;
+    VIsBAT         : boolean;
+    VIsCE          : boolean;
+    VIsDisjunct    : boolean;
+    VIsES          : boolean;
+    VIsXS          : boolean;
+    VIsMCSS        : boolean;
+    VIsNAT         : boolean;
+    VIsNCE         : boolean;
 
     VIsMasked : boolean;
     VIsMinimal : boolean;
@@ -204,40 +201,41 @@ type
     VNeedsToBeUpdated : boolean;  { true, if before an identical event was modified, then a update to this identical object is needed }
     VPointerToUpdateObject : TTFTAObject; { this points to the object the current object shall be updated to }
     VPosInEventList : Integer;   { allows to reference to my own pointer (within eventlist) }
-    VSpeepSearch : boolean;
+    VSpeedSearch : boolean;
     VType: TTFTAOperatorType;     { what type am I? }
 
-    function  CheckIsBasicANDTerm: boolean;
-    function  CheckIsCommutative : boolean;
+    function  CheckIsBasicEvent                          : boolean;
+    function  CheckIsCommutative                         : boolean;
     function  CheckIsEventSequenceWithNegated            : boolean;
-    function  CheckIsEventSequenceWithNegatedInternal    : boolean;
     function  CheckIsExtendedSequenceWithNegated         : boolean;
-    function  CheckIsExtendedSequenceWithNegatedInternal : boolean;
-    function  CheckIsMCSS        : boolean;
-    function  CheckIsNegated     : boolean;
-    function  CheckIsNegatedAtomicEvent : boolean;
-    function  CheckIsTypeAND     : boolean;
-    function  CheckIsTypePAND    : boolean;
-    function  CheckIsTypeSAND    : boolean;
-    function  CheckIsTypeOR      : boolean;
-    function  CheckIsTypeOTHER   : boolean;
-    function  CheckIsTypeXOR     : boolean;
-    function  CheckIsTypeTOP     : boolean;
-    function  CheckIsTypeNOT     : boolean;
-    function  CheckLogicFalse    : boolean;
-    function  CheckLogicTrue     : boolean;
-    function  GetIsNegatedExtendedCoreEvent : boolean;
+    function  CheckIsNegated                             : boolean;
+    function  CheckIsNegatedAtomicEvent                  : boolean;
+    function  CheckLogicFalse                            : boolean;
+    function  CheckLogicTrue                             : boolean;
+
+    function  CheckIsTypeAND                             : boolean;
+    function  CheckIsTypeBASIC                           : boolean;
+    function  CheckIsTypePAND                            : boolean;
+    function  CheckIsTypeSAND                            : boolean;
+    function  CheckIsTypeOR                              : boolean;
+    function  CheckIsTypeOTHER                           : boolean;
+    function  CheckIsTypeXOR                             : boolean;
+    function  CheckIsTypeTOP                             : boolean;
+    function  CheckIsTypeNOT                             : boolean;
+
     function  GetPointerToUpdateObject : TTFTAObject;
     function  GetTempExpr : ansistring;
     function  GetTempExprDEBUG : ansistring;
 
-    procedure CheckForCoreEvent;
-    procedure CheckForDisjunctEvent;
-    procedure CheckForEventSequenceEvent;
-    procedure CheckForExtendedSequenceEvent;
+    procedure CheckForDisjunctEvent;                     { TBD }
     procedure CheckForIsBasicANDTerm;
+    procedure CheckForIsCoreEvent;
+    procedure CheckForIsEventSequenceEvent;
+    procedure CheckForIsExtendedSequenceEvent;
+    procedure CheckForIsMCSS;                            { TBD }
     procedure CheckForIsNegatedANDTerm;
-    procedure SetIsBasicEvent (Parameter : boolean);
+    procedure CheckForIsNegatedCoreEvent;
+
     procedure SetTempExpr(theExpr : ansistring);
     procedure SetVType(Parameter : TTFTAOperatorType);
 
@@ -266,57 +264,59 @@ type
     procedure Mask;
     procedure RedirectMe(newItem : TTFTAObject);
     procedure SetChild(Index: Integer; Item: TTFTAObject);
+    procedure SetIsBasicEvent (Parameter : boolean);
     procedure SetLogicalValue (Parameter : boolean);
     procedure SetLogicalValue (Parameter : pointer);
     procedure Unmask;
 
-    property  Children : TTFTAList read VChildren write VChildren;
+    property  Children        : TTFTAList            read VChildren             write VChildren;
     {$IfDef TESTMODE}
-    property  DEBUGMemo : TMemo read VDEBUGMemo write VDEBUGMemo;
+    property  DEBUGMemo       : TMemo                read VDEBUGMemo            write VDEBUGMemo;
     {$EndIf}
-    property  EventType : TTFTAOperatorType read VType write SetVType;
-    property  EventLookupList : TTFTAEventLookuplist read VEventLookupList write VEventLookupList;
-    property  IsAllChildrenAreBasic : boolean read GetChildrenBasicState;
+    property  EventType       : TTFTAOperatorType    read VType                 write SetVType;
+    property  EventLookupList : TTFTAEventLookuplist read VEventLookupList      write VEventLookupList;
+    property  IsAllChildrenAreBasic : boolean        read GetChildrenBasicState;
+
+    property  IsCommutative                 : boolean read CheckIsCommutative;
+    property  IsDisjunctTerm                : boolean read VIsDisjunct          write VIsDisjunct ;
+
+    property  IsBasicANDTerm                : boolean read VIsBAT               write VIsBAT;
+    property  IsBasicEvent                  : boolean read CheckIsBasicEvent;
+    property  IsCoreEvent                   : boolean read VIsCE                write VIsCE;
+    property  IsEventSequence               : boolean read VIsES                write VIsES;
+    property  IsEventSequenceWithNegated    : boolean read CheckIsEventSequenceWithNegated;
+    property  IsExtendedSequence            : boolean read VIsXS                write VIsXS  ;
+    property  IsExtendedSequenceWithNegated : boolean read CheckIsExtendedSequenceWithNegated;
+    property  IsMCSSForm                    : boolean read VIsMCSS write VIsMCSS;
+    property  IsNegated                     : boolean read CheckIsNegated       write VIsNegated ;
+    property  IsNegatedANDTerm              : boolean read VIsNAT               write VIsNAT;
+    property  IsNegatedAtomicEvent          : boolean read CheckIsNegatedAtomicEvent ;
+    property  IsNegatedCoreEvent            : boolean read VIsNCE               write VIsNCE;
+    property  IsFalse                       : boolean read CheckLogicFalse;
+    property  IsTrue                        : boolean read CheckLogicTrue;
 
 
-    property  IsCommutative : boolean read CheckIsCommutative;
-    property  IsDisjunct : boolean read VIsDisjunct write VIsDisjunct ;
+    property  IsNotCompletelyBuildYet : boolean  read VIsNotCompletelyBuildYet  write VIsNotCompletelyBuildYet;
+    property  IsSorted                : boolean  read VIsSorted                 write VIsSorted;
 
-    property  IsBasicANDTerm                : boolean read VIsBasicANDTerm                write VIsBasicANDTerm;
-    property  IsBasicEvent                  : boolean read CheckIsBasicEvent              write SetIsBasicEvent;
-    property  IsCoreEvent                   : boolean read VIsCoreEvent                   write VIsCoreEvent;
-    property  IsEventSequence               : boolean read VIsEventSequence               write VIsEventSequence;
-    property  IsEventSequenceWithNegated    : boolean read VIsEventSequenceWithNegated    write VIsEventSequenceWithNegated;
-    property  IsExtendedSequence            : boolean read VIsExtendedSequence            write VIsExtendedSequence  ;
-    property  IsExtendedSequenceWithNegated : boolean read VIsExtendedSequenceWithNegated write VIsExtendedSequenceWithNegated;
-    property  IsNegated                     : boolean read CheckIsNegated                 write VIsNegated ;
-    property  IsNegatedANDTerm              : boolean read VIsNegatedANDTerm              write VIsNegatedANDTerm;
-    property  IsNegatedAtomicEvent          : boolean read CheckIsNegatedAtomicEvent;
-    property  IsNegatedCoreEvent            : boolean read VIsNegatedCoreEvent            write VIsNegatedCoreEvent;
-
-    property  IsFalse : boolean read CheckLogicFalse;
-    property  IsMCSSForm : boolean read CheckIsMCSS;
-    property  IsNotCompletelyBuildYet : boolean read VIsNotCompletelyBuildYet write VIsNotCompletelyBuildYet;
-    property  IsSorted : boolean read VIsSorted write VIsSorted;
-    property  IsTrue : boolean read CheckLogicTrue;
-    property  IsTypeAND : boolean read CheckIsTypeAND;
-    property  IsTypeBASIC : boolean read VIsBasicEvent;
-    property  IsTypePAND : boolean read CheckIsTypePAND;
-    property  IsTypeSAND : boolean read CheckIsTypeSAND;
-    property  IsTypeOR : boolean read CheckIsTypeOR;
-    property  IsTypeOTHER : boolean read CheckIsTypeOTHER;
-    property  IsTypeTOP : boolean read CheckIsTypeTOP;
-    property  IsTypeXOR : boolean read CheckIsTypeXOR;
-    property  IsTypeNOT : boolean read CheckIsTypeNOT;
-    property  Items[Index: Integer]: TTFTAObject read GetChild write SetChild; default;
-    property  LogicLevel : integer read VIsTrueFalse;
-    property  NeedsToBeUpdated : boolean read VNeedsToBeUpdated write VNeedsToBeUpdated;
-    property  PlainTemporalExpr : ansistring read VExpr;
-    property  PointerToUpdateObject : TTFTAObject read GetPointerToUpdateObject write VPointerToUpdateObject;
-    property  PosInEventList : Integer read VPosInEventList write VPosInEventList;
-    property  SpeedSearchIsSet : boolean read VSpeepSearch write VSpeepSearch;
-    property  TemporalExpr : ansistring read GetTempExpr write SetTempExpr;
-    property  TemporalExprDEBUG : ansistring read GetTempExprDEBUG;
+    property  IsTypeAND               : boolean  read CheckIsTypeAND;
+    property  IsTypeBASIC             : boolean  read CheckIsTypeBASIC;
+    property  IsTypePAND              : boolean  read CheckIsTypePAND;
+    property  IsTypeSAND              : boolean  read CheckIsTypeSAND;
+    property  IsTypeOR                : boolean  read CheckIsTypeOR;
+    property  IsTypeOTHER             : boolean  read CheckIsTypeOTHER;
+    property  IsTypeTOP               : boolean  read CheckIsTypeTOP;
+    property  IsTypeXOR               : boolean  read CheckIsTypeXOR;
+    property  IsTypeNOT               : boolean  read CheckIsTypeNOT;
+    property  Items[Index: Integer]: TTFTAObject read GetChild                  write SetChild; default;
+    property  LogicLevel              : integer  read VIsTrueFalse;
+    property  NeedsToBeUpdated        : boolean  read VNeedsToBeUpdated         write VNeedsToBeUpdated;
+    property  PlainTemporalExpr    : ansistring  read VExpr;
+    property  PointerToUpdateObject: TTFTAObject read GetPointerToUpdateObject  write VPointerToUpdateObject;
+    property  PosInEventList          : Integer  read VPosInEventList           write VPosInEventList;
+    property  SpeedSearchIsSet        : boolean  read VSpeedSearch              write VSpeedSearch;
+    property  TemporalExpr         : ansistring  read GetTempExpr               write SetTempExpr;
+    property  TemporalExprDEBUG    : ansistring  read GetTempExprDEBUG;
 
 
   end;

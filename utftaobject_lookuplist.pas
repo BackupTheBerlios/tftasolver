@@ -240,19 +240,18 @@ begin
   {$IfDef TESTMODE}
   Result.DEBUGMemo                  :=  self.DEBUGMemo            ;
   {$EndIf}
-  Result.IsBasicEvent               :=  IsBasicEvent              ;
   Result.IsCoreEvent                :=  IsCoreEvent               ;
   Result.IsEventSequence            :=  IsEventSequence           ;
   Result.IsNegated                  :=  IsNegated                 ;
   Result.IsNotCompletelyBuildYet    :=  IsNotCompletelyBuildYet   ;
-  Result.IsDisjunct                 :=  IsDisjunct                ;
+  Result.IsDisjunctTerm             :=  IsDisjunct                ;
   Result.IsExtendedSequence         :=  IsExtendedSequence        ;
   Result.IsSorted                   :=  False                     ;
   Result.NeedsToBeUpdated           :=  NeedsToBeUpdated          ;
   Result.PointerToUpdateObject      :=  PointerToUpdateObject     ;
   Result.PosInEventList             :=  posInList                 ;
   Result.TemporalExpr               :=  TemporalExpr              ;
-
+  Result.SetIsBasicEvent(IsBasicEvent);
 end;
 
 {------------------------------------------------------------------------------

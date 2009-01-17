@@ -597,7 +597,7 @@ begin
     end else
     { if there is also no NOT operator, then it is a basic event }
     begin
-        currentObject.IsBasicEvent := true;
+        currentObject.SetIsBasicEvent(True);
         { set "name" (i.e. temporalexpression) only if basic event AND not TRUE or FALSE }
         if (currentObject <> eventlist.TheFALSEElement) and
            (currentObject <> eventlist.TheTRUEElement) then

@@ -27,7 +27,26 @@
 
 { ############################################################################ }
 { TTFTAObject }
+
+{ this document is structured as follows:
+  AAA - routines concerning core operations on TTFTAObject like Create or Clone
+  BBB - routines handling vital properties of TTFTAObject like GetExpr or Count
+  CCC - routines checking term type properties like IsBasicEvent
+  DDD - routines setting term type properties like SetIsBAsicEvent
+  EEE - routines covering operations on children like AddChild
+  FFF - routines checking properties on children like GetChildrenBasicState
+  ZZZ - routines for debugging needs
+  }
+
 {------------------------------------------------------------------------------
+ ------------------------------------------------------------------------------
+ AAA AAA AAA AAA AAA AAA AAA AAA AAA AAA AAA AAA AAA AAA AAA AAA AAA AAA AAA AAA
+ routines concerning core operations on TTFTAObject
+ ------------------------------------------------------------------------------
+ -----------------------------------------------------------------------------}
+
+{------------------------------------------------------------------------------
+  AAA
   Class-Constructor
 ------------------------------------------------------------------------------}
 constructor TTFTAObject.Create;
@@ -46,397 +65,22 @@ begin
   self.VExpr:='NIL';                    { dummy value in order to not get exceptions }
 
 end;
-
 {------------------------------------------------------------------------------
-  Class-Destructor
-------------------------------------------------------------------------------}
-destructor TTFTAObject.Destroy;
-begin
-  // nothing specific yet...
-  inherited Destroy;
-end;
-{------------------------------------------------------------------------------
-  Add an entry in Children
-------------------------------------------------------------------------------}
-function TTFTAObject.AddChild(Item : TTFTAObject) :Integer;
-begin
-  if Assigned(self.Children) then Result := self.Children.Add(Item);
-end;
-{------------------------------------------------------------------------------
-  Assign Children
-------------------------------------------------------------------------------}
-procedure TTFTAObject.AssignChildren(Obj: TTFTAList);
-begin
-  if Assigned(self.Children) then self.Children.Assign(Obj);
-end;
-{------------------------------------------------------------------------------
-  check whether self is a core event
-
-------------------------------------------------------------------------------}
-procedure TTFTAObject.CheckForCoreEvent;
-begin
-  { self is a non-negated core event iff either:
-    Type 1 - it is a basic event or
-    Type 2 - it is a SAND term with only non-negated basic events as children
-    Type 3 - it is TRUE
-
-    self is a negated core event iff either:
-    Type 4 - it is a NOT with a basic event as child or
-    Type 5 - it is a AND term with only negated basic events as children
-    Type 6 - it is FALSE  }
-  If ( self.IsBasicEvent and (not (self.LogicLevel = 0)) ) or { type 1 or 3 }
-     ((self.IsTypeSAND) and (self.GetChildrenBasicState(-1))) then { type 2 }
-  begin
-    self.IsCoreEvent:= True;
-    self.IsNegated  := False;
-  end else
-  if ((self.IsTypeNOT) and (self[0].IsBasicEvent)) or { type 4 }
-     ( self.LogicLevel = 0 ) or { type 6 }
-     ((self.IsTypeAND) and (self.GetChildrenBasicState(1))) then { type 5 }
-  begin { (negated) basic event }
-    self.IsCoreEvent:= True;
-    self.IsNegated  := true;
-  end;
-end;
-{------------------------------------------------------------------------------
-  prueft, ob das uebergebene Ereignis Disjunkte Operanden besitzt ist und setzt
-  die Eigenschaften entsprechend
-------------------------------------------------------------------------------}
-procedure TTFTAObject.CheckForDisjunctEvent;
-begin
-  { nothing right now }
-end;
-{------------------------------------------------------------------------------
-  check whether self is a EventSequence
-  this one sets the self.IsEventSequence
-------------------------------------------------------------------------------}
-procedure TTFTAObject.CheckForEventSequenceEvent;
-var BreakTheLoop        : boolean;
-    i                   : Integer;
-    numberOfChildren    : Integer;
-    couldBeType2        : boolean;
-    couldBeType3        : boolean;
-begin
-  { self is a non-extended event sequence iff
-    Type 1 - self is a non-negated core-event or
-    Type 2 - self is a PAND of non-negated core events or
-    Type 3 - self is a PAND of an event sequence without negated events and one or more core events or
-    Type 4 - self is a AND with
-              - the first child event is a negated core event and
-              - the second child is a non-extended event sequence }
-  if (not self.IsNegated) and (self.IsCoreEvent) then
-  begin
-    { Type 1 }
-    self.IsEventSequence := true
-  end else
-  begin
-    { check for Type 2 or 3 }
-    if self.IsTypePAND then
-    begin
-      { check first child (this one decides between type 2 or three) }
-      couldBeType2 := (not self[0].IsNegated) and (self[0].IsCoreEvent);
-      couldBeType3 := (not couldBeType2) and
-                      (self[0].IsEventSequence) and
-                      (not self[0].IsEventSequenceWithNegated);
-      { check rest of children if either couldBeType2 or couldBeType3 }
-      if (couldBeType2 or couldBeType3) then
-      begin
-        i := 1;
-        numberOfChildren := self.Count;
-        repeat
-          BreakTheLoop := (not(self[i].IsCoreEvent)) or (self[i].IsNegated);
-          inc(i);
-        until BreakTheLoop or (i = numberOfChildren);
-        self.IsEventSequence := (not BreakTheLoop) ;
-      end else
-      begin
-        self.IsEventSequence := false;
-      end;
-    end else
-    begin
-      { check for type 4 }
-      self.IsEventSequence := self.CheckIsEventSequenceWithNegatedInternal;
-    end;
-  end;
-end;
-{------------------------------------------------------------------------------
-  check whether self is an extended EventSequence
-  this one sets the self.IsExtendedSequence
-------------------------------------------------------------------------------}
-procedure TTFTAObject.CheckForExtendedSequenceEvent;
-var BreakTheLoop           : boolean;
-    i                      : Integer;
-    numberOfChildren       : Integer;
-    couldBeType1           : boolean;
-    couldBeType2           : boolean;
-    thisIsABasicANDTerm    : boolean;
-    atLeastOneBasicANDTerm : boolean;
-begin
-  { self is an extended event sequence iff
-    Type 1 - self is a PAND of none or more non-negated core events and one or more
-             BasicANDTerms or
-    Type 2 - self is a PAND of an extended event sequence without negated events and
-             one or more of the following:
-               none or more non-negated core events and one or more
-               BasicANDTerms  or
-    Type 3 - self is a AND with
-              - the first child event is a negated core event and
-              - the second child is an extended event sequence }
-  { can only be extended sequence if it is a sequence }
-  if self.IsEventSequence then
-  begin
-    { check for Type 1 or 2 }
-    if self.IsTypePAND then
-    begin
-      atLeastOneBasicANDTerm := false;
-      { check first child (this one decides between type 1 or 2) }
-      if self[0].CheckIsBasicANDTerm then
-        atLeastOneBasicANDTerm := true;
-      couldBeType1 := ((not self[0].IsNegated) and (self[0].IsCoreEvent)) or
-                      (atLeastOneBasicANDTerm);
-      couldBeType2 := (not couldBeType1) and
-                      (self[0].IsExtendedSequence) and
-                      (not self[0].IsExtendedSequenceWithNegated);
-      { check rest of children if either couldBeType1 or couldBeType2 }
-      if (couldBeType1 or couldBeType2) then
-      begin
-        i := 1;
-        numberOfChildren := self.Count;
-        repeat
-          thisIsABasicANDTerm := false;
-          if self[i].CheckIsBasicANDTerm then
-          begin
-            thisIsABasicANDTerm := true; { flag for current loop }
-            atLeastOneBasicANDTerm := true; { flag that in any loop there was at least one }
-          end;
-          BreakTheLoop := (not(self[i].IsCoreEvent)) or (self[i].IsNegated) or (not thisIsABasicANDTerm);
-          inc(i);
-        until BreakTheLoop or (i = numberOfChildren);
-        self.IsEventSequence := (not BreakTheLoop);
-      end else
-      begin
-        self.IsEventSequence := false;
-      end;
-    end else
-    begin
-      { check for type 3 }
-      self.IsEventSequence := self.CheckIsExtendedSequenceWithNegatedInternal;
-    end;
-  end;
-end;
-{------------------------------------------------------------------------------
-  True if AND term of Basic events and non negated
-------------------------------------------------------------------------------}
-procedure TTFTAObject.CheckForIsBasicANDTerm;
-var i                : Integer;
-    numberOfChildren : Integer;
-    BreakTheLoop     : Boolean;
-begin
-  if self.IsTypeAND then
-  begin
-    i := 0;
-    numberOfChildren := self.Count;
-    repeat
-      BreakTheLoop := not( (not self[i].IsNegated) and self[i].IsBasicEvent );
-      inc(i);
-    until BreakTheLoop or (i = numberOfChildren );
-    self.IsBasicANDTerm := not BreakTheLoop;
-  end else
-  begin
-    self.IsBasicANDTerm := False;
-  end;
-end;
-
-procedure TTFTAObject.CheckForIsNegatedANDTerm;
-var i                : Integer;
-    numberOfChildren : Integer;
-    BreakTheLoop     : Boolean;
-begin
-  if self.IsTypeAND then
-  begin
-    i := 0;
-    numberOfChildren := self.Count;
-    repeat
-      BreakTheLoop := not self[i].IsNegatedAtomicEvent;
-      inc(i);
-    until BreakTheLoop or (i = numberOfChildren );
-    self.IsNegatedANDTerm := not BreakTheLoop;
-  end else
-  begin
-    self.IsBasicANDTerm := False;
-  end;
-end;
-
-{------------------------------------------------------------------------------
-
-------------------------------------------------------------------------------}
-function TTFTAObject.CheckIsBasicEvent : boolean;
-begin
-  Result := self.IsTypeBASIC and (not self.HasChildren);
-end;
-
-{------------------------------------------------------------------------------
-  True if commutative term
-------------------------------------------------------------------------------}
-function TTFTAObject.CheckIsCommutative : boolean;
-begin
-  Result := ( not self.IsTypePAND ) and ( self.Count > 1 );
-end;
-{------------------------------------------------------------------------------
-  True if EventSequence of Types 1,2,3 (see TTFTAObject.CheckForEventSequenceEvent!)
-------------------------------------------------------------------------------}
-function TTFTAObject.CheckIsEventSequenceWithNegated : boolean;
-begin
-  Result := (self.IsEventSequence) and (self.CheckIsEventSequenceWithNegatedInternal);
-end;
-
-{------------------------------------------------------------------------------
-
-------------------------------------------------------------------------------}
-function TTFTAObject.CheckIsEventSequenceWithNegatedInternal : boolean;
-begin
-  Result := (self.IsTypeAND)       and
-            (self.Count = 2)       and
-            (self[0].IsNegated)    and
-            (self[0].IsCoreEvent)  and
-            (self[1].IsEventSequence);
-end;
-{------------------------------------------------------------------------------
-  True if ExtendedSequence of Types 1,2 (see TTFTAObject.CheckForExtendedSequenceEvent!)
-------------------------------------------------------------------------------}
-function TTFTAObject.CheckIsExtendedSequenceWithNegated : boolean;
-begin
-  Result := (self.IsExtendedSequence) and (self.CheckIsExtendedSequenceWithNegatedInternal);
-end;
-function TTFTAObject.CheckIsExtendedSequenceWithNegatedInternal : boolean;
-begin
-  Result := (self.IsTypeAND)       and
-            (self.Count = 2)       and
-            (self[0].IsNegated)    and
-            (self[0].IsCoreEvent)  and
-            (self[1].IsExtendedSequence);
-end;
-
-{------------------------------------------------------------------------------
-
-------------------------------------------------------------------------------}
-function TTFTAObject.CheckIsMCSS : boolean;
-var i : integer;
-    numberOfChildren : integer;
-begin
-  if self.IsBasicEvent       or
-     self.IsEventSequence    or
-     self.IsExtendedSequence then
-  begin
-    Result := True;
-  end else
-  begin
-    Result := self.IsTypeOR or self.IsTypeXOR;
-    i := 0;
-    numberOfChildren := self.Count;
-    repeat
-      Result := Result and ( self[i].IsEventSequence or self[i].IsExtendedSequence );
-      inc(i);
-    until (not Result) or (i = numberOfChildren);
-  end;
-end;
-
-{------------------------------------------------------------------------------
-
-------------------------------------------------------------------------------}
-function TTFTAObject.CheckIsNegated : boolean;
-begin
-  Result := self.IsNegatedAtomicEvent or
-            self.IsNegatedANDTerm     or
-            self.IsNegatedCoreEvent   or
-            self.CheckLogicFalse;
-end;
-
-{------------------------------------------------------------------------------
-
-------------------------------------------------------------------------------}
-function TTFTAObject.CheckIsNegatedAtomicEvent : boolean;
-begin
-  Result := self.IsTypeNOT and self[0].IsBasicEvent;
-  { do not call TTFTAObject.ISNegated because of endless loop }
-end;
-{------------------------------------------------------------------------------
-  true if operator = XXX
-------------------------------------------------------------------------------}
-function TTFTAObject.CheckIsTypeAND : boolean;
-begin
-  Result := (self.EventType = tftaEventTypeAND);
-end;
-function TTFTAObject.CheckIsTypeNOT : boolean;
-begin
-  Result := (self.EventType = tftaEventTypeNOT);
-end;
-function TTFTAObject.CheckIsTypePAND : boolean;
-begin
-  Result := (self.EventType = tftaEventTypePAND);
-end;
-function TTFTAObject.CheckIsTypeOR : boolean;
-begin
-  Result := (self.EventType = tftaEventTypeOR);
-end;
-function TTFTAObject.CheckIsTypeOTHER : boolean;
-begin
-  Result := (self.EventType = tftaEventTypeOTHER);
-end;
-function TTFTAObject.CheckIsTypeSAND : boolean;
-begin
-  Result := (self.EventType = tftaEventTypeSAND);
-end;
-function TTFTAObject.CheckIsTypeTOP : boolean;
-begin
-  Result := (self.EventType = tftaEventTypeTOP);
-end;
-function TTFTAObject.CheckIsTypeXOR : boolean;
-begin
-  Result := (self.EventType = tftaEventTypeXOR);
-end;
-{------------------------------------------------------------------------------
-------------------------------------------------------------------------------}
-function TTFTAObject.CheckLogicFalse : boolean;
-begin
-  Result := (self.LogicLevel = 0);
-end;
-{------------------------------------------------------------------------------
-------------------------------------------------------------------------------}
-function TTFTAObject.CheckLogicTrue : boolean;
-begin
-  Result := (self.LogicLevel = 1);
-end;
-{------------------------------------------------------------------------------
-  prueft und setzt ggf. die Eigenschaften eines temporalen Terms wie
-  IsDisjunct, IsEventSequence ...
-  dazu wird fuer jede Eigenschaft eine separate Routine durchlaufen
-------------------------------------------------------------------------------}
-procedure TTFTAObject.CheckTermProperties;
-begin
-    self.CheckForCoreEvent;
-    self.CheckForEventSequenceEvent;
-    self.CheckForExtendedSequenceEvent;
-    self.CheckForDisjunctEvent;
-    { a direct check whether the term is negated or not is not necessary as this
-      property is set directly while creating each negated object }
-
-end;
-{------------------------------------------------------------------------------
-  makes a clone of the TTFTAobjectÂœ
+  AAA
+  makes a clone of the TTFTAObjectœ
 ------------------------------------------------------------------------------}
 function  TTFTAObject.Clone(list : TTFTAEventLookupList) : TTFTAObject;
 begin
   if self.LogicLevel = -1 then
     Result := list.NewItem(self.EventType,self.IsBasicEvent,self.IsCoreEvent,
                            self.IsEventSequence,self.IsNegated,
-                           self.IsNotCompletelyBuildYet,self.IsDisjunct,
+                           self.IsNotCompletelyBuildYet,self.IsDisjunctTerm,
                            self.IsExtendedSequence,NIL,self.NeedsToBeUpdated,
                            self.PointerToUpdateObject,self.TemporalExpr)
   else
     Result := list.NewItem(self.EventType,self.IsBasicEvent,self.IsCoreEvent,
                            self.IsEventSequence,self.IsNegated,
-                           self.IsNotCompletelyBuildYet,self.IsDisjunct,
+                           self.IsNotCompletelyBuildYet,self.IsDisjunctTerm,
                            self.IsExtendedSequence,
                            self.IsTrue, { True, if isTrue, and False, if isFalse }
                            self.NeedsToBeUpdated,
@@ -446,6 +90,124 @@ begin
   Result.EventLookupList := self.EventLookupList;
 end;
 {------------------------------------------------------------------------------
+  AAA
+  Class-Destructor
+------------------------------------------------------------------------------}
+destructor TTFTAObject.Destroy;
+begin
+  // nothing specific yet...
+  inherited Destroy;
+end;
+{------------------------------------------------------------------------------
+  AAA
+  Mask the TTFTAObject (= ignore while searching through eventlist)
+------------------------------------------------------------------------------}
+procedure TTFTAObject.Mask;
+begin
+  self.VIsMasked := true;
+end;
+{------------------------------------------------------------------------------
+  AAA
+  Redirects (updates) object to newItem and sets properties accordingly
+------------------------------------------------------------------------------}
+procedure TTFTAObject.RedirectMe(newItem : TTFTAObject);
+begin
+  self.PointerToUpdateObject:=newItem;
+  self.EventType := tftaEventTypeBASIC;
+  self.Children.Clear;
+  self.TemporalExpr := 'redirected to ' + PointerAddrStr(newItem);
+  self.NeedsToBeUpdated:=true;
+end;
+{------------------------------------------------------------------------------
+  AAA
+  Unmask the TTFTAObject (= no longer ignore it while searching through eventlist)
+------------------------------------------------------------------------------}
+procedure TTFTAObject.Unmask;
+begin
+  self.VIsMasked := false;
+end;
+
+{------------------------------------------------------------------------------
+ ------------------------------------------------------------------------------
+ BBB BBB BBB BBB BBB BBB BBB BBB BBB BBB BBB BBB BBB BBB BBB BBB BBB BBB BBB BBB
+ routines handling vital properties of TTFTAObject like GetExpr or Count
+ ------------------------------------------------------------------------------
+ -----------------------------------------------------------------------------}
+
+{------------------------------------------------------------------------------
+  BBB
+  true if operatortype = AND
+------------------------------------------------------------------------------}
+function TTFTAObject.CheckIsTypeAND : boolean;
+begin
+  Result := (self.EventType = tftaEventTypeAND);
+end;
+{------------------------------------------------------------------------------
+  BBB
+  true if operatortype = BASIC
+------------------------------------------------------------------------------}
+function TTFTAObject.CheckIsTypeBASIC : boolean;
+begin
+  Result := (self.EventType = tftaEventTypeBASIC);
+end;
+{------------------------------------------------------------------------------
+  BBB
+  true if operatortype = NOT
+------------------------------------------------------------------------------}
+function TTFTAObject.CheckIsTypeNOT : boolean;
+begin
+  Result := (self.EventType = tftaEventTypeNOT);
+end;
+{------------------------------------------------------------------------------
+  BBB
+  true if operatortype = PAND
+------------------------------------------------------------------------------}
+function TTFTAObject.CheckIsTypePAND : boolean;
+begin
+  Result := (self.EventType = tftaEventTypePAND);
+end;
+{------------------------------------------------------------------------------
+  BBB
+  true if operatortype = OR
+------------------------------------------------------------------------------}
+function TTFTAObject.CheckIsTypeOR : boolean;
+begin
+  Result := (self.EventType = tftaEventTypeOR);
+end;
+{------------------------------------------------------------------------------
+  BBB
+  true if operatortype = OTHER
+------------------------------------------------------------------------------}
+function TTFTAObject.CheckIsTypeOTHER : boolean;
+begin
+  Result := (self.EventType = tftaEventTypeOTHER);
+end;
+{------------------------------------------------------------------------------
+  BBB
+  true if operatortype = SAND
+------------------------------------------------------------------------------}
+function TTFTAObject.CheckIsTypeSAND : boolean;
+begin
+  Result := (self.EventType = tftaEventTypeSAND);
+end;
+{------------------------------------------------------------------------------
+  BBB
+  true if operatortype = TOP
+------------------------------------------------------------------------------}
+function TTFTAObject.CheckIsTypeTOP : boolean;
+begin
+  Result := (self.EventType = tftaEventTypeTOP);
+end;
+{------------------------------------------------------------------------------
+  BBB
+  true if operatortype = XOR
+------------------------------------------------------------------------------}
+function TTFTAObject.CheckIsTypeXOR : boolean;
+begin
+  Result := (self.EventType = tftaEventTypeXOR);
+end;
+{------------------------------------------------------------------------------
+  BBB
   Number of children
 ------------------------------------------------------------------------------}
 function TTFTAObject.Count : Integer;
@@ -455,29 +217,9 @@ begin
   else
     Result := 0;
 end;
-{$IfDef TESTMODE}
-procedure TTFTAObject.DEBUGPrint(isUpdate : boolean; eventlist : TTFTAEventLookupList; thestring : ansistring = '');
-begin
-  if Assigned(self.DEBUGMemo) then
-    if isUpdate then
-    begin
-      self.DEBUGMemo.Append(thestring + 'Update: ' + PointerAddrStr(self) + ' ::: ' + self.GetTempExprDEBUG );
-    end else
-    begin
-      self.DEBUGMemo.Append(thestring + 'New   : ' + PointerAddrStr(self) + ' ::: ' + self.GetTempExprDEBUG ) ;
-    end;
-  eventlist.pointerToApplication.ProcessMessages;
-end;
-{$EndIf}
 {------------------------------------------------------------------------------
-  Delete a child
-------------------------------------------------------------------------------}
-procedure TTFTAObject.DeleteChild(Index: Integer);
-begin
-  if Assigned(self.Children) then self.Children.Delete(Index);
-end;
-{------------------------------------------------------------------------------
-  Liefert Typ des Ereignisses (aus VType) als String
+  BBB
+  Return operator type as string
 ------------------------------------------------------------------------------}
 function TTFTAObject.EventTypeToString : string;
 begin
@@ -488,90 +230,9 @@ begin
     Result := self.PointerToUpdateObject.EventTypeToString;  { get of redirection }
 end;
 {------------------------------------------------------------------------------
-  Extract a child
-------------------------------------------------------------------------------}
-function TTFTAObject.ExtractChild(Item: TTFTAObject):TTFTAObject;
-begin
-  if Assigned(self.Children) then
-    Result := self.Children.Extract(Item)
-  else
-    Result := NIL;
-end;
-{------------------------------------------------------------------------------
-  Returns child nr. Index
-------------------------------------------------------------------------------}
-function TTFTAObject.GetChild(Index: Integer): TTFTAObject;
-begin
-  if Assigned(self.Children) then
-    {if (self.Count-1 < Index) or (Index < 0) then
-      ShowMessage('Fatal Error (081223.1811) while processing event ' +
-                   {PointerAddrStr(self) + ' ( ' + self.TemporalExpr + ' ) ' +} ' with Index=' + IntToStr(Index))
-    else} Result := self.Children[Index]
-  else
-    Result := NIL;
-end;
-{------------------------------------------------------------------------------
-  True, if there are entries in Children, false otherwise
-------------------------------------------------------------------------------}
-function  TTFTAObject.GetChildrenBasicState(handleNegated : integer = 0) : boolean;
-var i                : Integer;
-    numberOfChildren : Integer;
-begin
-  if (not self.HasChildren) then
-  begin
-    Result := False; { no children -> children cant be basic events }
-    exit;
-  end;
-
-  Result := True; { Default }
-  i := 0;
-  numberOfChildren := self.count;
-  if handleNegated = 0 then { allow negated but do not force them }
-  begin
-    repeat
-      Result := Result and (self[i].IsBasicEvent);
-      inc(i);
-    until (not Result) or (i = numberOfChildren);
-  end;
-
-  if handleNegated = -1 then { do not allow negated }
-  begin
-    repeat
-      Result := Result and (self[i].IsBasicEvent) and (not self[i].IsNegated);
-      inc(i);
-    until (not Result) or (i = numberOfChildren);
-  end;
-
-  if handleNegated = 1 then { force negated }
-  begin
-    repeat
-      Result := Result and (self[i].IsBasicEvent) and (self[i].IsNegated);
-      inc(i);
-    until (not Result) or (i = numberOfChildren);
-  end;
-end;
-
-function TTFTAObject.GetIsNegatedExtendedCoreEvent : boolean;
-var numberOfChildren : Integer;
-    i                : Integer;
-begin
-  { 1. self has to be extended sequence AND core event AND
-    2. at least one child has to be negated;
-    3. the check for type NOT of children is not sufficient as: NOT[NOT[X]] shows }
-  Result := (self.IsExtendedSequence) and (self.IsCoreEvent);
-  if Result then
-  begin
-    numberOfChildren := self.count;
-    i := 0;
-    repeat
-      Result := self[i].IsNegated;
-    until Result or (i=numberOfChildren);
-  end;
-end;
-
-{------------------------------------------------------------------------------
-  Reads VPointerToUpdateObject, but if the object VPointerToUpdateObject points
-  to itself has NeedsToBeUpdated set, then return
+  BBB
+  Reads VPointerToUpdateObject, but if the object that VPointerToUpdateObject
+  points to itself has NeedsToBeUpdated set, then return
   VPointerToUpdateObject.GetPointerToUpdateObject
 ------------------------------------------------------------------------------}
 function TTFTAObject.GetPointerToUpdateObject : TTFTAObject;
@@ -584,6 +245,7 @@ begin
   end;
 end;
 {------------------------------------------------------------------------------
+  BBB
   Provides the logical expression represented by the term / object
   Scanns through all descendants, which is time consuming
   use with care and as seldom as possible
@@ -677,8 +339,598 @@ begin
   end;
 
 end;
+{------------------------------------------------------------------------------
+  BBB
+  True, if there are entries in Children, false otherwise
+------------------------------------------------------------------------------}
+function TTFTAObject.HasChildren : boolean;
+begin
+  Result := (self.Count > 0);
+end;
+{------------------------------------------------------------------------------
+  BBB
+  Set the TTFTAObject's logical value to either True (1) or False (0) or NIL (see below)
+------------------------------------------------------------------------------}
+procedure TTFTAObject.SetLogicalValue (Parameter : boolean);
+begin
+  if Parameter then
+    self.VIsTrueFalse := 1
+  else
+    self.VIsTrueFalse := 0;
 
-{ Debug Version of GetTempExpr, which does not interfere with the term itself }
+  self.SetIsBasicEvent(True);
+  self.TemporalExpr:=BoolToString(Parameter);
+end;
+{------------------------------------------------------------------------------
+  BBB
+  Set the TTFTAObject's logical value NIL (-1)
+------------------------------------------------------------------------------}
+procedure TTFTAObject.SetLogicalValue (Parameter : pointer);
+begin
+  if not Assigned(Parameter) then
+    self.VIsTrueFalse := -1;
+end;
+{------------------------------------------------------------------------------
+  BBB
+  Set the string describing the logical expression
+------------------------------------------------------------------------------}
+procedure TTFTAObject.SetTempExpr(theExpr : ansistring);
+begin
+  self.VExpr:=theExpr;
+end;
+{------------------------------------------------------------------------------
+  BBB
+  Set the operatortype
+------------------------------------------------------------------------------}
+procedure TTFTAObject.SetVType(Parameter : TTFTAOperatorType);
+begin
+  self.VType := Parameter;
+  if self.VType = tftaEventTypeBASIC then
+    self.SetIsBasicEvent(true)
+  else
+    self.SetIsBasicEvent(false);
+  if self.VType = tftaEventTypeNOT then
+    self.IsNegated := true
+  else
+    self.IsNegated := false;
+end;
+
+{------------------------------------------------------------------------------
+ ------------------------------------------------------------------------------
+ CCC CCC CCC CCC CCC CCC CCC CCC CCC CCC CCC CCC CCC CCC CCC CCC CCC CCC CCC CCC
+ routines checking term type properties like IsBasicEvent
+ ------------------------------------------------------------------------------
+ -----------------------------------------------------------------------------}
+
+{------------------------------------------------------------------------------
+  CCC
+  True if operator type = BASIC and self has no children  (= BE)
+------------------------------------------------------------------------------}
+function TTFTAObject.CheckIsBasicEvent : boolean;
+begin
+  Result := self.IsTypeBASIC and (not self.HasChildren);
+end;
+{------------------------------------------------------------------------------
+  CCC
+  True if commutative term
+------------------------------------------------------------------------------}
+function TTFTAObject.CheckIsCommutative : boolean;
+begin
+  Result := ( not self.IsTypePAND ) and ( self.HasChildren );
+end;
+{------------------------------------------------------------------------------
+  CCC
+  True if EventSequence with Negated           (= NES)
+------------------------------------------------------------------------------}
+function TTFTAObject.CheckIsEventSequenceWithNegated : boolean;
+begin
+  Result := (self.IsTypeAND)             and
+            (self.Count = 2)             and
+            (self[0].IsNegatedCoreEvent) and
+            (self[1].IsEventSequence);
+end;
+{------------------------------------------------------------------------------
+  CCC
+  True if ExtendedSequence with Negated Events (= NXS)
+------------------------------------------------------------------------------}
+function TTFTAObject.CheckIsExtendedSequenceWithNegated : boolean;
+begin
+  Result := (self.IsEventSequenceWithNegated) and
+            (self[1].IsExtendedSequence);
+end;
+{------------------------------------------------------------------------------
+  CCC
+  True if negated
+------------------------------------------------------------------------------}
+function TTFTAObject.CheckIsNegated : boolean;
+begin
+  Result := self.IsNegatedAtomicEvent or
+            self.IsNegatedANDTerm     or
+            self.IsNegatedCoreEvent   or
+            self.IsFalse;
+end;
+{------------------------------------------------------------------------------
+  CCC
+  True if negation of an basic event (aka atomic event)  (= NAE)
+------------------------------------------------------------------------------}
+function TTFTAObject.CheckIsNegatedAtomicEvent : boolean;
+begin
+  Result := self.IsTypeNOT and self[0].IsBasicEvent;
+  { do not call TTFTAObject.IsNegated because of endless loop }
+end;
+{------------------------------------------------------------------------------
+  CCC
+  True if the FALSE element (set at creation via TTFTAObject.LogicLevel)
+------------------------------------------------------------------------------}
+function TTFTAObject.CheckLogicFalse : boolean;
+begin
+  Result := (self.LogicLevel = 0);
+end;
+{------------------------------------------------------------------------------
+  CCC
+  True if the TRUE element (set at creation via TTFTAObject.LogicLevel)
+------------------------------------------------------------------------------}
+function TTFTAObject.CheckLogicTrue : boolean;
+begin
+  Result := (self.LogicLevel = 1);
+end;
+
+{------------------------------------------------------------------------------
+ ------------------------------------------------------------------------------
+ DDD DDD DDD DDD DDD DDD DDD DDD DDD DDD DDD DDD DDD DDD DDD DDD DDD DDD DDD DDD
+ routines setting term type properties like SetIsBAsicEvent
+ ------------------------------------------------------------------------------
+ -----------------------------------------------------------------------------}
+
+{------------------------------------------------------------------------------
+  DDD
+  check whether self is made of disjunct children and is either OR or XOR
+  (sets self.IsDisjunctTerm)
+------------------------------------------------------------------------------}
+procedure TTFTAObject.CheckForDisjunctEvent;
+begin
+  { nothing right now }
+end;
+{------------------------------------------------------------------------------
+  DDD
+  Check whether self is a Basic AND Term  (=BAT)
+  (sets self.IsBasicANDTerm )
+------------------------------------------------------------------------------}
+procedure TTFTAObject.CheckForIsBasicANDTerm;
+var i                : Integer;
+    numberOfChildren : Integer;
+    BreakTheLoop     : Boolean;
+begin
+  self.IsBasicANDTerm := False;
+  if self.IsTypeAND then
+  begin
+    i := 0;
+    numberOfChildren := self.Count;
+    repeat
+      BreakTheLoop := not( (not self[i].IsNegated) and self[i].IsBasicEvent );
+      inc(i);
+    until BreakTheLoop or (i = numberOfChildren );
+    self.IsBasicANDTerm := not BreakTheLoop;
+  end;
+end;
+{------------------------------------------------------------------------------
+  DDD
+  check whether self is a core event         (= CE)
+  (sets self.IsCoreEvent, self.IsNegated)
+------------------------------------------------------------------------------}
+procedure TTFTAObject.CheckForIsCoreEvent;
+var isCE             : boolean = false;
+    i                : integer;
+    numberOfChildren : integer;
+begin
+  { self is a core event iff either:
+    it is a basic event or
+    it is a SAND term with only non-negated basic events as children
+    it is TRUE }
+  If ( self.IsBasicEvent and (not self.IsFalse) ) then
+  begin
+    isCE := true;
+  end;
+  if ( (not isCE) and self.IsTypeSAND ) then
+  begin
+    i := 0;
+    numberOfChildren := self.Count;
+    repeat
+      isCE := ( self.IsBasicEvent and (not self.IsFalse) );
+      inc(i);
+    until (not isCE) or (i = numberOfChildren);
+  end;
+  self.IsCoreEvent := isCE;
+  if isCE then
+    self.IsNegated  := False;
+end;
+{------------------------------------------------------------------------------
+  DDD
+  check whether self is a EventSequence       (= ES)
+  (sets self.IsEventSequence)
+------------------------------------------------------------------------------}
+procedure TTFTAObject.CheckForIsEventSequenceEvent;
+var BreakTheLoop        : boolean;
+    i                   : Integer;
+    numberOfChildren    : Integer;
+    couldBeType2        : boolean;
+    couldBeType3        : boolean;
+begin
+  //{ self is a non-extended event sequence iff
+    //Type 1 - self is a non-negated core-event or
+    //Type 2 - self is a PAND of non-negated core events or
+    //Type 3 - self is a PAND of an event sequence without negated events and one or more core events or
+    //Type 4 - self is a AND with
+              //- the first child event is a negated core event and
+              //- the second child is a non-extended event sequence }
+  //if (not self.IsNegated) and (self.IsCoreEvent) then
+  //begin
+    //{ Type 1 }
+    //self.IsEventSequence := true
+  //end else
+  //begin
+    //{ check for Type 2 or 3 }
+    //if self.IsTypePAND then
+    //begin
+      //{ check first child (this one decides between type 2 or three) }
+      //couldBeType2 := (not self[0].IsNegated) and (self[0].IsCoreEvent);
+      //couldBeType3 := (not couldBeType2) and
+                      //(self[0].IsEventSequence) and
+                      //(not self[0].IsEventSequenceWithNegated);
+      //{ check rest of children if either couldBeType2 or couldBeType3 }
+      //if (couldBeType2 or couldBeType3) then
+      //begin
+        //i := 1;
+        //numberOfChildren := self.Count;
+        //repeat
+          //BreakTheLoop := (not(self[i].IsCoreEvent)) or (self[i].IsNegated);
+          //inc(i);
+        //until BreakTheLoop or (i = numberOfChildren);
+        //self.IsEventSequence := (not BreakTheLoop) ;
+      //end else
+      //begin
+        //self.IsEventSequence := false;
+      //end;
+    //end else
+    //begin
+      //{ check for type 4 }
+      //self.IsEventSequence := self.CheckIsEventSequenceWithNegatedInternal;
+    //end;
+  //end;
+end;
+{------------------------------------------------------------------------------
+  DDD
+  check whether self is an extended EventSequence  (= XS)
+  (sets self.IsExtendedSequence)
+------------------------------------------------------------------------------}
+procedure TTFTAObject.CheckForIsExtendedSequenceEvent;
+var BreakTheLoop           : boolean;
+    i                      : Integer;
+    numberOfChildren       : Integer;
+    couldBeType1           : boolean;
+    couldBeType2           : boolean;
+    thisIsABasicANDTerm    : boolean;
+    atLeastOneBasicANDTerm : boolean;
+begin
+  //{ self is an extended event sequence iff
+    //Type 1 - self is a PAND of none or more non-negated core events and one or more
+             //BasicANDTerms or
+    //Type 2 - self is a PAND of an extended event sequence without negated events and
+             //one or more of the following:
+               //none or more non-negated core events and one or more
+               //BasicANDTerms  or
+    //Type 3 - self is a AND with
+              //- the first child event is a negated core event and
+              //- the second child is an extended event sequence }
+  //{ can only be extended sequence if it is a sequence }
+  //if self.IsEventSequence then
+  //begin
+    //{ check for Type 1 or 2 }
+    //if self.IsTypePAND then
+    //begin
+      //atLeastOneBasicANDTerm := false;
+      //{ check first child (this one decides between type 1 or 2) }
+      //if self[0].CheckIsBasicANDTerm then
+        //atLeastOneBasicANDTerm := true;
+      //couldBeType1 := ((not self[0].IsNegated) and (self[0].IsCoreEvent)) or
+                      //(atLeastOneBasicANDTerm);
+      //couldBeType2 := (not couldBeType1) and
+                      //(self[0].IsExtendedSequence) and
+                      //(not self[0].IsExtendedSequenceWithNegated);
+      //{ check rest of children if either couldBeType1 or couldBeType2 }
+      //if (couldBeType1 or couldBeType2) then
+      //begin
+        //i := 1;
+        //numberOfChildren := self.Count;
+        //repeat
+          //thisIsABasicANDTerm := false;
+          //if self[i].CheckIsBasicANDTerm then
+          //begin
+            //thisIsABasicANDTerm := true; { flag for current loop }
+            //atLeastOneBasicANDTerm := true; { flag that in any loop there was at least one }
+          //end;
+          //BreakTheLoop := (not(self[i].IsCoreEvent)) or (self[i].IsNegated) or (not thisIsABasicANDTerm);
+          //inc(i);
+        //until BreakTheLoop or (i = numberOfChildren);
+        //self.IsEventSequence := (not BreakTheLoop);
+      //end else
+      //begin
+        //self.IsEventSequence := false;
+      //end;
+    //end else
+    //begin
+      //{ check for type 3 }
+      //self.IsEventSequence := self.CheckIsExtendedSequenceWithNegatedInternal;
+    //end;
+  //end;
+end;
+{------------------------------------------------------------------------------
+  DDD
+  Check whether self is a MCSS
+  (sets IsMCSSForm )
+------------------------------------------------------------------------------}
+procedure TTFTAObject.CheckForIsMCSS;
+var i : integer;
+    numberOfChildren : integer;
+begin
+  //if self.IsBasicEvent       or
+     //self.IsEventSequence    or
+     //self.IsExtendedSequence then
+  //begin
+    //Result := True;
+  //end else
+  //begin
+    //Result := self.IsTypeOR or self.IsTypeXOR;
+    //i := 0;
+    //numberOfChildren := self.Count;
+    //repeat
+      //Result := Result and ( self[i].IsEventSequence or self[i].IsExtendedSequence );
+      //inc(i);
+    //until (not Result) or (i = numberOfChildren);
+  //end;
+end;
+{------------------------------------------------------------------------------
+  DDD
+  Check whether self is a negated AND Term (= NAT)
+  (sets self.IsNegatedANDTerm )
+------------------------------------------------------------------------------}
+procedure TTFTAObject.CheckForIsNegatedANDTerm;
+var i                : Integer;
+    numberOfChildren : Integer;
+    BreakTheLoop     : Boolean;
+begin
+  self.IsBasicANDTerm := False;
+  if self.IsTypeAND then
+  begin
+    i := 0;
+    numberOfChildren := self.Count;
+    repeat
+      BreakTheLoop := not self[i].IsNegatedAtomicEvent;
+      inc(i);
+    until BreakTheLoop or (i = numberOfChildren );
+    self.IsNegatedANDTerm := not BreakTheLoop;
+  end;
+end;
+{------------------------------------------------------------------------------
+  DDD
+  check whether self is a negated core event         (= NCE)
+  (sets self.IsNegatedCoreEvent)
+------------------------------------------------------------------------------}
+procedure TTFTAObject.CheckForIsNegatedCoreEvent;
+var isNCE             : boolean = false;
+    i                : integer;
+    numberOfChildren : integer;
+begin
+  { self is a negated core event iff either:
+    - it is a negated atomic event (NAE) or
+    - it is a negated AND term (NAT)
+    - it is FALSE  }
+  If ( self.IsNegatedAtomicEvent ) then
+  begin
+    isNCE := true;
+  end;
+  if ( (not isNCE) and self.IsFalse ) then
+  begin
+    isNCE := true;
+  end;
+  if ( (not isNCE) and self.IsNegatedANDTerm ) then
+  begin
+    isNCE := true;
+  end;
+  self.IsNegatedCoreEvent := isNCE;
+  if isNCE then
+    self.IsNegated  := True;
+end;
+{------------------------------------------------------------------------------
+  DDD
+  Check what type of term self is and set flags accordingly
+  This one is called after modification of terms and calls other DDD routines
+------------------------------------------------------------------------------}
+procedure TTFTAObject.CheckTermProperties;
+begin
+    self.CheckForIsCoreEvent;               { check CE  }
+    self.CheckForIsNegatedANDTerm;        { check NAT }
+    self.CheckForIsBasicANDTerm;          { check BAT }
+    self.CheckForIsEventSequenceEvent;      { check ES  }
+    self.CheckForIsExtendedSequenceEvent;   { check XS  }
+    self.CheckForDisjunctEvent;
+    { a direct check whether the term is negated or not is not necessary as this
+      property is set directly while creating each negated object }
+end;
+{------------------------------------------------------------------------------
+  DDD
+  set IsBasicEvent and properties accordingly
+------------------------------------------------------------------------------}
+procedure TTFTAObject.SetIsBasicEvent (Parameter : boolean);
+begin
+  if Parameter then
+  begin
+    self.IsCoreEvent:=true;
+    self.IsEventSequence:=true;
+    self.VType := tftaEventTypeBASIC;
+  end;
+end;
+
+{------------------------------------------------------------------------------
+ ------------------------------------------------------------------------------
+ EEE EEE EEE EEE EEE EEE EEE EEE EEE EEE EEE EEE EEE EEE EEE EEE EEE EEE EEE EEE
+ routines covering operations on children like AddChild
+ ------------------------------------------------------------------------------
+ -----------------------------------------------------------------------------}
+
+{------------------------------------------------------------------------------
+  EEE
+  Add an entry in Children
+------------------------------------------------------------------------------}
+function TTFTAObject.AddChild(Item : TTFTAObject) :Integer;
+begin
+  if Assigned(self.Children) then Result := self.Children.Add(Item);
+end;
+{------------------------------------------------------------------------------
+  EEE
+  Assign Children
+------------------------------------------------------------------------------}
+procedure TTFTAObject.AssignChildren(Obj: TTFTAList);
+begin
+  if Assigned(self.Children) then self.Children.Assign(Obj);
+end;
+{------------------------------------------------------------------------------
+  EEE
+  Delete a child
+------------------------------------------------------------------------------}
+procedure TTFTAObject.DeleteChild(Index: Integer);
+begin
+  if Assigned(self.Children) then self.Children.Delete(Index);
+end;
+{------------------------------------------------------------------------------
+  EEE
+  Extract a child
+------------------------------------------------------------------------------}
+function TTFTAObject.ExtractChild(Item: TTFTAObject):TTFTAObject;
+begin
+  if Assigned(self.Children) then
+    Result := self.Children.Extract(Item)
+  else
+    Result := NIL;
+end;
+{------------------------------------------------------------------------------
+  EEE
+  Returns child nr. Index
+------------------------------------------------------------------------------}
+function TTFTAObject.GetChild(Index: Integer): TTFTAObject;
+begin
+  if Assigned(self.Children) then
+    Result := self.Children[Index]
+  else
+    Result := NIL;
+end;
+{------------------------------------------------------------------------------
+  EEE
+  Insert a new child (Item) at pos Index
+------------------------------------------------------------------------------}
+procedure TTFTAObject.InsertChild(Index: Integer; Item: TTFTAObject);
+begin
+  if Assigned(self.Children) then self.Children.Insert(Index, Item);
+end;
+{------------------------------------------------------------------------------
+  EEE
+  Calls Children.Remove(Item)
+------------------------------------------------------------------------------}
+function TTFTAObject.RemoveChild(Item : TTFTAObject) : Integer;
+begin
+  if Assigned(self.Children) then
+    Result := self.Children.Remove(Item)
+  else
+    Result :=0;
+end;
+{------------------------------------------------------------------------------
+  EEE
+  Set child nr. Index to Item
+------------------------------------------------------------------------------}
+procedure TTFTAObject.SetChild(Index: Integer; Item: TTFTAObject);
+begin
+  if Assigned(self.Children) then self.Children[Index] := Item;
+end;
+
+
+{------------------------------------------------------------------------------
+ ------------------------------------------------------------------------------
+ FFF FFF FFF FFF FFF FFF FFF FFF FFF FFF FFF FFF FFF FFF FFF FFF FFF FFF FFF FFF
+ routines checking properties on children like GetChildrenBasicState
+ ------------------------------------------------------------------------------
+ -----------------------------------------------------------------------------}
+
+{------------------------------------------------------------------------------
+  FFF
+  True, if there are Children matching form depending on handleNegated:
+    handleNegated=0 : negated atomic terms and or basic events and or TRUE / FALSE
+    handleNegated=-1: basic events and or TRUE
+    handleNegated=1 : negated atomic terms and or FALSE
+------------------------------------------------------------------------------}
+function  TTFTAObject.GetChildrenBasicState(handleNegated : integer = 0) : boolean;
+var i                : Integer;
+    numberOfChildren : Integer;
+begin
+  if (not self.HasChildren) then
+  begin
+    Result := False; { no children -> children cant be basic events }
+    exit;
+  end;
+  Result := True; { Default }
+  i := 0;
+  numberOfChildren := self.count;
+  if handleNegated = 0 then { allow negated but do not force them }
+  begin
+    repeat
+      Result := Result and (self[i].IsBasicEvent);
+      inc(i);
+    until (not Result) or (i = numberOfChildren);
+  end;
+  if handleNegated = -1 then { do not allow negated }
+  begin
+    repeat
+      Result := Result and (self[i].IsBasicEvent) and (not self[i].IsNegated);
+      inc(i);
+    until (not Result) or (i = numberOfChildren);
+  end;
+  if handleNegated = 1 then { force negated }
+  begin
+    repeat
+      Result := Result and (self[i].IsBasicEvent) and (self[i].IsNegated);
+      inc(i);
+    until (not Result) or (i = numberOfChildren);
+  end;
+end;
+
+{------------------------------------------------------------------------------
+ ------------------------------------------------------------------------------
+ ZZZ ZZZ ZZZ ZZZ ZZZ ZZZ ZZZ ZZZ ZZZ ZZZ ZZZ ZZZ ZZZ ZZZ ZZZ ZZZ ZZZ ZZZ ZZZ ZZZ
+ routines for debugging needs
+ ------------------------------------------------------------------------------
+ -----------------------------------------------------------------------------}
+
+{------------------------------------------------------------------------------
+  ZZZ
+  Debug PRint information on TTFTAObject to DEBUGMemo (if assigned)
+------------------------------------------------------------------------------}
+{$IfDef TESTMODE}
+procedure TTFTAObject.DEBUGPrint(isUpdate : boolean; eventlist : TTFTAEventLookupList; thestring : ansistring = '');
+begin
+  if Assigned(self.DEBUGMemo) then
+    if isUpdate then
+    begin
+      self.DEBUGMemo.Append(thestring + 'Update: ' + PointerAddrStr(self) + ' ::: ' + self.GetTempExprDEBUG );
+    end else
+    begin
+      self.DEBUGMemo.Append(thestring + 'New   : ' + PointerAddrStr(self) + ' ::: ' + self.GetTempExprDEBUG ) ;
+    end;
+  eventlist.pointerToApplication.ProcessMessages;
+end;
+{$EndIf}
+{------------------------------------------------------------------------------
+  ZZZ
+  Debug Version of GetTempExpr, which does not interfere with the term itself
+------------------------------------------------------------------------------}
 function TTFTAObject.GetTempExprDEBUG : ansistring;
 var i                : Integer;
     numberOfChildren : Integer;
@@ -727,115 +979,9 @@ begin
     Result := self.EventTypeToString + Result + ']';
   end;
 end;
-
 {------------------------------------------------------------------------------
-  True, if there are entries in Children, false otherwise
-------------------------------------------------------------------------------}
-function TTFTAObject.HasChildren : boolean;
-begin
-  Result := (self.Count > 0);
-end;
-{------------------------------------------------------------------------------
-  Insert a new child (Item) at pos Index
-------------------------------------------------------------------------------}
-procedure TTFTAObject.InsertChild(Index: Integer; Item: TTFTAObject);
-begin
-  if Assigned(self.Children) then self.Children.Insert(Index, Item);
-end;
-
-{------------------------------------------------------------------------------
-------------------------------------------------------------------------------}
-procedure TTFTAObject.Mask;
-begin
-  self.VIsMasked := true;
-end;
-
-{------------------------------------------------------------------------------
-  Redirects (updates) object to newItem and sets properties accordingly
-------------------------------------------------------------------------------}
-procedure TTFTAObject.RedirectMe(newItem : TTFTAObject);
-begin
-  self.PointerToUpdateObject:=newItem;
-  self.EventType := tftaEventTypeBASIC;
-  self.Children.Clear;
-  self.TemporalExpr := 'redirected to ' + PointerAddrStr(newItem);
-  self.NeedsToBeUpdated:=true;
-end;
-{------------------------------------------------------------------------------
-  Calls Children.Remove(Item)
-------------------------------------------------------------------------------}
-function TTFTAObject.RemoveChild(Item : TTFTAObject) : Integer;
-begin
-  if Assigned(self.Children) then
-    Result := self.Children.Remove(Item)
-  else
-    Result :=0;
-end;
-{------------------------------------------------------------------------------
-  Set child nr. Index to Item
-------------------------------------------------------------------------------}
-procedure TTFTAObject.SetChild(Index: Integer; Item: TTFTAObject);
-begin
-  if Assigned(self.Children) then self.Children[Index] := Item;
-end;
-{------------------------------------------------------------------------------
-  set IsBasicEvent and properties accordingly
-------------------------------------------------------------------------------}
-procedure TTFTAObject.SetIsBasicEvent (Parameter : boolean);
-begin
-  self.VIsBasicEvent := Parameter;
-  if Parameter then
-  begin
-    self.IsCoreEvent:=true;
-    self.IsEventSequence:=true;
-    self.VType := tftaEventTypeBASIC;
-  end;
-end;
-
-procedure TTFTAObject.SetLogicalValue (Parameter : boolean);
-begin
-  if Parameter then
-    self.VIsTrueFalse := 1
-  else
-    self.VIsTrueFalse := 0;
-
-  self.SetIsBasicEvent(True);
-  self.TemporalExpr:=BoolToString(Parameter);
-end;
-procedure TTFTAObject.SetLogicalValue (Parameter : pointer);
-begin
-  if not Assigned(Parameter) then
-    self.VIsTrueFalse := -1;
-end;
-{------------------------------------------------------------------------------
-  Sets the string describing the logical expression represented by the term / object
-  This is used mainly for Basic Events, Searches (is quicker than rescanning
-  over and over again) and Sorting (dito).
-------------------------------------------------------------------------------}
-procedure TTFTAObject.SetTempExpr(theExpr : ansistring);
-begin
-  self.VExpr:=theExpr;
-end;
-procedure TTFTAObject.SetVType(Parameter : TTFTAOperatorType);
-begin
-  self.VType := Parameter;
-  if self.VType = tftaEventTypeBASIC then
-    self.SetIsBasicEvent(true)
-  else
-    self.SetIsBasicEvent(false);
-  if self.VType = tftaEventTypeNOT then
-    self.IsNegated := true
-  else
-    self.IsNegated := false;
-end;
-{------------------------------------------------------------------------------
-------------------------------------------------------------------------------}
-procedure TTFTAObject.Unmask;
-begin
-  self.VIsMasked := false;
-end;
-{------------------------------------------------------------------------------
-  Liefert als String eine Uebersicht ueber die Eigenschaften des Objekts.Âœ
+  ZZZ
+  DEBUG: Give a short status on necessity of updating the TTFTAObjectœ
 ------------------------------------------------------------------------------}
 function TTFTAObject.WriteStatus(indent:integer = 0) : ansistring;
 begin
