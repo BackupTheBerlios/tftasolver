@@ -4,7 +4,7 @@ unit utftaobject;
 
   Copyright by Simon J. Schilling (the Author)
   Email: sjschilling@gmx.net
-  Year: 2008
+  Year: 2008 / 2009
 
   Free Software. Enjoy.
 
