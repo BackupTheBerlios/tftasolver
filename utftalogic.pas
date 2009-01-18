@@ -971,76 +971,76 @@ var aTerm : TTFTAObject;
 begin
   Result := False;
 { ....check currentTerm .......................................................}
-  if (currentTerm.IsTypeAND) and
-     ( (alsoBasics) or (not currentTerm.IsAllChildrenAreBasic) )  {and
-     (not currentTerm.IsNegatedExtendedCoreEvent)} then
-  begin
-    Result := True;
-    {$IfDef TESTMODE}currentTerm.DEBUGPrint(true,eventlist,'Entered LawOfCompleteness');{$ENDIF}
+  if ( not currentTerm.IsTypeAND )                       then exit;
+  if currentTerm.IsNegatedANDTerm                        then exit;
+  if ( currentTerm.IsBasicANDTerm and (not alsoBasics) ) then exit;
+  if currentTerm[0].IsNegated                            then exit;
 { ....configure currentTerm ...................................................}
-    { if currentTerm.Count > 2 then split currentTerm first }
-    if currentTerm.Count > 2 then
-    begin
-      ANDSplit(currentTerm, theParent, theIndex, eventList);
-      currentTerm := theParent[theIndex];
-    end;
-    { iff x and y are not atomic (i.e. basic events) the original object (the AND term) will become an
-      XOR(                     [the original object]
-          PAND(x,y),           [the first new object called "a"]
-          PAND(y,x),           [the second new object called "b"]
-          SAND(X,Y)            [the third new object called "c"]
-         )
-    }
-    { thus, a total of three objects has to be created and checked for already existing }
-    xTerm := currentTerm[0];
-    yTerm := currentTerm[1];
+  // an AND term with only non-basic, non-negated operands remains
+  Result := True;
+  {$IfDef TESTMODE}currentTerm.DEBUGPrint(true,eventlist,'Entered LawOfCompleteness');{$ENDIF}
+  { if currentTerm.Count > 2 then split currentTerm first }
+  if currentTerm.Count > 2 then
+  begin
+    ANDSplit(currentTerm, theParent, theIndex, eventList);
+    currentTerm := theParent[theIndex];
+  end;
+  { iff x and y are not atomic (i.e. basic events) the original object (the AND term) will become an
+    XOR(                     [the original object]
+        PAND(x,y),           [the first new object called "a"]
+        PAND(y,x),           [the second new object called "b"]
+        SAND(X,Y)            [the third new object called "c"]
+       )
+  }
+  { thus, a total of three objects has to be created and checked for already existing }
+  xTerm := currentTerm[0];
+  yTerm := currentTerm[1];
 {.... clone currentTerm is not necessary ......................................}
 {.... create new terms ........................................................}
-    aTerm := eventlist.NewItem;
-    bTerm := eventlist.NewItem;
-    cTerm := eventlist.NewItem;
+  aTerm := eventlist.NewItem;
+  bTerm := eventlist.NewItem;
+  cTerm := eventlist.NewItem;
 {.... configure new terms .....................................................}
-    aTerm.EventType := tftaEventTypePAND;
-    aTerm.AddChild(xTerm);
-    aTerm.AddChild(yTerm);
-    aTerm.CheckTermProperties;
-    {$IfDef TESTMODE}aTerm.DEBUGPrint(false,eventlist,' (LawOfCompleteness) created new ');{$ENDIF}
-    bTerm.EventType := tftaEventTypePAND;
-    bTerm.AddChild(yTerm);
-    bTerm.AddChild(xTerm);
-    bTerm.CheckTermProperties;
-    {$IfDef TESTMODE}bTerm.DEBUGPrint(false,eventlist,' (LawOfCompleteness) created new ');{$ENDIF}
-    cTerm.EventType := tftaEventTypeSAND;
-    cTerm.AddChild(xTerm);
-    cTerm.AddChild(yTerm);
-    cTerm.CheckTermProperties;
-    {$IfDef TESTMODE}cTerm.DEBUGPrint(false,eventlist,' (LawOfCompleteness) created new ');{$ENDIF}
+  aTerm.EventType := tftaEventTypePAND;
+  aTerm.AddChild(xTerm);
+  aTerm.AddChild(yTerm);
+  aTerm.CheckTermProperties;
+  {$IfDef TESTMODE}aTerm.DEBUGPrint(false,eventlist,' (LawOfCompleteness) created new ');{$ENDIF}
+  bTerm.EventType := tftaEventTypePAND;
+  bTerm.AddChild(yTerm);
+  bTerm.AddChild(xTerm);
+  bTerm.CheckTermProperties;
+  {$IfDef TESTMODE}bTerm.DEBUGPrint(false,eventlist,' (LawOfCompleteness) created new ');{$ENDIF}
+  cTerm.EventType := tftaEventTypeSAND;
+  cTerm.AddChild(xTerm);
+  cTerm.AddChild(yTerm);
+  cTerm.CheckTermProperties;
+  {$IfDef TESTMODE}cTerm.DEBUGPrint(false,eventlist,' (LawOfCompleteness) created new ');{$ENDIF}
 {.... replace newTerms ........................................................}
     { no sorting necessary as original AND was sorted, thus xTerm < yTerm and
-      thus aTerm < bTerm < cTerm }
-    currentTerm.Mask;
-    flagSpeedSearchWasAlreadOn := eventlist.SpeedSearchFlagOn; { remember prior state }
-    eventlist.SpeedSearchFlagOn:=true;
-    eventlist.ReplaceWithIdentical(aTerm);
-    eventlist.ReplaceWithIdentical(bTerm);
-    eventlist.ReplaceWithIdentical(cTerm);
-    eventlist.SpeedSearchFlagOn := flagSpeedSearchWasAlreadOn; { restor prior state }
+    thus aTerm < bTerm < cTerm }
+  currentTerm.Mask;
+  flagSpeedSearchWasAlreadOn := eventlist.SpeedSearchFlagOn; { remember prior state }
+  eventlist.SpeedSearchFlagOn:=true;
+  eventlist.ReplaceWithIdentical(aTerm);
+  eventlist.ReplaceWithIdentical(bTerm);
+  eventlist.ReplaceWithIdentical(cTerm);
+  eventlist.SpeedSearchFlagOn := flagSpeedSearchWasAlreadOn; { restor prior state }
 {.... configure currentTerm ...................................................}
-    currentTerm.Children.Clear;
-    currentTerm.EventType:= tftaEventTypeXOR;
-    currentTerm.AddChild(aTerm);
-    currentTerm.AddChild(bTerm);
-    currentTerm.AddChild(cTerm);
-    currentTerm.Unmask;
-    currentTerm.CheckTermProperties;
-    {$IfDef TESTMODE}currentTerm.DEBUGPrint(true,eventlist,' (LawOfCompleteness) configured ');{$ENDIF}
+  currentTerm.Children.Clear;
+  currentTerm.EventType:= tftaEventTypeXOR;
+  currentTerm.AddChild(aTerm);
+  currentTerm.AddChild(bTerm);
+  currentTerm.AddChild(cTerm);
+  currentTerm.Unmask;
+  currentTerm.CheckTermProperties;
+  {$IfDef TESTMODE}currentTerm.DEBUGPrint(true,eventlist,' (LawOfCompleteness) configured ');{$ENDIF}
 {.... redirect currentTerm ....................................................}
-    existingTerm := eventlist.FindIdenticalExisting(currentTerm);
-    if Assigned(existingTerm) then
-    begin
-      RedirectTerm(currentTerm,existingTerm,eventlist,theParent,theIndex,'LawOfCompleteness 1');
-    end;
-  end; { check that overall term is a AND }
+  existingTerm := eventlist.FindIdenticalExisting(currentTerm);
+  if Assigned(existingTerm) then
+  begin
+    RedirectTerm(currentTerm,existingTerm,eventlist,theParent,theIndex,'LawOfCompleteness 1');
+  end;
 end;
 
 
@@ -1959,7 +1959,7 @@ begin
     exit; { return from this iteration of ScanChildrenSorting }
   end;
 
-  { test for NOT }
+  { test for NOT or TOP, as they have only one child }
   if currentTerm.IsTypeNOT or currentTerm.IsTypeTOP then
   begin
     { NOT or TOP operator }

@@ -73,23 +73,44 @@ implementation
   now we need a function like this which actually compares two objects of
   type TTFTAObject for TTFTAList.Sort (by comparing their TemporalExpr, of course) }
 function CompareTwoTTFTAStringListObjects(Item1: Pointer; Item2: Pointer) : Integer;
+var firstString : ansistring;
+    secondString: ansistring;
+    firstIsNEG  : boolean;
+    secondIsNEG : boolean;
 begin
+  { one special case:
+    it is required by the temporal logic of TFTA that in AND-terms negated events
+    are the first operand(s) of the term. therefore strict alphabetical sorting
+    must be overrode for this case. This is done here.
+    As it can not be separated which higher level term calls a given instance of
+    this function, all sorting is done in such a way as to put negated events to
+    the front }
   if Assigned(Item1) then
   begin
-    if Assigned(Item2) then
-      { Item1 <> NIL, Item2 <> NIL --> compare TemporalExpr's }
-      Result := AnsiCompareStr(TTFTAStringListObject(Item1).Text,
-                               TTFTAStringListObject(Item2).Text)
-    else
-      { Item1 <> NIL, Item2 = NIL --> return 1 (Item1 after Item2) }
+    if Assigned(Item2) then { Item1 <> NIL, Item2 <> NIL --> compare TemporalExpr's }
+    begin
+      firstString := TTFTAStringListObject(Item1).Text;
+      secondString:= TTFTAStringListObject(Item2).Text;
+      //
+      firstIsNEG  := AnsiStartsStr('NOT[',firstString)  or (firstString  = 'FALSE' ) ;
+      secondIsNEG := AnsiStartsStr('NOT[',secondString) or (secondString = 'FALSE' ) ;
+      if (firstIsNEG = secondIsNEG) then { either both are negated or none is --> compare alphabetically }
+      begin
+        Result := AnsiCompareStr(TTFTAStringListObject(Item1).Text,TTFTAStringListObject(Item2).Text);
+      end else
+      begin
+        if firstIsNEG then { Item 1 comes first because it is negated }
+          Result := -1
+        else               { Item 2 comes first because it is negated }
+          Result := 1;
+      end;
+    end else { Item1 <> NIL, Item2 = NIL --> return 1 (Item1 after Item2) }
       Result := 1;
   end else
   begin
-    if Assigned(Item2) then
-      { Item1 = NIL, Item2 <> NIL --> return -1 (Item2 after Item1) }
+    if Assigned(Item2) then { Item1 = NIL, Item2 <> NIL --> return -1 (Item2 after Item1) }
       Result := -1
-    else
-      { Item1 = NIL, Item2 = NIL --> return 0 (Item1 same as Item2) }
+    else                    { Item1 = NIL, Item2 = NIL --> return 0 (Item1 same as Item2) }
       Result := 0;
   end;
 end;

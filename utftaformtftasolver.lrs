@@ -1,327 +1,241 @@
 { Das ist eine automatisch erzeugte Lazarus-Ressourcendatei }
 
 LazarusResources.Add('TTFTAMainWindow','FORMDATA',[
-  'TPF0'#15'TTFTAMainWindow'#14'TFTAMainWindow'#4'Left'#3#205#0#6'Height'#3#220
-  +#2#3'Top'#3'!'#1#5'Width'#3#232#3#13'ActiveControl'#7#12'PageControl1'#11'Bo'
-  +'rderIcons'#11#12'biSystemMenu'#10'biMinimize'#0#11'BorderStyle'#7#8'bsDialo'
-  +'g'#7'Caption'#6#18'TFTA Solver (v0.1)'#12'ClientHeight'#3#188#2#11'ClientWi'
-  +'dth'#3#232#3#4'Menu'#7#15'MainMenuOverall'#10'ParentFont'#8#10'LCLVersion'#6
-  +#6'0.9.26'#0#9'TTreeView'#22'TreeViewInputStructure'#4'Left'#2#5#6'Height'#3
-  +#244#1#3'Top'#3#165#0#5'Width'#3#234#1#10'AutoExpand'#9#15'BackgroundColor'#4
-  +#204#204#255#0#11'BorderStyle'#7#6'bsNone'#11'BorderWidth'#2#2#5'Color'#7#7
-  +'clWhite'#5'Ctl3D'#9#17'DefaultItemHeight'#2#18#10'ScrollBars'#7#10'ssAutoBo'
-  +'th'#8'TabOrder'#2#0#7'Options'#11#13'tvoAutoExpand'#17'tvoAutoItemHeight'#16
-  +'tvoHideSelection'#21'tvoKeepCollapsedNodes'#14'tvoShowButtons'#12'tvoShowLi'
-  +'nes'#11'tvoShowRoot'#11'tvoToolTips'#0#0#0#10'TStatusBar'#21'StatusBarHaupt'
-  +'fenster'#6'Height'#2#28#3'Top'#3#160#2#5'Width'#3#232#3#6'Panels'#14#1#9'Al'
-  +'ignment'#7#8'taCenter'#5'Bevel'#7#6'pbNone'#5'Width'#2'd'#0#1#5'Width'#3#2#3
-  +#0#0#11'SimplePanel'#8#0#0#12'TProgressBar'#12'ProgressBar1'#4'Left'#2#1#6'H'
-  +'eight'#2#28#3'Top'#3#160#2#5'Width'#2'a'#3'Max'#2'd'#8'Position'#2'2'#6'Smo'
-  +'oth'#9#4'Step'#2#1#8'TabOrder'#2#3#7'Visible'#8#0#0#5'TMemo'#15'MemoInputSt'
-  +'ring'#4'Left'#2#5#6'Height'#3#130#0#4'Hint'#6#255'Ein temporallogischer Aus'
-  +'druck besteht '#10'aus folgenden Konstrukten, die auch '#10'geschachtet sei'
-  +'n k'#195#182'nnen:'#10#10'OPERATOREN:'#10'and, or, xor, pand, sand, not'#10
-  +'Bis auf not haben alle Operatoren'#10'zwei oder mehr Operanden; not hat'#10
-  +'genau einen Operanden.'#10#10'Es gelten die all'#3'Top'#2#30#5'Width'#3#234
-  +#1#5'Color'#4#204#204#255#0#13'Lines.Strings'#1#6#0#0#10'ScrollBars'#7#14'ss'
-  +'AutoVertical'#8'TabOrder'#2#1#0#0#8'TToolBar'#14'ToolBarOverall'#6'Height'#2
-  +#26#5'Width'#3#232#3#12'ButtonHeight'#2#25#11'ButtonWidth'#2#25#7'Caption'#6
-  +#14'ToolBarOverall'#14'DisabledImages'#7#28'ImageListMenuOverallInactive'#11
-  +'EdgeBorders'#11#0#9'EdgeInner'#7#6'esNone'#9'EdgeOuter'#7#6'esNone'#4'Flat'
-  +#9#6'Images'#7#20'ImageListMenuOverall'#14'ParentShowHint'#8#8'ShowHint'#9#8
-  +'TabOrder'#2#4#8'Wrapable'#8#0#11'TToolButton'#15'ToolButtonClear'#4'Left'#2
-  +#1#4'Hint'#6#30'Clear input and output fields.'#7'Caption'#6#3'New'#10'Image'
-  +'Index'#2#0#8'MenuItem'#7#13'MenuItemClear'#7'OnClick'#7#18'MenuItemClearCli'
-  +'ck'#0#0#11'TToolButton'#14'ToolButtonOpen'#4'Left'#2#30#4'Hint'#6#12'Open a'
-  +' file.'#7'Caption'#6#4'Open'#7'Enabled'#8#10'ImageIndex'#2#1#8'MenuItem'#7
-  +#12'MenuItemOpen'#7'OnClick'#7#17'MenuItemOpenClick'#0#0#11'TToolButton'#16
-  +'ToolButtonSaveAs'#4'Left'#2';'#4'Hint'#6')Save the input temporal term into'
-  +' a file.'#7'Caption'#6#13'Save Input As'#7'Enabled'#8#10'ImageIndex'#2#2#8
-  +'MenuItem'#7#16'MenuItemSaveInAs'#7'OnClick'#7#21'MenuItemSaveInAsClick'#0#0
-  +#11'TToolButton'#14'ToolButtonExit'#4'Left'#2'p'#4'Hint'#6#17'Exit the progr'
-  +'am.'#7'Caption'#6#4'Exit'#10'ImageIndex'#2#3#8'MenuItem'#7#12'MenuItemExit'
-  +#7'OnClick'#7#17'MenuItemExitClick'#0#0#11'TToolButton'#11'ToolButton2'#4'Le'
-  +'ft'#2'X'#5'Width'#2#24#7'Caption'#6#11'ToolButton1'#5'Style'#7#12'tbsSepara'
-  +'tor'#0#0#11'TToolButton'#11'ToolButton4'#4'Left'#3#141#0#5'Width'#2#24#7'Ca'
-  +'ption'#6#11'ToolButton1'#5'Style'#7#12'tbsSeparator'#0#0#11'TToolButton'#20
-  +'ToolButtonImportTerm'#4'Left'#3#165#0#4'Hint'#6';Scan the input string cont'
-  +'aining '#10'the user''s temporal term.'#7'Caption'#6#15'Scan Input Term'#10
-  +'ImageIndex'#2#4#8'MenuItem'#7#12'MenuItemScan'#7'OnClick'#7#17'MenuItemScan'
-  +'Click'#0#0#11'TToolButton'#18'ToolButtonSimplify'#4'Left'#3#194#0#4'Hint'#6
-  +'FStart the simplification according to the rules of the temporal logic.'#7
-  +'Caption'#6#8'Simplify'#7'Enabled'#8#10'ImageIndex'#2#5#8'MenuItem'#7#16'Men'
-  +'uItemSimplify'#7'OnClick'#7#21'MenuItemSimplifyClick'#0#0#11'TToolButton'#11
-  +'ToolButton5'#4'Left'#3#223#0#5'Width'#2#24#7'Caption'#6#11'ToolButton1'#5'S'
-  +'tyle'#7#12'tbsSeparator'#0#0#11'TToolButton'#19'ToolButtonShowTrees'#4'Left'
-  +#3#247#0#4'Hint'#6#27'Show / Hide Tree Structures'#7'Caption'#6#19'ToolButto'
-  +'nShowTrees'#4'Down'#9#10'ImageIndex'#2#6#6'Marked'#9#5'Style'#7#8'tbsCheck'
-  +#7'OnClick'#7#22'MenuItemShowTreesClick'#0#0#11'TToolButton'#11'ToolButton6'
-  +#4'Left'#3#20#1#5'Width'#2#24#7'Caption'#6#11'ToolButton1'#5'Style'#7#12'tbs'
-  +'Separator'#0#0#11'TToolButton'#19'ToolButtonSaveOutAs'#4'Left'#3','#1#4'Hin'
-  +'t'#6'*Save the output temporal term into a file.'#7'Caption'#6#14'Save Outp'
-  +'ut As'#7'Enabled'#8#10'ImageIndex'#2#7#8'MenuItem'#7#17'MenuItemSaveOutAs'#7
-  +'OnClick'#7#22'MenuItemSaveOutAsClick'#0#0#11'TToolButton'#11'ToolButton3'#4
-  +'Left'#3'I'#1#5'Width'#2#23#7'Caption'#6#11'ToolButton3'#5'Style'#7#12'tbsSe'
-  +'parator'#0#0#11'TToolButton'#14'ToolButtonHelp'#4'Left'#3'`'#1#4'Hint'#6#12
-  +'Help / About'#7'Caption'#6#12'Help / About'#10'ImageIndex'#2#8#7'OnClick'#7
-  +#18'MenuItemAboutClick'#0#0#11'TStaticText'#11'StaticText2'#4'Left'#3'}'#1#6
-  ,'Height'#2#25#5'Width'#3#3#1#7'Caption'#6#30'                        Output'
-  +#10'Font.Style'#11#6'fsBold'#0#10'ParentFont'#8#8'TabOrder'#2#0#0#0#0#12'TPa'
-  +'geControl'#12'PageControl1'#4'Left'#3#243#1#6'Height'#3'{'#2#3'Top'#2#30#5
-  +'Width'#3#240#1#10'ActivePage'#7#17'TabSheetOutMCSSsl'#8'TabIndex'#2#3#8'Tab'
-  +'Order'#2#5#0#9'TTabSheet'#17'TabSheetOutString'#7'Caption'#6#6'String'#12'C'
-  +'lientHeight'#3'{'#2#11'ClientWidth'#3#240#1#0#5'TMemo'#16'MemoOutputString'
-  +#6'Height'#3'V'#2#4'Hint'#6#255'Ein temporallogischer Ausdruck besteht '#10
-  +'aus folgenden Konstrukten, die auch '#10'geschachtet sein k'#195#182'nnen:'
-  +#10#10'OPERATOREN:'#10'and, or, xor, pand, sand, not'#10'Bis auf not haben a'
-  +'lle Operatoren'#10'zwei oder mehr Operanden; not hat'#10'genau einen Operan'
-  +'den.'#10#10'Es gelten die all'#5'Width'#3#234#1#5'Color'#4#179#255#179#0#13
-  +'Lines.Strings'#1#6#0#0#10'ScrollBars'#7#14'ssAutoVertical'#8'TabOrder'#2#0#0
-  +#0#11'TStaticText'#11'StaticText1'#6'Height'#2#30#3'Top'#2#190#5'Width'#2'd'
-  +#7'Caption'#6#6'Output'#10'Font.Style'#11#6'fsBold'#0#10'ParentFont'#8#8'Tab'
-  +'Order'#2#1#0#0#0#9'TTabSheet'#15'TabSheetOutTree'#7'Caption'#6#4'Tree'#12'C'
-  +'lientHeight'#3'{'#2#11'ClientWidth'#3#240#1#0#9'TTreeView'#23'TreeViewOutpu'
-  +'tStructure'#6'Height'#3'V'#2#5'Width'#3#234#1#10'AutoExpand'#9#15'Backgroun'
-  +'dColor'#4#179#255#179#0#11'BorderStyle'#7#6'bsNone'#11'BorderWidth'#2#2#5'C'
-  +'olor'#7#7'clWhite'#5'Ctl3D'#9#17'DefaultItemHeight'#2#18#10'ScrollBars'#7#10
-  +'ssAutoBoth'#8'TabOrder'#2#0#7'Options'#11#13'tvoAutoExpand'#17'tvoAutoItemH'
-  +'eight'#16'tvoHideSelection'#21'tvoKeepCollapsedNodes'#14'tvoShowButtons'#12
-  +'tvoShowLines'#11'tvoShowRoot'#11'tvoToolTips'#0#0#0#0#9'TTabSheet'#15'TabSh'
-  +'eetOutMCSS'#7'Caption'#6#4'MCSS'#12'ClientHeight'#3'{'#2#11'ClientWidth'#3
-  +#240#1#0#11'TStringGrid'#14'StringGridMCSS'#4'Left'#2#3#6'Height'#3#14#2#3'T'
-  +'op'#2'&'#5'Width'#3#232#1#8'ColCount'#2#2#7'Columns'#14#1#13'Title.Caption'
-  +#6#4'MCSS'#5'Width'#3#168#1#0#0#14'ExtendedSelect'#9#10'FixedColor'#7#9'clBt'
-  +'nFace'#7'Options'#11#15'goFixedVertLine'#15'goFixedHorzLine'#10'goVertLine'
-  +#10'goHorzLine'#13'goRangeSelect'#14'goSmoothScroll'#19'goFixedRowNumbering'
-  +#0#11'ParentColor'#8#8'RowCount'#2#5#8'TabOrder'#2#0#5'Cells'#1#2#6#2#0#2#0#6
-  +#6'Number'#2#0#2#1#6#1'1'#2#0#2#2#6#1'2'#2#0#2#3#6#1'3'#2#0#2#4#6#1'4'#2#1#2
-  +#0#6#4'MCSS'#0#0#0#11'TRadioGroup'#20'RadioGroupMCSSFormat'#4'Left'#2#3#6'He'
-  +'ight'#2#30#3'Top'#2#3#5'Width'#3#232#1#8'AutoFill'#9#28'ChildSizing.LeftRig'
-  +'htSpacing'#2#6#28'ChildSizing.TopBottomSpacing'#2#6#29'ChildSizing.EnlargeH'
-  +'orizontal'#7#24'crsHomogenousChildResize'#27'ChildSizing.EnlargeVertical'#7
-  +#24'crsHomogenousChildResize'#28'ChildSizing.ShrinkHorizontal'#7#14'crsScale'
-  +'Childs'#26'ChildSizing.ShrinkVertical'#7#14'crsScaleChilds'#18'ChildSizing.'
-  +'Layout'#7#29'cclTopToBottomThenLeftToRight'#27'ChildSizing.ControlsPerLine'
-  +#2#1#12'ClientHeight'#2#30#11'ClientWidth'#3#232#1#12'ColumnLayout'#7#24'clV'
-  +'erticalThenHorizontal'#7'Columns'#2#2#9'ItemIndex'#2#0#13'Items.Strings'#1#6
-  +#18'Format as readable'#6#19'Format as parseable'#0#8'TabOrder'#2#1#0#0#7'TB'
-  +'utton'#14'ButtonMCCSCopy'#4'Left'#2#3#6'Height'#2#25#3'Top'#3'9'#2#5'Width'
-  +#3#232#1#7'Caption'#6#21'Copy all to clipboard'#7'Enabled'#8#8'TabOrder'#2#2
-  +#0#0#0#9'TTabSheet'#17'TabSheetOutMCSSsl'#7'Caption'#6#19'MCSS (without SAND'
-  +')'#12'ClientHeight'#3'U'#2#11'ClientWidth'#3#236#1#0#11'TStringGrid'#16'Str'
-  +'ingGridMCSSsl'#4'Left'#2#3#6'Height'#3#14#2#3'Top'#2'&'#5'Width'#3#232#1#8
-  +'ColCount'#2#2#7'Columns'#14#1#13'Title.Caption'#6#4'MCSS'#5'Width'#3#168#1#0
-  +#0#14'ExtendedSelect'#9#10'FixedColor'#7#9'clBtnFace'#7'Options'#11#15'goFix'
-  +'edVertLine'#15'goFixedHorzLine'#10'goVertLine'#10'goHorzLine'#13'goRangeSel'
-  +'ect'#14'goSmoothScroll'#19'goFixedRowNumbering'#0#11'ParentColor'#8#8'RowCo'
-  +'unt'#2#5#8'TabOrder'#2#0#5'Cells'#1#2#6#2#0#2#0#6#6'Number'#2#0#2#1#6#1'1'#2
-  +#0#2#2#6#1'2'#2#0#2#3#6#1'3'#2#0#2#4#6#1'4'#2#1#2#0#6#4'MCSS'#0#0#0#11'TRadi'
-  +'oGroup'#22'RadioGroupMCSSFormatsl'#4'Left'#2#3#6'Height'#2#30#3'Top'#2#3#5
-  +'Width'#3#232#1#8'AutoFill'#9#28'ChildSizing.LeftRightSpacing'#2#6#28'ChildS'
-  +'izing.TopBottomSpacing'#2#6#29'ChildSizing.EnlargeHorizontal'#7#24'crsHomog'
-  +'enousChildResize'#27'ChildSizing.EnlargeVertical'#7#24'crsHomogenousChildRe'
-  +'size'#28'ChildSizing.ShrinkHorizontal'#7#14'crsScaleChilds'#26'ChildSizing.'
-  +'ShrinkVertical'#7#14'crsScaleChilds'#18'ChildSizing.Layout'#7#29'cclTopToBo'
-  +'ttomThenLeftToRight'#27'ChildSizing.ControlsPerLine'#2#1#12'ClientHeight'#2
-  +#26#11'ClientWidth'#3#228#1#12'ColumnLayout'#7#24'clVerticalThenHorizontal'#7
-  +'Columns'#2#2#9'ItemIndex'#2#0#13'Items.Strings'#1#6#18'Format as readable'#6
-  +#19'Format as parseable'#0#8'TabOrder'#2#1#0#0#7'TButton'#16'ButtonMCCSCopys'
-  +'l'#4'Left'#2#3#6'Height'#2#25#3'Top'#3'9'#2#5'Width'#3#232#1#7'Caption'#6#21
-  +'Copy all to clipboard'#7'Enabled'#8#8'TabOrder'#2#2#0#0#0#0#7'TButton'#7'Bu'
-  +'tton1'#4'Left'#2'j'#6'Height'#2#25#3'Top'#3#219#0#5'Width'#2'K'#7'Caption'#6
-  ,#7'Button1'#7'OnClick'#7#12'Button1Click'#8'TabOrder'#2#6#0#0#9'TMainMenu'#15
-  +'MainMenuOverall'#6'Images'#7#20'ImageListMenuOverall'#4'left'#3#204#3#0#9'T'
-  +'MenuItem'#12'MenuItemFile'#7'Caption'#6#4'File'#0#9'TMenuItem'#13'MenuItemC'
-  +'lear'#7'Caption'#6#3'New'#11'Bitmap.Data'#10#254#9#0#0#250#9#0#0'BM'#250#9#0
-  +#0#0#0#0#0'6'#0#0#0'('#0#0#0#25#0#0#0#25#0#0#0#1#0' '#0#0#0#0#0#196#9#0#0'd'
-  +#0#0#0'd'#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  'TPF0'#15'TTFTAMainWindow'#14'TFTAMainWindow'#6'Height'#3#220#2#3'Top'#2#25#5
+  +'Width'#3#232#3#13'ActiveControl'#7#12'PageControl1'#11'BorderIcons'#11#12'b'
+  +'iSystemMenu'#10'biMinimize'#0#11'BorderStyle'#7#8'bsDialog'#7'Caption'#6#18
+  +'TFTA Solver (v0.1)'#12'ClientHeight'#3#188#2#11'ClientWidth'#3#232#3#4'Menu'
+  +#7#15'MainMenuOverall'#10'ParentFont'#8#10'LCLVersion'#6#6'0.9.26'#0#9'TTree'
+  +'View'#22'TreeViewInputStructure'#4'Left'#2#5#6'Height'#3#244#1#3'Top'#3#165
+  +#0#5'Width'#3#234#1#10'AutoExpand'#9#15'BackgroundColor'#4#204#204#255#0#11
+  +'BorderStyle'#7#6'bsNone'#11'BorderWidth'#2#2#5'Color'#7#7'clWhite'#5'Ctl3D'
+  +#9#17'DefaultItemHeight'#2#18#10'ScrollBars'#7#10'ssAutoBoth'#8'TabOrder'#2#0
+  +#7'Options'#11#13'tvoAutoExpand'#17'tvoAutoItemHeight'#16'tvoHideSelection'
+  +#21'tvoKeepCollapsedNodes'#14'tvoShowButtons'#12'tvoShowLines'#11'tvoShowRoo'
+  +'t'#11'tvoToolTips'#0#0#0#10'TStatusBar'#21'StatusBarHauptfenster'#6'Height'
+  +#2#28#3'Top'#3#160#2#5'Width'#3#232#3#6'Panels'#14#1#9'Alignment'#7#8'taCent'
+  +'er'#5'Bevel'#7#6'pbNone'#5'Width'#2'd'#0#1#5'Width'#3#2#3#0#0#11'SimplePane'
+  +'l'#8#0#0#12'TProgressBar'#12'ProgressBar1'#4'Left'#2#1#6'Height'#2#28#3'Top'
+  +#3#160#2#5'Width'#2'a'#3'Max'#2'd'#8'Position'#2'2'#6'Smooth'#9#4'Step'#2#1#8
+  +'TabOrder'#2#3#7'Visible'#8#0#0#5'TMemo'#15'MemoInputString'#4'Left'#2#5#6'H'
+  +'eight'#3#130#0#4'Hint'#6#255'Ein temporallogischer Ausdruck besteht '#10'au'
+  +'s folgenden Konstrukten, die auch '#10'geschachtet sein k'#195#182'nnen:'#10
+  +#10'OPERATOREN:'#10'and, or, xor, pand, sand, not'#10'Bis auf not haben alle'
+  +' Operatoren'#10'zwei oder mehr Operanden; not hat'#10'genau einen Operanden'
+  +'.'#10#10'Es gelten die all'#3'Top'#2#30#5'Width'#3#234#1#5'Color'#4#204#204
+  +#255#0#13'Lines.Strings'#1#6#0#0#10'ScrollBars'#7#14'ssAutoVertical'#8'TabOr'
+  +'der'#2#1#0#0#8'TToolBar'#14'ToolBarOverall'#6'Height'#2#26#5'Width'#3#232#3
+  +#12'ButtonHeight'#2#25#11'ButtonWidth'#2#25#7'Caption'#6#14'ToolBarOverall'
+  +#14'DisabledImages'#7#28'ImageListMenuOverallInactive'#11'EdgeBorders'#11#0#9
+  +'EdgeInner'#7#6'esNone'#9'EdgeOuter'#7#6'esNone'#4'Flat'#9#6'Images'#7#20'Im'
+  +'ageListMenuOverall'#14'ParentShowHint'#8#8'ShowHint'#9#8'TabOrder'#2#4#8'Wr'
+  +'apable'#8#0#11'TToolButton'#15'ToolButtonClear'#4'Left'#2#1#4'Hint'#6#30'Cl'
+  +'ear input and output fields.'#7'Caption'#6#3'New'#10'ImageIndex'#2#0#8'Menu'
+  +'Item'#7#13'MenuItemClear'#7'OnClick'#7#18'MenuItemClearClick'#0#0#11'TToolB'
+  +'utton'#14'ToolButtonOpen'#4'Left'#2#30#4'Hint'#6#12'Open a file.'#7'Caption'
+  +#6#4'Open'#7'Enabled'#8#10'ImageIndex'#2#1#8'MenuItem'#7#12'MenuItemOpen'#7
+  +'OnClick'#7#17'MenuItemOpenClick'#0#0#11'TToolButton'#16'ToolButtonSaveAs'#4
+  +'Left'#2';'#4'Hint'#6')Save the input temporal term into a file.'#7'Caption'
+  +#6#13'Save Input As'#7'Enabled'#8#10'ImageIndex'#2#2#8'MenuItem'#7#16'MenuIt'
+  +'emSaveInAs'#7'OnClick'#7#21'MenuItemSaveInAsClick'#0#0#11'TToolButton'#14'T'
+  +'oolButtonExit'#4'Left'#2'p'#4'Hint'#6#17'Exit the program.'#7'Caption'#6#4
+  +'Exit'#10'ImageIndex'#2#3#8'MenuItem'#7#12'MenuItemExit'#7'OnClick'#7#17'Men'
+  +'uItemExitClick'#0#0#11'TToolButton'#11'ToolButton2'#4'Left'#2'X'#5'Width'#2
+  +#24#7'Caption'#6#11'ToolButton1'#5'Style'#7#12'tbsSeparator'#0#0#11'TToolBut'
+  +'ton'#11'ToolButton4'#4'Left'#3#141#0#5'Width'#2#24#7'Caption'#6#11'ToolButt'
+  +'on1'#5'Style'#7#12'tbsSeparator'#0#0#11'TToolButton'#20'ToolButtonImportTer'
+  +'m'#4'Left'#3#165#0#4'Hint'#6';Scan the input string containing '#10'the use'
+  +'r''s temporal term.'#7'Caption'#6#15'Scan Input Term'#10'ImageIndex'#2#4#8
+  +'MenuItem'#7#12'MenuItemScan'#7'OnClick'#7#17'MenuItemScanClick'#0#0#11'TToo'
+  +'lButton'#18'ToolButtonSimplify'#4'Left'#3#194#0#4'Hint'#6'FStart the simpli'
+  +'fication according to the rules of the temporal logic.'#7'Caption'#6#8'Simp'
+  +'lify'#7'Enabled'#8#10'ImageIndex'#2#5#8'MenuItem'#7#16'MenuItemSimplify'#7
+  +'OnClick'#7#21'MenuItemSimplifyClick'#0#0#11'TToolButton'#11'ToolButton5'#4
+  +'Left'#3#223#0#5'Width'#2#24#7'Caption'#6#11'ToolButton1'#5'Style'#7#12'tbsS'
+  +'eparator'#0#0#11'TToolButton'#19'ToolButtonShowTrees'#4'Left'#3#247#0#4'Hin'
+  +'t'#6#27'Show / Hide Tree Structures'#7'Caption'#6#19'ToolButtonShowTrees'#4
+  +'Down'#9#10'ImageIndex'#2#6#6'Marked'#9#5'Style'#7#8'tbsCheck'#7'OnClick'#7
+  +#22'MenuItemShowTreesClick'#0#0#11'TToolButton'#11'ToolButton6'#4'Left'#3#20
+  +#1#5'Width'#2#24#7'Caption'#6#11'ToolButton1'#5'Style'#7#12'tbsSeparator'#0#0
+  +#11'TToolButton'#19'ToolButtonSaveOutAs'#4'Left'#3','#1#4'Hint'#6'*Save the '
+  +'output temporal term into a file.'#7'Caption'#6#14'Save Output As'#7'Enable'
+  +'d'#8#10'ImageIndex'#2#7#8'MenuItem'#7#17'MenuItemSaveOutAs'#7'OnClick'#7#22
+  +'MenuItemSaveOutAsClick'#0#0#11'TToolButton'#11'ToolButton3'#4'Left'#3'I'#1#5
+  +'Width'#2#23#7'Caption'#6#11'ToolButton3'#5'Style'#7#12'tbsSeparator'#0#0#11
+  +'TToolButton'#14'ToolButtonHelp'#4'Left'#3'`'#1#4'Hint'#6#12'Help / About'#7
+  +'Caption'#6#12'Help / About'#10'ImageIndex'#2#8#7'OnClick'#7#18'MenuItemAbou'
+  +'tClick'#0#0#11'TStaticText'#11'StaticText2'#4'Left'#3'}'#1#6'Height'#2#25#5
+  ,'Width'#3#3#1#7'Caption'#6#30'                        Output'#10'Font.Style'
+  +#11#6'fsBold'#0#10'ParentFont'#8#8'TabOrder'#2#0#0#0#0#12'TPageControl'#12'P'
+  +'ageControl1'#4'Left'#3#243#1#6'Height'#3'{'#2#3'Top'#2#30#5'Width'#3#240#1
+  +#10'ActivePage'#7#17'TabSheetOutMCSSsl'#8'TabIndex'#2#3#8'TabOrder'#2#5#0#9
+  +'TTabSheet'#17'TabSheetOutString'#7'Caption'#6#6'String'#12'ClientHeight'#3
+  +'{'#2#11'ClientWidth'#3#240#1#0#5'TMemo'#16'MemoOutputString'#6'Height'#3'V'
+  +#2#4'Hint'#6#255'Ein temporallogischer Ausdruck besteht '#10'aus folgenden K'
+  +'onstrukten, die auch '#10'geschachtet sein k'#195#182'nnen:'#10#10'OPERATOR'
+  +'EN:'#10'and, or, xor, pand, sand, not'#10'Bis auf not haben alle Operatoren'
+  +#10'zwei oder mehr Operanden; not hat'#10'genau einen Operanden.'#10#10'Es g'
+  +'elten die all'#5'Width'#3#234#1#5'Color'#4#179#255#179#0#13'Lines.Strings'#1
+  +#6#0#0#10'ScrollBars'#7#14'ssAutoVertical'#8'TabOrder'#2#0#0#0#11'TStaticTex'
+  +'t'#11'StaticText1'#6'Height'#2#30#3'Top'#2#190#5'Width'#2'd'#7'Caption'#6#6
+  +'Output'#10'Font.Style'#11#6'fsBold'#0#10'ParentFont'#8#8'TabOrder'#2#1#0#0#0
+  +#9'TTabSheet'#15'TabSheetOutTree'#7'Caption'#6#4'Tree'#12'ClientHeight'#3'{'
+  +#2#11'ClientWidth'#3#240#1#0#9'TTreeView'#23'TreeViewOutputStructure'#6'Heig'
+  +'ht'#3'V'#2#5'Width'#3#234#1#10'AutoExpand'#9#15'BackgroundColor'#4#179#255
+  +#179#0#11'BorderStyle'#7#6'bsNone'#11'BorderWidth'#2#2#5'Color'#7#7'clWhite'
+  +#5'Ctl3D'#9#17'DefaultItemHeight'#2#18#10'ScrollBars'#7#10'ssAutoBoth'#8'Tab'
+  +'Order'#2#0#7'Options'#11#13'tvoAutoExpand'#17'tvoAutoItemHeight'#16'tvoHide'
+  +'Selection'#21'tvoKeepCollapsedNodes'#14'tvoShowButtons'#12'tvoShowLines'#11
+  +'tvoShowRoot'#11'tvoToolTips'#0#0#0#0#9'TTabSheet'#15'TabSheetOutMCSS'#7'Cap'
+  +'tion'#6#4'MCSS'#12'ClientHeight'#3'{'#2#11'ClientWidth'#3#240#1#0#11'TStrin'
+  +'gGrid'#14'StringGridMCSS'#4'Left'#2#3#6'Height'#3#14#2#3'Top'#2'&'#5'Width'
+  +#3#232#1#8'ColCount'#2#2#7'Columns'#14#1#13'Title.Caption'#6#4'MCSS'#5'Width'
+  +#3#168#1#0#0#14'ExtendedSelect'#9#10'FixedColor'#7#9'clBtnFace'#7'Options'#11
+  +#15'goFixedVertLine'#15'goFixedHorzLine'#10'goVertLine'#10'goHorzLine'#13'go'
+  +'RangeSelect'#14'goSmoothScroll'#19'goFixedRowNumbering'#0#11'ParentColor'#8
+  +#8'RowCount'#2#5#8'TabOrder'#2#0#5'Cells'#1#2#6#2#0#2#0#6#6'Number'#2#0#2#1#6
+  +#1'1'#2#0#2#2#6#1'2'#2#0#2#3#6#1'3'#2#0#2#4#6#1'4'#2#1#2#0#6#4'MCSS'#0#0#0#11
+  +'TRadioGroup'#20'RadioGroupMCSSFormat'#4'Left'#2#3#6'Height'#2#30#3'Top'#2#3
+  +#5'Width'#3#232#1#8'AutoFill'#9#28'ChildSizing.LeftRightSpacing'#2#6#28'Chil'
+  +'dSizing.TopBottomSpacing'#2#6#29'ChildSizing.EnlargeHorizontal'#7#24'crsHom'
+  +'ogenousChildResize'#27'ChildSizing.EnlargeVertical'#7#24'crsHomogenousChild'
+  +'Resize'#28'ChildSizing.ShrinkHorizontal'#7#14'crsScaleChilds'#26'ChildSizin'
+  +'g.ShrinkVertical'#7#14'crsScaleChilds'#18'ChildSizing.Layout'#7#29'cclTopTo'
+  +'BottomThenLeftToRight'#27'ChildSizing.ControlsPerLine'#2#1#12'ClientHeight'
+  +#2#30#11'ClientWidth'#3#232#1#12'ColumnLayout'#7#24'clVerticalThenHorizontal'
+  +#7'Columns'#2#2#9'ItemIndex'#2#0#13'Items.Strings'#1#6#18'Format as readable'
+  +#6#19'Format as parseable'#0#8'TabOrder'#2#1#0#0#7'TButton'#14'ButtonMCCSCop'
+  +'y'#4'Left'#2#3#6'Height'#2#25#3'Top'#3'9'#2#5'Width'#3#232#1#7'Caption'#6#21
+  +'Copy all to clipboard'#7'Enabled'#8#8'TabOrder'#2#2#0#0#0#9'TTabSheet'#17'T'
+  +'abSheetOutMCSSsl'#7'Caption'#6#19'MCSS (without SAND)'#12'ClientHeight'#3'U'
+  +#2#11'ClientWidth'#3#236#1#0#11'TStringGrid'#16'StringGridMCSSsl'#4'Left'#2#3
+  +#6'Height'#3#14#2#3'Top'#2'&'#5'Width'#3#232#1#8'ColCount'#2#2#7'Columns'#14
+  +#1#13'Title.Caption'#6#4'MCSS'#5'Width'#3#168#1#0#0#14'ExtendedSelect'#9#10
+  +'FixedColor'#7#9'clBtnFace'#7'Options'#11#15'goFixedVertLine'#15'goFixedHorz'
+  +'Line'#10'goVertLine'#10'goHorzLine'#13'goRangeSelect'#14'goSmoothScroll'#19
+  +'goFixedRowNumbering'#0#11'ParentColor'#8#8'RowCount'#2#5#8'TabOrder'#2#0#5
+  +'Cells'#1#2#6#2#0#2#0#6#6'Number'#2#0#2#1#6#1'1'#2#0#2#2#6#1'2'#2#0#2#3#6#1
+  +'3'#2#0#2#4#6#1'4'#2#1#2#0#6#4'MCSS'#0#0#0#11'TRadioGroup'#22'RadioGroupMCSS'
+  +'Formatsl'#4'Left'#2#3#6'Height'#2#30#3'Top'#2#3#5'Width'#3#232#1#8'AutoFill'
+  +#9#28'ChildSizing.LeftRightSpacing'#2#6#28'ChildSizing.TopBottomSpacing'#2#6
+  +#29'ChildSizing.EnlargeHorizontal'#7#24'crsHomogenousChildResize'#27'ChildSi'
+  +'zing.EnlargeVertical'#7#24'crsHomogenousChildResize'#28'ChildSizing.ShrinkH'
+  +'orizontal'#7#14'crsScaleChilds'#26'ChildSizing.ShrinkVertical'#7#14'crsScal'
+  +'eChilds'#18'ChildSizing.Layout'#7#29'cclTopToBottomThenLeftToRight'#27'Chil'
+  +'dSizing.ControlsPerLine'#2#1#12'ClientHeight'#2#26#11'ClientWidth'#3#228#1
+  +#12'ColumnLayout'#7#24'clVerticalThenHorizontal'#7'Columns'#2#2#9'ItemIndex'
+  +#2#0#13'Items.Strings'#1#6#18'Format as readable'#6#19'Format as parseable'#0
+  +#8'TabOrder'#2#1#0#0#7'TButton'#16'ButtonMCCSCopysl'#4'Left'#2#3#6'Height'#2
+  +#25#3'Top'#3'9'#2#5'Width'#3#232#1#7'Caption'#6#21'Copy all to clipboard'#7
+  +'Enabled'#8#8'TabOrder'#2#2#0#0#0#0#7'TButton'#7'Button1'#4'Left'#2'j'#6'Hei'
+  +'ght'#2#25#3'Top'#3#219#0#5'Width'#2'K'#7'Caption'#6#7'Button1'#7'OnClick'#7
+  ,#12'Button1Click'#8'TabOrder'#2#6#0#0#9'TMainMenu'#15'MainMenuOverall'#6'Ima'
+  +'ges'#7#20'ImageListMenuOverall'#4'left'#3#204#3#0#9'TMenuItem'#12'MenuItemF'
+  +'ile'#7'Caption'#6#4'File'#0#9'TMenuItem'#13'MenuItemClear'#7'Caption'#6#3'N'
+  +'ew'#11'Bitmap.Data'#10#254#9#0#0#250#9#0#0'BM'#250#9#0#0#0#0#0#0'6'#0#0#0'('
+  +#0#0#0#25#0#0#0#25#0#0#0#1#0' '#0#0#0#0#0#196#9#0#0'd'#0#0#0'd'#0#0#0#0#0#0#0
   +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
   +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
-  +#0#0#0#0#0'333'#0'777'#255'888'#255'888'#255'888'#255'888'#255'888'#255'888'
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'333'#0'777'
   +#255'888'#255'888'#255'888'#255'888'#255'888'#255'888'#255'888'#255'888'#255
-  +'888'#255'888'#255'888'#255'888'#255'888'#255'666'#255'222'#0#0#0#0#0#0#0#0#0
-  +'666'#255'GGG'#255'ooo'#255'ooo'#255'ooo'#255'ooo'#255'ooo'#255'ooo'#255'ooo'
+  +'888'#255'888'#255'888'#255'888'#255'888'#255'888'#255'888'#255'888'#255'888'
+  +#255'888'#255'888'#255'666'#255'222'#0#0#0#0#0#0#0#0#0'666'#255'GGG'#255'ooo'
   +#255'ooo'#255'ooo'#255'ooo'#255'ooo'#255'ooo'#255'ooo'#255'ooo'#255'ooo'#255
-  +'ooo'#255'ooo'#255'ooo'#255'ooo'#255'JJJ'#255'666'#255#0#0#0#0#0#0#0#0'666'
-  +#255'hhh'#255#179#179#179#255#179#179#179#255#179#179#179#255#179#179#179#255
-  +#179#179#179#255#179#179#179#255#179#179#179#255#179#179#179#255#176#176#176
-  +#255#160#160#160#255#176#176#176#255#179#179#179#255#179#179#179#255#179#179
-  +#179#255#179#179#179#255#179#179#179#255#179#179#179#255#179#179#179#255#179
-  +#179#179#255'ooo'#255'888'#255#0#0#0#0#0#0#0#0'666'#255'hhh'#255#179#179#179
+  +'ooo'#255'ooo'#255'ooo'#255'ooo'#255'ooo'#255'ooo'#255'ooo'#255'ooo'#255'ooo'
+  +#255'ooo'#255'JJJ'#255'666'#255#0#0#0#0#0#0#0#0'666'#255'hhh'#255#179#179#179
   +#255#179#179#179#255#179#179#179#255#179#179#179#255#179#179#179#255#179#179
-  +#179#255#179#179#179#255#170#170#170#255'DDD'#255'333'#255'CCC'#255#167#167
-  +#167#255#179#179#179#255#179#179#179#255#179#179#179#255#179#179#179#255#179
+  +#179#255#179#179#179#255#179#179#179#255#176#176#176#255#160#160#160#255#176
+  +#176#176#255#179#179#179#255#179#179#179#255#179#179#179#255#179#179#179#255
+  +#179#179#179#255#179#179#179#255#179#179#179#255#179#179#179#255'ooo'#255'88'
+  +'8'#255#0#0#0#0#0#0#0#0'666'#255'hhh'#255#179#179#179#255#179#179#179#255#179
+  +#179#179#255#179#179#179#255#179#179#179#255#179#179#179#255#179#179#179#255
+  +#170#170#170#255'DDD'#255'333'#255'CCC'#255#167#167#167#255#179#179#179#255
+  +#179#179#179#255#179#179#179#255#179#179#179#255#179#179#179#255#179#179#179
+  +#255#179#179#179#255'ooo'#255'888'#255#0#0#0#0#0#0#0#0'666'#255'hhh'#255#179
+  +#179#179#255#179#179#179#255#179#179#179#255#179#179#179#255#179#179#179#255
+  +#179#179#179#255#179#179#179#255#128#128#128#255'333'#255'333'#255'333'#255
+  +'|||'#255#179#179#179#255#179#179#179#255#179#179#179#255#179#179#179#255#179
   +#179#179#255#179#179#179#255#179#179#179#255'ooo'#255'888'#255#0#0#0#0#0#0#0
   +#0'666'#255'hhh'#255#179#179#179#255#179#179#179#255#179#179#179#255#179#179
-  +#179#255#179#179#179#255#179#179#179#255#179#179#179#255#128#128#128#255'333'
-  +#255'333'#255'333'#255'|||'#255#179#179#179#255#179#179#179#255#179#179#179
-  +#255#179#179#179#255#179#179#179#255#179#179#179#255#179#179#179#255'ooo'#255
-  +'888'#255#0#0#0#0#0#0#0#0'666'#255'hhh'#255#179#179#179#255#179#179#179#255
+  +#179#255#179#179#179#255#179#179#179#255#179#179#179#255'www'#255'333'#255'3'
+  +'33'#255'333'#255'ooo'#255#179#179#179#255#179#179#179#255#179#179#179#255
+  +#179#179#179#255#179#179#179#255#179#179#179#255#179#179#179#255'ooo'#255'88'
+  +'8'#255#0#0#0#0#0#0#0#0'666'#255'hhh'#255#179#179#179#255#179#179#179#255#179
+  +#179#179#255#179#179#179#255#179#179#179#255#179#179#179#255#179#179#179#255
+  +'www'#255'333'#255'333'#255'333'#255'ooo'#255#179#179#179#255#179#179#179#255
   +#179#179#179#255#179#179#179#255#179#179#179#255#179#179#179#255#179#179#179
-  +#255'www'#255'333'#255'333'#255'333'#255'ooo'#255#179#179#179#255#179#179#179
-  +#255#179#179#179#255#179#179#179#255#179#179#179#255#179#179#179#255#179#179
+  +#255'ooo'#255'888'#255#0#0#0#0#0#0#0#0'666'#255'hhh'#255#179#179#179#255#179
+  +#179#179#255#179#179#179#255#179#179#179#255#179#179#179#255#179#179#179#255
+  +#179#179#179#255'www'#255'333'#255'333'#255'333'#255'ooo'#255#179#179#179#255
+  +#179#179#179#255#179#179#179#255#179#179#179#255#179#179#179#255#179#179#179
+  +#255#179#179#179#255'ooo'#255'888'#255#0#0#0#0#0#0#0#0'666'#255'hhh'#255#179
+  +#179#179#255#179#179#179#255#179#179#179#255#179#179#179#255#179#179#179#255
+  +#179#179#179#255#179#179#179#255'www'#255'333'#255'333'#255'333'#255'ooo'#255
+  +#179#179#179#255#179#179#179#255#179#179#179#255#179#179#179#255#179#179#179
+  +#255#179#179#179#255#179#179#179#255'ooo'#255'888'#255#0#0#0#0#0#0#0#0'666'
+  +#255'hhh'#255#179#179#179#255#170#170#170#255'ttt'#255'ggg'#255'ggg'#255'ggg'
+  +#255'ggg'#255'NNN'#255'333'#255'333'#255'333'#255'KKK'#255'ggg'#255'ggg'#255
+  +'ggg'#255'ggg'#255'ppp'#255#167#167#167#255#179#179#179#255'ooo'#255'888'#255
+  +#0#0#0#0#0#0#0#0'666'#255'hhh'#255#179#179#179#255'YYY'#255'333'#255'333'#255
+  +'333'#255'333'#255'333'#255'333'#255'333'#255'333'#255'333'#255'333'#255'333'
+  +#255'333'#255'333'#255'333'#255'333'#255'PPP'#255#179#179#179#255'ooo'#255'8'
+  +'88'#255#0#0#0#0#0#0#0#0'666'#255'hhh'#255#179#179#179#255'>>>'#255'333'#255
+  +'333'#255'333'#255'333'#255'333'#255'333'#255'333'#255'333'#255'333'#255'333'
+  +#255'333'#255'333'#255'333'#255'333'#255'333'#255'999'#255#179#179#179#255'o'
+  +'oo'#255'888'#255#0#0#0#0#0#0#0#0'666'#255'hhh'#255#179#179#179#255'hhh'#255
+  +'333'#255'333'#255'333'#255'333'#255'333'#255'333'#255'333'#255'333'#255'333'
+  +#255'333'#255'333'#255'333'#255'333'#255'333'#255'333'#255'ccc'#255#179#179
   +#179#255'ooo'#255'888'#255#0#0#0#0#0#0#0#0'666'#255'hhh'#255#179#179#179#255
-  +#179#179#179#255#179#179#179#255#179#179#179#255#179#179#179#255#179#179#179
-  +#255#179#179#179#255'www'#255'333'#255'333'#255'333'#255'ooo'#255#179#179#179
-  +#255#179#179#179#255#179#179#179#255#179#179#179#255#179#179#179#255#179#179
-  +#179#255#179#179#179#255'ooo'#255'888'#255#0#0#0#0#0#0#0#0'666'#255'hhh'#255
+  +#178#178#178#255#147#147#147#255#136#136#136#255#136#136#136#255#136#136#136
+  +#255#136#136#136#255'```'#255'333'#255'333'#255'333'#255'[[['#255#136#136#136
+  +#255#136#136#136#255#136#136#136#255#136#136#136#255#147#147#147#255#178#178
+  +#178#255#179#179#179#255'ooo'#255'888'#255#0#0#0#0#0#0#0#0'666'#255'hhh'#255
   +#179#179#179#255#179#179#179#255#179#179#179#255#179#179#179#255#179#179#179
   +#255#179#179#179#255#179#179#179#255'www'#255'333'#255'333'#255'333'#255'ooo'
   +#255#179#179#179#255#179#179#179#255#179#179#179#255#179#179#179#255#179#179
-  +#179#255#179#179#179#255#179#179#179#255'ooo'#255'888'#255#0#0#0#0#0#0#0#0'6'
+  ,#179#255#179#179#179#255#179#179#179#255'ooo'#255'888'#255#0#0#0#0#0#0#0#0'6'
   +'66'#255'hhh'#255#179#179#179#255#179#179#179#255#179#179#179#255#179#179#179
   +#255#179#179#179#255#179#179#179#255#179#179#179#255'www'#255'333'#255'333'
   +#255'333'#255'ooo'#255#179#179#179#255#179#179#179#255#179#179#179#255#179
   +#179#179#255#179#179#179#255#179#179#179#255#179#179#179#255'ooo'#255'888'
-  +#255#0#0#0#0#0#0#0#0'666'#255'hhh'#255#179#179#179#255#170#170#170#255'ttt'
-  +#255'ggg'#255'ggg'#255'ggg'#255'ggg'#255'NNN'#255'333'#255'333'#255'333'#255
-  +'KKK'#255'ggg'#255'ggg'#255'ggg'#255'ggg'#255'ppp'#255#167#167#167#255#179
-  +#179#179#255'ooo'#255'888'#255#0#0#0#0#0#0#0#0'666'#255'hhh'#255#179#179#179
-  +#255'YYY'#255'333'#255'333'#255'333'#255'333'#255'333'#255'333'#255'333'#255
-  +'333'#255'333'#255'333'#255'333'#255'333'#255'333'#255'333'#255'333'#255'PPP'
+  +#255#0#0#0#0#0#0#0#0'666'#255'hhh'#255#179#179#179#255#179#179#179#255#179
+  +#179#179#255#179#179#179#255#179#179#179#255#179#179#179#255#179#179#179#255
+  +'www'#255'333'#255'333'#255'333'#255'ooo'#255#179#179#179#255#179#179#179#255
+  +#179#179#179#255#179#179#179#255#179#179#179#255#179#179#179#255#179#179#179
+  +#255'ooo'#255'888'#255#0#0#0#0#0#0#0#0'666'#255'hhh'#255#179#179#179#255#179
+  +#179#179#255#179#179#179#255#179#179#179#255#179#179#179#255#179#179#179#255
+  +#179#179#179#255'www'#255'333'#255'333'#255'333'#255'qqq'#255#179#179#179#255
+  +#179#179#179#255#179#179#179#255#179#179#179#255#179#179#179#255#179#179#179
   +#255#179#179#179#255'ooo'#255'888'#255#0#0#0#0#0#0#0#0'666'#255'hhh'#255#179
-  +#179#179#255'>>>'#255'333'#255'333'#255'333'#255'333'#255'333'#255'333'#255
-  +'333'#255'333'#255'333'#255'333'#255'333'#255'333'#255'333'#255'333'#255'333'
-  +#255'999'#255#179#179#179#255'ooo'#255'888'#255#0#0#0#0#0#0#0#0'666'#255'hhh'
-  +#255#179#179#179#255'hhh'#255'333'#255'333'#255'333'#255'333'#255'333'#255'3'
-  +'33'#255'333'#255'333'#255'333'#255'333'#255'333'#255'333'#255'333'#255'333'
-  +#255'333'#255'ccc'#255#179#179#179#255'ooo'#255'888'#255#0#0#0#0#0#0#0#0'666'
-  +#255'hhh'#255#179#179#179#255#178#178#178#255#147#147#147#255#136#136#136#255
-  +#136#136#136#255#136#136#136#255#136#136#136#255'```'#255'333'#255'333'#255
-  +'333'#255'[[['#255#136#136#136#255#136#136#136#255#136#136#136#255#136#136
-  +#136#255#147#147#147#255#178#178#178#255#179#179#179#255'ooo'#255'888'#255#0
-  +#0#0#0#0#0#0#0'666'#255'hhh'#255#179#179#179#255#179#179#179#255#179#179#179
-  +#255#179#179#179#255#179#179#179#255#179#179#179#255#179#179#179#255'www'#255
-  +'333'#255'333'#255'333'#255'ooo'#255#179#179#179#255#179#179#179#255#179#179
-  ,#179#255#179#179#179#255#179#179#179#255#179#179#179#255#179#179#179#255'ooo'
-  +#255'888'#255#0#0#0#0#0#0#0#0'666'#255'hhh'#255#179#179#179#255#179#179#179
-  +#255#179#179#179#255#179#179#179#255#179#179#179#255#179#179#179#255#179#179
-  +#179#255'www'#255'333'#255'333'#255'333'#255'ooo'#255#179#179#179#255#179#179
-  +#179#255#179#179#179#255#179#179#179#255#179#179#179#255#179#179#179#255#179
-  +#179#179#255'ooo'#255'888'#255#0#0#0#0#0#0#0#0'666'#255'hhh'#255#179#179#179
-  +#255#179#179#179#255#179#179#179#255#179#179#179#255#179#179#179#255#179#179
-  +#179#255#179#179#179#255'www'#255'333'#255'333'#255'333'#255'ooo'#255#179#179
-  +#179#255#179#179#179#255#179#179#179#255#179#179#179#255#179#179#179#255#179
-  +#179#179#255#179#179#179#255'ooo'#255'888'#255#0#0#0#0#0#0#0#0'666'#255'hhh'
-  +#255#179#179#179#255#179#179#179#255#179#179#179#255#179#179#179#255#179#179
-  +#179#255#179#179#179#255#179#179#179#255'www'#255'333'#255'333'#255'333'#255
-  +'qqq'#255#179#179#179#255#179#179#179#255#179#179#179#255#179#179#179#255#179
-  +#179#179#255#179#179#179#255#179#179#179#255'ooo'#255'888'#255#0#0#0#0#0#0#0
-  +#0'666'#255'hhh'#255#179#179#179#255#179#179#179#255#179#179#179#255#179#179
-  +#179#255#179#179#179#255#179#179#179#255#179#179#179#255#136#136#136#255'333'
-  +#255'333'#255'333'#255#131#131#131#255#179#179#179#255#179#179#179#255#179
   +#179#179#255#179#179#179#255#179#179#179#255#179#179#179#255#179#179#179#255
-  +'ooo'#255'888'#255#0#0#0#0#0#0#0#0'666'#255'hhh'#255#179#179#179#255#179#179
-  +#179#255#179#179#179#255#179#179#179#255#179#179#179#255#179#179#179#255#179
-  +#179#179#255#177#177#177#255'ccc'#255'AAA'#255'aaa'#255#175#175#175#255#179
-  +#179#179#255#179#179#179#255#179#179#179#255#179#179#179#255#179#179#179#255
-  +#179#179#179#255#179#179#179#255'ooo'#255'888'#255#0#0#0#0#0#0#0#0'666'#255
-  +'hhh'#255#179#179#179#255#179#179#179#255#179#179#179#255#179#179#179#255#179
-  +#179#179#255#179#179#179#255#179#179#179#255#179#179#179#255#179#179#179#255
+  +#179#179#179#255#179#179#179#255#136#136#136#255'333'#255'333'#255'333'#255
+  +#131#131#131#255#179#179#179#255#179#179#179#255#179#179#179#255#179#179#179
+  +#255#179#179#179#255#179#179#179#255#179#179#179#255'ooo'#255'888'#255#0#0#0
+  +#0#0#0#0#0'666'#255'hhh'#255#179#179#179#255#179#179#179#255#179#179#179#255
+  +#179#179#179#255#179#179#179#255#179#179#179#255#179#179#179#255#177#177#177
+  +#255'ccc'#255'AAA'#255'aaa'#255#175#175#175#255#179#179#179#255#179#179#179
+  +#255#179#179#179#255#179#179#179#255#179#179#179#255#179#179#179#255#179#179
+  +#179#255'ooo'#255'888'#255#0#0#0#0#0#0#0#0'666'#255'hhh'#255#179#179#179#255
   +#179#179#179#255#179#179#179#255#179#179#179#255#179#179#179#255#179#179#179
   +#255#179#179#179#255#179#179#179#255#179#179#179#255#179#179#179#255#179#179
-  +#179#255'ooo'#255'888'#255#0#0#0#0#0#0#0#0'444'#255'888'#255'JJJ'#255'JJJ'
-  +#255'JJJ'#255'JJJ'#255'JJJ'#255'JJJ'#255'JJJ'#255'JJJ'#255'JJJ'#255'JJJ'#255
-  +'JJJ'#255'JJJ'#255'JJJ'#255'JJJ'#255'JJJ'#255'JJJ'#255'JJJ'#255'JJJ'#255'JJJ'
-  +#255':::'#255'333'#255#0#0#0#0#0#0#0#0'333'#0'333'#0'333'#255'333'#255'333'
-  +#255'333'#255'333'#255'333'#255'333'#255'333'#255'333'#255'333'#255'333'#255
-  +'333'#255'333'#255'333'#255'333'#255'333'#255'333'#255'333'#255'333'#255'222'
-  +#0'+++'#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
-  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
-  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#4'Hint'#6#30
-  +'Clear input and output fields.'#10'ImageIndex'#2#0#8'ShortCut'#3'N@'#7'OnCl'
-  +'ick'#7#18'MenuItemClearClick'#0#0#9'TMenuItem'#12'MenuItemOpen'#7'Caption'#6
-  +#4'Open'#7'Enabled'#8#11'Bitmap.Data'#10#254#9#0#0#250#9#0#0'BM'#250#9#0#0#0
-  +#0#0#0'6'#0#0#0'('#0#0#0#25#0#0#0#25#0#0#0#1#0' '#0#0#0#0#0#196#9#0#0'd'#0#0
-  +#0'd'#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'MMM'#0'KKK'#0'KKK'#0'KKK'#0'KKK'#0'KKK'#0
-  +'KKK'#0'KKK'#0'KKK'#0'KKK'#0'KKK'#0'KKK'#0'KKK'#0'KKK'#0'KKK'#0'KKK'#0'MMM'#0
-  +'QQQ'#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'KKK'#0'RRR'#255'ddd'
-  +#255'ddd'#255'ddd'#255'ddd'#255'ddd'#255'ddd'#255'ddd'#255'ddd'#255'ddd'#255
-  +'ddd'#255'ddd'#255'ddd'#255'ddd'#255'ddd'#255'ddd'#255'ZZZ'#255'QQQ'#255#0#0
-  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'KKK'#0'```'#255'zzz'#255'ppp'
-  +#255'sss'#255'sss'#255'sss'#255'sss'#255'sss'#255'sss'#255'sss'#255'sss'#255
-  +'sss'#255'sss'#255'sss'#255'rrr'#255'www'#255'ppp'#255'QQQ'#255#0#0#0#0#0#0#0
-  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'KKK'#0'```'#255'qqq'#255#180#180#180#255
-  +#195#195#195#255#195#195#195#255#195#195#195#255#195#195#195#255#195#195#195
-  +#255#195#195#195#255#195#195#195#255#195#195#195#255#195#195#195#255#195#195
-  +#195#255#195#195#195#255#195#195#195#255'www'#255'ppp'#255'QQQ'#255#0#0#0#0#0
-  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'KKK'#0'```'#255'qqq'#255#181#181#181
-  +#255#195#195#195#255#195#195#195#255#195#195#195#255#195#195#195#255#195#195
-  +#195#255#195#195#195#255#195#195#195#255#195#195#195#255#195#195#195#255#195
-  +#195#195#255#195#195#195#255#195#195#195#255'xxx'#255'ppp'#255'QQQ'#255#0#0#0
-  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'KKK'#0'```'#255'qqq'#255#181#181
-  +#181#255#195#195#195#255#195#195#195#255#195#195#195#255#195#195#195#255#195
-  +#195#195#255#195#195#195#255#195#195#195#255#195#195#195#255#195#195#195#255
-  +#195#195#195#255#195#195#195#255#195#195#195#255'xxx'#255'ppp'#255'QQQ'#255#0
-  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'KKK'#0'```'#255'qqq'#255#181
-  +#181#181#255#195#195#195#255#195#195#195#255#195#195#195#255#195#195#195#255
-  +#195#195#195#255#195#195#195#255#195#195#195#255#195#195#195#255#195#195#195
-  +#255#195#195#195#255#195#195#195#255#195#195#195#255'xxx'#255'ppp'#255'QQQ'
-  ,#255#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'KKK'#0'```'#255'qqq'#255
-  +#181#181#181#255#195#195#195#255#195#195#195#255#195#195#195#255#195#195#195
-  +#255#195#195#195#255#195#195#195#255#195#195#195#255#195#195#195#255#195#195
-  +#195#255#195#195#195#255#195#195#195#255#195#195#195#255'xxx'#255'ppp'#255'Q'
-  +'QQ'#255#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'KKK'#0'```'#255'qqq'
-  +#255#181#181#181#255#195#195#195#255#195#195#195#255#195#195#195#255#195#195
-  +#195#255#195#195#195#255#195#195#195#255#195#195#195#255#195#195#195#255#195
-  +#195#195#255#195#195#195#255#195#195#195#255#195#195#195#255'xxx'#255'ppp'
-  +#255'QQQ'#255#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'KKK'#0'```'#255
-  +'qqq'#255#181#181#181#255#195#195#195#255#195#195#195#255#195#195#195#255#195
-  +#195#195#255#195#195#195#255#195#195#195#255#195#195#195#255#195#195#195#255
-  +#190#190#190#255'uuu'#255#168#168#168#255#195#195#195#255'xxx'#255'ppp'#255
-  +'QQQ'#255#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'KKK'#0'```'#255'qq'
-  +'q'#255#181#181#181#255#195#195#195#255#195#195#195#255#195#195#195#255#195
-  +#195#195#255#195#195#195#255#195#195#195#255#195#195#195#255#190#190#190#255
-  +'[[['#255'333'#255'jjj'#255#195#195#195#255'xxx'#255'ppp'#255'QQQ'#255#0#0#0
-  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'KKK'#0'```'#255'uuu'#255#130#130
-  +#130#255#141#141#141#255#141#141#141#255#141#141#141#255#141#141#141#255#141
-  +#141#141#255#141#141#141#255#138#138#138#255'LLL'#255'444'#255'333'#255']]]'
-  +#255#142#142#142#255'qqq'#255'ppp'#255'QQQ'#255#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
-  +#0#0#0#0#0#0#0#0#0'KKK'#0'```'#255''#255'{{{'#255'xxx'#255'xxx'#255'xxx'
-  +#255'xxx'#255'xxx'#255'vvv'#255'FFF'#255'333'#255'ddd'#255'333'#255'333'#255
-  +'<<<'#255'HHH'#255'UUU'#255'NNN'#255#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
-  +#0#0#0#0'KKK'#0'```'#255''#255''#255'rrr'#255'[[['#255'^^^'#255'^^^'
-  +#255'^^^'#255'EEE'#255'333'#255'aaa'#255''#255'ccc'#255'VVV'#255'TTT'#255
-  +'DDD'#255'333'#255'444'#255'444'#255'@@@'#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
-  +'KKK'#0'```'#255''#255''#255'eee'#255#168#168#168#255'uuu'#255'uuu'#255
-  +#166#166#166#255#135#135#135#255'333'#255'NNN'#255''#255'ooo'#255'mmm'#255
-  +'{{{'#255''#255'uuu'#255'PPP'#255'333'#255'444'#255'@@@'#0#0#0#0#0#0#0#0#0
-  +#0#0#0#0'KKK'#0'```'#255''#255''#255'eee'#255#148#148#148#255'sss'#255
-  +''#255#129#129#129#255#191#191#191#255#129#129#129#255'333'#255'YYY'#255
-  +'333'#255'333'#255'444'#255'GGG'#255'fff'#255'~~~'#255'eee'#255'444'#255'555'
-  +#255#0#0#0#0#0#0#0#0#0#0#0#0'KKK'#0'```'#255''#255''#255'eee'#255#148
-  +#148#148#255'sss'#255''#255#129#129#129#255#191#191#191#255#191#191#191
-  +#255'kkk'#255'333'#255'333'#255'III'#255'ZZZ'#255'>>>'#255'333'#255'DDD'#255
-  +'rrr'#255'eee'#255'333'#255'222'#0#0#0#0#0#0#0#0#0'KKK'#0'```'#255''#255
-  +''#255'eee'#255#164#164#164#255'lll'#255'ooo'#255#153#153#153#255#191#191
-  +#191#255#191#191#191#255#188#188#188#255'BBB'#255'333'#255'TTT'#255''#255
-  +'aaa'#255'CCC'#255'444'#255'555'#255'hhh'#255'MMM'#255'444'#255'999'#0#0#0#0
-  +#0'MMM'#0'OOO'#255'[[['#255'[[['#255'VVV'#255'kkk'#255'nnn'#255'nnn'#255'nnn'
-  +#255'nnn'#255'nnn'#255'nnn'#255'VVV'#255';;;'#255'PPP'#255'QQQ'#255'NNN'#255
-  +'KKK'#0'999'#0'333'#255'333'#255'YYY'#255'333'#255'333'#0#0#0#0#0#0#0#0#0'NN'
-  +'N'#0'KKK'#0'KKK'#0'KKK'#0'KKK'#0'KKK'#0'KKK'#0'KKK'#0'KKK'#0'KKK'#0'KKK'#0
-  +'KKK'#0'KKK'#0'KKK'#0'LLL'#0'PPP'#0#0#0#0#0#0#0#0#0'+++'#0'333'#255'444'#255
-  +'666'#255'333'#255#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
-  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
-  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'+++'#0'444'#255'333'#255'333'#255'111'#0#0
+  +#179#255#179#179#179#255#179#179#179#255#179#179#179#255#179#179#179#255#179
+  +#179#179#255#179#179#179#255#179#179#179#255#179#179#179#255'ooo'#255'888'
+  +#255#0#0#0#0#0#0#0#0'444'#255'888'#255'JJJ'#255'JJJ'#255'JJJ'#255'JJJ'#255'J'
+  +'JJ'#255'JJJ'#255'JJJ'#255'JJJ'#255'JJJ'#255'JJJ'#255'JJJ'#255'JJJ'#255'JJJ'
+  +#255'JJJ'#255'JJJ'#255'JJJ'#255'JJJ'#255'JJJ'#255'JJJ'#255':::'#255'333'#255
+  +#0#0#0#0#0#0#0#0'333'#0'333'#0'333'#255'333'#255'333'#255'333'#255'333'#255
+  +'333'#255'333'#255'333'#255'333'#255'333'#255'333'#255'333'#255'333'#255'333'
+  +#255'333'#255'333'#255'333'#255'333'#255'333'#255'222'#0'+++'#0#0#0#0#0#0#0#0
   +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
   +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
-  +#0#0#0#0#0#0#0'111'#0'333'#255'333'#255'444'#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
-  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
-  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'444'
-  +#255'333'#255'333'#255#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
-  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
-  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'333'#0'333'#255'333'#255#0#0#0
-  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
-  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
-  +#0#0#0#0#0#0#0#0#0#0#0#0#0'333'#0'000'#0#4'Hint'#6#12'Open a file.'#10'Image'
-  +'Index'#2#1#8'ShortCut'#3'O@'#7'OnClick'#7#17'MenuItemOpenClick'#0#0#9'TMenu'
-  +'Item'#16'MenuItemSaveInAs'#7'Caption'#6#13'Save Input As'#7'Enabled'#8#11'B'
-  +'itmap.Data'#10#254#9#0#0#250#9#0#0'BM'#250#9#0#0#0#0#0#0'6'#0#0#0'('#0#0#0
-  +#25#0#0#0#25#0#0#0#1#0' '#0#0#0#0#0#196#9#0#0'd'#0#0#0'd'#0#0#0#0#0#0#0#0#0#0
-  +#0#0#0#0#0'MMM'#0'KKK'#0'KKK'#0'KKK'#0'KKK'#0'KKK'#0'KKK'#0'KKK'#0'KKK'#0'KK'
-  +'K'#0'KKK'#0'KKK'#0'KKK'#0'KKK'#0'KKK'#0'KKK'#0'MMM'#0'QQQ'#0#0#0#0#0#0#0#0#0
-  ,#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'KKK'#0'RRR'#255'ddd'#255'ddd'#255'ddd'#255
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#4'Hint'#6#30'Clear input and outp'
+  +'ut fields.'#10'ImageIndex'#2#0#8'ShortCut'#3'N@'#7'OnClick'#7#18'MenuItemCl'
+  +'earClick'#0#0#9'TMenuItem'#12'MenuItemOpen'#7'Caption'#6#4'Open'#7'Enabled'
+  +#8#11'Bitmap.Data'#10#254#9#0#0#250#9#0#0'BM'#250#9#0#0#0#0#0#0'6'#0#0#0'('#0
+  +#0#0#25#0#0#0#25#0#0#0#1#0' '#0#0#0#0#0#196#9#0#0'd'#0#0#0'd'#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0'MMM'#0'KKK'#0'KKK'#0'KKK'#0'KKK'#0'KKK'#0'KKK'#0'KKK'#0'KKK'#0
+  +'KKK'#0'KKK'#0'KKK'#0'KKK'#0'KKK'#0'KKK'#0'KKK'#0'MMM'#0'QQQ'#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'KKK'#0'RRR'#255'ddd'#255'ddd'#255'ddd'#255
   +'ddd'#255'ddd'#255'ddd'#255'ddd'#255'ddd'#255'ddd'#255'ddd'#255'ddd'#255'ddd'
   +#255'ddd'#255'ddd'#255'ddd'#255'ZZZ'#255'QQQ'#255#0#0#0#0#0#0#0#0#0#0#0#0#0#0
   +#0#0#0#0#0#0#0#0#0#0'KKK'#0'```'#255'zzz'#255'ppp'#255'sss'#255'sss'#255'sss'
@@ -343,7 +257,7 @@ LazarusResources.Add('TTFTAMainWindow','FORMDATA',[
   +#195#195#195#255#195#195#195#255#195#195#195#255#195#195#195#255#195#195#195
   +#255#195#195#195#255#195#195#195#255#195#195#195#255#195#195#195#255#195#195
   +#195#255#195#195#195#255'xxx'#255'ppp'#255'QQQ'#255#0#0#0#0#0#0#0#0#0#0#0#0#0
-  +#0#0#0#0#0#0#0#0#0#0#0'KKK'#0'```'#255'qqq'#255#181#181#181#255#195#195#195
+  ,#0#0#0#0#0#0#0#0#0#0#0'KKK'#0'```'#255'qqq'#255#181#181#181#255#195#195#195
   +#255#195#195#195#255#195#195#195#255#195#195#195#255#195#195#195#255#195#195
   +#195#255#195#195#195#255#195#195#195#255#195#195#195#255#195#195#195#255#195
   +#195#195#255#195#195#195#255'xxx'#255'ppp'#255'QQQ'#255#0#0#0#0#0#0#0#0#0#0#0
@@ -353,425 +267,511 @@ LazarusResources.Add('TTFTAMainWindow','FORMDATA',[
   +#195#195#195#255#195#195#195#255'xxx'#255'ppp'#255'QQQ'#255#0#0#0#0#0#0#0#0#0
   +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'KKK'#0'```'#255'qqq'#255#181#181#181#255#195
   +#195#195#255#195#195#195#255#195#195#195#255#195#195#195#255#195#195#195#255
-  +#153#153#153#255#134#134#134#255#195#195#195#255#195#195#195#255#195#195#195
-  +#255#195#195#195#255#195#195#195#255'xxx'#255'ppp'#255'QQQ'#255#0#0#0#0#0#0#0
-  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'KKK'#0'```'#255'qqq'#255#181#181#181#255
-  +#195#195#195#255#195#195#195#255#195#195#195#255#195#195#195#255#195#195#195
-  +#255'444'#255'333'#255#170#170#170#255#195#195#195#255#195#195#195#255#195
-  +#195#195#255#195#195#195#255'xxx'#255'ppp'#255'QQQ'#255#0#0#0#0#0#0#0#0#0#0#0
-  +#0#0#0#0#0#0#0#0#0#0#0#0#0'KKK'#0'```'#255'uuu'#255#130#130#130#255#141#141
-  +#141#255#141#141#141#255#141#141#141#255#141#141#141#255#141#141#141#255']]]'
-  +#255'333'#255'HHH'#255#141#141#141#255#141#141#141#255#141#141#141#255#142
-  +#142#142#255'qqq'#255'ppp'#255'QQQ'#255#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
-  +#0#0#0#0#0'KKK'#0'```'#255''#255'{{{'#255'xxx'#255'xxx'#255'xxx'#255'xxx'
-  +#255'xxx'#255'eee'#255'333'#255'333'#255'ccc'#255'xxx'#255'xxx'#255'yyy'#255
-  +''#255'ppp'#255'QQQ'#255#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
-  +'KKK'#0'```'#255''#255''#255'rrr'#255'[[['#255'^^^'#255'^^^'#255'^^^'
-  +#255'\\\'#255'333'#255'333'#255'666'#255'ttt'#255''#255''#255''#255
-  +'ppp'#255'QQQ'#255#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'KKK'#0'``'
-  +'`'#255''#255''#255'eee'#255#168#168#168#255'uuu'#255'uuu'#255#166#166
-  +#166#255#191#191#191#255'[[['#255':::'#255'<<<'#255'==='#255'uuu'#255''
-  +#255''#255'ppp'#255'QQQ'#255'UUU'#0'UUU'#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +#195#195#195#255#195#195#195#255#195#195#195#255#190#190#190#255'uuu'#255#168
+  +#168#168#255#195#195#195#255'xxx'#255'ppp'#255'QQQ'#255#0#0#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0'KKK'#0'```'#255'qqq'#255#181#181#181#255#195#195
+  +#195#255#195#195#195#255#195#195#195#255#195#195#195#255#195#195#195#255#195
+  +#195#195#255#195#195#195#255#190#190#190#255'[[['#255'333'#255'jjj'#255#195
+  +#195#195#255'xxx'#255'ppp'#255'QQQ'#255#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0'KKK'#0'```'#255'uuu'#255#130#130#130#255#141#141#141#255#141#141
+  +#141#255#141#141#141#255#141#141#141#255#141#141#141#255#141#141#141#255#138
+  +#138#138#255'LLL'#255'444'#255'333'#255']]]'#255#142#142#142#255'qqq'#255'pp'
+  +'p'#255'QQQ'#255#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'KKK'#0'```'
+  +#255''#255'{{{'#255'xxx'#255'xxx'#255'xxx'#255'xxx'#255'xxx'#255'vvv'#255
+  +'FFF'#255'333'#255'ddd'#255'333'#255'333'#255'<<<'#255'HHH'#255'UUU'#255'NNN'
+  +#255#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'KKK'#0'```'#255''#255
+  +''#255'rrr'#255'[[['#255'^^^'#255'^^^'#255'^^^'#255'EEE'#255'333'#255'aaa'
+  +#255''#255'ccc'#255'VVV'#255'TTT'#255'DDD'#255'333'#255'444'#255'444'#255
+  +'@@@'#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'KKK'#0'```'#255''#255''#255'ee'
+  +'e'#255#168#168#168#255'uuu'#255'uuu'#255#166#166#166#255#135#135#135#255'33'
+  +'3'#255'NNN'#255''#255'ooo'#255'mmm'#255'{{{'#255''#255'uuu'#255'PPP'
+  +#255'333'#255'444'#255'@@@'#0#0#0#0#0#0#0#0#0#0#0#0#0'KKK'#0'```'#255''
+  +#255''#255'eee'#255#148#148#148#255'sss'#255''#255#129#129#129#255#191
+  +#191#191#255#129#129#129#255'333'#255'YYY'#255'333'#255'333'#255'444'#255'GG'
+  +'G'#255'fff'#255'~~~'#255'eee'#255'444'#255'555'#255#0#0#0#0#0#0#0#0#0#0#0#0
   +'KKK'#0'```'#255''#255''#255'eee'#255#148#148#148#255'sss'#255''#255
-  +#129#129#129#255#191#191#191#255#148#148#148#255'333'#255'___'#255':::'#255
-  +':::'#255'lll'#255''#255'ppp'#255'QQQ'#255'222'#0'333'#255'333'#0#0#0#0#0
-  +#0#0#0#0#0#0#0#0'KKK'#0'```'#255''#255''#255'eee'#255#148#148#148#255
-  +'sss'#255''#255#129#129#129#255#191#191#191#255#190#190#190#255'PPP'#255
-  +'CCC'#255'vvv'#255'@@@'#255'333'#255'NNN'#255'UUU'#255'NNN'#255'333'#255'333'
-  +#255'555'#255'777'#0#0#0#0#0#0#0#0#0'KKK'#0'```'#255''#255''#255'eee'
-  +#255#164#164#164#255'lll'#255'ooo'#255#153#153#153#255#191#191#191#255#191
-  +#191#191#255#163#163#163#255'555'#255'UUU'#255'}}}'#255'YYY'#255'555'#255'33'
-  +'3'#255'444'#255'333'#255'333'#255'777'#255'333'#255'333'#0#0#0#0#0'MMM'#0'O'
-  +'OO'#255'[[['#255'[[['#255'VVV'#255'kkk'#255'nnn'#255'nnn'#255'nnn'#255'nnn'
-  +#255'nnn'#255'nnn'#255'III'#255'333'#255'QQQ'#255'}}}'#255'zzz'#255'^^^'#255
-  +'GGG'#255'333'#255'999'#255'jjj'#255'333'#255'222'#255#0#0#0#0#0#0#0#0'NNN'#0
-  ,'KKK'#0'KKK'#0'KKK'#0'KKK'#0'KKK'#0'KKK'#0'KKK'#0'KKK'#0'KKK'#0'KKK'#0'KKK'#0
-  +'999'#255'333'#255'<<<'#255'___'#255'zzz'#255''#255''#255''#255''
-  +#255']]]'#255'333'#255'222'#255#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
-  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'111'#0'44'
-  +'4'#255'333'#255'333'#255'<<<'#255':::'#255'LLL'#255''#255'MMM'#255'333'
-  +#255'222'#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
-  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'333'#0'444'#0
-  +'333'#255'333'#255'333'#255'MMM'#255'333'#255'222'#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +#129#129#129#255#191#191#191#255#191#191#191#255'kkk'#255'333'#255'333'#255
+  +'III'#255'ZZZ'#255'>>>'#255'333'#255'DDD'#255'rrr'#255'eee'#255'333'#255'222'
+  +#0#0#0#0#0#0#0#0#0'KKK'#0'```'#255''#255''#255'eee'#255#164#164#164#255
+  +'lll'#255'ooo'#255#153#153#153#255#191#191#191#255#191#191#191#255#188#188
+  +#188#255'BBB'#255'333'#255'TTT'#255''#255'aaa'#255'CCC'#255'444'#255'555'
+  +#255'hhh'#255'MMM'#255'444'#255'999'#0#0#0#0#0'MMM'#0'OOO'#255'[[['#255'[[['
+  +#255'VVV'#255'kkk'#255'nnn'#255'nnn'#255'nnn'#255'nnn'#255'nnn'#255'nnn'#255
+  +'VVV'#255';;;'#255'PPP'#255'QQQ'#255'NNN'#255'KKK'#0'999'#0'333'#255'333'#255
+  +'YYY'#255'333'#255'333'#0#0#0#0#0#0#0#0#0'NNN'#0'KKK'#0'KKK'#0'KKK'#0'KKK'#0
+  +'KKK'#0'KKK'#0'KKK'#0'KKK'#0'KKK'#0'KKK'#0'KKK'#0'KKK'#0'KKK'#0'LLL'#0'PPP'#0
+  +#0#0#0#0#0#0#0#0'+++'#0'333'#255'444'#255'666'#255'333'#255#0#0#0#0#0#0#0#0#0
   +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
-  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'444'#255'333'
-  +#255'333'#255'222'#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'+'
+  +'++'#0'444'#255'333'#255'333'#255'111'#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
   +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
-  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'333'#255'333'#255'222'#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'111'#0'333'#255'333'
+  +#255'444'#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'444'#255'333'#255'333'#255#0#0#0#0#0#0#0#0
   +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
   +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
-  +#0#0#0#0'333'#0'444'#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#4'Hint'#6')Save the i'
-  +'nput temporal term into a file.'#10'ImageIndex'#2#2#8'ShortCut'#3'S@'#7'OnC'
-  +'lick'#7#21'MenuItemSaveInAsClick'#0#0#9'TMenuItem'#17'MenuItemSaveOutAs'#7
-  +'Caption'#6#14'Save Output As'#7'Enabled'#8#11'Bitmap.Data'#10#254#9#0#0#250
-  +#9#0#0'BM'#250#9#0#0#0#0#0#0'6'#0#0#0'('#0#0#0#25#0#0#0#25#0#0#0#1#0' '#0#0#0
-  +#0#0#196#9#0#0'd'#0#0#0'd'#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'UUU'#0'666'
-  +#0'555'#0'555'#0'555'#0'555'#0'555'#0'555'#0'555'#0'555'#0'555'#0'555'#0'555'
-  +#0'555'#0'555'#0'555'#0'555'#0'555'#0'555'#0'555'#0'@@@'#0#0#0#0#0#0#0#0#0#0
-  +#0#0#0'666'#0'555'#255'333'#255'333'#255'333'#255'333'#255'333'#255'333'#255
-  +'333'#255'333'#255'333'#255'333'#255'333'#255'333'#255'333'#255'333'#255'333'
-  +#255'333'#255'333'#255'333'#255'333'#255'444'#255'444'#0#0#0#0#0#0#0#0#0'444'
-  +#0'888'#255'ooo'#255'ppp'#255'ppp'#255'ppp'#255'ppp'#255'ppp'#255'ppp'#255'p'
-  +'pp'#255'ppp'#255'ppp'#255'ppp'#255'ppp'#255'ppp'#255'ppp'#255'ppp'#255'ppp'
-  +#255'ppp'#255'ppp'#255'ooo'#255'EEE'#255'444'#255#0#0#0#0#0#0#0#0'333'#0':::'
-  +#255''#255'hhh'#255'ppp'#255'rrr'#255'rrr'#255'rrr'#255'rrr'#255'rrr'#255
-  +'rrr'#255'rrr'#255'rrr'#255'rrr'#255'rrr'#255'rrr'#255'rrr'#255'rrr'#255'rrr'
-  +#255'eee'#255''#255'NNN'#255'333'#255#0#0#0#0#0#0#0#0'333'#0':::'#255''
-  +#255'kkk'#255#195#195#195#255#195#195#195#255#195#195#195#255#195#195#195#255
+  +#0#0#0#0'333'#0'333'#255'333'#255#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'333'#0'000'
+  +#0#4'Hint'#6#12'Open a file.'#10'ImageIndex'#2#1#8'ShortCut'#3'O@'#7'OnClick'
+  +#7#17'MenuItemOpenClick'#0#0#9'TMenuItem'#16'MenuItemSaveInAs'#7'Caption'#6
+  +#13'Save Input As'#7'Enabled'#8#11'Bitmap.Data'#10#254#9#0#0#250#9#0#0'BM'
+  +#250#9#0#0#0#0#0#0'6'#0#0#0'('#0#0#0#25#0#0#0#25#0#0#0#1#0' '#0#0#0#0#0#196#9
+  +#0#0'd'#0#0#0'd'#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'MMM'#0'KKK'#0'KKK'#0'KKK'#0'K'
+  +'KK'#0'KKK'#0'KKK'#0'KKK'#0'KKK'#0'KKK'#0'KKK'#0'KKK'#0'KKK'#0'KKK'#0'KKK'#0
+  +'KKK'#0'MMM'#0'QQQ'#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'KKK'#0
+  ,'RRR'#255'ddd'#255'ddd'#255'ddd'#255'ddd'#255'ddd'#255'ddd'#255'ddd'#255'ddd'
+  +#255'ddd'#255'ddd'#255'ddd'#255'ddd'#255'ddd'#255'ddd'#255'ddd'#255'ZZZ'#255
+  +'QQQ'#255#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'KKK'#0'```'#255'zz'
+  +'z'#255'ppp'#255'sss'#255'sss'#255'sss'#255'sss'#255'sss'#255'sss'#255'sss'
+  +#255'sss'#255'sss'#255'sss'#255'sss'#255'rrr'#255'www'#255'ppp'#255'QQQ'#255
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'KKK'#0'```'#255'qqq'#255#180
+  +#180#180#255#195#195#195#255#195#195#195#255#195#195#195#255#195#195#195#255
   +#195#195#195#255#195#195#195#255#195#195#195#255#195#195#195#255#195#195#195
-  +#255#195#195#195#255#194#194#194#255#141#141#141#255'~~~'#255#140#140#140#255
-  +#194#194#194#255#130#130#130#255'www'#255'NNN'#255'333'#255#0#0#0#0#0#0#0#0
-  +'333'#0':::'#255''#255'kkk'#255#195#195#195#255#195#195#195#255#195#195
-  +#195#255#195#195#195#255#195#195#195#255#195#195#195#255#195#195#195#255#195
-  +#195#195#255#195#195#195#255#195#195#195#255#190#190#190#255'ggg'#255'333'
-  +#255'aaa'#255#188#188#188#255#131#131#131#255'vvv'#255'NNN'#255'333'#255#0#0
-  +#0#0#0#0#0#0'333'#0':::'#255''#255'kkk'#255#195#195#195#255#184#184#184
-  +#255']]]'#255'@@@'#255'kkk'#255'VVV'#255#170#170#170#255']]]'#255'@@@'#255'X'
-  +'XX'#255#177#177#177#255#195#195#195#255'333'#255#187#187#187#255#195#195#195
-  +#255#131#131#131#255'vvv'#255'NNN'#255'333'#255#0#0#0#0#0#0#0#0'333'#0':::'
-  +#255''#255'kkk'#255#195#195#195#255'ggg'#255'444'#255'jjj'#255'CCC'#255'3'
-  +'33'#255#134#134#134#255'QQQ'#255'|||'#255'==='#255'ppp'#255#195#195#195#255
-  +'333'#255#187#187#187#255#195#195#195#255#131#131#131#255'vvv'#255'NNN'#255
-  +'333'#255#0#0#0#0#0#0#0#0'333'#0':::'#255''#255'kkk'#255#195#195#195#255
-  +'>>>'#255'eee'#255#195#195#195#255#140#140#140#255'333'#255#161#161#161#255
-  +#155#155#155#255'VVV'#255'333'#255#134#134#134#255#195#195#195#255'333'#255
-  +#187#187#187#255#195#195#195#255#131#131#131#255'vvv'#255'NNN'#255'333'#255#0
-  +#0#0#0#0#0#0#0'333'#0':::'#255''#255'kkk'#255#195#195#195#255'DDD'#255'XX'
-  +'X'#255#194#194#194#255'~~~'#255'333'#255#144#144#144#255'444'#255'VVV'#255
-  +#156#156#156#255#193#193#193#255#195#195#195#255'333'#255#187#187#187#255#195
-  +#195#195#255#131#131#131#255'vvv'#255'NNN'#255'333'#255#0#0#0#0#0#0#0#0'333'
-  +#0':::'#255''#255'kkk'#255#195#195#195#255'|||'#255'333'#255'BBB'#255'555'
-  +#255'333'#255#153#153#153#255'888'#255'KKK'#255'>>>'#255#129#129#129#255#195
-  +#195#195#255'333'#255#187#187#187#255#195#195#195#255#131#131#131#255'vvv'
-  +#255'NNN'#255'333'#255#0#0#0#0#0#0#0#0'333'#0':::'#255''#255'kkk'#255#195
-  +#195#195#255#194#194#194#255#134#134#134#255'hhh'#255#148#148#148#255''
-  +#255#191#191#191#255#162#162#162#255'mmm'#255'uuu'#255#185#185#185#255#195
-  +#195#195#255'333'#255#187#187#187#255#195#195#195#255#131#131#131#255'vvv'
-  +#255'NNN'#255'333'#255#0#0#0#0#0#0#0#0'333'#0':::'#255''#255'kkk'#255#195
-  +#195#195#255#195#195#195#255#195#195#195#255#195#195#195#255#195#195#195#255
-  ,#195#195#195#255#195#195#195#255#195#195#195#255#195#195#195#255#195#195#195
-  +#255#191#191#191#255'rrr'#255'333'#255'jjj'#255#192#192#192#255#131#131#131
-  +#255'vvv'#255'NNN'#255'333'#255#0#0#0#0#0#0#0#0'333'#0':::'#255''#255'kkk'
+  +#255#195#195#195#255#195#195#195#255#195#195#195#255'www'#255'ppp'#255'QQQ'
+  +#255#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'KKK'#0'```'#255'qqq'#255
+  +#181#181#181#255#195#195#195#255#195#195#195#255#195#195#195#255#195#195#195
   +#255#195#195#195#255#195#195#195#255#195#195#195#255#195#195#195#255#195#195
+  +#195#255#195#195#195#255#195#195#195#255#195#195#195#255'xxx'#255'ppp'#255'Q'
+  +'QQ'#255#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'KKK'#0'```'#255'qqq'
+  +#255#181#181#181#255#195#195#195#255#195#195#195#255#195#195#195#255#195#195
   +#195#255#195#195#195#255#195#195#195#255#195#195#195#255#195#195#195#255#195
-  +#195#195#255#194#194#194#255#132#132#132#255'TTT'#255#133#133#133#255#193#193
-  +#193#255#130#130#130#255'vvv'#255'NNN'#255'333'#255#0#0#0#0#0#0#0#0'333'#0':'
-  +'::'#255''#255'ggg'#255'sss'#255'ttt'#255'ttt'#255'ttt'#255'ttt'#255'ttt'
-  +#255'ttt'#255'ttt'#255'ttt'#255'ttt'#255'ttt'#255'ttt'#255'ttt'#255'ttt'#255
-  +'ttt'#255'ccc'#255'~~~'#255'NNN'#255'333'#255#0#0#0#0#0#0#0#0'333'#0':::'#255
-  +''#255''#255''#255''#255''#255''#255''#255''#255''
-  +#255''#255''#255''#255''#255''#255''#255''#255''#255
-  +''#255''#255'NNN'#255'333'#255#0#0#0#0#0#0#0#0'333'#0':::'#255''#255
-  +''#255''#255'ddd'#255'888'#255'333'#255'333'#255'333'#255'333'#255'333'
-  +#255'333'#255'333'#255':::'#255'hhh'#255''#255''#255''#255''#255
-  +''#255'NNN'#255'333'#255#0#0#0#0#0#0#0#0'333'#0':::'#255''#255''#255
-  +''#255'AAA'#255#153#153#153#255#152#152#152#255#135#135#135#255#151#151
-  +#151#255#181#181#181#255#181#181#181#255#181#181#181#255#181#181#181#255#144
-  +#144#144#255'FFF'#255''#255''#255''#255''#255''#255'NNN'#255
-  +'333'#255#0#0#0#0#0#0#0#0'333'#0':::'#255''#255''#255''#255'???'#255
-  +#157#157#157#255'[[['#255'ppp'#255'[[['#255#180#180#180#255#191#191#191#255
-  +#191#191#191#255#191#191#191#255#158#158#158#255'DDD'#255''#255''#255
-  +''#255''#255''#255'NNN'#255'333'#255#0#0#0#0#0#0#0#0'333'#0':::'#255
-  +''#255''#255''#255'???'#255#152#152#152#255'ddd'#255''#255'ddd'
-  +#255#175#175#175#255#191#191#191#255#191#191#191#255#191#191#191#255#158#158
-  +#158#255'DDD'#255''#255''#255''#255''#255''#255'HHH'#255'333'
-  +#255#0#0#0#0#0#0#0#0'333'#0':::'#255''#255''#255''#255'???'#255#152
-  +#152#152#255'ddd'#255''#255'ddd'#255#175#175#175#255#191#191#191#255#191
-  +#191#191#255#191#191#191#255#158#158#158#255'DDD'#255''#255''#255''
-  +#255''#255'jjj'#255'333'#255'333'#0#0#0#0#0#0#0#0#0'333'#0':::'#255''
-  +#255''#255''#255'???'#255#163#163#163#255'___'#255'aaa'#255'^^^'#255
-  +#186#186#186#255#191#191#191#255#191#191#191#255#191#191#191#255#158#158#158
-  +#255'DDD'#255''#255''#255''#255'iii'#255'555'#255'222'#255#0#0#0#0#0
-  +#0#0#0#0#0#0#0'444'#0'666'#255'VVV'#255'VVV'#255'VVV'#255'333'#255'JJJ'#255
-  +'VVV'#255'VVV'#255'VVV'#255'VVV'#255'VVV'#255'VVV'#255'VVV'#255'FFF'#255'555'
-  +#255'VVV'#255'VVV'#255'JJJ'#255'333'#255'222'#255#0#0#0#0#0#0#0#0#0#0#0#0#0#0
-  +#0#0'UUU'#0'222'#255'555'#255'777'#255'777'#255'444'#255'444'#255'555'#255'5'
-  +'55'#255'555'#255'555'#255'555'#255'555'#255'555'#255'444'#255'555'#255'777'
-  +#255'777'#255'777'#255'333'#255#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +#195#195#255#195#195#195#255#195#195#195#255#195#195#195#255'xxx'#255'ppp'
+  +#255'QQQ'#255#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'KKK'#0'```'#255
+  +'qqq'#255#181#181#181#255#195#195#195#255#195#195#195#255#195#195#195#255#195
+  +#195#195#255#195#195#195#255#195#195#195#255#195#195#195#255#195#195#195#255
+  +#195#195#195#255#195#195#195#255#195#195#195#255#195#195#195#255'xxx'#255'pp'
+  +'p'#255'QQQ'#255#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'KKK'#0'```'
+  +#255'qqq'#255#181#181#181#255#195#195#195#255#195#195#195#255#195#195#195#255
+  +#195#195#195#255#195#195#195#255#195#195#195#255#195#195#195#255#195#195#195
+  +#255#195#195#195#255#195#195#195#255#195#195#195#255#195#195#195#255'xxx'#255
+  +'ppp'#255'QQQ'#255#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'KKK'#0'``'
+  +'`'#255'qqq'#255#181#181#181#255#195#195#195#255#195#195#195#255#195#195#195
+  +#255#195#195#195#255#195#195#195#255#195#195#195#255#195#195#195#255#195#195
+  +#195#255#195#195#195#255#195#195#195#255#195#195#195#255#195#195#195#255'xxx'
+  +#255'ppp'#255'QQQ'#255#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'KKK'#0
+  +'```'#255'qqq'#255#181#181#181#255#195#195#195#255#195#195#195#255#195#195
+  +#195#255#195#195#195#255#195#195#195#255#153#153#153#255#134#134#134#255#195
+  +#195#195#255#195#195#195#255#195#195#195#255#195#195#195#255#195#195#195#255
+  +'xxx'#255'ppp'#255'QQQ'#255#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +'KKK'#0'```'#255'qqq'#255#181#181#181#255#195#195#195#255#195#195#195#255#195
+  +#195#195#255#195#195#195#255#195#195#195#255'444'#255'333'#255#170#170#170
+  +#255#195#195#195#255#195#195#195#255#195#195#195#255#195#195#195#255'xxx'#255
+  +'ppp'#255'QQQ'#255#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'KKK'#0'``'
+  +'`'#255'uuu'#255#130#130#130#255#141#141#141#255#141#141#141#255#141#141#141
+  +#255#141#141#141#255#141#141#141#255']]]'#255'333'#255'HHH'#255#141#141#141
+  +#255#141#141#141#255#141#141#141#255#142#142#142#255'qqq'#255'ppp'#255'QQQ'
+  +#255#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'KKK'#0'```'#255''#255
+  +'{{{'#255'xxx'#255'xxx'#255'xxx'#255'xxx'#255'xxx'#255'eee'#255'333'#255'333'
+  +#255'ccc'#255'xxx'#255'xxx'#255'yyy'#255''#255'ppp'#255'QQQ'#255#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'KKK'#0'```'#255''#255''#255'rrr'
+  +#255'[[['#255'^^^'#255'^^^'#255'^^^'#255'\\\'#255'333'#255'333'#255'666'#255
+  +'ttt'#255''#255''#255''#255'ppp'#255'QQQ'#255#0#0#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0'KKK'#0'```'#255''#255''#255'eee'#255#168#168
+  +#168#255'uuu'#255'uuu'#255#166#166#166#255#191#191#191#255'[[['#255':::'#255
+  +'<<<'#255'==='#255'uuu'#255''#255''#255'ppp'#255'QQQ'#255'UUU'#0'UUU'#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'KKK'#0'```'#255''#255''#255'eee'#255
+  +#148#148#148#255'sss'#255''#255#129#129#129#255#191#191#191#255#148#148
+  +#148#255'333'#255'___'#255':::'#255':::'#255'lll'#255''#255'ppp'#255'QQQ'
+  +#255'222'#0'333'#255'333'#0#0#0#0#0#0#0#0#0#0#0#0#0'KKK'#0'```'#255''#255
+  +''#255'eee'#255#148#148#148#255'sss'#255''#255#129#129#129#255#191#191
+  +#191#255#190#190#190#255'PPP'#255'CCC'#255'vvv'#255'@@@'#255'333'#255'NNN'
+  +#255'UUU'#255'NNN'#255'333'#255'333'#255'555'#255'777'#0#0#0#0#0#0#0#0#0'KKK'
+  +#0'```'#255''#255''#255'eee'#255#164#164#164#255'lll'#255'ooo'#255#153
+  +#153#153#255#191#191#191#255#191#191#191#255#163#163#163#255'555'#255'UUU'
+  +#255'}}}'#255'YYY'#255'555'#255'333'#255'444'#255'333'#255'333'#255'777'#255
+  +'333'#255'333'#0#0#0#0#0'MMM'#0'OOO'#255'[[['#255'[[['#255'VVV'#255'kkk'#255
+  +'nnn'#255'nnn'#255'nnn'#255'nnn'#255'nnn'#255'nnn'#255'III'#255'333'#255'QQQ'
+  +#255'}}}'#255'zzz'#255'^^^'#255'GGG'#255'333'#255'999'#255'jjj'#255'333'#255
+  +'222'#255#0#0#0#0#0#0#0#0'NNN'#0'KKK'#0'KKK'#0'KKK'#0'KKK'#0'KKK'#0'KKK'#0'K'
+  ,'KK'#0'KKK'#0'KKK'#0'KKK'#0'KKK'#0'999'#255'333'#255'<<<'#255'___'#255'zzz'
+  +#255''#255''#255''#255''#255']]]'#255'333'#255'222'#255#0#0#0#0#0
   +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0'111'#0'444'#255'333'#255'333'#255'<<<'#255':::'
+  +#255'LLL'#255''#255'MMM'#255'333'#255'222'#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
   +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
-  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#4'Hint'#6'*Save the output temporal term '
-  +'into a file.'#10'ImageIndex'#2#7#8'ShortCut'#3'S`'#7'OnClick'#7#22'MenuItem'
-  +'SaveOutAsClick'#0#0#9'TMenuItem'#12'MenuItemExit'#7'Caption'#6#4'Exit'#11'B'
-  +'itmap.Data'#10#254#9#0#0#250#9#0#0'BM'#250#9#0#0#0#0#0#0'6'#0#0#0'('#0#0#0
-  +#25#0#0#0#25#0#0#0#1#0' '#0#0#0#0#0#196#9#0#0'd'#0#0#0'd'#0#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0'333'#0'444'#0'333'#255'333'#255'333'#255'MMM'#255'333'
+  +#255'222'#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
   +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
-  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
-  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'444'#0'22'
-  +'2'#255'333'#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
-  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'444'#0'66'
-  +'6'#0#0#0#0#0#0#0#0#0#0#0#0#0'+++'#0'666'#255'HHH'#255'333'#255'666'#255'222'
-  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
-  +#0#0#0#0#0#0#0#0#0#0#0'222'#0'777'#255'333'#255'444'#255'111'#0#0#0#0#0#0#0#0
-  +#0#0#0#0#0'666'#255'xxx'#255#153#153#153#255'RRR'#255'444'#255'444'#0#0#0#0#0
-  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'333'#0'555'
-  +#255'444'#255']]]'#255#133#133#133#255'333'#255'666'#0#0#0#0#0#0#0#0#0#0#0#0
-  +#0'222'#0'???'#255#176#176#176#255#178#178#178#255'vvv'#255'333'#255'666'#255
-  +'333'#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'444'#0'777'#255'@@@'
-  +#255#149#149#149#255#179#179#179#255'ZZZ'#255'777'#255#0#0#0#0#0#0#0#0#0#0#0
-  +#0#0#0#0#0'000'#0'555'#255'uuu'#255#179#179#179#255#179#179#179#255#146#146
-  +#146#255'<<<'#255'555'#255'999'#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'444'#0'333'
-  +#255'^^^'#255#171#171#171#255#179#179#179#255#144#144#144#255'333'#255'222'#0
-  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'222'#0'555'#255#155#155#155#255#179
-  ,#179#179#255#179#179#179#255#163#163#163#255'DDD'#255'777'#255'///'#0#0#0#0#0
-  +'UUU'#0'444'#255'333'#255'|||'#255#179#179#179#255#179#179#179#255#168#168
-  +#168#255'<<<'#255'555'#255#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
-  +#0#0#0'777'#255'HHH'#255#176#176#176#255#179#179#179#255#179#179#179#255#168
-  +#168#168#255'III'#255'777'#255'111'#0'555'#255'888'#255#143#143#143#255#179
-  +#179#179#255#179#179#179#255#178#178#178#255'TTT'#255'777'#255'333'#0#0#0#0#0
-  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'///'#0'666'#255'ggg'#255#179
-  +#179#179#255#179#179#179#255#179#179#179#255#172#172#172#255'RRR'#255'333'
-  +#255'???'#255#156#156#156#255#179#179#179#255#179#179#179#255#179#179#179#255
-  +'qqq'#255'444'#255'333'#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
-  +#0#0#0#0#0#0#0#0#0#0'444'#0'333'#255'~~~'#255#179#179#179#255#179#179#179#255
-  +#179#179#179#255#175#175#175#255''#255#167#167#167#255#179#179#179#255#179
-  +#179#179#255#179#179#179#255#133#133#133#255'444'#255'222'#0#0#0#0#0#0#0#0#0
-  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'333'
-  +#0'555'#255#146#146#146#255#179#179#179#255#179#179#179#255#179#179#179#255
-  +#179#179#179#255#179#179#179#255#179#179#179#255#179#179#179#255#146#146#146
-  +#255'555'#255'555'#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
-  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'444'#255';;;'#255#161#161
-  +#161#255#179#179#179#255#179#179#179#255#179#179#179#255#179#179#179#255#179
-  +#179#179#255#155#155#155#255'999'#255'444'#255#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
-  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
-  +#0#0#0'555'#0'333'#255'ggg'#255#179#179#179#255#179#179#179#255#179#179#179
-  +#255#179#179#179#255#179#179#179#255'WWW'#255'333'#255'+++'#0#0#0#0#0#0#0#0#0
-  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
-  +#0#0#0#0#0#0'333'#0'777'#255'LLL'#255#174#174#174#255#179#179#179#255#179#179
-  +#179#255#179#179#179#255#179#179#179#255#179#179#179#255#161#161#161#255'999'
-  +#255'555'#255#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
-  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'333'#0'777'#255'CCC'#255#168#168#168#255#179
-  +#179#179#255#179#179#179#255#179#179#179#255#179#179#179#255#179#179#179#255
-  +#179#179#179#255#179#179#179#255#145#145#145#255'333'#255'333'#0#0#0#0#0#0#0
-  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
-  +'555'#255'<<<'#255#161#161#161#255#179#179#179#255#179#179#179#255#179#179
-  +#179#255#165#165#165#255'lll'#255#161#161#161#255#179#179#179#255#179#179#179
-  +#255#179#179#179#255'|||'#255'333'#255'555'#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
-  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'222'#0'666'#255#151#151#151#255#179
-  +#179#179#255#179#179#179#255#179#179#179#255#152#152#152#255'<<<'#255'333'
-  +#255'<<<'#255#153#153#153#255#179#179#179#255#179#179#179#255#179#179#179#255
-  +'eee'#255'666'#255'000'#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
-  +#0#0'333'#0'555'#255''#255#179#179#179#255#179#179#179#255#179#179#179#255
-  +#135#135#135#255'666'#255'555'#255'333'#0'555'#255'888'#255#142#142#142#255
-  +#179#179#179#255#179#179#179#255#176#176#176#255'LLL'#255'666'#255#0#0#0#0#0
-  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'+++'#0'777'#255']]]'#255#179#179#179
-  +#255#179#179#179#255#178#178#178#255'sss'#255'444'#255'444'#255#0#0#0#0#0#0#0
-  +#0'UUU'#0'444'#255'444'#255#128#128#128#255#179#179#179#255#179#179#179#255
-  +#158#158#158#255'666'#255'444'#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'333'
-  +#0'==='#255#171#171#171#255#179#179#179#255#163#163#163#255'QQQ'#255'444'#255
-  +'222'#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'333'#0'333'#255'eee'#255#175
-  +#175#175#255#179#179#179#255'uuu'#255'555'#255'111'#0#0#0#0#0#0#0#0#0#0#0#0#0
-  +'+++'#0'666'#255'}}}'#255#178#178#178#255#130#130#130#255'888'#255'666'#255
-  +'444'#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'333'#0'555'
-  +#255'KKK'#255#160#160#160#255#177#177#177#255'III'#255'555'#255#0#0#0#0#0#0#0
-  +#0#0#0#0#0'333'#0'333'#255'}}}'#255'HHH'#255'444'#255'333'#255'@@@'#0#0#0#0#0
-  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'666'#0'777'
-  +#255'666'#255'sss'#255'}}}'#255'555'#255'@@@'#0#0#0#0#0#0#0#0#0'333'#0'666'
-  +#255'666'#255'555'#255'222'#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
-  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'222'#0'555'#255'333'
-  +#255'555'#255'...'#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
-  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
-  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'$$$'#0'222'#0'222'#0#0#0#0#0#0#0#0#0#0#0
-  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
-  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
-  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#4'Hint'#6#17'Exit the program.'
-  +#10'ImageIndex'#2#3#8'ShortCut'#4's'#128#0#0#7'OnClick'#7#17'MenuItemExitCli'
-  +'ck'#0#0#0#9'TMenuItem'#9'MenuItem2'#7'Caption'#6#10'Calulation'#0#9'TMenuIt'
-  ,'em'#12'MenuItemScan'#7'Caption'#6#15'Scan Input Term'#11'Bitmap.Data'#10#254
-  +#9#0#0#250#9#0#0'BM'#250#9#0#0#0#0#0#0'6'#0#0#0'('#0#0#0#25#0#0#0#25#0#0#0#1
-  +#0' '#0#0#0#0#0#196#9#0#0'd'#0#0#0'd'#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
-  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'333'#0'222'#0
-  +'222'#0'222'#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
-  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
-  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'444'#0'333'#255'333'#255'333'#255'999'#0#0#0#0
-  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
-  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
-  +#0'333'#255'GGG'#255#140#140#140#255'333'#255'333'#0#0#0#0#0#0#0#0#0#0#0#0#0
-  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
-  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'333'#255'NNN'
-  +#255#149#149#149#255'333'#255'333'#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
-  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
-  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'333'#255'NNN'#255#149#149#149
-  +#255'333'#255'333'#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
-  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
-  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0'333'#255'NNN'#255#149#149#149#255'333'#255'333'
-  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
-  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
-  +#0#0#0#0#0'333'#255'NNN'#255#149#149#149#255'333'#255'333'#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0'444'#255'333'#255'333'#255'222'#0#0#0#0#0#0#0#0#0#0#0#0#0
   +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
   +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'333'#255
-  +'NNN'#255#149#149#149#255'333'#255'333'#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +'333'#255'222'#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
   +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
-  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'333'#255'NNN'#255#149#149
-  +#149#255'333'#255'333'#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'333'#0'444'#0#0#0#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#4'Hint'#6')Save the input temporal term into a file.'#10'ImageInd'
+  +'ex'#2#2#8'ShortCut'#3'S@'#7'OnClick'#7#21'MenuItemSaveInAsClick'#0#0#9'TMen'
+  +'uItem'#17'MenuItemSaveOutAs'#7'Caption'#6#14'Save Output As'#7'Enabled'#8#11
+  +'Bitmap.Data'#10#254#9#0#0#250#9#0#0'BM'#250#9#0#0#0#0#0#0'6'#0#0#0'('#0#0#0
+  +#25#0#0#0#25#0#0#0#1#0' '#0#0#0#0#0#196#9#0#0'd'#0#0#0'd'#0#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0'UUU'#0'666'#0'555'#0'555'#0'555'#0'555'#0'555'#0'555'#0'5'
+  +'55'#0'555'#0'555'#0'555'#0'555'#0'555'#0'555'#0'555'#0'555'#0'555'#0'555'#0
+  +'555'#0'@@@'#0#0#0#0#0#0#0#0#0#0#0#0#0'666'#0'555'#255'333'#255'333'#255'333'
+  +#255'333'#255'333'#255'333'#255'333'#255'333'#255'333'#255'333'#255'333'#255
+  +'333'#255'333'#255'333'#255'333'#255'333'#255'333'#255'333'#255'333'#255'444'
+  +#255'444'#0#0#0#0#0#0#0#0#0'444'#0'888'#255'ooo'#255'ppp'#255'ppp'#255'ppp'
+  +#255'ppp'#255'ppp'#255'ppp'#255'ppp'#255'ppp'#255'ppp'#255'ppp'#255'ppp'#255
+  +'ppp'#255'ppp'#255'ppp'#255'ppp'#255'ppp'#255'ppp'#255'ooo'#255'EEE'#255'444'
+  +#255#0#0#0#0#0#0#0#0'333'#0':::'#255''#255'hhh'#255'ppp'#255'rrr'#255'rrr'
+  +#255'rrr'#255'rrr'#255'rrr'#255'rrr'#255'rrr'#255'rrr'#255'rrr'#255'rrr'#255
+  +'rrr'#255'rrr'#255'rrr'#255'rrr'#255'eee'#255''#255'NNN'#255'333'#255#0#0
+  +#0#0#0#0#0#0'333'#0':::'#255''#255'kkk'#255#195#195#195#255#195#195#195
+  +#255#195#195#195#255#195#195#195#255#195#195#195#255#195#195#195#255#195#195
+  +#195#255#195#195#195#255#195#195#195#255#195#195#195#255#194#194#194#255#141
+  +#141#141#255'~~~'#255#140#140#140#255#194#194#194#255#130#130#130#255'www'
+  +#255'NNN'#255'333'#255#0#0#0#0#0#0#0#0'333'#0':::'#255''#255'kkk'#255#195
+  +#195#195#255#195#195#195#255#195#195#195#255#195#195#195#255#195#195#195#255
+  +#195#195#195#255#195#195#195#255#195#195#195#255#195#195#195#255#195#195#195
+  +#255#190#190#190#255'ggg'#255'333'#255'aaa'#255#188#188#188#255#131#131#131
+  +#255'vvv'#255'NNN'#255'333'#255#0#0#0#0#0#0#0#0'333'#0':::'#255''#255'kkk'
+  +#255#195#195#195#255#184#184#184#255']]]'#255'@@@'#255'kkk'#255'VVV'#255#170
+  +#170#170#255']]]'#255'@@@'#255'XXX'#255#177#177#177#255#195#195#195#255'333'
+  +#255#187#187#187#255#195#195#195#255#131#131#131#255'vvv'#255'NNN'#255'333'
+  +#255#0#0#0#0#0#0#0#0'333'#0':::'#255''#255'kkk'#255#195#195#195#255'ggg'
+  +#255'444'#255'jjj'#255'CCC'#255'333'#255#134#134#134#255'QQQ'#255'|||'#255'='
+  +'=='#255'ppp'#255#195#195#195#255'333'#255#187#187#187#255#195#195#195#255
+  +#131#131#131#255'vvv'#255'NNN'#255'333'#255#0#0#0#0#0#0#0#0'333'#0':::'#255
+  +''#255'kkk'#255#195#195#195#255'>>>'#255'eee'#255#195#195#195#255#140#140
+  +#140#255'333'#255#161#161#161#255#155#155#155#255'VVV'#255'333'#255#134#134
+  +#134#255#195#195#195#255'333'#255#187#187#187#255#195#195#195#255#131#131#131
+  +#255'vvv'#255'NNN'#255'333'#255#0#0#0#0#0#0#0#0'333'#0':::'#255''#255'kkk'
+  +#255#195#195#195#255'DDD'#255'XXX'#255#194#194#194#255'~~~'#255'333'#255#144
+  +#144#144#255'444'#255'VVV'#255#156#156#156#255#193#193#193#255#195#195#195
+  +#255'333'#255#187#187#187#255#195#195#195#255#131#131#131#255'vvv'#255'NNN'
+  +#255'333'#255#0#0#0#0#0#0#0#0'333'#0':::'#255''#255'kkk'#255#195#195#195
+  +#255'|||'#255'333'#255'BBB'#255'555'#255'333'#255#153#153#153#255'888'#255'K'
+  +'KK'#255'>>>'#255#129#129#129#255#195#195#195#255'333'#255#187#187#187#255
+  +#195#195#195#255#131#131#131#255'vvv'#255'NNN'#255'333'#255#0#0#0#0#0#0#0#0
+  +'333'#0':::'#255''#255'kkk'#255#195#195#195#255#194#194#194#255#134#134
+  +#134#255'hhh'#255#148#148#148#255''#255#191#191#191#255#162#162#162#255'm'
+  +'mm'#255'uuu'#255#185#185#185#255#195#195#195#255'333'#255#187#187#187#255
+  +#195#195#195#255#131#131#131#255'vvv'#255'NNN'#255'333'#255#0#0#0#0#0#0#0#0
+  +'333'#0':::'#255''#255'kkk'#255#195#195#195#255#195#195#195#255#195#195
+  +#195#255#195#195#195#255#195#195#195#255#195#195#195#255#195#195#195#255#195
+  ,#195#195#255#195#195#195#255#195#195#195#255#191#191#191#255'rrr'#255'333'
+  +#255'jjj'#255#192#192#192#255#131#131#131#255'vvv'#255'NNN'#255'333'#255#0#0
+  +#0#0#0#0#0#0'333'#0':::'#255''#255'kkk'#255#195#195#195#255#195#195#195
+  +#255#195#195#195#255#195#195#195#255#195#195#195#255#195#195#195#255#195#195
+  +#195#255#195#195#195#255#195#195#195#255#195#195#195#255#194#194#194#255#132
+  +#132#132#255'TTT'#255#133#133#133#255#193#193#193#255#130#130#130#255'vvv'
+  +#255'NNN'#255'333'#255#0#0#0#0#0#0#0#0'333'#0':::'#255''#255'ggg'#255'sss'
+  +#255'ttt'#255'ttt'#255'ttt'#255'ttt'#255'ttt'#255'ttt'#255'ttt'#255'ttt'#255
+  +'ttt'#255'ttt'#255'ttt'#255'ttt'#255'ttt'#255'ttt'#255'ccc'#255'~~~'#255'NNN'
+  +#255'333'#255#0#0#0#0#0#0#0#0'333'#0':::'#255''#255''#255''#255''
+  +#255''#255''#255''#255''#255''#255''#255''#255''#255
+  +''#255''#255''#255''#255''#255''#255''#255'NNN'#255'333'
+  +#255#0#0#0#0#0#0#0#0'333'#0':::'#255''#255''#255''#255'ddd'#255'888'
+  +#255'333'#255'333'#255'333'#255'333'#255'333'#255'333'#255'333'#255':::'#255
+  +'hhh'#255''#255''#255''#255''#255''#255'NNN'#255'333'#255#0#0
+  +#0#0#0#0#0#0'333'#0':::'#255''#255''#255''#255'AAA'#255#153#153#153
+  +#255#152#152#152#255#135#135#135#255#151#151#151#255#181#181#181#255#181#181
+  +#181#255#181#181#181#255#181#181#181#255#144#144#144#255'FFF'#255''#255''
+  +''#255''#255''#255''#255'NNN'#255'333'#255#0#0#0#0#0#0#0#0'333'#0
+  +':::'#255''#255''#255''#255'???'#255#157#157#157#255'[[['#255'ppp'
+  +#255'[[['#255#180#180#180#255#191#191#191#255#191#191#191#255#191#191#191#255
+  +#158#158#158#255'DDD'#255''#255''#255''#255''#255''#255'NNN'
+  +#255'333'#255#0#0#0#0#0#0#0#0'333'#0':::'#255''#255''#255''#255'???'
+  +#255#152#152#152#255'ddd'#255''#255'ddd'#255#175#175#175#255#191#191#191
+  +#255#191#191#191#255#191#191#191#255#158#158#158#255'DDD'#255''#255''
+  +#255''#255''#255''#255'HHH'#255'333'#255#0#0#0#0#0#0#0#0'333'#0':::'
+  +#255''#255''#255''#255'???'#255#152#152#152#255'ddd'#255''#255'd'
+  +'dd'#255#175#175#175#255#191#191#191#255#191#191#191#255#191#191#191#255#158
+  +#158#158#255'DDD'#255''#255''#255''#255''#255'jjj'#255'333'#255
+  +'333'#0#0#0#0#0#0#0#0#0'333'#0':::'#255''#255''#255''#255'???'#255
+  +#163#163#163#255'___'#255'aaa'#255'^^^'#255#186#186#186#255#191#191#191#255
+  +#191#191#191#255#191#191#191#255#158#158#158#255'DDD'#255''#255''#255
+  +''#255'iii'#255'555'#255'222'#255#0#0#0#0#0#0#0#0#0#0#0#0'444'#0'666'#255
+  +'VVV'#255'VVV'#255'VVV'#255'333'#255'JJJ'#255'VVV'#255'VVV'#255'VVV'#255'VVV'
+  +#255'VVV'#255'VVV'#255'VVV'#255'FFF'#255'555'#255'VVV'#255'VVV'#255'JJJ'#255
+  +'333'#255'222'#255#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'UUU'#0'222'#255'555'#255
+  +'777'#255'777'#255'444'#255'444'#255'555'#255'555'#255'555'#255'555'#255'555'
+  +#255'555'#255'555'#255'444'#255'555'#255'777'#255'777'#255'777'#255'333'#255
   +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
-  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'333'#255'NNN'#255#149#149#149#255'333'#255
-  +'333'#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
-  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
-  +#0#0#0#0#0#0#0'333'#255'NNN'#255#149#149#149#255'333'#255'333'#0#0#0#0#0#0#0
-  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
-  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'333'#0'444'
-  +#255'VVV'#255#161#161#161#255'333'#255'333'#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
-  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
-  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'333'#0'666'#255'???'#255#163#163#163#255
-  +#179#179#179#255'|||'#255'444'#255'222'#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
-  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
-  +#0#0#0#0#0#0#0#0'333'#0'666'#255'>>>'#255#161#161#161#255#179#179#179#255#179
-  +#179#179#255#179#179#179#255'{{{'#255'333'#255'444'#0#0#0#0#0#0#0#0#0#0#0#0#0
-  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
-  +#0#0#0#0#0#0'+++'#0'777'#255'<<<'#255#158#158#158#255#179#179#179#255#179#179
-  +#179#255#179#179#179#255#179#179#179#255#179#179#179#255'xxx'#255'444'#255'2'
-  +'22'#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
-  +#0#0#0#0#0#0#0#0#0#0#0#0#0'+++'#0'444'#255';;;'#255#156#156#156#255#179#179
-  +#179#255#179#179#179#255#179#179#179#255#179#179#179#255#179#179#179#255#179
-  +#179#179#255#179#179#179#255'uuu'#255'333'#255'222'#0#0#0#0#0#0#0#0#0#0#0#0#0
-  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'UUU'#0'555'#255'999'
-  +#255#154#154#154#255#179#179#179#255#179#179#179#255#179#179#179#255#179#179
-  +#179#255#179#179#179#255#179#179#179#255#179#179#179#255#179#179#179#255#179
-  +#179#179#255'rrr'#255'333'#255'222'#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
-  +#0#0#0#0#0#0#0#0#0#0#0#0'UUU'#0'555'#255'888'#255#128#128#128#255'~~~'#255'q'
-  +'qq'#255'bbb'#255'^^^'#255'UUU'#255'UUU'#255'YYY'#255'^^^'#255'hhh'#255'ttt'
-  +#255#134#134#134#255'ggg'#255'333'#255'444'#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
-  +#0#0#0#0#0#0#0#0#0#0#0#0'444'#255'555'#255'444'#255'333'#255'333'#255'666'
-  +#255'???'#255'CCC'#255'FFF'#255'GGG'#255'DDD'#255'CCC'#255'<<<'#255'444'#255
-  +'333'#255'333'#255'888'#255'333'#255'222'#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
-  +#0#0#0'333'#255'333'#255'BBB'#255'XXX'#255'ZZZ'#255'UUU'#255'MMM'#255'EEE'
-  +#255'BBB'#255'???'#255'==='#255'==='#255'???'#255'DDD'#255'III'#255'MMM'#255
-  +'LLL'#255'>>>'#255'333'#255'333'#255'444'#255#0#0#0#0#0#0#0#0#0#0#0#0',,,'#0
-  +'333'#255'aaa'#255''#255'DDD'#255'444'#255'>>>'#255'CCC'#255'GGG'#255'III'
-  +#255'III'#255'333'#255'333'#255'333'#255'333'#255'333'#255'333'#255'333'#255
-  +'333'#255'333'#255'333'#255'333'#255#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'666'#255
-  ,'666'#255'RRR'#255'___'#255'PPP'#255'BBB'#255';;;'#255'888'#255'777'#255'999'
-  +#255'444'#255'333'#255'333'#255'333'#255'444'#255'888'#255'888'#255'333'#255
-  +'333'#255'333'#255'333'#255#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'333'#0'444'#255
-  +'555'#255'333'#255'333'#255'777'#255'DDD'#255'III'#255'LLL'#255'RRR'#255'OOO'
-  +#255'OOO'#255'KKK'#255'GGG'#255'@@@'#255'444'#255'333'#255'333'#255'555'#255
-  +'444'#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'555'
-  +#0'333'#0'333'#255'333'#255'333'#255'555'#255'444'#255'444'#255'444'#255'555'
-  +#255'333'#255'333'#255'444'#0'444'#0'111'#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
   +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
   +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
-  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#4'Hint'#6';Scan the i'
-  +'nput string containing '#10'the user''s temporal term.'#10'ImageIndex'#2#4#8
-  +'ShortCut'#3'1@'#7'OnClick'#7#17'MenuItemScanClick'#0#0#9'TMenuItem'#16'Menu'
-  +'ItemSimplify'#7'Caption'#6#8'Simplify'#7'Enabled'#8#11'Bitmap.Data'#10#254#9
+  +#0#0#4'Hint'#6'*Save the output temporal term into a file.'#10'ImageIndex'#2
+  +#7#8'ShortCut'#3'S`'#7'OnClick'#7#22'MenuItemSaveOutAsClick'#0#0#9'TMenuItem'
+  +#12'MenuItemExit'#7'Caption'#6#4'Exit'#11'Bitmap.Data'#10#254#9#0#0#250#9#0#0
+  +'BM'#250#9#0#0#0#0#0#0'6'#0#0#0'('#0#0#0#25#0#0#0#25#0#0#0#1#0' '#0#0#0#0#0
+  +#196#9#0#0'd'#0#0#0'd'#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'444'#0'222'#255'333'#0#0#0#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'444'#0'666'#0#0#0#0#0#0#0#0#0#0#0#0#0'+++'#0
+  +'666'#255'HHH'#255'333'#255'666'#255'222'#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'222'#0'777'
+  +#255'333'#255'444'#255'111'#0#0#0#0#0#0#0#0#0#0#0#0#0'666'#255'xxx'#255#153
+  +#153#153#255'RRR'#255'444'#255'444'#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'333'#0'555'#255'444'#255']]]'#255#133#133
+  +#133#255'333'#255'666'#0#0#0#0#0#0#0#0#0#0#0#0#0'222'#0'???'#255#176#176#176
+  +#255#178#178#178#255'vvv'#255'333'#255'666'#255'333'#0#0#0#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0'444'#0'777'#255'@@@'#255#149#149#149#255#179#179
+  +#179#255'ZZZ'#255'777'#255#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'000'#0'555'#255'u'
+  +'uu'#255#179#179#179#255#179#179#179#255#146#146#146#255'<<<'#255'555'#255'9'
+  +'99'#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'444'#0'333'#255'^^^'#255#171#171#171
+  +#255#179#179#179#255#144#144#144#255'333'#255'222'#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0'222'#0'555'#255#155#155#155#255#179#179#179#255#179#179#179
+  ,#255#163#163#163#255'DDD'#255'777'#255'///'#0#0#0#0#0'UUU'#0'444'#255'333'
+  +#255'|||'#255#179#179#179#255#179#179#179#255#168#168#168#255'<<<'#255'555'
+  +#255#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'777'#255'HHH'
+  +#255#176#176#176#255#179#179#179#255#179#179#179#255#168#168#168#255'III'#255
+  +'777'#255'111'#0'555'#255'888'#255#143#143#143#255#179#179#179#255#179#179
+  +#179#255#178#178#178#255'TTT'#255'777'#255'333'#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0'///'#0'666'#255'ggg'#255#179#179#179#255#179#179
+  +#179#255#179#179#179#255#172#172#172#255'RRR'#255'333'#255'???'#255#156#156
+  +#156#255#179#179#179#255#179#179#179#255#179#179#179#255'qqq'#255'444'#255'3'
+  +'33'#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +#0'444'#0'333'#255'~~~'#255#179#179#179#255#179#179#179#255#179#179#179#255
+  +#175#175#175#255''#255#167#167#167#255#179#179#179#255#179#179#179#255#179
+  +#179#179#255#133#133#133#255'444'#255'222'#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'333'#0'555'#255#146
+  +#146#146#255#179#179#179#255#179#179#179#255#179#179#179#255#179#179#179#255
+  +#179#179#179#255#179#179#179#255#179#179#179#255#146#146#146#255'555'#255'55'
+  +'5'#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'444'#255';;;'#255#161#161#161#255#179#179
+  +#179#255#179#179#179#255#179#179#179#255#179#179#179#255#179#179#179#255#155
+  +#155#155#255'999'#255'444'#255#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'555'#0'33'
+  +'3'#255'ggg'#255#179#179#179#255#179#179#179#255#179#179#179#255#179#179#179
+  +#255#179#179#179#255'WWW'#255'333'#255'+++'#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'333'
+  +#0'777'#255'LLL'#255#174#174#174#255#179#179#179#255#179#179#179#255#179#179
+  +#179#255#179#179#179#255#179#179#179#255#161#161#161#255'999'#255'555'#255#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0'333'#0'777'#255'CCC'#255#168#168#168#255#179#179#179#255
+  +#179#179#179#255#179#179#179#255#179#179#179#255#179#179#179#255#179#179#179
+  +#255#179#179#179#255#145#145#145#255'333'#255'333'#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'555'#255'<<'
+  +'<'#255#161#161#161#255#179#179#179#255#179#179#179#255#179#179#179#255#165
+  +#165#165#255'lll'#255#161#161#161#255#179#179#179#255#179#179#179#255#179#179
+  +#179#255'|||'#255'333'#255'555'#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0'222'#0'666'#255#151#151#151#255#179#179#179#255
+  +#179#179#179#255#179#179#179#255#152#152#152#255'<<<'#255'333'#255'<<<'#255
+  +#153#153#153#255#179#179#179#255#179#179#179#255#179#179#179#255'eee'#255'66'
+  +'6'#255'000'#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'333'#0
+  +'555'#255''#255#179#179#179#255#179#179#179#255#179#179#179#255#135#135
+  +#135#255'666'#255'555'#255'333'#0'555'#255'888'#255#142#142#142#255#179#179
+  +#179#255#179#179#179#255#176#176#176#255'LLL'#255'666'#255#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'+++'#0'777'#255']]]'#255#179#179#179#255#179
+  +#179#179#255#178#178#178#255'sss'#255'444'#255'444'#255#0#0#0#0#0#0#0#0'UUU'
+  +#0'444'#255'444'#255#128#128#128#255#179#179#179#255#179#179#179#255#158#158
+  +#158#255'666'#255'444'#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'333'#0'==='
+  +#255#171#171#171#255#179#179#179#255#163#163#163#255'QQQ'#255'444'#255'222'#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'333'#0'333'#255'eee'#255#175#175#175
+  +#255#179#179#179#255'uuu'#255'555'#255'111'#0#0#0#0#0#0#0#0#0#0#0#0#0'+++'#0
+  +'666'#255'}}}'#255#178#178#178#255#130#130#130#255'888'#255'666'#255'444'#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'333'#0'555'#255'KKK'
+  +#255#160#160#160#255#177#177#177#255'III'#255'555'#255#0#0#0#0#0#0#0#0#0#0#0
+  +#0'333'#0'333'#255'}}}'#255'HHH'#255'444'#255'333'#255'@@@'#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'666'#0'777'#255'666'
+  +#255'sss'#255'}}}'#255'555'#255'@@@'#0#0#0#0#0#0#0#0#0'333'#0'666'#255'666'
+  +#255'555'#255'222'#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'222'#0'555'#255'333'#255'55'
+  +'5'#255'...'#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'$$$'#0'222'#0'222'#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#4'Hint'#6#17'Exit the program.'#10'Im'
+  +'ageIndex'#2#3#8'ShortCut'#4's'#128#0#0#7'OnClick'#7#17'MenuItemExitClick'#0
+  +#0#0#9'TMenuItem'#9'MenuItem2'#7'Caption'#6#10'Calulation'#0#9'TMenuItem'#12
+  ,'MenuItemScan'#7'Caption'#6#15'Scan Input Term'#11'Bitmap.Data'#10#254#9#0#0
+  +#250#9#0#0'BM'#250#9#0#0#0#0#0#0'6'#0#0#0'('#0#0#0#25#0#0#0#25#0#0#0#1#0' '#0
+  +#0#0#0#0#196#9#0#0'd'#0#0#0'd'#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'333'#0'222'#0'222'#0
+  +'222'#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0'444'#0'333'#255'333'#255'333'#255'999'#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'333'
+  +#255'GGG'#255#140#140#140#255'333'#255'333'#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'333'#255'NNN'#255#149
+  +#149#149#255'333'#255'333'#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'333'#255'NNN'#255#149#149#149#255'333'
+  +#255'333'#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0'333'#255'NNN'#255#149#149#149#255'333'#255'333'#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +'333'#255'NNN'#255#149#149#149#255'333'#255'333'#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'333'#255'NNN'#255
+  +#149#149#149#255'333'#255'333'#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'333'#255'NNN'#255#149#149#149#255'3'
+  +'33'#255'333'#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0'333'#255'NNN'#255#149#149#149#255'333'#255'333'#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +#0#0'333'#255'NNN'#255#149#149#149#255'333'#255'333'#0#0#0#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'333'#0'444'#255'VVV'
+  +#255#161#161#161#255'333'#255'333'#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0'333'#0'666'#255'???'#255#163#163#163#255#179#179
+  +#179#255'|||'#255'444'#255'222'#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0'333'#0'666'#255'>>>'#255#161#161#161#255#179#179#179#255#179#179#179
+  +#255#179#179#179#255'{{{'#255'333'#255'444'#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +#0#0'+++'#0'777'#255'<<<'#255#158#158#158#255#179#179#179#255#179#179#179#255
+  +#179#179#179#255#179#179#179#255#179#179#179#255'xxx'#255'444'#255'222'#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0'+++'#0'444'#255';;;'#255#156#156#156#255#179#179#179#255#179
+  +#179#179#255#179#179#179#255#179#179#179#255#179#179#179#255#179#179#179#255
+  +#179#179#179#255'uuu'#255'333'#255'222'#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'UUU'#0'555'#255'999'#255#154#154
+  +#154#255#179#179#179#255#179#179#179#255#179#179#179#255#179#179#179#255#179
+  +#179#179#255#179#179#179#255#179#179#179#255#179#179#179#255#179#179#179#255
+  +'rrr'#255'333'#255'222'#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0'UUU'#0'555'#255'888'#255#128#128#128#255'~~~'#255'qqq'#255'bbb'
+  +#255'^^^'#255'UUU'#255'UUU'#255'YYY'#255'^^^'#255'hhh'#255'ttt'#255#134#134
+  +#134#255'ggg'#255'333'#255'444'#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0'444'#255'555'#255'444'#255'333'#255'333'#255'666'#255'???'#255
+  +'CCC'#255'FFF'#255'GGG'#255'DDD'#255'CCC'#255'<<<'#255'444'#255'333'#255'333'
+  +#255'888'#255'333'#255'222'#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'333'
+  +#255'333'#255'BBB'#255'XXX'#255'ZZZ'#255'UUU'#255'MMM'#255'EEE'#255'BBB'#255
+  +'???'#255'==='#255'==='#255'???'#255'DDD'#255'III'#255'MMM'#255'LLL'#255'>>>'
+  +#255'333'#255'333'#255'444'#255#0#0#0#0#0#0#0#0#0#0#0#0',,,'#0'333'#255'aaa'
+  +#255''#255'DDD'#255'444'#255'>>>'#255'CCC'#255'GGG'#255'III'#255'III'#255
+  +'333'#255'333'#255'333'#255'333'#255'333'#255'333'#255'333'#255'333'#255'333'
+  +#255'333'#255'333'#255#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'666'#255'666'#255'RRR'
+  ,#255'___'#255'PPP'#255'BBB'#255';;;'#255'888'#255'777'#255'999'#255'444'#255
+  +'333'#255'333'#255'333'#255'444'#255'888'#255'888'#255'333'#255'333'#255'333'
+  +#255'333'#255#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'333'#0'444'#255'555'#255'333'
+  +#255'333'#255'777'#255'DDD'#255'III'#255'LLL'#255'RRR'#255'OOO'#255'OOO'#255
+  +'KKK'#255'GGG'#255'@@@'#255'444'#255'333'#255'333'#255'555'#255'444'#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'555'#0'333'#0'333'
+  +#255'333'#255'333'#255'555'#255'444'#255'444'#255'444'#255'555'#255'333'#255
+  +'333'#255'444'#0'444'#0'111'#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#4'Hint'#6';Scan the input string '
+  +'containing '#10'the user''s temporal term.'#10'ImageIndex'#2#4#8'ShortCut'#3
+  +'1@'#7'OnClick'#7#17'MenuItemScanClick'#0#0#9'TMenuItem'#16'MenuItemSimplify'
+  +#7'Caption'#6#8'Simplify'#7'Enabled'#8#11'Bitmap.Data'#10#254#9#0#0#250#9#0#0
+  +'BM'#250#9#0#0#0#0#0#0'6'#0#0#0'('#0#0#0#25#0#0#0#25#0#0#0#1#0' '#0#0#0#0#0
+  +#196#9#0#0'd'#0#0#0'd'#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +#0#0'333'#255'333'#255'+++'#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'111'#0'333'#255'333'#255'222'#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0'666'#255'BBB'#255'\\\'#255'777'#255#0#0#0#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'111'#0'333'#255
+  +#141#141#141#255#151#151#151#255'333'#255'222'#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'999'#0'666'#255'ZZZ'#255#179#179#179
+  +#255#179#179#179#255'PPP'#255'666'#255#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'555'#255';;;'#255#168#168#168#255#179#179#179
+  +#255#179#179#179#255#143#143#143#255'444'#255'555'#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0'444'#0'333'#255#138#138#138#255#179#179#179#255
+  +#179#179#179#255#179#179#179#255#179#179#179#255'NNN'#255'444'#255#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'333'#0'555'#255'hhh'#255#179#179#179#255
+  +#179#179#179#255#179#179#179#255#179#179#179#255#179#179#179#255#151#151#151
+  +#255'333'#255'555'#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'333'#0'666'#255'UUU'#255#178
+  +#178#178#255#179#179#179#255#160#160#160#255'fff'#255#143#143#143#255#179#179
+  +#179#255#179#179#179#255'___'#255'666'#255'UUU'#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'000'#0'666'#255
+  +'KKK'#255#171#171#171#255#156#156#156#255'bbb'#255'444'#255'333'#255'555'#255
+  +#156#156#156#255#179#179#179#255#164#164#164#255'777'#255'333'#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +'666'#255'333'#255'zzz'#255'SSS'#255'333'#255'777'#255'444'#0'@@@'#0'444'#255
+  +'>>>'#255#165#165#165#255#179#179#179#255'rrr'#255'666'#255'666'#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'888'
+  +#255'333'#255'666'#255'555'#255'222'#0#0#0#0#0#0#0#0#0#0#0#0#0'+++'#0'777'
+  +#255'HHH'#255#171#171#171#255#175#175#175#255'FFF'#255'666'#255#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'777'#0'777'
+  +#255'QQQ'#255#174#174#174#255#155#155#155#255'555'#255'222'#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'222'#0'666'#255
+  +'VVV'#255#176#176#176#255'xxx'#255'555'#255'555'#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'333'#0'555'#255']]]'#255
+  +#176#176#176#255'SSS'#255'666'#255'333'#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'333'#0'555'#255'ddd'#255#168#168#168
+  ,#255'CCC'#255'666'#255#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'222'#0'444'#255'hhh'#255#158#158#158#255'888'
+  +#255'555'#255#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0'333'#0'444'#255'ddd'#255#145#145#145#255'555'#255'555'#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0'222'#0'555'#255']]]'#255#135#135#135#255'444'#255'444'#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'555'
+  +#0'666'#255'JJJ'#255'}}}'#255'555'#255'555'#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'777'#0'777'#255'<<<'#255
+  +'\\\'#255'444'#255'444'#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'999'#0'333'#255'333'#255'333'#255'333'#255
+  +'222'#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0'222'#0'333'#255'333'#255'UUU'#0#0#0#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#4'Hint'#6'FStart the simplification according to '
+  +'the rules of the temporal logic.'#10'ImageIndex'#2#5#8'ShortCut'#3'2@'#7'On'
+  +'Click'#7#21'MenuItemSimplifyClick'#0#0#0#9'TMenuItem'#12'MenuItemView'#7'Ca'
+  +'ption'#6#4'View'#0#9'TMenuItem'#17'MenuItemShowTrees'#9'AutoCheck'#9#7'Capt'
+  +'ion'#6#27'Show / Hide tree structures'#7'Checked'#9#11'Bitmap.Data'#10#254#9
   +#0#0#250#9#0#0'BM'#250#9#0#0#0#0#0#0'6'#0#0#0'('#0#0#0#25#0#0#0#25#0#0#0#1#0
   +' '#0#0#0#0#0#196#9#0#0'd'#0#0#0'd'#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
   +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
   +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
   +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
-  +#0#0#0#0#0#0#0#0'333'#255'333'#255'+++'#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
-  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
-  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'111'#0'333'#255'333'
-  +#255'222'#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
-  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
-  +#0#0#0#0#0#0#0#0#0#0#0#0#0'666'#255'BBB'#255'\\\'#255'777'#255#0#0#0#0#0#0#0
-  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
-  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'111'#0
-  +'333'#255#141#141#141#255#151#151#151#255'333'#255'222'#0#0#0#0#0#0#0#0#0#0#0
-  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
-  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'999'#0'666'#255'ZZZ'#255#179
-  +#179#179#255#179#179#179#255'PPP'#255'666'#255#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
-  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
-  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'555'#255';;;'#255#168#168#168#255#179
-  +#179#179#255#179#179#179#255#143#143#143#255'444'#255'555'#0#0#0#0#0#0#0#0#0
-  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
-  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'444'#0'333'#255#138#138#138#255#179#179
-  +#179#255#179#179#179#255#179#179#179#255#179#179#179#255'NNN'#255'444'#255#0
-  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
-  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'333'#0'555'#255'hhh'#255#179#179
-  +#179#255#179#179#179#255#179#179#179#255#179#179#179#255#179#179#179#255#151
-  +#151#151#255'333'#255'555'#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
-  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'333'#0'666'#255'UUU'
-  +#255#178#178#178#255#179#179#179#255#160#160#160#255'fff'#255#143#143#143#255
-  +#179#179#179#255#179#179#179#255'___'#255'666'#255'UUU'#0#0#0#0#0#0#0#0#0#0#0
-  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'000'#0
-  +'666'#255'KKK'#255#171#171#171#255#156#156#156#255'bbb'#255'444'#255'333'#255
-  +'555'#255#156#156#156#255#179#179#179#255#164#164#164#255'777'#255'333'#0#0#0
-  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
-  +#0#0#0#0'666'#255'333'#255'zzz'#255'SSS'#255'333'#255'777'#255'444'#0'@@@'#0
-  +'444'#255'>>>'#255#165#165#165#255#179#179#179#255'rrr'#255'666'#255'666'#0#0
-  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
-  +#0'888'#255'333'#255'666'#255'555'#255'222'#0#0#0#0#0#0#0#0#0#0#0#0#0'+++'#0
-  +'777'#255'HHH'#255#171#171#171#255#175#175#175#255'FFF'#255'666'#255#0#0#0#0
-  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
-  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'777'#0
-  +'777'#255'QQQ'#255#174#174#174#255#155#155#155#255'555'#255'222'#0#0#0#0#0#0
-  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
-  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'222'#0'66'
-  +'6'#255'VVV'#255#176#176#176#255'xxx'#255'555'#255'555'#0#0#0#0#0#0#0#0#0#0#0
-  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
-  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'333'#0'555'#255']]]'
-  +#255#176#176#176#255'SSS'#255'666'#255'333'#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
-  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
-  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'333'#0'555'#255'ddd'#255#168#168
-  ,#168#255'CCC'#255'666'#255#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
-  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
-  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'222'#0'444'#255'hhh'#255#158#158#158#255
-  +'888'#255'555'#255#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
-  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
-  +#0#0#0#0#0#0#0#0#0#0#0#0#0'333'#0'444'#255'ddd'#255#145#145#145#255'555'#255
-  +'555'#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
-  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
-  +#0#0#0#0#0#0#0'222'#0'555'#255']]]'#255#135#135#135#255'444'#255'444'#0#0#0#0
-  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
-  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
-  +#0'555'#0'666'#255'JJJ'#255'}}}'#255'555'#255'555'#0#0#0#0#0#0#0#0#0#0#0#0#0
-  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
-  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'777'#0'777'#255
-  +'<<<'#255'\\\'#255'444'#255'444'#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
-  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
-  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'999'#0'333'#255'333'#255'333'#255
-  +'333'#255'222'#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
-  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
-  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'222'#0'333'#255'333'#255'UUU'#0#0#0#0#0#0#0
-  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
-  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
-  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#4'Hint'#6'FStart the simplification acc'
-  +'ording to the rules of the temporal logic.'#10'ImageIndex'#2#5#8'ShortCut'#3
-  +'2@'#7'OnClick'#7#21'MenuItemSimplifyClick'#0#0#0#9'TMenuItem'#12'MenuItemVi'
-  +'ew'#7'Caption'#6#4'View'#0#9'TMenuItem'#17'MenuItemShowTrees'#9'AutoCheck'#9
-  +#7'Caption'#6#27'Show / Hide tree structures'#7'Checked'#9#11'Bitmap.Data'#10
-  +#254#9#0#0#250#9#0#0'BM'#250#9#0#0#0#0#0#0'6'#0#0#0'('#0#0#0#25#0#0#0#25#0#0
-  +#0#1#0' '#0#0#0#0#0#196#9#0#0'd'#0#0#0'd'#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
   +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
   +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
   +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
   +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
-  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
-  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
-  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
-  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'f'#25#0#0'j'
-  +#26#0#255'j'#26#0#255'j'#26#0#255'j'#26#0#255'j'#26#0#255'j'#26#0#255'j'#26#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0'f'#25#0#0'j'#26#0
   +#255'j'#26#0#255'j'#26#0#255'j'#26#0#255'j'#26#0#255'j'#26#0#255'j'#26#0#255
   +'j'#26#0#255'j'#26#0#255'j'#26#0#255'j'#26#0#255'j'#26#0#255'j'#26#0#255'j'
-  +#26#0#255'j'#26#0#255'f'#25#0#0#0#0#0#0#0#0#0#0'n'#27#0#255#207'3'#0#255#255
-  +'T'#27#255#255'T'#27#255#255'T'#27#255#255'T'#27#255#255'T'#27#255#255'T'#27
+  +#26#0#255'j'#26#0#255'j'#26#0#255'j'#26#0#255'j'#26#0#255'j'#26#0#255'j'#26#0
+  +#255'j'#26#0#255'f'#25#0#0#0#0#0#0#0#0#0#0'n'#27#0#255#207'3'#0#255#255'T'#27
   +#255#255'T'#27#255#255'T'#27#255#255'T'#27#255#255'T'#27#255#255'T'#27#255
   +#255'T'#27#255#255'T'#27#255#255'T'#27#255#255'T'#27#255#255'T'#27#255#255'T'
-  +#27#255#255'T'#27#255#255'T'#27#255#238';'#0#255'f'#25#0#255'b'#24#0#0#0#0#0
-  +#0'g'#25#0#255#255'^)'#255#255#175#148#255#255#175#148#255#255#175#148#255
+  +#27#255#255'T'#27#255#255'T'#27#255#255'T'#27#255#255'T'#27#255#255'T'#27#255
+  +#255'T'#27#255#255'T'#27#255#238';'#0#255'f'#25#0#255'b'#24#0#0#0#0#0#0'g'#25
+  +#0#255#255'^)'#255#255#175#148#255#255#175#148#255#255#175#148#255#255#175
+  +#148#255#255#175#148#255#255#175#148#255#255#175#148#255#255#175#148#255#255
+  +#175#148#255#255#157'}'#255#255'e2'#255#255'd0'#255#255'd0'#255#255#139'd'
+  +#255#255#175#148#255#255#175#148#255#255#175#148#255#255#175#148#255#255#175
+  +#148#255#255#135'_'#255'b'#24#0#255'b'#24#0#0#0#0#0#0'g'#25#0#255#255'^)'#255
   +#255#175#148#255#255#175#148#255#255#175#148#255#255#175#148#255#255#175#148
-  +#255#255#175#148#255#255#157'}'#255#255'e2'#255#255'd0'#255#255'd0'#255#255
-  +#139'd'#255#255#175#148#255#255#175#148#255#255#175#148#255#255#175#148#255
-  +#255#175#148#255#255#135'_'#255'b'#24#0#255'b'#24#0#0#0#0#0#0'g'#25#0#255#255
-  +'^)'#255#255#175#148#255#255#175#148#255#255#175#148#255#255#175#148#255#255
-  +#175#148#255#255#175#148#255#255#175#148#255#255#175#148#255#255#175#148#255
-  +#198'1'#0#255#185'.'#0#255#198'1'#0#255#198'1'#0#255#150'%'#0#255#255#175#148
-  +#255#255#175#148#255#255#175#148#255#255#175#148#255#255#175#148#255#255#135
-  +'_'#255'b'#24#0#255'b'#24#0#0#0#0#0#0'g'#25#0#255#255'^)'#255#255#175#148#255
-  +#255#175#148#255#255#175#148#255#255#175#148#255#255#175#148#255#255'[$'#255
-  +#255'F'#9#255#255'F'#9#255#255#130'Y'#255#172'+'#0#255#241'<'#0#255#252'?'#0
-  +#255#252'?'#0#255#150'%'#0#255#255#175#148#255#255#175#148#255#255#175#148
-  +#255#255#175#148#255#255#175#148#255#255#135'_'#255'b'#24#0#255'b'#24#0#0#0#0
-  +#0#0'g'#25#0#255#255'^)'#255#255#175#148#255#255#175#148#255#255#175#148#255
-  +#255#175#148#255#255#175#148#255'{'#30#0#255#255'd0'#255#255'd0'#255#255#142
-  +'i'#255#172'+'#0#255#241'<'#0#255#252'?'#0#255#252'?'#0#255#150'%'#0#255#255
-  +#175#148#255#255#175#148#255#255#175#148#255#255#175#148#255#255#175#148#255
-  +#255#135'_'#255'b'#24#0#255'b'#24#0#0#0#0#0#0'g'#25#0#255#255'^)'#255#255#175
-  ,#148#255#255#175#148#255#255#175#148#255#255#175#148#255#255#175#148#255#172
-  +'+'#0#255#255#175#148#255#255#175#148#255#255#175#148#255#196'1'#0#255#183'-'
-  +#0#255#188'/'#0#255#188'/'#0#255#145'$'#0#255#255#175#148#255#255#175#148#255
+  +#255#255#175#148#255#255#175#148#255#255#175#148#255#255#175#148#255#198'1'#0
+  +#255#185'.'#0#255#198'1'#0#255#198'1'#0#255#150'%'#0#255#255#175#148#255#255
+  +#175#148#255#255#175#148#255#255#175#148#255#255#175#148#255#255#135'_'#255
+  +'b'#24#0#255'b'#24#0#0#0#0#0#0'g'#25#0#255#255'^)'#255#255#175#148#255#255
+  +#175#148#255#255#175#148#255#255#175#148#255#255#175#148#255#255'[$'#255#255
+  +'F'#9#255#255'F'#9#255#255#130'Y'#255#172'+'#0#255#241'<'#0#255#252'?'#0#255
+  +#252'?'#0#255#150'%'#0#255#255#175#148#255#255#175#148#255#255#175#148#255
+  +#255#175#148#255#255#175#148#255#255#135'_'#255'b'#24#0#255'b'#24#0#0#0#0#0#0
+  +'g'#25#0#255#255'^)'#255#255#175#148#255#255#175#148#255#255#175#148#255#255
+  +#175#148#255#255#175#148#255'{'#30#0#255#255'd0'#255#255'd0'#255#255#142'i'
+  +#255#172'+'#0#255#241'<'#0#255#252'?'#0#255#252'?'#0#255#150'%'#0#255#255#175
+  +#148#255#255#175#148#255#255#175#148#255#255#175#148#255#255#175#148#255#255
+  +#135'_'#255'b'#24#0#255'b'#24#0#0#0#0#0#0'g'#25#0#255#255'^)'#255#255#175#148
+  ,#255#255#175#148#255#255#175#148#255#255#175#148#255#255#175#148#255#172'+'#0
+  +#255#255#175#148#255#255#175#148#255#255#175#148#255#196'1'#0#255#183'-'#0
+  +#255#188'/'#0#255#188'/'#0#255#145'$'#0#255#255#175#148#255#255#175#148#255
   +#255#175#148#255#255#175#148#255#255#175#148#255#255#135'_'#255'b'#24#0#255
   +'b'#24#0#0#0#0#0#0'g'#25#0#255#255'^)'#255#255#175#148#255#255#175#148#255
   +#255#175#148#255#255#175#148#255#255#175#148#255#172'+'#0#255#255#175#148#255

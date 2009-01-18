@@ -405,9 +405,6 @@ end;
 ------------------------------------------------------------------------------}
 procedure TTFTAObject.SetVType(Parameter : TTFTAOperatorType);
 begin
-  //ShowMEssage(' Setting Type from / To : ' +
-  //                                 IntToStr(Ord(self.VType)) + ' --> ' + IntToStr(Ord(Parameter)));
-  //
   self.VType := Parameter;
   if self.IsTypeBASIC then self.SetIsBasicEvent(true);
 end;

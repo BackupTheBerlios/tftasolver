@@ -1,7 +1,6 @@
 object TFTAMainWindow: TTFTAMainWindow
-  Left = 205
   Height = 732
-  Top = 289
+  Top = 25
   Width = 1000
   ActiveControl = PageControl1
   BorderIcons = [biSystemMenu, biMinimize]

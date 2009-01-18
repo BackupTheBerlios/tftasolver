@@ -71,8 +71,6 @@ begin
                                        BoolToString(true),    {   TemporalExpr          }
                                        true     {   LogicalValue          }    );
   self.SpeedSearchFlagOn := false;
-  ShowMessage(' TRUE:  ' + BoolToString(self.TheTRUEElement.IsTrue) +
-              ' FALSE: ' + BoolToString(self.TheFALSEElement.IsFalse) );
 end;
 {------------------------------------------------------------------------------
   Class-Destructor
