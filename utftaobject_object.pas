@@ -461,10 +461,11 @@ end;
 ------------------------------------------------------------------------------}
 function TTFTAObject.CheckIsNegated : boolean;
 begin
-  Result := self.IsNegatedAtomicEvent or
+  Result := self.IsTypeNOT            or
+            self.IsFalse              or
             self.IsNegatedANDTerm     or
-            self.IsNegatedCoreEvent   or
-            self.IsFalse;
+            self.IsNegatedAtomicEvent or  { IsTypeNOT will bee true, too; mentioned here just for readability }
+            self.IsNegatedCoreEvent   ;   { IsTypeNOT will bee true, too; mentioned here just for readability }
 end;
 {------------------------------------------------------------------------------
   CCC

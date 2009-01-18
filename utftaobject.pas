@@ -44,7 +44,7 @@ const
                                                        'SAND'    ,
                                                        'OTHER'   ,
                                                        'TOP'     ,
-                                                       'NOT'     ,
+                                                       'not'     ,
                                                        'BASIC'   );
 type
 

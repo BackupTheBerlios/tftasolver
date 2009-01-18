@@ -44,6 +44,7 @@ uses
 implementation
 
   { "private" functions / Procedures }
+  function  ANDCombine          (currentTerm :TTFTAObject; theParent : TTFTAList; theIndex : Integer; eventlist : TTFTAEventLookupList) : boolean; forward;
   function  ANDContradict       (currentTerm :TTFTAObject; theParent : TTFTAList; theIndex : Integer; eventlist : TTFTAEventLookupList) : boolean; forward;
   function  ANDFalse            (currentTerm :TTFTAObject; theParent : TTFTAList; theIndex : Integer; eventlist : TTFTAEventLookupList) : boolean; forward;
   function  ANDSplit            (currentTerm :TTFTAObject; theParent : TTFTAList; theIndex : Integer; eventlist : TTFTAEventLookupList) : boolean; forward;
@@ -68,6 +69,7 @@ implementation
   function  NOTPAND             (currentTerm :TTFTAObject; theParent : TTFTAList; theIndex : Integer; eventlist : TTFTAEventLookupList) : boolean; forward;
   function  ORSplit             (currentTerm :TTFTAObject; theParent : TTFTAList; theIndex : Integer; eventlist : TTFTAEventLookupList) : boolean; forward;
   function  ORXORFalse          (currentTerm :TTFTAObject; theParent : TTFTAList; theIndex : Integer; eventlist : TTFTAEventLookupList) : boolean; forward;
+  function  ORXORSANDCombine    (currentTerm :TTFTAObject; theParent : TTFTAList; theIndex : Integer; eventlist : TTFTAEventLookupList) : boolean; forward;
   function  ORXORTrue           (currentTerm :TTFTAObject; theParent : TTFTAList; theIndex : Integer; eventlist : TTFTAEventLookupList) : boolean; forward;
   function  PANDFalse           (currentTerm :TTFTAObject; theParent : TTFTAList; theIndex : Integer; eventlist : TTFTAEventLookupList) : boolean; forward;
   function  PANDMultiples       (currentTerm :TTFTAObject; theParent : TTFTAList; theIndex : Integer; eventlist : TTFTAEventLookupList) : boolean; forward;
@@ -87,9 +89,162 @@ implementation
 
 
 
-{These routines are designed according to the remarks in
- "TFTASolver - Description of the TFTASolver Algorithms" (Version 146 of 20081227)
- Chapter 2.2. Comments correspond to this chapter.}
+
+
+
+{IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
+ IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
+  Combine of AND terms (incl. sorting)
+ IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
+ IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII}
+function ANDCombine(currentTerm :TTFTAObject; theParent : TTFTAList; theIndex : Integer; eventlist : TTFTAEventLookupList) : boolean;
+var firstOpIsNeg      : boolean;
+    secondOpIsNeg     : boolean;
+    i                 : integer;
+    numberOfChildren  : integer;
+    nowPosInTerm      : integer;
+    nowSizeNATArray   : integer;
+    NATTypeTerms      : array of integer;
+    nowSizeANDArray   : integer;
+    ANDTypeTerms      : array of integer;
+    tempObject        : TTFTAObject;
+    thereAreNegOps    : boolean;
+    thereAreNonNegOps : boolean;
+begin
+  Result := False;
+{ ....check currentTerm .......................................................}
+  { routine is called from GenericSplit which does the checking on operator type etc.
+    it is also already checked that the currentTerm is neither a NAT no a BAT }
+  { Thus there are XXX possibilities left:
+    - term has exactly one negated and one non-negated operand --> do nothing
+    - term has exclusively negated operands
+    - term has exclusively non-negated operands
+    - term has negated and non-negated operands and a total of three or more operands }
+  if ( currentTerm.Count = 2 ) then
+  begin
+     firstOpIsNeg := currentTerm[0].IsNegated;
+     secondOpIsNeg := currentTerm[1].IsNegated;
+     if ( firstOpIsNeg xor secondOpIsNeg ) then exit;
+  end;
+  // now scan through all children and check whether they are exclusively negated or
+  // non-negated or intermixed
+  nowPosInTerm      := 0;
+  nowSizeNATArray   := 0;
+  nowSizeANDArray   := 0;
+  thereAreNegOps    := false;
+  thereAreNonNegOps := false;
+  numberOfChildren  := currentTerm.Count;
+  repeat
+    if (currentTerm[nowPosInTerm].IsNegated) then
+    begin
+      thereAreNegOps    := true;
+      // check whether it is a NAT
+      if (not thereAreNonNegOps) and (currentTerm[nowPosInTerm].IsNegatedANDTerm) then
+      begin
+        inc(nowSizeNATArray);
+        SetLength(NATTypeTerms,nowSizeNATArray);         { expand array }
+        NATTypeTerms[nowSizeNATArray-1] := nowPosInTerm; { add current pos to array }
+      end;
+    end else
+    begin
+      thereAreNonNegOps := true;
+      // check whether it is a term with itself type AND
+      if (not thereAreNegOps) and (currentTerm[nowPosInTerm].IsTypeAND) then
+      begin
+        inc(nowSizeANDArray);
+        SetLength(ANDTypeTerms,nowSizeANDArray);         { expand array }
+        ANDTypeTerms[nowSizeANDArray-1] := nowPosInTerm; { add current pos to array }
+      end;
+    end;
+    // until intermixed or scan finished
+    if (thereAreNegOps and thereAreNonNegOps) then
+    begin
+      //Result := ANDMixedSplit(currentTerm,theParent,theIndex,eventlist);
+      exit;
+    end;
+    inc(nowPosInTerm);
+  until (nowPosInTerm = numberOfChildren);
+  //
+  if thereAreNegOps then
+  begin
+    if nowSizeNATArray = 0 then exit; { only negateds but no NATs --> do nothing }
+    Result := true; { ok, we have to apply changes to the term }
+    dec(nowSizeNATArray); { zero-based index }
+    for i := 0 to nowSizeNATArray do
+    begin
+      { get all NAT-children of the event and add them to current Event;
+        do not yet extract the events as this would interfere with the
+        indexes stored in NATTypeTerms; adding at the end does not interfere here. }
+      nowPosInTerm := 0;
+      numberOfChildren := currentTerm[NATTypeTerms[i]].Count;
+      if numberOfChildren > 0 then
+      begin
+        repeat
+          currentTerm.AddChild(currentTerm[NATTypeTerms[i]][nowPosInTerm]);
+          inc(nowPosInTerm);
+        until (nowPosInTerm = numberOfChildren);
+      end;
+    end; { for each listed in array }
+    { now extract all array-listed terms from currentTerm; in order to minimize
+      interference we do this from back to front }
+    for i := nowSizeNATArray downto 0 do
+    begin
+      currentTerm.DeleteChild(NATTypeTerms[i]);
+    end;
+  end else
+  begin
+    thereAreNegOps := false; { reuse this variable for checking of the operands }
+    if nowSizeANDArray = 0 then exit; { only non-negateds but no ANDs --> do nothing }
+    dec(nowSizeANDArray); { zero-based index }
+    for i := 0 to nowSizeANDArray do
+    begin
+      { get all AND-children of the event and check whether one of the has negated elements in it
+        flatten each AND child that has no negated elements and skip all the other children }
+      nowPosInTerm := 0;
+      numberOfChildren := currentTerm[ANDTypeTerms[i]].Count;
+      if numberOfChildren > 0 then
+      begin
+        repeat
+          thereAreNegOps := currentTerm[ANDTypeTerms[i]][nowPosInTerm].IsNegated;
+          inc(nowPosInTerm);
+        until thereAreNegOps or (nowPosInTerm = numberOfChildren);
+        if thereAreNegOps then
+        begin // the event referred to by ANDTypeTerms[i] has at least one negated child
+          ANDTypeTerms[i] := -100; // flag value indicating that there was a term with a negated --> skip while deleting (see below)
+        end else
+        begin
+          { get all AND-children of the event and add them to current Event;
+          do not yet extract the events as this would interfere with the
+          indexes stored in ANDTypeTerms; adding at the end does not interfere here. }
+          nowPosInTerm := 0;
+          repeat
+            currentTerm.AddChild(currentTerm[ANDTypeTerms[i]][nowPosInTerm]);
+            inc(nowPosInTerm);
+          until (nowPosInTerm = numberOfChildren);
+        end;
+      end;
+    end; { for each listed in array }
+    { now extract all array-listed terms from currentTerm; in order to minimize
+      interference we do this from back to front }
+    for i := nowSizeANDArray downto 0 do
+    begin
+      if (ANDTypeTerms[i] <> -100) then
+      begin
+        currentTerm.DeleteChild(ANDTypeTerms[i]);
+        Result := true; { ok, we have to apply changes to the term }
+      end;
+    end;
+  end;
+  { now sort currentTerm (thereby checking whether an identical object
+    already is listed in Eventlist }
+{ ....configuration continued and redirection .................................}
+  SortOperands(currentTerm,theParent,theIndex,eventlist);
+  currentTerm.CheckTermProperties;
+  {$IfDef TESTMODE}currentTerm.DEBUGPrint(true,eventlist,'ANDCombine 2');{$ENDIF}
+end;
+
+
+
 
 
 
@@ -746,69 +901,25 @@ end;
 
 {IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
  IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
-  Generic combine of commutative terms (incl. sorting)
+  Generic combine of commutative terms
+  provides basic checks of term and then calls appropriate routines for actual combining
  IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
  IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII}
 function GenericCombine(currentTerm :TTFTAObject; theParent : TTFTAList; theIndex : Integer; eventlist : TTFTAEventLookupList) : boolean;
-var myType           : TTFTAOperatorType;
-    i                : integer;
-    numberOfChildren : integer;
-    nowPosInTerm     : integer;
-    nowSizeArray     : integer;
-    SameTypeTerms    : array of integer;
-    tempObject : TTFTAObject;
 begin
   Result := False;
-  myType := currentTerm.EventType;
 { ....check currentTerm .......................................................}
-  if currentTerm.IsCommutative then
+  if currentTerm.IsBasicANDTerm      then exit;
+  if currentTerm.IsNegatedANDTerm    then exit;
+  if (not currentTerm.IsCommutative) then exit;
+  //
+  if currentTerm.IsTypeAND then
   begin
-    { scan all children and get all objects of same type as currentTerm;
-      this is done in a single loop }
-    nowPosInTerm := 0;
-    nowSizeArray := 0;
-    numberOfChildren := currentTerm.Count;
-    repeat
-      if (currentTerm[nowPosInTerm].EventType = myType) then
-      begin { if same type }
-        inc(nowSizeArray);
-        SetLength(SameTypeTerms,nowSizeArray); { expand array }
-        SameTypeTerms[nowSizeArray-1] := nowPosInTerm; { add current pos to array }
-      end;
-      inc(nowPosInTerm);
-    until (nowPosInTerm = numberOfChildren);
-    if nowSizeArray > 0 then
-    begin { at least one same type event was found }
-{ ....configure currentTerm....................................................}
-      Result := true;
-      {$IfDef TESTMODE}currentTerm.DEBUGPrint(true,eventlist,'Entered GenericCombine');{$ENDIF}
-      { for each of the same type events do }
-      for i := 0 to nowSizeArray-1 do
-      begin
-        { get all children of the event and add them to current Event;
-          do not yet extract the same type events as this would interfere with the
-          indexes stored in SameTypeTerms; adding at the end does not interfere here. }
-        nowPosInTerm := 0;
-        numberOfChildren := currentTerm[SameTypeTerms[i]].Count;
-        if numberOfChildren > 0 then
-          repeat
-            currentTerm.AddChild(currentTerm[SameTypeTerms[i]][nowPosInTerm]);
-            inc(nowPosInTerm);
-          until (nowPosInTerm = numberOfChildren);
-      end;
-      { now extract all SameTypeTerms from currentTerm; in order to minimize
-        interference we do this from back to front }
-      for i := nowSizeArray-1 downto 0 do
-      begin
-        currentTerm.DeleteChild(SameTypeTerms[i]);
-      end;
-      { now sort currentTerm (thereby checking whether an identical object
-        already is listed in Eventlist }
-{ ....configuration continued and redirection .................................}
-      SortOperands(currentTerm,theParent,theIndex,eventlist);
-      currentTerm.CheckTermProperties;
-      {$IfDef TESTMODE}currentTerm.DEBUGPrint(true,eventlist,'GenericCombine 2');{$ENDIF}
-    end; { if nowSizeArray > 0 }
+    Result := ANDCombine(currentTerm,theParent,theIndex,eventlist);
+  end else
+  begin
+    // now it must be OR, XOR, SAND as it is neither not commutative nor AND
+    Result := ORXORSANDCombine(currentTerm,theParent,theIndex,eventlist);
   end;
 end;
 
@@ -1482,6 +1593,77 @@ begin
       end;
     end;  { Result }
   end;  { isTypeOR / XOR }
+end;
+
+
+
+
+
+
+{IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
+ IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
+  Generic combine of OR, XOR, SAND terms (incl. sorting)
+ IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
+ IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII}
+function ORXORSANDCombine(currentTerm :TTFTAObject; theParent : TTFTAList; theIndex : Integer; eventlist : TTFTAEventLookupList) : boolean;
+var myType           : TTFTAOperatorType;
+    i                : integer;
+    numberOfChildren : integer;
+    nowPosInTerm     : integer;
+    nowSizeArray     : integer;
+    SameTypeTerms    : array of integer;
+    tempObject : TTFTAObject;
+begin
+  Result := False;
+  myType := currentTerm.EventType;
+{ ....check currentTerm .......................................................}
+  { routine is called from GenericSplit which does the checking on operator type etc. }
+  { scan all children and get all objects of same type as currentTerm;
+    this is done in a single loop }
+  nowPosInTerm := 0;
+  nowSizeArray := 0;
+  numberOfChildren := currentTerm.Count;
+  repeat
+    if (currentTerm[nowPosInTerm].EventType = myType) then
+    begin { if same type }
+      inc(nowSizeArray);
+      SetLength(SameTypeTerms,nowSizeArray); { expand array }
+      SameTypeTerms[nowSizeArray-1] := nowPosInTerm; { add current pos to array }
+    end;
+    inc(nowPosInTerm);
+  until (nowPosInTerm = numberOfChildren);
+  if nowSizeArray > 0 then
+  begin { at least one same type event was found }
+{ ....configure currentTerm....................................................}
+    Result := true;
+    {$IfDef TESTMODE}currentTerm.DEBUGPrint(true,eventlist,'Entered ORXORSANDCombine');{$ENDIF}
+    { for each of the same type events do }
+    for i := 0 to nowSizeArray-1 do
+    begin
+      { get all children of the event and add them to current Event;
+        do not yet extract the same type events as this would interfere with the
+        indexes stored in SameTypeTerms; adding at the end does not interfere here. }
+      nowPosInTerm := 0;
+      numberOfChildren := currentTerm[SameTypeTerms[i]].Count;
+      if numberOfChildren > 0 then
+        repeat
+          currentTerm.AddChild(currentTerm[SameTypeTerms[i]][nowPosInTerm]);
+          inc(nowPosInTerm);
+        until (nowPosInTerm = numberOfChildren);
+    end;
+    { now extract all SameTypeTerms from currentTerm; in order to minimize
+      interference we do this from back to front }
+    for i := nowSizeArray-1 downto 0 do
+    begin
+      currentTerm.DeleteChild(SameTypeTerms[i]);
+    end;
+    { now sort currentTerm (thereby checking whether an identical object
+      already is listed in Eventlist }
+{ ....configuration continued and redirection .................................}
+    SortOperands(currentTerm,theParent,theIndex,eventlist);
+    currentTerm.CheckTermProperties;
+    {$IfDef TESTMODE}currentTerm.DEBUGPrint(true,eventlist,'ORXORSANDCombine 2');{$ENDIF}
+  end; { if nowSizeArray > 0 }
 end;
 
 
