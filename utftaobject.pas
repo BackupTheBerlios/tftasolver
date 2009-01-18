@@ -37,9 +37,15 @@ uses
   StrUtils, contnrs, sjspointertools;
 
 const
-  cEventTypeStringArray : array[1..9] of string[30] = ('AND','OR','XOR','PAND','SAND','OTHER','TOP','NOT',
-                                                       'BASIC');
-  
+  cEventTypeStringArray : array[1..9] of string[10] = ('AND'     ,
+                                                       'OR'      ,
+                                                       'XOR'     ,
+                                                       'PAND'    ,
+                                                       'SAND'    ,
+                                                       'OTHER'   ,
+                                                       'TOP'     ,
+                                                       'NOT'     ,
+                                                       'BASIC'   );
 type
 
   { forward declarations }
@@ -48,15 +54,15 @@ type
   TTFTAEventLookupList = class;
   
   { ######################################################################## }
-  TTFTAOperatorType = (tftaEventTypeAND := 1,
-                       tftaEventTypeOR,
-                       tftaEventTypeXOR,
-                       tftaEventTypePAND,
-                       tftaEventTypeSAND,
-                       tftaEventTypeOTHER,
-                       tftaEventTypeTOP,
-                       tftaEventTypeNOT,
-                       tftaEventTypeBASIC);
+  TTFTAOperatorType = (tftaEventTypeAND    := 1   ,
+                       tftaEventTypeOR            ,
+                       tftaEventTypeXOR           ,
+                       tftaEventTypePAND          ,
+                       tftaEventTypeSAND          ,
+                       tftaEventTypeOTHER         ,
+                       tftaEventTypeTOP           ,
+                       tftaEventTypeNOT           ,
+                       tftaEventTypeBASIC         );
   
   { ########################################################################## }
 
@@ -65,27 +71,34 @@ type
   TTFTAEventLookupList = class(TFPObjectList)
   private
     {$IfDef TESTMODE}
-      VDEBUGMemo: TMemo;
+      VDEBUGMemo       : TMemo;
     {$EndIf}
-    VmyApplication : TApplication;
-    VtheFALSE : TTFTAObject;
-    VtheTRUE  : TTFTAObject;
+    VmyApplication     : TApplication;
+    VtheFALSE          : TTFTAObject;
+    VtheTRUE           : TTFTAObject;
     VSpeedSearchFlagOn : boolean;
 
     function  GetItem(Index: Integer): TTFTAObject;
-    function  NewItemPrivate(EventType               : TTFTAOperatorType;
-                            IsBasicEvent            : boolean;
-                            IsCoreEvent             : boolean;
-                            IsEventSequence         : boolean;
-                            IsNegated               : boolean;
-                            IsNotCompletelyBuildYet : boolean;
-                            IsDisjunct              : boolean;
-                            IsExtendedSequence      : boolean;
-                            NeedsToBeUpdated        : boolean;
-                            PointerToUpdateObject   : TTFTAObject;
-                            TemporalExpr            : ansistring) : TTFTAObject;
+    function  NewItemPrivate(ET                        : TTFTAOperatorType;
+                             BE                        : boolean;
+                             CE                        : boolean;
+                             ES                        : boolean;
+                             XS                        : boolean;
+                             NAT                       : boolean;
+                             NCE                       : boolean;
+                             BAT                       : boolean;
+                             MCSSForm                  : boolean;
+                             Disjunct                  : boolean;
+                             NotComplete               : boolean;
+                             NeedsToBeUpdated          : boolean;
+                             PointerToUpdateObject     : TTFTAObject;
+                             TemporalExpr: ansistring) : TTFTAObject;
+
     procedure SetItem(Index: Integer; Item: TTFTAObject);
     procedure SetSpeedSearchFlagOn(SetTo : boolean);
+
+    property  theFALSEprivate : TTFTAObject read VtheFALSE write VtheFALSE;
+    property  theTRUEprivate  : TTFTAObject read VtheTRUE  write VtheTRUE;
 
   public
     {$IfDef TESTMODE}
@@ -95,49 +108,55 @@ type
     {$EndIf}
     destructor  Destroy;
 
-    function  Add(Item: TTFTAObject): Integer;
-    procedure Delete(Index : Integer);
-    // function  Extract(Item: TTFTAObject):TTFTAObject;
-    function  FindIdenticalExisting(Item : TTFTAObject) : TTFTAObject;
-    function  FindIdenticalExisting(Text : ansistring) : TTFTAObject;
-    procedure FreeTerm(theTerm : TTFTAObject);
-    procedure Insert(Index: Integer; Item: TTFTAObject);
-    function  NewItem: TTFTAObject;
-    function  NewItem(      EventType               : TTFTAOperatorType;
-                  		      IsBasicEvent            : boolean;
-                  		      IsCoreEvent             : boolean;
-                  		      IsEventSequence         : boolean;
-                  		      IsNegated               : boolean;
-                  		      IsNotCompletelyBuildYet : boolean;
-                  		      IsDisjunct              : boolean;
-                  		      IsExtendedSequence      : boolean;
-                  		      LogicalValue            : boolean;    { <<<<<<<<< !}
-                  		      NeedsToBeUpdated        : boolean;
-                  		      PointerToUpdateObject   : TTFTAObject;
-                  		      TemporalExpr            : ansistring) : TTFTAObject;
-    function  NewItem(      EventType               : TTFTAOperatorType;
-                  		      IsBasicEvent            : boolean;
-                  		      IsCoreEvent             : boolean;
-                  		      IsEventSequence         : boolean;
-                  		      IsNegated               : boolean;
-                  		      IsNotCompletelyBuildYet : boolean;
-                  		      IsDisjunct              : boolean;
-                  		      IsExtendedSequence      : boolean;
-                  		      LogicalValue            : pointer;    { <<<<<<<<< !}
-                  		      NeedsToBeUpdated        : boolean;
-                  		      PointerToUpdateObject   : TTFTAObject;
-                  		      TemporalExpr            : ansistring) : TTFTAObject;
-    procedure Replace(var oldTerm : TTFTAObject; newTerm : TTFTAObject);
-    procedure ReplaceWithIdentical(var oldTerm : TTFTAObject);
+    function  Add                  (Item: TTFTAObject)  : Integer     ;
+    function  FindIdenticalExisting(Item : TTFTAObject) : TTFTAObject ;
+    function  FindIdenticalExisting(Text : ansistring)  : TTFTAObject ;
+    function  NewItem                                   : TTFTAObject ;
+    function  NewItem( ET                        : TTFTAOperatorType;
+                       BE                        : boolean;
+                       CE                        : boolean;
+                       ES                        : boolean;
+                       XS                        : boolean;
+                       NAT                       : boolean;
+                       NCE                       : boolean;
+                       BAT                       : boolean;
+                       MCSSForm                  : boolean;
+                       Disjunct                  : boolean;
+                       NotComplete               : boolean;
+                       NeedsToBeUpdated          : boolean;
+                       PointerToUpdateObject     : TTFTAObject;
+                       TemporalExpr              : ansistring;
+                       LogicalValue              : boolean  { ############ } ) : TTFTAObject;
+    function  NewItem( ET                        : TTFTAOperatorType;
+                       BE                        : boolean;
+                       CE                        : boolean;
+                       ES                        : boolean;
+                       XS                        : boolean;
+                       NAT                       : boolean;
+                       NCE                       : boolean;
+                       BAT                       : boolean;
+                       MCSSForm                  : boolean;
+                       Disjunct                  : boolean;
+                       NotComplete               : boolean;
+                       NeedsToBeUpdated          : boolean;
+                       PointerToUpdateObject     : TTFTAObject;
+                       TemporalExpr              : ansistring;
+                       LogicalValue              : pointer  { ############ } ) : TTFTAObject;
+
+    procedure Delete               (Index : Integer)                                    ;
+    procedure FreeTerm             (theTerm : TTFTAObject)                              ;
+    procedure Insert               (Index: Integer; Item: TTFTAObject)                  ;
+    procedure Replace              (var oldTerm : TTFTAObject; newTerm : TTFTAObject)   ;
+    procedure ReplaceWithIdentical (var oldTerm : TTFTAObject)                          ;
 
     {$IfDef TESTMODE}
-    property  DEBUGMemo : TMemo read VDEBUGMemo write VDEBUGMemo;
+    property  DEBUGMemo            : TMemo        read VDEBUGMemo         write VDEBUGMemo           ;
     {$EndIf}
-    property  Items[Index: Integer]: TTFTAObject read GetItem write SetItem; default;
-    property  pointerToApplication : TApplication read VmyApplication write VmyApplication;
-    property  SpeedSearchFlagOn : boolean read VSpeedSearchFlagOn write SetSpeedSearchFlagOn;
-    property  TheFALSEElement : TTFTAObject read VtheFALSE;
-    property  TheTRUEElement : TTFTAObject read VtheTRUE;
+    property  Items[Index: Integer]: TTFTAObject  read GetItem            write SetItem              ; default;
+    property  pointerToApplication : TApplication read VmyApplication     write VmyApplication       ;
+    property  SpeedSearchFlagOn    : boolean      read VSpeedSearchFlagOn write SetSpeedSearchFlagOn ;
+    property  TheFALSEElement      : TTFTAObject  read VtheFALSE                                     ;
+    property  TheTRUEElement       : TTFTAObject  read VtheTRUE                                      ;
 
   end;
 
@@ -288,7 +307,7 @@ type
     property  IsExtendedSequence            : boolean read VIsXS                write VIsXS  ;
     property  IsExtendedSequenceWithNegated : boolean read CheckIsExtendedSequenceWithNegated;
     property  IsMCSSForm                    : boolean read VIsMCSS write VIsMCSS;
-    property  IsNegated                     : boolean read CheckIsNegated       write VIsNegated ;
+    property  IsNegated                     : boolean read CheckIsNegated ;
     property  IsNegatedANDTerm              : boolean read VIsNAT               write VIsNAT;
     property  IsNegatedAtomicEvent          : boolean read CheckIsNegatedAtomicEvent ;
     property  IsNegatedCoreEvent            : boolean read VIsNCE               write VIsNCE;

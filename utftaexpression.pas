@@ -179,19 +179,21 @@ begin
     EventList.pointerToApplication := pointerToApplication;
 
     { create the TemporalTerm (TTFTAObject), TOP level event }
-    TemporalTerm := EventList.NewItem(tftaEventTypeTOP,
-                                      false, {IsBasicEvent}
-                                      false, {IsCoreEvent}
-                                      false, {IsEventSequence}
-                                      false, {IsNegated}
-                                      false, {IsNotCompletelyBuildYet}
-                                      false, {IsDisjunct}
-                                      false, {IsExtendedSequence}
-                                      NIL,   {LogicalValue}
-                                      false, {NeedsToBeUpdatedfalse}
-                                      NIL,   {PointerToUpdateObject}
-                                      'TOP'
-                                     );
+    TemporalTerm := EventList.NewItem( tftaEventTypeTOP,     {   ET                    }
+                                       false,    {   BE                    }
+                                       false,    {   CE                    }
+                                       false,    {   ES                    }
+                                       false,    {   XS                    }
+                                       false,    {   NAT                   }
+                                       false,    {   NCE                   }
+                                       false,    {   BAT                   }
+                                       false,    {   MCSSForm              }
+                                       false,    {   Disjunct              }
+                                       false,    {   NotComplete           }
+                                       false,    {   NeedsToBeUpdated      }
+                                       NIL,      {   PointerToUpdateObject }
+                                       'TOP',    {   TemporalExpr          }
+                                       NIL       {   LogicalValue          }    );
 
     {$IfDef TESTMODE}
     if Assigned( DEBUGMemo) then DEBUGMemo.Append('TOP Levels created' + sLineBreak +
@@ -592,15 +594,20 @@ begin
       currentObject.IsNotCompletelyBuildYet := false;
       { next, set properties of the current node /treelevel according to the
         properties of its children (if any) }
-      currentObject.IsNegated:=true;
       currentObject.CheckTermProperties;
     end else
     { if there is also no NOT operator, then it is a basic event }
     begin
+      currentObject.Mask;
+      theTempObject := EventList.FindIdenticalExisting(theNewString);
+      currentObject.Unmask;
+      if not Assigned(theTempObject) then
+      begin
+        { object is NOT part of EventList yet }
         currentObject.SetIsBasicEvent(True);
         { set "name" (i.e. temporalexpression) only if basic event AND not TRUE or FALSE }
         if (currentObject <> eventlist.TheFALSEElement) and
-           (currentObject <> eventlist.TheTRUEElement) then
+          (currentObject <> eventlist.TheTRUEElement) then
         begin
           currentObject.TemporalExpr := theNewString;
         end;
@@ -608,6 +615,16 @@ begin
         if Assigned( DEBUGMemo) then
           DEBUGMemo.Append('New Basic Event ' + PointerAddrStr(currentObject) + ' called ' + theNewString );
         {$EndIf}
+      end else
+      begin
+        { object IS part of EventList --> just add pointer to it to TemporalTerm;
+          there is no need to parse its children, as they already exists }
+        currentObject.RedirectMe(theTempObject);
+        {$IfDef TESTMODE}
+          if Assigned( DEBUGMemo) then
+            DEBUGMemo.Append('Redirected existing BASIC ' + PointerAddrStr(theTempObject) );
+        {$EndIf}
+      end;
     end;
   end;
   

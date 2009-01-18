@@ -226,13 +226,40 @@ begin
 end;
 
 procedure TTFTAMainWindow.Button1Click(Sender: TObject);
+
+  procedure ScanDown(theObject : TTFTAObject);
+  var i : integer;
+      numberOfChildren : integer;
+  begin
+    if theObject.HasChildren then
+    begin
+      i := 0;
+      numberOfChildren := theObject.Count;
+      repeat
+        ScanDown(theObject[i]);
+        inc(i);
+      until ( i = numberOfChildren );
+    end;
+    theObject.CheckTermProperties;
+  end;
+
 begin
   MenuItemScanClick(Sender);
-  ShowMessage('Basic-Event:  ' + BoolToStr(self.TemporalExpression.TemporalTerm[0].IsBasicEvent) + sLineBreak +
-              'Core-Event:   ' + BoolToStr(self.TemporalExpression.TemporalTerm[0].IsCoreEvent) + sLineBreak +
-              'negated:      ' + BoolToStr(self.TemporalExpression.TemporalTerm[0].IsNegated) + sLineBreak +
-              'Event-Sequ.:  ' + BoolToStr(self.TemporalExpression.TemporalTerm[0].IsEventSequence) + sLineBreak +
-              'Extended-Sequ:' + BoolToStr(self.TemporalExpression.TemporalTerm[0].IsExtendedSequence) + sLineBreak);
+  ScanDown(self.TemporalExpression.TemporalTerm);
+  ShowMessage('BE     : ' + BoolToStr(self.TemporalExpression.TemporalTerm[0].IsBasicEvent) + sLineBreak +
+              'NAE    : ' + BoolToStr(self.TemporalExpression.TemporalTerm[0].IsNegatedAtomicEvent) + sLineBreak +
+              'BAT    : ' + BoolToStr(self.TemporalExpression.TemporalTerm[0].IsBasicANDTerm) + sLineBreak +
+              'NAT    : ' + BoolToStr(self.TemporalExpression.TemporalTerm[0].IsNegatedANDTerm) + sLineBreak +
+              'CE     : ' + BoolToStr(self.TemporalExpression.TemporalTerm[0].IsCoreEvent) + sLineBreak +
+              'NCE    : ' + BoolToStr(self.TemporalExpression.TemporalTerm[0].IsNegatedCoreEvent) + sLineBreak +
+              'ES     : ' + BoolToStr(self.TemporalExpression.TemporalTerm[0].IsEventSequence) + sLineBreak +
+              'NES    : ' + BoolToStr(self.TemporalExpression.TemporalTerm[0].IsEventSequenceWithNegated) + sLineBreak +
+              'XS     : ' + BoolToStr(self.TemporalExpression.TemporalTerm[0].IsExtendedSequence) + sLineBreak +
+              'NXS    : ' + BoolToStr(self.TemporalExpression.TemporalTerm[0].IsExtendedSequenceWithNegated) + sLineBreak +
+              'negated: ' + BoolToStr(self.TemporalExpression.TemporalTerm[0].IsNegated) + sLineBreak +
+              'TRUE   : ' + BoolToStr(self.TemporalExpression.TemporalTerm[0].IsTrue) + sLineBreak +
+              'FALSE  : ' + BoolToStr(self.TemporalExpression.TemporalTerm[0].IsFalse) + sLineBreak
+             );
 end;
 
 procedure TTFTAMainWindow.MenuItemExitClick(Sender: TObject);

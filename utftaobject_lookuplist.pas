@@ -39,34 +39,40 @@ begin
   self.OwnsObjects:= true; { the EventLookupList owns objects (the objects.children - list does not! }
 
   { create the FALSE event }
-  self.VtheFALSE := self.NewItem( tftaEventTypeBASIC,
-                                  true,  {IsBasicEvent}
-                                  true,  {IsCoreEvent}
-                                  false, {IsEventSequence}
-                                  true,  {IsNegated}
-                                  false, {IsNotCompletelyBuildYet}
-                                  false, {IsDisjunct}
-                                  false, {IsExtendedSequence}
-                                  false, {LogicalValue}
-                                  false, {NeedsToBeUpdatedfalse}
-                                  NIL,   {PointerToUpdateObject}
-                                  BoolToString(false)  { temporal Expression }
-                                 );
+  self.theFALSEprivate := self.NewItem(tftaEventTypeBASIC,     {   ET                    }
+                                       true ,    {   BE                    }
+                                       false,    {   CE                    }
+                                       false,    {   ES                    }
+                                       false,    {   XS                    }
+                                       false,    {   NAT                   }
+                                       true ,    {   NCE                   }
+                                       false,    {   BAT                   }
+                                       false,    {   MCSSForm              }
+                                       false,    {   Disjunct              }
+                                       false,    {   NotComplete           }
+                                       false,    {   NeedsToBeUpdated      }
+                                       NIL,      {   PointerToUpdateObject }
+                                       BoolToString(false),    {   TemporalExpr          }
+                                       false     {   LogicalValue          }    );
   { create the TRUE event }
-  self.VtheTRUE := self.NewItem(tftaEventTypeBASIC,
-                                true,  {IsBasicEvent}
-                                true,  {IsCoreEvent}
-                                false, {IsEventSequence}
-                                false, {IsNegated}
-                                false, {IsNotCompletelyBuildYet}
-                                false, {IsDisjunct}
-                                false, {IsExtendedSequence}
-                                true,  {LogicalValue}
-                                false, {NeedsToBeUpdatedfalse}
-                                NIL,   {PointerToUpdateObject}
-                                BoolToString(true)  { temporal Expression }
-                               );
+  self.theTRUEprivate := self.NewItem( tftaEventTypeBASIC,     {   ET                    }
+                                       true ,    {   BE                    }
+                                       true ,    {   CE                    }
+                                       true ,    {   ES                    }
+                                       false,    {   XS                    }
+                                       false,    {   NAT                   }
+                                       false,    {   NCE                   }
+                                       false,    {   BAT                   }
+                                       false,    {   MCSSForm              }
+                                       false,    {   Disjunct              }
+                                       false,    {   NotComplete           }
+                                       false,    {   NeedsToBeUpdated      }
+                                       NIL,      {   PointerToUpdateObject }
+                                       BoolToString(true),    {   TemporalExpr          }
+                                       true     {   LogicalValue          }    );
   self.SpeedSearchFlagOn := false;
+  ShowMessage(' TRUE:  ' + BoolToString(self.TheTRUEElement.IsTrue) +
+              ' FALSE: ' + BoolToString(self.TheFALSEElement.IsFalse) );
 end;
 {------------------------------------------------------------------------------
   Class-Destructor
@@ -81,6 +87,7 @@ end;
 function TTFTAEventLookupList.Add(Item: TTFTAObject): Integer;
 begin
   Result := inherited Add(Item);
+  Item.PosInEventList := Result;
 end;
 {------------------------------------------------------------------------------
 ------------------------------------------------------------------------------}
@@ -102,17 +109,6 @@ begin
     until i = numberOfItems;
   end;
 end;
-//{------------------------------------------------------------------------------
-//------------------------------------------------------------------------------}
-//function TTFTAEventLookupList.Extract(Item: TTFTAObject):TTFTAObject;
-//begin
-  //Result := TTFTAObject(inherited Extract(TObject(Item)));
-  //if Assigned(Result) and Result.NeedsToBeUpdated then
-  //begin
-    //Result := Result.PointerToUpdateObject;
-  //end;
-//end;
-
 {------------------------------------------------------------------------------
 ------------------------------------------------------------------------------}
 function TTFTAEventLookupList.FindIdenticalExisting(Item: TTFTAObject) : TTFTAObject;
@@ -192,66 +188,133 @@ end;
 function TTFTAEventLookupList.NewItem: TTFTAObject;
 begin
   Result:=
-    self.NewItem( tftaEventTypeOTHER, { type }
-                  false,  {IsBasicEvent              }
-                  false,  {IsCoreEvent               }
-                  false,  {IsEventSequence           }
-                  false,  {IsNegated                 }
-                  false,  {IsNotCompletelyBuildYet   }
-                  false,  {IsDisjunct                }
-                  false,  {IsExtendedSequence        }
-                  NIL,    {LogicalValue              }
-                  false,  {NeedsToBeUpdated          }
-                  NIL,    {PointerToUpdateObject     }
-                  'DUMMY' {TemporalExpr              }
-                 );
+    self.NewItem(tftaEventTypeOTHER,     {   ET                    }
+                 false,                  {   BE                    }
+                 false,                  {   CE                    }
+                 false,                  {   ES                    }
+                 false,                  {   XS                    }
+                 false,                  {   NAT                   }
+                 false,                  {   NCE                   }
+                 false,                  {   BAT                   }
+                 false,                  {   MCSSForm              }
+                 false,                  {   Disjunct              }
+                 false,                  {   NotComplete           }
+                 false,                  {   NeedsToBeUpdated      }
+                 NIL,                    {   PointerToUpdateObject }
+                 'DUMMY',                {   TemporalExpr          }
+                 NIL                     {   LogicalValue          }    );
 end;
 {------------------------------------------------------------------------------
 ------------------------------------------------------------------------------}
 { public: version with options and true/false as logical value }
-function TTFTAEventLookupList.NewItem(EventType: TTFTAOperatorType;IsBasicEvent: boolean;IsCoreEvent: boolean;IsEventSequence: boolean;IsNegated: boolean;IsNotCompletelyBuildYet : boolean;IsDisjunct: boolean;IsExtendedSequence : boolean;LogicalValue : boolean;NeedsToBeUpdated: boolean;PointerToUpdateObject : TTFTAObject;TemporalExpr: ansistring) : TTFTAObject;
+function TTFTAEventLookupList.NewItem (ET                        : TTFTAOperatorType;
+                                       BE                        : boolean;
+                                       CE                        : boolean;
+                                       ES                        : boolean;
+                                       XS                        : boolean;
+                                       NAT                       : boolean;
+                                       NCE                       : boolean;
+                                       BAT                       : boolean;
+                                       MCSSForm                  : boolean;
+                                       Disjunct                  : boolean;
+                                       NotComplete               : boolean;
+                                       NeedsToBeUpdated          : boolean;
+                                       PointerToUpdateObject     : TTFTAObject;
+                                       TemporalExpr              : ansistring;
+                                       LogicalValue              : boolean
+                                      ) : TTFTAObject;
 begin
-  Result:= self.NewItemPrivate(EventType,IsBasicEvent,IsCoreEvent,IsEventSequence,
-                          IsNegated,IsNotCompletelyBuildYet,IsDisjunct,IsExtendedSequence,
-                          NeedsToBeUpdated,PointerToUpdateObject,TemporalExpr);
-  Result.SetLogicalValue(LogicalValue) ;
+  Result:= self.NewItemPrivate(ET                        ,
+                               BE                        ,
+                               CE                        ,
+                               ES                        ,
+                               XS                        ,
+                               NAT                       ,
+                               NCE                       ,
+                               BAT                       ,
+                               MCSSForm                  ,
+                               Disjunct                  ,
+                               NotComplete               ,
+                               NeedsToBeUpdated          ,
+                               PointerToUpdateObject     ,
+                               TemporalExpr              );
+  Result.SetLogicalValue(LogicalValue);
 end;
 {------------------------------------------------------------------------------
 ------------------------------------------------------------------------------}
 { public version with options and NIL as logical value }
-function TTFTAEventLookupList.NewItem(EventType: TTFTAOperatorType;IsBasicEvent: boolean;IsCoreEvent: boolean;IsEventSequence: boolean;IsNegated: boolean;IsNotCompletelyBuildYet : boolean;IsDisjunct: boolean;IsExtendedSequence : boolean;LogicalValue : pointer;NeedsToBeUpdated: boolean;PointerToUpdateObject : TTFTAObject;TemporalExpr: ansistring) : TTFTAObject;
+function TTFTAEventLookupList.NewItem (ET                        : TTFTAOperatorType;
+                                       BE                        : boolean;
+                                       CE                        : boolean;
+                                       ES                        : boolean;
+                                       XS                        : boolean;
+                                       NAT                       : boolean;
+                                       NCE                       : boolean;
+                                       BAT                       : boolean;
+                                       MCSSForm                  : boolean;
+                                       Disjunct                  : boolean;
+                                       NotComplete               : boolean;
+                                       NeedsToBeUpdated          : boolean;
+                                       PointerToUpdateObject     : TTFTAObject;
+                                       TemporalExpr              : ansistring;
+                                       LogicalValue              : pointer
+                                      ) : TTFTAObject;
 begin
-  Result:= self.NewItemPrivate(EventType,IsBasicEvent,IsCoreEvent,IsEventSequence,
-                          IsNegated,IsNotCompletelyBuildYet,IsDisjunct,IsExtendedSequence,
-                          NeedsToBeUpdated,PointerToUpdateObject,TemporalExpr);
+  Result:= self.NewItemPrivate(ET                        ,
+                               BE                        ,
+                               CE                        ,
+                               ES                        ,
+                               XS                        ,
+                               NAT                       ,
+                               NCE                       ,
+                               BAT                       ,
+                               MCSSForm                  ,
+                               Disjunct                  ,
+                               NotComplete               ,
+                               NeedsToBeUpdated          ,
+                               PointerToUpdateObject     ,
+                               TemporalExpr              );
   Result.SetLogicalValue(NIL);
 end;
 {------------------------------------------------------------------------------
 ------------------------------------------------------------------------------}
 { private (generic) version}
-function TTFTAEventLookupList.NewItemPrivate(EventType: TTFTAOperatorType;IsBasicEvent: boolean;IsCoreEvent: boolean;IsEventSequence: boolean;IsNegated: boolean;IsNotCompletelyBuildYet : boolean;IsDisjunct: boolean;IsExtendedSequence : boolean;NeedsToBeUpdated: boolean;PointerToUpdateObject : TTFTAObject;TemporalExpr: ansistring) : TTFTAObject;
+function TTFTAEventLookupList.NewItemPrivate(ET                        : TTFTAOperatorType;
+                                             BE                        : boolean;
+                                             CE                        : boolean;
+                                             ES                        : boolean;
+                                             XS                        : boolean;
+                                             NAT                       : boolean;
+                                             NCE                       : boolean;
+                                             BAT                       : boolean;
+                                             MCSSForm                  : boolean;
+                                             Disjunct                  : boolean;
+                                             NotComplete               : boolean;
+                                             NeedsToBeUpdated          : boolean;
+                                             PointerToUpdateObject     : TTFTAObject;
+                                             TemporalExpr: ansistring) : TTFTAObject;
 var posInList: Integer = 0;
 begin
   posInList := self.Add(TTFTAObject.Create);
   Result := self[posInList];
   Result.EventLookupList := self;
-
-  Result.EventType                  :=  EventType                 ;
-  {$IfDef TESTMODE}
-  Result.DEBUGMemo                  :=  self.DEBUGMemo            ;
-  {$EndIf}
-  Result.IsCoreEvent                :=  IsCoreEvent               ;
-  Result.IsEventSequence            :=  IsEventSequence           ;
-  Result.IsNegated                  :=  IsNegated                 ;
-  Result.IsNotCompletelyBuildYet    :=  IsNotCompletelyBuildYet   ;
-  Result.IsDisjunctTerm             :=  IsDisjunct                ;
-  Result.IsExtendedSequence         :=  IsExtendedSequence        ;
+  Result.EventType                  :=  ET                        ;
+  Result.IsCoreEvent                :=  CE                        ;
+  Result.IsEventSequence            :=  ES                        ;
+  Result.IsExtendedSequence         :=  XS                        ;
+  Result.IsNegatedANDTerm           :=  NAT                       ;
+  Result.IsNegatedCoreEvent         :=  NCE                       ;
+  REsult.IsBasicANDTerm             :=  BAT                       ;
+  Result.IsMCSSForm                 :=  MCSSForm                  ;
+  Result.IsDisjunctTerm             :=  Disjunct                  ;
+  Result.IsNotCompletelyBuildYet    :=  NotComplete               ;
   Result.IsSorted                   :=  False                     ;
   Result.NeedsToBeUpdated           :=  NeedsToBeUpdated          ;
   Result.PointerToUpdateObject      :=  PointerToUpdateObject     ;
   Result.PosInEventList             :=  posInList                 ;
   Result.TemporalExpr               :=  TemporalExpr              ;
-  Result.SetIsBasicEvent(IsBasicEvent);
+  Result.SetIsBasicEvent(BE)                                      ;
+  {$IfDef TESTMODE}Result.DEBUGMemo :=  self.DEBUGMemo            ;     {$EndIf}
 end;
 
 {------------------------------------------------------------------------------
