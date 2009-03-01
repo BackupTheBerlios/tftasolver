@@ -1,4 +1,4 @@
-// $ANTLR 3.1.1 /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g 2009-03-01 16:13:26
+// $ANTLR 3.1.1 /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g 2009-03-01 22:35:57
 
 import java.util.HashMap;
 
@@ -65,7 +65,7 @@ public class tftacParser extends Parser {
     };
 
     // $ANTLR start "expression"
-    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:17:1: expression : term ( ( OR | XOR ) term )* ;
+    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:42:1: expression : term ( ( OR | XOR ) term )* ;
     public final tftacParser.expression_return expression() throws RecognitionException {
         tftacParser.expression_return retval = new tftacParser.expression_return();
         retval.start = input.LT(1);
@@ -83,18 +83,18 @@ public class tftacParser extends Parser {
         Object XOR3_tree=null;
 
         try {
-            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:17:13: ( term ( ( OR | XOR ) term )* )
-            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:17:15: term ( ( OR | XOR ) term )*
+            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:42:13: ( term ( ( OR | XOR ) term )* )
+            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:42:15: term ( ( OR | XOR ) term )*
             {
             root_0 = (Object)adaptor.nil();
 
-            pushFollow(FOLLOW_term_in_expression41);
+            pushFollow(FOLLOW_term_in_expression44);
             term1=term();
 
             state._fsp--;
 
             adaptor.addChild(root_0, term1.getTree());
-            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:17:20: ( ( OR | XOR ) term )*
+            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:42:20: ( ( OR | XOR ) term )*
             loop2:
             do {
                 int alt2=2;
@@ -107,9 +107,9 @@ public class tftacParser extends Parser {
 
                 switch (alt2) {
             	case 1 :
-            	    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:17:22: ( OR | XOR ) term
+            	    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:42:22: ( OR | XOR ) term
             	    {
-            	    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:17:22: ( OR | XOR )
+            	    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:42:22: ( OR | XOR )
             	    int alt1=2;
             	    int LA1_0 = input.LA(1);
 
@@ -127,9 +127,9 @@ public class tftacParser extends Parser {
             	    }
             	    switch (alt1) {
             	        case 1 :
-            	            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:17:23: OR
+            	            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:42:23: OR
             	            {
-            	            OR2=(Token)match(input,OR,FOLLOW_OR_in_expression46); 
+            	            OR2=(Token)match(input,OR,FOLLOW_OR_in_expression49); 
             	            OR2_tree = (Object)adaptor.create(OR2);
             	            root_0 = (Object)adaptor.becomeRoot(OR2_tree, root_0);
 
@@ -137,9 +137,9 @@ public class tftacParser extends Parser {
             	            }
             	            break;
             	        case 2 :
-            	            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:17:29: XOR
+            	            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:42:29: XOR
             	            {
-            	            XOR3=(Token)match(input,XOR,FOLLOW_XOR_in_expression51); 
+            	            XOR3=(Token)match(input,XOR,FOLLOW_XOR_in_expression54); 
             	            XOR3_tree = (Object)adaptor.create(XOR3);
             	            root_0 = (Object)adaptor.becomeRoot(XOR3_tree, root_0);
 
@@ -149,7 +149,7 @@ public class tftacParser extends Parser {
 
             	    }
 
-            	    pushFollow(FOLLOW_term_in_expression55);
+            	    pushFollow(FOLLOW_term_in_expression58);
             	    term4=term();
 
             	    state._fsp--;
@@ -191,7 +191,7 @@ public class tftacParser extends Parser {
     };
 
     // $ANTLR start "term"
-    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:20:1: term : factor ( ( AND | PAND | SAND ) factor )* ;
+    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:45:1: term : factor ( ( AND | PAND | SAND ) factor )* ;
     public final tftacParser.term_return term() throws RecognitionException {
         tftacParser.term_return retval = new tftacParser.term_return();
         retval.start = input.LT(1);
@@ -211,18 +211,18 @@ public class tftacParser extends Parser {
         Object SAND8_tree=null;
 
         try {
-            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:20:7: ( factor ( ( AND | PAND | SAND ) factor )* )
-            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:20:9: factor ( ( AND | PAND | SAND ) factor )*
+            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:45:7: ( factor ( ( AND | PAND | SAND ) factor )* )
+            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:45:9: factor ( ( AND | PAND | SAND ) factor )*
             {
             root_0 = (Object)adaptor.nil();
 
-            pushFollow(FOLLOW_factor_in_term70);
+            pushFollow(FOLLOW_factor_in_term73);
             factor5=factor();
 
             state._fsp--;
 
             adaptor.addChild(root_0, factor5.getTree());
-            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:20:16: ( ( AND | PAND | SAND ) factor )*
+            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:45:16: ( ( AND | PAND | SAND ) factor )*
             loop4:
             do {
                 int alt4=2;
@@ -235,9 +235,9 @@ public class tftacParser extends Parser {
 
                 switch (alt4) {
             	case 1 :
-            	    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:20:17: ( AND | PAND | SAND ) factor
+            	    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:45:17: ( AND | PAND | SAND ) factor
             	    {
-            	    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:20:17: ( AND | PAND | SAND )
+            	    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:45:17: ( AND | PAND | SAND )
             	    int alt3=3;
             	    switch ( input.LA(1) ) {
             	    case AND:
@@ -264,9 +264,9 @@ public class tftacParser extends Parser {
 
             	    switch (alt3) {
             	        case 1 :
-            	            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:20:18: AND
+            	            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:45:18: AND
             	            {
-            	            AND6=(Token)match(input,AND,FOLLOW_AND_in_term74); 
+            	            AND6=(Token)match(input,AND,FOLLOW_AND_in_term77); 
             	            AND6_tree = (Object)adaptor.create(AND6);
             	            root_0 = (Object)adaptor.becomeRoot(AND6_tree, root_0);
 
@@ -274,9 +274,9 @@ public class tftacParser extends Parser {
             	            }
             	            break;
             	        case 2 :
-            	            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:20:25: PAND
+            	            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:45:25: PAND
             	            {
-            	            PAND7=(Token)match(input,PAND,FOLLOW_PAND_in_term79); 
+            	            PAND7=(Token)match(input,PAND,FOLLOW_PAND_in_term82); 
             	            PAND7_tree = (Object)adaptor.create(PAND7);
             	            root_0 = (Object)adaptor.becomeRoot(PAND7_tree, root_0);
 
@@ -284,9 +284,9 @@ public class tftacParser extends Parser {
             	            }
             	            break;
             	        case 3 :
-            	            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:20:33: SAND
+            	            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:45:33: SAND
             	            {
-            	            SAND8=(Token)match(input,SAND,FOLLOW_SAND_in_term84); 
+            	            SAND8=(Token)match(input,SAND,FOLLOW_SAND_in_term87); 
             	            SAND8_tree = (Object)adaptor.create(SAND8);
             	            root_0 = (Object)adaptor.becomeRoot(SAND8_tree, root_0);
 
@@ -296,7 +296,7 @@ public class tftacParser extends Parser {
 
             	    }
 
-            	    pushFollow(FOLLOW_factor_in_term88);
+            	    pushFollow(FOLLOW_factor_in_term91);
             	    factor9=factor();
 
             	    state._fsp--;
@@ -338,7 +338,7 @@ public class tftacParser extends Parser {
     };
 
     // $ANTLR start "factor"
-    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:23:1: factor : ( ID | LBRACE expression RBRACE | NOT factor | TRUE | FALSE );
+    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:48:1: factor : ( ID | LBRACE expression RBRACE | NOT factor | TRUE | FALSE );
     public final tftacParser.factor_return factor() throws RecognitionException {
         tftacParser.factor_return retval = new tftacParser.factor_return();
         retval.start = input.LT(1);
@@ -364,7 +364,7 @@ public class tftacParser extends Parser {
         Object FALSE17_tree=null;
 
         try {
-            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:23:9: ( ID | LBRACE expression RBRACE | NOT factor | TRUE | FALSE )
+            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:48:9: ( ID | LBRACE expression RBRACE | NOT factor | TRUE | FALSE )
             int alt5=5;
             switch ( input.LA(1) ) {
             case ID:
@@ -401,11 +401,11 @@ public class tftacParser extends Parser {
 
             switch (alt5) {
                 case 1 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:23:11: ID
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:48:11: ID
                     {
                     root_0 = (Object)adaptor.nil();
 
-                    ID10=(Token)match(input,ID,FOLLOW_ID_in_factor104); 
+                    ID10=(Token)match(input,ID,FOLLOW_ID_in_factor107); 
                     ID10_tree = (Object)adaptor.create(ID10);
                     adaptor.addChild(root_0, ID10_tree);
 
@@ -413,31 +413,31 @@ public class tftacParser extends Parser {
                     }
                     break;
                 case 2 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:24:5: LBRACE expression RBRACE
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:49:5: LBRACE expression RBRACE
                     {
                     root_0 = (Object)adaptor.nil();
 
-                    LBRACE11=(Token)match(input,LBRACE,FOLLOW_LBRACE_in_factor110); 
-                    pushFollow(FOLLOW_expression_in_factor113);
+                    LBRACE11=(Token)match(input,LBRACE,FOLLOW_LBRACE_in_factor113); 
+                    pushFollow(FOLLOW_expression_in_factor116);
                     expression12=expression();
 
                     state._fsp--;
 
                     adaptor.addChild(root_0, expression12.getTree());
-                    RBRACE13=(Token)match(input,RBRACE,FOLLOW_RBRACE_in_factor115); 
+                    RBRACE13=(Token)match(input,RBRACE,FOLLOW_RBRACE_in_factor118); 
 
                     }
                     break;
                 case 3 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:25:5: NOT factor
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:50:5: NOT factor
                     {
                     root_0 = (Object)adaptor.nil();
 
-                    NOT14=(Token)match(input,NOT,FOLLOW_NOT_in_factor122); 
+                    NOT14=(Token)match(input,NOT,FOLLOW_NOT_in_factor125); 
                     NOT14_tree = (Object)adaptor.create(NOT14);
                     root_0 = (Object)adaptor.becomeRoot(NOT14_tree, root_0);
 
-                    pushFollow(FOLLOW_factor_in_factor125);
+                    pushFollow(FOLLOW_factor_in_factor128);
                     factor15=factor();
 
                     state._fsp--;
@@ -447,11 +447,11 @@ public class tftacParser extends Parser {
                     }
                     break;
                 case 4 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:26:5: TRUE
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:51:5: TRUE
                     {
                     root_0 = (Object)adaptor.nil();
 
-                    TRUE16=(Token)match(input,TRUE,FOLLOW_TRUE_in_factor131); 
+                    TRUE16=(Token)match(input,TRUE,FOLLOW_TRUE_in_factor134); 
                     TRUE16_tree = (Object)adaptor.create(TRUE16);
                     adaptor.addChild(root_0, TRUE16_tree);
 
@@ -459,11 +459,11 @@ public class tftacParser extends Parser {
                     }
                     break;
                 case 5 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:26:12: FALSE
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:51:12: FALSE
                     {
                     root_0 = (Object)adaptor.nil();
 
-                    FALSE17=(Token)match(input,FALSE,FOLLOW_FALSE_in_factor135); 
+                    FALSE17=(Token)match(input,FALSE,FOLLOW_FALSE_in_factor138); 
                     FALSE17_tree = (Object)adaptor.create(FALSE17);
                     adaptor.addChild(root_0, FALSE17_tree);
 
@@ -495,22 +495,22 @@ public class tftacParser extends Parser {
 
  
 
-    public static final BitSet FOLLOW_term_in_expression41 = new BitSet(new long[]{0x0000000000000032L});
-    public static final BitSet FOLLOW_OR_in_expression46 = new BitSet(new long[]{0x0000000000007600L});
-    public static final BitSet FOLLOW_XOR_in_expression51 = new BitSet(new long[]{0x0000000000007600L});
-    public static final BitSet FOLLOW_term_in_expression55 = new BitSet(new long[]{0x0000000000000032L});
-    public static final BitSet FOLLOW_factor_in_term70 = new BitSet(new long[]{0x00000000000001C2L});
-    public static final BitSet FOLLOW_AND_in_term74 = new BitSet(new long[]{0x0000000000007600L});
-    public static final BitSet FOLLOW_PAND_in_term79 = new BitSet(new long[]{0x0000000000007600L});
-    public static final BitSet FOLLOW_SAND_in_term84 = new BitSet(new long[]{0x0000000000007600L});
-    public static final BitSet FOLLOW_factor_in_term88 = new BitSet(new long[]{0x00000000000001C2L});
-    public static final BitSet FOLLOW_ID_in_factor104 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_LBRACE_in_factor110 = new BitSet(new long[]{0x0000000000007600L});
-    public static final BitSet FOLLOW_expression_in_factor113 = new BitSet(new long[]{0x0000000000000800L});
-    public static final BitSet FOLLOW_RBRACE_in_factor115 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_NOT_in_factor122 = new BitSet(new long[]{0x0000000000007600L});
-    public static final BitSet FOLLOW_factor_in_factor125 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TRUE_in_factor131 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_FALSE_in_factor135 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_term_in_expression44 = new BitSet(new long[]{0x0000000000000032L});
+    public static final BitSet FOLLOW_OR_in_expression49 = new BitSet(new long[]{0x0000000000007600L});
+    public static final BitSet FOLLOW_XOR_in_expression54 = new BitSet(new long[]{0x0000000000007600L});
+    public static final BitSet FOLLOW_term_in_expression58 = new BitSet(new long[]{0x0000000000000032L});
+    public static final BitSet FOLLOW_factor_in_term73 = new BitSet(new long[]{0x00000000000001C2L});
+    public static final BitSet FOLLOW_AND_in_term77 = new BitSet(new long[]{0x0000000000007600L});
+    public static final BitSet FOLLOW_PAND_in_term82 = new BitSet(new long[]{0x0000000000007600L});
+    public static final BitSet FOLLOW_SAND_in_term87 = new BitSet(new long[]{0x0000000000007600L});
+    public static final BitSet FOLLOW_factor_in_term91 = new BitSet(new long[]{0x00000000000001C2L});
+    public static final BitSet FOLLOW_ID_in_factor107 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_LBRACE_in_factor113 = new BitSet(new long[]{0x0000000000007600L});
+    public static final BitSet FOLLOW_expression_in_factor116 = new BitSet(new long[]{0x0000000000000800L});
+    public static final BitSet FOLLOW_RBRACE_in_factor118 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_NOT_in_factor125 = new BitSet(new long[]{0x0000000000007600L});
+    public static final BitSet FOLLOW_factor_in_factor128 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_TRUE_in_factor134 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_FALSE_in_factor138 = new BitSet(new long[]{0x0000000000000002L});
 
 }

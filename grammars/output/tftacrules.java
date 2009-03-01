@@ -1,4 +1,4 @@
-// $ANTLR 3.1.1 /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g 2009-03-01 19:52:08
+// $ANTLR 3.1.1 /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g 2009-03-01 22:11:21
 
 import java.util.HashMap;
 
@@ -66,7 +66,7 @@ public class tftacrules extends TreeParser {
     };
 
     // $ANTLR start "tt"
-    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:23:1: tt : ( andterm | negandterm | orterm | pandterm | sandterm | xorterm | ae | ^( NOT ^( NOT a1= tt ) ) -> $a1);
+    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:44:1: tt : ( andterm | negandterm | orterm | pandterm | sandterm | xorterm | ae | ^( NOT ^( NOT a1= tt ) ) -> $a1);
     public final tftacrules.tt_return tt() throws RecognitionException {
         tftacrules.tt_return retval = new tftacrules.tt_return();
         retval.start = input.LT(1);
@@ -101,17 +101,17 @@ public class tftacrules extends TreeParser {
         RewriteRuleSubtreeStream stream_tt=new RewriteRuleSubtreeStream(adaptor,"rule tt");
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 1) ) { return retval; }
-            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:23:5: ( andterm | negandterm | orterm | pandterm | sandterm | xorterm | ae | ^( NOT ^( NOT a1= tt ) ) -> $a1)
+            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:44:5: ( andterm | negandterm | orterm | pandterm | sandterm | xorterm | ae | ^( NOT ^( NOT a1= tt ) ) -> $a1)
             int alt1=8;
             alt1 = dfa1.predict(input);
             switch (alt1) {
                 case 1 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:23:7: andterm
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:44:7: andterm
                     {
                     root_0 = (Object)adaptor.nil();
 
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_andterm_in_tt65);
+                    pushFollow(FOLLOW_andterm_in_tt64);
                     andterm1=andterm();
 
                     state._fsp--;
@@ -124,12 +124,12 @@ public class tftacrules extends TreeParser {
                     }
                     break;
                 case 2 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:24:4: negandterm
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:45:4: negandterm
                     {
                     root_0 = (Object)adaptor.nil();
 
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_negandterm_in_tt70);
+                    pushFollow(FOLLOW_negandterm_in_tt69);
                     negandterm2=negandterm();
 
                     state._fsp--;
@@ -142,12 +142,12 @@ public class tftacrules extends TreeParser {
                     }
                     break;
                 case 3 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:25:4: orterm
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:46:4: orterm
                     {
                     root_0 = (Object)adaptor.nil();
 
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_orterm_in_tt75);
+                    pushFollow(FOLLOW_orterm_in_tt74);
                     orterm3=orterm();
 
                     state._fsp--;
@@ -160,12 +160,12 @@ public class tftacrules extends TreeParser {
                     }
                     break;
                 case 4 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:26:4: pandterm
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:47:4: pandterm
                     {
                     root_0 = (Object)adaptor.nil();
 
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_pandterm_in_tt80);
+                    pushFollow(FOLLOW_pandterm_in_tt79);
                     pandterm4=pandterm();
 
                     state._fsp--;
@@ -178,12 +178,12 @@ public class tftacrules extends TreeParser {
                     }
                     break;
                 case 5 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:27:4: sandterm
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:48:4: sandterm
                     {
                     root_0 = (Object)adaptor.nil();
 
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_sandterm_in_tt85);
+                    pushFollow(FOLLOW_sandterm_in_tt84);
                     sandterm5=sandterm();
 
                     state._fsp--;
@@ -196,12 +196,12 @@ public class tftacrules extends TreeParser {
                     }
                     break;
                 case 6 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:28:4: xorterm
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:49:4: xorterm
                     {
                     root_0 = (Object)adaptor.nil();
 
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_xorterm_in_tt90);
+                    pushFollow(FOLLOW_xorterm_in_tt89);
                     xorterm6=xorterm();
 
                     state._fsp--;
@@ -214,12 +214,12 @@ public class tftacrules extends TreeParser {
                     }
                     break;
                 case 7 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:29:4: ae
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:50:4: ae
                     {
                     root_0 = (Object)adaptor.nil();
 
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_ae_in_tt95);
+                    pushFollow(FOLLOW_ae_in_tt94);
                     ae7=ae();
 
                     state._fsp--;
@@ -232,14 +232,14 @@ public class tftacrules extends TreeParser {
                     }
                     break;
                 case 8 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:30:4: ^( NOT ^( NOT a1= tt ) )
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:51:4: ^( NOT ^( NOT a1= tt ) )
                     {
                     _last = (Object)input.LT(1);
                     {
                     Object _save_last_1 = _last;
                     Object _first_1 = null;
                     Object root_1 = (Object)adaptor.nil();_last = (Object)input.LT(1);
-                    NOT8=(Object)match(input,NOT,FOLLOW_NOT_in_tt101); if (state.failed) return retval; 
+                    NOT8=(Object)match(input,NOT,FOLLOW_NOT_in_tt100); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_NOT.add(NOT8);
 
 
@@ -250,14 +250,14 @@ public class tftacrules extends TreeParser {
                     Object _save_last_2 = _last;
                     Object _first_2 = null;
                     Object root_2 = (Object)adaptor.nil();_last = (Object)input.LT(1);
-                    NOT9=(Object)match(input,NOT,FOLLOW_NOT_in_tt104); if (state.failed) return retval; 
+                    NOT9=(Object)match(input,NOT,FOLLOW_NOT_in_tt103); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_NOT.add(NOT9);
 
 
 
                     match(input, Token.DOWN, null); if (state.failed) return retval;
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_tt_in_tt108);
+                    pushFollow(FOLLOW_tt_in_tt107);
                     a1=tt();
 
                     state._fsp--;
@@ -285,7 +285,7 @@ public class tftacrules extends TreeParser {
                     RewriteRuleSubtreeStream stream_a1=new RewriteRuleSubtreeStream(adaptor,"token a1",a1!=null?a1.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 31:4: -> $a1
+                    // 52:4: -> $a1
                     {
                         adaptor.addChild(root_0, stream_a1.nextTree());
 
@@ -318,7 +318,7 @@ public class tftacrules extends TreeParser {
     };
 
     // $ANTLR start "ce"
-    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:45:1: ce : ( ae | ^( SAND ce ce ) );
+    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:66:1: ce : ( ae | ^( SAND ce ce ) );
     public final tftacrules.ce_return ce() throws RecognitionException {
         tftacrules.ce_return retval = new tftacrules.ce_return();
         retval.start = input.LT(1);
@@ -340,7 +340,7 @@ public class tftacrules extends TreeParser {
 
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 2) ) { return retval; }
-            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:45:4: ( ae | ^( SAND ce ce ) )
+            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:66:4: ( ae | ^( SAND ce ce ) )
             int alt2=2;
             int LA2_0 = input.LA(1);
 
@@ -359,12 +359,12 @@ public class tftacrules extends TreeParser {
             }
             switch (alt2) {
                 case 1 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:45:6: ae
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:66:6: ae
                     {
                     root_0 = (Object)adaptor.nil();
 
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_ae_in_ce151);
+                    pushFollow(FOLLOW_ae_in_ce150);
                     ae10=ae();
 
                     state._fsp--;
@@ -377,7 +377,7 @@ public class tftacrules extends TreeParser {
                     }
                     break;
                 case 2 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:46:4: ^( SAND ce ce )
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:67:4: ^( SAND ce ce )
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -386,7 +386,7 @@ public class tftacrules extends TreeParser {
                     Object _save_last_1 = _last;
                     Object _first_1 = null;
                     Object root_1 = (Object)adaptor.nil();_last = (Object)input.LT(1);
-                    SAND11=(Object)match(input,SAND,FOLLOW_SAND_in_ce158); if (state.failed) return retval;
+                    SAND11=(Object)match(input,SAND,FOLLOW_SAND_in_ce157); if (state.failed) return retval;
                     if ( state.backtracking==0 ) {
                     SAND11_tree = (Object)adaptor.dupNode(SAND11);
 
@@ -396,7 +396,7 @@ public class tftacrules extends TreeParser {
 
                     match(input, Token.DOWN, null); if (state.failed) return retval;
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_ce_in_ce160);
+                    pushFollow(FOLLOW_ce_in_ce159);
                     ce12=ce();
 
                     state._fsp--;
@@ -404,7 +404,7 @@ public class tftacrules extends TreeParser {
                     if ( state.backtracking==0 ) 
                     adaptor.addChild(root_1, ce12.getTree());
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_ce_in_ce162);
+                    pushFollow(FOLLOW_ce_in_ce161);
                     ce13=ce();
 
                     state._fsp--;
@@ -444,7 +444,7 @@ public class tftacrules extends TreeParser {
     };
 
     // $ANTLR start "notterm"
-    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:49:1: notterm : ( ^( NOT ^( AND x= tt y= tt ) ) -> ^( OR ^( NOT $x) ^( NOT $y) ) | ^( NOT ^( OR x= tt y= tt ) ) -> ^( AND ^( NOT $x) ^( NOT $y) ) | ^( NOT ^( XOR x= tt y= tt ) ) -> ^( AND ^( NOT $x) ^( NOT $y) ) | ^( NOT ^( PAND x= tt y= tt ) ) -> ^( XOR ^( AND ^( NOT $x) ^( NOT $y) ) ^( AND ^( NOT $x) $y) ) | ^( NOT ^( SAND x= tt y= tt ) ) -> ^( XOR ^( AND ^( NOT $x) ^( NOT $y) ) ^( XOR ^( AND ^( NOT $x) $y) ^( XOR ^( AND ^( NOT $y) $x) ^( XOR ^( PAND $y $x) ^( XOR ^( PAND $x $y) ) ) ) ) ) | ^( OR notterm notterm ) | ^( XOR notterm notterm ) | ^( AND notterm notterm ) | ^( NOT tt ) );
+    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:70:1: notterm : ( ^( NOT ^( AND x= tt y= tt ) ) -> ^( OR ^( NOT $x) ^( NOT $y) ) | ^( NOT ^( OR x= tt y= tt ) ) -> ^( AND ^( NOT $x) ^( NOT $y) ) | ^( NOT ^( XOR x= tt y= tt ) ) -> ^( AND ^( NOT $x) ^( NOT $y) ) | ^( NOT ^( PAND x= tt y= tt ) ) -> ^( XOR ^( AND ^( NOT $x) ^( NOT $y) ) ^( AND ^( NOT $x) $y) ) | ^( NOT ^( SAND x= tt y= tt ) ) -> ^( XOR ^( AND ^( NOT $x) ^( NOT $y) ) ^( XOR ^( AND ^( NOT $x) $y) ^( XOR ^( AND ^( NOT $y) $x) ^( XOR ^( PAND $y $x) ^( XOR ^( PAND $x $y) ) ) ) ) ) | ^( OR notterm notterm ) | ^( XOR notterm notterm ) | ^( AND notterm notterm ) | ^( NOT tt ) );
     public final tftacrules.notterm_return notterm() throws RecognitionException {
         tftacrules.notterm_return retval = new tftacrules.notterm_return();
         retval.start = input.LT(1);
@@ -510,19 +510,19 @@ public class tftacrules extends TreeParser {
         RewriteRuleSubtreeStream stream_tt=new RewriteRuleSubtreeStream(adaptor,"rule tt");
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 3) ) { return retval; }
-            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:49:9: ( ^( NOT ^( AND x= tt y= tt ) ) -> ^( OR ^( NOT $x) ^( NOT $y) ) | ^( NOT ^( OR x= tt y= tt ) ) -> ^( AND ^( NOT $x) ^( NOT $y) ) | ^( NOT ^( XOR x= tt y= tt ) ) -> ^( AND ^( NOT $x) ^( NOT $y) ) | ^( NOT ^( PAND x= tt y= tt ) ) -> ^( XOR ^( AND ^( NOT $x) ^( NOT $y) ) ^( AND ^( NOT $x) $y) ) | ^( NOT ^( SAND x= tt y= tt ) ) -> ^( XOR ^( AND ^( NOT $x) ^( NOT $y) ) ^( XOR ^( AND ^( NOT $x) $y) ^( XOR ^( AND ^( NOT $y) $x) ^( XOR ^( PAND $y $x) ^( XOR ^( PAND $x $y) ) ) ) ) ) | ^( OR notterm notterm ) | ^( XOR notterm notterm ) | ^( AND notterm notterm ) | ^( NOT tt ) )
+            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:70:9: ( ^( NOT ^( AND x= tt y= tt ) ) -> ^( OR ^( NOT $x) ^( NOT $y) ) | ^( NOT ^( OR x= tt y= tt ) ) -> ^( AND ^( NOT $x) ^( NOT $y) ) | ^( NOT ^( XOR x= tt y= tt ) ) -> ^( AND ^( NOT $x) ^( NOT $y) ) | ^( NOT ^( PAND x= tt y= tt ) ) -> ^( XOR ^( AND ^( NOT $x) ^( NOT $y) ) ^( AND ^( NOT $x) $y) ) | ^( NOT ^( SAND x= tt y= tt ) ) -> ^( XOR ^( AND ^( NOT $x) ^( NOT $y) ) ^( XOR ^( AND ^( NOT $x) $y) ^( XOR ^( AND ^( NOT $y) $x) ^( XOR ^( PAND $y $x) ^( XOR ^( PAND $x $y) ) ) ) ) ) | ^( OR notterm notterm ) | ^( XOR notterm notterm ) | ^( AND notterm notterm ) | ^( NOT tt ) )
             int alt3=9;
             alt3 = dfa3.predict(input);
             switch (alt3) {
                 case 1 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:49:11: ^( NOT ^( AND x= tt y= tt ) )
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:70:11: ^( NOT ^( AND x= tt y= tt ) )
                     {
                     _last = (Object)input.LT(1);
                     {
                     Object _save_last_1 = _last;
                     Object _first_1 = null;
                     Object root_1 = (Object)adaptor.nil();_last = (Object)input.LT(1);
-                    NOT14=(Object)match(input,NOT,FOLLOW_NOT_in_notterm175); if (state.failed) return retval; 
+                    NOT14=(Object)match(input,NOT,FOLLOW_NOT_in_notterm174); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_NOT.add(NOT14);
 
 
@@ -533,21 +533,21 @@ public class tftacrules extends TreeParser {
                     Object _save_last_2 = _last;
                     Object _first_2 = null;
                     Object root_2 = (Object)adaptor.nil();_last = (Object)input.LT(1);
-                    AND15=(Object)match(input,AND,FOLLOW_AND_in_notterm178); if (state.failed) return retval; 
+                    AND15=(Object)match(input,AND,FOLLOW_AND_in_notterm177); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_AND.add(AND15);
 
 
 
                     match(input, Token.DOWN, null); if (state.failed) return retval;
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_tt_in_notterm182);
+                    pushFollow(FOLLOW_tt_in_notterm181);
                     x=tt();
 
                     state._fsp--;
                     if (state.failed) return retval;
                     if ( state.backtracking==0 ) stream_tt.add(x.getTree());
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_tt_in_notterm186);
+                    pushFollow(FOLLOW_tt_in_notterm185);
                     y=tt();
 
                     state._fsp--;
@@ -564,7 +564,7 @@ public class tftacrules extends TreeParser {
 
 
                     // AST REWRITE
-                    // elements: x, NOT, y, NOT
+                    // elements: NOT, x, NOT, y
                     // token labels: 
                     // rule labels: retval, y, x
                     // token list labels: 
@@ -576,14 +576,14 @@ public class tftacrules extends TreeParser {
                     RewriteRuleSubtreeStream stream_x=new RewriteRuleSubtreeStream(adaptor,"token x",x!=null?x.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 50:4: -> ^( OR ^( NOT $x) ^( NOT $y) )
+                    // 71:4: -> ^( OR ^( NOT $x) ^( NOT $y) )
                     {
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:50:7: ^( OR ^( NOT $x) ^( NOT $y) )
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:71:7: ^( OR ^( NOT $x) ^( NOT $y) )
                         {
                         Object root_1 = (Object)adaptor.nil();
                         root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(OR, "OR"), root_1);
 
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:50:12: ^( NOT $x)
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:71:12: ^( NOT $x)
                         {
                         Object root_2 = (Object)adaptor.nil();
                         root_2 = (Object)adaptor.becomeRoot(stream_NOT.nextNode(), root_2);
@@ -592,7 +592,7 @@ public class tftacrules extends TreeParser {
 
                         adaptor.addChild(root_1, root_2);
                         }
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:50:22: ^( NOT $y)
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:71:22: ^( NOT $y)
                         {
                         Object root_2 = (Object)adaptor.nil();
                         root_2 = (Object)adaptor.becomeRoot(stream_NOT.nextNode(), root_2);
@@ -611,14 +611,14 @@ public class tftacrules extends TreeParser {
                     }
                     break;
                 case 2 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:51:4: ^( NOT ^( OR x= tt y= tt ) )
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:72:4: ^( NOT ^( OR x= tt y= tt ) )
                     {
                     _last = (Object)input.LT(1);
                     {
                     Object _save_last_1 = _last;
                     Object _first_1 = null;
                     Object root_1 = (Object)adaptor.nil();_last = (Object)input.LT(1);
-                    NOT16=(Object)match(input,NOT,FOLLOW_NOT_in_notterm218); if (state.failed) return retval; 
+                    NOT16=(Object)match(input,NOT,FOLLOW_NOT_in_notterm217); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_NOT.add(NOT16);
 
 
@@ -629,21 +629,117 @@ public class tftacrules extends TreeParser {
                     Object _save_last_2 = _last;
                     Object _first_2 = null;
                     Object root_2 = (Object)adaptor.nil();_last = (Object)input.LT(1);
-                    OR17=(Object)match(input,OR,FOLLOW_OR_in_notterm221); if (state.failed) return retval; 
+                    OR17=(Object)match(input,OR,FOLLOW_OR_in_notterm220); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_OR.add(OR17);
 
 
 
                     match(input, Token.DOWN, null); if (state.failed) return retval;
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_tt_in_notterm225);
+                    pushFollow(FOLLOW_tt_in_notterm224);
                     x=tt();
 
                     state._fsp--;
                     if (state.failed) return retval;
                     if ( state.backtracking==0 ) stream_tt.add(x.getTree());
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_tt_in_notterm229);
+                    pushFollow(FOLLOW_tt_in_notterm228);
+                    y=tt();
+
+                    state._fsp--;
+                    if (state.failed) return retval;
+                    if ( state.backtracking==0 ) stream_tt.add(y.getTree());
+
+                    match(input, Token.UP, null); if (state.failed) return retval;adaptor.addChild(root_1, root_2);_last = _save_last_2;
+                    }
+
+
+                    match(input, Token.UP, null); if (state.failed) return retval;adaptor.addChild(root_0, root_1);_last = _save_last_1;
+                    }
+
+
+
+                    // AST REWRITE
+                    // elements: NOT, NOT, y, x
+                    // token labels: 
+                    // rule labels: retval, y, x
+                    // token list labels: 
+                    // rule list labels: 
+                    if ( state.backtracking==0 ) {
+                    retval.tree = root_0;
+                    RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"token retval",retval!=null?retval.tree:null);
+                    RewriteRuleSubtreeStream stream_y=new RewriteRuleSubtreeStream(adaptor,"token y",y!=null?y.tree:null);
+                    RewriteRuleSubtreeStream stream_x=new RewriteRuleSubtreeStream(adaptor,"token x",x!=null?x.tree:null);
+
+                    root_0 = (Object)adaptor.nil();
+                    // 73:4: -> ^( AND ^( NOT $x) ^( NOT $y) )
+                    {
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:73:7: ^( AND ^( NOT $x) ^( NOT $y) )
+                        {
+                        Object root_1 = (Object)adaptor.nil();
+                        root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(AND, "AND"), root_1);
+
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:73:13: ^( NOT $x)
+                        {
+                        Object root_2 = (Object)adaptor.nil();
+                        root_2 = (Object)adaptor.becomeRoot(stream_NOT.nextNode(), root_2);
+
+                        adaptor.addChild(root_2, stream_x.nextTree());
+
+                        adaptor.addChild(root_1, root_2);
+                        }
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:73:23: ^( NOT $y)
+                        {
+                        Object root_2 = (Object)adaptor.nil();
+                        root_2 = (Object)adaptor.becomeRoot(stream_NOT.nextNode(), root_2);
+
+                        adaptor.addChild(root_2, stream_y.nextTree());
+
+                        adaptor.addChild(root_1, root_2);
+                        }
+
+                        adaptor.addChild(root_0, root_1);
+                        }
+
+                    }
+
+                    retval.tree = root_0;}
+                    }
+                    break;
+                case 3 :
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:74:4: ^( NOT ^( XOR x= tt y= tt ) )
+                    {
+                    _last = (Object)input.LT(1);
+                    {
+                    Object _save_last_1 = _last;
+                    Object _first_1 = null;
+                    Object root_1 = (Object)adaptor.nil();_last = (Object)input.LT(1);
+                    NOT18=(Object)match(input,NOT,FOLLOW_NOT_in_notterm260); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_NOT.add(NOT18);
+
+
+
+                    match(input, Token.DOWN, null); if (state.failed) return retval;
+                    _last = (Object)input.LT(1);
+                    {
+                    Object _save_last_2 = _last;
+                    Object _first_2 = null;
+                    Object root_2 = (Object)adaptor.nil();_last = (Object)input.LT(1);
+                    XOR19=(Object)match(input,XOR,FOLLOW_XOR_in_notterm263); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_XOR.add(XOR19);
+
+
+
+                    match(input, Token.DOWN, null); if (state.failed) return retval;
+                    _last = (Object)input.LT(1);
+                    pushFollow(FOLLOW_tt_in_notterm267);
+                    x=tt();
+
+                    state._fsp--;
+                    if (state.failed) return retval;
+                    if ( state.backtracking==0 ) stream_tt.add(x.getTree());
+                    _last = (Object)input.LT(1);
+                    pushFollow(FOLLOW_tt_in_notterm271);
                     y=tt();
 
                     state._fsp--;
@@ -672,14 +768,14 @@ public class tftacrules extends TreeParser {
                     RewriteRuleSubtreeStream stream_x=new RewriteRuleSubtreeStream(adaptor,"token x",x!=null?x.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 52:4: -> ^( AND ^( NOT $x) ^( NOT $y) )
+                    // 75:4: -> ^( AND ^( NOT $x) ^( NOT $y) )
                     {
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:52:7: ^( AND ^( NOT $x) ^( NOT $y) )
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:75:7: ^( AND ^( NOT $x) ^( NOT $y) )
                         {
                         Object root_1 = (Object)adaptor.nil();
                         root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(AND, "AND"), root_1);
 
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:52:13: ^( NOT $x)
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:75:13: ^( NOT $x)
                         {
                         Object root_2 = (Object)adaptor.nil();
                         root_2 = (Object)adaptor.becomeRoot(stream_NOT.nextNode(), root_2);
@@ -688,103 +784,7 @@ public class tftacrules extends TreeParser {
 
                         adaptor.addChild(root_1, root_2);
                         }
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:52:23: ^( NOT $y)
-                        {
-                        Object root_2 = (Object)adaptor.nil();
-                        root_2 = (Object)adaptor.becomeRoot(stream_NOT.nextNode(), root_2);
-
-                        adaptor.addChild(root_2, stream_y.nextTree());
-
-                        adaptor.addChild(root_1, root_2);
-                        }
-
-                        adaptor.addChild(root_0, root_1);
-                        }
-
-                    }
-
-                    retval.tree = root_0;}
-                    }
-                    break;
-                case 3 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:53:4: ^( NOT ^( XOR x= tt y= tt ) )
-                    {
-                    _last = (Object)input.LT(1);
-                    {
-                    Object _save_last_1 = _last;
-                    Object _first_1 = null;
-                    Object root_1 = (Object)adaptor.nil();_last = (Object)input.LT(1);
-                    NOT18=(Object)match(input,NOT,FOLLOW_NOT_in_notterm261); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_NOT.add(NOT18);
-
-
-
-                    match(input, Token.DOWN, null); if (state.failed) return retval;
-                    _last = (Object)input.LT(1);
-                    {
-                    Object _save_last_2 = _last;
-                    Object _first_2 = null;
-                    Object root_2 = (Object)adaptor.nil();_last = (Object)input.LT(1);
-                    XOR19=(Object)match(input,XOR,FOLLOW_XOR_in_notterm264); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_XOR.add(XOR19);
-
-
-
-                    match(input, Token.DOWN, null); if (state.failed) return retval;
-                    _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_tt_in_notterm268);
-                    x=tt();
-
-                    state._fsp--;
-                    if (state.failed) return retval;
-                    if ( state.backtracking==0 ) stream_tt.add(x.getTree());
-                    _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_tt_in_notterm272);
-                    y=tt();
-
-                    state._fsp--;
-                    if (state.failed) return retval;
-                    if ( state.backtracking==0 ) stream_tt.add(y.getTree());
-
-                    match(input, Token.UP, null); if (state.failed) return retval;adaptor.addChild(root_1, root_2);_last = _save_last_2;
-                    }
-
-
-                    match(input, Token.UP, null); if (state.failed) return retval;adaptor.addChild(root_0, root_1);_last = _save_last_1;
-                    }
-
-
-
-                    // AST REWRITE
-                    // elements: x, NOT, y, NOT
-                    // token labels: 
-                    // rule labels: retval, y, x
-                    // token list labels: 
-                    // rule list labels: 
-                    if ( state.backtracking==0 ) {
-                    retval.tree = root_0;
-                    RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"token retval",retval!=null?retval.tree:null);
-                    RewriteRuleSubtreeStream stream_y=new RewriteRuleSubtreeStream(adaptor,"token y",y!=null?y.tree:null);
-                    RewriteRuleSubtreeStream stream_x=new RewriteRuleSubtreeStream(adaptor,"token x",x!=null?x.tree:null);
-
-                    root_0 = (Object)adaptor.nil();
-                    // 54:4: -> ^( AND ^( NOT $x) ^( NOT $y) )
-                    {
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:54:7: ^( AND ^( NOT $x) ^( NOT $y) )
-                        {
-                        Object root_1 = (Object)adaptor.nil();
-                        root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(AND, "AND"), root_1);
-
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:54:13: ^( NOT $x)
-                        {
-                        Object root_2 = (Object)adaptor.nil();
-                        root_2 = (Object)adaptor.becomeRoot(stream_NOT.nextNode(), root_2);
-
-                        adaptor.addChild(root_2, stream_x.nextTree());
-
-                        adaptor.addChild(root_1, root_2);
-                        }
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:54:23: ^( NOT $y)
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:75:23: ^( NOT $y)
                         {
                         Object root_2 = (Object)adaptor.nil();
                         root_2 = (Object)adaptor.becomeRoot(stream_NOT.nextNode(), root_2);
@@ -803,14 +803,14 @@ public class tftacrules extends TreeParser {
                     }
                     break;
                 case 4 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:55:4: ^( NOT ^( PAND x= tt y= tt ) )
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:76:4: ^( NOT ^( PAND x= tt y= tt ) )
                     {
                     _last = (Object)input.LT(1);
                     {
                     Object _save_last_1 = _last;
                     Object _first_1 = null;
                     Object root_1 = (Object)adaptor.nil();_last = (Object)input.LT(1);
-                    NOT20=(Object)match(input,NOT,FOLLOW_NOT_in_notterm304); if (state.failed) return retval; 
+                    NOT20=(Object)match(input,NOT,FOLLOW_NOT_in_notterm303); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_NOT.add(NOT20);
 
 
@@ -821,21 +821,21 @@ public class tftacrules extends TreeParser {
                     Object _save_last_2 = _last;
                     Object _first_2 = null;
                     Object root_2 = (Object)adaptor.nil();_last = (Object)input.LT(1);
-                    PAND21=(Object)match(input,PAND,FOLLOW_PAND_in_notterm307); if (state.failed) return retval; 
+                    PAND21=(Object)match(input,PAND,FOLLOW_PAND_in_notterm306); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_PAND.add(PAND21);
 
 
 
                     match(input, Token.DOWN, null); if (state.failed) return retval;
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_tt_in_notterm311);
+                    pushFollow(FOLLOW_tt_in_notterm310);
                     x=tt();
 
                     state._fsp--;
                     if (state.failed) return retval;
                     if ( state.backtracking==0 ) stream_tt.add(x.getTree());
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_tt_in_notterm315);
+                    pushFollow(FOLLOW_tt_in_notterm314);
                     y=tt();
 
                     state._fsp--;
@@ -852,7 +852,7 @@ public class tftacrules extends TreeParser {
 
 
                     // AST REWRITE
-                    // elements: NOT, y, x, NOT, y, NOT, x
+                    // elements: y, NOT, NOT, x, NOT, y, x
                     // token labels: 
                     // rule labels: retval, y, x
                     // token list labels: 
@@ -864,19 +864,19 @@ public class tftacrules extends TreeParser {
                     RewriteRuleSubtreeStream stream_x=new RewriteRuleSubtreeStream(adaptor,"token x",x!=null?x.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 56:4: -> ^( XOR ^( AND ^( NOT $x) ^( NOT $y) ) ^( AND ^( NOT $x) $y) )
+                    // 77:4: -> ^( XOR ^( AND ^( NOT $x) ^( NOT $y) ) ^( AND ^( NOT $x) $y) )
                     {
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:56:7: ^( XOR ^( AND ^( NOT $x) ^( NOT $y) ) ^( AND ^( NOT $x) $y) )
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:77:7: ^( XOR ^( AND ^( NOT $x) ^( NOT $y) ) ^( AND ^( NOT $x) $y) )
                         {
                         Object root_1 = (Object)adaptor.nil();
                         root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(XOR, "XOR"), root_1);
 
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:56:13: ^( AND ^( NOT $x) ^( NOT $y) )
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:77:13: ^( AND ^( NOT $x) ^( NOT $y) )
                         {
                         Object root_2 = (Object)adaptor.nil();
                         root_2 = (Object)adaptor.becomeRoot((Object)adaptor.create(AND, "AND"), root_2);
 
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:56:19: ^( NOT $x)
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:77:19: ^( NOT $x)
                         {
                         Object root_3 = (Object)adaptor.nil();
                         root_3 = (Object)adaptor.becomeRoot(stream_NOT.nextNode(), root_3);
@@ -885,7 +885,7 @@ public class tftacrules extends TreeParser {
 
                         adaptor.addChild(root_2, root_3);
                         }
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:56:29: ^( NOT $y)
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:77:29: ^( NOT $y)
                         {
                         Object root_3 = (Object)adaptor.nil();
                         root_3 = (Object)adaptor.becomeRoot(stream_NOT.nextNode(), root_3);
@@ -897,12 +897,12 @@ public class tftacrules extends TreeParser {
 
                         adaptor.addChild(root_1, root_2);
                         }
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:56:40: ^( AND ^( NOT $x) $y)
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:77:40: ^( AND ^( NOT $x) $y)
                         {
                         Object root_2 = (Object)adaptor.nil();
                         root_2 = (Object)adaptor.becomeRoot((Object)adaptor.create(AND, "AND"), root_2);
 
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:56:46: ^( NOT $x)
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:77:46: ^( NOT $x)
                         {
                         Object root_3 = (Object)adaptor.nil();
                         root_3 = (Object)adaptor.becomeRoot(stream_NOT.nextNode(), root_3);
@@ -925,14 +925,14 @@ public class tftacrules extends TreeParser {
                     }
                     break;
                 case 5 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:58:4: ^( NOT ^( SAND x= tt y= tt ) )
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:79:4: ^( NOT ^( SAND x= tt y= tt ) )
                     {
                     _last = (Object)input.LT(1);
                     {
                     Object _save_last_1 = _last;
                     Object _first_1 = null;
                     Object root_1 = (Object)adaptor.nil();_last = (Object)input.LT(1);
-                    NOT22=(Object)match(input,NOT,FOLLOW_NOT_in_notterm370); if (state.failed) return retval; 
+                    NOT22=(Object)match(input,NOT,FOLLOW_NOT_in_notterm369); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_NOT.add(NOT22);
 
 
@@ -943,21 +943,21 @@ public class tftacrules extends TreeParser {
                     Object _save_last_2 = _last;
                     Object _first_2 = null;
                     Object root_2 = (Object)adaptor.nil();_last = (Object)input.LT(1);
-                    SAND23=(Object)match(input,SAND,FOLLOW_SAND_in_notterm373); if (state.failed) return retval; 
+                    SAND23=(Object)match(input,SAND,FOLLOW_SAND_in_notterm372); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_SAND.add(SAND23);
 
 
 
                     match(input, Token.DOWN, null); if (state.failed) return retval;
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_tt_in_notterm377);
+                    pushFollow(FOLLOW_tt_in_notterm376);
                     x=tt();
 
                     state._fsp--;
                     if (state.failed) return retval;
                     if ( state.backtracking==0 ) stream_tt.add(x.getTree());
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_tt_in_notterm381);
+                    pushFollow(FOLLOW_tt_in_notterm380);
                     y=tt();
 
                     state._fsp--;
@@ -974,7 +974,7 @@ public class tftacrules extends TreeParser {
 
 
                     // AST REWRITE
-                    // elements: y, x, y, y, y, y, x, NOT, NOT, x, NOT, NOT, x, x
+                    // elements: NOT, NOT, y, x, x, y, x, NOT, y, y, x, y, x, NOT
                     // token labels: 
                     // rule labels: retval, y, x
                     // token list labels: 
@@ -986,19 +986,19 @@ public class tftacrules extends TreeParser {
                     RewriteRuleSubtreeStream stream_x=new RewriteRuleSubtreeStream(adaptor,"token x",x!=null?x.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 59:4: -> ^( XOR ^( AND ^( NOT $x) ^( NOT $y) ) ^( XOR ^( AND ^( NOT $x) $y) ^( XOR ^( AND ^( NOT $y) $x) ^( XOR ^( PAND $y $x) ^( XOR ^( PAND $x $y) ) ) ) ) )
+                    // 80:4: -> ^( XOR ^( AND ^( NOT $x) ^( NOT $y) ) ^( XOR ^( AND ^( NOT $x) $y) ^( XOR ^( AND ^( NOT $y) $x) ^( XOR ^( PAND $y $x) ^( XOR ^( PAND $x $y) ) ) ) ) )
                     {
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:59:7: ^( XOR ^( AND ^( NOT $x) ^( NOT $y) ) ^( XOR ^( AND ^( NOT $x) $y) ^( XOR ^( AND ^( NOT $y) $x) ^( XOR ^( PAND $y $x) ^( XOR ^( PAND $x $y) ) ) ) ) )
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:80:7: ^( XOR ^( AND ^( NOT $x) ^( NOT $y) ) ^( XOR ^( AND ^( NOT $x) $y) ^( XOR ^( AND ^( NOT $y) $x) ^( XOR ^( PAND $y $x) ^( XOR ^( PAND $x $y) ) ) ) ) )
                         {
                         Object root_1 = (Object)adaptor.nil();
                         root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(XOR, "XOR"), root_1);
 
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:59:13: ^( AND ^( NOT $x) ^( NOT $y) )
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:80:13: ^( AND ^( NOT $x) ^( NOT $y) )
                         {
                         Object root_2 = (Object)adaptor.nil();
                         root_2 = (Object)adaptor.becomeRoot((Object)adaptor.create(AND, "AND"), root_2);
 
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:59:19: ^( NOT $x)
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:80:19: ^( NOT $x)
                         {
                         Object root_3 = (Object)adaptor.nil();
                         root_3 = (Object)adaptor.becomeRoot(stream_NOT.nextNode(), root_3);
@@ -1007,7 +1007,7 @@ public class tftacrules extends TreeParser {
 
                         adaptor.addChild(root_2, root_3);
                         }
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:59:29: ^( NOT $y)
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:80:29: ^( NOT $y)
                         {
                         Object root_3 = (Object)adaptor.nil();
                         root_3 = (Object)adaptor.becomeRoot(stream_NOT.nextNode(), root_3);
@@ -1019,17 +1019,17 @@ public class tftacrules extends TreeParser {
 
                         adaptor.addChild(root_1, root_2);
                         }
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:59:40: ^( XOR ^( AND ^( NOT $x) $y) ^( XOR ^( AND ^( NOT $y) $x) ^( XOR ^( PAND $y $x) ^( XOR ^( PAND $x $y) ) ) ) )
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:80:40: ^( XOR ^( AND ^( NOT $x) $y) ^( XOR ^( AND ^( NOT $y) $x) ^( XOR ^( PAND $y $x) ^( XOR ^( PAND $x $y) ) ) ) )
                         {
                         Object root_2 = (Object)adaptor.nil();
                         root_2 = (Object)adaptor.becomeRoot((Object)adaptor.create(XOR, "XOR"), root_2);
 
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:59:46: ^( AND ^( NOT $x) $y)
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:80:46: ^( AND ^( NOT $x) $y)
                         {
                         Object root_3 = (Object)adaptor.nil();
                         root_3 = (Object)adaptor.becomeRoot((Object)adaptor.create(AND, "AND"), root_3);
 
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:59:52: ^( NOT $x)
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:80:52: ^( NOT $x)
                         {
                         Object root_4 = (Object)adaptor.nil();
                         root_4 = (Object)adaptor.becomeRoot(stream_NOT.nextNode(), root_4);
@@ -1042,17 +1042,17 @@ public class tftacrules extends TreeParser {
 
                         adaptor.addChild(root_2, root_3);
                         }
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:59:66: ^( XOR ^( AND ^( NOT $y) $x) ^( XOR ^( PAND $y $x) ^( XOR ^( PAND $x $y) ) ) )
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:80:66: ^( XOR ^( AND ^( NOT $y) $x) ^( XOR ^( PAND $y $x) ^( XOR ^( PAND $x $y) ) ) )
                         {
                         Object root_3 = (Object)adaptor.nil();
                         root_3 = (Object)adaptor.becomeRoot((Object)adaptor.create(XOR, "XOR"), root_3);
 
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:59:72: ^( AND ^( NOT $y) $x)
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:80:72: ^( AND ^( NOT $y) $x)
                         {
                         Object root_4 = (Object)adaptor.nil();
                         root_4 = (Object)adaptor.becomeRoot((Object)adaptor.create(AND, "AND"), root_4);
 
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:59:78: ^( NOT $y)
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:80:78: ^( NOT $y)
                         {
                         Object root_5 = (Object)adaptor.nil();
                         root_5 = (Object)adaptor.becomeRoot(stream_NOT.nextNode(), root_5);
@@ -1065,12 +1065,12 @@ public class tftacrules extends TreeParser {
 
                         adaptor.addChild(root_3, root_4);
                         }
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:59:92: ^( XOR ^( PAND $y $x) ^( XOR ^( PAND $x $y) ) )
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:80:92: ^( XOR ^( PAND $y $x) ^( XOR ^( PAND $x $y) ) )
                         {
                         Object root_4 = (Object)adaptor.nil();
                         root_4 = (Object)adaptor.becomeRoot((Object)adaptor.create(XOR, "XOR"), root_4);
 
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:59:98: ^( PAND $y $x)
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:80:98: ^( PAND $y $x)
                         {
                         Object root_5 = (Object)adaptor.nil();
                         root_5 = (Object)adaptor.becomeRoot((Object)adaptor.create(PAND, "PAND"), root_5);
@@ -1080,12 +1080,12 @@ public class tftacrules extends TreeParser {
 
                         adaptor.addChild(root_4, root_5);
                         }
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:59:112: ^( XOR ^( PAND $x $y) )
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:80:112: ^( XOR ^( PAND $x $y) )
                         {
                         Object root_5 = (Object)adaptor.nil();
                         root_5 = (Object)adaptor.becomeRoot((Object)adaptor.create(XOR, "XOR"), root_5);
 
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:59:118: ^( PAND $x $y)
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:80:118: ^( PAND $x $y)
                         {
                         Object root_6 = (Object)adaptor.nil();
                         root_6 = (Object)adaptor.becomeRoot((Object)adaptor.create(PAND, "PAND"), root_6);
@@ -1117,7 +1117,7 @@ public class tftacrules extends TreeParser {
                     }
                     break;
                 case 6 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:60:4: ^( OR notterm notterm )
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:81:4: ^( OR notterm notterm )
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -1126,7 +1126,7 @@ public class tftacrules extends TreeParser {
                     Object _save_last_1 = _last;
                     Object _first_1 = null;
                     Object root_1 = (Object)adaptor.nil();_last = (Object)input.LT(1);
-                    OR24=(Object)match(input,OR,FOLLOW_OR_in_notterm484); if (state.failed) return retval;
+                    OR24=(Object)match(input,OR,FOLLOW_OR_in_notterm483); if (state.failed) return retval;
                     if ( state.backtracking==0 ) {
                     OR24_tree = (Object)adaptor.dupNode(OR24);
 
@@ -1136,7 +1136,7 @@ public class tftacrules extends TreeParser {
 
                     match(input, Token.DOWN, null); if (state.failed) return retval;
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_notterm_in_notterm486);
+                    pushFollow(FOLLOW_notterm_in_notterm485);
                     notterm25=notterm();
 
                     state._fsp--;
@@ -1144,7 +1144,7 @@ public class tftacrules extends TreeParser {
                     if ( state.backtracking==0 ) 
                     adaptor.addChild(root_1, notterm25.getTree());
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_notterm_in_notterm488);
+                    pushFollow(FOLLOW_notterm_in_notterm487);
                     notterm26=notterm();
 
                     state._fsp--;
@@ -1161,7 +1161,7 @@ public class tftacrules extends TreeParser {
                     }
                     break;
                 case 7 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:61:4: ^( XOR notterm notterm )
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:82:4: ^( XOR notterm notterm )
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -1170,7 +1170,7 @@ public class tftacrules extends TreeParser {
                     Object _save_last_1 = _last;
                     Object _first_1 = null;
                     Object root_1 = (Object)adaptor.nil();_last = (Object)input.LT(1);
-                    XOR27=(Object)match(input,XOR,FOLLOW_XOR_in_notterm495); if (state.failed) return retval;
+                    XOR27=(Object)match(input,XOR,FOLLOW_XOR_in_notterm494); if (state.failed) return retval;
                     if ( state.backtracking==0 ) {
                     XOR27_tree = (Object)adaptor.dupNode(XOR27);
 
@@ -1180,7 +1180,7 @@ public class tftacrules extends TreeParser {
 
                     match(input, Token.DOWN, null); if (state.failed) return retval;
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_notterm_in_notterm497);
+                    pushFollow(FOLLOW_notterm_in_notterm496);
                     notterm28=notterm();
 
                     state._fsp--;
@@ -1188,7 +1188,7 @@ public class tftacrules extends TreeParser {
                     if ( state.backtracking==0 ) 
                     adaptor.addChild(root_1, notterm28.getTree());
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_notterm_in_notterm499);
+                    pushFollow(FOLLOW_notterm_in_notterm498);
                     notterm29=notterm();
 
                     state._fsp--;
@@ -1205,7 +1205,7 @@ public class tftacrules extends TreeParser {
                     }
                     break;
                 case 8 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:62:4: ^( AND notterm notterm )
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:83:4: ^( AND notterm notterm )
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -1214,7 +1214,7 @@ public class tftacrules extends TreeParser {
                     Object _save_last_1 = _last;
                     Object _first_1 = null;
                     Object root_1 = (Object)adaptor.nil();_last = (Object)input.LT(1);
-                    AND30=(Object)match(input,AND,FOLLOW_AND_in_notterm506); if (state.failed) return retval;
+                    AND30=(Object)match(input,AND,FOLLOW_AND_in_notterm505); if (state.failed) return retval;
                     if ( state.backtracking==0 ) {
                     AND30_tree = (Object)adaptor.dupNode(AND30);
 
@@ -1224,7 +1224,7 @@ public class tftacrules extends TreeParser {
 
                     match(input, Token.DOWN, null); if (state.failed) return retval;
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_notterm_in_notterm508);
+                    pushFollow(FOLLOW_notterm_in_notterm507);
                     notterm31=notterm();
 
                     state._fsp--;
@@ -1232,7 +1232,7 @@ public class tftacrules extends TreeParser {
                     if ( state.backtracking==0 ) 
                     adaptor.addChild(root_1, notterm31.getTree());
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_notterm_in_notterm510);
+                    pushFollow(FOLLOW_notterm_in_notterm509);
                     notterm32=notterm();
 
                     state._fsp--;
@@ -1249,7 +1249,7 @@ public class tftacrules extends TreeParser {
                     }
                     break;
                 case 9 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:63:4: ^( NOT tt )
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:84:4: ^( NOT tt )
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -1258,7 +1258,7 @@ public class tftacrules extends TreeParser {
                     Object _save_last_1 = _last;
                     Object _first_1 = null;
                     Object root_1 = (Object)adaptor.nil();_last = (Object)input.LT(1);
-                    NOT33=(Object)match(input,NOT,FOLLOW_NOT_in_notterm517); if (state.failed) return retval;
+                    NOT33=(Object)match(input,NOT,FOLLOW_NOT_in_notterm516); if (state.failed) return retval;
                     if ( state.backtracking==0 ) {
                     NOT33_tree = (Object)adaptor.dupNode(NOT33);
 
@@ -1268,7 +1268,7 @@ public class tftacrules extends TreeParser {
 
                     match(input, Token.DOWN, null); if (state.failed) return retval;
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_tt_in_notterm519);
+                    pushFollow(FOLLOW_tt_in_notterm518);
                     tt34=tt();
 
                     state._fsp--;
@@ -1308,7 +1308,7 @@ public class tftacrules extends TreeParser {
     };
 
     // $ANTLR start "andterm"
-    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:70:1: andterm : ( ^( AND . FALSE ) -> FALSE | ^( AND FALSE . ) -> FALSE | ^( AND TRUE a= ae ) -> $a | ^( AND a= ae TRUE ) -> $a | ^( AND ^( XOR x= tt y= tt ) z= tt ) -> ^( XOR ^( AND $x $z) ^( AND $y $z) ) | ^( AND ^( OR x= tt y= tt ) z= tt ) -> ^( OR ^( AND $x $z) ^( AND $y $z) ) | ^( AND z= tt ^( OR x= tt y= tt ) ) -> ^( OR ^( AND $x $z) ^( AND $y $z) ) | ^( AND ^( AND n1= notterm m1= metaPandSandAE ) z= tt ) -> ^( XOR ^( AND $n1 ^( AND $m1 $z) ) ^( XOR ^( PAND ^( PAND $m1 ^( NOT $n1) ) $z) ^( PAND $m1 ^( SAND ^( NOT $n1) $z) ) ) ) | ^( AND x= tt y= tt ) -> ^( XOR ^( PAND $x $y) ^( XOR ^( PAND $y $x) ^( SAND $x $y) ) ) | ^( AND tt tt ) );
+    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:91:1: andterm : ( ^( AND . FALSE ) -> FALSE | ^( AND FALSE . ) -> FALSE | ^( AND TRUE a= ae ) -> $a | ^( AND a= ae TRUE ) -> $a | ^( AND ^( XOR x= tt y= tt ) z= tt ) -> ^( XOR ^( AND $x $z) ^( AND $y $z) ) | ^( AND ^( OR x= tt y= tt ) z= tt ) -> ^( OR ^( AND $x $z) ^( AND $y $z) ) | ^( AND z= tt ^( OR x= tt y= tt ) ) -> ^( OR ^( AND $x $z) ^( AND $y $z) ) | ^( AND ^( AND n1= notterm m1= metaPandSandAE ) z= tt ) -> ^( XOR ^( AND $n1 ^( AND $m1 $z) ) ^( XOR ^( PAND ^( PAND $m1 ^( NOT $n1) ) $z) ^( PAND $m1 ^( SAND ^( NOT $n1) $z) ) ) ) | ^( AND x= tt y= tt ) -> ^( XOR ^( PAND $x $y) ^( XOR ^( PAND $y $x) ^( SAND $x $y) ) ) | ^( AND tt tt ) );
     public final tftacrules.andterm_return andterm() throws RecognitionException {
         tftacrules.andterm_return retval = new tftacrules.andterm_return();
         retval.start = input.LT(1);
@@ -1386,19 +1386,19 @@ public class tftacrules extends TreeParser {
         RewriteRuleSubtreeStream stream_ae=new RewriteRuleSubtreeStream(adaptor,"rule ae");
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 4) ) { return retval; }
-            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:70:9: ( ^( AND . FALSE ) -> FALSE | ^( AND FALSE . ) -> FALSE | ^( AND TRUE a= ae ) -> $a | ^( AND a= ae TRUE ) -> $a | ^( AND ^( XOR x= tt y= tt ) z= tt ) -> ^( XOR ^( AND $x $z) ^( AND $y $z) ) | ^( AND ^( OR x= tt y= tt ) z= tt ) -> ^( OR ^( AND $x $z) ^( AND $y $z) ) | ^( AND z= tt ^( OR x= tt y= tt ) ) -> ^( OR ^( AND $x $z) ^( AND $y $z) ) | ^( AND ^( AND n1= notterm m1= metaPandSandAE ) z= tt ) -> ^( XOR ^( AND $n1 ^( AND $m1 $z) ) ^( XOR ^( PAND ^( PAND $m1 ^( NOT $n1) ) $z) ^( PAND $m1 ^( SAND ^( NOT $n1) $z) ) ) ) | ^( AND x= tt y= tt ) -> ^( XOR ^( PAND $x $y) ^( XOR ^( PAND $y $x) ^( SAND $x $y) ) ) | ^( AND tt tt ) )
+            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:91:9: ( ^( AND . FALSE ) -> FALSE | ^( AND FALSE . ) -> FALSE | ^( AND TRUE a= ae ) -> $a | ^( AND a= ae TRUE ) -> $a | ^( AND ^( XOR x= tt y= tt ) z= tt ) -> ^( XOR ^( AND $x $z) ^( AND $y $z) ) | ^( AND ^( OR x= tt y= tt ) z= tt ) -> ^( OR ^( AND $x $z) ^( AND $y $z) ) | ^( AND z= tt ^( OR x= tt y= tt ) ) -> ^( OR ^( AND $x $z) ^( AND $y $z) ) | ^( AND ^( AND n1= notterm m1= metaPandSandAE ) z= tt ) -> ^( XOR ^( AND $n1 ^( AND $m1 $z) ) ^( XOR ^( PAND ^( PAND $m1 ^( NOT $n1) ) $z) ^( PAND $m1 ^( SAND ^( NOT $n1) $z) ) ) ) | ^( AND x= tt y= tt ) -> ^( XOR ^( PAND $x $y) ^( XOR ^( PAND $y $x) ^( SAND $x $y) ) ) | ^( AND tt tt ) )
             int alt4=10;
             alt4 = dfa4.predict(input);
             switch (alt4) {
                 case 1 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:70:11: ^( AND . FALSE )
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:91:11: ^( AND . FALSE )
                     {
                     _last = (Object)input.LT(1);
                     {
                     Object _save_last_1 = _last;
                     Object _first_1 = null;
                     Object root_1 = (Object)adaptor.nil();_last = (Object)input.LT(1);
-                    AND35=(Object)match(input,AND,FOLLOW_AND_in_andterm535); if (state.failed) return retval; 
+                    AND35=(Object)match(input,AND,FOLLOW_AND_in_andterm534); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_AND.add(AND35);
 
 
@@ -1407,7 +1407,7 @@ public class tftacrules extends TreeParser {
                     wildcard36=(Object)input.LT(1);
                     matchAny(input); if (state.failed) return retval;
                     _last = (Object)input.LT(1);
-                    FALSE37=(Object)match(input,FALSE,FOLLOW_FALSE_in_andterm539); if (state.failed) return retval; 
+                    FALSE37=(Object)match(input,FALSE,FOLLOW_FALSE_in_andterm538); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_FALSE.add(FALSE37);
 
 
@@ -1427,7 +1427,7 @@ public class tftacrules extends TreeParser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"token retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 71:5: -> FALSE
+                    // 92:5: -> FALSE
                     {
                         adaptor.addChild(root_0, stream_FALSE.nextNode());
 
@@ -1437,21 +1437,21 @@ public class tftacrules extends TreeParser {
                     }
                     break;
                 case 2 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:72:4: ^( AND FALSE . )
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:93:4: ^( AND FALSE . )
                     {
                     _last = (Object)input.LT(1);
                     {
                     Object _save_last_1 = _last;
                     Object _first_1 = null;
                     Object root_1 = (Object)adaptor.nil();_last = (Object)input.LT(1);
-                    AND38=(Object)match(input,AND,FOLLOW_AND_in_andterm554); if (state.failed) return retval; 
+                    AND38=(Object)match(input,AND,FOLLOW_AND_in_andterm553); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_AND.add(AND38);
 
 
 
                     match(input, Token.DOWN, null); if (state.failed) return retval;
                     _last = (Object)input.LT(1);
-                    FALSE39=(Object)match(input,FALSE,FOLLOW_FALSE_in_andterm556); if (state.failed) return retval; 
+                    FALSE39=(Object)match(input,FALSE,FOLLOW_FALSE_in_andterm555); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_FALSE.add(FALSE39);
 
                     wildcard40=(Object)input.LT(1);
@@ -1473,7 +1473,7 @@ public class tftacrules extends TreeParser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"token retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 73:4: -> FALSE
+                    // 94:4: -> FALSE
                     {
                         adaptor.addChild(root_0, stream_FALSE.nextNode());
 
@@ -1483,25 +1483,25 @@ public class tftacrules extends TreeParser {
                     }
                     break;
                 case 3 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:74:4: ^( AND TRUE a= ae )
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:95:4: ^( AND TRUE a= ae )
                     {
                     _last = (Object)input.LT(1);
                     {
                     Object _save_last_1 = _last;
                     Object _first_1 = null;
                     Object root_1 = (Object)adaptor.nil();_last = (Object)input.LT(1);
-                    AND41=(Object)match(input,AND,FOLLOW_AND_in_andterm572); if (state.failed) return retval; 
+                    AND41=(Object)match(input,AND,FOLLOW_AND_in_andterm571); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_AND.add(AND41);
 
 
 
                     match(input, Token.DOWN, null); if (state.failed) return retval;
                     _last = (Object)input.LT(1);
-                    TRUE42=(Object)match(input,TRUE,FOLLOW_TRUE_in_andterm574); if (state.failed) return retval; 
+                    TRUE42=(Object)match(input,TRUE,FOLLOW_TRUE_in_andterm573); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_TRUE.add(TRUE42);
 
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_ae_in_andterm578);
+                    pushFollow(FOLLOW_ae_in_andterm577);
                     a=ae();
 
                     state._fsp--;
@@ -1525,7 +1525,7 @@ public class tftacrules extends TreeParser {
                     RewriteRuleSubtreeStream stream_a=new RewriteRuleSubtreeStream(adaptor,"token a",a!=null?a.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 75:4: -> $a
+                    // 96:4: -> $a
                     {
                         adaptor.addChild(root_0, stream_a.nextTree());
 
@@ -1535,28 +1535,28 @@ public class tftacrules extends TreeParser {
                     }
                     break;
                 case 4 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:76:4: ^( AND a= ae TRUE )
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:97:4: ^( AND a= ae TRUE )
                     {
                     _last = (Object)input.LT(1);
                     {
                     Object _save_last_1 = _last;
                     Object _first_1 = null;
                     Object root_1 = (Object)adaptor.nil();_last = (Object)input.LT(1);
-                    AND43=(Object)match(input,AND,FOLLOW_AND_in_andterm593); if (state.failed) return retval; 
+                    AND43=(Object)match(input,AND,FOLLOW_AND_in_andterm592); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_AND.add(AND43);
 
 
 
                     match(input, Token.DOWN, null); if (state.failed) return retval;
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_ae_in_andterm597);
+                    pushFollow(FOLLOW_ae_in_andterm596);
                     a=ae();
 
                     state._fsp--;
                     if (state.failed) return retval;
                     if ( state.backtracking==0 ) stream_ae.add(a.getTree());
                     _last = (Object)input.LT(1);
-                    TRUE44=(Object)match(input,TRUE,FOLLOW_TRUE_in_andterm599); if (state.failed) return retval; 
+                    TRUE44=(Object)match(input,TRUE,FOLLOW_TRUE_in_andterm598); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_TRUE.add(TRUE44);
 
 
@@ -1577,7 +1577,7 @@ public class tftacrules extends TreeParser {
                     RewriteRuleSubtreeStream stream_a=new RewriteRuleSubtreeStream(adaptor,"token a",a!=null?a.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 77:4: -> $a
+                    // 98:4: -> $a
                     {
                         adaptor.addChild(root_0, stream_a.nextTree());
 
@@ -1587,14 +1587,14 @@ public class tftacrules extends TreeParser {
                     }
                     break;
                 case 5 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:78:4: ^( AND ^( XOR x= tt y= tt ) z= tt )
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:99:4: ^( AND ^( XOR x= tt y= tt ) z= tt )
                     {
                     _last = (Object)input.LT(1);
                     {
                     Object _save_last_1 = _last;
                     Object _first_1 = null;
                     Object root_1 = (Object)adaptor.nil();_last = (Object)input.LT(1);
-                    AND45=(Object)match(input,AND,FOLLOW_AND_in_andterm614); if (state.failed) return retval; 
+                    AND45=(Object)match(input,AND,FOLLOW_AND_in_andterm613); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_AND.add(AND45);
 
 
@@ -1605,21 +1605,21 @@ public class tftacrules extends TreeParser {
                     Object _save_last_2 = _last;
                     Object _first_2 = null;
                     Object root_2 = (Object)adaptor.nil();_last = (Object)input.LT(1);
-                    XOR46=(Object)match(input,XOR,FOLLOW_XOR_in_andterm617); if (state.failed) return retval; 
+                    XOR46=(Object)match(input,XOR,FOLLOW_XOR_in_andterm616); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_XOR.add(XOR46);
 
 
 
                     match(input, Token.DOWN, null); if (state.failed) return retval;
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_tt_in_andterm621);
+                    pushFollow(FOLLOW_tt_in_andterm620);
                     x=tt();
 
                     state._fsp--;
                     if (state.failed) return retval;
                     if ( state.backtracking==0 ) stream_tt.add(x.getTree());
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_tt_in_andterm625);
+                    pushFollow(FOLLOW_tt_in_andterm624);
                     y=tt();
 
                     state._fsp--;
@@ -1630,7 +1630,7 @@ public class tftacrules extends TreeParser {
                     }
 
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_tt_in_andterm630);
+                    pushFollow(FOLLOW_tt_in_andterm629);
                     z=tt();
 
                     state._fsp--;
@@ -1643,7 +1643,7 @@ public class tftacrules extends TreeParser {
 
 
                     // AST REWRITE
-                    // elements: XOR, y, AND, z, z, AND, x
+                    // elements: y, z, AND, x, z, AND, XOR
                     // token labels: 
                     // rule labels: retval, z, y, x
                     // token list labels: 
@@ -1656,14 +1656,14 @@ public class tftacrules extends TreeParser {
                     RewriteRuleSubtreeStream stream_x=new RewriteRuleSubtreeStream(adaptor,"token x",x!=null?x.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 79:4: -> ^( XOR ^( AND $x $z) ^( AND $y $z) )
+                    // 100:4: -> ^( XOR ^( AND $x $z) ^( AND $y $z) )
                     {
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:79:7: ^( XOR ^( AND $x $z) ^( AND $y $z) )
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:100:7: ^( XOR ^( AND $x $z) ^( AND $y $z) )
                         {
                         Object root_1 = (Object)adaptor.nil();
                         root_1 = (Object)adaptor.becomeRoot(stream_XOR.nextNode(), root_1);
 
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:79:13: ^( AND $x $z)
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:100:13: ^( AND $x $z)
                         {
                         Object root_2 = (Object)adaptor.nil();
                         root_2 = (Object)adaptor.becomeRoot(stream_AND.nextNode(), root_2);
@@ -1673,7 +1673,7 @@ public class tftacrules extends TreeParser {
 
                         adaptor.addChild(root_1, root_2);
                         }
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:79:26: ^( AND $y $z)
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:100:26: ^( AND $y $z)
                         {
                         Object root_2 = (Object)adaptor.nil();
                         root_2 = (Object)adaptor.becomeRoot(stream_AND.nextNode(), root_2);
@@ -1693,14 +1693,14 @@ public class tftacrules extends TreeParser {
                     }
                     break;
                 case 6 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:80:4: ^( AND ^( OR x= tt y= tt ) z= tt )
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:101:4: ^( AND ^( OR x= tt y= tt ) z= tt )
                     {
                     _last = (Object)input.LT(1);
                     {
                     Object _save_last_1 = _last;
                     Object _first_1 = null;
                     Object root_1 = (Object)adaptor.nil();_last = (Object)input.LT(1);
-                    AND47=(Object)match(input,AND,FOLLOW_AND_in_andterm669); if (state.failed) return retval; 
+                    AND47=(Object)match(input,AND,FOLLOW_AND_in_andterm668); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_AND.add(AND47);
 
 
@@ -1711,21 +1711,21 @@ public class tftacrules extends TreeParser {
                     Object _save_last_2 = _last;
                     Object _first_2 = null;
                     Object root_2 = (Object)adaptor.nil();_last = (Object)input.LT(1);
-                    OR48=(Object)match(input,OR,FOLLOW_OR_in_andterm672); if (state.failed) return retval; 
+                    OR48=(Object)match(input,OR,FOLLOW_OR_in_andterm671); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_OR.add(OR48);
 
 
 
                     match(input, Token.DOWN, null); if (state.failed) return retval;
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_tt_in_andterm676);
+                    pushFollow(FOLLOW_tt_in_andterm675);
                     x=tt();
 
                     state._fsp--;
                     if (state.failed) return retval;
                     if ( state.backtracking==0 ) stream_tt.add(x.getTree());
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_tt_in_andterm680);
+                    pushFollow(FOLLOW_tt_in_andterm679);
                     y=tt();
 
                     state._fsp--;
@@ -1736,7 +1736,7 @@ public class tftacrules extends TreeParser {
                     }
 
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_tt_in_andterm685);
+                    pushFollow(FOLLOW_tt_in_andterm684);
                     z=tt();
 
                     state._fsp--;
@@ -1749,7 +1749,7 @@ public class tftacrules extends TreeParser {
 
 
                     // AST REWRITE
-                    // elements: OR, z, x, z, AND, y, AND
+                    // elements: AND, OR, x, z, AND, y, z
                     // token labels: 
                     // rule labels: retval, z, y, x
                     // token list labels: 
@@ -1762,14 +1762,14 @@ public class tftacrules extends TreeParser {
                     RewriteRuleSubtreeStream stream_x=new RewriteRuleSubtreeStream(adaptor,"token x",x!=null?x.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 81:4: -> ^( OR ^( AND $x $z) ^( AND $y $z) )
+                    // 102:4: -> ^( OR ^( AND $x $z) ^( AND $y $z) )
                     {
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:81:7: ^( OR ^( AND $x $z) ^( AND $y $z) )
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:102:7: ^( OR ^( AND $x $z) ^( AND $y $z) )
                         {
                         Object root_1 = (Object)adaptor.nil();
                         root_1 = (Object)adaptor.becomeRoot(stream_OR.nextNode(), root_1);
 
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:81:12: ^( AND $x $z)
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:102:12: ^( AND $x $z)
                         {
                         Object root_2 = (Object)adaptor.nil();
                         root_2 = (Object)adaptor.becomeRoot(stream_AND.nextNode(), root_2);
@@ -1779,7 +1779,7 @@ public class tftacrules extends TreeParser {
 
                         adaptor.addChild(root_1, root_2);
                         }
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:81:25: ^( AND $y $z)
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:102:25: ^( AND $y $z)
                         {
                         Object root_2 = (Object)adaptor.nil();
                         root_2 = (Object)adaptor.becomeRoot(stream_AND.nextNode(), root_2);
@@ -1799,21 +1799,21 @@ public class tftacrules extends TreeParser {
                     }
                     break;
                 case 7 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:82:4: ^( AND z= tt ^( OR x= tt y= tt ) )
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:103:4: ^( AND z= tt ^( OR x= tt y= tt ) )
                     {
                     _last = (Object)input.LT(1);
                     {
                     Object _save_last_1 = _last;
                     Object _first_1 = null;
                     Object root_1 = (Object)adaptor.nil();_last = (Object)input.LT(1);
-                    AND49=(Object)match(input,AND,FOLLOW_AND_in_andterm724); if (state.failed) return retval; 
+                    AND49=(Object)match(input,AND,FOLLOW_AND_in_andterm723); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_AND.add(AND49);
 
 
 
                     match(input, Token.DOWN, null); if (state.failed) return retval;
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_tt_in_andterm728);
+                    pushFollow(FOLLOW_tt_in_andterm727);
                     z=tt();
 
                     state._fsp--;
@@ -1824,21 +1824,21 @@ public class tftacrules extends TreeParser {
                     Object _save_last_2 = _last;
                     Object _first_2 = null;
                     Object root_2 = (Object)adaptor.nil();_last = (Object)input.LT(1);
-                    OR50=(Object)match(input,OR,FOLLOW_OR_in_andterm731); if (state.failed) return retval; 
+                    OR50=(Object)match(input,OR,FOLLOW_OR_in_andterm730); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_OR.add(OR50);
 
 
 
                     match(input, Token.DOWN, null); if (state.failed) return retval;
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_tt_in_andterm735);
+                    pushFollow(FOLLOW_tt_in_andterm734);
                     x=tt();
 
                     state._fsp--;
                     if (state.failed) return retval;
                     if ( state.backtracking==0 ) stream_tt.add(x.getTree());
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_tt_in_andterm739);
+                    pushFollow(FOLLOW_tt_in_andterm738);
                     y=tt();
 
                     state._fsp--;
@@ -1855,7 +1855,7 @@ public class tftacrules extends TreeParser {
 
 
                     // AST REWRITE
-                    // elements: AND, x, y, z, AND, z, OR
+                    // elements: AND, z, y, x, z, OR, AND
                     // token labels: 
                     // rule labels: retval, z, y, x
                     // token list labels: 
@@ -1868,14 +1868,14 @@ public class tftacrules extends TreeParser {
                     RewriteRuleSubtreeStream stream_x=new RewriteRuleSubtreeStream(adaptor,"token x",x!=null?x.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 83:4: -> ^( OR ^( AND $x $z) ^( AND $y $z) )
+                    // 104:4: -> ^( OR ^( AND $x $z) ^( AND $y $z) )
                     {
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:83:7: ^( OR ^( AND $x $z) ^( AND $y $z) )
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:104:7: ^( OR ^( AND $x $z) ^( AND $y $z) )
                         {
                         Object root_1 = (Object)adaptor.nil();
                         root_1 = (Object)adaptor.becomeRoot(stream_OR.nextNode(), root_1);
 
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:83:12: ^( AND $x $z)
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:104:12: ^( AND $x $z)
                         {
                         Object root_2 = (Object)adaptor.nil();
                         root_2 = (Object)adaptor.becomeRoot(stream_AND.nextNode(), root_2);
@@ -1885,7 +1885,7 @@ public class tftacrules extends TreeParser {
 
                         adaptor.addChild(root_1, root_2);
                         }
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:83:25: ^( AND $y $z)
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:104:25: ^( AND $y $z)
                         {
                         Object root_2 = (Object)adaptor.nil();
                         root_2 = (Object)adaptor.becomeRoot(stream_AND.nextNode(), root_2);
@@ -1905,14 +1905,14 @@ public class tftacrules extends TreeParser {
                     }
                     break;
                 case 8 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:84:4: ^( AND ^( AND n1= notterm m1= metaPandSandAE ) z= tt )
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:105:4: ^( AND ^( AND n1= notterm m1= metaPandSandAE ) z= tt )
                     {
                     _last = (Object)input.LT(1);
                     {
                     Object _save_last_1 = _last;
                     Object _first_1 = null;
                     Object root_1 = (Object)adaptor.nil();_last = (Object)input.LT(1);
-                    AND51=(Object)match(input,AND,FOLLOW_AND_in_andterm778); if (state.failed) return retval; 
+                    AND51=(Object)match(input,AND,FOLLOW_AND_in_andterm777); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_AND.add(AND51);
 
 
@@ -1923,21 +1923,21 @@ public class tftacrules extends TreeParser {
                     Object _save_last_2 = _last;
                     Object _first_2 = null;
                     Object root_2 = (Object)adaptor.nil();_last = (Object)input.LT(1);
-                    AND52=(Object)match(input,AND,FOLLOW_AND_in_andterm781); if (state.failed) return retval; 
+                    AND52=(Object)match(input,AND,FOLLOW_AND_in_andterm780); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_AND.add(AND52);
 
 
 
                     match(input, Token.DOWN, null); if (state.failed) return retval;
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_notterm_in_andterm785);
+                    pushFollow(FOLLOW_notterm_in_andterm784);
                     n1=notterm();
 
                     state._fsp--;
                     if (state.failed) return retval;
                     if ( state.backtracking==0 ) stream_notterm.add(n1.getTree());
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_metaPandSandAE_in_andterm789);
+                    pushFollow(FOLLOW_metaPandSandAE_in_andterm788);
                     m1=metaPandSandAE();
 
                     state._fsp--;
@@ -1948,7 +1948,7 @@ public class tftacrules extends TreeParser {
                     }
 
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_tt_in_andterm794);
+                    pushFollow(FOLLOW_tt_in_andterm793);
                     z=tt();
 
                     state._fsp--;
@@ -1961,7 +1961,7 @@ public class tftacrules extends TreeParser {
 
 
                     // AST REWRITE
-                    // elements: z, m1, m1, n1, AND, m1, z, n1, AND, n1, z
+                    // elements: n1, n1, z, m1, AND, z, m1, AND, m1, z, n1
                     // token labels: 
                     // rule labels: n1, retval, m1, z
                     // token list labels: 
@@ -1974,20 +1974,20 @@ public class tftacrules extends TreeParser {
                     RewriteRuleSubtreeStream stream_z=new RewriteRuleSubtreeStream(adaptor,"token z",z!=null?z.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 85:4: -> ^( XOR ^( AND $n1 ^( AND $m1 $z) ) ^( XOR ^( PAND ^( PAND $m1 ^( NOT $n1) ) $z) ^( PAND $m1 ^( SAND ^( NOT $n1) $z) ) ) )
+                    // 106:4: -> ^( XOR ^( AND $n1 ^( AND $m1 $z) ) ^( XOR ^( PAND ^( PAND $m1 ^( NOT $n1) ) $z) ^( PAND $m1 ^( SAND ^( NOT $n1) $z) ) ) )
                     {
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:85:7: ^( XOR ^( AND $n1 ^( AND $m1 $z) ) ^( XOR ^( PAND ^( PAND $m1 ^( NOT $n1) ) $z) ^( PAND $m1 ^( SAND ^( NOT $n1) $z) ) ) )
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:106:7: ^( XOR ^( AND $n1 ^( AND $m1 $z) ) ^( XOR ^( PAND ^( PAND $m1 ^( NOT $n1) ) $z) ^( PAND $m1 ^( SAND ^( NOT $n1) $z) ) ) )
                         {
                         Object root_1 = (Object)adaptor.nil();
                         root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(XOR, "XOR"), root_1);
 
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:85:13: ^( AND $n1 ^( AND $m1 $z) )
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:106:13: ^( AND $n1 ^( AND $m1 $z) )
                         {
                         Object root_2 = (Object)adaptor.nil();
                         root_2 = (Object)adaptor.becomeRoot(stream_AND.nextNode(), root_2);
 
                         adaptor.addChild(root_2, stream_n1.nextTree());
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:85:23: ^( AND $m1 $z)
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:106:23: ^( AND $m1 $z)
                         {
                         Object root_3 = (Object)adaptor.nil();
                         root_3 = (Object)adaptor.becomeRoot(stream_AND.nextNode(), root_3);
@@ -2000,23 +2000,23 @@ public class tftacrules extends TreeParser {
 
                         adaptor.addChild(root_1, root_2);
                         }
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:85:38: ^( XOR ^( PAND ^( PAND $m1 ^( NOT $n1) ) $z) ^( PAND $m1 ^( SAND ^( NOT $n1) $z) ) )
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:106:38: ^( XOR ^( PAND ^( PAND $m1 ^( NOT $n1) ) $z) ^( PAND $m1 ^( SAND ^( NOT $n1) $z) ) )
                         {
                         Object root_2 = (Object)adaptor.nil();
                         root_2 = (Object)adaptor.becomeRoot((Object)adaptor.create(XOR, "XOR"), root_2);
 
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:85:44: ^( PAND ^( PAND $m1 ^( NOT $n1) ) $z)
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:106:44: ^( PAND ^( PAND $m1 ^( NOT $n1) ) $z)
                         {
                         Object root_3 = (Object)adaptor.nil();
                         root_3 = (Object)adaptor.becomeRoot((Object)adaptor.create(PAND, "PAND"), root_3);
 
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:85:51: ^( PAND $m1 ^( NOT $n1) )
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:106:51: ^( PAND $m1 ^( NOT $n1) )
                         {
                         Object root_4 = (Object)adaptor.nil();
                         root_4 = (Object)adaptor.becomeRoot((Object)adaptor.create(PAND, "PAND"), root_4);
 
                         adaptor.addChild(root_4, stream_m1.nextTree());
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:85:62: ^( NOT $n1)
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:106:62: ^( NOT $n1)
                         {
                         Object root_5 = (Object)adaptor.nil();
                         root_5 = (Object)adaptor.becomeRoot((Object)adaptor.create(NOT, "NOT"), root_5);
@@ -2032,18 +2032,18 @@ public class tftacrules extends TreeParser {
 
                         adaptor.addChild(root_2, root_3);
                         }
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:85:78: ^( PAND $m1 ^( SAND ^( NOT $n1) $z) )
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:106:78: ^( PAND $m1 ^( SAND ^( NOT $n1) $z) )
                         {
                         Object root_3 = (Object)adaptor.nil();
                         root_3 = (Object)adaptor.becomeRoot((Object)adaptor.create(PAND, "PAND"), root_3);
 
                         adaptor.addChild(root_3, stream_m1.nextTree());
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:85:89: ^( SAND ^( NOT $n1) $z)
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:106:89: ^( SAND ^( NOT $n1) $z)
                         {
                         Object root_4 = (Object)adaptor.nil();
                         root_4 = (Object)adaptor.becomeRoot((Object)adaptor.create(SAND, "SAND"), root_4);
 
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:85:96: ^( NOT $n1)
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:106:96: ^( NOT $n1)
                         {
                         Object root_5 = (Object)adaptor.nil();
                         root_5 = (Object)adaptor.becomeRoot((Object)adaptor.create(NOT, "NOT"), root_5);
@@ -2072,28 +2072,28 @@ public class tftacrules extends TreeParser {
                     }
                     break;
                 case 9 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:86:4: ^( AND x= tt y= tt )
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:107:4: ^( AND x= tt y= tt )
                     {
                     _last = (Object)input.LT(1);
                     {
                     Object _save_last_1 = _last;
                     Object _first_1 = null;
                     Object root_1 = (Object)adaptor.nil();_last = (Object)input.LT(1);
-                    AND53=(Object)match(input,AND,FOLLOW_AND_in_andterm873); if (state.failed) return retval; 
+                    AND53=(Object)match(input,AND,FOLLOW_AND_in_andterm872); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_AND.add(AND53);
 
 
 
                     match(input, Token.DOWN, null); if (state.failed) return retval;
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_tt_in_andterm877);
+                    pushFollow(FOLLOW_tt_in_andterm876);
                     x=tt();
 
                     state._fsp--;
                     if (state.failed) return retval;
                     if ( state.backtracking==0 ) stream_tt.add(x.getTree());
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_tt_in_andterm881);
+                    pushFollow(FOLLOW_tt_in_andterm880);
                     y=tt();
 
                     state._fsp--;
@@ -2106,7 +2106,7 @@ public class tftacrules extends TreeParser {
 
 
                     // AST REWRITE
-                    // elements: y, y, x, x, x, y
+                    // elements: y, y, y, x, x, x
                     // token labels: 
                     // rule labels: retval, y, x
                     // token list labels: 
@@ -2118,14 +2118,14 @@ public class tftacrules extends TreeParser {
                     RewriteRuleSubtreeStream stream_x=new RewriteRuleSubtreeStream(adaptor,"token x",x!=null?x.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 87:4: -> ^( XOR ^( PAND $x $y) ^( XOR ^( PAND $y $x) ^( SAND $x $y) ) )
+                    // 108:4: -> ^( XOR ^( PAND $x $y) ^( XOR ^( PAND $y $x) ^( SAND $x $y) ) )
                     {
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:87:7: ^( XOR ^( PAND $x $y) ^( XOR ^( PAND $y $x) ^( SAND $x $y) ) )
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:108:7: ^( XOR ^( PAND $x $y) ^( XOR ^( PAND $y $x) ^( SAND $x $y) ) )
                         {
                         Object root_1 = (Object)adaptor.nil();
                         root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(XOR, "XOR"), root_1);
 
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:87:13: ^( PAND $x $y)
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:108:13: ^( PAND $x $y)
                         {
                         Object root_2 = (Object)adaptor.nil();
                         root_2 = (Object)adaptor.becomeRoot((Object)adaptor.create(PAND, "PAND"), root_2);
@@ -2135,12 +2135,12 @@ public class tftacrules extends TreeParser {
 
                         adaptor.addChild(root_1, root_2);
                         }
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:87:27: ^( XOR ^( PAND $y $x) ^( SAND $x $y) )
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:108:27: ^( XOR ^( PAND $y $x) ^( SAND $x $y) )
                         {
                         Object root_2 = (Object)adaptor.nil();
                         root_2 = (Object)adaptor.becomeRoot((Object)adaptor.create(XOR, "XOR"), root_2);
 
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:87:33: ^( PAND $y $x)
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:108:33: ^( PAND $y $x)
                         {
                         Object root_3 = (Object)adaptor.nil();
                         root_3 = (Object)adaptor.becomeRoot((Object)adaptor.create(PAND, "PAND"), root_3);
@@ -2150,7 +2150,7 @@ public class tftacrules extends TreeParser {
 
                         adaptor.addChild(root_2, root_3);
                         }
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:87:47: ^( SAND $x $y)
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:108:47: ^( SAND $x $y)
                         {
                         Object root_3 = (Object)adaptor.nil();
                         root_3 = (Object)adaptor.becomeRoot((Object)adaptor.create(SAND, "SAND"), root_3);
@@ -2173,7 +2173,7 @@ public class tftacrules extends TreeParser {
                     }
                     break;
                 case 10 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:88:4: ^( AND tt tt )
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:109:4: ^( AND tt tt )
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -2182,7 +2182,7 @@ public class tftacrules extends TreeParser {
                     Object _save_last_1 = _last;
                     Object _first_1 = null;
                     Object root_1 = (Object)adaptor.nil();_last = (Object)input.LT(1);
-                    AND54=(Object)match(input,AND,FOLLOW_AND_in_andterm933); if (state.failed) return retval;
+                    AND54=(Object)match(input,AND,FOLLOW_AND_in_andterm932); if (state.failed) return retval;
                     if ( state.backtracking==0 ) {
                     AND54_tree = (Object)adaptor.dupNode(AND54);
 
@@ -2192,7 +2192,7 @@ public class tftacrules extends TreeParser {
 
                     match(input, Token.DOWN, null); if (state.failed) return retval;
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_tt_in_andterm935);
+                    pushFollow(FOLLOW_tt_in_andterm934);
                     tt55=tt();
 
                     state._fsp--;
@@ -2200,7 +2200,7 @@ public class tftacrules extends TreeParser {
                     if ( state.backtracking==0 ) 
                     adaptor.addChild(root_1, tt55.getTree());
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_tt_in_andterm937);
+                    pushFollow(FOLLOW_tt_in_andterm936);
                     tt56=tt();
 
                     state._fsp--;
@@ -2240,7 +2240,7 @@ public class tftacrules extends TreeParser {
     };
 
     // $ANTLR start "negandterm"
-    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:91:1: negandterm : ( ^( AND ^( OR x= notterm y= negatedterm ) z1= pandterm ) -> ^( OR ^( AND $x $z1) ^( AND $y $z1) ) | ^( AND ^( XOR x= notterm y= negatedterm ) z1= pandterm ) -> ^( XOR ^( AND $x $z1) ^( AND $y $z1) ) | ^( AND ^( OR x= notterm y= negatedterm ) z2= sandterm ) -> ^( OR ^( AND $x $z2) ^( AND $y $z2) ) | ^( AND ^( XOR x= notterm y= negatedterm ) z2= sandterm ) -> ^( XOR ^( AND $x $z2) ^( AND $y $z2) ) | ^( AND ^( OR x= notterm y= negatedterm ) z3= ae ) -> ^( OR ^( AND $x $z3) ^( AND $y $z3) ) | ^( AND ^( XOR x= notterm y= negatedterm ) z3= ae ) -> ^( XOR ^( AND $x $z3) ^( AND $y $z3) ) | ^( AND n1= notterm ^( OR t1= tt t2= tt ) ) -> ^( OR ^( AND $n1 $t1) ^( AND $n1 $t2) ) | ^( AND n1= notterm ^( XOR t1= tt t2= tt ) ) -> ^( XOR ^( AND $n1 $t1) ^( AND $n1 $t2) ) | ^( AND n1= notterm ^( AND n2= notterm m1= metaPandSandAE ) ) -> ^( AND ^( AND $n1 $n2) $m1) | ^( AND notterm metaPandSandAE ) );
+    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:112:1: negandterm : ( ^( AND ^( OR x= notterm y= negatedterm ) z1= pandterm ) -> ^( OR ^( AND $x $z1) ^( AND $y $z1) ) | ^( AND ^( XOR x= notterm y= negatedterm ) z1= pandterm ) -> ^( XOR ^( AND $x $z1) ^( AND $y $z1) ) | ^( AND ^( OR x= notterm y= negatedterm ) z2= sandterm ) -> ^( OR ^( AND $x $z2) ^( AND $y $z2) ) | ^( AND ^( XOR x= notterm y= negatedterm ) z2= sandterm ) -> ^( XOR ^( AND $x $z2) ^( AND $y $z2) ) | ^( AND ^( OR x= notterm y= negatedterm ) z3= ae ) -> ^( OR ^( AND $x $z3) ^( AND $y $z3) ) | ^( AND ^( XOR x= notterm y= negatedterm ) z3= ae ) -> ^( XOR ^( AND $x $z3) ^( AND $y $z3) ) | ^( AND n1= notterm ^( OR t1= tt t2= tt ) ) -> ^( OR ^( AND $n1 $t1) ^( AND $n1 $t2) ) | ^( AND n1= notterm ^( XOR t1= tt t2= tt ) ) -> ^( XOR ^( AND $n1 $t1) ^( AND $n1 $t2) ) | ^( AND n1= notterm ^( AND n2= notterm m1= metaPandSandAE ) ) -> ^( AND ^( AND $n1 $n2) $m1) | ^( AND notterm metaPandSandAE ) );
     public final tftacrules.negandterm_return negandterm() throws RecognitionException {
         tftacrules.negandterm_return retval = new tftacrules.negandterm_return();
         retval.start = input.LT(1);
@@ -2325,19 +2325,19 @@ public class tftacrules extends TreeParser {
         RewriteRuleSubtreeStream stream_ae=new RewriteRuleSubtreeStream(adaptor,"rule ae");
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 5) ) { return retval; }
-            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:92:2: ( ^( AND ^( OR x= notterm y= negatedterm ) z1= pandterm ) -> ^( OR ^( AND $x $z1) ^( AND $y $z1) ) | ^( AND ^( XOR x= notterm y= negatedterm ) z1= pandterm ) -> ^( XOR ^( AND $x $z1) ^( AND $y $z1) ) | ^( AND ^( OR x= notterm y= negatedterm ) z2= sandterm ) -> ^( OR ^( AND $x $z2) ^( AND $y $z2) ) | ^( AND ^( XOR x= notterm y= negatedterm ) z2= sandterm ) -> ^( XOR ^( AND $x $z2) ^( AND $y $z2) ) | ^( AND ^( OR x= notterm y= negatedterm ) z3= ae ) -> ^( OR ^( AND $x $z3) ^( AND $y $z3) ) | ^( AND ^( XOR x= notterm y= negatedterm ) z3= ae ) -> ^( XOR ^( AND $x $z3) ^( AND $y $z3) ) | ^( AND n1= notterm ^( OR t1= tt t2= tt ) ) -> ^( OR ^( AND $n1 $t1) ^( AND $n1 $t2) ) | ^( AND n1= notterm ^( XOR t1= tt t2= tt ) ) -> ^( XOR ^( AND $n1 $t1) ^( AND $n1 $t2) ) | ^( AND n1= notterm ^( AND n2= notterm m1= metaPandSandAE ) ) -> ^( AND ^( AND $n1 $n2) $m1) | ^( AND notterm metaPandSandAE ) )
+            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:113:2: ( ^( AND ^( OR x= notterm y= negatedterm ) z1= pandterm ) -> ^( OR ^( AND $x $z1) ^( AND $y $z1) ) | ^( AND ^( XOR x= notterm y= negatedterm ) z1= pandterm ) -> ^( XOR ^( AND $x $z1) ^( AND $y $z1) ) | ^( AND ^( OR x= notterm y= negatedterm ) z2= sandterm ) -> ^( OR ^( AND $x $z2) ^( AND $y $z2) ) | ^( AND ^( XOR x= notterm y= negatedterm ) z2= sandterm ) -> ^( XOR ^( AND $x $z2) ^( AND $y $z2) ) | ^( AND ^( OR x= notterm y= negatedterm ) z3= ae ) -> ^( OR ^( AND $x $z3) ^( AND $y $z3) ) | ^( AND ^( XOR x= notterm y= negatedterm ) z3= ae ) -> ^( XOR ^( AND $x $z3) ^( AND $y $z3) ) | ^( AND n1= notterm ^( OR t1= tt t2= tt ) ) -> ^( OR ^( AND $n1 $t1) ^( AND $n1 $t2) ) | ^( AND n1= notterm ^( XOR t1= tt t2= tt ) ) -> ^( XOR ^( AND $n1 $t1) ^( AND $n1 $t2) ) | ^( AND n1= notterm ^( AND n2= notterm m1= metaPandSandAE ) ) -> ^( AND ^( AND $n1 $n2) $m1) | ^( AND notterm metaPandSandAE ) )
             int alt5=10;
             alt5 = dfa5.predict(input);
             switch (alt5) {
                 case 1 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:92:4: ^( AND ^( OR x= notterm y= negatedterm ) z1= pandterm )
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:113:4: ^( AND ^( OR x= notterm y= negatedterm ) z1= pandterm )
                     {
                     _last = (Object)input.LT(1);
                     {
                     Object _save_last_1 = _last;
                     Object _first_1 = null;
                     Object root_1 = (Object)adaptor.nil();_last = (Object)input.LT(1);
-                    AND57=(Object)match(input,AND,FOLLOW_AND_in_negandterm951); if (state.failed) return retval; 
+                    AND57=(Object)match(input,AND,FOLLOW_AND_in_negandterm950); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_AND.add(AND57);
 
 
@@ -2348,21 +2348,21 @@ public class tftacrules extends TreeParser {
                     Object _save_last_2 = _last;
                     Object _first_2 = null;
                     Object root_2 = (Object)adaptor.nil();_last = (Object)input.LT(1);
-                    OR58=(Object)match(input,OR,FOLLOW_OR_in_negandterm954); if (state.failed) return retval; 
+                    OR58=(Object)match(input,OR,FOLLOW_OR_in_negandterm953); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_OR.add(OR58);
 
 
 
                     match(input, Token.DOWN, null); if (state.failed) return retval;
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_notterm_in_negandterm958);
+                    pushFollow(FOLLOW_notterm_in_negandterm957);
                     x=notterm();
 
                     state._fsp--;
                     if (state.failed) return retval;
                     if ( state.backtracking==0 ) stream_notterm.add(x.getTree());
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_negatedterm_in_negandterm962);
+                    pushFollow(FOLLOW_negatedterm_in_negandterm961);
                     y=negatedterm();
 
                     state._fsp--;
@@ -2373,7 +2373,7 @@ public class tftacrules extends TreeParser {
                     }
 
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_pandterm_in_negandterm967);
+                    pushFollow(FOLLOW_pandterm_in_negandterm966);
                     z1=pandterm();
 
                     state._fsp--;
@@ -2386,7 +2386,7 @@ public class tftacrules extends TreeParser {
 
 
                     // AST REWRITE
-                    // elements: y, AND, OR, z1, AND, x, z1
+                    // elements: AND, y, z1, x, OR, AND, z1
                     // token labels: 
                     // rule labels: retval, z1, y, x
                     // token list labels: 
@@ -2399,14 +2399,14 @@ public class tftacrules extends TreeParser {
                     RewriteRuleSubtreeStream stream_x=new RewriteRuleSubtreeStream(adaptor,"token x",x!=null?x.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 93:4: -> ^( OR ^( AND $x $z1) ^( AND $y $z1) )
+                    // 114:4: -> ^( OR ^( AND $x $z1) ^( AND $y $z1) )
                     {
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:93:7: ^( OR ^( AND $x $z1) ^( AND $y $z1) )
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:114:7: ^( OR ^( AND $x $z1) ^( AND $y $z1) )
                         {
                         Object root_1 = (Object)adaptor.nil();
                         root_1 = (Object)adaptor.becomeRoot(stream_OR.nextNode(), root_1);
 
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:93:12: ^( AND $x $z1)
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:114:12: ^( AND $x $z1)
                         {
                         Object root_2 = (Object)adaptor.nil();
                         root_2 = (Object)adaptor.becomeRoot(stream_AND.nextNode(), root_2);
@@ -2416,7 +2416,7 @@ public class tftacrules extends TreeParser {
 
                         adaptor.addChild(root_1, root_2);
                         }
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:93:26: ^( AND $y $z1)
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:114:26: ^( AND $y $z1)
                         {
                         Object root_2 = (Object)adaptor.nil();
                         root_2 = (Object)adaptor.becomeRoot(stream_AND.nextNode(), root_2);
@@ -2436,14 +2436,14 @@ public class tftacrules extends TreeParser {
                     }
                     break;
                 case 2 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:94:4: ^( AND ^( XOR x= notterm y= negatedterm ) z1= pandterm )
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:115:4: ^( AND ^( XOR x= notterm y= negatedterm ) z1= pandterm )
                     {
                     _last = (Object)input.LT(1);
                     {
                     Object _save_last_1 = _last;
                     Object _first_1 = null;
                     Object root_1 = (Object)adaptor.nil();_last = (Object)input.LT(1);
-                    AND59=(Object)match(input,AND,FOLLOW_AND_in_negandterm1003); if (state.failed) return retval; 
+                    AND59=(Object)match(input,AND,FOLLOW_AND_in_negandterm1002); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_AND.add(AND59);
 
 
@@ -2454,21 +2454,21 @@ public class tftacrules extends TreeParser {
                     Object _save_last_2 = _last;
                     Object _first_2 = null;
                     Object root_2 = (Object)adaptor.nil();_last = (Object)input.LT(1);
-                    XOR60=(Object)match(input,XOR,FOLLOW_XOR_in_negandterm1006); if (state.failed) return retval; 
+                    XOR60=(Object)match(input,XOR,FOLLOW_XOR_in_negandterm1005); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_XOR.add(XOR60);
 
 
 
                     match(input, Token.DOWN, null); if (state.failed) return retval;
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_notterm_in_negandterm1010);
+                    pushFollow(FOLLOW_notterm_in_negandterm1009);
                     x=notterm();
 
                     state._fsp--;
                     if (state.failed) return retval;
                     if ( state.backtracking==0 ) stream_notterm.add(x.getTree());
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_negatedterm_in_negandterm1014);
+                    pushFollow(FOLLOW_negatedterm_in_negandterm1013);
                     y=negatedterm();
 
                     state._fsp--;
@@ -2479,7 +2479,7 @@ public class tftacrules extends TreeParser {
                     }
 
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_pandterm_in_negandterm1019);
+                    pushFollow(FOLLOW_pandterm_in_negandterm1018);
                     z1=pandterm();
 
                     state._fsp--;
@@ -2492,7 +2492,7 @@ public class tftacrules extends TreeParser {
 
 
                     // AST REWRITE
-                    // elements: x, AND, AND, y, XOR, z1, z1
+                    // elements: x, y, z1, XOR, AND, z1, AND
                     // token labels: 
                     // rule labels: retval, z1, y, x
                     // token list labels: 
@@ -2505,14 +2505,14 @@ public class tftacrules extends TreeParser {
                     RewriteRuleSubtreeStream stream_x=new RewriteRuleSubtreeStream(adaptor,"token x",x!=null?x.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 95:4: -> ^( XOR ^( AND $x $z1) ^( AND $y $z1) )
+                    // 116:4: -> ^( XOR ^( AND $x $z1) ^( AND $y $z1) )
                     {
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:95:7: ^( XOR ^( AND $x $z1) ^( AND $y $z1) )
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:116:7: ^( XOR ^( AND $x $z1) ^( AND $y $z1) )
                         {
                         Object root_1 = (Object)adaptor.nil();
                         root_1 = (Object)adaptor.becomeRoot(stream_XOR.nextNode(), root_1);
 
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:95:13: ^( AND $x $z1)
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:116:13: ^( AND $x $z1)
                         {
                         Object root_2 = (Object)adaptor.nil();
                         root_2 = (Object)adaptor.becomeRoot(stream_AND.nextNode(), root_2);
@@ -2522,7 +2522,7 @@ public class tftacrules extends TreeParser {
 
                         adaptor.addChild(root_1, root_2);
                         }
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:95:27: ^( AND $y $z1)
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:116:27: ^( AND $y $z1)
                         {
                         Object root_2 = (Object)adaptor.nil();
                         root_2 = (Object)adaptor.becomeRoot(stream_AND.nextNode(), root_2);
@@ -2542,14 +2542,14 @@ public class tftacrules extends TreeParser {
                     }
                     break;
                 case 3 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:96:4: ^( AND ^( OR x= notterm y= negatedterm ) z2= sandterm )
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:117:4: ^( AND ^( OR x= notterm y= negatedterm ) z2= sandterm )
                     {
                     _last = (Object)input.LT(1);
                     {
                     Object _save_last_1 = _last;
                     Object _first_1 = null;
                     Object root_1 = (Object)adaptor.nil();_last = (Object)input.LT(1);
-                    AND61=(Object)match(input,AND,FOLLOW_AND_in_negandterm1055); if (state.failed) return retval; 
+                    AND61=(Object)match(input,AND,FOLLOW_AND_in_negandterm1054); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_AND.add(AND61);
 
 
@@ -2560,21 +2560,21 @@ public class tftacrules extends TreeParser {
                     Object _save_last_2 = _last;
                     Object _first_2 = null;
                     Object root_2 = (Object)adaptor.nil();_last = (Object)input.LT(1);
-                    OR62=(Object)match(input,OR,FOLLOW_OR_in_negandterm1058); if (state.failed) return retval; 
+                    OR62=(Object)match(input,OR,FOLLOW_OR_in_negandterm1057); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_OR.add(OR62);
 
 
 
                     match(input, Token.DOWN, null); if (state.failed) return retval;
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_notterm_in_negandterm1062);
+                    pushFollow(FOLLOW_notterm_in_negandterm1061);
                     x=notterm();
 
                     state._fsp--;
                     if (state.failed) return retval;
                     if ( state.backtracking==0 ) stream_notterm.add(x.getTree());
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_negatedterm_in_negandterm1066);
+                    pushFollow(FOLLOW_negatedterm_in_negandterm1065);
                     y=negatedterm();
 
                     state._fsp--;
@@ -2585,7 +2585,7 @@ public class tftacrules extends TreeParser {
                     }
 
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_sandterm_in_negandterm1071);
+                    pushFollow(FOLLOW_sandterm_in_negandterm1070);
                     z2=sandterm();
 
                     state._fsp--;
@@ -2598,7 +2598,7 @@ public class tftacrules extends TreeParser {
 
 
                     // AST REWRITE
-                    // elements: AND, z2, x, OR, AND, y, z2
+                    // elements: x, z2, AND, z2, OR, y, AND
                     // token labels: 
                     // rule labels: retval, z2, y, x
                     // token list labels: 
@@ -2611,14 +2611,14 @@ public class tftacrules extends TreeParser {
                     RewriteRuleSubtreeStream stream_x=new RewriteRuleSubtreeStream(adaptor,"token x",x!=null?x.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 97:4: -> ^( OR ^( AND $x $z2) ^( AND $y $z2) )
+                    // 118:4: -> ^( OR ^( AND $x $z2) ^( AND $y $z2) )
                     {
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:97:7: ^( OR ^( AND $x $z2) ^( AND $y $z2) )
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:118:7: ^( OR ^( AND $x $z2) ^( AND $y $z2) )
                         {
                         Object root_1 = (Object)adaptor.nil();
                         root_1 = (Object)adaptor.becomeRoot(stream_OR.nextNode(), root_1);
 
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:97:12: ^( AND $x $z2)
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:118:12: ^( AND $x $z2)
                         {
                         Object root_2 = (Object)adaptor.nil();
                         root_2 = (Object)adaptor.becomeRoot(stream_AND.nextNode(), root_2);
@@ -2628,7 +2628,7 @@ public class tftacrules extends TreeParser {
 
                         adaptor.addChild(root_1, root_2);
                         }
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:97:26: ^( AND $y $z2)
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:118:26: ^( AND $y $z2)
                         {
                         Object root_2 = (Object)adaptor.nil();
                         root_2 = (Object)adaptor.becomeRoot(stream_AND.nextNode(), root_2);
@@ -2648,14 +2648,14 @@ public class tftacrules extends TreeParser {
                     }
                     break;
                 case 4 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:98:4: ^( AND ^( XOR x= notterm y= negatedterm ) z2= sandterm )
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:119:4: ^( AND ^( XOR x= notterm y= negatedterm ) z2= sandterm )
                     {
                     _last = (Object)input.LT(1);
                     {
                     Object _save_last_1 = _last;
                     Object _first_1 = null;
                     Object root_1 = (Object)adaptor.nil();_last = (Object)input.LT(1);
-                    AND63=(Object)match(input,AND,FOLLOW_AND_in_negandterm1107); if (state.failed) return retval; 
+                    AND63=(Object)match(input,AND,FOLLOW_AND_in_negandterm1106); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_AND.add(AND63);
 
 
@@ -2666,21 +2666,21 @@ public class tftacrules extends TreeParser {
                     Object _save_last_2 = _last;
                     Object _first_2 = null;
                     Object root_2 = (Object)adaptor.nil();_last = (Object)input.LT(1);
-                    XOR64=(Object)match(input,XOR,FOLLOW_XOR_in_negandterm1110); if (state.failed) return retval; 
+                    XOR64=(Object)match(input,XOR,FOLLOW_XOR_in_negandterm1109); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_XOR.add(XOR64);
 
 
 
                     match(input, Token.DOWN, null); if (state.failed) return retval;
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_notterm_in_negandterm1114);
+                    pushFollow(FOLLOW_notterm_in_negandterm1113);
                     x=notterm();
 
                     state._fsp--;
                     if (state.failed) return retval;
                     if ( state.backtracking==0 ) stream_notterm.add(x.getTree());
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_negatedterm_in_negandterm1118);
+                    pushFollow(FOLLOW_negatedterm_in_negandterm1117);
                     y=negatedterm();
 
                     state._fsp--;
@@ -2691,7 +2691,7 @@ public class tftacrules extends TreeParser {
                     }
 
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_sandterm_in_negandterm1123);
+                    pushFollow(FOLLOW_sandterm_in_negandterm1122);
                     z2=sandterm();
 
                     state._fsp--;
@@ -2704,7 +2704,7 @@ public class tftacrules extends TreeParser {
 
 
                     // AST REWRITE
-                    // elements: z2, XOR, AND, AND, y, z2, x
+                    // elements: AND, z2, x, z2, AND, y, XOR
                     // token labels: 
                     // rule labels: retval, z2, y, x
                     // token list labels: 
@@ -2717,14 +2717,14 @@ public class tftacrules extends TreeParser {
                     RewriteRuleSubtreeStream stream_x=new RewriteRuleSubtreeStream(adaptor,"token x",x!=null?x.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 99:4: -> ^( XOR ^( AND $x $z2) ^( AND $y $z2) )
+                    // 120:4: -> ^( XOR ^( AND $x $z2) ^( AND $y $z2) )
                     {
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:99:7: ^( XOR ^( AND $x $z2) ^( AND $y $z2) )
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:120:7: ^( XOR ^( AND $x $z2) ^( AND $y $z2) )
                         {
                         Object root_1 = (Object)adaptor.nil();
                         root_1 = (Object)adaptor.becomeRoot(stream_XOR.nextNode(), root_1);
 
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:99:13: ^( AND $x $z2)
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:120:13: ^( AND $x $z2)
                         {
                         Object root_2 = (Object)adaptor.nil();
                         root_2 = (Object)adaptor.becomeRoot(stream_AND.nextNode(), root_2);
@@ -2734,7 +2734,7 @@ public class tftacrules extends TreeParser {
 
                         adaptor.addChild(root_1, root_2);
                         }
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:99:27: ^( AND $y $z2)
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:120:27: ^( AND $y $z2)
                         {
                         Object root_2 = (Object)adaptor.nil();
                         root_2 = (Object)adaptor.becomeRoot(stream_AND.nextNode(), root_2);
@@ -2754,14 +2754,14 @@ public class tftacrules extends TreeParser {
                     }
                     break;
                 case 5 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:100:4: ^( AND ^( OR x= notterm y= negatedterm ) z3= ae )
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:121:4: ^( AND ^( OR x= notterm y= negatedterm ) z3= ae )
                     {
                     _last = (Object)input.LT(1);
                     {
                     Object _save_last_1 = _last;
                     Object _first_1 = null;
                     Object root_1 = (Object)adaptor.nil();_last = (Object)input.LT(1);
-                    AND65=(Object)match(input,AND,FOLLOW_AND_in_negandterm1159); if (state.failed) return retval; 
+                    AND65=(Object)match(input,AND,FOLLOW_AND_in_negandterm1158); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_AND.add(AND65);
 
 
@@ -2772,21 +2772,21 @@ public class tftacrules extends TreeParser {
                     Object _save_last_2 = _last;
                     Object _first_2 = null;
                     Object root_2 = (Object)adaptor.nil();_last = (Object)input.LT(1);
-                    OR66=(Object)match(input,OR,FOLLOW_OR_in_negandterm1162); if (state.failed) return retval; 
+                    OR66=(Object)match(input,OR,FOLLOW_OR_in_negandterm1161); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_OR.add(OR66);
 
 
 
                     match(input, Token.DOWN, null); if (state.failed) return retval;
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_notterm_in_negandterm1166);
+                    pushFollow(FOLLOW_notterm_in_negandterm1165);
                     x=notterm();
 
                     state._fsp--;
                     if (state.failed) return retval;
                     if ( state.backtracking==0 ) stream_notterm.add(x.getTree());
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_negatedterm_in_negandterm1170);
+                    pushFollow(FOLLOW_negatedterm_in_negandterm1169);
                     y=negatedterm();
 
                     state._fsp--;
@@ -2797,7 +2797,7 @@ public class tftacrules extends TreeParser {
                     }
 
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_ae_in_negandterm1175);
+                    pushFollow(FOLLOW_ae_in_negandterm1174);
                     z3=ae();
 
                     state._fsp--;
@@ -2810,7 +2810,7 @@ public class tftacrules extends TreeParser {
 
 
                     // AST REWRITE
-                    // elements: z3, AND, z3, AND, y, x, OR
+                    // elements: x, AND, AND, y, OR, z3, z3
                     // token labels: 
                     // rule labels: retval, z3, y, x
                     // token list labels: 
@@ -2823,14 +2823,14 @@ public class tftacrules extends TreeParser {
                     RewriteRuleSubtreeStream stream_x=new RewriteRuleSubtreeStream(adaptor,"token x",x!=null?x.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 101:4: -> ^( OR ^( AND $x $z3) ^( AND $y $z3) )
+                    // 122:4: -> ^( OR ^( AND $x $z3) ^( AND $y $z3) )
                     {
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:101:7: ^( OR ^( AND $x $z3) ^( AND $y $z3) )
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:122:7: ^( OR ^( AND $x $z3) ^( AND $y $z3) )
                         {
                         Object root_1 = (Object)adaptor.nil();
                         root_1 = (Object)adaptor.becomeRoot(stream_OR.nextNode(), root_1);
 
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:101:12: ^( AND $x $z3)
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:122:12: ^( AND $x $z3)
                         {
                         Object root_2 = (Object)adaptor.nil();
                         root_2 = (Object)adaptor.becomeRoot(stream_AND.nextNode(), root_2);
@@ -2840,7 +2840,7 @@ public class tftacrules extends TreeParser {
 
                         adaptor.addChild(root_1, root_2);
                         }
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:101:26: ^( AND $y $z3)
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:122:26: ^( AND $y $z3)
                         {
                         Object root_2 = (Object)adaptor.nil();
                         root_2 = (Object)adaptor.becomeRoot(stream_AND.nextNode(), root_2);
@@ -2860,14 +2860,14 @@ public class tftacrules extends TreeParser {
                     }
                     break;
                 case 6 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:102:4: ^( AND ^( XOR x= notterm y= negatedterm ) z3= ae )
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:123:4: ^( AND ^( XOR x= notterm y= negatedterm ) z3= ae )
                     {
                     _last = (Object)input.LT(1);
                     {
                     Object _save_last_1 = _last;
                     Object _first_1 = null;
                     Object root_1 = (Object)adaptor.nil();_last = (Object)input.LT(1);
-                    AND67=(Object)match(input,AND,FOLLOW_AND_in_negandterm1211); if (state.failed) return retval; 
+                    AND67=(Object)match(input,AND,FOLLOW_AND_in_negandterm1210); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_AND.add(AND67);
 
 
@@ -2878,21 +2878,21 @@ public class tftacrules extends TreeParser {
                     Object _save_last_2 = _last;
                     Object _first_2 = null;
                     Object root_2 = (Object)adaptor.nil();_last = (Object)input.LT(1);
-                    XOR68=(Object)match(input,XOR,FOLLOW_XOR_in_negandterm1214); if (state.failed) return retval; 
+                    XOR68=(Object)match(input,XOR,FOLLOW_XOR_in_negandterm1213); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_XOR.add(XOR68);
 
 
 
                     match(input, Token.DOWN, null); if (state.failed) return retval;
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_notterm_in_negandterm1218);
+                    pushFollow(FOLLOW_notterm_in_negandterm1217);
                     x=notterm();
 
                     state._fsp--;
                     if (state.failed) return retval;
                     if ( state.backtracking==0 ) stream_notterm.add(x.getTree());
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_negatedterm_in_negandterm1222);
+                    pushFollow(FOLLOW_negatedterm_in_negandterm1221);
                     y=negatedterm();
 
                     state._fsp--;
@@ -2903,7 +2903,7 @@ public class tftacrules extends TreeParser {
                     }
 
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_ae_in_negandterm1227);
+                    pushFollow(FOLLOW_ae_in_negandterm1226);
                     z3=ae();
 
                     state._fsp--;
@@ -2916,7 +2916,7 @@ public class tftacrules extends TreeParser {
 
 
                     // AST REWRITE
-                    // elements: AND, XOR, y, z3, z3, AND, x
+                    // elements: AND, AND, y, x, XOR, z3, z3
                     // token labels: 
                     // rule labels: retval, z3, y, x
                     // token list labels: 
@@ -2929,14 +2929,14 @@ public class tftacrules extends TreeParser {
                     RewriteRuleSubtreeStream stream_x=new RewriteRuleSubtreeStream(adaptor,"token x",x!=null?x.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 103:4: -> ^( XOR ^( AND $x $z3) ^( AND $y $z3) )
+                    // 124:4: -> ^( XOR ^( AND $x $z3) ^( AND $y $z3) )
                     {
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:103:7: ^( XOR ^( AND $x $z3) ^( AND $y $z3) )
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:124:7: ^( XOR ^( AND $x $z3) ^( AND $y $z3) )
                         {
                         Object root_1 = (Object)adaptor.nil();
                         root_1 = (Object)adaptor.becomeRoot(stream_XOR.nextNode(), root_1);
 
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:103:13: ^( AND $x $z3)
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:124:13: ^( AND $x $z3)
                         {
                         Object root_2 = (Object)adaptor.nil();
                         root_2 = (Object)adaptor.becomeRoot(stream_AND.nextNode(), root_2);
@@ -2946,7 +2946,7 @@ public class tftacrules extends TreeParser {
 
                         adaptor.addChild(root_1, root_2);
                         }
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:103:27: ^( AND $y $z3)
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:124:27: ^( AND $y $z3)
                         {
                         Object root_2 = (Object)adaptor.nil();
                         root_2 = (Object)adaptor.becomeRoot(stream_AND.nextNode(), root_2);
@@ -2966,21 +2966,21 @@ public class tftacrules extends TreeParser {
                     }
                     break;
                 case 7 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:104:4: ^( AND n1= notterm ^( OR t1= tt t2= tt ) )
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:125:4: ^( AND n1= notterm ^( OR t1= tt t2= tt ) )
                     {
                     _last = (Object)input.LT(1);
                     {
                     Object _save_last_1 = _last;
                     Object _first_1 = null;
                     Object root_1 = (Object)adaptor.nil();_last = (Object)input.LT(1);
-                    AND69=(Object)match(input,AND,FOLLOW_AND_in_negandterm1263); if (state.failed) return retval; 
+                    AND69=(Object)match(input,AND,FOLLOW_AND_in_negandterm1262); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_AND.add(AND69);
 
 
 
                     match(input, Token.DOWN, null); if (state.failed) return retval;
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_notterm_in_negandterm1267);
+                    pushFollow(FOLLOW_notterm_in_negandterm1266);
                     n1=notterm();
 
                     state._fsp--;
@@ -2991,21 +2991,21 @@ public class tftacrules extends TreeParser {
                     Object _save_last_2 = _last;
                     Object _first_2 = null;
                     Object root_2 = (Object)adaptor.nil();_last = (Object)input.LT(1);
-                    OR70=(Object)match(input,OR,FOLLOW_OR_in_negandterm1270); if (state.failed) return retval; 
+                    OR70=(Object)match(input,OR,FOLLOW_OR_in_negandterm1269); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_OR.add(OR70);
 
 
 
                     match(input, Token.DOWN, null); if (state.failed) return retval;
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_tt_in_negandterm1274);
+                    pushFollow(FOLLOW_tt_in_negandterm1273);
                     t1=tt();
 
                     state._fsp--;
                     if (state.failed) return retval;
                     if ( state.backtracking==0 ) stream_tt.add(t1.getTree());
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_tt_in_negandterm1278);
+                    pushFollow(FOLLOW_tt_in_negandterm1277);
                     t2=tt();
 
                     state._fsp--;
@@ -3022,7 +3022,7 @@ public class tftacrules extends TreeParser {
 
 
                     // AST REWRITE
-                    // elements: t2, n1, t1, n1, AND, OR, AND
+                    // elements: t2, OR, t1, n1, n1, AND, AND
                     // token labels: 
                     // rule labels: n1, t2, retval, t1
                     // token list labels: 
@@ -3035,14 +3035,14 @@ public class tftacrules extends TreeParser {
                     RewriteRuleSubtreeStream stream_t1=new RewriteRuleSubtreeStream(adaptor,"token t1",t1!=null?t1.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 105:4: -> ^( OR ^( AND $n1 $t1) ^( AND $n1 $t2) )
+                    // 126:4: -> ^( OR ^( AND $n1 $t1) ^( AND $n1 $t2) )
                     {
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:105:7: ^( OR ^( AND $n1 $t1) ^( AND $n1 $t2) )
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:126:7: ^( OR ^( AND $n1 $t1) ^( AND $n1 $t2) )
                         {
                         Object root_1 = (Object)adaptor.nil();
                         root_1 = (Object)adaptor.becomeRoot(stream_OR.nextNode(), root_1);
 
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:105:12: ^( AND $n1 $t1)
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:126:12: ^( AND $n1 $t1)
                         {
                         Object root_2 = (Object)adaptor.nil();
                         root_2 = (Object)adaptor.becomeRoot(stream_AND.nextNode(), root_2);
@@ -3052,7 +3052,7 @@ public class tftacrules extends TreeParser {
 
                         adaptor.addChild(root_1, root_2);
                         }
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:105:28: ^( AND $n1 $t2)
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:126:28: ^( AND $n1 $t2)
                         {
                         Object root_2 = (Object)adaptor.nil();
                         root_2 = (Object)adaptor.becomeRoot(stream_AND.nextNode(), root_2);
@@ -3072,21 +3072,21 @@ public class tftacrules extends TreeParser {
                     }
                     break;
                 case 8 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:106:4: ^( AND n1= notterm ^( XOR t1= tt t2= tt ) )
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:127:4: ^( AND n1= notterm ^( XOR t1= tt t2= tt ) )
                     {
                     _last = (Object)input.LT(1);
                     {
                     Object _save_last_1 = _last;
                     Object _first_1 = null;
                     Object root_1 = (Object)adaptor.nil();_last = (Object)input.LT(1);
-                    AND71=(Object)match(input,AND,FOLLOW_AND_in_negandterm1318); if (state.failed) return retval; 
+                    AND71=(Object)match(input,AND,FOLLOW_AND_in_negandterm1317); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_AND.add(AND71);
 
 
 
                     match(input, Token.DOWN, null); if (state.failed) return retval;
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_notterm_in_negandterm1322);
+                    pushFollow(FOLLOW_notterm_in_negandterm1321);
                     n1=notterm();
 
                     state._fsp--;
@@ -3097,21 +3097,21 @@ public class tftacrules extends TreeParser {
                     Object _save_last_2 = _last;
                     Object _first_2 = null;
                     Object root_2 = (Object)adaptor.nil();_last = (Object)input.LT(1);
-                    XOR72=(Object)match(input,XOR,FOLLOW_XOR_in_negandterm1325); if (state.failed) return retval; 
+                    XOR72=(Object)match(input,XOR,FOLLOW_XOR_in_negandterm1324); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_XOR.add(XOR72);
 
 
 
                     match(input, Token.DOWN, null); if (state.failed) return retval;
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_tt_in_negandterm1329);
+                    pushFollow(FOLLOW_tt_in_negandterm1328);
                     t1=tt();
 
                     state._fsp--;
                     if (state.failed) return retval;
                     if ( state.backtracking==0 ) stream_tt.add(t1.getTree());
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_tt_in_negandterm1333);
+                    pushFollow(FOLLOW_tt_in_negandterm1332);
                     t2=tt();
 
                     state._fsp--;
@@ -3128,7 +3128,7 @@ public class tftacrules extends TreeParser {
 
 
                     // AST REWRITE
-                    // elements: AND, n1, AND, n1, XOR, t1, t2
+                    // elements: AND, t1, XOR, AND, t2, n1, n1
                     // token labels: 
                     // rule labels: n1, t2, retval, t1
                     // token list labels: 
@@ -3141,14 +3141,14 @@ public class tftacrules extends TreeParser {
                     RewriteRuleSubtreeStream stream_t1=new RewriteRuleSubtreeStream(adaptor,"token t1",t1!=null?t1.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 107:4: -> ^( XOR ^( AND $n1 $t1) ^( AND $n1 $t2) )
+                    // 128:4: -> ^( XOR ^( AND $n1 $t1) ^( AND $n1 $t2) )
                     {
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:107:7: ^( XOR ^( AND $n1 $t1) ^( AND $n1 $t2) )
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:128:7: ^( XOR ^( AND $n1 $t1) ^( AND $n1 $t2) )
                         {
                         Object root_1 = (Object)adaptor.nil();
                         root_1 = (Object)adaptor.becomeRoot(stream_XOR.nextNode(), root_1);
 
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:107:13: ^( AND $n1 $t1)
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:128:13: ^( AND $n1 $t1)
                         {
                         Object root_2 = (Object)adaptor.nil();
                         root_2 = (Object)adaptor.becomeRoot(stream_AND.nextNode(), root_2);
@@ -3158,7 +3158,7 @@ public class tftacrules extends TreeParser {
 
                         adaptor.addChild(root_1, root_2);
                         }
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:107:29: ^( AND $n1 $t2)
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:128:29: ^( AND $n1 $t2)
                         {
                         Object root_2 = (Object)adaptor.nil();
                         root_2 = (Object)adaptor.becomeRoot(stream_AND.nextNode(), root_2);
@@ -3178,21 +3178,21 @@ public class tftacrules extends TreeParser {
                     }
                     break;
                 case 9 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:108:4: ^( AND n1= notterm ^( AND n2= notterm m1= metaPandSandAE ) )
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:129:4: ^( AND n1= notterm ^( AND n2= notterm m1= metaPandSandAE ) )
                     {
                     _last = (Object)input.LT(1);
                     {
                     Object _save_last_1 = _last;
                     Object _first_1 = null;
                     Object root_1 = (Object)adaptor.nil();_last = (Object)input.LT(1);
-                    AND73=(Object)match(input,AND,FOLLOW_AND_in_negandterm1372); if (state.failed) return retval; 
+                    AND73=(Object)match(input,AND,FOLLOW_AND_in_negandterm1371); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_AND.add(AND73);
 
 
 
                     match(input, Token.DOWN, null); if (state.failed) return retval;
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_notterm_in_negandterm1376);
+                    pushFollow(FOLLOW_notterm_in_negandterm1375);
                     n1=notterm();
 
                     state._fsp--;
@@ -3203,21 +3203,21 @@ public class tftacrules extends TreeParser {
                     Object _save_last_2 = _last;
                     Object _first_2 = null;
                     Object root_2 = (Object)adaptor.nil();_last = (Object)input.LT(1);
-                    AND74=(Object)match(input,AND,FOLLOW_AND_in_negandterm1379); if (state.failed) return retval; 
+                    AND74=(Object)match(input,AND,FOLLOW_AND_in_negandterm1378); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_AND.add(AND74);
 
 
 
                     match(input, Token.DOWN, null); if (state.failed) return retval;
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_notterm_in_negandterm1383);
+                    pushFollow(FOLLOW_notterm_in_negandterm1382);
                     n2=notterm();
 
                     state._fsp--;
                     if (state.failed) return retval;
                     if ( state.backtracking==0 ) stream_notterm.add(n2.getTree());
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_metaPandSandAE_in_negandterm1387);
+                    pushFollow(FOLLOW_metaPandSandAE_in_negandterm1386);
                     m1=metaPandSandAE();
 
                     state._fsp--;
@@ -3234,7 +3234,7 @@ public class tftacrules extends TreeParser {
 
 
                     // AST REWRITE
-                    // elements: n1, AND, n2, AND, m1
+                    // elements: n2, AND, m1, n1, AND
                     // token labels: 
                     // rule labels: n1, retval, n2, m1
                     // token list labels: 
@@ -3247,14 +3247,14 @@ public class tftacrules extends TreeParser {
                     RewriteRuleSubtreeStream stream_m1=new RewriteRuleSubtreeStream(adaptor,"token m1",m1!=null?m1.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 109:4: -> ^( AND ^( AND $n1 $n2) $m1)
+                    // 130:4: -> ^( AND ^( AND $n1 $n2) $m1)
                     {
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:109:7: ^( AND ^( AND $n1 $n2) $m1)
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:130:7: ^( AND ^( AND $n1 $n2) $m1)
                         {
                         Object root_1 = (Object)adaptor.nil();
                         root_1 = (Object)adaptor.becomeRoot(stream_AND.nextNode(), root_1);
 
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:109:13: ^( AND $n1 $n2)
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:130:13: ^( AND $n1 $n2)
                         {
                         Object root_2 = (Object)adaptor.nil();
                         root_2 = (Object)adaptor.becomeRoot(stream_AND.nextNode(), root_2);
@@ -3275,7 +3275,7 @@ public class tftacrules extends TreeParser {
                     }
                     break;
                 case 10 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:110:4: ^( AND notterm metaPandSandAE )
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:131:4: ^( AND notterm metaPandSandAE )
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -3284,7 +3284,7 @@ public class tftacrules extends TreeParser {
                     Object _save_last_1 = _last;
                     Object _first_1 = null;
                     Object root_1 = (Object)adaptor.nil();_last = (Object)input.LT(1);
-                    AND75=(Object)match(input,AND,FOLLOW_AND_in_negandterm1417); if (state.failed) return retval;
+                    AND75=(Object)match(input,AND,FOLLOW_AND_in_negandterm1416); if (state.failed) return retval;
                     if ( state.backtracking==0 ) {
                     AND75_tree = (Object)adaptor.dupNode(AND75);
 
@@ -3294,7 +3294,7 @@ public class tftacrules extends TreeParser {
 
                     match(input, Token.DOWN, null); if (state.failed) return retval;
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_notterm_in_negandterm1419);
+                    pushFollow(FOLLOW_notterm_in_negandterm1418);
                     notterm76=notterm();
 
                     state._fsp--;
@@ -3302,7 +3302,7 @@ public class tftacrules extends TreeParser {
                     if ( state.backtracking==0 ) 
                     adaptor.addChild(root_1, notterm76.getTree());
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_metaPandSandAE_in_negandterm1421);
+                    pushFollow(FOLLOW_metaPandSandAE_in_negandterm1420);
                     metaPandSandAE77=metaPandSandAE();
 
                     state._fsp--;
@@ -3342,7 +3342,7 @@ public class tftacrules extends TreeParser {
     };
 
     // $ANTLR start "negatedterm"
-    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:113:1: negatedterm : ( negandterm | notterm );
+    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:134:1: negatedterm : ( negandterm | notterm );
     public final tftacrules.negatedterm_return negatedterm() throws RecognitionException {
         tftacrules.negatedterm_return retval = new tftacrules.negatedterm_return();
         retval.start = input.LT(1);
@@ -3360,7 +3360,7 @@ public class tftacrules extends TreeParser {
 
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 6) ) { return retval; }
-            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:114:2: ( negandterm | notterm )
+            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:135:2: ( negandterm | notterm )
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -3393,12 +3393,12 @@ public class tftacrules extends TreeParser {
             }
             switch (alt6) {
                 case 1 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:114:4: negandterm
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:135:4: negandterm
                     {
                     root_0 = (Object)adaptor.nil();
 
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_negandterm_in_negatedterm1435);
+                    pushFollow(FOLLOW_negandterm_in_negatedterm1434);
                     negandterm78=negandterm();
 
                     state._fsp--;
@@ -3411,12 +3411,12 @@ public class tftacrules extends TreeParser {
                     }
                     break;
                 case 2 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:115:4: notterm
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:136:4: notterm
                     {
                     root_0 = (Object)adaptor.nil();
 
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_notterm_in_negatedterm1440);
+                    pushFollow(FOLLOW_notterm_in_negatedterm1439);
                     notterm79=notterm();
 
                     state._fsp--;
@@ -3452,7 +3452,7 @@ public class tftacrules extends TreeParser {
     };
 
     // $ANTLR start "metaPandSandAE"
-    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:118:1: metaPandSandAE : ( pandterm | sandterm | andterm | ae );
+    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:139:1: metaPandSandAE : ( pandterm | sandterm | andterm | ae );
     public final tftacrules.metaPandSandAE_return metaPandSandAE() throws RecognitionException {
         tftacrules.metaPandSandAE_return retval = new tftacrules.metaPandSandAE_return();
         retval.start = input.LT(1);
@@ -3474,7 +3474,7 @@ public class tftacrules extends TreeParser {
 
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 7) ) { return retval; }
-            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:119:2: ( pandterm | sandterm | andterm | ae )
+            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:140:2: ( pandterm | sandterm | andterm | ae )
             int alt7=4;
             switch ( input.LA(1) ) {
             case PAND:
@@ -3509,12 +3509,12 @@ public class tftacrules extends TreeParser {
 
             switch (alt7) {
                 case 1 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:119:4: pandterm
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:140:4: pandterm
                     {
                     root_0 = (Object)adaptor.nil();
 
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_pandterm_in_metaPandSandAE1452);
+                    pushFollow(FOLLOW_pandterm_in_metaPandSandAE1451);
                     pandterm80=pandterm();
 
                     state._fsp--;
@@ -3527,12 +3527,12 @@ public class tftacrules extends TreeParser {
                     }
                     break;
                 case 2 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:120:4: sandterm
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:141:4: sandterm
                     {
                     root_0 = (Object)adaptor.nil();
 
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_sandterm_in_metaPandSandAE1457);
+                    pushFollow(FOLLOW_sandterm_in_metaPandSandAE1456);
                     sandterm81=sandterm();
 
                     state._fsp--;
@@ -3545,12 +3545,12 @@ public class tftacrules extends TreeParser {
                     }
                     break;
                 case 3 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:121:4: andterm
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:142:4: andterm
                     {
                     root_0 = (Object)adaptor.nil();
 
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_andterm_in_metaPandSandAE1462);
+                    pushFollow(FOLLOW_andterm_in_metaPandSandAE1461);
                     andterm82=andterm();
 
                     state._fsp--;
@@ -3563,12 +3563,12 @@ public class tftacrules extends TreeParser {
                     }
                     break;
                 case 4 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:122:4: ae
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:143:4: ae
                     {
                     root_0 = (Object)adaptor.nil();
 
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_ae_in_metaPandSandAE1467);
+                    pushFollow(FOLLOW_ae_in_metaPandSandAE1466);
                     ae83=ae();
 
                     state._fsp--;
@@ -3604,7 +3604,7 @@ public class tftacrules extends TreeParser {
     };
 
     // $ANTLR start "orterm"
-    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:125:1: orterm : ( ^( OR ae TRUE ) -> TRUE | ^( OR TRUE . ) -> TRUE | ^( OR FALSE a= ae ) -> $a | ^( OR a= ae FALSE ) -> $a | ^( OR tt tt ) );
+    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:146:1: orterm : ( ^( OR ae TRUE ) -> TRUE | ^( OR TRUE . ) -> TRUE | ^( OR FALSE a= ae ) -> $a | ^( OR a= ae FALSE ) -> $a | ^( OR tt tt ) );
     public final tftacrules.orterm_return orterm() throws RecognitionException {
         tftacrules.orterm_return retval = new tftacrules.orterm_return();
         retval.start = input.LT(1);
@@ -3649,7 +3649,7 @@ public class tftacrules extends TreeParser {
         RewriteRuleSubtreeStream stream_ae=new RewriteRuleSubtreeStream(adaptor,"rule ae");
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 8) ) { return retval; }
-            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:125:8: ( ^( OR ae TRUE ) -> TRUE | ^( OR TRUE . ) -> TRUE | ^( OR FALSE a= ae ) -> $a | ^( OR a= ae FALSE ) -> $a | ^( OR tt tt ) )
+            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:146:8: ( ^( OR ae TRUE ) -> TRUE | ^( OR TRUE . ) -> TRUE | ^( OR FALSE a= ae ) -> $a | ^( OR a= ae FALSE ) -> $a | ^( OR tt tt ) )
             int alt8=5;
             int LA8_0 = input.LA(1);
 
@@ -3688,28 +3688,28 @@ public class tftacrules extends TreeParser {
             }
             switch (alt8) {
                 case 1 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:125:10: ^( OR ae TRUE )
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:146:10: ^( OR ae TRUE )
                     {
                     _last = (Object)input.LT(1);
                     {
                     Object _save_last_1 = _last;
                     Object _first_1 = null;
                     Object root_1 = (Object)adaptor.nil();_last = (Object)input.LT(1);
-                    OR84=(Object)match(input,OR,FOLLOW_OR_in_orterm1479); if (state.failed) return retval; 
+                    OR84=(Object)match(input,OR,FOLLOW_OR_in_orterm1478); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_OR.add(OR84);
 
 
 
                     match(input, Token.DOWN, null); if (state.failed) return retval;
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_ae_in_orterm1481);
+                    pushFollow(FOLLOW_ae_in_orterm1480);
                     ae85=ae();
 
                     state._fsp--;
                     if (state.failed) return retval;
                     if ( state.backtracking==0 ) stream_ae.add(ae85.getTree());
                     _last = (Object)input.LT(1);
-                    TRUE86=(Object)match(input,TRUE,FOLLOW_TRUE_in_orterm1483); if (state.failed) return retval; 
+                    TRUE86=(Object)match(input,TRUE,FOLLOW_TRUE_in_orterm1482); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_TRUE.add(TRUE86);
 
 
@@ -3729,7 +3729,7 @@ public class tftacrules extends TreeParser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"token retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 126:5: -> TRUE
+                    // 147:5: -> TRUE
                     {
                         adaptor.addChild(root_0, stream_TRUE.nextNode());
 
@@ -3739,21 +3739,21 @@ public class tftacrules extends TreeParser {
                     }
                     break;
                 case 2 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:127:4: ^( OR TRUE . )
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:148:4: ^( OR TRUE . )
                     {
                     _last = (Object)input.LT(1);
                     {
                     Object _save_last_1 = _last;
                     Object _first_1 = null;
                     Object root_1 = (Object)adaptor.nil();_last = (Object)input.LT(1);
-                    OR87=(Object)match(input,OR,FOLLOW_OR_in_orterm1498); if (state.failed) return retval; 
+                    OR87=(Object)match(input,OR,FOLLOW_OR_in_orterm1497); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_OR.add(OR87);
 
 
 
                     match(input, Token.DOWN, null); if (state.failed) return retval;
                     _last = (Object)input.LT(1);
-                    TRUE88=(Object)match(input,TRUE,FOLLOW_TRUE_in_orterm1500); if (state.failed) return retval; 
+                    TRUE88=(Object)match(input,TRUE,FOLLOW_TRUE_in_orterm1499); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_TRUE.add(TRUE88);
 
                     wildcard89=(Object)input.LT(1);
@@ -3775,7 +3775,7 @@ public class tftacrules extends TreeParser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"token retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 128:4: -> TRUE
+                    // 149:4: -> TRUE
                     {
                         adaptor.addChild(root_0, stream_TRUE.nextNode());
 
@@ -3785,25 +3785,25 @@ public class tftacrules extends TreeParser {
                     }
                     break;
                 case 3 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:129:4: ^( OR FALSE a= ae )
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:150:4: ^( OR FALSE a= ae )
                     {
                     _last = (Object)input.LT(1);
                     {
                     Object _save_last_1 = _last;
                     Object _first_1 = null;
                     Object root_1 = (Object)adaptor.nil();_last = (Object)input.LT(1);
-                    OR90=(Object)match(input,OR,FOLLOW_OR_in_orterm1516); if (state.failed) return retval; 
+                    OR90=(Object)match(input,OR,FOLLOW_OR_in_orterm1515); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_OR.add(OR90);
 
 
 
                     match(input, Token.DOWN, null); if (state.failed) return retval;
                     _last = (Object)input.LT(1);
-                    FALSE91=(Object)match(input,FALSE,FOLLOW_FALSE_in_orterm1518); if (state.failed) return retval; 
+                    FALSE91=(Object)match(input,FALSE,FOLLOW_FALSE_in_orterm1517); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_FALSE.add(FALSE91);
 
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_ae_in_orterm1522);
+                    pushFollow(FOLLOW_ae_in_orterm1521);
                     a=ae();
 
                     state._fsp--;
@@ -3827,7 +3827,7 @@ public class tftacrules extends TreeParser {
                     RewriteRuleSubtreeStream stream_a=new RewriteRuleSubtreeStream(adaptor,"token a",a!=null?a.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 130:4: -> $a
+                    // 151:4: -> $a
                     {
                         adaptor.addChild(root_0, stream_a.nextTree());
 
@@ -3837,28 +3837,28 @@ public class tftacrules extends TreeParser {
                     }
                     break;
                 case 4 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:131:4: ^( OR a= ae FALSE )
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:152:4: ^( OR a= ae FALSE )
                     {
                     _last = (Object)input.LT(1);
                     {
                     Object _save_last_1 = _last;
                     Object _first_1 = null;
                     Object root_1 = (Object)adaptor.nil();_last = (Object)input.LT(1);
-                    OR92=(Object)match(input,OR,FOLLOW_OR_in_orterm1537); if (state.failed) return retval; 
+                    OR92=(Object)match(input,OR,FOLLOW_OR_in_orterm1536); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_OR.add(OR92);
 
 
 
                     match(input, Token.DOWN, null); if (state.failed) return retval;
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_ae_in_orterm1541);
+                    pushFollow(FOLLOW_ae_in_orterm1540);
                     a=ae();
 
                     state._fsp--;
                     if (state.failed) return retval;
                     if ( state.backtracking==0 ) stream_ae.add(a.getTree());
                     _last = (Object)input.LT(1);
-                    FALSE93=(Object)match(input,FALSE,FOLLOW_FALSE_in_orterm1543); if (state.failed) return retval; 
+                    FALSE93=(Object)match(input,FALSE,FOLLOW_FALSE_in_orterm1542); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_FALSE.add(FALSE93);
 
 
@@ -3879,7 +3879,7 @@ public class tftacrules extends TreeParser {
                     RewriteRuleSubtreeStream stream_a=new RewriteRuleSubtreeStream(adaptor,"token a",a!=null?a.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 132:4: -> $a
+                    // 153:4: -> $a
                     {
                         adaptor.addChild(root_0, stream_a.nextTree());
 
@@ -3889,7 +3889,7 @@ public class tftacrules extends TreeParser {
                     }
                     break;
                 case 5 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:133:4: ^( OR tt tt )
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:154:4: ^( OR tt tt )
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -3898,7 +3898,7 @@ public class tftacrules extends TreeParser {
                     Object _save_last_1 = _last;
                     Object _first_1 = null;
                     Object root_1 = (Object)adaptor.nil();_last = (Object)input.LT(1);
-                    OR94=(Object)match(input,OR,FOLLOW_OR_in_orterm1558); if (state.failed) return retval;
+                    OR94=(Object)match(input,OR,FOLLOW_OR_in_orterm1557); if (state.failed) return retval;
                     if ( state.backtracking==0 ) {
                     OR94_tree = (Object)adaptor.dupNode(OR94);
 
@@ -3908,7 +3908,7 @@ public class tftacrules extends TreeParser {
 
                     match(input, Token.DOWN, null); if (state.failed) return retval;
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_tt_in_orterm1560);
+                    pushFollow(FOLLOW_tt_in_orterm1559);
                     tt95=tt();
 
                     state._fsp--;
@@ -3916,7 +3916,7 @@ public class tftacrules extends TreeParser {
                     if ( state.backtracking==0 ) 
                     adaptor.addChild(root_1, tt95.getTree());
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_tt_in_orterm1562);
+                    pushFollow(FOLLOW_tt_in_orterm1561);
                     tt96=tt();
 
                     state._fsp--;
@@ -3956,7 +3956,7 @@ public class tftacrules extends TreeParser {
     };
 
     // $ANTLR start "xorterm"
-    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:136:1: xorterm : ( ^( XOR ae TRUE ) -> TRUE | ^( XOR TRUE . ) -> TRUE | ^( XOR FALSE a= ae ) -> $a | ^( XOR a= ae FALSE ) -> $a | ^( XOR tt tt ) );
+    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:157:1: xorterm : ( ^( XOR ae TRUE ) -> TRUE | ^( XOR TRUE . ) -> TRUE | ^( XOR FALSE a= ae ) -> $a | ^( XOR a= ae FALSE ) -> $a | ^( XOR tt tt ) );
     public final tftacrules.xorterm_return xorterm() throws RecognitionException {
         tftacrules.xorterm_return retval = new tftacrules.xorterm_return();
         retval.start = input.LT(1);
@@ -4001,7 +4001,7 @@ public class tftacrules extends TreeParser {
         RewriteRuleSubtreeStream stream_ae=new RewriteRuleSubtreeStream(adaptor,"rule ae");
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 9) ) { return retval; }
-            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:136:9: ( ^( XOR ae TRUE ) -> TRUE | ^( XOR TRUE . ) -> TRUE | ^( XOR FALSE a= ae ) -> $a | ^( XOR a= ae FALSE ) -> $a | ^( XOR tt tt ) )
+            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:157:9: ( ^( XOR ae TRUE ) -> TRUE | ^( XOR TRUE . ) -> TRUE | ^( XOR FALSE a= ae ) -> $a | ^( XOR a= ae FALSE ) -> $a | ^( XOR tt tt ) )
             int alt9=5;
             int LA9_0 = input.LA(1);
 
@@ -4040,28 +4040,28 @@ public class tftacrules extends TreeParser {
             }
             switch (alt9) {
                 case 1 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:136:11: ^( XOR ae TRUE )
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:157:11: ^( XOR ae TRUE )
                     {
                     _last = (Object)input.LT(1);
                     {
                     Object _save_last_1 = _last;
                     Object _first_1 = null;
                     Object root_1 = (Object)adaptor.nil();_last = (Object)input.LT(1);
-                    XOR97=(Object)match(input,XOR,FOLLOW_XOR_in_xorterm1575); if (state.failed) return retval; 
+                    XOR97=(Object)match(input,XOR,FOLLOW_XOR_in_xorterm1574); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_XOR.add(XOR97);
 
 
 
                     match(input, Token.DOWN, null); if (state.failed) return retval;
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_ae_in_xorterm1577);
+                    pushFollow(FOLLOW_ae_in_xorterm1576);
                     ae98=ae();
 
                     state._fsp--;
                     if (state.failed) return retval;
                     if ( state.backtracking==0 ) stream_ae.add(ae98.getTree());
                     _last = (Object)input.LT(1);
-                    TRUE99=(Object)match(input,TRUE,FOLLOW_TRUE_in_xorterm1579); if (state.failed) return retval; 
+                    TRUE99=(Object)match(input,TRUE,FOLLOW_TRUE_in_xorterm1578); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_TRUE.add(TRUE99);
 
 
@@ -4081,7 +4081,7 @@ public class tftacrules extends TreeParser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"token retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 137:5: -> TRUE
+                    // 158:5: -> TRUE
                     {
                         adaptor.addChild(root_0, stream_TRUE.nextNode());
 
@@ -4091,21 +4091,21 @@ public class tftacrules extends TreeParser {
                     }
                     break;
                 case 2 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:138:4: ^( XOR TRUE . )
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:159:4: ^( XOR TRUE . )
                     {
                     _last = (Object)input.LT(1);
                     {
                     Object _save_last_1 = _last;
                     Object _first_1 = null;
                     Object root_1 = (Object)adaptor.nil();_last = (Object)input.LT(1);
-                    XOR100=(Object)match(input,XOR,FOLLOW_XOR_in_xorterm1594); if (state.failed) return retval; 
+                    XOR100=(Object)match(input,XOR,FOLLOW_XOR_in_xorterm1593); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_XOR.add(XOR100);
 
 
 
                     match(input, Token.DOWN, null); if (state.failed) return retval;
                     _last = (Object)input.LT(1);
-                    TRUE101=(Object)match(input,TRUE,FOLLOW_TRUE_in_xorterm1596); if (state.failed) return retval; 
+                    TRUE101=(Object)match(input,TRUE,FOLLOW_TRUE_in_xorterm1595); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_TRUE.add(TRUE101);
 
                     wildcard102=(Object)input.LT(1);
@@ -4127,7 +4127,7 @@ public class tftacrules extends TreeParser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"token retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 139:4: -> TRUE
+                    // 160:4: -> TRUE
                     {
                         adaptor.addChild(root_0, stream_TRUE.nextNode());
 
@@ -4137,25 +4137,25 @@ public class tftacrules extends TreeParser {
                     }
                     break;
                 case 3 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:140:4: ^( XOR FALSE a= ae )
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:161:4: ^( XOR FALSE a= ae )
                     {
                     _last = (Object)input.LT(1);
                     {
                     Object _save_last_1 = _last;
                     Object _first_1 = null;
                     Object root_1 = (Object)adaptor.nil();_last = (Object)input.LT(1);
-                    XOR103=(Object)match(input,XOR,FOLLOW_XOR_in_xorterm1612); if (state.failed) return retval; 
+                    XOR103=(Object)match(input,XOR,FOLLOW_XOR_in_xorterm1611); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_XOR.add(XOR103);
 
 
 
                     match(input, Token.DOWN, null); if (state.failed) return retval;
                     _last = (Object)input.LT(1);
-                    FALSE104=(Object)match(input,FALSE,FOLLOW_FALSE_in_xorterm1614); if (state.failed) return retval; 
+                    FALSE104=(Object)match(input,FALSE,FOLLOW_FALSE_in_xorterm1613); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_FALSE.add(FALSE104);
 
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_ae_in_xorterm1618);
+                    pushFollow(FOLLOW_ae_in_xorterm1617);
                     a=ae();
 
                     state._fsp--;
@@ -4179,7 +4179,7 @@ public class tftacrules extends TreeParser {
                     RewriteRuleSubtreeStream stream_a=new RewriteRuleSubtreeStream(adaptor,"token a",a!=null?a.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 141:4: -> $a
+                    // 162:4: -> $a
                     {
                         adaptor.addChild(root_0, stream_a.nextTree());
 
@@ -4189,28 +4189,28 @@ public class tftacrules extends TreeParser {
                     }
                     break;
                 case 4 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:142:4: ^( XOR a= ae FALSE )
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:163:4: ^( XOR a= ae FALSE )
                     {
                     _last = (Object)input.LT(1);
                     {
                     Object _save_last_1 = _last;
                     Object _first_1 = null;
                     Object root_1 = (Object)adaptor.nil();_last = (Object)input.LT(1);
-                    XOR105=(Object)match(input,XOR,FOLLOW_XOR_in_xorterm1633); if (state.failed) return retval; 
+                    XOR105=(Object)match(input,XOR,FOLLOW_XOR_in_xorterm1632); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_XOR.add(XOR105);
 
 
 
                     match(input, Token.DOWN, null); if (state.failed) return retval;
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_ae_in_xorterm1637);
+                    pushFollow(FOLLOW_ae_in_xorterm1636);
                     a=ae();
 
                     state._fsp--;
                     if (state.failed) return retval;
                     if ( state.backtracking==0 ) stream_ae.add(a.getTree());
                     _last = (Object)input.LT(1);
-                    FALSE106=(Object)match(input,FALSE,FOLLOW_FALSE_in_xorterm1639); if (state.failed) return retval; 
+                    FALSE106=(Object)match(input,FALSE,FOLLOW_FALSE_in_xorterm1638); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_FALSE.add(FALSE106);
 
 
@@ -4231,7 +4231,7 @@ public class tftacrules extends TreeParser {
                     RewriteRuleSubtreeStream stream_a=new RewriteRuleSubtreeStream(adaptor,"token a",a!=null?a.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 143:4: -> $a
+                    // 164:4: -> $a
                     {
                         adaptor.addChild(root_0, stream_a.nextTree());
 
@@ -4241,7 +4241,7 @@ public class tftacrules extends TreeParser {
                     }
                     break;
                 case 5 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:144:4: ^( XOR tt tt )
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:165:4: ^( XOR tt tt )
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -4250,7 +4250,7 @@ public class tftacrules extends TreeParser {
                     Object _save_last_1 = _last;
                     Object _first_1 = null;
                     Object root_1 = (Object)adaptor.nil();_last = (Object)input.LT(1);
-                    XOR107=(Object)match(input,XOR,FOLLOW_XOR_in_xorterm1654); if (state.failed) return retval;
+                    XOR107=(Object)match(input,XOR,FOLLOW_XOR_in_xorterm1653); if (state.failed) return retval;
                     if ( state.backtracking==0 ) {
                     XOR107_tree = (Object)adaptor.dupNode(XOR107);
 
@@ -4260,7 +4260,7 @@ public class tftacrules extends TreeParser {
 
                     match(input, Token.DOWN, null); if (state.failed) return retval;
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_tt_in_xorterm1656);
+                    pushFollow(FOLLOW_tt_in_xorterm1655);
                     tt108=tt();
 
                     state._fsp--;
@@ -4268,7 +4268,7 @@ public class tftacrules extends TreeParser {
                     if ( state.backtracking==0 ) 
                     adaptor.addChild(root_1, tt108.getTree());
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_tt_in_xorterm1658);
+                    pushFollow(FOLLOW_tt_in_xorterm1657);
                     tt109=tt();
 
                     state._fsp--;
@@ -4308,7 +4308,7 @@ public class tftacrules extends TreeParser {
     };
 
     // $ANTLR start "pandterm"
-    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:147:1: pandterm : ( ^( PAND ae FALSE ) -> FALSE | ^( PAND FALSE . ) -> FALSE | ^( PAND ae TRUE ) -> FALSE | ^( PAND TRUE a= ae ) -> $a | ^( PAND ^( XOR x= tt y= tt ) z= tt ) -> ^( XOR ^( PAND $x $z) ^( PAND $y $z) ) | ^( PAND z= tt ^( XOR x= tt y= tt ) ) -> ^( XOR ^( PAND $z $x) ^( PAND $z $y) ) | ^( PAND ^( OR x= tt y= tt ) z= tt ) -> ^( OR ^( PAND $x $z) ^( PAND $y $z) ) | ^( PAND z= tt ^( OR x= tt y= tt ) ) -> ^( XOR ^( AND ^( NOT $y) ^( PAND $z $x) ) ^( XOR ^( AND ^( NOT $x) ^( PAND $z $y) ) ^( PAND $x ^( SAND $y $z) ) ) ) | ^( PAND z= tt ^( PAND x= tt y= tt ) ) -> ^( PAND ^( AND $x $z) $y) | ^( PAND x= tt ^( AND b= notterm z= tt ) ) -> ^( AND $b ^( PAND $x $z) ) | ^( PAND ^( AND n1= notterm m1= metaPandSandAE ) z= tt ) -> ^( XOR ^( AND $n1 ^( PAND $m1 $z) ) ^( XOR ^( PAND ^( PAND $m1 ^( NOT $n1) ) $z) ^( PAND $m1 ^( SAND ^( NOT $n1) $z) ) ) ) | ^( PAND tt tt ) );
+    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:168:1: pandterm : ( ^( PAND ae FALSE ) -> FALSE | ^( PAND FALSE . ) -> FALSE | ^( PAND ae TRUE ) -> FALSE | ^( PAND TRUE a= ae ) -> $a | ^( PAND ^( XOR x= tt y= tt ) z= tt ) -> ^( XOR ^( PAND $x $z) ^( PAND $y $z) ) | ^( PAND z= tt ^( XOR x= tt y= tt ) ) -> ^( XOR ^( PAND $z $x) ^( PAND $z $y) ) | ^( PAND ^( OR x= tt y= tt ) z= tt ) -> ^( OR ^( PAND $x $z) ^( PAND $y $z) ) | ^( PAND z= tt ^( OR x= tt y= tt ) ) -> ^( XOR ^( AND ^( NOT $y) ^( PAND $z $x) ) ^( XOR ^( AND ^( NOT $x) ^( PAND $z $y) ) ^( PAND $x ^( SAND $y $z) ) ) ) | ^( PAND z= tt ^( PAND x= tt y= tt ) ) -> ^( PAND ^( AND $x $z) $y) | ^( PAND x= tt ^( AND b= notterm z= tt ) ) -> ^( AND $b ^( PAND $x $z) ) | ^( PAND ^( AND n1= notterm m1= metaPandSandAE ) z= tt ) -> ^( XOR ^( AND $n1 ^( PAND $m1 $z) ) ^( XOR ^( PAND ^( PAND $m1 ^( NOT $n1) ) $z) ^( PAND $m1 ^( SAND ^( NOT $n1) $z) ) ) ) | ^( PAND tt tt ) );
     public final tftacrules.pandterm_return pandterm() throws RecognitionException {
         tftacrules.pandterm_return retval = new tftacrules.pandterm_return();
         retval.start = input.LT(1);
@@ -4401,33 +4401,33 @@ public class tftacrules extends TreeParser {
         RewriteRuleSubtreeStream stream_ae=new RewriteRuleSubtreeStream(adaptor,"rule ae");
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 10) ) { return retval; }
-            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:147:9: ( ^( PAND ae FALSE ) -> FALSE | ^( PAND FALSE . ) -> FALSE | ^( PAND ae TRUE ) -> FALSE | ^( PAND TRUE a= ae ) -> $a | ^( PAND ^( XOR x= tt y= tt ) z= tt ) -> ^( XOR ^( PAND $x $z) ^( PAND $y $z) ) | ^( PAND z= tt ^( XOR x= tt y= tt ) ) -> ^( XOR ^( PAND $z $x) ^( PAND $z $y) ) | ^( PAND ^( OR x= tt y= tt ) z= tt ) -> ^( OR ^( PAND $x $z) ^( PAND $y $z) ) | ^( PAND z= tt ^( OR x= tt y= tt ) ) -> ^( XOR ^( AND ^( NOT $y) ^( PAND $z $x) ) ^( XOR ^( AND ^( NOT $x) ^( PAND $z $y) ) ^( PAND $x ^( SAND $y $z) ) ) ) | ^( PAND z= tt ^( PAND x= tt y= tt ) ) -> ^( PAND ^( AND $x $z) $y) | ^( PAND x= tt ^( AND b= notterm z= tt ) ) -> ^( AND $b ^( PAND $x $z) ) | ^( PAND ^( AND n1= notterm m1= metaPandSandAE ) z= tt ) -> ^( XOR ^( AND $n1 ^( PAND $m1 $z) ) ^( XOR ^( PAND ^( PAND $m1 ^( NOT $n1) ) $z) ^( PAND $m1 ^( SAND ^( NOT $n1) $z) ) ) ) | ^( PAND tt tt ) )
+            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:168:9: ( ^( PAND ae FALSE ) -> FALSE | ^( PAND FALSE . ) -> FALSE | ^( PAND ae TRUE ) -> FALSE | ^( PAND TRUE a= ae ) -> $a | ^( PAND ^( XOR x= tt y= tt ) z= tt ) -> ^( XOR ^( PAND $x $z) ^( PAND $y $z) ) | ^( PAND z= tt ^( XOR x= tt y= tt ) ) -> ^( XOR ^( PAND $z $x) ^( PAND $z $y) ) | ^( PAND ^( OR x= tt y= tt ) z= tt ) -> ^( OR ^( PAND $x $z) ^( PAND $y $z) ) | ^( PAND z= tt ^( OR x= tt y= tt ) ) -> ^( XOR ^( AND ^( NOT $y) ^( PAND $z $x) ) ^( XOR ^( AND ^( NOT $x) ^( PAND $z $y) ) ^( PAND $x ^( SAND $y $z) ) ) ) | ^( PAND z= tt ^( PAND x= tt y= tt ) ) -> ^( PAND ^( AND $x $z) $y) | ^( PAND x= tt ^( AND b= notterm z= tt ) ) -> ^( AND $b ^( PAND $x $z) ) | ^( PAND ^( AND n1= notterm m1= metaPandSandAE ) z= tt ) -> ^( XOR ^( AND $n1 ^( PAND $m1 $z) ) ^( XOR ^( PAND ^( PAND $m1 ^( NOT $n1) ) $z) ^( PAND $m1 ^( SAND ^( NOT $n1) $z) ) ) ) | ^( PAND tt tt ) )
             int alt10=12;
             alt10 = dfa10.predict(input);
             switch (alt10) {
                 case 1 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:147:11: ^( PAND ae FALSE )
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:168:11: ^( PAND ae FALSE )
                     {
                     _last = (Object)input.LT(1);
                     {
                     Object _save_last_1 = _last;
                     Object _first_1 = null;
                     Object root_1 = (Object)adaptor.nil();_last = (Object)input.LT(1);
-                    PAND110=(Object)match(input,PAND,FOLLOW_PAND_in_pandterm1670); if (state.failed) return retval; 
+                    PAND110=(Object)match(input,PAND,FOLLOW_PAND_in_pandterm1669); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_PAND.add(PAND110);
 
 
 
                     match(input, Token.DOWN, null); if (state.failed) return retval;
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_ae_in_pandterm1672);
+                    pushFollow(FOLLOW_ae_in_pandterm1671);
                     ae111=ae();
 
                     state._fsp--;
                     if (state.failed) return retval;
                     if ( state.backtracking==0 ) stream_ae.add(ae111.getTree());
                     _last = (Object)input.LT(1);
-                    FALSE112=(Object)match(input,FALSE,FOLLOW_FALSE_in_pandterm1674); if (state.failed) return retval; 
+                    FALSE112=(Object)match(input,FALSE,FOLLOW_FALSE_in_pandterm1673); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_FALSE.add(FALSE112);
 
 
@@ -4447,7 +4447,7 @@ public class tftacrules extends TreeParser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"token retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 148:5: -> FALSE
+                    // 169:5: -> FALSE
                     {
                         adaptor.addChild(root_0, stream_FALSE.nextNode());
 
@@ -4457,21 +4457,21 @@ public class tftacrules extends TreeParser {
                     }
                     break;
                 case 2 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:149:4: ^( PAND FALSE . )
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:170:4: ^( PAND FALSE . )
                     {
                     _last = (Object)input.LT(1);
                     {
                     Object _save_last_1 = _last;
                     Object _first_1 = null;
                     Object root_1 = (Object)adaptor.nil();_last = (Object)input.LT(1);
-                    PAND113=(Object)match(input,PAND,FOLLOW_PAND_in_pandterm1689); if (state.failed) return retval; 
+                    PAND113=(Object)match(input,PAND,FOLLOW_PAND_in_pandterm1688); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_PAND.add(PAND113);
 
 
 
                     match(input, Token.DOWN, null); if (state.failed) return retval;
                     _last = (Object)input.LT(1);
-                    FALSE114=(Object)match(input,FALSE,FOLLOW_FALSE_in_pandterm1691); if (state.failed) return retval; 
+                    FALSE114=(Object)match(input,FALSE,FOLLOW_FALSE_in_pandterm1690); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_FALSE.add(FALSE114);
 
                     wildcard115=(Object)input.LT(1);
@@ -4493,7 +4493,7 @@ public class tftacrules extends TreeParser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"token retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 150:4: -> FALSE
+                    // 171:4: -> FALSE
                     {
                         adaptor.addChild(root_0, stream_FALSE.nextNode());
 
@@ -4503,28 +4503,28 @@ public class tftacrules extends TreeParser {
                     }
                     break;
                 case 3 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:151:4: ^( PAND ae TRUE )
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:172:4: ^( PAND ae TRUE )
                     {
                     _last = (Object)input.LT(1);
                     {
                     Object _save_last_1 = _last;
                     Object _first_1 = null;
                     Object root_1 = (Object)adaptor.nil();_last = (Object)input.LT(1);
-                    PAND116=(Object)match(input,PAND,FOLLOW_PAND_in_pandterm1707); if (state.failed) return retval; 
+                    PAND116=(Object)match(input,PAND,FOLLOW_PAND_in_pandterm1706); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_PAND.add(PAND116);
 
 
 
                     match(input, Token.DOWN, null); if (state.failed) return retval;
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_ae_in_pandterm1709);
+                    pushFollow(FOLLOW_ae_in_pandterm1708);
                     ae117=ae();
 
                     state._fsp--;
                     if (state.failed) return retval;
                     if ( state.backtracking==0 ) stream_ae.add(ae117.getTree());
                     _last = (Object)input.LT(1);
-                    TRUE118=(Object)match(input,TRUE,FOLLOW_TRUE_in_pandterm1711); if (state.failed) return retval; 
+                    TRUE118=(Object)match(input,TRUE,FOLLOW_TRUE_in_pandterm1710); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_TRUE.add(TRUE118);
 
 
@@ -4544,7 +4544,7 @@ public class tftacrules extends TreeParser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"token retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 152:5: -> FALSE
+                    // 173:5: -> FALSE
                     {
                         adaptor.addChild(root_0, (Object)adaptor.create(FALSE, "FALSE"));
 
@@ -4554,25 +4554,25 @@ public class tftacrules extends TreeParser {
                     }
                     break;
                 case 4 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:153:4: ^( PAND TRUE a= ae )
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:174:4: ^( PAND TRUE a= ae )
                     {
                     _last = (Object)input.LT(1);
                     {
                     Object _save_last_1 = _last;
                     Object _first_1 = null;
                     Object root_1 = (Object)adaptor.nil();_last = (Object)input.LT(1);
-                    PAND119=(Object)match(input,PAND,FOLLOW_PAND_in_pandterm1726); if (state.failed) return retval; 
+                    PAND119=(Object)match(input,PAND,FOLLOW_PAND_in_pandterm1725); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_PAND.add(PAND119);
 
 
 
                     match(input, Token.DOWN, null); if (state.failed) return retval;
                     _last = (Object)input.LT(1);
-                    TRUE120=(Object)match(input,TRUE,FOLLOW_TRUE_in_pandterm1728); if (state.failed) return retval; 
+                    TRUE120=(Object)match(input,TRUE,FOLLOW_TRUE_in_pandterm1727); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_TRUE.add(TRUE120);
 
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_ae_in_pandterm1732);
+                    pushFollow(FOLLOW_ae_in_pandterm1731);
                     a=ae();
 
                     state._fsp--;
@@ -4596,7 +4596,7 @@ public class tftacrules extends TreeParser {
                     RewriteRuleSubtreeStream stream_a=new RewriteRuleSubtreeStream(adaptor,"token a",a!=null?a.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 154:4: -> $a
+                    // 175:4: -> $a
                     {
                         adaptor.addChild(root_0, stream_a.nextTree());
 
@@ -4606,14 +4606,14 @@ public class tftacrules extends TreeParser {
                     }
                     break;
                 case 5 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:155:4: ^( PAND ^( XOR x= tt y= tt ) z= tt )
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:176:4: ^( PAND ^( XOR x= tt y= tt ) z= tt )
                     {
                     _last = (Object)input.LT(1);
                     {
                     Object _save_last_1 = _last;
                     Object _first_1 = null;
                     Object root_1 = (Object)adaptor.nil();_last = (Object)input.LT(1);
-                    PAND121=(Object)match(input,PAND,FOLLOW_PAND_in_pandterm1747); if (state.failed) return retval; 
+                    PAND121=(Object)match(input,PAND,FOLLOW_PAND_in_pandterm1746); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_PAND.add(PAND121);
 
 
@@ -4624,21 +4624,21 @@ public class tftacrules extends TreeParser {
                     Object _save_last_2 = _last;
                     Object _first_2 = null;
                     Object root_2 = (Object)adaptor.nil();_last = (Object)input.LT(1);
-                    XOR122=(Object)match(input,XOR,FOLLOW_XOR_in_pandterm1750); if (state.failed) return retval; 
+                    XOR122=(Object)match(input,XOR,FOLLOW_XOR_in_pandterm1749); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_XOR.add(XOR122);
 
 
 
                     match(input, Token.DOWN, null); if (state.failed) return retval;
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_tt_in_pandterm1754);
+                    pushFollow(FOLLOW_tt_in_pandterm1753);
                     x=tt();
 
                     state._fsp--;
                     if (state.failed) return retval;
                     if ( state.backtracking==0 ) stream_tt.add(x.getTree());
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_tt_in_pandterm1758);
+                    pushFollow(FOLLOW_tt_in_pandterm1757);
                     y=tt();
 
                     state._fsp--;
@@ -4649,7 +4649,7 @@ public class tftacrules extends TreeParser {
                     }
 
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_tt_in_pandterm1763);
+                    pushFollow(FOLLOW_tt_in_pandterm1762);
                     z=tt();
 
                     state._fsp--;
@@ -4662,7 +4662,7 @@ public class tftacrules extends TreeParser {
 
 
                     // AST REWRITE
-                    // elements: PAND, PAND, z, x, XOR, y, z
+                    // elements: x, z, y, PAND, PAND, XOR, z
                     // token labels: 
                     // rule labels: retval, z, y, x
                     // token list labels: 
@@ -4675,14 +4675,14 @@ public class tftacrules extends TreeParser {
                     RewriteRuleSubtreeStream stream_x=new RewriteRuleSubtreeStream(adaptor,"token x",x!=null?x.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 156:4: -> ^( XOR ^( PAND $x $z) ^( PAND $y $z) )
+                    // 177:4: -> ^( XOR ^( PAND $x $z) ^( PAND $y $z) )
                     {
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:156:7: ^( XOR ^( PAND $x $z) ^( PAND $y $z) )
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:177:7: ^( XOR ^( PAND $x $z) ^( PAND $y $z) )
                         {
                         Object root_1 = (Object)adaptor.nil();
                         root_1 = (Object)adaptor.becomeRoot(stream_XOR.nextNode(), root_1);
 
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:156:13: ^( PAND $x $z)
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:177:13: ^( PAND $x $z)
                         {
                         Object root_2 = (Object)adaptor.nil();
                         root_2 = (Object)adaptor.becomeRoot(stream_PAND.nextNode(), root_2);
@@ -4692,7 +4692,7 @@ public class tftacrules extends TreeParser {
 
                         adaptor.addChild(root_1, root_2);
                         }
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:156:27: ^( PAND $y $z)
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:177:27: ^( PAND $y $z)
                         {
                         Object root_2 = (Object)adaptor.nil();
                         root_2 = (Object)adaptor.becomeRoot(stream_PAND.nextNode(), root_2);
@@ -4712,21 +4712,21 @@ public class tftacrules extends TreeParser {
                     }
                     break;
                 case 6 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:157:4: ^( PAND z= tt ^( XOR x= tt y= tt ) )
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:178:4: ^( PAND z= tt ^( XOR x= tt y= tt ) )
                     {
                     _last = (Object)input.LT(1);
                     {
                     Object _save_last_1 = _last;
                     Object _first_1 = null;
                     Object root_1 = (Object)adaptor.nil();_last = (Object)input.LT(1);
-                    PAND123=(Object)match(input,PAND,FOLLOW_PAND_in_pandterm1800); if (state.failed) return retval; 
+                    PAND123=(Object)match(input,PAND,FOLLOW_PAND_in_pandterm1799); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_PAND.add(PAND123);
 
 
 
                     match(input, Token.DOWN, null); if (state.failed) return retval;
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_tt_in_pandterm1804);
+                    pushFollow(FOLLOW_tt_in_pandterm1803);
                     z=tt();
 
                     state._fsp--;
@@ -4737,21 +4737,21 @@ public class tftacrules extends TreeParser {
                     Object _save_last_2 = _last;
                     Object _first_2 = null;
                     Object root_2 = (Object)adaptor.nil();_last = (Object)input.LT(1);
-                    XOR124=(Object)match(input,XOR,FOLLOW_XOR_in_pandterm1807); if (state.failed) return retval; 
+                    XOR124=(Object)match(input,XOR,FOLLOW_XOR_in_pandterm1806); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_XOR.add(XOR124);
 
 
 
                     match(input, Token.DOWN, null); if (state.failed) return retval;
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_tt_in_pandterm1811);
+                    pushFollow(FOLLOW_tt_in_pandterm1810);
                     x=tt();
 
                     state._fsp--;
                     if (state.failed) return retval;
                     if ( state.backtracking==0 ) stream_tt.add(x.getTree());
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_tt_in_pandterm1815);
+                    pushFollow(FOLLOW_tt_in_pandterm1814);
                     y=tt();
 
                     state._fsp--;
@@ -4768,7 +4768,7 @@ public class tftacrules extends TreeParser {
 
 
                     // AST REWRITE
-                    // elements: PAND, z, PAND, XOR, z, y, x
+                    // elements: x, y, z, XOR, PAND, PAND, z
                     // token labels: 
                     // rule labels: retval, z, y, x
                     // token list labels: 
@@ -4781,14 +4781,14 @@ public class tftacrules extends TreeParser {
                     RewriteRuleSubtreeStream stream_x=new RewriteRuleSubtreeStream(adaptor,"token x",x!=null?x.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 158:4: -> ^( XOR ^( PAND $z $x) ^( PAND $z $y) )
+                    // 179:4: -> ^( XOR ^( PAND $z $x) ^( PAND $z $y) )
                     {
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:158:7: ^( XOR ^( PAND $z $x) ^( PAND $z $y) )
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:179:7: ^( XOR ^( PAND $z $x) ^( PAND $z $y) )
                         {
                         Object root_1 = (Object)adaptor.nil();
                         root_1 = (Object)adaptor.becomeRoot(stream_XOR.nextNode(), root_1);
 
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:158:13: ^( PAND $z $x)
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:179:13: ^( PAND $z $x)
                         {
                         Object root_2 = (Object)adaptor.nil();
                         root_2 = (Object)adaptor.becomeRoot(stream_PAND.nextNode(), root_2);
@@ -4798,7 +4798,7 @@ public class tftacrules extends TreeParser {
 
                         adaptor.addChild(root_1, root_2);
                         }
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:158:27: ^( PAND $z $y)
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:179:27: ^( PAND $z $y)
                         {
                         Object root_2 = (Object)adaptor.nil();
                         root_2 = (Object)adaptor.becomeRoot(stream_PAND.nextNode(), root_2);
@@ -4818,14 +4818,14 @@ public class tftacrules extends TreeParser {
                     }
                     break;
                 case 7 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:159:4: ^( PAND ^( OR x= tt y= tt ) z= tt )
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:180:4: ^( PAND ^( OR x= tt y= tt ) z= tt )
                     {
                     _last = (Object)input.LT(1);
                     {
                     Object _save_last_1 = _last;
                     Object _first_1 = null;
                     Object root_1 = (Object)adaptor.nil();_last = (Object)input.LT(1);
-                    PAND125=(Object)match(input,PAND,FOLLOW_PAND_in_pandterm1854); if (state.failed) return retval; 
+                    PAND125=(Object)match(input,PAND,FOLLOW_PAND_in_pandterm1853); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_PAND.add(PAND125);
 
 
@@ -4836,21 +4836,21 @@ public class tftacrules extends TreeParser {
                     Object _save_last_2 = _last;
                     Object _first_2 = null;
                     Object root_2 = (Object)adaptor.nil();_last = (Object)input.LT(1);
-                    OR126=(Object)match(input,OR,FOLLOW_OR_in_pandterm1857); if (state.failed) return retval; 
+                    OR126=(Object)match(input,OR,FOLLOW_OR_in_pandterm1856); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_OR.add(OR126);
 
 
 
                     match(input, Token.DOWN, null); if (state.failed) return retval;
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_tt_in_pandterm1861);
+                    pushFollow(FOLLOW_tt_in_pandterm1860);
                     x=tt();
 
                     state._fsp--;
                     if (state.failed) return retval;
                     if ( state.backtracking==0 ) stream_tt.add(x.getTree());
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_tt_in_pandterm1865);
+                    pushFollow(FOLLOW_tt_in_pandterm1864);
                     y=tt();
 
                     state._fsp--;
@@ -4861,7 +4861,7 @@ public class tftacrules extends TreeParser {
                     }
 
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_tt_in_pandterm1870);
+                    pushFollow(FOLLOW_tt_in_pandterm1869);
                     z=tt();
 
                     state._fsp--;
@@ -4874,7 +4874,7 @@ public class tftacrules extends TreeParser {
 
 
                     // AST REWRITE
-                    // elements: PAND, z, z, y, x, PAND, OR
+                    // elements: y, z, x, OR, PAND, PAND, z
                     // token labels: 
                     // rule labels: retval, z, y, x
                     // token list labels: 
@@ -4887,14 +4887,14 @@ public class tftacrules extends TreeParser {
                     RewriteRuleSubtreeStream stream_x=new RewriteRuleSubtreeStream(adaptor,"token x",x!=null?x.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 160:4: -> ^( OR ^( PAND $x $z) ^( PAND $y $z) )
+                    // 181:4: -> ^( OR ^( PAND $x $z) ^( PAND $y $z) )
                     {
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:160:7: ^( OR ^( PAND $x $z) ^( PAND $y $z) )
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:181:7: ^( OR ^( PAND $x $z) ^( PAND $y $z) )
                         {
                         Object root_1 = (Object)adaptor.nil();
                         root_1 = (Object)adaptor.becomeRoot(stream_OR.nextNode(), root_1);
 
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:160:12: ^( PAND $x $z)
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:181:12: ^( PAND $x $z)
                         {
                         Object root_2 = (Object)adaptor.nil();
                         root_2 = (Object)adaptor.becomeRoot(stream_PAND.nextNode(), root_2);
@@ -4904,7 +4904,7 @@ public class tftacrules extends TreeParser {
 
                         adaptor.addChild(root_1, root_2);
                         }
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:160:26: ^( PAND $y $z)
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:181:26: ^( PAND $y $z)
                         {
                         Object root_2 = (Object)adaptor.nil();
                         root_2 = (Object)adaptor.becomeRoot(stream_PAND.nextNode(), root_2);
@@ -4924,21 +4924,21 @@ public class tftacrules extends TreeParser {
                     }
                     break;
                 case 8 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:161:4: ^( PAND z= tt ^( OR x= tt y= tt ) )
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:182:4: ^( PAND z= tt ^( OR x= tt y= tt ) )
                     {
                     _last = (Object)input.LT(1);
                     {
                     Object _save_last_1 = _last;
                     Object _first_1 = null;
                     Object root_1 = (Object)adaptor.nil();_last = (Object)input.LT(1);
-                    PAND127=(Object)match(input,PAND,FOLLOW_PAND_in_pandterm1907); if (state.failed) return retval; 
+                    PAND127=(Object)match(input,PAND,FOLLOW_PAND_in_pandterm1906); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_PAND.add(PAND127);
 
 
 
                     match(input, Token.DOWN, null); if (state.failed) return retval;
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_tt_in_pandterm1911);
+                    pushFollow(FOLLOW_tt_in_pandterm1910);
                     z=tt();
 
                     state._fsp--;
@@ -4949,21 +4949,21 @@ public class tftacrules extends TreeParser {
                     Object _save_last_2 = _last;
                     Object _first_2 = null;
                     Object root_2 = (Object)adaptor.nil();_last = (Object)input.LT(1);
-                    OR128=(Object)match(input,OR,FOLLOW_OR_in_pandterm1914); if (state.failed) return retval; 
+                    OR128=(Object)match(input,OR,FOLLOW_OR_in_pandterm1913); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_OR.add(OR128);
 
 
 
                     match(input, Token.DOWN, null); if (state.failed) return retval;
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_tt_in_pandterm1918);
+                    pushFollow(FOLLOW_tt_in_pandterm1917);
                     x=tt();
 
                     state._fsp--;
                     if (state.failed) return retval;
                     if ( state.backtracking==0 ) stream_tt.add(x.getTree());
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_tt_in_pandterm1922);
+                    pushFollow(FOLLOW_tt_in_pandterm1921);
                     y=tt();
 
                     state._fsp--;
@@ -4980,7 +4980,7 @@ public class tftacrules extends TreeParser {
 
 
                     // AST REWRITE
-                    // elements: PAND, x, z, y, z, x, z, PAND, y, y, x, PAND
+                    // elements: PAND, x, PAND, z, y, z, y, y, PAND, x, x, z
                     // token labels: 
                     // rule labels: retval, z, y, x
                     // token list labels: 
@@ -4993,19 +4993,19 @@ public class tftacrules extends TreeParser {
                     RewriteRuleSubtreeStream stream_x=new RewriteRuleSubtreeStream(adaptor,"token x",x!=null?x.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 162:4: -> ^( XOR ^( AND ^( NOT $y) ^( PAND $z $x) ) ^( XOR ^( AND ^( NOT $x) ^( PAND $z $y) ) ^( PAND $x ^( SAND $y $z) ) ) )
+                    // 183:4: -> ^( XOR ^( AND ^( NOT $y) ^( PAND $z $x) ) ^( XOR ^( AND ^( NOT $x) ^( PAND $z $y) ) ^( PAND $x ^( SAND $y $z) ) ) )
                     {
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:162:7: ^( XOR ^( AND ^( NOT $y) ^( PAND $z $x) ) ^( XOR ^( AND ^( NOT $x) ^( PAND $z $y) ) ^( PAND $x ^( SAND $y $z) ) ) )
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:183:7: ^( XOR ^( AND ^( NOT $y) ^( PAND $z $x) ) ^( XOR ^( AND ^( NOT $x) ^( PAND $z $y) ) ^( PAND $x ^( SAND $y $z) ) ) )
                         {
                         Object root_1 = (Object)adaptor.nil();
                         root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(XOR, "XOR"), root_1);
 
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:162:13: ^( AND ^( NOT $y) ^( PAND $z $x) )
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:183:13: ^( AND ^( NOT $y) ^( PAND $z $x) )
                         {
                         Object root_2 = (Object)adaptor.nil();
                         root_2 = (Object)adaptor.becomeRoot((Object)adaptor.create(AND, "AND"), root_2);
 
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:162:20: ^( NOT $y)
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:183:20: ^( NOT $y)
                         {
                         Object root_3 = (Object)adaptor.nil();
                         root_3 = (Object)adaptor.becomeRoot((Object)adaptor.create(NOT, "NOT"), root_3);
@@ -5014,7 +5014,7 @@ public class tftacrules extends TreeParser {
 
                         adaptor.addChild(root_2, root_3);
                         }
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:162:30: ^( PAND $z $x)
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:183:30: ^( PAND $z $x)
                         {
                         Object root_3 = (Object)adaptor.nil();
                         root_3 = (Object)adaptor.becomeRoot(stream_PAND.nextNode(), root_3);
@@ -5027,17 +5027,17 @@ public class tftacrules extends TreeParser {
 
                         adaptor.addChild(root_1, root_2);
                         }
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:162:46: ^( XOR ^( AND ^( NOT $x) ^( PAND $z $y) ) ^( PAND $x ^( SAND $y $z) ) )
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:183:46: ^( XOR ^( AND ^( NOT $x) ^( PAND $z $y) ) ^( PAND $x ^( SAND $y $z) ) )
                         {
                         Object root_2 = (Object)adaptor.nil();
                         root_2 = (Object)adaptor.becomeRoot((Object)adaptor.create(XOR, "XOR"), root_2);
 
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:162:52: ^( AND ^( NOT $x) ^( PAND $z $y) )
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:183:52: ^( AND ^( NOT $x) ^( PAND $z $y) )
                         {
                         Object root_3 = (Object)adaptor.nil();
                         root_3 = (Object)adaptor.becomeRoot((Object)adaptor.create(AND, "AND"), root_3);
 
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:162:59: ^( NOT $x)
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:183:59: ^( NOT $x)
                         {
                         Object root_4 = (Object)adaptor.nil();
                         root_4 = (Object)adaptor.becomeRoot((Object)adaptor.create(NOT, "NOT"), root_4);
@@ -5046,7 +5046,7 @@ public class tftacrules extends TreeParser {
 
                         adaptor.addChild(root_3, root_4);
                         }
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:162:69: ^( PAND $z $y)
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:183:69: ^( PAND $z $y)
                         {
                         Object root_4 = (Object)adaptor.nil();
                         root_4 = (Object)adaptor.becomeRoot(stream_PAND.nextNode(), root_4);
@@ -5059,13 +5059,13 @@ public class tftacrules extends TreeParser {
 
                         adaptor.addChild(root_2, root_3);
                         }
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:162:84: ^( PAND $x ^( SAND $y $z) )
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:183:84: ^( PAND $x ^( SAND $y $z) )
                         {
                         Object root_3 = (Object)adaptor.nil();
                         root_3 = (Object)adaptor.becomeRoot(stream_PAND.nextNode(), root_3);
 
                         adaptor.addChild(root_3, stream_x.nextTree());
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:162:94: ^( SAND $y $z)
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:183:94: ^( SAND $y $z)
                         {
                         Object root_4 = (Object)adaptor.nil();
                         root_4 = (Object)adaptor.becomeRoot((Object)adaptor.create(SAND, "SAND"), root_4);
@@ -5091,21 +5091,21 @@ public class tftacrules extends TreeParser {
                     }
                     break;
                 case 9 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:163:4: ^( PAND z= tt ^( PAND x= tt y= tt ) )
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:184:4: ^( PAND z= tt ^( PAND x= tt y= tt ) )
                     {
                     _last = (Object)input.LT(1);
                     {
                     Object _save_last_1 = _last;
                     Object _first_1 = null;
                     Object root_1 = (Object)adaptor.nil();_last = (Object)input.LT(1);
-                    PAND129=(Object)match(input,PAND,FOLLOW_PAND_in_pandterm2006); if (state.failed) return retval; 
+                    PAND129=(Object)match(input,PAND,FOLLOW_PAND_in_pandterm2005); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_PAND.add(PAND129);
 
 
 
                     match(input, Token.DOWN, null); if (state.failed) return retval;
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_tt_in_pandterm2010);
+                    pushFollow(FOLLOW_tt_in_pandterm2009);
                     z=tt();
 
                     state._fsp--;
@@ -5116,21 +5116,21 @@ public class tftacrules extends TreeParser {
                     Object _save_last_2 = _last;
                     Object _first_2 = null;
                     Object root_2 = (Object)adaptor.nil();_last = (Object)input.LT(1);
-                    PAND130=(Object)match(input,PAND,FOLLOW_PAND_in_pandterm2013); if (state.failed) return retval; 
+                    PAND130=(Object)match(input,PAND,FOLLOW_PAND_in_pandterm2012); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_PAND.add(PAND130);
 
 
 
                     match(input, Token.DOWN, null); if (state.failed) return retval;
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_tt_in_pandterm2017);
+                    pushFollow(FOLLOW_tt_in_pandterm2016);
                     x=tt();
 
                     state._fsp--;
                     if (state.failed) return retval;
                     if ( state.backtracking==0 ) stream_tt.add(x.getTree());
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_tt_in_pandterm2021);
+                    pushFollow(FOLLOW_tt_in_pandterm2020);
                     y=tt();
 
                     state._fsp--;
@@ -5147,7 +5147,7 @@ public class tftacrules extends TreeParser {
 
 
                     // AST REWRITE
-                    // elements: x, PAND, y, z
+                    // elements: y, z, x, PAND
                     // token labels: 
                     // rule labels: retval, z, y, x
                     // token list labels: 
@@ -5160,14 +5160,14 @@ public class tftacrules extends TreeParser {
                     RewriteRuleSubtreeStream stream_x=new RewriteRuleSubtreeStream(adaptor,"token x",x!=null?x.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 164:4: -> ^( PAND ^( AND $x $z) $y)
+                    // 185:4: -> ^( PAND ^( AND $x $z) $y)
                     {
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:164:7: ^( PAND ^( AND $x $z) $y)
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:185:7: ^( PAND ^( AND $x $z) $y)
                         {
                         Object root_1 = (Object)adaptor.nil();
                         root_1 = (Object)adaptor.becomeRoot(stream_PAND.nextNode(), root_1);
 
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:164:14: ^( AND $x $z)
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:185:14: ^( AND $x $z)
                         {
                         Object root_2 = (Object)adaptor.nil();
                         root_2 = (Object)adaptor.becomeRoot((Object)adaptor.create(AND, "AND"), root_2);
@@ -5188,21 +5188,21 @@ public class tftacrules extends TreeParser {
                     }
                     break;
                 case 10 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:165:4: ^( PAND x= tt ^( AND b= notterm z= tt ) )
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:186:4: ^( PAND x= tt ^( AND b= notterm z= tt ) )
                     {
                     _last = (Object)input.LT(1);
                     {
                     Object _save_last_1 = _last;
                     Object _first_1 = null;
                     Object root_1 = (Object)adaptor.nil();_last = (Object)input.LT(1);
-                    PAND131=(Object)match(input,PAND,FOLLOW_PAND_in_pandterm2051); if (state.failed) return retval; 
+                    PAND131=(Object)match(input,PAND,FOLLOW_PAND_in_pandterm2050); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_PAND.add(PAND131);
 
 
 
                     match(input, Token.DOWN, null); if (state.failed) return retval;
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_tt_in_pandterm2055);
+                    pushFollow(FOLLOW_tt_in_pandterm2054);
                     x=tt();
 
                     state._fsp--;
@@ -5213,21 +5213,21 @@ public class tftacrules extends TreeParser {
                     Object _save_last_2 = _last;
                     Object _first_2 = null;
                     Object root_2 = (Object)adaptor.nil();_last = (Object)input.LT(1);
-                    AND132=(Object)match(input,AND,FOLLOW_AND_in_pandterm2058); if (state.failed) return retval; 
+                    AND132=(Object)match(input,AND,FOLLOW_AND_in_pandterm2057); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_AND.add(AND132);
 
 
 
                     match(input, Token.DOWN, null); if (state.failed) return retval;
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_notterm_in_pandterm2062);
+                    pushFollow(FOLLOW_notterm_in_pandterm2061);
                     b=notterm();
 
                     state._fsp--;
                     if (state.failed) return retval;
                     if ( state.backtracking==0 ) stream_notterm.add(b.getTree());
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_tt_in_pandterm2066);
+                    pushFollow(FOLLOW_tt_in_pandterm2065);
                     z=tt();
 
                     state._fsp--;
@@ -5244,7 +5244,7 @@ public class tftacrules extends TreeParser {
 
 
                     // AST REWRITE
-                    // elements: z, b, AND, x, PAND
+                    // elements: x, PAND, b, AND, z
                     // token labels: 
                     // rule labels: retval, b, z, x
                     // token list labels: 
@@ -5257,15 +5257,15 @@ public class tftacrules extends TreeParser {
                     RewriteRuleSubtreeStream stream_x=new RewriteRuleSubtreeStream(adaptor,"token x",x!=null?x.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 166:4: -> ^( AND $b ^( PAND $x $z) )
+                    // 187:4: -> ^( AND $b ^( PAND $x $z) )
                     {
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:166:7: ^( AND $b ^( PAND $x $z) )
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:187:7: ^( AND $b ^( PAND $x $z) )
                         {
                         Object root_1 = (Object)adaptor.nil();
                         root_1 = (Object)adaptor.becomeRoot(stream_AND.nextNode(), root_1);
 
                         adaptor.addChild(root_1, stream_b.nextTree());
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:166:16: ^( PAND $x $z)
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:187:16: ^( PAND $x $z)
                         {
                         Object root_2 = (Object)adaptor.nil();
                         root_2 = (Object)adaptor.becomeRoot(stream_PAND.nextNode(), root_2);
@@ -5285,14 +5285,14 @@ public class tftacrules extends TreeParser {
                     }
                     break;
                 case 11 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:167:4: ^( PAND ^( AND n1= notterm m1= metaPandSandAE ) z= tt )
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:188:4: ^( PAND ^( AND n1= notterm m1= metaPandSandAE ) z= tt )
                     {
                     _last = (Object)input.LT(1);
                     {
                     Object _save_last_1 = _last;
                     Object _first_1 = null;
                     Object root_1 = (Object)adaptor.nil();_last = (Object)input.LT(1);
-                    PAND133=(Object)match(input,PAND,FOLLOW_PAND_in_pandterm2096); if (state.failed) return retval; 
+                    PAND133=(Object)match(input,PAND,FOLLOW_PAND_in_pandterm2095); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_PAND.add(PAND133);
 
 
@@ -5303,21 +5303,21 @@ public class tftacrules extends TreeParser {
                     Object _save_last_2 = _last;
                     Object _first_2 = null;
                     Object root_2 = (Object)adaptor.nil();_last = (Object)input.LT(1);
-                    AND134=(Object)match(input,AND,FOLLOW_AND_in_pandterm2099); if (state.failed) return retval; 
+                    AND134=(Object)match(input,AND,FOLLOW_AND_in_pandterm2098); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_AND.add(AND134);
 
 
 
                     match(input, Token.DOWN, null); if (state.failed) return retval;
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_notterm_in_pandterm2103);
+                    pushFollow(FOLLOW_notterm_in_pandterm2102);
                     n1=notterm();
 
                     state._fsp--;
                     if (state.failed) return retval;
                     if ( state.backtracking==0 ) stream_notterm.add(n1.getTree());
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_metaPandSandAE_in_pandterm2107);
+                    pushFollow(FOLLOW_metaPandSandAE_in_pandterm2106);
                     m1=metaPandSandAE();
 
                     state._fsp--;
@@ -5328,7 +5328,7 @@ public class tftacrules extends TreeParser {
                     }
 
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_tt_in_pandterm2112);
+                    pushFollow(FOLLOW_tt_in_pandterm2111);
                     z=tt();
 
                     state._fsp--;
@@ -5341,7 +5341,7 @@ public class tftacrules extends TreeParser {
 
 
                     // AST REWRITE
-                    // elements: m1, z, PAND, n1, m1, n1, PAND, z, z, PAND, PAND, m1, n1, AND
+                    // elements: z, n1, m1, n1, m1, z, PAND, AND, PAND, PAND, n1, m1, z, PAND
                     // token labels: 
                     // rule labels: n1, retval, m1, z
                     // token list labels: 
@@ -5354,20 +5354,20 @@ public class tftacrules extends TreeParser {
                     RewriteRuleSubtreeStream stream_z=new RewriteRuleSubtreeStream(adaptor,"token z",z!=null?z.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 168:4: -> ^( XOR ^( AND $n1 ^( PAND $m1 $z) ) ^( XOR ^( PAND ^( PAND $m1 ^( NOT $n1) ) $z) ^( PAND $m1 ^( SAND ^( NOT $n1) $z) ) ) )
+                    // 189:4: -> ^( XOR ^( AND $n1 ^( PAND $m1 $z) ) ^( XOR ^( PAND ^( PAND $m1 ^( NOT $n1) ) $z) ^( PAND $m1 ^( SAND ^( NOT $n1) $z) ) ) )
                     {
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:168:7: ^( XOR ^( AND $n1 ^( PAND $m1 $z) ) ^( XOR ^( PAND ^( PAND $m1 ^( NOT $n1) ) $z) ^( PAND $m1 ^( SAND ^( NOT $n1) $z) ) ) )
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:189:7: ^( XOR ^( AND $n1 ^( PAND $m1 $z) ) ^( XOR ^( PAND ^( PAND $m1 ^( NOT $n1) ) $z) ^( PAND $m1 ^( SAND ^( NOT $n1) $z) ) ) )
                         {
                         Object root_1 = (Object)adaptor.nil();
                         root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(XOR, "XOR"), root_1);
 
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:168:13: ^( AND $n1 ^( PAND $m1 $z) )
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:189:13: ^( AND $n1 ^( PAND $m1 $z) )
                         {
                         Object root_2 = (Object)adaptor.nil();
                         root_2 = (Object)adaptor.becomeRoot(stream_AND.nextNode(), root_2);
 
                         adaptor.addChild(root_2, stream_n1.nextTree());
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:168:23: ^( PAND $m1 $z)
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:189:23: ^( PAND $m1 $z)
                         {
                         Object root_3 = (Object)adaptor.nil();
                         root_3 = (Object)adaptor.becomeRoot(stream_PAND.nextNode(), root_3);
@@ -5380,23 +5380,23 @@ public class tftacrules extends TreeParser {
 
                         adaptor.addChild(root_1, root_2);
                         }
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:168:39: ^( XOR ^( PAND ^( PAND $m1 ^( NOT $n1) ) $z) ^( PAND $m1 ^( SAND ^( NOT $n1) $z) ) )
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:189:39: ^( XOR ^( PAND ^( PAND $m1 ^( NOT $n1) ) $z) ^( PAND $m1 ^( SAND ^( NOT $n1) $z) ) )
                         {
                         Object root_2 = (Object)adaptor.nil();
                         root_2 = (Object)adaptor.becomeRoot((Object)adaptor.create(XOR, "XOR"), root_2);
 
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:168:45: ^( PAND ^( PAND $m1 ^( NOT $n1) ) $z)
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:189:45: ^( PAND ^( PAND $m1 ^( NOT $n1) ) $z)
                         {
                         Object root_3 = (Object)adaptor.nil();
                         root_3 = (Object)adaptor.becomeRoot(stream_PAND.nextNode(), root_3);
 
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:168:52: ^( PAND $m1 ^( NOT $n1) )
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:189:52: ^( PAND $m1 ^( NOT $n1) )
                         {
                         Object root_4 = (Object)adaptor.nil();
                         root_4 = (Object)adaptor.becomeRoot(stream_PAND.nextNode(), root_4);
 
                         adaptor.addChild(root_4, stream_m1.nextTree());
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:168:63: ^( NOT $n1)
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:189:63: ^( NOT $n1)
                         {
                         Object root_5 = (Object)adaptor.nil();
                         root_5 = (Object)adaptor.becomeRoot((Object)adaptor.create(NOT, "NOT"), root_5);
@@ -5412,18 +5412,18 @@ public class tftacrules extends TreeParser {
 
                         adaptor.addChild(root_2, root_3);
                         }
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:168:79: ^( PAND $m1 ^( SAND ^( NOT $n1) $z) )
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:189:79: ^( PAND $m1 ^( SAND ^( NOT $n1) $z) )
                         {
                         Object root_3 = (Object)adaptor.nil();
                         root_3 = (Object)adaptor.becomeRoot(stream_PAND.nextNode(), root_3);
 
                         adaptor.addChild(root_3, stream_m1.nextTree());
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:168:90: ^( SAND ^( NOT $n1) $z)
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:189:90: ^( SAND ^( NOT $n1) $z)
                         {
                         Object root_4 = (Object)adaptor.nil();
                         root_4 = (Object)adaptor.becomeRoot((Object)adaptor.create(SAND, "SAND"), root_4);
 
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:168:97: ^( NOT $n1)
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:189:97: ^( NOT $n1)
                         {
                         Object root_5 = (Object)adaptor.nil();
                         root_5 = (Object)adaptor.becomeRoot((Object)adaptor.create(NOT, "NOT"), root_5);
@@ -5452,7 +5452,7 @@ public class tftacrules extends TreeParser {
                     }
                     break;
                 case 12 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:169:4: ^( PAND tt tt )
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:190:4: ^( PAND tt tt )
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -5461,7 +5461,7 @@ public class tftacrules extends TreeParser {
                     Object _save_last_1 = _last;
                     Object _first_1 = null;
                     Object root_1 = (Object)adaptor.nil();_last = (Object)input.LT(1);
-                    PAND135=(Object)match(input,PAND,FOLLOW_PAND_in_pandterm2191); if (state.failed) return retval;
+                    PAND135=(Object)match(input,PAND,FOLLOW_PAND_in_pandterm2190); if (state.failed) return retval;
                     if ( state.backtracking==0 ) {
                     PAND135_tree = (Object)adaptor.dupNode(PAND135);
 
@@ -5471,7 +5471,7 @@ public class tftacrules extends TreeParser {
 
                     match(input, Token.DOWN, null); if (state.failed) return retval;
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_tt_in_pandterm2193);
+                    pushFollow(FOLLOW_tt_in_pandterm2192);
                     tt136=tt();
 
                     state._fsp--;
@@ -5479,7 +5479,7 @@ public class tftacrules extends TreeParser {
                     if ( state.backtracking==0 ) 
                     adaptor.addChild(root_1, tt136.getTree());
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_tt_in_pandterm2195);
+                    pushFollow(FOLLOW_tt_in_pandterm2194);
                     tt137=tt();
 
                     state._fsp--;
@@ -5519,7 +5519,7 @@ public class tftacrules extends TreeParser {
     };
 
     // $ANTLR start "sandterm"
-    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:172:1: sandterm : ( ^( SAND ae FALSE ) -> FALSE | ^( SAND FALSE . ) -> FALSE | ^( SAND TRUE TRUE ) -> TRUE | ^( SAND ae TRUE ) -> FALSE | ^( SAND TRUE . ) -> FALSE | ^( SAND ^( XOR x= tt y= tt ) z= tt ) -> ^( XOR ^( SAND $x $z) ^( SAND $y $z) ) | ^( SAND z= tt ^( XOR x= tt y= tt ) ) -> ^( XOR ^( SAND $x $z) ^( SAND $y $z) ) | ^( SAND z= tt ^( OR x= tt y= tt ) ) -> ^( XOR ^( AND ^( NOT $y) ^( SAND $z $x) ) ^( XOR ^( AND ^( NOT $x) ^( SAND $y $z) ) ^( SAND $x ^( SAND $y $z) ) ) ) | ^( SAND ^( OR x= tt y= tt ) z= tt ) -> ^( XOR ^( AND ^( NOT $y) ^( SAND $x $z) ) ^( XOR ^( AND ^( NOT $x) ^( SAND $y $z) ) ^( SAND $x ^( SAND $y $z) ) ) ) | ^( SAND ^( PAND x= tt y= tt ) z= tt ) -> ^( PAND $x ^( SAND $y $z) ) | ^( SAND z= tt ^( PAND x= tt y= tt ) ) -> ^( PAND $x ^( SAND $y $z) ) | ^( SAND x= tt ^( AND a= notterm z= tt ) ) -> ^( AND $a ^( SAND $x $z) ) | ^( SAND ^( AND a= notterm z= tt ) x= tt ) -> ^( AND $a ^( SAND $x $z) ) | ^( SAND tt tt ) );
+    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:193:1: sandterm : ( ^( SAND ae FALSE ) -> FALSE | ^( SAND FALSE . ) -> FALSE | ^( SAND TRUE TRUE ) -> TRUE | ^( SAND ae TRUE ) -> FALSE | ^( SAND TRUE . ) -> FALSE | ^( SAND ^( XOR x= tt y= tt ) z= tt ) -> ^( XOR ^( SAND $x $z) ^( SAND $y $z) ) | ^( SAND z= tt ^( XOR x= tt y= tt ) ) -> ^( XOR ^( SAND $x $z) ^( SAND $y $z) ) | ^( SAND z= tt ^( OR x= tt y= tt ) ) -> ^( XOR ^( AND ^( NOT $y) ^( SAND $z $x) ) ^( XOR ^( AND ^( NOT $x) ^( SAND $y $z) ) ^( SAND $x ^( SAND $y $z) ) ) ) | ^( SAND ^( OR x= tt y= tt ) z= tt ) -> ^( XOR ^( AND ^( NOT $y) ^( SAND $x $z) ) ^( XOR ^( AND ^( NOT $x) ^( SAND $y $z) ) ^( SAND $x ^( SAND $y $z) ) ) ) | ^( SAND ^( PAND x= tt y= tt ) z= tt ) -> ^( PAND $x ^( SAND $y $z) ) | ^( SAND z= tt ^( PAND x= tt y= tt ) ) -> ^( PAND $x ^( SAND $y $z) ) | ^( SAND x= tt ^( AND a= notterm z= tt ) ) -> ^( AND $a ^( SAND $x $z) ) | ^( SAND ^( AND a= notterm z= tt ) x= tt ) -> ^( AND $a ^( SAND $x $z) ) | ^( SAND tt tt ) );
     public final tftacrules.sandterm_return sandterm() throws RecognitionException {
         tftacrules.sandterm_return retval = new tftacrules.sandterm_return();
         retval.start = input.LT(1);
@@ -5618,33 +5618,33 @@ public class tftacrules extends TreeParser {
         RewriteRuleSubtreeStream stream_ae=new RewriteRuleSubtreeStream(adaptor,"rule ae");
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 11) ) { return retval; }
-            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:172:9: ( ^( SAND ae FALSE ) -> FALSE | ^( SAND FALSE . ) -> FALSE | ^( SAND TRUE TRUE ) -> TRUE | ^( SAND ae TRUE ) -> FALSE | ^( SAND TRUE . ) -> FALSE | ^( SAND ^( XOR x= tt y= tt ) z= tt ) -> ^( XOR ^( SAND $x $z) ^( SAND $y $z) ) | ^( SAND z= tt ^( XOR x= tt y= tt ) ) -> ^( XOR ^( SAND $x $z) ^( SAND $y $z) ) | ^( SAND z= tt ^( OR x= tt y= tt ) ) -> ^( XOR ^( AND ^( NOT $y) ^( SAND $z $x) ) ^( XOR ^( AND ^( NOT $x) ^( SAND $y $z) ) ^( SAND $x ^( SAND $y $z) ) ) ) | ^( SAND ^( OR x= tt y= tt ) z= tt ) -> ^( XOR ^( AND ^( NOT $y) ^( SAND $x $z) ) ^( XOR ^( AND ^( NOT $x) ^( SAND $y $z) ) ^( SAND $x ^( SAND $y $z) ) ) ) | ^( SAND ^( PAND x= tt y= tt ) z= tt ) -> ^( PAND $x ^( SAND $y $z) ) | ^( SAND z= tt ^( PAND x= tt y= tt ) ) -> ^( PAND $x ^( SAND $y $z) ) | ^( SAND x= tt ^( AND a= notterm z= tt ) ) -> ^( AND $a ^( SAND $x $z) ) | ^( SAND ^( AND a= notterm z= tt ) x= tt ) -> ^( AND $a ^( SAND $x $z) ) | ^( SAND tt tt ) )
+            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:193:9: ( ^( SAND ae FALSE ) -> FALSE | ^( SAND FALSE . ) -> FALSE | ^( SAND TRUE TRUE ) -> TRUE | ^( SAND ae TRUE ) -> FALSE | ^( SAND TRUE . ) -> FALSE | ^( SAND ^( XOR x= tt y= tt ) z= tt ) -> ^( XOR ^( SAND $x $z) ^( SAND $y $z) ) | ^( SAND z= tt ^( XOR x= tt y= tt ) ) -> ^( XOR ^( SAND $x $z) ^( SAND $y $z) ) | ^( SAND z= tt ^( OR x= tt y= tt ) ) -> ^( XOR ^( AND ^( NOT $y) ^( SAND $z $x) ) ^( XOR ^( AND ^( NOT $x) ^( SAND $y $z) ) ^( SAND $x ^( SAND $y $z) ) ) ) | ^( SAND ^( OR x= tt y= tt ) z= tt ) -> ^( XOR ^( AND ^( NOT $y) ^( SAND $x $z) ) ^( XOR ^( AND ^( NOT $x) ^( SAND $y $z) ) ^( SAND $x ^( SAND $y $z) ) ) ) | ^( SAND ^( PAND x= tt y= tt ) z= tt ) -> ^( PAND $x ^( SAND $y $z) ) | ^( SAND z= tt ^( PAND x= tt y= tt ) ) -> ^( PAND $x ^( SAND $y $z) ) | ^( SAND x= tt ^( AND a= notterm z= tt ) ) -> ^( AND $a ^( SAND $x $z) ) | ^( SAND ^( AND a= notterm z= tt ) x= tt ) -> ^( AND $a ^( SAND $x $z) ) | ^( SAND tt tt ) )
             int alt11=14;
             alt11 = dfa11.predict(input);
             switch (alt11) {
                 case 1 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:172:11: ^( SAND ae FALSE )
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:193:11: ^( SAND ae FALSE )
                     {
                     _last = (Object)input.LT(1);
                     {
                     Object _save_last_1 = _last;
                     Object _first_1 = null;
                     Object root_1 = (Object)adaptor.nil();_last = (Object)input.LT(1);
-                    SAND138=(Object)match(input,SAND,FOLLOW_SAND_in_sandterm2207); if (state.failed) return retval; 
+                    SAND138=(Object)match(input,SAND,FOLLOW_SAND_in_sandterm2206); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_SAND.add(SAND138);
 
 
 
                     match(input, Token.DOWN, null); if (state.failed) return retval;
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_ae_in_sandterm2209);
+                    pushFollow(FOLLOW_ae_in_sandterm2208);
                     ae139=ae();
 
                     state._fsp--;
                     if (state.failed) return retval;
                     if ( state.backtracking==0 ) stream_ae.add(ae139.getTree());
                     _last = (Object)input.LT(1);
-                    FALSE140=(Object)match(input,FALSE,FOLLOW_FALSE_in_sandterm2211); if (state.failed) return retval; 
+                    FALSE140=(Object)match(input,FALSE,FOLLOW_FALSE_in_sandterm2210); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_FALSE.add(FALSE140);
 
 
@@ -5664,7 +5664,7 @@ public class tftacrules extends TreeParser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"token retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 173:5: -> FALSE
+                    // 194:5: -> FALSE
                     {
                         adaptor.addChild(root_0, stream_FALSE.nextNode());
 
@@ -5674,21 +5674,21 @@ public class tftacrules extends TreeParser {
                     }
                     break;
                 case 2 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:174:4: ^( SAND FALSE . )
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:195:4: ^( SAND FALSE . )
                     {
                     _last = (Object)input.LT(1);
                     {
                     Object _save_last_1 = _last;
                     Object _first_1 = null;
                     Object root_1 = (Object)adaptor.nil();_last = (Object)input.LT(1);
-                    SAND141=(Object)match(input,SAND,FOLLOW_SAND_in_sandterm2226); if (state.failed) return retval; 
+                    SAND141=(Object)match(input,SAND,FOLLOW_SAND_in_sandterm2225); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_SAND.add(SAND141);
 
 
 
                     match(input, Token.DOWN, null); if (state.failed) return retval;
                     _last = (Object)input.LT(1);
-                    FALSE142=(Object)match(input,FALSE,FOLLOW_FALSE_in_sandterm2228); if (state.failed) return retval; 
+                    FALSE142=(Object)match(input,FALSE,FOLLOW_FALSE_in_sandterm2227); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_FALSE.add(FALSE142);
 
                     wildcard143=(Object)input.LT(1);
@@ -5710,7 +5710,7 @@ public class tftacrules extends TreeParser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"token retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 175:4: -> FALSE
+                    // 196:4: -> FALSE
                     {
                         adaptor.addChild(root_0, stream_FALSE.nextNode());
 
@@ -5720,25 +5720,25 @@ public class tftacrules extends TreeParser {
                     }
                     break;
                 case 3 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:176:4: ^( SAND TRUE TRUE )
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:197:4: ^( SAND TRUE TRUE )
                     {
                     _last = (Object)input.LT(1);
                     {
                     Object _save_last_1 = _last;
                     Object _first_1 = null;
                     Object root_1 = (Object)adaptor.nil();_last = (Object)input.LT(1);
-                    SAND144=(Object)match(input,SAND,FOLLOW_SAND_in_sandterm2244); if (state.failed) return retval; 
+                    SAND144=(Object)match(input,SAND,FOLLOW_SAND_in_sandterm2243); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_SAND.add(SAND144);
 
 
 
                     match(input, Token.DOWN, null); if (state.failed) return retval;
                     _last = (Object)input.LT(1);
-                    TRUE145=(Object)match(input,TRUE,FOLLOW_TRUE_in_sandterm2246); if (state.failed) return retval; 
+                    TRUE145=(Object)match(input,TRUE,FOLLOW_TRUE_in_sandterm2245); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_TRUE.add(TRUE145);
 
                     _last = (Object)input.LT(1);
-                    TRUE146=(Object)match(input,TRUE,FOLLOW_TRUE_in_sandterm2248); if (state.failed) return retval; 
+                    TRUE146=(Object)match(input,TRUE,FOLLOW_TRUE_in_sandterm2247); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_TRUE.add(TRUE146);
 
 
@@ -5758,7 +5758,7 @@ public class tftacrules extends TreeParser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"token retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 177:4: -> TRUE
+                    // 198:4: -> TRUE
                     {
                         adaptor.addChild(root_0, stream_TRUE.nextNode());
 
@@ -5768,28 +5768,28 @@ public class tftacrules extends TreeParser {
                     }
                     break;
                 case 4 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:178:4: ^( SAND ae TRUE )
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:199:4: ^( SAND ae TRUE )
                     {
                     _last = (Object)input.LT(1);
                     {
                     Object _save_last_1 = _last;
                     Object _first_1 = null;
                     Object root_1 = (Object)adaptor.nil();_last = (Object)input.LT(1);
-                    SAND147=(Object)match(input,SAND,FOLLOW_SAND_in_sandterm2262); if (state.failed) return retval; 
+                    SAND147=(Object)match(input,SAND,FOLLOW_SAND_in_sandterm2261); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_SAND.add(SAND147);
 
 
 
                     match(input, Token.DOWN, null); if (state.failed) return retval;
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_ae_in_sandterm2264);
+                    pushFollow(FOLLOW_ae_in_sandterm2263);
                     ae148=ae();
 
                     state._fsp--;
                     if (state.failed) return retval;
                     if ( state.backtracking==0 ) stream_ae.add(ae148.getTree());
                     _last = (Object)input.LT(1);
-                    TRUE149=(Object)match(input,TRUE,FOLLOW_TRUE_in_sandterm2266); if (state.failed) return retval; 
+                    TRUE149=(Object)match(input,TRUE,FOLLOW_TRUE_in_sandterm2265); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_TRUE.add(TRUE149);
 
 
@@ -5809,7 +5809,7 @@ public class tftacrules extends TreeParser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"token retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 179:5: -> FALSE
+                    // 200:5: -> FALSE
                     {
                         adaptor.addChild(root_0, (Object)adaptor.create(FALSE, "FALSE"));
 
@@ -5819,21 +5819,21 @@ public class tftacrules extends TreeParser {
                     }
                     break;
                 case 5 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:180:4: ^( SAND TRUE . )
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:201:4: ^( SAND TRUE . )
                     {
                     _last = (Object)input.LT(1);
                     {
                     Object _save_last_1 = _last;
                     Object _first_1 = null;
                     Object root_1 = (Object)adaptor.nil();_last = (Object)input.LT(1);
-                    SAND150=(Object)match(input,SAND,FOLLOW_SAND_in_sandterm2281); if (state.failed) return retval; 
+                    SAND150=(Object)match(input,SAND,FOLLOW_SAND_in_sandterm2280); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_SAND.add(SAND150);
 
 
 
                     match(input, Token.DOWN, null); if (state.failed) return retval;
                     _last = (Object)input.LT(1);
-                    TRUE151=(Object)match(input,TRUE,FOLLOW_TRUE_in_sandterm2283); if (state.failed) return retval; 
+                    TRUE151=(Object)match(input,TRUE,FOLLOW_TRUE_in_sandterm2282); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_TRUE.add(TRUE151);
 
                     wildcard152=(Object)input.LT(1);
@@ -5855,7 +5855,7 @@ public class tftacrules extends TreeParser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"token retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 181:4: -> FALSE
+                    // 202:4: -> FALSE
                     {
                         adaptor.addChild(root_0, (Object)adaptor.create(FALSE, "FALSE"));
 
@@ -5865,14 +5865,14 @@ public class tftacrules extends TreeParser {
                     }
                     break;
                 case 6 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:182:4: ^( SAND ^( XOR x= tt y= tt ) z= tt )
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:203:4: ^( SAND ^( XOR x= tt y= tt ) z= tt )
                     {
                     _last = (Object)input.LT(1);
                     {
                     Object _save_last_1 = _last;
                     Object _first_1 = null;
                     Object root_1 = (Object)adaptor.nil();_last = (Object)input.LT(1);
-                    SAND153=(Object)match(input,SAND,FOLLOW_SAND_in_sandterm2299); if (state.failed) return retval; 
+                    SAND153=(Object)match(input,SAND,FOLLOW_SAND_in_sandterm2298); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_SAND.add(SAND153);
 
 
@@ -5883,21 +5883,21 @@ public class tftacrules extends TreeParser {
                     Object _save_last_2 = _last;
                     Object _first_2 = null;
                     Object root_2 = (Object)adaptor.nil();_last = (Object)input.LT(1);
-                    XOR154=(Object)match(input,XOR,FOLLOW_XOR_in_sandterm2302); if (state.failed) return retval; 
+                    XOR154=(Object)match(input,XOR,FOLLOW_XOR_in_sandterm2301); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_XOR.add(XOR154);
 
 
 
                     match(input, Token.DOWN, null); if (state.failed) return retval;
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_tt_in_sandterm2306);
+                    pushFollow(FOLLOW_tt_in_sandterm2305);
                     x=tt();
 
                     state._fsp--;
                     if (state.failed) return retval;
                     if ( state.backtracking==0 ) stream_tt.add(x.getTree());
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_tt_in_sandterm2310);
+                    pushFollow(FOLLOW_tt_in_sandterm2309);
                     y=tt();
 
                     state._fsp--;
@@ -5908,7 +5908,7 @@ public class tftacrules extends TreeParser {
                     }
 
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_tt_in_sandterm2315);
+                    pushFollow(FOLLOW_tt_in_sandterm2314);
                     z=tt();
 
                     state._fsp--;
@@ -5921,7 +5921,7 @@ public class tftacrules extends TreeParser {
 
 
                     // AST REWRITE
-                    // elements: z, SAND, z, SAND, XOR, x, y
+                    // elements: x, XOR, y, z, SAND, z, SAND
                     // token labels: 
                     // rule labels: retval, z, y, x
                     // token list labels: 
@@ -5934,14 +5934,14 @@ public class tftacrules extends TreeParser {
                     RewriteRuleSubtreeStream stream_x=new RewriteRuleSubtreeStream(adaptor,"token x",x!=null?x.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 183:4: -> ^( XOR ^( SAND $x $z) ^( SAND $y $z) )
+                    // 204:4: -> ^( XOR ^( SAND $x $z) ^( SAND $y $z) )
                     {
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:183:7: ^( XOR ^( SAND $x $z) ^( SAND $y $z) )
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:204:7: ^( XOR ^( SAND $x $z) ^( SAND $y $z) )
                         {
                         Object root_1 = (Object)adaptor.nil();
                         root_1 = (Object)adaptor.becomeRoot(stream_XOR.nextNode(), root_1);
 
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:183:13: ^( SAND $x $z)
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:204:13: ^( SAND $x $z)
                         {
                         Object root_2 = (Object)adaptor.nil();
                         root_2 = (Object)adaptor.becomeRoot(stream_SAND.nextNode(), root_2);
@@ -5951,7 +5951,7 @@ public class tftacrules extends TreeParser {
 
                         adaptor.addChild(root_1, root_2);
                         }
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:183:27: ^( SAND $y $z)
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:204:27: ^( SAND $y $z)
                         {
                         Object root_2 = (Object)adaptor.nil();
                         root_2 = (Object)adaptor.becomeRoot(stream_SAND.nextNode(), root_2);
@@ -5971,21 +5971,21 @@ public class tftacrules extends TreeParser {
                     }
                     break;
                 case 7 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:184:4: ^( SAND z= tt ^( XOR x= tt y= tt ) )
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:205:4: ^( SAND z= tt ^( XOR x= tt y= tt ) )
                     {
                     _last = (Object)input.LT(1);
                     {
                     Object _save_last_1 = _last;
                     Object _first_1 = null;
                     Object root_1 = (Object)adaptor.nil();_last = (Object)input.LT(1);
-                    SAND155=(Object)match(input,SAND,FOLLOW_SAND_in_sandterm2352); if (state.failed) return retval; 
+                    SAND155=(Object)match(input,SAND,FOLLOW_SAND_in_sandterm2351); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_SAND.add(SAND155);
 
 
 
                     match(input, Token.DOWN, null); if (state.failed) return retval;
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_tt_in_sandterm2356);
+                    pushFollow(FOLLOW_tt_in_sandterm2355);
                     z=tt();
 
                     state._fsp--;
@@ -5996,21 +5996,21 @@ public class tftacrules extends TreeParser {
                     Object _save_last_2 = _last;
                     Object _first_2 = null;
                     Object root_2 = (Object)adaptor.nil();_last = (Object)input.LT(1);
-                    XOR156=(Object)match(input,XOR,FOLLOW_XOR_in_sandterm2359); if (state.failed) return retval; 
+                    XOR156=(Object)match(input,XOR,FOLLOW_XOR_in_sandterm2358); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_XOR.add(XOR156);
 
 
 
                     match(input, Token.DOWN, null); if (state.failed) return retval;
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_tt_in_sandterm2363);
+                    pushFollow(FOLLOW_tt_in_sandterm2362);
                     x=tt();
 
                     state._fsp--;
                     if (state.failed) return retval;
                     if ( state.backtracking==0 ) stream_tt.add(x.getTree());
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_tt_in_sandterm2367);
+                    pushFollow(FOLLOW_tt_in_sandterm2366);
                     y=tt();
 
                     state._fsp--;
@@ -6027,7 +6027,7 @@ public class tftacrules extends TreeParser {
 
 
                     // AST REWRITE
-                    // elements: z, SAND, z, x, SAND, y, XOR
+                    // elements: SAND, z, x, XOR, SAND, y, z
                     // token labels: 
                     // rule labels: retval, z, y, x
                     // token list labels: 
@@ -6040,14 +6040,14 @@ public class tftacrules extends TreeParser {
                     RewriteRuleSubtreeStream stream_x=new RewriteRuleSubtreeStream(adaptor,"token x",x!=null?x.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 185:4: -> ^( XOR ^( SAND $x $z) ^( SAND $y $z) )
+                    // 206:4: -> ^( XOR ^( SAND $x $z) ^( SAND $y $z) )
                     {
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:185:7: ^( XOR ^( SAND $x $z) ^( SAND $y $z) )
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:206:7: ^( XOR ^( SAND $x $z) ^( SAND $y $z) )
                         {
                         Object root_1 = (Object)adaptor.nil();
                         root_1 = (Object)adaptor.becomeRoot(stream_XOR.nextNode(), root_1);
 
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:185:13: ^( SAND $x $z)
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:206:13: ^( SAND $x $z)
                         {
                         Object root_2 = (Object)adaptor.nil();
                         root_2 = (Object)adaptor.becomeRoot(stream_SAND.nextNode(), root_2);
@@ -6057,7 +6057,7 @@ public class tftacrules extends TreeParser {
 
                         adaptor.addChild(root_1, root_2);
                         }
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:185:27: ^( SAND $y $z)
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:206:27: ^( SAND $y $z)
                         {
                         Object root_2 = (Object)adaptor.nil();
                         root_2 = (Object)adaptor.becomeRoot(stream_SAND.nextNode(), root_2);
@@ -6077,21 +6077,21 @@ public class tftacrules extends TreeParser {
                     }
                     break;
                 case 8 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:186:4: ^( SAND z= tt ^( OR x= tt y= tt ) )
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:207:4: ^( SAND z= tt ^( OR x= tt y= tt ) )
                     {
                     _last = (Object)input.LT(1);
                     {
                     Object _save_last_1 = _last;
                     Object _first_1 = null;
                     Object root_1 = (Object)adaptor.nil();_last = (Object)input.LT(1);
-                    SAND157=(Object)match(input,SAND,FOLLOW_SAND_in_sandterm2405); if (state.failed) return retval; 
+                    SAND157=(Object)match(input,SAND,FOLLOW_SAND_in_sandterm2404); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_SAND.add(SAND157);
 
 
 
                     match(input, Token.DOWN, null); if (state.failed) return retval;
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_tt_in_sandterm2409);
+                    pushFollow(FOLLOW_tt_in_sandterm2408);
                     z=tt();
 
                     state._fsp--;
@@ -6102,21 +6102,21 @@ public class tftacrules extends TreeParser {
                     Object _save_last_2 = _last;
                     Object _first_2 = null;
                     Object root_2 = (Object)adaptor.nil();_last = (Object)input.LT(1);
-                    OR158=(Object)match(input,OR,FOLLOW_OR_in_sandterm2412); if (state.failed) return retval; 
+                    OR158=(Object)match(input,OR,FOLLOW_OR_in_sandterm2411); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_OR.add(OR158);
 
 
 
                     match(input, Token.DOWN, null); if (state.failed) return retval;
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_tt_in_sandterm2416);
+                    pushFollow(FOLLOW_tt_in_sandterm2415);
                     x=tt();
 
                     state._fsp--;
                     if (state.failed) return retval;
                     if ( state.backtracking==0 ) stream_tt.add(x.getTree());
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_tt_in_sandterm2420);
+                    pushFollow(FOLLOW_tt_in_sandterm2419);
                     y=tt();
 
                     state._fsp--;
@@ -6133,7 +6133,7 @@ public class tftacrules extends TreeParser {
 
 
                     // AST REWRITE
-                    // elements: y, x, x, z, SAND, y, SAND, SAND, SAND, z, y, x, z
+                    // elements: SAND, SAND, x, y, y, z, z, SAND, y, x, SAND, x, z
                     // token labels: 
                     // rule labels: retval, z, y, x
                     // token list labels: 
@@ -6146,19 +6146,19 @@ public class tftacrules extends TreeParser {
                     RewriteRuleSubtreeStream stream_x=new RewriteRuleSubtreeStream(adaptor,"token x",x!=null?x.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 187:4: -> ^( XOR ^( AND ^( NOT $y) ^( SAND $z $x) ) ^( XOR ^( AND ^( NOT $x) ^( SAND $y $z) ) ^( SAND $x ^( SAND $y $z) ) ) )
+                    // 208:4: -> ^( XOR ^( AND ^( NOT $y) ^( SAND $z $x) ) ^( XOR ^( AND ^( NOT $x) ^( SAND $y $z) ) ^( SAND $x ^( SAND $y $z) ) ) )
                     {
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:187:7: ^( XOR ^( AND ^( NOT $y) ^( SAND $z $x) ) ^( XOR ^( AND ^( NOT $x) ^( SAND $y $z) ) ^( SAND $x ^( SAND $y $z) ) ) )
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:208:7: ^( XOR ^( AND ^( NOT $y) ^( SAND $z $x) ) ^( XOR ^( AND ^( NOT $x) ^( SAND $y $z) ) ^( SAND $x ^( SAND $y $z) ) ) )
                         {
                         Object root_1 = (Object)adaptor.nil();
                         root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(XOR, "XOR"), root_1);
 
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:187:13: ^( AND ^( NOT $y) ^( SAND $z $x) )
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:208:13: ^( AND ^( NOT $y) ^( SAND $z $x) )
                         {
                         Object root_2 = (Object)adaptor.nil();
                         root_2 = (Object)adaptor.becomeRoot((Object)adaptor.create(AND, "AND"), root_2);
 
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:187:20: ^( NOT $y)
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:208:20: ^( NOT $y)
                         {
                         Object root_3 = (Object)adaptor.nil();
                         root_3 = (Object)adaptor.becomeRoot((Object)adaptor.create(NOT, "NOT"), root_3);
@@ -6167,7 +6167,7 @@ public class tftacrules extends TreeParser {
 
                         adaptor.addChild(root_2, root_3);
                         }
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:187:30: ^( SAND $z $x)
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:208:30: ^( SAND $z $x)
                         {
                         Object root_3 = (Object)adaptor.nil();
                         root_3 = (Object)adaptor.becomeRoot(stream_SAND.nextNode(), root_3);
@@ -6180,17 +6180,17 @@ public class tftacrules extends TreeParser {
 
                         adaptor.addChild(root_1, root_2);
                         }
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:187:46: ^( XOR ^( AND ^( NOT $x) ^( SAND $y $z) ) ^( SAND $x ^( SAND $y $z) ) )
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:208:46: ^( XOR ^( AND ^( NOT $x) ^( SAND $y $z) ) ^( SAND $x ^( SAND $y $z) ) )
                         {
                         Object root_2 = (Object)adaptor.nil();
                         root_2 = (Object)adaptor.becomeRoot((Object)adaptor.create(XOR, "XOR"), root_2);
 
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:187:52: ^( AND ^( NOT $x) ^( SAND $y $z) )
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:208:52: ^( AND ^( NOT $x) ^( SAND $y $z) )
                         {
                         Object root_3 = (Object)adaptor.nil();
                         root_3 = (Object)adaptor.becomeRoot((Object)adaptor.create(AND, "AND"), root_3);
 
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:187:59: ^( NOT $x)
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:208:59: ^( NOT $x)
                         {
                         Object root_4 = (Object)adaptor.nil();
                         root_4 = (Object)adaptor.becomeRoot((Object)adaptor.create(NOT, "NOT"), root_4);
@@ -6199,7 +6199,7 @@ public class tftacrules extends TreeParser {
 
                         adaptor.addChild(root_3, root_4);
                         }
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:187:69: ^( SAND $y $z)
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:208:69: ^( SAND $y $z)
                         {
                         Object root_4 = (Object)adaptor.nil();
                         root_4 = (Object)adaptor.becomeRoot(stream_SAND.nextNode(), root_4);
@@ -6212,13 +6212,13 @@ public class tftacrules extends TreeParser {
 
                         adaptor.addChild(root_2, root_3);
                         }
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:187:84: ^( SAND $x ^( SAND $y $z) )
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:208:84: ^( SAND $x ^( SAND $y $z) )
                         {
                         Object root_3 = (Object)adaptor.nil();
                         root_3 = (Object)adaptor.becomeRoot(stream_SAND.nextNode(), root_3);
 
                         adaptor.addChild(root_3, stream_x.nextTree());
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:187:94: ^( SAND $y $z)
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:208:94: ^( SAND $y $z)
                         {
                         Object root_4 = (Object)adaptor.nil();
                         root_4 = (Object)adaptor.becomeRoot(stream_SAND.nextNode(), root_4);
@@ -6244,14 +6244,14 @@ public class tftacrules extends TreeParser {
                     }
                     break;
                 case 9 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:188:4: ^( SAND ^( OR x= tt y= tt ) z= tt )
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:209:4: ^( SAND ^( OR x= tt y= tt ) z= tt )
                     {
                     _last = (Object)input.LT(1);
                     {
                     Object _save_last_1 = _last;
                     Object _first_1 = null;
                     Object root_1 = (Object)adaptor.nil();_last = (Object)input.LT(1);
-                    SAND159=(Object)match(input,SAND,FOLLOW_SAND_in_sandterm2504); if (state.failed) return retval; 
+                    SAND159=(Object)match(input,SAND,FOLLOW_SAND_in_sandterm2503); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_SAND.add(SAND159);
 
 
@@ -6262,21 +6262,21 @@ public class tftacrules extends TreeParser {
                     Object _save_last_2 = _last;
                     Object _first_2 = null;
                     Object root_2 = (Object)adaptor.nil();_last = (Object)input.LT(1);
-                    OR160=(Object)match(input,OR,FOLLOW_OR_in_sandterm2507); if (state.failed) return retval; 
+                    OR160=(Object)match(input,OR,FOLLOW_OR_in_sandterm2506); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_OR.add(OR160);
 
 
 
                     match(input, Token.DOWN, null); if (state.failed) return retval;
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_tt_in_sandterm2511);
+                    pushFollow(FOLLOW_tt_in_sandterm2510);
                     x=tt();
 
                     state._fsp--;
                     if (state.failed) return retval;
                     if ( state.backtracking==0 ) stream_tt.add(x.getTree());
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_tt_in_sandterm2515);
+                    pushFollow(FOLLOW_tt_in_sandterm2514);
                     y=tt();
 
                     state._fsp--;
@@ -6287,7 +6287,7 @@ public class tftacrules extends TreeParser {
                     }
 
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_tt_in_sandterm2520);
+                    pushFollow(FOLLOW_tt_in_sandterm2519);
                     z=tt();
 
                     state._fsp--;
@@ -6300,7 +6300,7 @@ public class tftacrules extends TreeParser {
 
 
                     // AST REWRITE
-                    // elements: z, z, x, x, x, y, SAND, SAND, y, SAND, SAND, z, y
+                    // elements: SAND, y, SAND, y, y, z, SAND, z, x, z, SAND, x, x
                     // token labels: 
                     // rule labels: retval, z, y, x
                     // token list labels: 
@@ -6313,19 +6313,19 @@ public class tftacrules extends TreeParser {
                     RewriteRuleSubtreeStream stream_x=new RewriteRuleSubtreeStream(adaptor,"token x",x!=null?x.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 189:4: -> ^( XOR ^( AND ^( NOT $y) ^( SAND $x $z) ) ^( XOR ^( AND ^( NOT $x) ^( SAND $y $z) ) ^( SAND $x ^( SAND $y $z) ) ) )
+                    // 210:4: -> ^( XOR ^( AND ^( NOT $y) ^( SAND $x $z) ) ^( XOR ^( AND ^( NOT $x) ^( SAND $y $z) ) ^( SAND $x ^( SAND $y $z) ) ) )
                     {
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:189:7: ^( XOR ^( AND ^( NOT $y) ^( SAND $x $z) ) ^( XOR ^( AND ^( NOT $x) ^( SAND $y $z) ) ^( SAND $x ^( SAND $y $z) ) ) )
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:210:7: ^( XOR ^( AND ^( NOT $y) ^( SAND $x $z) ) ^( XOR ^( AND ^( NOT $x) ^( SAND $y $z) ) ^( SAND $x ^( SAND $y $z) ) ) )
                         {
                         Object root_1 = (Object)adaptor.nil();
                         root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(XOR, "XOR"), root_1);
 
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:189:13: ^( AND ^( NOT $y) ^( SAND $x $z) )
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:210:13: ^( AND ^( NOT $y) ^( SAND $x $z) )
                         {
                         Object root_2 = (Object)adaptor.nil();
                         root_2 = (Object)adaptor.becomeRoot((Object)adaptor.create(AND, "AND"), root_2);
 
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:189:20: ^( NOT $y)
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:210:20: ^( NOT $y)
                         {
                         Object root_3 = (Object)adaptor.nil();
                         root_3 = (Object)adaptor.becomeRoot((Object)adaptor.create(NOT, "NOT"), root_3);
@@ -6334,7 +6334,7 @@ public class tftacrules extends TreeParser {
 
                         adaptor.addChild(root_2, root_3);
                         }
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:189:30: ^( SAND $x $z)
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:210:30: ^( SAND $x $z)
                         {
                         Object root_3 = (Object)adaptor.nil();
                         root_3 = (Object)adaptor.becomeRoot(stream_SAND.nextNode(), root_3);
@@ -6347,17 +6347,17 @@ public class tftacrules extends TreeParser {
 
                         adaptor.addChild(root_1, root_2);
                         }
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:189:46: ^( XOR ^( AND ^( NOT $x) ^( SAND $y $z) ) ^( SAND $x ^( SAND $y $z) ) )
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:210:46: ^( XOR ^( AND ^( NOT $x) ^( SAND $y $z) ) ^( SAND $x ^( SAND $y $z) ) )
                         {
                         Object root_2 = (Object)adaptor.nil();
                         root_2 = (Object)adaptor.becomeRoot((Object)adaptor.create(XOR, "XOR"), root_2);
 
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:189:52: ^( AND ^( NOT $x) ^( SAND $y $z) )
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:210:52: ^( AND ^( NOT $x) ^( SAND $y $z) )
                         {
                         Object root_3 = (Object)adaptor.nil();
                         root_3 = (Object)adaptor.becomeRoot((Object)adaptor.create(AND, "AND"), root_3);
 
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:189:59: ^( NOT $x)
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:210:59: ^( NOT $x)
                         {
                         Object root_4 = (Object)adaptor.nil();
                         root_4 = (Object)adaptor.becomeRoot((Object)adaptor.create(NOT, "NOT"), root_4);
@@ -6366,7 +6366,7 @@ public class tftacrules extends TreeParser {
 
                         adaptor.addChild(root_3, root_4);
                         }
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:189:69: ^( SAND $y $z)
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:210:69: ^( SAND $y $z)
                         {
                         Object root_4 = (Object)adaptor.nil();
                         root_4 = (Object)adaptor.becomeRoot(stream_SAND.nextNode(), root_4);
@@ -6379,13 +6379,13 @@ public class tftacrules extends TreeParser {
 
                         adaptor.addChild(root_2, root_3);
                         }
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:189:84: ^( SAND $x ^( SAND $y $z) )
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:210:84: ^( SAND $x ^( SAND $y $z) )
                         {
                         Object root_3 = (Object)adaptor.nil();
                         root_3 = (Object)adaptor.becomeRoot(stream_SAND.nextNode(), root_3);
 
                         adaptor.addChild(root_3, stream_x.nextTree());
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:189:94: ^( SAND $y $z)
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:210:94: ^( SAND $y $z)
                         {
                         Object root_4 = (Object)adaptor.nil();
                         root_4 = (Object)adaptor.becomeRoot(stream_SAND.nextNode(), root_4);
@@ -6411,14 +6411,14 @@ public class tftacrules extends TreeParser {
                     }
                     break;
                 case 10 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:190:4: ^( SAND ^( PAND x= tt y= tt ) z= tt )
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:211:4: ^( SAND ^( PAND x= tt y= tt ) z= tt )
                     {
                     _last = (Object)input.LT(1);
                     {
                     Object _save_last_1 = _last;
                     Object _first_1 = null;
                     Object root_1 = (Object)adaptor.nil();_last = (Object)input.LT(1);
-                    SAND161=(Object)match(input,SAND,FOLLOW_SAND_in_sandterm2603); if (state.failed) return retval; 
+                    SAND161=(Object)match(input,SAND,FOLLOW_SAND_in_sandterm2602); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_SAND.add(SAND161);
 
 
@@ -6429,21 +6429,21 @@ public class tftacrules extends TreeParser {
                     Object _save_last_2 = _last;
                     Object _first_2 = null;
                     Object root_2 = (Object)adaptor.nil();_last = (Object)input.LT(1);
-                    PAND162=(Object)match(input,PAND,FOLLOW_PAND_in_sandterm2606); if (state.failed) return retval; 
+                    PAND162=(Object)match(input,PAND,FOLLOW_PAND_in_sandterm2605); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_PAND.add(PAND162);
 
 
 
                     match(input, Token.DOWN, null); if (state.failed) return retval;
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_tt_in_sandterm2610);
+                    pushFollow(FOLLOW_tt_in_sandterm2609);
                     x=tt();
 
                     state._fsp--;
                     if (state.failed) return retval;
                     if ( state.backtracking==0 ) stream_tt.add(x.getTree());
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_tt_in_sandterm2614);
+                    pushFollow(FOLLOW_tt_in_sandterm2613);
                     y=tt();
 
                     state._fsp--;
@@ -6454,7 +6454,7 @@ public class tftacrules extends TreeParser {
                     }
 
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_tt_in_sandterm2619);
+                    pushFollow(FOLLOW_tt_in_sandterm2618);
                     z=tt();
 
                     state._fsp--;
@@ -6467,7 +6467,7 @@ public class tftacrules extends TreeParser {
 
 
                     // AST REWRITE
-                    // elements: y, z, x, PAND, SAND
+                    // elements: x, y, z, SAND, PAND
                     // token labels: 
                     // rule labels: retval, z, y, x
                     // token list labels: 
@@ -6480,15 +6480,15 @@ public class tftacrules extends TreeParser {
                     RewriteRuleSubtreeStream stream_x=new RewriteRuleSubtreeStream(adaptor,"token x",x!=null?x.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 191:4: -> ^( PAND $x ^( SAND $y $z) )
+                    // 212:4: -> ^( PAND $x ^( SAND $y $z) )
                     {
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:191:7: ^( PAND $x ^( SAND $y $z) )
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:212:7: ^( PAND $x ^( SAND $y $z) )
                         {
                         Object root_1 = (Object)adaptor.nil();
                         root_1 = (Object)adaptor.becomeRoot(stream_PAND.nextNode(), root_1);
 
                         adaptor.addChild(root_1, stream_x.nextTree());
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:191:17: ^( SAND $y $z)
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:212:17: ^( SAND $y $z)
                         {
                         Object root_2 = (Object)adaptor.nil();
                         root_2 = (Object)adaptor.becomeRoot(stream_SAND.nextNode(), root_2);
@@ -6508,21 +6508,21 @@ public class tftacrules extends TreeParser {
                     }
                     break;
                 case 11 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:192:4: ^( SAND z= tt ^( PAND x= tt y= tt ) )
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:213:4: ^( SAND z= tt ^( PAND x= tt y= tt ) )
                     {
                     _last = (Object)input.LT(1);
                     {
                     Object _save_last_1 = _last;
                     Object _first_1 = null;
                     Object root_1 = (Object)adaptor.nil();_last = (Object)input.LT(1);
-                    SAND163=(Object)match(input,SAND,FOLLOW_SAND_in_sandterm2648); if (state.failed) return retval; 
+                    SAND163=(Object)match(input,SAND,FOLLOW_SAND_in_sandterm2647); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_SAND.add(SAND163);
 
 
 
                     match(input, Token.DOWN, null); if (state.failed) return retval;
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_tt_in_sandterm2652);
+                    pushFollow(FOLLOW_tt_in_sandterm2651);
                     z=tt();
 
                     state._fsp--;
@@ -6533,21 +6533,21 @@ public class tftacrules extends TreeParser {
                     Object _save_last_2 = _last;
                     Object _first_2 = null;
                     Object root_2 = (Object)adaptor.nil();_last = (Object)input.LT(1);
-                    PAND164=(Object)match(input,PAND,FOLLOW_PAND_in_sandterm2655); if (state.failed) return retval; 
+                    PAND164=(Object)match(input,PAND,FOLLOW_PAND_in_sandterm2654); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_PAND.add(PAND164);
 
 
 
                     match(input, Token.DOWN, null); if (state.failed) return retval;
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_tt_in_sandterm2659);
+                    pushFollow(FOLLOW_tt_in_sandterm2658);
                     x=tt();
 
                     state._fsp--;
                     if (state.failed) return retval;
                     if ( state.backtracking==0 ) stream_tt.add(x.getTree());
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_tt_in_sandterm2663);
+                    pushFollow(FOLLOW_tt_in_sandterm2662);
                     y=tt();
 
                     state._fsp--;
@@ -6564,7 +6564,7 @@ public class tftacrules extends TreeParser {
 
 
                     // AST REWRITE
-                    // elements: y, z, x, SAND, PAND
+                    // elements: PAND, z, x, SAND, y
                     // token labels: 
                     // rule labels: retval, z, y, x
                     // token list labels: 
@@ -6577,15 +6577,15 @@ public class tftacrules extends TreeParser {
                     RewriteRuleSubtreeStream stream_x=new RewriteRuleSubtreeStream(adaptor,"token x",x!=null?x.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 193:4: -> ^( PAND $x ^( SAND $y $z) )
+                    // 214:4: -> ^( PAND $x ^( SAND $y $z) )
                     {
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:193:7: ^( PAND $x ^( SAND $y $z) )
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:214:7: ^( PAND $x ^( SAND $y $z) )
                         {
                         Object root_1 = (Object)adaptor.nil();
                         root_1 = (Object)adaptor.becomeRoot(stream_PAND.nextNode(), root_1);
 
                         adaptor.addChild(root_1, stream_x.nextTree());
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:193:17: ^( SAND $y $z)
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:214:17: ^( SAND $y $z)
                         {
                         Object root_2 = (Object)adaptor.nil();
                         root_2 = (Object)adaptor.becomeRoot(stream_SAND.nextNode(), root_2);
@@ -6605,21 +6605,21 @@ public class tftacrules extends TreeParser {
                     }
                     break;
                 case 12 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:194:4: ^( SAND x= tt ^( AND a= notterm z= tt ) )
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:215:4: ^( SAND x= tt ^( AND a= notterm z= tt ) )
                     {
                     _last = (Object)input.LT(1);
                     {
                     Object _save_last_1 = _last;
                     Object _first_1 = null;
                     Object root_1 = (Object)adaptor.nil();_last = (Object)input.LT(1);
-                    SAND165=(Object)match(input,SAND,FOLLOW_SAND_in_sandterm2693); if (state.failed) return retval; 
+                    SAND165=(Object)match(input,SAND,FOLLOW_SAND_in_sandterm2692); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_SAND.add(SAND165);
 
 
 
                     match(input, Token.DOWN, null); if (state.failed) return retval;
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_tt_in_sandterm2697);
+                    pushFollow(FOLLOW_tt_in_sandterm2696);
                     x=tt();
 
                     state._fsp--;
@@ -6630,21 +6630,21 @@ public class tftacrules extends TreeParser {
                     Object _save_last_2 = _last;
                     Object _first_2 = null;
                     Object root_2 = (Object)adaptor.nil();_last = (Object)input.LT(1);
-                    AND166=(Object)match(input,AND,FOLLOW_AND_in_sandterm2700); if (state.failed) return retval; 
+                    AND166=(Object)match(input,AND,FOLLOW_AND_in_sandterm2699); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_AND.add(AND166);
 
 
 
                     match(input, Token.DOWN, null); if (state.failed) return retval;
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_notterm_in_sandterm2704);
+                    pushFollow(FOLLOW_notterm_in_sandterm2703);
                     a=notterm();
 
                     state._fsp--;
                     if (state.failed) return retval;
                     if ( state.backtracking==0 ) stream_notterm.add(a.getTree());
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_tt_in_sandterm2708);
+                    pushFollow(FOLLOW_tt_in_sandterm2707);
                     z=tt();
 
                     state._fsp--;
@@ -6661,7 +6661,7 @@ public class tftacrules extends TreeParser {
 
 
                     // AST REWRITE
-                    // elements: AND, SAND, x, z, a
+                    // elements: x, a, AND, z, SAND
                     // token labels: 
                     // rule labels: retval, a, z, x
                     // token list labels: 
@@ -6674,15 +6674,15 @@ public class tftacrules extends TreeParser {
                     RewriteRuleSubtreeStream stream_x=new RewriteRuleSubtreeStream(adaptor,"token x",x!=null?x.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 195:4: -> ^( AND $a ^( SAND $x $z) )
+                    // 216:4: -> ^( AND $a ^( SAND $x $z) )
                     {
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:195:7: ^( AND $a ^( SAND $x $z) )
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:216:7: ^( AND $a ^( SAND $x $z) )
                         {
                         Object root_1 = (Object)adaptor.nil();
                         root_1 = (Object)adaptor.becomeRoot(stream_AND.nextNode(), root_1);
 
                         adaptor.addChild(root_1, stream_a.nextTree());
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:195:16: ^( SAND $x $z)
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:216:16: ^( SAND $x $z)
                         {
                         Object root_2 = (Object)adaptor.nil();
                         root_2 = (Object)adaptor.becomeRoot(stream_SAND.nextNode(), root_2);
@@ -6702,14 +6702,14 @@ public class tftacrules extends TreeParser {
                     }
                     break;
                 case 13 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:196:4: ^( SAND ^( AND a= notterm z= tt ) x= tt )
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:217:4: ^( SAND ^( AND a= notterm z= tt ) x= tt )
                     {
                     _last = (Object)input.LT(1);
                     {
                     Object _save_last_1 = _last;
                     Object _first_1 = null;
                     Object root_1 = (Object)adaptor.nil();_last = (Object)input.LT(1);
-                    SAND167=(Object)match(input,SAND,FOLLOW_SAND_in_sandterm2738); if (state.failed) return retval; 
+                    SAND167=(Object)match(input,SAND,FOLLOW_SAND_in_sandterm2737); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_SAND.add(SAND167);
 
 
@@ -6720,21 +6720,21 @@ public class tftacrules extends TreeParser {
                     Object _save_last_2 = _last;
                     Object _first_2 = null;
                     Object root_2 = (Object)adaptor.nil();_last = (Object)input.LT(1);
-                    AND168=(Object)match(input,AND,FOLLOW_AND_in_sandterm2741); if (state.failed) return retval; 
+                    AND168=(Object)match(input,AND,FOLLOW_AND_in_sandterm2740); if (state.failed) return retval; 
                     if ( state.backtracking==0 ) stream_AND.add(AND168);
 
 
 
                     match(input, Token.DOWN, null); if (state.failed) return retval;
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_notterm_in_sandterm2745);
+                    pushFollow(FOLLOW_notterm_in_sandterm2744);
                     a=notterm();
 
                     state._fsp--;
                     if (state.failed) return retval;
                     if ( state.backtracking==0 ) stream_notterm.add(a.getTree());
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_tt_in_sandterm2749);
+                    pushFollow(FOLLOW_tt_in_sandterm2748);
                     z=tt();
 
                     state._fsp--;
@@ -6745,7 +6745,7 @@ public class tftacrules extends TreeParser {
                     }
 
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_tt_in_sandterm2754);
+                    pushFollow(FOLLOW_tt_in_sandterm2753);
                     x=tt();
 
                     state._fsp--;
@@ -6758,7 +6758,7 @@ public class tftacrules extends TreeParser {
 
 
                     // AST REWRITE
-                    // elements: z, SAND, a, AND, x
+                    // elements: x, AND, z, SAND, a
                     // token labels: 
                     // rule labels: retval, a, z, x
                     // token list labels: 
@@ -6771,15 +6771,15 @@ public class tftacrules extends TreeParser {
                     RewriteRuleSubtreeStream stream_x=new RewriteRuleSubtreeStream(adaptor,"token x",x!=null?x.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 197:4: -> ^( AND $a ^( SAND $x $z) )
+                    // 218:4: -> ^( AND $a ^( SAND $x $z) )
                     {
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:197:7: ^( AND $a ^( SAND $x $z) )
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:218:7: ^( AND $a ^( SAND $x $z) )
                         {
                         Object root_1 = (Object)adaptor.nil();
                         root_1 = (Object)adaptor.becomeRoot(stream_AND.nextNode(), root_1);
 
                         adaptor.addChild(root_1, stream_a.nextTree());
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:197:16: ^( SAND $x $z)
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:218:16: ^( SAND $x $z)
                         {
                         Object root_2 = (Object)adaptor.nil();
                         root_2 = (Object)adaptor.becomeRoot(stream_SAND.nextNode(), root_2);
@@ -6799,7 +6799,7 @@ public class tftacrules extends TreeParser {
                     }
                     break;
                 case 14 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:198:4: ^( SAND tt tt )
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:219:4: ^( SAND tt tt )
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -6808,7 +6808,7 @@ public class tftacrules extends TreeParser {
                     Object _save_last_1 = _last;
                     Object _first_1 = null;
                     Object root_1 = (Object)adaptor.nil();_last = (Object)input.LT(1);
-                    SAND169=(Object)match(input,SAND,FOLLOW_SAND_in_sandterm2784); if (state.failed) return retval;
+                    SAND169=(Object)match(input,SAND,FOLLOW_SAND_in_sandterm2783); if (state.failed) return retval;
                     if ( state.backtracking==0 ) {
                     SAND169_tree = (Object)adaptor.dupNode(SAND169);
 
@@ -6818,7 +6818,7 @@ public class tftacrules extends TreeParser {
 
                     match(input, Token.DOWN, null); if (state.failed) return retval;
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_tt_in_sandterm2786);
+                    pushFollow(FOLLOW_tt_in_sandterm2785);
                     tt170=tt();
 
                     state._fsp--;
@@ -6826,7 +6826,7 @@ public class tftacrules extends TreeParser {
                     if ( state.backtracking==0 ) 
                     adaptor.addChild(root_1, tt170.getTree());
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_tt_in_sandterm2788);
+                    pushFollow(FOLLOW_tt_in_sandterm2787);
                     tt171=tt();
 
                     state._fsp--;
@@ -6866,7 +6866,7 @@ public class tftacrules extends TreeParser {
     };
 
     // $ANTLR start "ae"
-    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:201:1: ae : ( ID | TRUE | FALSE );
+    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:222:1: ae : ( ID | TRUE | FALSE );
     public final tftacrules.ae_return ae() throws RecognitionException {
         tftacrules.ae_return retval = new tftacrules.ae_return();
         retval.start = input.LT(1);
@@ -6882,7 +6882,7 @@ public class tftacrules extends TreeParser {
 
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 12) ) { return retval; }
-            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:201:6: ( ID | TRUE | FALSE )
+            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:222:6: ( ID | TRUE | FALSE )
             // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:
             {
             root_0 = (Object)adaptor.nil();
@@ -6928,10 +6928,10 @@ public class tftacrules extends TreeParser {
 
     // $ANTLR start synpred1_tftacrules
     public final void synpred1_tftacrules_fragment() throws RecognitionException {   
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:23:7: ( andterm )
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:23:7: andterm
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:44:7: ( andterm )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:44:7: andterm
         {
-        pushFollow(FOLLOW_andterm_in_synpred1_tftacrules65);
+        pushFollow(FOLLOW_andterm_in_synpred1_tftacrules64);
         andterm();
 
         state._fsp--;
@@ -6943,10 +6943,10 @@ public class tftacrules extends TreeParser {
 
     // $ANTLR start synpred2_tftacrules
     public final void synpred2_tftacrules_fragment() throws RecognitionException {   
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:24:4: ( negandterm )
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:24:4: negandterm
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:45:4: ( negandterm )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:45:4: negandterm
         {
-        pushFollow(FOLLOW_negandterm_in_synpred2_tftacrules70);
+        pushFollow(FOLLOW_negandterm_in_synpred2_tftacrules69);
         negandterm();
 
         state._fsp--;
@@ -6963,21 +6963,21 @@ public class tftacrules extends TreeParser {
         tftacrules.tt_return y = null;
 
 
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:49:11: ( ^( NOT ^( AND x= tt y= tt ) ) )
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:49:11: ^( NOT ^( AND x= tt y= tt ) )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:70:11: ( ^( NOT ^( AND x= tt y= tt ) ) )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:70:11: ^( NOT ^( AND x= tt y= tt ) )
         {
-        match(input,NOT,FOLLOW_NOT_in_synpred9_tftacrules175); if (state.failed) return ;
+        match(input,NOT,FOLLOW_NOT_in_synpred9_tftacrules174); if (state.failed) return ;
 
         match(input, Token.DOWN, null); if (state.failed) return ;
-        match(input,AND,FOLLOW_AND_in_synpred9_tftacrules178); if (state.failed) return ;
+        match(input,AND,FOLLOW_AND_in_synpred9_tftacrules177); if (state.failed) return ;
 
         match(input, Token.DOWN, null); if (state.failed) return ;
-        pushFollow(FOLLOW_tt_in_synpred9_tftacrules182);
+        pushFollow(FOLLOW_tt_in_synpred9_tftacrules181);
         x=tt();
 
         state._fsp--;
         if (state.failed) return ;
-        pushFollow(FOLLOW_tt_in_synpred9_tftacrules186);
+        pushFollow(FOLLOW_tt_in_synpred9_tftacrules185);
         y=tt();
 
         state._fsp--;
@@ -6998,21 +6998,21 @@ public class tftacrules extends TreeParser {
         tftacrules.tt_return y = null;
 
 
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:51:4: ( ^( NOT ^( OR x= tt y= tt ) ) )
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:51:4: ^( NOT ^( OR x= tt y= tt ) )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:72:4: ( ^( NOT ^( OR x= tt y= tt ) ) )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:72:4: ^( NOT ^( OR x= tt y= tt ) )
         {
-        match(input,NOT,FOLLOW_NOT_in_synpred10_tftacrules218); if (state.failed) return ;
+        match(input,NOT,FOLLOW_NOT_in_synpred10_tftacrules217); if (state.failed) return ;
 
         match(input, Token.DOWN, null); if (state.failed) return ;
-        match(input,OR,FOLLOW_OR_in_synpred10_tftacrules221); if (state.failed) return ;
+        match(input,OR,FOLLOW_OR_in_synpred10_tftacrules220); if (state.failed) return ;
 
         match(input, Token.DOWN, null); if (state.failed) return ;
-        pushFollow(FOLLOW_tt_in_synpred10_tftacrules225);
+        pushFollow(FOLLOW_tt_in_synpred10_tftacrules224);
         x=tt();
 
         state._fsp--;
         if (state.failed) return ;
-        pushFollow(FOLLOW_tt_in_synpred10_tftacrules229);
+        pushFollow(FOLLOW_tt_in_synpred10_tftacrules228);
         y=tt();
 
         state._fsp--;
@@ -7033,21 +7033,21 @@ public class tftacrules extends TreeParser {
         tftacrules.tt_return y = null;
 
 
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:53:4: ( ^( NOT ^( XOR x= tt y= tt ) ) )
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:53:4: ^( NOT ^( XOR x= tt y= tt ) )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:74:4: ( ^( NOT ^( XOR x= tt y= tt ) ) )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:74:4: ^( NOT ^( XOR x= tt y= tt ) )
         {
-        match(input,NOT,FOLLOW_NOT_in_synpred11_tftacrules261); if (state.failed) return ;
+        match(input,NOT,FOLLOW_NOT_in_synpred11_tftacrules260); if (state.failed) return ;
 
         match(input, Token.DOWN, null); if (state.failed) return ;
-        match(input,XOR,FOLLOW_XOR_in_synpred11_tftacrules264); if (state.failed) return ;
+        match(input,XOR,FOLLOW_XOR_in_synpred11_tftacrules263); if (state.failed) return ;
 
         match(input, Token.DOWN, null); if (state.failed) return ;
-        pushFollow(FOLLOW_tt_in_synpred11_tftacrules268);
+        pushFollow(FOLLOW_tt_in_synpred11_tftacrules267);
         x=tt();
 
         state._fsp--;
         if (state.failed) return ;
-        pushFollow(FOLLOW_tt_in_synpred11_tftacrules272);
+        pushFollow(FOLLOW_tt_in_synpred11_tftacrules271);
         y=tt();
 
         state._fsp--;
@@ -7068,21 +7068,21 @@ public class tftacrules extends TreeParser {
         tftacrules.tt_return y = null;
 
 
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:55:4: ( ^( NOT ^( PAND x= tt y= tt ) ) )
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:55:4: ^( NOT ^( PAND x= tt y= tt ) )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:76:4: ( ^( NOT ^( PAND x= tt y= tt ) ) )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:76:4: ^( NOT ^( PAND x= tt y= tt ) )
         {
-        match(input,NOT,FOLLOW_NOT_in_synpred12_tftacrules304); if (state.failed) return ;
+        match(input,NOT,FOLLOW_NOT_in_synpred12_tftacrules303); if (state.failed) return ;
 
         match(input, Token.DOWN, null); if (state.failed) return ;
-        match(input,PAND,FOLLOW_PAND_in_synpred12_tftacrules307); if (state.failed) return ;
+        match(input,PAND,FOLLOW_PAND_in_synpred12_tftacrules306); if (state.failed) return ;
 
         match(input, Token.DOWN, null); if (state.failed) return ;
-        pushFollow(FOLLOW_tt_in_synpred12_tftacrules311);
+        pushFollow(FOLLOW_tt_in_synpred12_tftacrules310);
         x=tt();
 
         state._fsp--;
         if (state.failed) return ;
-        pushFollow(FOLLOW_tt_in_synpred12_tftacrules315);
+        pushFollow(FOLLOW_tt_in_synpred12_tftacrules314);
         y=tt();
 
         state._fsp--;
@@ -7103,21 +7103,21 @@ public class tftacrules extends TreeParser {
         tftacrules.tt_return y = null;
 
 
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:58:4: ( ^( NOT ^( SAND x= tt y= tt ) ) )
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:58:4: ^( NOT ^( SAND x= tt y= tt ) )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:79:4: ( ^( NOT ^( SAND x= tt y= tt ) ) )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:79:4: ^( NOT ^( SAND x= tt y= tt ) )
         {
-        match(input,NOT,FOLLOW_NOT_in_synpred13_tftacrules370); if (state.failed) return ;
+        match(input,NOT,FOLLOW_NOT_in_synpred13_tftacrules369); if (state.failed) return ;
 
         match(input, Token.DOWN, null); if (state.failed) return ;
-        match(input,SAND,FOLLOW_SAND_in_synpred13_tftacrules373); if (state.failed) return ;
+        match(input,SAND,FOLLOW_SAND_in_synpred13_tftacrules372); if (state.failed) return ;
 
         match(input, Token.DOWN, null); if (state.failed) return ;
-        pushFollow(FOLLOW_tt_in_synpred13_tftacrules377);
+        pushFollow(FOLLOW_tt_in_synpred13_tftacrules376);
         x=tt();
 
         state._fsp--;
         if (state.failed) return ;
-        pushFollow(FOLLOW_tt_in_synpred13_tftacrules381);
+        pushFollow(FOLLOW_tt_in_synpred13_tftacrules380);
         y=tt();
 
         state._fsp--;
@@ -7133,14 +7133,14 @@ public class tftacrules extends TreeParser {
 
     // $ANTLR start synpred17_tftacrules
     public final void synpred17_tftacrules_fragment() throws RecognitionException {   
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:70:11: ( ^( AND . FALSE ) )
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:70:11: ^( AND . FALSE )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:91:11: ( ^( AND . FALSE ) )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:91:11: ^( AND . FALSE )
         {
-        match(input,AND,FOLLOW_AND_in_synpred17_tftacrules535); if (state.failed) return ;
+        match(input,AND,FOLLOW_AND_in_synpred17_tftacrules534); if (state.failed) return ;
 
         match(input, Token.DOWN, null); if (state.failed) return ;
         matchAny(input); if (state.failed) return ;
-        match(input,FALSE,FOLLOW_FALSE_in_synpred17_tftacrules539); if (state.failed) return ;
+        match(input,FALSE,FOLLOW_FALSE_in_synpred17_tftacrules538); if (state.failed) return ;
 
         match(input, Token.UP, null); if (state.failed) return ;
 
@@ -7150,13 +7150,13 @@ public class tftacrules extends TreeParser {
 
     // $ANTLR start synpred18_tftacrules
     public final void synpred18_tftacrules_fragment() throws RecognitionException {   
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:72:4: ( ^( AND FALSE . ) )
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:72:4: ^( AND FALSE . )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:93:4: ( ^( AND FALSE . ) )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:93:4: ^( AND FALSE . )
         {
-        match(input,AND,FOLLOW_AND_in_synpred18_tftacrules554); if (state.failed) return ;
+        match(input,AND,FOLLOW_AND_in_synpred18_tftacrules553); if (state.failed) return ;
 
         match(input, Token.DOWN, null); if (state.failed) return ;
-        match(input,FALSE,FOLLOW_FALSE_in_synpred18_tftacrules556); if (state.failed) return ;
+        match(input,FALSE,FOLLOW_FALSE_in_synpred18_tftacrules555); if (state.failed) return ;
         matchAny(input); if (state.failed) return ;
 
         match(input, Token.UP, null); if (state.failed) return ;
@@ -7170,14 +7170,14 @@ public class tftacrules extends TreeParser {
         tftacrules.ae_return a = null;
 
 
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:74:4: ( ^( AND TRUE a= ae ) )
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:74:4: ^( AND TRUE a= ae )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:95:4: ( ^( AND TRUE a= ae ) )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:95:4: ^( AND TRUE a= ae )
         {
-        match(input,AND,FOLLOW_AND_in_synpred19_tftacrules572); if (state.failed) return ;
+        match(input,AND,FOLLOW_AND_in_synpred19_tftacrules571); if (state.failed) return ;
 
         match(input, Token.DOWN, null); if (state.failed) return ;
-        match(input,TRUE,FOLLOW_TRUE_in_synpred19_tftacrules574); if (state.failed) return ;
-        pushFollow(FOLLOW_ae_in_synpred19_tftacrules578);
+        match(input,TRUE,FOLLOW_TRUE_in_synpred19_tftacrules573); if (state.failed) return ;
+        pushFollow(FOLLOW_ae_in_synpred19_tftacrules577);
         a=ae();
 
         state._fsp--;
@@ -7194,18 +7194,18 @@ public class tftacrules extends TreeParser {
         tftacrules.ae_return a = null;
 
 
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:76:4: ( ^( AND a= ae TRUE ) )
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:76:4: ^( AND a= ae TRUE )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:97:4: ( ^( AND a= ae TRUE ) )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:97:4: ^( AND a= ae TRUE )
         {
-        match(input,AND,FOLLOW_AND_in_synpred20_tftacrules593); if (state.failed) return ;
+        match(input,AND,FOLLOW_AND_in_synpred20_tftacrules592); if (state.failed) return ;
 
         match(input, Token.DOWN, null); if (state.failed) return ;
-        pushFollow(FOLLOW_ae_in_synpred20_tftacrules597);
+        pushFollow(FOLLOW_ae_in_synpred20_tftacrules596);
         a=ae();
 
         state._fsp--;
         if (state.failed) return ;
-        match(input,TRUE,FOLLOW_TRUE_in_synpred20_tftacrules599); if (state.failed) return ;
+        match(input,TRUE,FOLLOW_TRUE_in_synpred20_tftacrules598); if (state.failed) return ;
 
         match(input, Token.UP, null); if (state.failed) return ;
 
@@ -7222,28 +7222,28 @@ public class tftacrules extends TreeParser {
         tftacrules.tt_return z = null;
 
 
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:78:4: ( ^( AND ^( XOR x= tt y= tt ) z= tt ) )
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:78:4: ^( AND ^( XOR x= tt y= tt ) z= tt )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:99:4: ( ^( AND ^( XOR x= tt y= tt ) z= tt ) )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:99:4: ^( AND ^( XOR x= tt y= tt ) z= tt )
         {
-        match(input,AND,FOLLOW_AND_in_synpred21_tftacrules614); if (state.failed) return ;
+        match(input,AND,FOLLOW_AND_in_synpred21_tftacrules613); if (state.failed) return ;
 
         match(input, Token.DOWN, null); if (state.failed) return ;
-        match(input,XOR,FOLLOW_XOR_in_synpred21_tftacrules617); if (state.failed) return ;
+        match(input,XOR,FOLLOW_XOR_in_synpred21_tftacrules616); if (state.failed) return ;
 
         match(input, Token.DOWN, null); if (state.failed) return ;
-        pushFollow(FOLLOW_tt_in_synpred21_tftacrules621);
+        pushFollow(FOLLOW_tt_in_synpred21_tftacrules620);
         x=tt();
 
         state._fsp--;
         if (state.failed) return ;
-        pushFollow(FOLLOW_tt_in_synpred21_tftacrules625);
+        pushFollow(FOLLOW_tt_in_synpred21_tftacrules624);
         y=tt();
 
         state._fsp--;
         if (state.failed) return ;
 
         match(input, Token.UP, null); if (state.failed) return ;
-        pushFollow(FOLLOW_tt_in_synpred21_tftacrules630);
+        pushFollow(FOLLOW_tt_in_synpred21_tftacrules629);
         z=tt();
 
         state._fsp--;
@@ -7264,28 +7264,28 @@ public class tftacrules extends TreeParser {
         tftacrules.tt_return z = null;
 
 
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:80:4: ( ^( AND ^( OR x= tt y= tt ) z= tt ) )
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:80:4: ^( AND ^( OR x= tt y= tt ) z= tt )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:101:4: ( ^( AND ^( OR x= tt y= tt ) z= tt ) )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:101:4: ^( AND ^( OR x= tt y= tt ) z= tt )
         {
-        match(input,AND,FOLLOW_AND_in_synpred22_tftacrules669); if (state.failed) return ;
+        match(input,AND,FOLLOW_AND_in_synpred22_tftacrules668); if (state.failed) return ;
 
         match(input, Token.DOWN, null); if (state.failed) return ;
-        match(input,OR,FOLLOW_OR_in_synpred22_tftacrules672); if (state.failed) return ;
+        match(input,OR,FOLLOW_OR_in_synpred22_tftacrules671); if (state.failed) return ;
 
         match(input, Token.DOWN, null); if (state.failed) return ;
-        pushFollow(FOLLOW_tt_in_synpred22_tftacrules676);
+        pushFollow(FOLLOW_tt_in_synpred22_tftacrules675);
         x=tt();
 
         state._fsp--;
         if (state.failed) return ;
-        pushFollow(FOLLOW_tt_in_synpred22_tftacrules680);
+        pushFollow(FOLLOW_tt_in_synpred22_tftacrules679);
         y=tt();
 
         state._fsp--;
         if (state.failed) return ;
 
         match(input, Token.UP, null); if (state.failed) return ;
-        pushFollow(FOLLOW_tt_in_synpred22_tftacrules685);
+        pushFollow(FOLLOW_tt_in_synpred22_tftacrules684);
         z=tt();
 
         state._fsp--;
@@ -7306,26 +7306,26 @@ public class tftacrules extends TreeParser {
         tftacrules.tt_return y = null;
 
 
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:82:4: ( ^( AND z= tt ^( OR x= tt y= tt ) ) )
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:82:4: ^( AND z= tt ^( OR x= tt y= tt ) )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:103:4: ( ^( AND z= tt ^( OR x= tt y= tt ) ) )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:103:4: ^( AND z= tt ^( OR x= tt y= tt ) )
         {
-        match(input,AND,FOLLOW_AND_in_synpred23_tftacrules724); if (state.failed) return ;
+        match(input,AND,FOLLOW_AND_in_synpred23_tftacrules723); if (state.failed) return ;
 
         match(input, Token.DOWN, null); if (state.failed) return ;
-        pushFollow(FOLLOW_tt_in_synpred23_tftacrules728);
+        pushFollow(FOLLOW_tt_in_synpred23_tftacrules727);
         z=tt();
 
         state._fsp--;
         if (state.failed) return ;
-        match(input,OR,FOLLOW_OR_in_synpred23_tftacrules731); if (state.failed) return ;
+        match(input,OR,FOLLOW_OR_in_synpred23_tftacrules730); if (state.failed) return ;
 
         match(input, Token.DOWN, null); if (state.failed) return ;
-        pushFollow(FOLLOW_tt_in_synpred23_tftacrules735);
+        pushFollow(FOLLOW_tt_in_synpred23_tftacrules734);
         x=tt();
 
         state._fsp--;
         if (state.failed) return ;
-        pushFollow(FOLLOW_tt_in_synpred23_tftacrules739);
+        pushFollow(FOLLOW_tt_in_synpred23_tftacrules738);
         y=tt();
 
         state._fsp--;
@@ -7348,28 +7348,28 @@ public class tftacrules extends TreeParser {
         tftacrules.tt_return z = null;
 
 
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:84:4: ( ^( AND ^( AND n1= notterm m1= metaPandSandAE ) z= tt ) )
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:84:4: ^( AND ^( AND n1= notterm m1= metaPandSandAE ) z= tt )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:105:4: ( ^( AND ^( AND n1= notterm m1= metaPandSandAE ) z= tt ) )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:105:4: ^( AND ^( AND n1= notterm m1= metaPandSandAE ) z= tt )
         {
-        match(input,AND,FOLLOW_AND_in_synpred24_tftacrules778); if (state.failed) return ;
+        match(input,AND,FOLLOW_AND_in_synpred24_tftacrules777); if (state.failed) return ;
 
         match(input, Token.DOWN, null); if (state.failed) return ;
-        match(input,AND,FOLLOW_AND_in_synpred24_tftacrules781); if (state.failed) return ;
+        match(input,AND,FOLLOW_AND_in_synpred24_tftacrules780); if (state.failed) return ;
 
         match(input, Token.DOWN, null); if (state.failed) return ;
-        pushFollow(FOLLOW_notterm_in_synpred24_tftacrules785);
+        pushFollow(FOLLOW_notterm_in_synpred24_tftacrules784);
         n1=notterm();
 
         state._fsp--;
         if (state.failed) return ;
-        pushFollow(FOLLOW_metaPandSandAE_in_synpred24_tftacrules789);
+        pushFollow(FOLLOW_metaPandSandAE_in_synpred24_tftacrules788);
         m1=metaPandSandAE();
 
         state._fsp--;
         if (state.failed) return ;
 
         match(input, Token.UP, null); if (state.failed) return ;
-        pushFollow(FOLLOW_tt_in_synpred24_tftacrules794);
+        pushFollow(FOLLOW_tt_in_synpred24_tftacrules793);
         z=tt();
 
         state._fsp--;
@@ -7388,18 +7388,18 @@ public class tftacrules extends TreeParser {
         tftacrules.tt_return y = null;
 
 
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:86:4: ( ^( AND x= tt y= tt ) )
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:86:4: ^( AND x= tt y= tt )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:107:4: ( ^( AND x= tt y= tt ) )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:107:4: ^( AND x= tt y= tt )
         {
-        match(input,AND,FOLLOW_AND_in_synpred25_tftacrules873); if (state.failed) return ;
+        match(input,AND,FOLLOW_AND_in_synpred25_tftacrules872); if (state.failed) return ;
 
         match(input, Token.DOWN, null); if (state.failed) return ;
-        pushFollow(FOLLOW_tt_in_synpred25_tftacrules877);
+        pushFollow(FOLLOW_tt_in_synpred25_tftacrules876);
         x=tt();
 
         state._fsp--;
         if (state.failed) return ;
-        pushFollow(FOLLOW_tt_in_synpred25_tftacrules881);
+        pushFollow(FOLLOW_tt_in_synpred25_tftacrules880);
         y=tt();
 
         state._fsp--;
@@ -7420,28 +7420,28 @@ public class tftacrules extends TreeParser {
         tftacrules.pandterm_return z1 = null;
 
 
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:92:4: ( ^( AND ^( OR x= notterm y= negatedterm ) z1= pandterm ) )
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:92:4: ^( AND ^( OR x= notterm y= negatedterm ) z1= pandterm )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:113:4: ( ^( AND ^( OR x= notterm y= negatedterm ) z1= pandterm ) )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:113:4: ^( AND ^( OR x= notterm y= negatedterm ) z1= pandterm )
         {
-        match(input,AND,FOLLOW_AND_in_synpred26_tftacrules951); if (state.failed) return ;
+        match(input,AND,FOLLOW_AND_in_synpred26_tftacrules950); if (state.failed) return ;
 
         match(input, Token.DOWN, null); if (state.failed) return ;
-        match(input,OR,FOLLOW_OR_in_synpred26_tftacrules954); if (state.failed) return ;
+        match(input,OR,FOLLOW_OR_in_synpred26_tftacrules953); if (state.failed) return ;
 
         match(input, Token.DOWN, null); if (state.failed) return ;
-        pushFollow(FOLLOW_notterm_in_synpred26_tftacrules958);
+        pushFollow(FOLLOW_notterm_in_synpred26_tftacrules957);
         x=notterm();
 
         state._fsp--;
         if (state.failed) return ;
-        pushFollow(FOLLOW_negatedterm_in_synpred26_tftacrules962);
+        pushFollow(FOLLOW_negatedterm_in_synpred26_tftacrules961);
         y=negatedterm();
 
         state._fsp--;
         if (state.failed) return ;
 
         match(input, Token.UP, null); if (state.failed) return ;
-        pushFollow(FOLLOW_pandterm_in_synpred26_tftacrules967);
+        pushFollow(FOLLOW_pandterm_in_synpred26_tftacrules966);
         z1=pandterm();
 
         state._fsp--;
@@ -7462,28 +7462,28 @@ public class tftacrules extends TreeParser {
         tftacrules.pandterm_return z1 = null;
 
 
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:94:4: ( ^( AND ^( XOR x= notterm y= negatedterm ) z1= pandterm ) )
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:94:4: ^( AND ^( XOR x= notterm y= negatedterm ) z1= pandterm )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:115:4: ( ^( AND ^( XOR x= notterm y= negatedterm ) z1= pandterm ) )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:115:4: ^( AND ^( XOR x= notterm y= negatedterm ) z1= pandterm )
         {
-        match(input,AND,FOLLOW_AND_in_synpred27_tftacrules1003); if (state.failed) return ;
+        match(input,AND,FOLLOW_AND_in_synpred27_tftacrules1002); if (state.failed) return ;
 
         match(input, Token.DOWN, null); if (state.failed) return ;
-        match(input,XOR,FOLLOW_XOR_in_synpred27_tftacrules1006); if (state.failed) return ;
+        match(input,XOR,FOLLOW_XOR_in_synpred27_tftacrules1005); if (state.failed) return ;
 
         match(input, Token.DOWN, null); if (state.failed) return ;
-        pushFollow(FOLLOW_notterm_in_synpred27_tftacrules1010);
+        pushFollow(FOLLOW_notterm_in_synpred27_tftacrules1009);
         x=notterm();
 
         state._fsp--;
         if (state.failed) return ;
-        pushFollow(FOLLOW_negatedterm_in_synpred27_tftacrules1014);
+        pushFollow(FOLLOW_negatedterm_in_synpred27_tftacrules1013);
         y=negatedterm();
 
         state._fsp--;
         if (state.failed) return ;
 
         match(input, Token.UP, null); if (state.failed) return ;
-        pushFollow(FOLLOW_pandterm_in_synpred27_tftacrules1019);
+        pushFollow(FOLLOW_pandterm_in_synpred27_tftacrules1018);
         z1=pandterm();
 
         state._fsp--;
@@ -7504,28 +7504,28 @@ public class tftacrules extends TreeParser {
         tftacrules.sandterm_return z2 = null;
 
 
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:96:4: ( ^( AND ^( OR x= notterm y= negatedterm ) z2= sandterm ) )
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:96:4: ^( AND ^( OR x= notterm y= negatedterm ) z2= sandterm )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:117:4: ( ^( AND ^( OR x= notterm y= negatedterm ) z2= sandterm ) )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:117:4: ^( AND ^( OR x= notterm y= negatedterm ) z2= sandterm )
         {
-        match(input,AND,FOLLOW_AND_in_synpred28_tftacrules1055); if (state.failed) return ;
+        match(input,AND,FOLLOW_AND_in_synpred28_tftacrules1054); if (state.failed) return ;
 
         match(input, Token.DOWN, null); if (state.failed) return ;
-        match(input,OR,FOLLOW_OR_in_synpred28_tftacrules1058); if (state.failed) return ;
+        match(input,OR,FOLLOW_OR_in_synpred28_tftacrules1057); if (state.failed) return ;
 
         match(input, Token.DOWN, null); if (state.failed) return ;
-        pushFollow(FOLLOW_notterm_in_synpred28_tftacrules1062);
+        pushFollow(FOLLOW_notterm_in_synpred28_tftacrules1061);
         x=notterm();
 
         state._fsp--;
         if (state.failed) return ;
-        pushFollow(FOLLOW_negatedterm_in_synpred28_tftacrules1066);
+        pushFollow(FOLLOW_negatedterm_in_synpred28_tftacrules1065);
         y=negatedterm();
 
         state._fsp--;
         if (state.failed) return ;
 
         match(input, Token.UP, null); if (state.failed) return ;
-        pushFollow(FOLLOW_sandterm_in_synpred28_tftacrules1071);
+        pushFollow(FOLLOW_sandterm_in_synpred28_tftacrules1070);
         z2=sandterm();
 
         state._fsp--;
@@ -7546,28 +7546,28 @@ public class tftacrules extends TreeParser {
         tftacrules.sandterm_return z2 = null;
 
 
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:98:4: ( ^( AND ^( XOR x= notterm y= negatedterm ) z2= sandterm ) )
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:98:4: ^( AND ^( XOR x= notterm y= negatedterm ) z2= sandterm )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:119:4: ( ^( AND ^( XOR x= notterm y= negatedterm ) z2= sandterm ) )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:119:4: ^( AND ^( XOR x= notterm y= negatedterm ) z2= sandterm )
         {
-        match(input,AND,FOLLOW_AND_in_synpred29_tftacrules1107); if (state.failed) return ;
+        match(input,AND,FOLLOW_AND_in_synpred29_tftacrules1106); if (state.failed) return ;
 
         match(input, Token.DOWN, null); if (state.failed) return ;
-        match(input,XOR,FOLLOW_XOR_in_synpred29_tftacrules1110); if (state.failed) return ;
+        match(input,XOR,FOLLOW_XOR_in_synpred29_tftacrules1109); if (state.failed) return ;
 
         match(input, Token.DOWN, null); if (state.failed) return ;
-        pushFollow(FOLLOW_notterm_in_synpred29_tftacrules1114);
+        pushFollow(FOLLOW_notterm_in_synpred29_tftacrules1113);
         x=notterm();
 
         state._fsp--;
         if (state.failed) return ;
-        pushFollow(FOLLOW_negatedterm_in_synpred29_tftacrules1118);
+        pushFollow(FOLLOW_negatedterm_in_synpred29_tftacrules1117);
         y=negatedterm();
 
         state._fsp--;
         if (state.failed) return ;
 
         match(input, Token.UP, null); if (state.failed) return ;
-        pushFollow(FOLLOW_sandterm_in_synpred29_tftacrules1123);
+        pushFollow(FOLLOW_sandterm_in_synpred29_tftacrules1122);
         z2=sandterm();
 
         state._fsp--;
@@ -7588,28 +7588,28 @@ public class tftacrules extends TreeParser {
         tftacrules.ae_return z3 = null;
 
 
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:100:4: ( ^( AND ^( OR x= notterm y= negatedterm ) z3= ae ) )
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:100:4: ^( AND ^( OR x= notterm y= negatedterm ) z3= ae )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:121:4: ( ^( AND ^( OR x= notterm y= negatedterm ) z3= ae ) )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:121:4: ^( AND ^( OR x= notterm y= negatedterm ) z3= ae )
         {
-        match(input,AND,FOLLOW_AND_in_synpred30_tftacrules1159); if (state.failed) return ;
+        match(input,AND,FOLLOW_AND_in_synpred30_tftacrules1158); if (state.failed) return ;
 
         match(input, Token.DOWN, null); if (state.failed) return ;
-        match(input,OR,FOLLOW_OR_in_synpred30_tftacrules1162); if (state.failed) return ;
+        match(input,OR,FOLLOW_OR_in_synpred30_tftacrules1161); if (state.failed) return ;
 
         match(input, Token.DOWN, null); if (state.failed) return ;
-        pushFollow(FOLLOW_notterm_in_synpred30_tftacrules1166);
+        pushFollow(FOLLOW_notterm_in_synpred30_tftacrules1165);
         x=notterm();
 
         state._fsp--;
         if (state.failed) return ;
-        pushFollow(FOLLOW_negatedterm_in_synpred30_tftacrules1170);
+        pushFollow(FOLLOW_negatedterm_in_synpred30_tftacrules1169);
         y=negatedterm();
 
         state._fsp--;
         if (state.failed) return ;
 
         match(input, Token.UP, null); if (state.failed) return ;
-        pushFollow(FOLLOW_ae_in_synpred30_tftacrules1175);
+        pushFollow(FOLLOW_ae_in_synpred30_tftacrules1174);
         z3=ae();
 
         state._fsp--;
@@ -7630,28 +7630,28 @@ public class tftacrules extends TreeParser {
         tftacrules.ae_return z3 = null;
 
 
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:102:4: ( ^( AND ^( XOR x= notterm y= negatedterm ) z3= ae ) )
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:102:4: ^( AND ^( XOR x= notterm y= negatedterm ) z3= ae )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:123:4: ( ^( AND ^( XOR x= notterm y= negatedterm ) z3= ae ) )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:123:4: ^( AND ^( XOR x= notterm y= negatedterm ) z3= ae )
         {
-        match(input,AND,FOLLOW_AND_in_synpred31_tftacrules1211); if (state.failed) return ;
+        match(input,AND,FOLLOW_AND_in_synpred31_tftacrules1210); if (state.failed) return ;
 
         match(input, Token.DOWN, null); if (state.failed) return ;
-        match(input,XOR,FOLLOW_XOR_in_synpred31_tftacrules1214); if (state.failed) return ;
+        match(input,XOR,FOLLOW_XOR_in_synpred31_tftacrules1213); if (state.failed) return ;
 
         match(input, Token.DOWN, null); if (state.failed) return ;
-        pushFollow(FOLLOW_notterm_in_synpred31_tftacrules1218);
+        pushFollow(FOLLOW_notterm_in_synpred31_tftacrules1217);
         x=notterm();
 
         state._fsp--;
         if (state.failed) return ;
-        pushFollow(FOLLOW_negatedterm_in_synpred31_tftacrules1222);
+        pushFollow(FOLLOW_negatedterm_in_synpred31_tftacrules1221);
         y=negatedterm();
 
         state._fsp--;
         if (state.failed) return ;
 
         match(input, Token.UP, null); if (state.failed) return ;
-        pushFollow(FOLLOW_ae_in_synpred31_tftacrules1227);
+        pushFollow(FOLLOW_ae_in_synpred31_tftacrules1226);
         z3=ae();
 
         state._fsp--;
@@ -7672,26 +7672,26 @@ public class tftacrules extends TreeParser {
         tftacrules.tt_return t2 = null;
 
 
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:104:4: ( ^( AND n1= notterm ^( OR t1= tt t2= tt ) ) )
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:104:4: ^( AND n1= notterm ^( OR t1= tt t2= tt ) )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:125:4: ( ^( AND n1= notterm ^( OR t1= tt t2= tt ) ) )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:125:4: ^( AND n1= notterm ^( OR t1= tt t2= tt ) )
         {
-        match(input,AND,FOLLOW_AND_in_synpred32_tftacrules1263); if (state.failed) return ;
+        match(input,AND,FOLLOW_AND_in_synpred32_tftacrules1262); if (state.failed) return ;
 
         match(input, Token.DOWN, null); if (state.failed) return ;
-        pushFollow(FOLLOW_notterm_in_synpred32_tftacrules1267);
+        pushFollow(FOLLOW_notterm_in_synpred32_tftacrules1266);
         n1=notterm();
 
         state._fsp--;
         if (state.failed) return ;
-        match(input,OR,FOLLOW_OR_in_synpred32_tftacrules1270); if (state.failed) return ;
+        match(input,OR,FOLLOW_OR_in_synpred32_tftacrules1269); if (state.failed) return ;
 
         match(input, Token.DOWN, null); if (state.failed) return ;
-        pushFollow(FOLLOW_tt_in_synpred32_tftacrules1274);
+        pushFollow(FOLLOW_tt_in_synpred32_tftacrules1273);
         t1=tt();
 
         state._fsp--;
         if (state.failed) return ;
-        pushFollow(FOLLOW_tt_in_synpred32_tftacrules1278);
+        pushFollow(FOLLOW_tt_in_synpred32_tftacrules1277);
         t2=tt();
 
         state._fsp--;
@@ -7714,26 +7714,26 @@ public class tftacrules extends TreeParser {
         tftacrules.tt_return t2 = null;
 
 
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:106:4: ( ^( AND n1= notterm ^( XOR t1= tt t2= tt ) ) )
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:106:4: ^( AND n1= notterm ^( XOR t1= tt t2= tt ) )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:127:4: ( ^( AND n1= notterm ^( XOR t1= tt t2= tt ) ) )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:127:4: ^( AND n1= notterm ^( XOR t1= tt t2= tt ) )
         {
-        match(input,AND,FOLLOW_AND_in_synpred33_tftacrules1318); if (state.failed) return ;
+        match(input,AND,FOLLOW_AND_in_synpred33_tftacrules1317); if (state.failed) return ;
 
         match(input, Token.DOWN, null); if (state.failed) return ;
-        pushFollow(FOLLOW_notterm_in_synpred33_tftacrules1322);
+        pushFollow(FOLLOW_notterm_in_synpred33_tftacrules1321);
         n1=notterm();
 
         state._fsp--;
         if (state.failed) return ;
-        match(input,XOR,FOLLOW_XOR_in_synpred33_tftacrules1325); if (state.failed) return ;
+        match(input,XOR,FOLLOW_XOR_in_synpred33_tftacrules1324); if (state.failed) return ;
 
         match(input, Token.DOWN, null); if (state.failed) return ;
-        pushFollow(FOLLOW_tt_in_synpred33_tftacrules1329);
+        pushFollow(FOLLOW_tt_in_synpred33_tftacrules1328);
         t1=tt();
 
         state._fsp--;
         if (state.failed) return ;
-        pushFollow(FOLLOW_tt_in_synpred33_tftacrules1333);
+        pushFollow(FOLLOW_tt_in_synpred33_tftacrules1332);
         t2=tt();
 
         state._fsp--;
@@ -7756,26 +7756,26 @@ public class tftacrules extends TreeParser {
         tftacrules.metaPandSandAE_return m1 = null;
 
 
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:108:4: ( ^( AND n1= notterm ^( AND n2= notterm m1= metaPandSandAE ) ) )
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:108:4: ^( AND n1= notterm ^( AND n2= notterm m1= metaPandSandAE ) )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:129:4: ( ^( AND n1= notterm ^( AND n2= notterm m1= metaPandSandAE ) ) )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:129:4: ^( AND n1= notterm ^( AND n2= notterm m1= metaPandSandAE ) )
         {
-        match(input,AND,FOLLOW_AND_in_synpred34_tftacrules1372); if (state.failed) return ;
+        match(input,AND,FOLLOW_AND_in_synpred34_tftacrules1371); if (state.failed) return ;
 
         match(input, Token.DOWN, null); if (state.failed) return ;
-        pushFollow(FOLLOW_notterm_in_synpred34_tftacrules1376);
+        pushFollow(FOLLOW_notterm_in_synpred34_tftacrules1375);
         n1=notterm();
 
         state._fsp--;
         if (state.failed) return ;
-        match(input,AND,FOLLOW_AND_in_synpred34_tftacrules1379); if (state.failed) return ;
+        match(input,AND,FOLLOW_AND_in_synpred34_tftacrules1378); if (state.failed) return ;
 
         match(input, Token.DOWN, null); if (state.failed) return ;
-        pushFollow(FOLLOW_notterm_in_synpred34_tftacrules1383);
+        pushFollow(FOLLOW_notterm_in_synpred34_tftacrules1382);
         n2=notterm();
 
         state._fsp--;
         if (state.failed) return ;
-        pushFollow(FOLLOW_metaPandSandAE_in_synpred34_tftacrules1387);
+        pushFollow(FOLLOW_metaPandSandAE_in_synpred34_tftacrules1386);
         m1=metaPandSandAE();
 
         state._fsp--;
@@ -7791,10 +7791,10 @@ public class tftacrules extends TreeParser {
 
     // $ANTLR start synpred35_tftacrules
     public final void synpred35_tftacrules_fragment() throws RecognitionException {   
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:114:4: ( negandterm )
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:114:4: negandterm
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:135:4: ( negandterm )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:135:4: negandterm
         {
-        pushFollow(FOLLOW_negandterm_in_synpred35_tftacrules1435);
+        pushFollow(FOLLOW_negandterm_in_synpred35_tftacrules1434);
         negandterm();
 
         state._fsp--;
@@ -7806,18 +7806,18 @@ public class tftacrules extends TreeParser {
 
     // $ANTLR start synpred39_tftacrules
     public final void synpred39_tftacrules_fragment() throws RecognitionException {   
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:125:10: ( ^( OR ae TRUE ) )
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:125:10: ^( OR ae TRUE )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:146:10: ( ^( OR ae TRUE ) )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:146:10: ^( OR ae TRUE )
         {
-        match(input,OR,FOLLOW_OR_in_synpred39_tftacrules1479); if (state.failed) return ;
+        match(input,OR,FOLLOW_OR_in_synpred39_tftacrules1478); if (state.failed) return ;
 
         match(input, Token.DOWN, null); if (state.failed) return ;
-        pushFollow(FOLLOW_ae_in_synpred39_tftacrules1481);
+        pushFollow(FOLLOW_ae_in_synpred39_tftacrules1480);
         ae();
 
         state._fsp--;
         if (state.failed) return ;
-        match(input,TRUE,FOLLOW_TRUE_in_synpred39_tftacrules1483); if (state.failed) return ;
+        match(input,TRUE,FOLLOW_TRUE_in_synpred39_tftacrules1482); if (state.failed) return ;
 
         match(input, Token.UP, null); if (state.failed) return ;
 
@@ -7827,13 +7827,13 @@ public class tftacrules extends TreeParser {
 
     // $ANTLR start synpred40_tftacrules
     public final void synpred40_tftacrules_fragment() throws RecognitionException {   
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:127:4: ( ^( OR TRUE . ) )
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:127:4: ^( OR TRUE . )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:148:4: ( ^( OR TRUE . ) )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:148:4: ^( OR TRUE . )
         {
-        match(input,OR,FOLLOW_OR_in_synpred40_tftacrules1498); if (state.failed) return ;
+        match(input,OR,FOLLOW_OR_in_synpred40_tftacrules1497); if (state.failed) return ;
 
         match(input, Token.DOWN, null); if (state.failed) return ;
-        match(input,TRUE,FOLLOW_TRUE_in_synpred40_tftacrules1500); if (state.failed) return ;
+        match(input,TRUE,FOLLOW_TRUE_in_synpred40_tftacrules1499); if (state.failed) return ;
         matchAny(input); if (state.failed) return ;
 
         match(input, Token.UP, null); if (state.failed) return ;
@@ -7847,14 +7847,14 @@ public class tftacrules extends TreeParser {
         tftacrules.ae_return a = null;
 
 
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:129:4: ( ^( OR FALSE a= ae ) )
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:129:4: ^( OR FALSE a= ae )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:150:4: ( ^( OR FALSE a= ae ) )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:150:4: ^( OR FALSE a= ae )
         {
-        match(input,OR,FOLLOW_OR_in_synpred41_tftacrules1516); if (state.failed) return ;
+        match(input,OR,FOLLOW_OR_in_synpred41_tftacrules1515); if (state.failed) return ;
 
         match(input, Token.DOWN, null); if (state.failed) return ;
-        match(input,FALSE,FOLLOW_FALSE_in_synpred41_tftacrules1518); if (state.failed) return ;
-        pushFollow(FOLLOW_ae_in_synpred41_tftacrules1522);
+        match(input,FALSE,FOLLOW_FALSE_in_synpred41_tftacrules1517); if (state.failed) return ;
+        pushFollow(FOLLOW_ae_in_synpred41_tftacrules1521);
         a=ae();
 
         state._fsp--;
@@ -7871,18 +7871,18 @@ public class tftacrules extends TreeParser {
         tftacrules.ae_return a = null;
 
 
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:131:4: ( ^( OR a= ae FALSE ) )
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:131:4: ^( OR a= ae FALSE )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:152:4: ( ^( OR a= ae FALSE ) )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:152:4: ^( OR a= ae FALSE )
         {
-        match(input,OR,FOLLOW_OR_in_synpred42_tftacrules1537); if (state.failed) return ;
+        match(input,OR,FOLLOW_OR_in_synpred42_tftacrules1536); if (state.failed) return ;
 
         match(input, Token.DOWN, null); if (state.failed) return ;
-        pushFollow(FOLLOW_ae_in_synpred42_tftacrules1541);
+        pushFollow(FOLLOW_ae_in_synpred42_tftacrules1540);
         a=ae();
 
         state._fsp--;
         if (state.failed) return ;
-        match(input,FALSE,FOLLOW_FALSE_in_synpred42_tftacrules1543); if (state.failed) return ;
+        match(input,FALSE,FOLLOW_FALSE_in_synpred42_tftacrules1542); if (state.failed) return ;
 
         match(input, Token.UP, null); if (state.failed) return ;
 
@@ -7892,18 +7892,18 @@ public class tftacrules extends TreeParser {
 
     // $ANTLR start synpred43_tftacrules
     public final void synpred43_tftacrules_fragment() throws RecognitionException {   
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:136:11: ( ^( XOR ae TRUE ) )
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:136:11: ^( XOR ae TRUE )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:157:11: ( ^( XOR ae TRUE ) )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:157:11: ^( XOR ae TRUE )
         {
-        match(input,XOR,FOLLOW_XOR_in_synpred43_tftacrules1575); if (state.failed) return ;
+        match(input,XOR,FOLLOW_XOR_in_synpred43_tftacrules1574); if (state.failed) return ;
 
         match(input, Token.DOWN, null); if (state.failed) return ;
-        pushFollow(FOLLOW_ae_in_synpred43_tftacrules1577);
+        pushFollow(FOLLOW_ae_in_synpred43_tftacrules1576);
         ae();
 
         state._fsp--;
         if (state.failed) return ;
-        match(input,TRUE,FOLLOW_TRUE_in_synpred43_tftacrules1579); if (state.failed) return ;
+        match(input,TRUE,FOLLOW_TRUE_in_synpred43_tftacrules1578); if (state.failed) return ;
 
         match(input, Token.UP, null); if (state.failed) return ;
 
@@ -7913,13 +7913,13 @@ public class tftacrules extends TreeParser {
 
     // $ANTLR start synpred44_tftacrules
     public final void synpred44_tftacrules_fragment() throws RecognitionException {   
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:138:4: ( ^( XOR TRUE . ) )
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:138:4: ^( XOR TRUE . )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:159:4: ( ^( XOR TRUE . ) )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:159:4: ^( XOR TRUE . )
         {
-        match(input,XOR,FOLLOW_XOR_in_synpred44_tftacrules1594); if (state.failed) return ;
+        match(input,XOR,FOLLOW_XOR_in_synpred44_tftacrules1593); if (state.failed) return ;
 
         match(input, Token.DOWN, null); if (state.failed) return ;
-        match(input,TRUE,FOLLOW_TRUE_in_synpred44_tftacrules1596); if (state.failed) return ;
+        match(input,TRUE,FOLLOW_TRUE_in_synpred44_tftacrules1595); if (state.failed) return ;
         matchAny(input); if (state.failed) return ;
 
         match(input, Token.UP, null); if (state.failed) return ;
@@ -7933,14 +7933,14 @@ public class tftacrules extends TreeParser {
         tftacrules.ae_return a = null;
 
 
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:140:4: ( ^( XOR FALSE a= ae ) )
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:140:4: ^( XOR FALSE a= ae )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:161:4: ( ^( XOR FALSE a= ae ) )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:161:4: ^( XOR FALSE a= ae )
         {
-        match(input,XOR,FOLLOW_XOR_in_synpred45_tftacrules1612); if (state.failed) return ;
+        match(input,XOR,FOLLOW_XOR_in_synpred45_tftacrules1611); if (state.failed) return ;
 
         match(input, Token.DOWN, null); if (state.failed) return ;
-        match(input,FALSE,FOLLOW_FALSE_in_synpred45_tftacrules1614); if (state.failed) return ;
-        pushFollow(FOLLOW_ae_in_synpred45_tftacrules1618);
+        match(input,FALSE,FOLLOW_FALSE_in_synpred45_tftacrules1613); if (state.failed) return ;
+        pushFollow(FOLLOW_ae_in_synpred45_tftacrules1617);
         a=ae();
 
         state._fsp--;
@@ -7957,18 +7957,18 @@ public class tftacrules extends TreeParser {
         tftacrules.ae_return a = null;
 
 
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:142:4: ( ^( XOR a= ae FALSE ) )
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:142:4: ^( XOR a= ae FALSE )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:163:4: ( ^( XOR a= ae FALSE ) )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:163:4: ^( XOR a= ae FALSE )
         {
-        match(input,XOR,FOLLOW_XOR_in_synpred46_tftacrules1633); if (state.failed) return ;
+        match(input,XOR,FOLLOW_XOR_in_synpred46_tftacrules1632); if (state.failed) return ;
 
         match(input, Token.DOWN, null); if (state.failed) return ;
-        pushFollow(FOLLOW_ae_in_synpred46_tftacrules1637);
+        pushFollow(FOLLOW_ae_in_synpred46_tftacrules1636);
         a=ae();
 
         state._fsp--;
         if (state.failed) return ;
-        match(input,FALSE,FOLLOW_FALSE_in_synpred46_tftacrules1639); if (state.failed) return ;
+        match(input,FALSE,FOLLOW_FALSE_in_synpred46_tftacrules1638); if (state.failed) return ;
 
         match(input, Token.UP, null); if (state.failed) return ;
 
@@ -7978,18 +7978,18 @@ public class tftacrules extends TreeParser {
 
     // $ANTLR start synpred47_tftacrules
     public final void synpred47_tftacrules_fragment() throws RecognitionException {   
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:147:11: ( ^( PAND ae FALSE ) )
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:147:11: ^( PAND ae FALSE )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:168:11: ( ^( PAND ae FALSE ) )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:168:11: ^( PAND ae FALSE )
         {
-        match(input,PAND,FOLLOW_PAND_in_synpred47_tftacrules1670); if (state.failed) return ;
+        match(input,PAND,FOLLOW_PAND_in_synpred47_tftacrules1669); if (state.failed) return ;
 
         match(input, Token.DOWN, null); if (state.failed) return ;
-        pushFollow(FOLLOW_ae_in_synpred47_tftacrules1672);
+        pushFollow(FOLLOW_ae_in_synpred47_tftacrules1671);
         ae();
 
         state._fsp--;
         if (state.failed) return ;
-        match(input,FALSE,FOLLOW_FALSE_in_synpred47_tftacrules1674); if (state.failed) return ;
+        match(input,FALSE,FOLLOW_FALSE_in_synpred47_tftacrules1673); if (state.failed) return ;
 
         match(input, Token.UP, null); if (state.failed) return ;
 
@@ -7999,13 +7999,13 @@ public class tftacrules extends TreeParser {
 
     // $ANTLR start synpred48_tftacrules
     public final void synpred48_tftacrules_fragment() throws RecognitionException {   
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:149:4: ( ^( PAND FALSE . ) )
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:149:4: ^( PAND FALSE . )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:170:4: ( ^( PAND FALSE . ) )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:170:4: ^( PAND FALSE . )
         {
-        match(input,PAND,FOLLOW_PAND_in_synpred48_tftacrules1689); if (state.failed) return ;
+        match(input,PAND,FOLLOW_PAND_in_synpred48_tftacrules1688); if (state.failed) return ;
 
         match(input, Token.DOWN, null); if (state.failed) return ;
-        match(input,FALSE,FOLLOW_FALSE_in_synpred48_tftacrules1691); if (state.failed) return ;
+        match(input,FALSE,FOLLOW_FALSE_in_synpred48_tftacrules1690); if (state.failed) return ;
         matchAny(input); if (state.failed) return ;
 
         match(input, Token.UP, null); if (state.failed) return ;
@@ -8016,18 +8016,18 @@ public class tftacrules extends TreeParser {
 
     // $ANTLR start synpred49_tftacrules
     public final void synpred49_tftacrules_fragment() throws RecognitionException {   
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:151:4: ( ^( PAND ae TRUE ) )
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:151:4: ^( PAND ae TRUE )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:172:4: ( ^( PAND ae TRUE ) )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:172:4: ^( PAND ae TRUE )
         {
-        match(input,PAND,FOLLOW_PAND_in_synpred49_tftacrules1707); if (state.failed) return ;
+        match(input,PAND,FOLLOW_PAND_in_synpred49_tftacrules1706); if (state.failed) return ;
 
         match(input, Token.DOWN, null); if (state.failed) return ;
-        pushFollow(FOLLOW_ae_in_synpred49_tftacrules1709);
+        pushFollow(FOLLOW_ae_in_synpred49_tftacrules1708);
         ae();
 
         state._fsp--;
         if (state.failed) return ;
-        match(input,TRUE,FOLLOW_TRUE_in_synpred49_tftacrules1711); if (state.failed) return ;
+        match(input,TRUE,FOLLOW_TRUE_in_synpred49_tftacrules1710); if (state.failed) return ;
 
         match(input, Token.UP, null); if (state.failed) return ;
 
@@ -8040,14 +8040,14 @@ public class tftacrules extends TreeParser {
         tftacrules.ae_return a = null;
 
 
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:153:4: ( ^( PAND TRUE a= ae ) )
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:153:4: ^( PAND TRUE a= ae )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:174:4: ( ^( PAND TRUE a= ae ) )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:174:4: ^( PAND TRUE a= ae )
         {
-        match(input,PAND,FOLLOW_PAND_in_synpred50_tftacrules1726); if (state.failed) return ;
+        match(input,PAND,FOLLOW_PAND_in_synpred50_tftacrules1725); if (state.failed) return ;
 
         match(input, Token.DOWN, null); if (state.failed) return ;
-        match(input,TRUE,FOLLOW_TRUE_in_synpred50_tftacrules1728); if (state.failed) return ;
-        pushFollow(FOLLOW_ae_in_synpred50_tftacrules1732);
+        match(input,TRUE,FOLLOW_TRUE_in_synpred50_tftacrules1727); if (state.failed) return ;
+        pushFollow(FOLLOW_ae_in_synpred50_tftacrules1731);
         a=ae();
 
         state._fsp--;
@@ -8068,28 +8068,28 @@ public class tftacrules extends TreeParser {
         tftacrules.tt_return z = null;
 
 
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:155:4: ( ^( PAND ^( XOR x= tt y= tt ) z= tt ) )
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:155:4: ^( PAND ^( XOR x= tt y= tt ) z= tt )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:176:4: ( ^( PAND ^( XOR x= tt y= tt ) z= tt ) )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:176:4: ^( PAND ^( XOR x= tt y= tt ) z= tt )
         {
-        match(input,PAND,FOLLOW_PAND_in_synpred51_tftacrules1747); if (state.failed) return ;
+        match(input,PAND,FOLLOW_PAND_in_synpred51_tftacrules1746); if (state.failed) return ;
 
         match(input, Token.DOWN, null); if (state.failed) return ;
-        match(input,XOR,FOLLOW_XOR_in_synpred51_tftacrules1750); if (state.failed) return ;
+        match(input,XOR,FOLLOW_XOR_in_synpred51_tftacrules1749); if (state.failed) return ;
 
         match(input, Token.DOWN, null); if (state.failed) return ;
-        pushFollow(FOLLOW_tt_in_synpred51_tftacrules1754);
+        pushFollow(FOLLOW_tt_in_synpred51_tftacrules1753);
         x=tt();
 
         state._fsp--;
         if (state.failed) return ;
-        pushFollow(FOLLOW_tt_in_synpred51_tftacrules1758);
+        pushFollow(FOLLOW_tt_in_synpred51_tftacrules1757);
         y=tt();
 
         state._fsp--;
         if (state.failed) return ;
 
         match(input, Token.UP, null); if (state.failed) return ;
-        pushFollow(FOLLOW_tt_in_synpred51_tftacrules1763);
+        pushFollow(FOLLOW_tt_in_synpred51_tftacrules1762);
         z=tt();
 
         state._fsp--;
@@ -8110,26 +8110,26 @@ public class tftacrules extends TreeParser {
         tftacrules.tt_return y = null;
 
 
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:157:4: ( ^( PAND z= tt ^( XOR x= tt y= tt ) ) )
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:157:4: ^( PAND z= tt ^( XOR x= tt y= tt ) )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:178:4: ( ^( PAND z= tt ^( XOR x= tt y= tt ) ) )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:178:4: ^( PAND z= tt ^( XOR x= tt y= tt ) )
         {
-        match(input,PAND,FOLLOW_PAND_in_synpred52_tftacrules1800); if (state.failed) return ;
+        match(input,PAND,FOLLOW_PAND_in_synpred52_tftacrules1799); if (state.failed) return ;
 
         match(input, Token.DOWN, null); if (state.failed) return ;
-        pushFollow(FOLLOW_tt_in_synpred52_tftacrules1804);
+        pushFollow(FOLLOW_tt_in_synpred52_tftacrules1803);
         z=tt();
 
         state._fsp--;
         if (state.failed) return ;
-        match(input,XOR,FOLLOW_XOR_in_synpred52_tftacrules1807); if (state.failed) return ;
+        match(input,XOR,FOLLOW_XOR_in_synpred52_tftacrules1806); if (state.failed) return ;
 
         match(input, Token.DOWN, null); if (state.failed) return ;
-        pushFollow(FOLLOW_tt_in_synpred52_tftacrules1811);
+        pushFollow(FOLLOW_tt_in_synpred52_tftacrules1810);
         x=tt();
 
         state._fsp--;
         if (state.failed) return ;
-        pushFollow(FOLLOW_tt_in_synpred52_tftacrules1815);
+        pushFollow(FOLLOW_tt_in_synpred52_tftacrules1814);
         y=tt();
 
         state._fsp--;
@@ -8152,28 +8152,28 @@ public class tftacrules extends TreeParser {
         tftacrules.tt_return z = null;
 
 
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:159:4: ( ^( PAND ^( OR x= tt y= tt ) z= tt ) )
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:159:4: ^( PAND ^( OR x= tt y= tt ) z= tt )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:180:4: ( ^( PAND ^( OR x= tt y= tt ) z= tt ) )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:180:4: ^( PAND ^( OR x= tt y= tt ) z= tt )
         {
-        match(input,PAND,FOLLOW_PAND_in_synpred53_tftacrules1854); if (state.failed) return ;
+        match(input,PAND,FOLLOW_PAND_in_synpred53_tftacrules1853); if (state.failed) return ;
 
         match(input, Token.DOWN, null); if (state.failed) return ;
-        match(input,OR,FOLLOW_OR_in_synpred53_tftacrules1857); if (state.failed) return ;
+        match(input,OR,FOLLOW_OR_in_synpred53_tftacrules1856); if (state.failed) return ;
 
         match(input, Token.DOWN, null); if (state.failed) return ;
-        pushFollow(FOLLOW_tt_in_synpred53_tftacrules1861);
+        pushFollow(FOLLOW_tt_in_synpred53_tftacrules1860);
         x=tt();
 
         state._fsp--;
         if (state.failed) return ;
-        pushFollow(FOLLOW_tt_in_synpred53_tftacrules1865);
+        pushFollow(FOLLOW_tt_in_synpred53_tftacrules1864);
         y=tt();
 
         state._fsp--;
         if (state.failed) return ;
 
         match(input, Token.UP, null); if (state.failed) return ;
-        pushFollow(FOLLOW_tt_in_synpred53_tftacrules1870);
+        pushFollow(FOLLOW_tt_in_synpred53_tftacrules1869);
         z=tt();
 
         state._fsp--;
@@ -8194,26 +8194,26 @@ public class tftacrules extends TreeParser {
         tftacrules.tt_return y = null;
 
 
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:161:4: ( ^( PAND z= tt ^( OR x= tt y= tt ) ) )
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:161:4: ^( PAND z= tt ^( OR x= tt y= tt ) )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:182:4: ( ^( PAND z= tt ^( OR x= tt y= tt ) ) )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:182:4: ^( PAND z= tt ^( OR x= tt y= tt ) )
         {
-        match(input,PAND,FOLLOW_PAND_in_synpred54_tftacrules1907); if (state.failed) return ;
+        match(input,PAND,FOLLOW_PAND_in_synpred54_tftacrules1906); if (state.failed) return ;
 
         match(input, Token.DOWN, null); if (state.failed) return ;
-        pushFollow(FOLLOW_tt_in_synpred54_tftacrules1911);
+        pushFollow(FOLLOW_tt_in_synpred54_tftacrules1910);
         z=tt();
 
         state._fsp--;
         if (state.failed) return ;
-        match(input,OR,FOLLOW_OR_in_synpred54_tftacrules1914); if (state.failed) return ;
+        match(input,OR,FOLLOW_OR_in_synpred54_tftacrules1913); if (state.failed) return ;
 
         match(input, Token.DOWN, null); if (state.failed) return ;
-        pushFollow(FOLLOW_tt_in_synpred54_tftacrules1918);
+        pushFollow(FOLLOW_tt_in_synpred54_tftacrules1917);
         x=tt();
 
         state._fsp--;
         if (state.failed) return ;
-        pushFollow(FOLLOW_tt_in_synpred54_tftacrules1922);
+        pushFollow(FOLLOW_tt_in_synpred54_tftacrules1921);
         y=tt();
 
         state._fsp--;
@@ -8236,26 +8236,26 @@ public class tftacrules extends TreeParser {
         tftacrules.tt_return y = null;
 
 
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:163:4: ( ^( PAND z= tt ^( PAND x= tt y= tt ) ) )
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:163:4: ^( PAND z= tt ^( PAND x= tt y= tt ) )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:184:4: ( ^( PAND z= tt ^( PAND x= tt y= tt ) ) )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:184:4: ^( PAND z= tt ^( PAND x= tt y= tt ) )
         {
-        match(input,PAND,FOLLOW_PAND_in_synpred55_tftacrules2006); if (state.failed) return ;
+        match(input,PAND,FOLLOW_PAND_in_synpred55_tftacrules2005); if (state.failed) return ;
 
         match(input, Token.DOWN, null); if (state.failed) return ;
-        pushFollow(FOLLOW_tt_in_synpred55_tftacrules2010);
+        pushFollow(FOLLOW_tt_in_synpred55_tftacrules2009);
         z=tt();
 
         state._fsp--;
         if (state.failed) return ;
-        match(input,PAND,FOLLOW_PAND_in_synpred55_tftacrules2013); if (state.failed) return ;
+        match(input,PAND,FOLLOW_PAND_in_synpred55_tftacrules2012); if (state.failed) return ;
 
         match(input, Token.DOWN, null); if (state.failed) return ;
-        pushFollow(FOLLOW_tt_in_synpred55_tftacrules2017);
+        pushFollow(FOLLOW_tt_in_synpred55_tftacrules2016);
         x=tt();
 
         state._fsp--;
         if (state.failed) return ;
-        pushFollow(FOLLOW_tt_in_synpred55_tftacrules2021);
+        pushFollow(FOLLOW_tt_in_synpred55_tftacrules2020);
         y=tt();
 
         state._fsp--;
@@ -8278,26 +8278,26 @@ public class tftacrules extends TreeParser {
         tftacrules.tt_return z = null;
 
 
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:165:4: ( ^( PAND x= tt ^( AND b= notterm z= tt ) ) )
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:165:4: ^( PAND x= tt ^( AND b= notterm z= tt ) )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:186:4: ( ^( PAND x= tt ^( AND b= notterm z= tt ) ) )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:186:4: ^( PAND x= tt ^( AND b= notterm z= tt ) )
         {
-        match(input,PAND,FOLLOW_PAND_in_synpred56_tftacrules2051); if (state.failed) return ;
+        match(input,PAND,FOLLOW_PAND_in_synpred56_tftacrules2050); if (state.failed) return ;
 
         match(input, Token.DOWN, null); if (state.failed) return ;
-        pushFollow(FOLLOW_tt_in_synpred56_tftacrules2055);
+        pushFollow(FOLLOW_tt_in_synpred56_tftacrules2054);
         x=tt();
 
         state._fsp--;
         if (state.failed) return ;
-        match(input,AND,FOLLOW_AND_in_synpred56_tftacrules2058); if (state.failed) return ;
+        match(input,AND,FOLLOW_AND_in_synpred56_tftacrules2057); if (state.failed) return ;
 
         match(input, Token.DOWN, null); if (state.failed) return ;
-        pushFollow(FOLLOW_notterm_in_synpred56_tftacrules2062);
+        pushFollow(FOLLOW_notterm_in_synpred56_tftacrules2061);
         b=notterm();
 
         state._fsp--;
         if (state.failed) return ;
-        pushFollow(FOLLOW_tt_in_synpred56_tftacrules2066);
+        pushFollow(FOLLOW_tt_in_synpred56_tftacrules2065);
         z=tt();
 
         state._fsp--;
@@ -8320,28 +8320,28 @@ public class tftacrules extends TreeParser {
         tftacrules.tt_return z = null;
 
 
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:167:4: ( ^( PAND ^( AND n1= notterm m1= metaPandSandAE ) z= tt ) )
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:167:4: ^( PAND ^( AND n1= notterm m1= metaPandSandAE ) z= tt )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:188:4: ( ^( PAND ^( AND n1= notterm m1= metaPandSandAE ) z= tt ) )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:188:4: ^( PAND ^( AND n1= notterm m1= metaPandSandAE ) z= tt )
         {
-        match(input,PAND,FOLLOW_PAND_in_synpred57_tftacrules2096); if (state.failed) return ;
+        match(input,PAND,FOLLOW_PAND_in_synpred57_tftacrules2095); if (state.failed) return ;
 
         match(input, Token.DOWN, null); if (state.failed) return ;
-        match(input,AND,FOLLOW_AND_in_synpred57_tftacrules2099); if (state.failed) return ;
+        match(input,AND,FOLLOW_AND_in_synpred57_tftacrules2098); if (state.failed) return ;
 
         match(input, Token.DOWN, null); if (state.failed) return ;
-        pushFollow(FOLLOW_notterm_in_synpred57_tftacrules2103);
+        pushFollow(FOLLOW_notterm_in_synpred57_tftacrules2102);
         n1=notterm();
 
         state._fsp--;
         if (state.failed) return ;
-        pushFollow(FOLLOW_metaPandSandAE_in_synpred57_tftacrules2107);
+        pushFollow(FOLLOW_metaPandSandAE_in_synpred57_tftacrules2106);
         m1=metaPandSandAE();
 
         state._fsp--;
         if (state.failed) return ;
 
         match(input, Token.UP, null); if (state.failed) return ;
-        pushFollow(FOLLOW_tt_in_synpred57_tftacrules2112);
+        pushFollow(FOLLOW_tt_in_synpred57_tftacrules2111);
         z=tt();
 
         state._fsp--;
@@ -8355,18 +8355,18 @@ public class tftacrules extends TreeParser {
 
     // $ANTLR start synpred58_tftacrules
     public final void synpred58_tftacrules_fragment() throws RecognitionException {   
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:172:11: ( ^( SAND ae FALSE ) )
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:172:11: ^( SAND ae FALSE )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:193:11: ( ^( SAND ae FALSE ) )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:193:11: ^( SAND ae FALSE )
         {
-        match(input,SAND,FOLLOW_SAND_in_synpred58_tftacrules2207); if (state.failed) return ;
+        match(input,SAND,FOLLOW_SAND_in_synpred58_tftacrules2206); if (state.failed) return ;
 
         match(input, Token.DOWN, null); if (state.failed) return ;
-        pushFollow(FOLLOW_ae_in_synpred58_tftacrules2209);
+        pushFollow(FOLLOW_ae_in_synpred58_tftacrules2208);
         ae();
 
         state._fsp--;
         if (state.failed) return ;
-        match(input,FALSE,FOLLOW_FALSE_in_synpred58_tftacrules2211); if (state.failed) return ;
+        match(input,FALSE,FOLLOW_FALSE_in_synpred58_tftacrules2210); if (state.failed) return ;
 
         match(input, Token.UP, null); if (state.failed) return ;
 
@@ -8376,13 +8376,13 @@ public class tftacrules extends TreeParser {
 
     // $ANTLR start synpred59_tftacrules
     public final void synpred59_tftacrules_fragment() throws RecognitionException {   
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:174:4: ( ^( SAND FALSE . ) )
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:174:4: ^( SAND FALSE . )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:195:4: ( ^( SAND FALSE . ) )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:195:4: ^( SAND FALSE . )
         {
-        match(input,SAND,FOLLOW_SAND_in_synpred59_tftacrules2226); if (state.failed) return ;
+        match(input,SAND,FOLLOW_SAND_in_synpred59_tftacrules2225); if (state.failed) return ;
 
         match(input, Token.DOWN, null); if (state.failed) return ;
-        match(input,FALSE,FOLLOW_FALSE_in_synpred59_tftacrules2228); if (state.failed) return ;
+        match(input,FALSE,FOLLOW_FALSE_in_synpred59_tftacrules2227); if (state.failed) return ;
         matchAny(input); if (state.failed) return ;
 
         match(input, Token.UP, null); if (state.failed) return ;
@@ -8393,14 +8393,14 @@ public class tftacrules extends TreeParser {
 
     // $ANTLR start synpred60_tftacrules
     public final void synpred60_tftacrules_fragment() throws RecognitionException {   
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:176:4: ( ^( SAND TRUE TRUE ) )
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:176:4: ^( SAND TRUE TRUE )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:197:4: ( ^( SAND TRUE TRUE ) )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:197:4: ^( SAND TRUE TRUE )
         {
-        match(input,SAND,FOLLOW_SAND_in_synpred60_tftacrules2244); if (state.failed) return ;
+        match(input,SAND,FOLLOW_SAND_in_synpred60_tftacrules2243); if (state.failed) return ;
 
         match(input, Token.DOWN, null); if (state.failed) return ;
-        match(input,TRUE,FOLLOW_TRUE_in_synpred60_tftacrules2246); if (state.failed) return ;
-        match(input,TRUE,FOLLOW_TRUE_in_synpred60_tftacrules2248); if (state.failed) return ;
+        match(input,TRUE,FOLLOW_TRUE_in_synpred60_tftacrules2245); if (state.failed) return ;
+        match(input,TRUE,FOLLOW_TRUE_in_synpred60_tftacrules2247); if (state.failed) return ;
 
         match(input, Token.UP, null); if (state.failed) return ;
 
@@ -8410,18 +8410,18 @@ public class tftacrules extends TreeParser {
 
     // $ANTLR start synpred61_tftacrules
     public final void synpred61_tftacrules_fragment() throws RecognitionException {   
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:178:4: ( ^( SAND ae TRUE ) )
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:178:4: ^( SAND ae TRUE )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:199:4: ( ^( SAND ae TRUE ) )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:199:4: ^( SAND ae TRUE )
         {
-        match(input,SAND,FOLLOW_SAND_in_synpred61_tftacrules2262); if (state.failed) return ;
+        match(input,SAND,FOLLOW_SAND_in_synpred61_tftacrules2261); if (state.failed) return ;
 
         match(input, Token.DOWN, null); if (state.failed) return ;
-        pushFollow(FOLLOW_ae_in_synpred61_tftacrules2264);
+        pushFollow(FOLLOW_ae_in_synpred61_tftacrules2263);
         ae();
 
         state._fsp--;
         if (state.failed) return ;
-        match(input,TRUE,FOLLOW_TRUE_in_synpred61_tftacrules2266); if (state.failed) return ;
+        match(input,TRUE,FOLLOW_TRUE_in_synpred61_tftacrules2265); if (state.failed) return ;
 
         match(input, Token.UP, null); if (state.failed) return ;
 
@@ -8431,13 +8431,13 @@ public class tftacrules extends TreeParser {
 
     // $ANTLR start synpred62_tftacrules
     public final void synpred62_tftacrules_fragment() throws RecognitionException {   
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:180:4: ( ^( SAND TRUE . ) )
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:180:4: ^( SAND TRUE . )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:201:4: ( ^( SAND TRUE . ) )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:201:4: ^( SAND TRUE . )
         {
-        match(input,SAND,FOLLOW_SAND_in_synpred62_tftacrules2281); if (state.failed) return ;
+        match(input,SAND,FOLLOW_SAND_in_synpred62_tftacrules2280); if (state.failed) return ;
 
         match(input, Token.DOWN, null); if (state.failed) return ;
-        match(input,TRUE,FOLLOW_TRUE_in_synpred62_tftacrules2283); if (state.failed) return ;
+        match(input,TRUE,FOLLOW_TRUE_in_synpred62_tftacrules2282); if (state.failed) return ;
         matchAny(input); if (state.failed) return ;
 
         match(input, Token.UP, null); if (state.failed) return ;
@@ -8455,28 +8455,28 @@ public class tftacrules extends TreeParser {
         tftacrules.tt_return z = null;
 
 
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:182:4: ( ^( SAND ^( XOR x= tt y= tt ) z= tt ) )
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:182:4: ^( SAND ^( XOR x= tt y= tt ) z= tt )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:203:4: ( ^( SAND ^( XOR x= tt y= tt ) z= tt ) )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:203:4: ^( SAND ^( XOR x= tt y= tt ) z= tt )
         {
-        match(input,SAND,FOLLOW_SAND_in_synpred63_tftacrules2299); if (state.failed) return ;
+        match(input,SAND,FOLLOW_SAND_in_synpred63_tftacrules2298); if (state.failed) return ;
 
         match(input, Token.DOWN, null); if (state.failed) return ;
-        match(input,XOR,FOLLOW_XOR_in_synpred63_tftacrules2302); if (state.failed) return ;
+        match(input,XOR,FOLLOW_XOR_in_synpred63_tftacrules2301); if (state.failed) return ;
 
         match(input, Token.DOWN, null); if (state.failed) return ;
-        pushFollow(FOLLOW_tt_in_synpred63_tftacrules2306);
+        pushFollow(FOLLOW_tt_in_synpred63_tftacrules2305);
         x=tt();
 
         state._fsp--;
         if (state.failed) return ;
-        pushFollow(FOLLOW_tt_in_synpred63_tftacrules2310);
+        pushFollow(FOLLOW_tt_in_synpred63_tftacrules2309);
         y=tt();
 
         state._fsp--;
         if (state.failed) return ;
 
         match(input, Token.UP, null); if (state.failed) return ;
-        pushFollow(FOLLOW_tt_in_synpred63_tftacrules2315);
+        pushFollow(FOLLOW_tt_in_synpred63_tftacrules2314);
         z=tt();
 
         state._fsp--;
@@ -8497,26 +8497,26 @@ public class tftacrules extends TreeParser {
         tftacrules.tt_return y = null;
 
 
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:184:4: ( ^( SAND z= tt ^( XOR x= tt y= tt ) ) )
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:184:4: ^( SAND z= tt ^( XOR x= tt y= tt ) )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:205:4: ( ^( SAND z= tt ^( XOR x= tt y= tt ) ) )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:205:4: ^( SAND z= tt ^( XOR x= tt y= tt ) )
         {
-        match(input,SAND,FOLLOW_SAND_in_synpred64_tftacrules2352); if (state.failed) return ;
+        match(input,SAND,FOLLOW_SAND_in_synpred64_tftacrules2351); if (state.failed) return ;
 
         match(input, Token.DOWN, null); if (state.failed) return ;
-        pushFollow(FOLLOW_tt_in_synpred64_tftacrules2356);
+        pushFollow(FOLLOW_tt_in_synpred64_tftacrules2355);
         z=tt();
 
         state._fsp--;
         if (state.failed) return ;
-        match(input,XOR,FOLLOW_XOR_in_synpred64_tftacrules2359); if (state.failed) return ;
+        match(input,XOR,FOLLOW_XOR_in_synpred64_tftacrules2358); if (state.failed) return ;
 
         match(input, Token.DOWN, null); if (state.failed) return ;
-        pushFollow(FOLLOW_tt_in_synpred64_tftacrules2363);
+        pushFollow(FOLLOW_tt_in_synpred64_tftacrules2362);
         x=tt();
 
         state._fsp--;
         if (state.failed) return ;
-        pushFollow(FOLLOW_tt_in_synpred64_tftacrules2367);
+        pushFollow(FOLLOW_tt_in_synpred64_tftacrules2366);
         y=tt();
 
         state._fsp--;
@@ -8539,26 +8539,26 @@ public class tftacrules extends TreeParser {
         tftacrules.tt_return y = null;
 
 
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:186:4: ( ^( SAND z= tt ^( OR x= tt y= tt ) ) )
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:186:4: ^( SAND z= tt ^( OR x= tt y= tt ) )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:207:4: ( ^( SAND z= tt ^( OR x= tt y= tt ) ) )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:207:4: ^( SAND z= tt ^( OR x= tt y= tt ) )
         {
-        match(input,SAND,FOLLOW_SAND_in_synpred65_tftacrules2405); if (state.failed) return ;
+        match(input,SAND,FOLLOW_SAND_in_synpred65_tftacrules2404); if (state.failed) return ;
 
         match(input, Token.DOWN, null); if (state.failed) return ;
-        pushFollow(FOLLOW_tt_in_synpred65_tftacrules2409);
+        pushFollow(FOLLOW_tt_in_synpred65_tftacrules2408);
         z=tt();
 
         state._fsp--;
         if (state.failed) return ;
-        match(input,OR,FOLLOW_OR_in_synpred65_tftacrules2412); if (state.failed) return ;
+        match(input,OR,FOLLOW_OR_in_synpred65_tftacrules2411); if (state.failed) return ;
 
         match(input, Token.DOWN, null); if (state.failed) return ;
-        pushFollow(FOLLOW_tt_in_synpred65_tftacrules2416);
+        pushFollow(FOLLOW_tt_in_synpred65_tftacrules2415);
         x=tt();
 
         state._fsp--;
         if (state.failed) return ;
-        pushFollow(FOLLOW_tt_in_synpred65_tftacrules2420);
+        pushFollow(FOLLOW_tt_in_synpred65_tftacrules2419);
         y=tt();
 
         state._fsp--;
@@ -8581,28 +8581,28 @@ public class tftacrules extends TreeParser {
         tftacrules.tt_return z = null;
 
 
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:188:4: ( ^( SAND ^( OR x= tt y= tt ) z= tt ) )
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:188:4: ^( SAND ^( OR x= tt y= tt ) z= tt )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:209:4: ( ^( SAND ^( OR x= tt y= tt ) z= tt ) )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:209:4: ^( SAND ^( OR x= tt y= tt ) z= tt )
         {
-        match(input,SAND,FOLLOW_SAND_in_synpred66_tftacrules2504); if (state.failed) return ;
+        match(input,SAND,FOLLOW_SAND_in_synpred66_tftacrules2503); if (state.failed) return ;
 
         match(input, Token.DOWN, null); if (state.failed) return ;
-        match(input,OR,FOLLOW_OR_in_synpred66_tftacrules2507); if (state.failed) return ;
+        match(input,OR,FOLLOW_OR_in_synpred66_tftacrules2506); if (state.failed) return ;
 
         match(input, Token.DOWN, null); if (state.failed) return ;
-        pushFollow(FOLLOW_tt_in_synpred66_tftacrules2511);
+        pushFollow(FOLLOW_tt_in_synpred66_tftacrules2510);
         x=tt();
 
         state._fsp--;
         if (state.failed) return ;
-        pushFollow(FOLLOW_tt_in_synpred66_tftacrules2515);
+        pushFollow(FOLLOW_tt_in_synpred66_tftacrules2514);
         y=tt();
 
         state._fsp--;
         if (state.failed) return ;
 
         match(input, Token.UP, null); if (state.failed) return ;
-        pushFollow(FOLLOW_tt_in_synpred66_tftacrules2520);
+        pushFollow(FOLLOW_tt_in_synpred66_tftacrules2519);
         z=tt();
 
         state._fsp--;
@@ -8623,28 +8623,28 @@ public class tftacrules extends TreeParser {
         tftacrules.tt_return z = null;
 
 
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:190:4: ( ^( SAND ^( PAND x= tt y= tt ) z= tt ) )
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:190:4: ^( SAND ^( PAND x= tt y= tt ) z= tt )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:211:4: ( ^( SAND ^( PAND x= tt y= tt ) z= tt ) )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:211:4: ^( SAND ^( PAND x= tt y= tt ) z= tt )
         {
-        match(input,SAND,FOLLOW_SAND_in_synpred67_tftacrules2603); if (state.failed) return ;
+        match(input,SAND,FOLLOW_SAND_in_synpred67_tftacrules2602); if (state.failed) return ;
 
         match(input, Token.DOWN, null); if (state.failed) return ;
-        match(input,PAND,FOLLOW_PAND_in_synpred67_tftacrules2606); if (state.failed) return ;
+        match(input,PAND,FOLLOW_PAND_in_synpred67_tftacrules2605); if (state.failed) return ;
 
         match(input, Token.DOWN, null); if (state.failed) return ;
-        pushFollow(FOLLOW_tt_in_synpred67_tftacrules2610);
+        pushFollow(FOLLOW_tt_in_synpred67_tftacrules2609);
         x=tt();
 
         state._fsp--;
         if (state.failed) return ;
-        pushFollow(FOLLOW_tt_in_synpred67_tftacrules2614);
+        pushFollow(FOLLOW_tt_in_synpred67_tftacrules2613);
         y=tt();
 
         state._fsp--;
         if (state.failed) return ;
 
         match(input, Token.UP, null); if (state.failed) return ;
-        pushFollow(FOLLOW_tt_in_synpred67_tftacrules2619);
+        pushFollow(FOLLOW_tt_in_synpred67_tftacrules2618);
         z=tt();
 
         state._fsp--;
@@ -8665,26 +8665,26 @@ public class tftacrules extends TreeParser {
         tftacrules.tt_return y = null;
 
 
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:192:4: ( ^( SAND z= tt ^( PAND x= tt y= tt ) ) )
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:192:4: ^( SAND z= tt ^( PAND x= tt y= tt ) )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:213:4: ( ^( SAND z= tt ^( PAND x= tt y= tt ) ) )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:213:4: ^( SAND z= tt ^( PAND x= tt y= tt ) )
         {
-        match(input,SAND,FOLLOW_SAND_in_synpred68_tftacrules2648); if (state.failed) return ;
+        match(input,SAND,FOLLOW_SAND_in_synpred68_tftacrules2647); if (state.failed) return ;
 
         match(input, Token.DOWN, null); if (state.failed) return ;
-        pushFollow(FOLLOW_tt_in_synpred68_tftacrules2652);
+        pushFollow(FOLLOW_tt_in_synpred68_tftacrules2651);
         z=tt();
 
         state._fsp--;
         if (state.failed) return ;
-        match(input,PAND,FOLLOW_PAND_in_synpred68_tftacrules2655); if (state.failed) return ;
+        match(input,PAND,FOLLOW_PAND_in_synpred68_tftacrules2654); if (state.failed) return ;
 
         match(input, Token.DOWN, null); if (state.failed) return ;
-        pushFollow(FOLLOW_tt_in_synpred68_tftacrules2659);
+        pushFollow(FOLLOW_tt_in_synpred68_tftacrules2658);
         x=tt();
 
         state._fsp--;
         if (state.failed) return ;
-        pushFollow(FOLLOW_tt_in_synpred68_tftacrules2663);
+        pushFollow(FOLLOW_tt_in_synpred68_tftacrules2662);
         y=tt();
 
         state._fsp--;
@@ -8707,26 +8707,26 @@ public class tftacrules extends TreeParser {
         tftacrules.tt_return z = null;
 
 
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:194:4: ( ^( SAND x= tt ^( AND a= notterm z= tt ) ) )
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:194:4: ^( SAND x= tt ^( AND a= notterm z= tt ) )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:215:4: ( ^( SAND x= tt ^( AND a= notterm z= tt ) ) )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:215:4: ^( SAND x= tt ^( AND a= notterm z= tt ) )
         {
-        match(input,SAND,FOLLOW_SAND_in_synpred69_tftacrules2693); if (state.failed) return ;
+        match(input,SAND,FOLLOW_SAND_in_synpred69_tftacrules2692); if (state.failed) return ;
 
         match(input, Token.DOWN, null); if (state.failed) return ;
-        pushFollow(FOLLOW_tt_in_synpred69_tftacrules2697);
+        pushFollow(FOLLOW_tt_in_synpred69_tftacrules2696);
         x=tt();
 
         state._fsp--;
         if (state.failed) return ;
-        match(input,AND,FOLLOW_AND_in_synpred69_tftacrules2700); if (state.failed) return ;
+        match(input,AND,FOLLOW_AND_in_synpred69_tftacrules2699); if (state.failed) return ;
 
         match(input, Token.DOWN, null); if (state.failed) return ;
-        pushFollow(FOLLOW_notterm_in_synpred69_tftacrules2704);
+        pushFollow(FOLLOW_notterm_in_synpred69_tftacrules2703);
         a=notterm();
 
         state._fsp--;
         if (state.failed) return ;
-        pushFollow(FOLLOW_tt_in_synpred69_tftacrules2708);
+        pushFollow(FOLLOW_tt_in_synpred69_tftacrules2707);
         z=tt();
 
         state._fsp--;
@@ -8749,28 +8749,28 @@ public class tftacrules extends TreeParser {
         tftacrules.tt_return x = null;
 
 
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:196:4: ( ^( SAND ^( AND a= notterm z= tt ) x= tt ) )
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:196:4: ^( SAND ^( AND a= notterm z= tt ) x= tt )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:217:4: ( ^( SAND ^( AND a= notterm z= tt ) x= tt ) )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:217:4: ^( SAND ^( AND a= notterm z= tt ) x= tt )
         {
-        match(input,SAND,FOLLOW_SAND_in_synpred70_tftacrules2738); if (state.failed) return ;
+        match(input,SAND,FOLLOW_SAND_in_synpred70_tftacrules2737); if (state.failed) return ;
 
         match(input, Token.DOWN, null); if (state.failed) return ;
-        match(input,AND,FOLLOW_AND_in_synpred70_tftacrules2741); if (state.failed) return ;
+        match(input,AND,FOLLOW_AND_in_synpred70_tftacrules2740); if (state.failed) return ;
 
         match(input, Token.DOWN, null); if (state.failed) return ;
-        pushFollow(FOLLOW_notterm_in_synpred70_tftacrules2745);
+        pushFollow(FOLLOW_notterm_in_synpred70_tftacrules2744);
         a=notterm();
 
         state._fsp--;
         if (state.failed) return ;
-        pushFollow(FOLLOW_tt_in_synpred70_tftacrules2749);
+        pushFollow(FOLLOW_tt_in_synpred70_tftacrules2748);
         z=tt();
 
         state._fsp--;
         if (state.failed) return ;
 
         match(input, Token.UP, null); if (state.failed) return ;
-        pushFollow(FOLLOW_tt_in_synpred70_tftacrules2754);
+        pushFollow(FOLLOW_tt_in_synpred70_tftacrules2753);
         x=tt();
 
         state._fsp--;
@@ -9659,7 +9659,7 @@ public class tftacrules extends TreeParser {
             this.transition = DFA1_transition;
         }
         public String getDescription() {
-            return "23:1: tt : ( andterm | negandterm | orterm | pandterm | sandterm | xorterm | ae | ^( NOT ^( NOT a1= tt ) ) -> $a1);";
+            return "44:1: tt : ( andterm | negandterm | orterm | pandterm | sandterm | xorterm | ae | ^( NOT ^( NOT a1= tt ) ) -> $a1);";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             TreeNodeStream input = (TreeNodeStream)_input;
@@ -9744,7 +9744,7 @@ public class tftacrules extends TreeParser {
             this.transition = DFA3_transition;
         }
         public String getDescription() {
-            return "49:1: notterm : ( ^( NOT ^( AND x= tt y= tt ) ) -> ^( OR ^( NOT $x) ^( NOT $y) ) | ^( NOT ^( OR x= tt y= tt ) ) -> ^( AND ^( NOT $x) ^( NOT $y) ) | ^( NOT ^( XOR x= tt y= tt ) ) -> ^( AND ^( NOT $x) ^( NOT $y) ) | ^( NOT ^( PAND x= tt y= tt ) ) -> ^( XOR ^( AND ^( NOT $x) ^( NOT $y) ) ^( AND ^( NOT $x) $y) ) | ^( NOT ^( SAND x= tt y= tt ) ) -> ^( XOR ^( AND ^( NOT $x) ^( NOT $y) ) ^( XOR ^( AND ^( NOT $x) $y) ^( XOR ^( AND ^( NOT $y) $x) ^( XOR ^( PAND $y $x) ^( XOR ^( PAND $x $y) ) ) ) ) ) | ^( OR notterm notterm ) | ^( XOR notterm notterm ) | ^( AND notterm notterm ) | ^( NOT tt ) );";
+            return "70:1: notterm : ( ^( NOT ^( AND x= tt y= tt ) ) -> ^( OR ^( NOT $x) ^( NOT $y) ) | ^( NOT ^( OR x= tt y= tt ) ) -> ^( AND ^( NOT $x) ^( NOT $y) ) | ^( NOT ^( XOR x= tt y= tt ) ) -> ^( AND ^( NOT $x) ^( NOT $y) ) | ^( NOT ^( PAND x= tt y= tt ) ) -> ^( XOR ^( AND ^( NOT $x) ^( NOT $y) ) ^( AND ^( NOT $x) $y) ) | ^( NOT ^( SAND x= tt y= tt ) ) -> ^( XOR ^( AND ^( NOT $x) ^( NOT $y) ) ^( XOR ^( AND ^( NOT $x) $y) ^( XOR ^( AND ^( NOT $y) $x) ^( XOR ^( PAND $y $x) ^( XOR ^( PAND $x $y) ) ) ) ) ) | ^( OR notterm notterm ) | ^( XOR notterm notterm ) | ^( AND notterm notterm ) | ^( NOT tt ) );";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             TreeNodeStream input = (TreeNodeStream)_input;
@@ -9838,7 +9838,7 @@ public class tftacrules extends TreeParser {
             this.transition = DFA4_transition;
         }
         public String getDescription() {
-            return "70:1: andterm : ( ^( AND . FALSE ) -> FALSE | ^( AND FALSE . ) -> FALSE | ^( AND TRUE a= ae ) -> $a | ^( AND a= ae TRUE ) -> $a | ^( AND ^( XOR x= tt y= tt ) z= tt ) -> ^( XOR ^( AND $x $z) ^( AND $y $z) ) | ^( AND ^( OR x= tt y= tt ) z= tt ) -> ^( OR ^( AND $x $z) ^( AND $y $z) ) | ^( AND z= tt ^( OR x= tt y= tt ) ) -> ^( OR ^( AND $x $z) ^( AND $y $z) ) | ^( AND ^( AND n1= notterm m1= metaPandSandAE ) z= tt ) -> ^( XOR ^( AND $n1 ^( AND $m1 $z) ) ^( XOR ^( PAND ^( PAND $m1 ^( NOT $n1) ) $z) ^( PAND $m1 ^( SAND ^( NOT $n1) $z) ) ) ) | ^( AND x= tt y= tt ) -> ^( XOR ^( PAND $x $y) ^( XOR ^( PAND $y $x) ^( SAND $x $y) ) ) | ^( AND tt tt ) );";
+            return "91:1: andterm : ( ^( AND . FALSE ) -> FALSE | ^( AND FALSE . ) -> FALSE | ^( AND TRUE a= ae ) -> $a | ^( AND a= ae TRUE ) -> $a | ^( AND ^( XOR x= tt y= tt ) z= tt ) -> ^( XOR ^( AND $x $z) ^( AND $y $z) ) | ^( AND ^( OR x= tt y= tt ) z= tt ) -> ^( OR ^( AND $x $z) ^( AND $y $z) ) | ^( AND z= tt ^( OR x= tt y= tt ) ) -> ^( OR ^( AND $x $z) ^( AND $y $z) ) | ^( AND ^( AND n1= notterm m1= metaPandSandAE ) z= tt ) -> ^( XOR ^( AND $n1 ^( AND $m1 $z) ) ^( XOR ^( PAND ^( PAND $m1 ^( NOT $n1) ) $z) ^( PAND $m1 ^( SAND ^( NOT $n1) $z) ) ) ) | ^( AND x= tt y= tt ) -> ^( XOR ^( PAND $x $y) ^( XOR ^( PAND $y $x) ^( SAND $x $y) ) ) | ^( AND tt tt ) );";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             TreeNodeStream input = (TreeNodeStream)_input;
@@ -9940,7 +9940,7 @@ public class tftacrules extends TreeParser {
             this.transition = DFA5_transition;
         }
         public String getDescription() {
-            return "91:1: negandterm : ( ^( AND ^( OR x= notterm y= negatedterm ) z1= pandterm ) -> ^( OR ^( AND $x $z1) ^( AND $y $z1) ) | ^( AND ^( XOR x= notterm y= negatedterm ) z1= pandterm ) -> ^( XOR ^( AND $x $z1) ^( AND $y $z1) ) | ^( AND ^( OR x= notterm y= negatedterm ) z2= sandterm ) -> ^( OR ^( AND $x $z2) ^( AND $y $z2) ) | ^( AND ^( XOR x= notterm y= negatedterm ) z2= sandterm ) -> ^( XOR ^( AND $x $z2) ^( AND $y $z2) ) | ^( AND ^( OR x= notterm y= negatedterm ) z3= ae ) -> ^( OR ^( AND $x $z3) ^( AND $y $z3) ) | ^( AND ^( XOR x= notterm y= negatedterm ) z3= ae ) -> ^( XOR ^( AND $x $z3) ^( AND $y $z3) ) | ^( AND n1= notterm ^( OR t1= tt t2= tt ) ) -> ^( OR ^( AND $n1 $t1) ^( AND $n1 $t2) ) | ^( AND n1= notterm ^( XOR t1= tt t2= tt ) ) -> ^( XOR ^( AND $n1 $t1) ^( AND $n1 $t2) ) | ^( AND n1= notterm ^( AND n2= notterm m1= metaPandSandAE ) ) -> ^( AND ^( AND $n1 $n2) $m1) | ^( AND notterm metaPandSandAE ) );";
+            return "112:1: negandterm : ( ^( AND ^( OR x= notterm y= negatedterm ) z1= pandterm ) -> ^( OR ^( AND $x $z1) ^( AND $y $z1) ) | ^( AND ^( XOR x= notterm y= negatedterm ) z1= pandterm ) -> ^( XOR ^( AND $x $z1) ^( AND $y $z1) ) | ^( AND ^( OR x= notterm y= negatedterm ) z2= sandterm ) -> ^( OR ^( AND $x $z2) ^( AND $y $z2) ) | ^( AND ^( XOR x= notterm y= negatedterm ) z2= sandterm ) -> ^( XOR ^( AND $x $z2) ^( AND $y $z2) ) | ^( AND ^( OR x= notterm y= negatedterm ) z3= ae ) -> ^( OR ^( AND $x $z3) ^( AND $y $z3) ) | ^( AND ^( XOR x= notterm y= negatedterm ) z3= ae ) -> ^( XOR ^( AND $x $z3) ^( AND $y $z3) ) | ^( AND n1= notterm ^( OR t1= tt t2= tt ) ) -> ^( OR ^( AND $n1 $t1) ^( AND $n1 $t2) ) | ^( AND n1= notterm ^( XOR t1= tt t2= tt ) ) -> ^( XOR ^( AND $n1 $t1) ^( AND $n1 $t2) ) | ^( AND n1= notterm ^( AND n2= notterm m1= metaPandSandAE ) ) -> ^( AND ^( AND $n1 $n2) $m1) | ^( AND notterm metaPandSandAE ) );";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             TreeNodeStream input = (TreeNodeStream)_input;
@@ -10044,7 +10044,7 @@ public class tftacrules extends TreeParser {
             this.transition = DFA10_transition;
         }
         public String getDescription() {
-            return "147:1: pandterm : ( ^( PAND ae FALSE ) -> FALSE | ^( PAND FALSE . ) -> FALSE | ^( PAND ae TRUE ) -> FALSE | ^( PAND TRUE a= ae ) -> $a | ^( PAND ^( XOR x= tt y= tt ) z= tt ) -> ^( XOR ^( PAND $x $z) ^( PAND $y $z) ) | ^( PAND z= tt ^( XOR x= tt y= tt ) ) -> ^( XOR ^( PAND $z $x) ^( PAND $z $y) ) | ^( PAND ^( OR x= tt y= tt ) z= tt ) -> ^( OR ^( PAND $x $z) ^( PAND $y $z) ) | ^( PAND z= tt ^( OR x= tt y= tt ) ) -> ^( XOR ^( AND ^( NOT $y) ^( PAND $z $x) ) ^( XOR ^( AND ^( NOT $x) ^( PAND $z $y) ) ^( PAND $x ^( SAND $y $z) ) ) ) | ^( PAND z= tt ^( PAND x= tt y= tt ) ) -> ^( PAND ^( AND $x $z) $y) | ^( PAND x= tt ^( AND b= notterm z= tt ) ) -> ^( AND $b ^( PAND $x $z) ) | ^( PAND ^( AND n1= notterm m1= metaPandSandAE ) z= tt ) -> ^( XOR ^( AND $n1 ^( PAND $m1 $z) ) ^( XOR ^( PAND ^( PAND $m1 ^( NOT $n1) ) $z) ^( PAND $m1 ^( SAND ^( NOT $n1) $z) ) ) ) | ^( PAND tt tt ) );";
+            return "168:1: pandterm : ( ^( PAND ae FALSE ) -> FALSE | ^( PAND FALSE . ) -> FALSE | ^( PAND ae TRUE ) -> FALSE | ^( PAND TRUE a= ae ) -> $a | ^( PAND ^( XOR x= tt y= tt ) z= tt ) -> ^( XOR ^( PAND $x $z) ^( PAND $y $z) ) | ^( PAND z= tt ^( XOR x= tt y= tt ) ) -> ^( XOR ^( PAND $z $x) ^( PAND $z $y) ) | ^( PAND ^( OR x= tt y= tt ) z= tt ) -> ^( OR ^( PAND $x $z) ^( PAND $y $z) ) | ^( PAND z= tt ^( OR x= tt y= tt ) ) -> ^( XOR ^( AND ^( NOT $y) ^( PAND $z $x) ) ^( XOR ^( AND ^( NOT $x) ^( PAND $z $y) ) ^( PAND $x ^( SAND $y $z) ) ) ) | ^( PAND z= tt ^( PAND x= tt y= tt ) ) -> ^( PAND ^( AND $x $z) $y) | ^( PAND x= tt ^( AND b= notterm z= tt ) ) -> ^( AND $b ^( PAND $x $z) ) | ^( PAND ^( AND n1= notterm m1= metaPandSandAE ) z= tt ) -> ^( XOR ^( AND $n1 ^( PAND $m1 $z) ) ^( XOR ^( PAND ^( PAND $m1 ^( NOT $n1) ) $z) ^( PAND $m1 ^( SAND ^( NOT $n1) $z) ) ) ) | ^( PAND tt tt ) );";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             TreeNodeStream input = (TreeNodeStream)_input;
@@ -10155,7 +10155,7 @@ public class tftacrules extends TreeParser {
             this.transition = DFA11_transition;
         }
         public String getDescription() {
-            return "172:1: sandterm : ( ^( SAND ae FALSE ) -> FALSE | ^( SAND FALSE . ) -> FALSE | ^( SAND TRUE TRUE ) -> TRUE | ^( SAND ae TRUE ) -> FALSE | ^( SAND TRUE . ) -> FALSE | ^( SAND ^( XOR x= tt y= tt ) z= tt ) -> ^( XOR ^( SAND $x $z) ^( SAND $y $z) ) | ^( SAND z= tt ^( XOR x= tt y= tt ) ) -> ^( XOR ^( SAND $x $z) ^( SAND $y $z) ) | ^( SAND z= tt ^( OR x= tt y= tt ) ) -> ^( XOR ^( AND ^( NOT $y) ^( SAND $z $x) ) ^( XOR ^( AND ^( NOT $x) ^( SAND $y $z) ) ^( SAND $x ^( SAND $y $z) ) ) ) | ^( SAND ^( OR x= tt y= tt ) z= tt ) -> ^( XOR ^( AND ^( NOT $y) ^( SAND $x $z) ) ^( XOR ^( AND ^( NOT $x) ^( SAND $y $z) ) ^( SAND $x ^( SAND $y $z) ) ) ) | ^( SAND ^( PAND x= tt y= tt ) z= tt ) -> ^( PAND $x ^( SAND $y $z) ) | ^( SAND z= tt ^( PAND x= tt y= tt ) ) -> ^( PAND $x ^( SAND $y $z) ) | ^( SAND x= tt ^( AND a= notterm z= tt ) ) -> ^( AND $a ^( SAND $x $z) ) | ^( SAND ^( AND a= notterm z= tt ) x= tt ) -> ^( AND $a ^( SAND $x $z) ) | ^( SAND tt tt ) );";
+            return "193:1: sandterm : ( ^( SAND ae FALSE ) -> FALSE | ^( SAND FALSE . ) -> FALSE | ^( SAND TRUE TRUE ) -> TRUE | ^( SAND ae TRUE ) -> FALSE | ^( SAND TRUE . ) -> FALSE | ^( SAND ^( XOR x= tt y= tt ) z= tt ) -> ^( XOR ^( SAND $x $z) ^( SAND $y $z) ) | ^( SAND z= tt ^( XOR x= tt y= tt ) ) -> ^( XOR ^( SAND $x $z) ^( SAND $y $z) ) | ^( SAND z= tt ^( OR x= tt y= tt ) ) -> ^( XOR ^( AND ^( NOT $y) ^( SAND $z $x) ) ^( XOR ^( AND ^( NOT $x) ^( SAND $y $z) ) ^( SAND $x ^( SAND $y $z) ) ) ) | ^( SAND ^( OR x= tt y= tt ) z= tt ) -> ^( XOR ^( AND ^( NOT $y) ^( SAND $x $z) ) ^( XOR ^( AND ^( NOT $x) ^( SAND $y $z) ) ^( SAND $x ^( SAND $y $z) ) ) ) | ^( SAND ^( PAND x= tt y= tt ) z= tt ) -> ^( PAND $x ^( SAND $y $z) ) | ^( SAND z= tt ^( PAND x= tt y= tt ) ) -> ^( PAND $x ^( SAND $y $z) ) | ^( SAND x= tt ^( AND a= notterm z= tt ) ) -> ^( AND $a ^( SAND $x $z) ) | ^( SAND ^( AND a= notterm z= tt ) x= tt ) -> ^( AND $a ^( SAND $x $z) ) | ^( SAND tt tt ) );";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             TreeNodeStream input = (TreeNodeStream)_input;
@@ -10210,496 +10210,496 @@ public class tftacrules extends TreeParser {
     }
  
 
-    public static final BitSet FOLLOW_andterm_in_tt65 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_negandterm_in_tt70 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_orterm_in_tt75 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_pandterm_in_tt80 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_sandterm_in_tt85 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_xorterm_in_tt90 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ae_in_tt95 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_NOT_in_tt101 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_NOT_in_tt104 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_tt_in_tt108 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_ae_in_ce151 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_SAND_in_ce158 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_ce_in_ce160 = new BitSet(new long[]{0x0000000000006300L});
-    public static final BitSet FOLLOW_ce_in_ce162 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_NOT_in_notterm175 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_AND_in_notterm178 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_tt_in_notterm182 = new BitSet(new long[]{0x00000000000073F0L});
-    public static final BitSet FOLLOW_tt_in_notterm186 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_NOT_in_notterm218 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_OR_in_notterm221 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_tt_in_notterm225 = new BitSet(new long[]{0x00000000000073F0L});
-    public static final BitSet FOLLOW_tt_in_notterm229 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_NOT_in_notterm261 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_XOR_in_notterm264 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_tt_in_notterm268 = new BitSet(new long[]{0x00000000000073F0L});
-    public static final BitSet FOLLOW_tt_in_notterm272 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_NOT_in_notterm304 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_PAND_in_notterm307 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_tt_in_notterm311 = new BitSet(new long[]{0x00000000000073F0L});
-    public static final BitSet FOLLOW_tt_in_notterm315 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_NOT_in_notterm370 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_SAND_in_notterm373 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_tt_in_notterm377 = new BitSet(new long[]{0x00000000000073F0L});
-    public static final BitSet FOLLOW_tt_in_notterm381 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_OR_in_notterm484 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_notterm_in_notterm486 = new BitSet(new long[]{0x0000000000001070L});
-    public static final BitSet FOLLOW_notterm_in_notterm488 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_XOR_in_notterm495 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_notterm_in_notterm497 = new BitSet(new long[]{0x0000000000001070L});
-    public static final BitSet FOLLOW_notterm_in_notterm499 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_AND_in_notterm506 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_notterm_in_notterm508 = new BitSet(new long[]{0x0000000000001070L});
-    public static final BitSet FOLLOW_notterm_in_notterm510 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_NOT_in_notterm517 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_tt_in_notterm519 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_AND_in_andterm535 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_FALSE_in_andterm539 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_AND_in_andterm554 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_FALSE_in_andterm556 = new BitSet(new long[]{0x000000000001FFF0L});
-    public static final BitSet FOLLOW_AND_in_andterm572 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_TRUE_in_andterm574 = new BitSet(new long[]{0x0000000000006200L});
-    public static final BitSet FOLLOW_ae_in_andterm578 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_AND_in_andterm593 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_ae_in_andterm597 = new BitSet(new long[]{0x0000000000002000L});
-    public static final BitSet FOLLOW_TRUE_in_andterm599 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_AND_in_andterm614 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_XOR_in_andterm617 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_tt_in_andterm621 = new BitSet(new long[]{0x00000000000073F0L});
-    public static final BitSet FOLLOW_tt_in_andterm625 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_tt_in_andterm630 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_AND_in_andterm669 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_OR_in_andterm672 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_tt_in_andterm676 = new BitSet(new long[]{0x00000000000073F0L});
-    public static final BitSet FOLLOW_tt_in_andterm680 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_tt_in_andterm685 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_AND_in_andterm724 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_tt_in_andterm728 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_OR_in_andterm731 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_tt_in_andterm735 = new BitSet(new long[]{0x00000000000073F0L});
-    public static final BitSet FOLLOW_tt_in_andterm739 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_AND_in_andterm778 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_AND_in_andterm781 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_notterm_in_andterm785 = new BitSet(new long[]{0x00000000000063C0L});
-    public static final BitSet FOLLOW_metaPandSandAE_in_andterm789 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_tt_in_andterm794 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_AND_in_andterm873 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_tt_in_andterm877 = new BitSet(new long[]{0x00000000000073F0L});
-    public static final BitSet FOLLOW_tt_in_andterm881 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_AND_in_andterm933 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_tt_in_andterm935 = new BitSet(new long[]{0x00000000000073F0L});
-    public static final BitSet FOLLOW_tt_in_andterm937 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_AND_in_negandterm951 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_OR_in_negandterm954 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_notterm_in_negandterm958 = new BitSet(new long[]{0x0000000000001070L});
-    public static final BitSet FOLLOW_negatedterm_in_negandterm962 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_pandterm_in_negandterm967 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_AND_in_negandterm1003 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_XOR_in_negandterm1006 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_notterm_in_negandterm1010 = new BitSet(new long[]{0x0000000000001070L});
-    public static final BitSet FOLLOW_negatedterm_in_negandterm1014 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_pandterm_in_negandterm1019 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_AND_in_negandterm1055 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_OR_in_negandterm1058 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_notterm_in_negandterm1062 = new BitSet(new long[]{0x0000000000001070L});
-    public static final BitSet FOLLOW_negatedterm_in_negandterm1066 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_sandterm_in_negandterm1071 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_AND_in_negandterm1107 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_XOR_in_negandterm1110 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_notterm_in_negandterm1114 = new BitSet(new long[]{0x0000000000001070L});
-    public static final BitSet FOLLOW_negatedterm_in_negandterm1118 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_sandterm_in_negandterm1123 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_AND_in_negandterm1159 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_OR_in_negandterm1162 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_notterm_in_negandterm1166 = new BitSet(new long[]{0x0000000000001070L});
-    public static final BitSet FOLLOW_negatedterm_in_negandterm1170 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_ae_in_negandterm1175 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_AND_in_negandterm1211 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_XOR_in_negandterm1214 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_notterm_in_negandterm1218 = new BitSet(new long[]{0x0000000000001070L});
-    public static final BitSet FOLLOW_negatedterm_in_negandterm1222 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_ae_in_negandterm1227 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_AND_in_negandterm1263 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_notterm_in_negandterm1267 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_OR_in_negandterm1270 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_tt_in_negandterm1274 = new BitSet(new long[]{0x00000000000073F0L});
-    public static final BitSet FOLLOW_tt_in_negandterm1278 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_AND_in_negandterm1318 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_notterm_in_negandterm1322 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_XOR_in_negandterm1325 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_tt_in_negandterm1329 = new BitSet(new long[]{0x00000000000073F0L});
-    public static final BitSet FOLLOW_tt_in_negandterm1333 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_AND_in_negandterm1372 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_notterm_in_negandterm1376 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_AND_in_negandterm1379 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_notterm_in_negandterm1383 = new BitSet(new long[]{0x00000000000063C0L});
-    public static final BitSet FOLLOW_metaPandSandAE_in_negandterm1387 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_AND_in_negandterm1417 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_notterm_in_negandterm1419 = new BitSet(new long[]{0x00000000000063C0L});
-    public static final BitSet FOLLOW_metaPandSandAE_in_negandterm1421 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_negandterm_in_negatedterm1435 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_notterm_in_negatedterm1440 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_pandterm_in_metaPandSandAE1452 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_sandterm_in_metaPandSandAE1457 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_andterm_in_metaPandSandAE1462 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ae_in_metaPandSandAE1467 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_OR_in_orterm1479 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_ae_in_orterm1481 = new BitSet(new long[]{0x0000000000002000L});
-    public static final BitSet FOLLOW_TRUE_in_orterm1483 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_OR_in_orterm1498 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_TRUE_in_orterm1500 = new BitSet(new long[]{0x000000000001FFF0L});
-    public static final BitSet FOLLOW_OR_in_orterm1516 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_FALSE_in_orterm1518 = new BitSet(new long[]{0x0000000000006200L});
-    public static final BitSet FOLLOW_ae_in_orterm1522 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_OR_in_orterm1537 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_ae_in_orterm1541 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_FALSE_in_orterm1543 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_OR_in_orterm1558 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_tt_in_orterm1560 = new BitSet(new long[]{0x00000000000073F0L});
-    public static final BitSet FOLLOW_tt_in_orterm1562 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_XOR_in_xorterm1575 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_ae_in_xorterm1577 = new BitSet(new long[]{0x0000000000002000L});
-    public static final BitSet FOLLOW_TRUE_in_xorterm1579 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_XOR_in_xorterm1594 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_TRUE_in_xorterm1596 = new BitSet(new long[]{0x000000000001FFF0L});
-    public static final BitSet FOLLOW_XOR_in_xorterm1612 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_FALSE_in_xorterm1614 = new BitSet(new long[]{0x0000000000006200L});
-    public static final BitSet FOLLOW_ae_in_xorterm1618 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_XOR_in_xorterm1633 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_ae_in_xorterm1637 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_FALSE_in_xorterm1639 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_XOR_in_xorterm1654 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_tt_in_xorterm1656 = new BitSet(new long[]{0x00000000000073F0L});
-    public static final BitSet FOLLOW_tt_in_xorterm1658 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_PAND_in_pandterm1670 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_ae_in_pandterm1672 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_FALSE_in_pandterm1674 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_PAND_in_pandterm1689 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_FALSE_in_pandterm1691 = new BitSet(new long[]{0x000000000001FFF0L});
-    public static final BitSet FOLLOW_PAND_in_pandterm1707 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_ae_in_pandterm1709 = new BitSet(new long[]{0x0000000000002000L});
-    public static final BitSet FOLLOW_TRUE_in_pandterm1711 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_PAND_in_pandterm1726 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_TRUE_in_pandterm1728 = new BitSet(new long[]{0x0000000000006200L});
-    public static final BitSet FOLLOW_ae_in_pandterm1732 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_PAND_in_pandterm1747 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_XOR_in_pandterm1750 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_tt_in_pandterm1754 = new BitSet(new long[]{0x00000000000073F0L});
-    public static final BitSet FOLLOW_tt_in_pandterm1758 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_tt_in_pandterm1763 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_PAND_in_pandterm1800 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_tt_in_pandterm1804 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_XOR_in_pandterm1807 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_tt_in_pandterm1811 = new BitSet(new long[]{0x00000000000073F0L});
-    public static final BitSet FOLLOW_tt_in_pandterm1815 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_PAND_in_pandterm1854 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_OR_in_pandterm1857 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_tt_in_pandterm1861 = new BitSet(new long[]{0x00000000000073F0L});
-    public static final BitSet FOLLOW_tt_in_pandterm1865 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_tt_in_pandterm1870 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_PAND_in_pandterm1907 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_tt_in_pandterm1911 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_OR_in_pandterm1914 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_tt_in_pandterm1918 = new BitSet(new long[]{0x00000000000073F0L});
-    public static final BitSet FOLLOW_tt_in_pandterm1922 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_PAND_in_pandterm2006 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_tt_in_pandterm2010 = new BitSet(new long[]{0x0000000000000080L});
-    public static final BitSet FOLLOW_PAND_in_pandterm2013 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_tt_in_pandterm2017 = new BitSet(new long[]{0x00000000000073F0L});
-    public static final BitSet FOLLOW_tt_in_pandterm2021 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_PAND_in_pandterm2051 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_tt_in_pandterm2055 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_AND_in_pandterm2058 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_notterm_in_pandterm2062 = new BitSet(new long[]{0x00000000000073F0L});
-    public static final BitSet FOLLOW_tt_in_pandterm2066 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_PAND_in_pandterm2096 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_AND_in_pandterm2099 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_notterm_in_pandterm2103 = new BitSet(new long[]{0x00000000000063C0L});
-    public static final BitSet FOLLOW_metaPandSandAE_in_pandterm2107 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_tt_in_pandterm2112 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_PAND_in_pandterm2191 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_tt_in_pandterm2193 = new BitSet(new long[]{0x00000000000073F0L});
-    public static final BitSet FOLLOW_tt_in_pandterm2195 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_SAND_in_sandterm2207 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_ae_in_sandterm2209 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_FALSE_in_sandterm2211 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_SAND_in_sandterm2226 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_FALSE_in_sandterm2228 = new BitSet(new long[]{0x000000000001FFF0L});
-    public static final BitSet FOLLOW_SAND_in_sandterm2244 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_TRUE_in_sandterm2246 = new BitSet(new long[]{0x0000000000002000L});
-    public static final BitSet FOLLOW_TRUE_in_sandterm2248 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_SAND_in_sandterm2262 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_ae_in_sandterm2264 = new BitSet(new long[]{0x0000000000002000L});
-    public static final BitSet FOLLOW_TRUE_in_sandterm2266 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_SAND_in_sandterm2281 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_TRUE_in_sandterm2283 = new BitSet(new long[]{0x000000000001FFF0L});
-    public static final BitSet FOLLOW_SAND_in_sandterm2299 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_XOR_in_sandterm2302 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_tt_in_sandterm2306 = new BitSet(new long[]{0x00000000000073F0L});
-    public static final BitSet FOLLOW_tt_in_sandterm2310 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_tt_in_sandterm2315 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_SAND_in_sandterm2352 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_tt_in_sandterm2356 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_XOR_in_sandterm2359 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_tt_in_sandterm2363 = new BitSet(new long[]{0x00000000000073F0L});
-    public static final BitSet FOLLOW_tt_in_sandterm2367 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_SAND_in_sandterm2405 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_tt_in_sandterm2409 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_OR_in_sandterm2412 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_tt_in_sandterm2416 = new BitSet(new long[]{0x00000000000073F0L});
-    public static final BitSet FOLLOW_tt_in_sandterm2420 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_SAND_in_sandterm2504 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_OR_in_sandterm2507 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_tt_in_sandterm2511 = new BitSet(new long[]{0x00000000000073F0L});
-    public static final BitSet FOLLOW_tt_in_sandterm2515 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_tt_in_sandterm2520 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_SAND_in_sandterm2603 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_PAND_in_sandterm2606 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_tt_in_sandterm2610 = new BitSet(new long[]{0x00000000000073F0L});
-    public static final BitSet FOLLOW_tt_in_sandterm2614 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_tt_in_sandterm2619 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_SAND_in_sandterm2648 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_tt_in_sandterm2652 = new BitSet(new long[]{0x0000000000000080L});
-    public static final BitSet FOLLOW_PAND_in_sandterm2655 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_tt_in_sandterm2659 = new BitSet(new long[]{0x00000000000073F0L});
-    public static final BitSet FOLLOW_tt_in_sandterm2663 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_SAND_in_sandterm2693 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_tt_in_sandterm2697 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_AND_in_sandterm2700 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_notterm_in_sandterm2704 = new BitSet(new long[]{0x00000000000073F0L});
-    public static final BitSet FOLLOW_tt_in_sandterm2708 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_SAND_in_sandterm2738 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_AND_in_sandterm2741 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_notterm_in_sandterm2745 = new BitSet(new long[]{0x00000000000073F0L});
-    public static final BitSet FOLLOW_tt_in_sandterm2749 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_tt_in_sandterm2754 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_SAND_in_sandterm2784 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_tt_in_sandterm2786 = new BitSet(new long[]{0x00000000000073F0L});
-    public static final BitSet FOLLOW_tt_in_sandterm2788 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_andterm_in_tt64 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_negandterm_in_tt69 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_orterm_in_tt74 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_pandterm_in_tt79 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_sandterm_in_tt84 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_xorterm_in_tt89 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ae_in_tt94 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_NOT_in_tt100 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_NOT_in_tt103 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_tt_in_tt107 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_ae_in_ce150 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_SAND_in_ce157 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_ce_in_ce159 = new BitSet(new long[]{0x0000000000006300L});
+    public static final BitSet FOLLOW_ce_in_ce161 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_NOT_in_notterm174 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_AND_in_notterm177 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_tt_in_notterm181 = new BitSet(new long[]{0x00000000000073F0L});
+    public static final BitSet FOLLOW_tt_in_notterm185 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_NOT_in_notterm217 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_OR_in_notterm220 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_tt_in_notterm224 = new BitSet(new long[]{0x00000000000073F0L});
+    public static final BitSet FOLLOW_tt_in_notterm228 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_NOT_in_notterm260 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_XOR_in_notterm263 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_tt_in_notterm267 = new BitSet(new long[]{0x00000000000073F0L});
+    public static final BitSet FOLLOW_tt_in_notterm271 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_NOT_in_notterm303 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_PAND_in_notterm306 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_tt_in_notterm310 = new BitSet(new long[]{0x00000000000073F0L});
+    public static final BitSet FOLLOW_tt_in_notterm314 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_NOT_in_notterm369 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_SAND_in_notterm372 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_tt_in_notterm376 = new BitSet(new long[]{0x00000000000073F0L});
+    public static final BitSet FOLLOW_tt_in_notterm380 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_OR_in_notterm483 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_notterm_in_notterm485 = new BitSet(new long[]{0x0000000000001070L});
+    public static final BitSet FOLLOW_notterm_in_notterm487 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_XOR_in_notterm494 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_notterm_in_notterm496 = new BitSet(new long[]{0x0000000000001070L});
+    public static final BitSet FOLLOW_notterm_in_notterm498 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_AND_in_notterm505 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_notterm_in_notterm507 = new BitSet(new long[]{0x0000000000001070L});
+    public static final BitSet FOLLOW_notterm_in_notterm509 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_NOT_in_notterm516 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_tt_in_notterm518 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_AND_in_andterm534 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_FALSE_in_andterm538 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_AND_in_andterm553 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_FALSE_in_andterm555 = new BitSet(new long[]{0x000000000001FFF0L});
+    public static final BitSet FOLLOW_AND_in_andterm571 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_TRUE_in_andterm573 = new BitSet(new long[]{0x0000000000006200L});
+    public static final BitSet FOLLOW_ae_in_andterm577 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_AND_in_andterm592 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_ae_in_andterm596 = new BitSet(new long[]{0x0000000000002000L});
+    public static final BitSet FOLLOW_TRUE_in_andterm598 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_AND_in_andterm613 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_XOR_in_andterm616 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_tt_in_andterm620 = new BitSet(new long[]{0x00000000000073F0L});
+    public static final BitSet FOLLOW_tt_in_andterm624 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_tt_in_andterm629 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_AND_in_andterm668 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_OR_in_andterm671 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_tt_in_andterm675 = new BitSet(new long[]{0x00000000000073F0L});
+    public static final BitSet FOLLOW_tt_in_andterm679 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_tt_in_andterm684 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_AND_in_andterm723 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_tt_in_andterm727 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_OR_in_andterm730 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_tt_in_andterm734 = new BitSet(new long[]{0x00000000000073F0L});
+    public static final BitSet FOLLOW_tt_in_andterm738 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_AND_in_andterm777 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_AND_in_andterm780 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_notterm_in_andterm784 = new BitSet(new long[]{0x00000000000063C0L});
+    public static final BitSet FOLLOW_metaPandSandAE_in_andterm788 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_tt_in_andterm793 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_AND_in_andterm872 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_tt_in_andterm876 = new BitSet(new long[]{0x00000000000073F0L});
+    public static final BitSet FOLLOW_tt_in_andterm880 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_AND_in_andterm932 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_tt_in_andterm934 = new BitSet(new long[]{0x00000000000073F0L});
+    public static final BitSet FOLLOW_tt_in_andterm936 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_AND_in_negandterm950 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_OR_in_negandterm953 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_notterm_in_negandterm957 = new BitSet(new long[]{0x0000000000001070L});
+    public static final BitSet FOLLOW_negatedterm_in_negandterm961 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_pandterm_in_negandterm966 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_AND_in_negandterm1002 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_XOR_in_negandterm1005 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_notterm_in_negandterm1009 = new BitSet(new long[]{0x0000000000001070L});
+    public static final BitSet FOLLOW_negatedterm_in_negandterm1013 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_pandterm_in_negandterm1018 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_AND_in_negandterm1054 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_OR_in_negandterm1057 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_notterm_in_negandterm1061 = new BitSet(new long[]{0x0000000000001070L});
+    public static final BitSet FOLLOW_negatedterm_in_negandterm1065 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_sandterm_in_negandterm1070 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_AND_in_negandterm1106 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_XOR_in_negandterm1109 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_notterm_in_negandterm1113 = new BitSet(new long[]{0x0000000000001070L});
+    public static final BitSet FOLLOW_negatedterm_in_negandterm1117 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_sandterm_in_negandterm1122 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_AND_in_negandterm1158 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_OR_in_negandterm1161 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_notterm_in_negandterm1165 = new BitSet(new long[]{0x0000000000001070L});
+    public static final BitSet FOLLOW_negatedterm_in_negandterm1169 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_ae_in_negandterm1174 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_AND_in_negandterm1210 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_XOR_in_negandterm1213 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_notterm_in_negandterm1217 = new BitSet(new long[]{0x0000000000001070L});
+    public static final BitSet FOLLOW_negatedterm_in_negandterm1221 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_ae_in_negandterm1226 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_AND_in_negandterm1262 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_notterm_in_negandterm1266 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_OR_in_negandterm1269 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_tt_in_negandterm1273 = new BitSet(new long[]{0x00000000000073F0L});
+    public static final BitSet FOLLOW_tt_in_negandterm1277 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_AND_in_negandterm1317 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_notterm_in_negandterm1321 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_XOR_in_negandterm1324 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_tt_in_negandterm1328 = new BitSet(new long[]{0x00000000000073F0L});
+    public static final BitSet FOLLOW_tt_in_negandterm1332 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_AND_in_negandterm1371 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_notterm_in_negandterm1375 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_AND_in_negandterm1378 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_notterm_in_negandterm1382 = new BitSet(new long[]{0x00000000000063C0L});
+    public static final BitSet FOLLOW_metaPandSandAE_in_negandterm1386 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_AND_in_negandterm1416 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_notterm_in_negandterm1418 = new BitSet(new long[]{0x00000000000063C0L});
+    public static final BitSet FOLLOW_metaPandSandAE_in_negandterm1420 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_negandterm_in_negatedterm1434 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_notterm_in_negatedterm1439 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_pandterm_in_metaPandSandAE1451 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_sandterm_in_metaPandSandAE1456 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_andterm_in_metaPandSandAE1461 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ae_in_metaPandSandAE1466 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_OR_in_orterm1478 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_ae_in_orterm1480 = new BitSet(new long[]{0x0000000000002000L});
+    public static final BitSet FOLLOW_TRUE_in_orterm1482 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_OR_in_orterm1497 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_TRUE_in_orterm1499 = new BitSet(new long[]{0x000000000001FFF0L});
+    public static final BitSet FOLLOW_OR_in_orterm1515 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_FALSE_in_orterm1517 = new BitSet(new long[]{0x0000000000006200L});
+    public static final BitSet FOLLOW_ae_in_orterm1521 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_OR_in_orterm1536 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_ae_in_orterm1540 = new BitSet(new long[]{0x0000000000004000L});
+    public static final BitSet FOLLOW_FALSE_in_orterm1542 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_OR_in_orterm1557 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_tt_in_orterm1559 = new BitSet(new long[]{0x00000000000073F0L});
+    public static final BitSet FOLLOW_tt_in_orterm1561 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_XOR_in_xorterm1574 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_ae_in_xorterm1576 = new BitSet(new long[]{0x0000000000002000L});
+    public static final BitSet FOLLOW_TRUE_in_xorterm1578 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_XOR_in_xorterm1593 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_TRUE_in_xorterm1595 = new BitSet(new long[]{0x000000000001FFF0L});
+    public static final BitSet FOLLOW_XOR_in_xorterm1611 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_FALSE_in_xorterm1613 = new BitSet(new long[]{0x0000000000006200L});
+    public static final BitSet FOLLOW_ae_in_xorterm1617 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_XOR_in_xorterm1632 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_ae_in_xorterm1636 = new BitSet(new long[]{0x0000000000004000L});
+    public static final BitSet FOLLOW_FALSE_in_xorterm1638 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_XOR_in_xorterm1653 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_tt_in_xorterm1655 = new BitSet(new long[]{0x00000000000073F0L});
+    public static final BitSet FOLLOW_tt_in_xorterm1657 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_PAND_in_pandterm1669 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_ae_in_pandterm1671 = new BitSet(new long[]{0x0000000000004000L});
+    public static final BitSet FOLLOW_FALSE_in_pandterm1673 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_PAND_in_pandterm1688 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_FALSE_in_pandterm1690 = new BitSet(new long[]{0x000000000001FFF0L});
+    public static final BitSet FOLLOW_PAND_in_pandterm1706 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_ae_in_pandterm1708 = new BitSet(new long[]{0x0000000000002000L});
+    public static final BitSet FOLLOW_TRUE_in_pandterm1710 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_PAND_in_pandterm1725 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_TRUE_in_pandterm1727 = new BitSet(new long[]{0x0000000000006200L});
+    public static final BitSet FOLLOW_ae_in_pandterm1731 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_PAND_in_pandterm1746 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_XOR_in_pandterm1749 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_tt_in_pandterm1753 = new BitSet(new long[]{0x00000000000073F0L});
+    public static final BitSet FOLLOW_tt_in_pandterm1757 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_tt_in_pandterm1762 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_PAND_in_pandterm1799 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_tt_in_pandterm1803 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_XOR_in_pandterm1806 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_tt_in_pandterm1810 = new BitSet(new long[]{0x00000000000073F0L});
+    public static final BitSet FOLLOW_tt_in_pandterm1814 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_PAND_in_pandterm1853 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_OR_in_pandterm1856 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_tt_in_pandterm1860 = new BitSet(new long[]{0x00000000000073F0L});
+    public static final BitSet FOLLOW_tt_in_pandterm1864 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_tt_in_pandterm1869 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_PAND_in_pandterm1906 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_tt_in_pandterm1910 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_OR_in_pandterm1913 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_tt_in_pandterm1917 = new BitSet(new long[]{0x00000000000073F0L});
+    public static final BitSet FOLLOW_tt_in_pandterm1921 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_PAND_in_pandterm2005 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_tt_in_pandterm2009 = new BitSet(new long[]{0x0000000000000080L});
+    public static final BitSet FOLLOW_PAND_in_pandterm2012 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_tt_in_pandterm2016 = new BitSet(new long[]{0x00000000000073F0L});
+    public static final BitSet FOLLOW_tt_in_pandterm2020 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_PAND_in_pandterm2050 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_tt_in_pandterm2054 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_AND_in_pandterm2057 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_notterm_in_pandterm2061 = new BitSet(new long[]{0x00000000000073F0L});
+    public static final BitSet FOLLOW_tt_in_pandterm2065 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_PAND_in_pandterm2095 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_AND_in_pandterm2098 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_notterm_in_pandterm2102 = new BitSet(new long[]{0x00000000000063C0L});
+    public static final BitSet FOLLOW_metaPandSandAE_in_pandterm2106 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_tt_in_pandterm2111 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_PAND_in_pandterm2190 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_tt_in_pandterm2192 = new BitSet(new long[]{0x00000000000073F0L});
+    public static final BitSet FOLLOW_tt_in_pandterm2194 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_SAND_in_sandterm2206 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_ae_in_sandterm2208 = new BitSet(new long[]{0x0000000000004000L});
+    public static final BitSet FOLLOW_FALSE_in_sandterm2210 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_SAND_in_sandterm2225 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_FALSE_in_sandterm2227 = new BitSet(new long[]{0x000000000001FFF0L});
+    public static final BitSet FOLLOW_SAND_in_sandterm2243 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_TRUE_in_sandterm2245 = new BitSet(new long[]{0x0000000000002000L});
+    public static final BitSet FOLLOW_TRUE_in_sandterm2247 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_SAND_in_sandterm2261 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_ae_in_sandterm2263 = new BitSet(new long[]{0x0000000000002000L});
+    public static final BitSet FOLLOW_TRUE_in_sandterm2265 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_SAND_in_sandterm2280 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_TRUE_in_sandterm2282 = new BitSet(new long[]{0x000000000001FFF0L});
+    public static final BitSet FOLLOW_SAND_in_sandterm2298 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_XOR_in_sandterm2301 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_tt_in_sandterm2305 = new BitSet(new long[]{0x00000000000073F0L});
+    public static final BitSet FOLLOW_tt_in_sandterm2309 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_tt_in_sandterm2314 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_SAND_in_sandterm2351 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_tt_in_sandterm2355 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_XOR_in_sandterm2358 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_tt_in_sandterm2362 = new BitSet(new long[]{0x00000000000073F0L});
+    public static final BitSet FOLLOW_tt_in_sandterm2366 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_SAND_in_sandterm2404 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_tt_in_sandterm2408 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_OR_in_sandterm2411 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_tt_in_sandterm2415 = new BitSet(new long[]{0x00000000000073F0L});
+    public static final BitSet FOLLOW_tt_in_sandterm2419 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_SAND_in_sandterm2503 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_OR_in_sandterm2506 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_tt_in_sandterm2510 = new BitSet(new long[]{0x00000000000073F0L});
+    public static final BitSet FOLLOW_tt_in_sandterm2514 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_tt_in_sandterm2519 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_SAND_in_sandterm2602 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_PAND_in_sandterm2605 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_tt_in_sandterm2609 = new BitSet(new long[]{0x00000000000073F0L});
+    public static final BitSet FOLLOW_tt_in_sandterm2613 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_tt_in_sandterm2618 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_SAND_in_sandterm2647 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_tt_in_sandterm2651 = new BitSet(new long[]{0x0000000000000080L});
+    public static final BitSet FOLLOW_PAND_in_sandterm2654 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_tt_in_sandterm2658 = new BitSet(new long[]{0x00000000000073F0L});
+    public static final BitSet FOLLOW_tt_in_sandterm2662 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_SAND_in_sandterm2692 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_tt_in_sandterm2696 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_AND_in_sandterm2699 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_notterm_in_sandterm2703 = new BitSet(new long[]{0x00000000000073F0L});
+    public static final BitSet FOLLOW_tt_in_sandterm2707 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_SAND_in_sandterm2737 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_AND_in_sandterm2740 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_notterm_in_sandterm2744 = new BitSet(new long[]{0x00000000000073F0L});
+    public static final BitSet FOLLOW_tt_in_sandterm2748 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_tt_in_sandterm2753 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_SAND_in_sandterm2783 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_tt_in_sandterm2785 = new BitSet(new long[]{0x00000000000073F0L});
+    public static final BitSet FOLLOW_tt_in_sandterm2787 = new BitSet(new long[]{0x0000000000000008L});
     public static final BitSet FOLLOW_set_in_ae0 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_andterm_in_synpred1_tftacrules65 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_negandterm_in_synpred2_tftacrules70 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_NOT_in_synpred9_tftacrules175 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_AND_in_synpred9_tftacrules178 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_tt_in_synpred9_tftacrules182 = new BitSet(new long[]{0x00000000000073F0L});
-    public static final BitSet FOLLOW_tt_in_synpred9_tftacrules186 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_NOT_in_synpred10_tftacrules218 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_OR_in_synpred10_tftacrules221 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_tt_in_synpred10_tftacrules225 = new BitSet(new long[]{0x00000000000073F0L});
-    public static final BitSet FOLLOW_tt_in_synpred10_tftacrules229 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_NOT_in_synpred11_tftacrules261 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_XOR_in_synpred11_tftacrules264 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_tt_in_synpred11_tftacrules268 = new BitSet(new long[]{0x00000000000073F0L});
-    public static final BitSet FOLLOW_tt_in_synpred11_tftacrules272 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_NOT_in_synpred12_tftacrules304 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_PAND_in_synpred12_tftacrules307 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_tt_in_synpred12_tftacrules311 = new BitSet(new long[]{0x00000000000073F0L});
-    public static final BitSet FOLLOW_tt_in_synpred12_tftacrules315 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_NOT_in_synpred13_tftacrules370 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_SAND_in_synpred13_tftacrules373 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_tt_in_synpred13_tftacrules377 = new BitSet(new long[]{0x00000000000073F0L});
-    public static final BitSet FOLLOW_tt_in_synpred13_tftacrules381 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_AND_in_synpred17_tftacrules535 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_FALSE_in_synpred17_tftacrules539 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_AND_in_synpred18_tftacrules554 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_FALSE_in_synpred18_tftacrules556 = new BitSet(new long[]{0x000000000001FFF0L});
-    public static final BitSet FOLLOW_AND_in_synpred19_tftacrules572 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_TRUE_in_synpred19_tftacrules574 = new BitSet(new long[]{0x0000000000006200L});
-    public static final BitSet FOLLOW_ae_in_synpred19_tftacrules578 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_AND_in_synpred20_tftacrules593 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_ae_in_synpred20_tftacrules597 = new BitSet(new long[]{0x0000000000002000L});
-    public static final BitSet FOLLOW_TRUE_in_synpred20_tftacrules599 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_AND_in_synpred21_tftacrules614 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_XOR_in_synpred21_tftacrules617 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_tt_in_synpred21_tftacrules621 = new BitSet(new long[]{0x00000000000073F0L});
-    public static final BitSet FOLLOW_tt_in_synpred21_tftacrules625 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_tt_in_synpred21_tftacrules630 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_AND_in_synpred22_tftacrules669 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_OR_in_synpred22_tftacrules672 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_tt_in_synpred22_tftacrules676 = new BitSet(new long[]{0x00000000000073F0L});
-    public static final BitSet FOLLOW_tt_in_synpred22_tftacrules680 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_tt_in_synpred22_tftacrules685 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_AND_in_synpred23_tftacrules724 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_tt_in_synpred23_tftacrules728 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_OR_in_synpred23_tftacrules731 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_tt_in_synpred23_tftacrules735 = new BitSet(new long[]{0x00000000000073F0L});
-    public static final BitSet FOLLOW_tt_in_synpred23_tftacrules739 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_AND_in_synpred24_tftacrules778 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_AND_in_synpred24_tftacrules781 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_notterm_in_synpred24_tftacrules785 = new BitSet(new long[]{0x00000000000063C0L});
-    public static final BitSet FOLLOW_metaPandSandAE_in_synpred24_tftacrules789 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_tt_in_synpred24_tftacrules794 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_AND_in_synpred25_tftacrules873 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_tt_in_synpred25_tftacrules877 = new BitSet(new long[]{0x00000000000073F0L});
-    public static final BitSet FOLLOW_tt_in_synpred25_tftacrules881 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_AND_in_synpred26_tftacrules951 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_OR_in_synpred26_tftacrules954 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_notterm_in_synpred26_tftacrules958 = new BitSet(new long[]{0x0000000000001070L});
-    public static final BitSet FOLLOW_negatedterm_in_synpred26_tftacrules962 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_pandterm_in_synpred26_tftacrules967 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_AND_in_synpred27_tftacrules1003 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_XOR_in_synpred27_tftacrules1006 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_notterm_in_synpred27_tftacrules1010 = new BitSet(new long[]{0x0000000000001070L});
-    public static final BitSet FOLLOW_negatedterm_in_synpred27_tftacrules1014 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_pandterm_in_synpred27_tftacrules1019 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_AND_in_synpred28_tftacrules1055 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_OR_in_synpred28_tftacrules1058 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_notterm_in_synpred28_tftacrules1062 = new BitSet(new long[]{0x0000000000001070L});
-    public static final BitSet FOLLOW_negatedterm_in_synpred28_tftacrules1066 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_sandterm_in_synpred28_tftacrules1071 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_AND_in_synpred29_tftacrules1107 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_XOR_in_synpred29_tftacrules1110 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_notterm_in_synpred29_tftacrules1114 = new BitSet(new long[]{0x0000000000001070L});
-    public static final BitSet FOLLOW_negatedterm_in_synpred29_tftacrules1118 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_sandterm_in_synpred29_tftacrules1123 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_AND_in_synpred30_tftacrules1159 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_OR_in_synpred30_tftacrules1162 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_notterm_in_synpred30_tftacrules1166 = new BitSet(new long[]{0x0000000000001070L});
-    public static final BitSet FOLLOW_negatedterm_in_synpred30_tftacrules1170 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_ae_in_synpred30_tftacrules1175 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_AND_in_synpred31_tftacrules1211 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_XOR_in_synpred31_tftacrules1214 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_notterm_in_synpred31_tftacrules1218 = new BitSet(new long[]{0x0000000000001070L});
-    public static final BitSet FOLLOW_negatedterm_in_synpred31_tftacrules1222 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_ae_in_synpred31_tftacrules1227 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_AND_in_synpred32_tftacrules1263 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_notterm_in_synpred32_tftacrules1267 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_OR_in_synpred32_tftacrules1270 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_tt_in_synpred32_tftacrules1274 = new BitSet(new long[]{0x00000000000073F0L});
-    public static final BitSet FOLLOW_tt_in_synpred32_tftacrules1278 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_AND_in_synpred33_tftacrules1318 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_notterm_in_synpred33_tftacrules1322 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_XOR_in_synpred33_tftacrules1325 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_tt_in_synpred33_tftacrules1329 = new BitSet(new long[]{0x00000000000073F0L});
-    public static final BitSet FOLLOW_tt_in_synpred33_tftacrules1333 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_AND_in_synpred34_tftacrules1372 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_notterm_in_synpred34_tftacrules1376 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_AND_in_synpred34_tftacrules1379 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_notterm_in_synpred34_tftacrules1383 = new BitSet(new long[]{0x00000000000063C0L});
-    public static final BitSet FOLLOW_metaPandSandAE_in_synpred34_tftacrules1387 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_negandterm_in_synpred35_tftacrules1435 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_OR_in_synpred39_tftacrules1479 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_ae_in_synpred39_tftacrules1481 = new BitSet(new long[]{0x0000000000002000L});
-    public static final BitSet FOLLOW_TRUE_in_synpred39_tftacrules1483 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_OR_in_synpred40_tftacrules1498 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_TRUE_in_synpred40_tftacrules1500 = new BitSet(new long[]{0x000000000001FFF0L});
-    public static final BitSet FOLLOW_OR_in_synpred41_tftacrules1516 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_FALSE_in_synpred41_tftacrules1518 = new BitSet(new long[]{0x0000000000006200L});
-    public static final BitSet FOLLOW_ae_in_synpred41_tftacrules1522 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_OR_in_synpred42_tftacrules1537 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_ae_in_synpred42_tftacrules1541 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_FALSE_in_synpred42_tftacrules1543 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_XOR_in_synpred43_tftacrules1575 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_ae_in_synpred43_tftacrules1577 = new BitSet(new long[]{0x0000000000002000L});
-    public static final BitSet FOLLOW_TRUE_in_synpred43_tftacrules1579 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_XOR_in_synpred44_tftacrules1594 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_TRUE_in_synpred44_tftacrules1596 = new BitSet(new long[]{0x000000000001FFF0L});
-    public static final BitSet FOLLOW_XOR_in_synpred45_tftacrules1612 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_FALSE_in_synpred45_tftacrules1614 = new BitSet(new long[]{0x0000000000006200L});
-    public static final BitSet FOLLOW_ae_in_synpred45_tftacrules1618 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_XOR_in_synpred46_tftacrules1633 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_ae_in_synpred46_tftacrules1637 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_FALSE_in_synpred46_tftacrules1639 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_PAND_in_synpred47_tftacrules1670 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_ae_in_synpred47_tftacrules1672 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_FALSE_in_synpred47_tftacrules1674 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_PAND_in_synpred48_tftacrules1689 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_FALSE_in_synpred48_tftacrules1691 = new BitSet(new long[]{0x000000000001FFF0L});
-    public static final BitSet FOLLOW_PAND_in_synpred49_tftacrules1707 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_ae_in_synpred49_tftacrules1709 = new BitSet(new long[]{0x0000000000002000L});
-    public static final BitSet FOLLOW_TRUE_in_synpred49_tftacrules1711 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_PAND_in_synpred50_tftacrules1726 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_TRUE_in_synpred50_tftacrules1728 = new BitSet(new long[]{0x0000000000006200L});
-    public static final BitSet FOLLOW_ae_in_synpred50_tftacrules1732 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_PAND_in_synpred51_tftacrules1747 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_XOR_in_synpred51_tftacrules1750 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_tt_in_synpred51_tftacrules1754 = new BitSet(new long[]{0x00000000000073F0L});
-    public static final BitSet FOLLOW_tt_in_synpred51_tftacrules1758 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_tt_in_synpred51_tftacrules1763 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_PAND_in_synpred52_tftacrules1800 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_tt_in_synpred52_tftacrules1804 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_XOR_in_synpred52_tftacrules1807 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_tt_in_synpred52_tftacrules1811 = new BitSet(new long[]{0x00000000000073F0L});
-    public static final BitSet FOLLOW_tt_in_synpred52_tftacrules1815 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_PAND_in_synpred53_tftacrules1854 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_OR_in_synpred53_tftacrules1857 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_tt_in_synpred53_tftacrules1861 = new BitSet(new long[]{0x00000000000073F0L});
-    public static final BitSet FOLLOW_tt_in_synpred53_tftacrules1865 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_tt_in_synpred53_tftacrules1870 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_PAND_in_synpred54_tftacrules1907 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_tt_in_synpred54_tftacrules1911 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_OR_in_synpred54_tftacrules1914 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_tt_in_synpred54_tftacrules1918 = new BitSet(new long[]{0x00000000000073F0L});
-    public static final BitSet FOLLOW_tt_in_synpred54_tftacrules1922 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_PAND_in_synpred55_tftacrules2006 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_tt_in_synpred55_tftacrules2010 = new BitSet(new long[]{0x0000000000000080L});
-    public static final BitSet FOLLOW_PAND_in_synpred55_tftacrules2013 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_tt_in_synpred55_tftacrules2017 = new BitSet(new long[]{0x00000000000073F0L});
-    public static final BitSet FOLLOW_tt_in_synpred55_tftacrules2021 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_PAND_in_synpred56_tftacrules2051 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_tt_in_synpred56_tftacrules2055 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_AND_in_synpred56_tftacrules2058 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_notterm_in_synpred56_tftacrules2062 = new BitSet(new long[]{0x00000000000073F0L});
-    public static final BitSet FOLLOW_tt_in_synpred56_tftacrules2066 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_PAND_in_synpred57_tftacrules2096 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_AND_in_synpred57_tftacrules2099 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_notterm_in_synpred57_tftacrules2103 = new BitSet(new long[]{0x00000000000063C0L});
-    public static final BitSet FOLLOW_metaPandSandAE_in_synpred57_tftacrules2107 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_tt_in_synpred57_tftacrules2112 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_SAND_in_synpred58_tftacrules2207 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_ae_in_synpred58_tftacrules2209 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_FALSE_in_synpred58_tftacrules2211 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_SAND_in_synpred59_tftacrules2226 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_FALSE_in_synpred59_tftacrules2228 = new BitSet(new long[]{0x000000000001FFF0L});
-    public static final BitSet FOLLOW_SAND_in_synpred60_tftacrules2244 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_TRUE_in_synpred60_tftacrules2246 = new BitSet(new long[]{0x0000000000002000L});
-    public static final BitSet FOLLOW_TRUE_in_synpred60_tftacrules2248 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_SAND_in_synpred61_tftacrules2262 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_ae_in_synpred61_tftacrules2264 = new BitSet(new long[]{0x0000000000002000L});
-    public static final BitSet FOLLOW_TRUE_in_synpred61_tftacrules2266 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_SAND_in_synpred62_tftacrules2281 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_TRUE_in_synpred62_tftacrules2283 = new BitSet(new long[]{0x000000000001FFF0L});
-    public static final BitSet FOLLOW_SAND_in_synpred63_tftacrules2299 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_XOR_in_synpred63_tftacrules2302 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_tt_in_synpred63_tftacrules2306 = new BitSet(new long[]{0x00000000000073F0L});
-    public static final BitSet FOLLOW_tt_in_synpred63_tftacrules2310 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_tt_in_synpred63_tftacrules2315 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_SAND_in_synpred64_tftacrules2352 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_tt_in_synpred64_tftacrules2356 = new BitSet(new long[]{0x0000000000000020L});
-    public static final BitSet FOLLOW_XOR_in_synpred64_tftacrules2359 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_tt_in_synpred64_tftacrules2363 = new BitSet(new long[]{0x00000000000073F0L});
-    public static final BitSet FOLLOW_tt_in_synpred64_tftacrules2367 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_SAND_in_synpred65_tftacrules2405 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_tt_in_synpred65_tftacrules2409 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_OR_in_synpred65_tftacrules2412 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_tt_in_synpred65_tftacrules2416 = new BitSet(new long[]{0x00000000000073F0L});
-    public static final BitSet FOLLOW_tt_in_synpred65_tftacrules2420 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_SAND_in_synpred66_tftacrules2504 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_OR_in_synpred66_tftacrules2507 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_tt_in_synpred66_tftacrules2511 = new BitSet(new long[]{0x00000000000073F0L});
-    public static final BitSet FOLLOW_tt_in_synpred66_tftacrules2515 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_tt_in_synpred66_tftacrules2520 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_SAND_in_synpred67_tftacrules2603 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_PAND_in_synpred67_tftacrules2606 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_tt_in_synpred67_tftacrules2610 = new BitSet(new long[]{0x00000000000073F0L});
-    public static final BitSet FOLLOW_tt_in_synpred67_tftacrules2614 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_tt_in_synpred67_tftacrules2619 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_SAND_in_synpred68_tftacrules2648 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_tt_in_synpred68_tftacrules2652 = new BitSet(new long[]{0x0000000000000080L});
-    public static final BitSet FOLLOW_PAND_in_synpred68_tftacrules2655 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_tt_in_synpred68_tftacrules2659 = new BitSet(new long[]{0x00000000000073F0L});
-    public static final BitSet FOLLOW_tt_in_synpred68_tftacrules2663 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_SAND_in_synpred69_tftacrules2693 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_tt_in_synpred69_tftacrules2697 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_AND_in_synpred69_tftacrules2700 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_notterm_in_synpred69_tftacrules2704 = new BitSet(new long[]{0x00000000000073F0L});
-    public static final BitSet FOLLOW_tt_in_synpred69_tftacrules2708 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_SAND_in_synpred70_tftacrules2738 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_AND_in_synpred70_tftacrules2741 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_notterm_in_synpred70_tftacrules2745 = new BitSet(new long[]{0x00000000000073F0L});
-    public static final BitSet FOLLOW_tt_in_synpred70_tftacrules2749 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_tt_in_synpred70_tftacrules2754 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_andterm_in_synpred1_tftacrules64 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_negandterm_in_synpred2_tftacrules69 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_NOT_in_synpred9_tftacrules174 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_AND_in_synpred9_tftacrules177 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_tt_in_synpred9_tftacrules181 = new BitSet(new long[]{0x00000000000073F0L});
+    public static final BitSet FOLLOW_tt_in_synpred9_tftacrules185 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_NOT_in_synpred10_tftacrules217 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_OR_in_synpred10_tftacrules220 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_tt_in_synpred10_tftacrules224 = new BitSet(new long[]{0x00000000000073F0L});
+    public static final BitSet FOLLOW_tt_in_synpred10_tftacrules228 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_NOT_in_synpred11_tftacrules260 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_XOR_in_synpred11_tftacrules263 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_tt_in_synpred11_tftacrules267 = new BitSet(new long[]{0x00000000000073F0L});
+    public static final BitSet FOLLOW_tt_in_synpred11_tftacrules271 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_NOT_in_synpred12_tftacrules303 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_PAND_in_synpred12_tftacrules306 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_tt_in_synpred12_tftacrules310 = new BitSet(new long[]{0x00000000000073F0L});
+    public static final BitSet FOLLOW_tt_in_synpred12_tftacrules314 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_NOT_in_synpred13_tftacrules369 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_SAND_in_synpred13_tftacrules372 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_tt_in_synpred13_tftacrules376 = new BitSet(new long[]{0x00000000000073F0L});
+    public static final BitSet FOLLOW_tt_in_synpred13_tftacrules380 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_AND_in_synpred17_tftacrules534 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_FALSE_in_synpred17_tftacrules538 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_AND_in_synpred18_tftacrules553 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_FALSE_in_synpred18_tftacrules555 = new BitSet(new long[]{0x000000000001FFF0L});
+    public static final BitSet FOLLOW_AND_in_synpred19_tftacrules571 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_TRUE_in_synpred19_tftacrules573 = new BitSet(new long[]{0x0000000000006200L});
+    public static final BitSet FOLLOW_ae_in_synpred19_tftacrules577 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_AND_in_synpred20_tftacrules592 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_ae_in_synpred20_tftacrules596 = new BitSet(new long[]{0x0000000000002000L});
+    public static final BitSet FOLLOW_TRUE_in_synpred20_tftacrules598 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_AND_in_synpred21_tftacrules613 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_XOR_in_synpred21_tftacrules616 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_tt_in_synpred21_tftacrules620 = new BitSet(new long[]{0x00000000000073F0L});
+    public static final BitSet FOLLOW_tt_in_synpred21_tftacrules624 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_tt_in_synpred21_tftacrules629 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_AND_in_synpred22_tftacrules668 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_OR_in_synpred22_tftacrules671 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_tt_in_synpred22_tftacrules675 = new BitSet(new long[]{0x00000000000073F0L});
+    public static final BitSet FOLLOW_tt_in_synpred22_tftacrules679 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_tt_in_synpred22_tftacrules684 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_AND_in_synpred23_tftacrules723 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_tt_in_synpred23_tftacrules727 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_OR_in_synpred23_tftacrules730 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_tt_in_synpred23_tftacrules734 = new BitSet(new long[]{0x00000000000073F0L});
+    public static final BitSet FOLLOW_tt_in_synpred23_tftacrules738 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_AND_in_synpred24_tftacrules777 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_AND_in_synpred24_tftacrules780 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_notterm_in_synpred24_tftacrules784 = new BitSet(new long[]{0x00000000000063C0L});
+    public static final BitSet FOLLOW_metaPandSandAE_in_synpred24_tftacrules788 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_tt_in_synpred24_tftacrules793 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_AND_in_synpred25_tftacrules872 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_tt_in_synpred25_tftacrules876 = new BitSet(new long[]{0x00000000000073F0L});
+    public static final BitSet FOLLOW_tt_in_synpred25_tftacrules880 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_AND_in_synpred26_tftacrules950 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_OR_in_synpred26_tftacrules953 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_notterm_in_synpred26_tftacrules957 = new BitSet(new long[]{0x0000000000001070L});
+    public static final BitSet FOLLOW_negatedterm_in_synpred26_tftacrules961 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_pandterm_in_synpred26_tftacrules966 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_AND_in_synpred27_tftacrules1002 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_XOR_in_synpred27_tftacrules1005 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_notterm_in_synpred27_tftacrules1009 = new BitSet(new long[]{0x0000000000001070L});
+    public static final BitSet FOLLOW_negatedterm_in_synpred27_tftacrules1013 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_pandterm_in_synpred27_tftacrules1018 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_AND_in_synpred28_tftacrules1054 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_OR_in_synpred28_tftacrules1057 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_notterm_in_synpred28_tftacrules1061 = new BitSet(new long[]{0x0000000000001070L});
+    public static final BitSet FOLLOW_negatedterm_in_synpred28_tftacrules1065 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_sandterm_in_synpred28_tftacrules1070 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_AND_in_synpred29_tftacrules1106 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_XOR_in_synpred29_tftacrules1109 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_notterm_in_synpred29_tftacrules1113 = new BitSet(new long[]{0x0000000000001070L});
+    public static final BitSet FOLLOW_negatedterm_in_synpred29_tftacrules1117 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_sandterm_in_synpred29_tftacrules1122 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_AND_in_synpred30_tftacrules1158 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_OR_in_synpred30_tftacrules1161 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_notterm_in_synpred30_tftacrules1165 = new BitSet(new long[]{0x0000000000001070L});
+    public static final BitSet FOLLOW_negatedterm_in_synpred30_tftacrules1169 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_ae_in_synpred30_tftacrules1174 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_AND_in_synpred31_tftacrules1210 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_XOR_in_synpred31_tftacrules1213 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_notterm_in_synpred31_tftacrules1217 = new BitSet(new long[]{0x0000000000001070L});
+    public static final BitSet FOLLOW_negatedterm_in_synpred31_tftacrules1221 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_ae_in_synpred31_tftacrules1226 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_AND_in_synpred32_tftacrules1262 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_notterm_in_synpred32_tftacrules1266 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_OR_in_synpred32_tftacrules1269 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_tt_in_synpred32_tftacrules1273 = new BitSet(new long[]{0x00000000000073F0L});
+    public static final BitSet FOLLOW_tt_in_synpred32_tftacrules1277 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_AND_in_synpred33_tftacrules1317 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_notterm_in_synpred33_tftacrules1321 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_XOR_in_synpred33_tftacrules1324 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_tt_in_synpred33_tftacrules1328 = new BitSet(new long[]{0x00000000000073F0L});
+    public static final BitSet FOLLOW_tt_in_synpred33_tftacrules1332 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_AND_in_synpred34_tftacrules1371 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_notterm_in_synpred34_tftacrules1375 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_AND_in_synpred34_tftacrules1378 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_notterm_in_synpred34_tftacrules1382 = new BitSet(new long[]{0x00000000000063C0L});
+    public static final BitSet FOLLOW_metaPandSandAE_in_synpred34_tftacrules1386 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_negandterm_in_synpred35_tftacrules1434 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_OR_in_synpred39_tftacrules1478 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_ae_in_synpred39_tftacrules1480 = new BitSet(new long[]{0x0000000000002000L});
+    public static final BitSet FOLLOW_TRUE_in_synpred39_tftacrules1482 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_OR_in_synpred40_tftacrules1497 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_TRUE_in_synpred40_tftacrules1499 = new BitSet(new long[]{0x000000000001FFF0L});
+    public static final BitSet FOLLOW_OR_in_synpred41_tftacrules1515 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_FALSE_in_synpred41_tftacrules1517 = new BitSet(new long[]{0x0000000000006200L});
+    public static final BitSet FOLLOW_ae_in_synpred41_tftacrules1521 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_OR_in_synpred42_tftacrules1536 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_ae_in_synpred42_tftacrules1540 = new BitSet(new long[]{0x0000000000004000L});
+    public static final BitSet FOLLOW_FALSE_in_synpred42_tftacrules1542 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_XOR_in_synpred43_tftacrules1574 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_ae_in_synpred43_tftacrules1576 = new BitSet(new long[]{0x0000000000002000L});
+    public static final BitSet FOLLOW_TRUE_in_synpred43_tftacrules1578 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_XOR_in_synpred44_tftacrules1593 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_TRUE_in_synpred44_tftacrules1595 = new BitSet(new long[]{0x000000000001FFF0L});
+    public static final BitSet FOLLOW_XOR_in_synpred45_tftacrules1611 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_FALSE_in_synpred45_tftacrules1613 = new BitSet(new long[]{0x0000000000006200L});
+    public static final BitSet FOLLOW_ae_in_synpred45_tftacrules1617 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_XOR_in_synpred46_tftacrules1632 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_ae_in_synpred46_tftacrules1636 = new BitSet(new long[]{0x0000000000004000L});
+    public static final BitSet FOLLOW_FALSE_in_synpred46_tftacrules1638 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_PAND_in_synpred47_tftacrules1669 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_ae_in_synpred47_tftacrules1671 = new BitSet(new long[]{0x0000000000004000L});
+    public static final BitSet FOLLOW_FALSE_in_synpred47_tftacrules1673 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_PAND_in_synpred48_tftacrules1688 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_FALSE_in_synpred48_tftacrules1690 = new BitSet(new long[]{0x000000000001FFF0L});
+    public static final BitSet FOLLOW_PAND_in_synpred49_tftacrules1706 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_ae_in_synpred49_tftacrules1708 = new BitSet(new long[]{0x0000000000002000L});
+    public static final BitSet FOLLOW_TRUE_in_synpred49_tftacrules1710 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_PAND_in_synpred50_tftacrules1725 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_TRUE_in_synpred50_tftacrules1727 = new BitSet(new long[]{0x0000000000006200L});
+    public static final BitSet FOLLOW_ae_in_synpred50_tftacrules1731 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_PAND_in_synpred51_tftacrules1746 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_XOR_in_synpred51_tftacrules1749 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_tt_in_synpred51_tftacrules1753 = new BitSet(new long[]{0x00000000000073F0L});
+    public static final BitSet FOLLOW_tt_in_synpred51_tftacrules1757 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_tt_in_synpred51_tftacrules1762 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_PAND_in_synpred52_tftacrules1799 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_tt_in_synpred52_tftacrules1803 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_XOR_in_synpred52_tftacrules1806 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_tt_in_synpred52_tftacrules1810 = new BitSet(new long[]{0x00000000000073F0L});
+    public static final BitSet FOLLOW_tt_in_synpred52_tftacrules1814 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_PAND_in_synpred53_tftacrules1853 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_OR_in_synpred53_tftacrules1856 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_tt_in_synpred53_tftacrules1860 = new BitSet(new long[]{0x00000000000073F0L});
+    public static final BitSet FOLLOW_tt_in_synpred53_tftacrules1864 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_tt_in_synpred53_tftacrules1869 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_PAND_in_synpred54_tftacrules1906 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_tt_in_synpred54_tftacrules1910 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_OR_in_synpred54_tftacrules1913 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_tt_in_synpred54_tftacrules1917 = new BitSet(new long[]{0x00000000000073F0L});
+    public static final BitSet FOLLOW_tt_in_synpred54_tftacrules1921 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_PAND_in_synpred55_tftacrules2005 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_tt_in_synpred55_tftacrules2009 = new BitSet(new long[]{0x0000000000000080L});
+    public static final BitSet FOLLOW_PAND_in_synpred55_tftacrules2012 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_tt_in_synpred55_tftacrules2016 = new BitSet(new long[]{0x00000000000073F0L});
+    public static final BitSet FOLLOW_tt_in_synpred55_tftacrules2020 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_PAND_in_synpred56_tftacrules2050 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_tt_in_synpred56_tftacrules2054 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_AND_in_synpred56_tftacrules2057 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_notterm_in_synpred56_tftacrules2061 = new BitSet(new long[]{0x00000000000073F0L});
+    public static final BitSet FOLLOW_tt_in_synpred56_tftacrules2065 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_PAND_in_synpred57_tftacrules2095 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_AND_in_synpred57_tftacrules2098 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_notterm_in_synpred57_tftacrules2102 = new BitSet(new long[]{0x00000000000063C0L});
+    public static final BitSet FOLLOW_metaPandSandAE_in_synpred57_tftacrules2106 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_tt_in_synpred57_tftacrules2111 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_SAND_in_synpred58_tftacrules2206 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_ae_in_synpred58_tftacrules2208 = new BitSet(new long[]{0x0000000000004000L});
+    public static final BitSet FOLLOW_FALSE_in_synpred58_tftacrules2210 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_SAND_in_synpred59_tftacrules2225 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_FALSE_in_synpred59_tftacrules2227 = new BitSet(new long[]{0x000000000001FFF0L});
+    public static final BitSet FOLLOW_SAND_in_synpred60_tftacrules2243 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_TRUE_in_synpred60_tftacrules2245 = new BitSet(new long[]{0x0000000000002000L});
+    public static final BitSet FOLLOW_TRUE_in_synpred60_tftacrules2247 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_SAND_in_synpred61_tftacrules2261 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_ae_in_synpred61_tftacrules2263 = new BitSet(new long[]{0x0000000000002000L});
+    public static final BitSet FOLLOW_TRUE_in_synpred61_tftacrules2265 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_SAND_in_synpred62_tftacrules2280 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_TRUE_in_synpred62_tftacrules2282 = new BitSet(new long[]{0x000000000001FFF0L});
+    public static final BitSet FOLLOW_SAND_in_synpred63_tftacrules2298 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_XOR_in_synpred63_tftacrules2301 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_tt_in_synpred63_tftacrules2305 = new BitSet(new long[]{0x00000000000073F0L});
+    public static final BitSet FOLLOW_tt_in_synpred63_tftacrules2309 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_tt_in_synpred63_tftacrules2314 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_SAND_in_synpred64_tftacrules2351 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_tt_in_synpred64_tftacrules2355 = new BitSet(new long[]{0x0000000000000020L});
+    public static final BitSet FOLLOW_XOR_in_synpred64_tftacrules2358 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_tt_in_synpred64_tftacrules2362 = new BitSet(new long[]{0x00000000000073F0L});
+    public static final BitSet FOLLOW_tt_in_synpred64_tftacrules2366 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_SAND_in_synpred65_tftacrules2404 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_tt_in_synpred65_tftacrules2408 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_OR_in_synpred65_tftacrules2411 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_tt_in_synpred65_tftacrules2415 = new BitSet(new long[]{0x00000000000073F0L});
+    public static final BitSet FOLLOW_tt_in_synpred65_tftacrules2419 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_SAND_in_synpred66_tftacrules2503 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_OR_in_synpred66_tftacrules2506 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_tt_in_synpred66_tftacrules2510 = new BitSet(new long[]{0x00000000000073F0L});
+    public static final BitSet FOLLOW_tt_in_synpred66_tftacrules2514 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_tt_in_synpred66_tftacrules2519 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_SAND_in_synpred67_tftacrules2602 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_PAND_in_synpred67_tftacrules2605 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_tt_in_synpred67_tftacrules2609 = new BitSet(new long[]{0x00000000000073F0L});
+    public static final BitSet FOLLOW_tt_in_synpred67_tftacrules2613 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_tt_in_synpred67_tftacrules2618 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_SAND_in_synpred68_tftacrules2647 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_tt_in_synpred68_tftacrules2651 = new BitSet(new long[]{0x0000000000000080L});
+    public static final BitSet FOLLOW_PAND_in_synpred68_tftacrules2654 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_tt_in_synpred68_tftacrules2658 = new BitSet(new long[]{0x00000000000073F0L});
+    public static final BitSet FOLLOW_tt_in_synpred68_tftacrules2662 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_SAND_in_synpred69_tftacrules2692 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_tt_in_synpred69_tftacrules2696 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_AND_in_synpred69_tftacrules2699 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_notterm_in_synpred69_tftacrules2703 = new BitSet(new long[]{0x00000000000073F0L});
+    public static final BitSet FOLLOW_tt_in_synpred69_tftacrules2707 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_SAND_in_synpred70_tftacrules2737 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_AND_in_synpred70_tftacrules2740 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_notterm_in_synpred70_tftacrules2744 = new BitSet(new long[]{0x00000000000073F0L});
+    public static final BitSet FOLLOW_tt_in_synpred70_tftacrules2748 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_tt_in_synpred70_tftacrules2753 = new BitSet(new long[]{0x0000000000000008L});
 
 }

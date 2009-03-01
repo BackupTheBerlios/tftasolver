@@ -1,4 +1,4 @@
-// $ANTLR 3.1.1 /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacprinter.g 2009-03-01 16:13:40
+// $ANTLR 3.1.1 /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacprinter.g 2009-03-01 21:55:44
 
 import org.antlr.runtime.*;
 import org.antlr.runtime.tree.*;import java.util.Stack;
@@ -73,7 +73,7 @@ public class tftacprinter extends TreeParser {
     };
 
     // $ANTLR start "infixform"
-    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacprinter.g:13:1: infixform : ( ^( PAND a= infixform b= infixform ) -> template(a=$a.stb=$b.st) \"(<a> PAND <b>)\" | ^( AND a= infixform b= infixform ) -> template(a=$a.stb=$b.st) \"(<a> AND <b>)\" | ^( SAND a= infixform b= infixform ) -> template(a=$a.stb=$b.st) \"(<a> SAND <b>)\" | ^( OR a= infixform b= infixform ) -> template(a=$a.stb=$b.st) \"(<a> OR <b>)\" | ^( XOR a= infixform b= infixform ) -> template(a=$a.stb=$b.st) \"(<a> XOR <b>)\" | ^( NOT a= infixform ) -> template(a=$a.st) \"(NOT <a>)\" | ID -> template(a=$ID.text) \"<a>\" | TRUE -> {%{\"TRUE\"}} | FALSE -> {%{\"FALSE\"}});
+    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacprinter.g:33:1: infixform : ( ^( PAND a= infixform b= infixform ) -> template(a=$a.stb=$b.st) \"(<a> PAND <b>)\" | ^( AND a= infixform b= infixform ) -> template(a=$a.stb=$b.st) \"(<a> AND <b>)\" | ^( SAND a= infixform b= infixform ) -> template(a=$a.stb=$b.st) \"(<a> SAND <b>)\" | ^( OR a= infixform b= infixform ) -> template(a=$a.stb=$b.st) \"(<a> OR <b>)\" | ^( XOR a= infixform b= infixform ) -> template(a=$a.stb=$b.st) \"(<a> XOR <b>)\" | ^( NOT a= infixform ) -> template(a=$a.st) \"(NOT <a>)\" | ID -> template(a=$ID.text) \"<a>\" | TRUE -> {%{\"TRUE\"}} | FALSE -> {%{\"FALSE\"}});
     public final tftacprinter.infixform_return infixform() throws RecognitionException {
         tftacprinter.infixform_return retval = new tftacprinter.infixform_return();
         retval.start = input.LT(1);
@@ -85,7 +85,7 @@ public class tftacprinter extends TreeParser {
 
 
         try {
-            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacprinter.g:14:2: ( ^( PAND a= infixform b= infixform ) -> template(a=$a.stb=$b.st) \"(<a> PAND <b>)\" | ^( AND a= infixform b= infixform ) -> template(a=$a.stb=$b.st) \"(<a> AND <b>)\" | ^( SAND a= infixform b= infixform ) -> template(a=$a.stb=$b.st) \"(<a> SAND <b>)\" | ^( OR a= infixform b= infixform ) -> template(a=$a.stb=$b.st) \"(<a> OR <b>)\" | ^( XOR a= infixform b= infixform ) -> template(a=$a.stb=$b.st) \"(<a> XOR <b>)\" | ^( NOT a= infixform ) -> template(a=$a.st) \"(NOT <a>)\" | ID -> template(a=$ID.text) \"<a>\" | TRUE -> {%{\"TRUE\"}} | FALSE -> {%{\"FALSE\"}})
+            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacprinter.g:34:2: ( ^( PAND a= infixform b= infixform ) -> template(a=$a.stb=$b.st) \"(<a> PAND <b>)\" | ^( AND a= infixform b= infixform ) -> template(a=$a.stb=$b.st) \"(<a> AND <b>)\" | ^( SAND a= infixform b= infixform ) -> template(a=$a.stb=$b.st) \"(<a> SAND <b>)\" | ^( OR a= infixform b= infixform ) -> template(a=$a.stb=$b.st) \"(<a> OR <b>)\" | ^( XOR a= infixform b= infixform ) -> template(a=$a.stb=$b.st) \"(<a> XOR <b>)\" | ^( NOT a= infixform ) -> template(a=$a.st) \"(NOT <a>)\" | ID -> template(a=$ID.text) \"<a>\" | TRUE -> {%{\"TRUE\"}} | FALSE -> {%{\"FALSE\"}})
             int alt1=9;
             switch ( input.LA(1) ) {
             case PAND:
@@ -142,17 +142,17 @@ public class tftacprinter extends TreeParser {
 
             switch (alt1) {
                 case 1 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacprinter.g:14:7: ^( PAND a= infixform b= infixform )
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacprinter.g:34:7: ^( PAND a= infixform b= infixform )
                     {
-                    match(input,PAND,FOLLOW_PAND_in_infixform51); 
+                    match(input,PAND,FOLLOW_PAND_in_infixform49); 
 
                     match(input, Token.DOWN, null); 
-                    pushFollow(FOLLOW_infixform_in_infixform55);
+                    pushFollow(FOLLOW_infixform_in_infixform53);
                     a=infixform();
 
                     state._fsp--;
 
-                    pushFollow(FOLLOW_infixform_in_infixform59);
+                    pushFollow(FOLLOW_infixform_in_infixform57);
                     b=infixform();
 
                     state._fsp--;
@@ -162,7 +162,7 @@ public class tftacprinter extends TreeParser {
 
 
                     // TEMPLATE REWRITE
-                    // 15:4: -> template(a=$a.stb=$b.st) \"(<a> PAND <b>)\"
+                    // 35:4: -> template(a=$a.stb=$b.st) \"(<a> PAND <b>)\"
                     {
                         retval.st = new StringTemplate(templateLib, "(<a> PAND <b>)",
                       new STAttrMap().put("a", (a!=null?a.st:null)).put("b", (b!=null?b.st:null)));
@@ -172,17 +172,17 @@ public class tftacprinter extends TreeParser {
                     }
                     break;
                 case 2 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacprinter.g:16:6: ^( AND a= infixform b= infixform )
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacprinter.g:36:6: ^( AND a= infixform b= infixform )
                     {
-                    match(input,AND,FOLLOW_AND_in_infixform89); 
+                    match(input,AND,FOLLOW_AND_in_infixform87); 
 
                     match(input, Token.DOWN, null); 
-                    pushFollow(FOLLOW_infixform_in_infixform94);
+                    pushFollow(FOLLOW_infixform_in_infixform92);
                     a=infixform();
 
                     state._fsp--;
 
-                    pushFollow(FOLLOW_infixform_in_infixform98);
+                    pushFollow(FOLLOW_infixform_in_infixform96);
                     b=infixform();
 
                     state._fsp--;
@@ -192,7 +192,7 @@ public class tftacprinter extends TreeParser {
 
 
                     // TEMPLATE REWRITE
-                    // 17:4: -> template(a=$a.stb=$b.st) \"(<a> AND <b>)\"
+                    // 37:4: -> template(a=$a.stb=$b.st) \"(<a> AND <b>)\"
                     {
                         retval.st = new StringTemplate(templateLib, "(<a> AND <b>)",
                       new STAttrMap().put("a", (a!=null?a.st:null)).put("b", (b!=null?b.st:null)));
@@ -202,17 +202,17 @@ public class tftacprinter extends TreeParser {
                     }
                     break;
                 case 3 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacprinter.g:18:7: ^( SAND a= infixform b= infixform )
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacprinter.g:38:7: ^( SAND a= infixform b= infixform )
                     {
-                    match(input,SAND,FOLLOW_SAND_in_infixform132); 
+                    match(input,SAND,FOLLOW_SAND_in_infixform130); 
 
                     match(input, Token.DOWN, null); 
-                    pushFollow(FOLLOW_infixform_in_infixform137);
+                    pushFollow(FOLLOW_infixform_in_infixform135);
                     a=infixform();
 
                     state._fsp--;
 
-                    pushFollow(FOLLOW_infixform_in_infixform141);
+                    pushFollow(FOLLOW_infixform_in_infixform139);
                     b=infixform();
 
                     state._fsp--;
@@ -222,7 +222,7 @@ public class tftacprinter extends TreeParser {
 
 
                     // TEMPLATE REWRITE
-                    // 19:4: -> template(a=$a.stb=$b.st) \"(<a> SAND <b>)\"
+                    // 39:4: -> template(a=$a.stb=$b.st) \"(<a> SAND <b>)\"
                     {
                         retval.st = new StringTemplate(templateLib, "(<a> SAND <b>)",
                       new STAttrMap().put("a", (a!=null?a.st:null)).put("b", (b!=null?b.st:null)));
@@ -232,17 +232,17 @@ public class tftacprinter extends TreeParser {
                     }
                     break;
                 case 4 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacprinter.g:20:7: ^( OR a= infixform b= infixform )
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacprinter.g:40:7: ^( OR a= infixform b= infixform )
                     {
-                    match(input,OR,FOLLOW_OR_in_infixform172); 
+                    match(input,OR,FOLLOW_OR_in_infixform170); 
 
                     match(input, Token.DOWN, null); 
-                    pushFollow(FOLLOW_infixform_in_infixform177);
+                    pushFollow(FOLLOW_infixform_in_infixform175);
                     a=infixform();
 
                     state._fsp--;
 
-                    pushFollow(FOLLOW_infixform_in_infixform181);
+                    pushFollow(FOLLOW_infixform_in_infixform179);
                     b=infixform();
 
                     state._fsp--;
@@ -252,7 +252,7 @@ public class tftacprinter extends TreeParser {
 
 
                     // TEMPLATE REWRITE
-                    // 21:4: -> template(a=$a.stb=$b.st) \"(<a> OR <b>)\"
+                    // 41:4: -> template(a=$a.stb=$b.st) \"(<a> OR <b>)\"
                     {
                         retval.st = new StringTemplate(templateLib, "(<a> OR <b>)",
                       new STAttrMap().put("a", (a!=null?a.st:null)).put("b", (b!=null?b.st:null)));
@@ -262,17 +262,17 @@ public class tftacprinter extends TreeParser {
                     }
                     break;
                 case 5 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacprinter.g:22:7: ^( XOR a= infixform b= infixform )
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacprinter.g:42:7: ^( XOR a= infixform b= infixform )
                     {
-                    match(input,XOR,FOLLOW_XOR_in_infixform212); 
+                    match(input,XOR,FOLLOW_XOR_in_infixform210); 
 
                     match(input, Token.DOWN, null); 
-                    pushFollow(FOLLOW_infixform_in_infixform217);
+                    pushFollow(FOLLOW_infixform_in_infixform215);
                     a=infixform();
 
                     state._fsp--;
 
-                    pushFollow(FOLLOW_infixform_in_infixform221);
+                    pushFollow(FOLLOW_infixform_in_infixform219);
                     b=infixform();
 
                     state._fsp--;
@@ -282,7 +282,7 @@ public class tftacprinter extends TreeParser {
 
 
                     // TEMPLATE REWRITE
-                    // 23:4: -> template(a=$a.stb=$b.st) \"(<a> XOR <b>)\"
+                    // 43:4: -> template(a=$a.stb=$b.st) \"(<a> XOR <b>)\"
                     {
                         retval.st = new StringTemplate(templateLib, "(<a> XOR <b>)",
                       new STAttrMap().put("a", (a!=null?a.st:null)).put("b", (b!=null?b.st:null)));
@@ -292,12 +292,12 @@ public class tftacprinter extends TreeParser {
                     }
                     break;
                 case 6 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacprinter.g:24:7: ^( NOT a= infixform )
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacprinter.g:44:7: ^( NOT a= infixform )
                     {
-                    match(input,NOT,FOLLOW_NOT_in_infixform252); 
+                    match(input,NOT,FOLLOW_NOT_in_infixform250); 
 
                     match(input, Token.DOWN, null); 
-                    pushFollow(FOLLOW_infixform_in_infixform257);
+                    pushFollow(FOLLOW_infixform_in_infixform255);
                     a=infixform();
 
                     state._fsp--;
@@ -307,7 +307,7 @@ public class tftacprinter extends TreeParser {
 
 
                     // TEMPLATE REWRITE
-                    // 25:4: -> template(a=$a.st) \"(NOT <a>)\"
+                    // 45:4: -> template(a=$a.st) \"(NOT <a>)\"
                     {
                         retval.st = new StringTemplate(templateLib, "(NOT <a>)",
                       new STAttrMap().put("a", (a!=null?a.st:null)));
@@ -317,13 +317,13 @@ public class tftacprinter extends TreeParser {
                     }
                     break;
                 case 7 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacprinter.g:26:11: ID
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacprinter.g:46:11: ID
                     {
-                    ID1=(CommonTree)match(input,ID,FOLLOW_ID_in_infixform287); 
+                    ID1=(CommonTree)match(input,ID,FOLLOW_ID_in_infixform285); 
 
 
                     // TEMPLATE REWRITE
-                    // 26:14: -> template(a=$ID.text) \"<a>\"
+                    // 46:14: -> template(a=$ID.text) \"<a>\"
                     {
                         retval.st = new StringTemplate(templateLib, "<a>",
                       new STAttrMap().put("a", (ID1!=null?ID1.getText():null)));
@@ -333,13 +333,13 @@ public class tftacprinter extends TreeParser {
                     }
                     break;
                 case 8 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacprinter.g:27:4: TRUE
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacprinter.g:47:4: TRUE
                     {
-                    match(input,TRUE,FOLLOW_TRUE_in_infixform303); 
+                    match(input,TRUE,FOLLOW_TRUE_in_infixform301); 
 
 
                     // TEMPLATE REWRITE
-                    // 27:9: -> {%{\"TRUE\"}}
+                    // 47:9: -> {%{\"TRUE\"}}
                     {
                         retval.st = new StringTemplate(templateLib,"TRUE");
                     }
@@ -348,13 +348,13 @@ public class tftacprinter extends TreeParser {
                     }
                     break;
                 case 9 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacprinter.g:28:4: FALSE
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacprinter.g:48:4: FALSE
                     {
-                    match(input,FALSE,FOLLOW_FALSE_in_infixform312); 
+                    match(input,FALSE,FOLLOW_FALSE_in_infixform310); 
 
 
                     // TEMPLATE REWRITE
-                    // 28:10: -> {%{\"FALSE\"}}
+                    // 48:10: -> {%{\"FALSE\"}}
                     {
                         retval.st = new StringTemplate(templateLib,"FALSE");
                     }
@@ -380,25 +380,25 @@ public class tftacprinter extends TreeParser {
 
  
 
-    public static final BitSet FOLLOW_PAND_in_infixform51 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_infixform_in_infixform55 = new BitSet(new long[]{0x00000000000073F0L});
-    public static final BitSet FOLLOW_infixform_in_infixform59 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_AND_in_infixform89 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_infixform_in_infixform94 = new BitSet(new long[]{0x00000000000073F0L});
-    public static final BitSet FOLLOW_infixform_in_infixform98 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_SAND_in_infixform132 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_infixform_in_infixform137 = new BitSet(new long[]{0x00000000000073F0L});
-    public static final BitSet FOLLOW_infixform_in_infixform141 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_OR_in_infixform172 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_infixform_in_infixform177 = new BitSet(new long[]{0x00000000000073F0L});
-    public static final BitSet FOLLOW_infixform_in_infixform181 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_XOR_in_infixform212 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_infixform_in_infixform217 = new BitSet(new long[]{0x00000000000073F0L});
-    public static final BitSet FOLLOW_infixform_in_infixform221 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_NOT_in_infixform252 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_infixform_in_infixform257 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_ID_in_infixform287 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TRUE_in_infixform303 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_FALSE_in_infixform312 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_PAND_in_infixform49 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_infixform_in_infixform53 = new BitSet(new long[]{0x00000000000073F0L});
+    public static final BitSet FOLLOW_infixform_in_infixform57 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_AND_in_infixform87 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_infixform_in_infixform92 = new BitSet(new long[]{0x00000000000073F0L});
+    public static final BitSet FOLLOW_infixform_in_infixform96 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_SAND_in_infixform130 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_infixform_in_infixform135 = new BitSet(new long[]{0x00000000000073F0L});
+    public static final BitSet FOLLOW_infixform_in_infixform139 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_OR_in_infixform170 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_infixform_in_infixform175 = new BitSet(new long[]{0x00000000000073F0L});
+    public static final BitSet FOLLOW_infixform_in_infixform179 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_XOR_in_infixform210 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_infixform_in_infixform215 = new BitSet(new long[]{0x00000000000073F0L});
+    public static final BitSet FOLLOW_infixform_in_infixform219 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_NOT_in_infixform250 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_infixform_in_infixform255 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_ID_in_infixform285 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_TRUE_in_infixform301 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_FALSE_in_infixform310 = new BitSet(new long[]{0x0000000000000002L});
 
 }
