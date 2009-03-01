@@ -1,5 +1,0 @@
-<?xml version="1.0"?>
-<CONFIG>
-  <Compiler Value="/usr/bin/ppc386" Date="1219188162"/>
-  <Params Value=" -MObjFPC -Sgi -O1 -gl -WG -vewnhic -l -Fu../../../../../../99_publikationen/15_FPC/01_TFTA_Solver/ -Fu../../../../../../.lazarus/lib/TurboPowerIPro/i386-linux/ -Fu../../../../../../../../usr/lib/lazarus/lcl/units/i386-linux/ -Fu../../../../../../../../usr/lib/lazarus/lcl/units/i386-linux/gtk/ -Fu../../../../../../../../usr/lib/lazarus/packager/units/i386-linux/ -Fu. -otftasolver -dLCL -dLCLgtk tftasolver.lpr"/>
-</CONFIG>
