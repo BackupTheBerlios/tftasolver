@@ -44,45 +44,49 @@ uses
 implementation
 
   { "private" functions / Procedures }
-  function  ANDCombine          (currentTerm :TTFTAObject; theParent : TTFTAList; theIndex : Integer; eventlist : TTFTAEventLookupList) : boolean; forward;
-  function  ANDContradict       (currentTerm :TTFTAObject; theParent : TTFTAList; theIndex : Integer; eventlist : TTFTAEventLookupList) : boolean; forward;
-  function  ANDFalse            (currentTerm :TTFTAObject; theParent : TTFTAList; theIndex : Integer; eventlist : TTFTAEventLookupList) : boolean; forward;
-  function  ANDSplit            (currentTerm :TTFTAObject; theParent : TTFTAList; theIndex : Integer; eventlist : TTFTAEventLookupList) : boolean; forward;
-  function  ANDTrue             (currentTerm :TTFTAObject; theParent : TTFTAList; theIndex : Integer; eventlist : TTFTAEventLookupList) : boolean; forward;
-  function  DistributeANDORXOR  (currentTerm :TTFTAObject; theParent : TTFTAList; theIndex : Integer; eventlist : TTFTAEventLookupList) : boolean; forward;
-  function  DistributeORPAND    (currentTerm :TTFTAObject; theParent : TTFTAList; theIndex : Integer; eventlist : TTFTAEventLookupList) : boolean; forward;
-  function  DistributePANDOR    (currentTerm :TTFTAObject; theParent : TTFTAList; theIndex : Integer; eventlist : TTFTAEventLookupList) : boolean; forward;
-  function  DistributePANDXOR   (currentTerm :TTFTAObject; theParent : TTFTAList; theIndex : Integer; eventlist : TTFTAEventLookupList) : boolean; forward;
-  function  DistributeSANDAND   (currentTerm :TTFTAObject; theParent : TTFTAList; theIndex : Integer; eventlist : TTFTAEventLookupList) : boolean; forward;
-  function  DistributeSANDOR    (currentTerm :TTFTAObject; theParent : TTFTAList; theIndex : Integer; eventlist : TTFTAEventLookupList) : boolean; forward;
-  function  DistributeSANDXOR   (currentTerm :TTFTAObject; theParent : TTFTAList; theIndex : Integer; eventlist : TTFTAEventLookupList) : boolean; forward;
-  function  GenericCombine      (currentTerm :TTFTAObject; theParent : TTFTAList; theIndex : Integer; eventlist : TTFTAEventLookupList) : boolean; forward;
-  function  GenericNOTBoolean   (currentTerm :TTFTAObject; theParent : TTFTAList; theIndex : Integer; eventlist : TTFTAEventLookupList; flagANDtoOR : boolean) : boolean; forward;
-  function  GenericSplit        (currentTerm :TTFTAObject; theParent : TTFTAList; theIndex : Integer; eventlist : TTFTAEventLookupList; theType : TTFTAOperatorType) : boolean; forward;
-  function  LawOfCompleteness   (currentTerm :TTFTAObject; theParent : TTFTAList; theIndex : Integer; eventlist : TTFTAEventLookupList) : boolean; forward;
-  function  LawOfComplInternal  (currentTerm :TTFTAObject; theParent : TTFTAList; theIndex : Integer; eventlist : TTFTAEventLookupList; alsoBasics : boolean = false) : boolean; forward;
-  function  LawOfIdempotency    (currentTerm :TTFTAObject; theParent : TTFTAList; theIndex : Integer; eventlist : TTFTAEventLookupList) : boolean; forward;
-  function  LawOfNonrecurrence  (currentTerm :TTFTAObject; theParent : TTFTAList; theIndex : Integer; eventlist : TTFTAEventLookupList) : boolean; forward;
-  function  NOTANDORXOR         (currentTerm :TTFTAObject; theParent : TTFTAList; theIndex : Integer; eventlist : TTFTAEventLookupList) : boolean; forward;
-  function  NOTFalseTrue        (currentTerm :TTFTAObject; theParent : TTFTAList; theIndex : Integer; eventlist : TTFTAEventLookupList) : boolean; forward;
-  function  NOTNOT              (currentTerm :TTFTAObject; theParent : TTFTAList; theIndex : Integer; eventlist : TTFTAEventLookupList) : boolean; forward;
-  function  NOTPAND             (currentTerm :TTFTAObject; theParent : TTFTAList; theIndex : Integer; eventlist : TTFTAEventLookupList) : boolean; forward;
-  function  ORSplit             (currentTerm :TTFTAObject; theParent : TTFTAList; theIndex : Integer; eventlist : TTFTAEventLookupList) : boolean; forward;
-  function  ORXORFalse          (currentTerm :TTFTAObject; theParent : TTFTAList; theIndex : Integer; eventlist : TTFTAEventLookupList) : boolean; forward;
-  function  ORXORSANDCombine    (currentTerm :TTFTAObject; theParent : TTFTAList; theIndex : Integer; eventlist : TTFTAEventLookupList) : boolean; forward;
-  function  ORXORTrue           (currentTerm :TTFTAObject; theParent : TTFTAList; theIndex : Integer; eventlist : TTFTAEventLookupList) : boolean; forward;
-  function  PANDFalse           (currentTerm :TTFTAObject; theParent : TTFTAList; theIndex : Integer; eventlist : TTFTAEventLookupList) : boolean; forward;
-  function  PANDMultiples       (currentTerm :TTFTAObject; theParent : TTFTAList; theIndex : Integer; eventlist : TTFTAEventLookupList) : boolean; forward;
-  function  PANDPANDTransform   (currentTerm :TTFTAObject; theParent : TTFTAList; theIndex : Integer; eventlist : TTFTAEventLookupList) : boolean; forward;
-  function  PANDNegated         (currentTerm :TTFTAObject; theParent : TTFTAList; theIndex : Integer; eventlist : TTFTAEventLookupList) : boolean; forward;
-  function  PANDSplit           (currentTerm :TTFTAObject; theParent : TTFTAList; theIndex : Integer; eventlist : TTFTAEventLookupList) : boolean; forward;
-  function  SANDFalse           (currentTerm :TTFTAObject; theParent : TTFTAList; theIndex : Integer; eventlist : TTFTAEventLookupList) : boolean; forward;
-  function  SANDNegated         (currentTerm :TTFTAObject; theParent : TTFTAList; theIndex : Integer; eventlist : TTFTAEventLookupList) : boolean; forward;
-  function  SANDPANDTransform   (currentTerm :TTFTAObject; theParent : TTFTAList; theIndex : Integer; eventlist : TTFTAEventLookupList) : boolean; forward;
-  function  SANDSplit           (currentTerm :TTFTAObject; theParent : TTFTAList; theIndex : Integer; eventlist : TTFTAEventLookupList) : boolean; forward;
-  function  XORSplit            (currentTerm :TTFTAObject; theParent : TTFTAList; theIndex : Integer; eventlist : TTFTAEventLookupList) : boolean; forward;
+  function  ANDCombine                 (currentTerm :TTFTAObject; theParent : TTFTAList; theIndex : Integer; eventlist : TTFTAEventLookupList) : boolean; forward;
+  function  ANDContradict              (currentTerm :TTFTAObject; theParent : TTFTAList; theIndex : Integer; eventlist : TTFTAEventLookupList) : boolean; forward;
+  function  ANDFalse                   (currentTerm :TTFTAObject; theParent : TTFTAList; theIndex : Integer; eventlist : TTFTAEventLookupList) : boolean; forward;
+  function  ANDMixedSplit              (currentTerm :TTFTAObject; theParent : TTFTAList; theIndex : Integer; eventlist : TTFTAEventLookupList) : boolean; forward;
+  function  ANDMixedSplitCheckless     (currentTerm :TTFTAObject; theParent : TTFTAList; theIndex : Integer; eventlist : TTFTAEventLookupList) : boolean; forward;
+  function  ANDMixedSplitInternal      (currentTerm :TTFTAObject; theParent : TTFTAList; theIndex : Integer; eventlist : TTFTAEventLookupList; withTermCheck : boolean) : boolean; forward;
+  function  ANDSplit                   (currentTerm :TTFTAObject; theParent : TTFTAList; theIndex : Integer; eventlist : TTFTAEventLookupList) : boolean; forward;
+  function  ANDTrue                    (currentTerm :TTFTAObject; theParent : TTFTAList; theIndex : Integer; eventlist : TTFTAEventLookupList) : boolean; forward;
+  function  DistributeANDORXOR         (currentTerm :TTFTAObject; theParent : TTFTAList; theIndex : Integer; eventlist : TTFTAEventLookupList) : boolean; forward;
+  function  DistributeORPAND           (currentTerm :TTFTAObject; theParent : TTFTAList; theIndex : Integer; eventlist : TTFTAEventLookupList) : boolean; forward;
+  function  DistributePANDOR           (currentTerm :TTFTAObject; theParent : TTFTAList; theIndex : Integer; eventlist : TTFTAEventLookupList) : boolean; forward;
+  function  DistributePANDXOR          (currentTerm :TTFTAObject; theParent : TTFTAList; theIndex : Integer; eventlist : TTFTAEventLookupList) : boolean; forward;
+  function  DistributeSANDAND          (currentTerm :TTFTAObject; theParent : TTFTAList; theIndex : Integer; eventlist : TTFTAEventLookupList) : boolean; forward;
+  function  DistributeSANDOR           (currentTerm :TTFTAObject; theParent : TTFTAList; theIndex : Integer; eventlist : TTFTAEventLookupList) : boolean; forward;
+  function  DistributeSANDXOR          (currentTerm :TTFTAObject; theParent : TTFTAList; theIndex : Integer; eventlist : TTFTAEventLookupList) : boolean; forward;
+  function  GenericCombine             (currentTerm :TTFTAObject; theParent : TTFTAList; theIndex : Integer; eventlist : TTFTAEventLookupList) : boolean; forward;
+  function  GenericNOTBoolean          (currentTerm :TTFTAObject; theParent : TTFTAList; theIndex : Integer; eventlist : TTFTAEventLookupList; flagANDtoOR : boolean) : boolean; forward;
+  function  GenericSplit               (currentTerm :TTFTAObject; theParent : TTFTAList; theIndex : Integer; eventlist : TTFTAEventLookupList; theType : TTFTAOperatorType) : boolean; forward;
+  function  LawOfCompleteness          (currentTerm :TTFTAObject; theParent : TTFTAList; theIndex : Integer; eventlist : TTFTAEventLookupList) : boolean; forward;
+  function  LawOfComplInternal         (currentTerm :TTFTAObject; theParent : TTFTAList; theIndex : Integer; eventlist : TTFTAEventLookupList; alsoBasics : boolean = false) : boolean; forward;
+  function  LawOfIdempotency           (currentTerm :TTFTAObject; theParent : TTFTAList; theIndex : Integer; eventlist : TTFTAEventLookupList) : boolean; forward;
+  function  LawOfNonrecurrence         (currentTerm :TTFTAObject; theParent : TTFTAList; theIndex : Integer; eventlist : TTFTAEventLookupList) : boolean; forward;
+  function  NOTANDORXOR                (currentTerm :TTFTAObject; theParent : TTFTAList; theIndex : Integer; eventlist : TTFTAEventLookupList) : boolean; forward;
+  function  NOTFalseTrue               (currentTerm :TTFTAObject; theParent : TTFTAList; theIndex : Integer; eventlist : TTFTAEventLookupList) : boolean; forward;
+  function  NOTNOT                     (currentTerm :TTFTAObject; theParent : TTFTAList; theIndex : Integer; eventlist : TTFTAEventLookupList) : boolean; forward;
+  function  NOTPAND                    (currentTerm :TTFTAObject; theParent : TTFTAList; theIndex : Integer; eventlist : TTFTAEventLookupList) : boolean; forward;
+  function  ORSplit                    (currentTerm :TTFTAObject; theParent : TTFTAList; theIndex : Integer; eventlist : TTFTAEventLookupList) : boolean; forward;
+  function  ORXORFalse                 (currentTerm :TTFTAObject; theParent : TTFTAList; theIndex : Integer; eventlist : TTFTAEventLookupList) : boolean; forward;
+  function  ORXORSANDCombine           (currentTerm :TTFTAObject; theParent : TTFTAList; theIndex : Integer; eventlist : TTFTAEventLookupList) : boolean; forward;
+  function  ORXORTrue                  (currentTerm :TTFTAObject; theParent : TTFTAList; theIndex : Integer; eventlist : TTFTAEventLookupList) : boolean; forward;
+  function  PANDFalse                  (currentTerm :TTFTAObject; theParent : TTFTAList; theIndex : Integer; eventlist : TTFTAEventLookupList) : boolean; forward;
+  function  PANDMultiples              (currentTerm :TTFTAObject; theParent : TTFTAList; theIndex : Integer; eventlist : TTFTAEventLookupList) : boolean; forward;
+  function  PANDPANDTransform          (currentTerm :TTFTAObject; theParent : TTFTAList; theIndex : Integer; eventlist : TTFTAEventLookupList) : boolean; forward;
+  function  PANDNegated                (currentTerm :TTFTAObject; theParent : TTFTAList; theIndex : Integer; eventlist : TTFTAEventLookupList) : boolean; forward;
+  function  PANDSplit                  (currentTerm :TTFTAObject; theParent : TTFTAList; theIndex : Integer; eventlist : TTFTAEventLookupList) : boolean; forward;
+  function  SANDFalse                  (currentTerm :TTFTAObject; theParent : TTFTAList; theIndex : Integer; eventlist : TTFTAEventLookupList) : boolean; forward;
+  function  SANDNegated                (currentTerm :TTFTAObject; theParent : TTFTAList; theIndex : Integer; eventlist : TTFTAEventLookupList) : boolean; forward;
+  function  SANDPANDTransform          (currentTerm :TTFTAObject; theParent : TTFTAList; theIndex : Integer; eventlist : TTFTAEventLookupList) : boolean; forward;
+  function  SANDSplit                  (currentTerm :TTFTAObject; theParent : TTFTAList; theIndex : Integer; eventlist : TTFTAEventLookupList) : boolean; forward;
+  function  XORSplit                   (currentTerm :TTFTAObject; theParent : TTFTAList; theIndex : Integer; eventlist : TTFTAEventLookupList) : boolean; forward;
 
   { also private but not primary simplification routines but internal "helper" routines }
+
   function  CheckForPrematStop  (changedChild :TTFTAObject; currentTerm :TTFTAObject; theParent : TTFTAList; theIndex : Integer; eventlist : TTFTAEventLookupList) : boolean; forward;
   procedure RedirectTerm        (oldTerm     :TTFTAObject; newTerm   : TTFTAObject; eventlist : TTFTAEventLookupList; parentList : TTFTAList; oldObjectListIndex : Integer; callString : ansistring = ''); forward;
   function  ScanChildrenSorting (currentTerm :TTFTAObject; theParent : TTFTAList; theIndex : Integer; eventlist : TTFTAEventLookupList; var isChange : boolean) : ansistring; forward;
@@ -159,7 +163,7 @@ begin
     // until intermixed or scan finished
     if (thereAreNegOps and thereAreNonNegOps) then
     begin
-      //Result := ANDMixedSplit(currentTerm,theParent,theIndex,eventlist);
+      Result := ANDMixedSplit(currentTerm,theParent,theIndex,eventlist);
       exit;
     end;
     inc(nowPosInTerm);
@@ -345,6 +349,63 @@ begin
       Result := True;
     end;
   end;
+end;
+
+
+
+
+
+{IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
+ IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
+  split AND with negated and non-negated children into AND with two children:
+  - one child is AND with all negated terms and one child is AND with all non-negated terms.
+ IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
+ IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII}
+function ANDMixedSplit( currentTerm :TTFTAObject; theParent : TTFTAList; theIndex : Integer; eventlist : TTFTAEventLookupList) : boolean;
+var mixedState       : integer;
+    i                : integer;
+    numberOfChildren : integer;
+begin
+  Result := false;
+  mixedState := currentTerm.HasMixedChildren;
+end;
+
+
+
+
+
+{IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
+ IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
+  split AND with negated and non-negated children into AND with two children:
+  - one child is AND with all negated terms and one child is AND with all non-negated terms.
+ IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
+ IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII}
+function ANDMixedSplitCheckless( currentTerm :TTFTAObject; theParent : TTFTAList; theIndex : Integer; eventlist : TTFTAEventLookupList) : boolean;
+var mixedState       : integer;
+    i                : integer;
+    numberOfChildren : integer;
+begin
+  Result := false;
+  mixedState := currentTerm.HasMixedChildren;
+end;
+
+
+
+
+
+
+{IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
+ IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
+  Internal function called by ANDMixedSplit and ANDMixedSplitCheckless
+ IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII
+ IIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIII}
+function ANDMixedSplitInternal( currentTerm :TTFTAObject; theParent : TTFTAList; theIndex : Integer; eventlist : TTFTAEventLookupList; withTermCheck : boolean) : boolean;
+var mixedState       : integer;
+    i                : integer;
+    numberOfChildren : integer;
+begin
+  Result := false;
+  mixedState := currentTerm.HasMixedChildren;
 end;
 
 

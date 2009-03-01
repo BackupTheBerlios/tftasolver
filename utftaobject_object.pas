@@ -845,6 +845,43 @@ begin
     until (not Result) or (i = numberOfChildren);
   end;
 end;
+{------------------------------------------------------------------------------
+  FFF
+  Returns integer according to children of self being negated or non-negated
+------------------------------------------------------------------------------}
+function  TTFTAObject.GetChildrenMixedState : integer;
+var i                : Integer;
+    numberOfChildren : Integer;
+    hasNegated       : boolean;
+    hasNonNegated    : boolean;
+begin
+  if (not self.HasChildren) then
+  begin
+    Result := -1; { no children }
+    exit;
+  end;
+  i                := 0;
+  numberOfChildren := self.count;
+  hasNegated       := false;
+  hasNonNegated    := false;
+  repeat
+    if self[i].IsNegated then
+      hasNegated := hasNegated or True
+    else
+      hasNonNegated := hasNonNegated or True;
+    inc(i);
+  until (i = numberOfChildren);
+  if hasNegated then
+    if hasNonNegated then
+      Result := 2 { has both }
+    else
+      Result := 1 { has only negated }
+  else
+    if hasNonNegated then
+      Result := 0 { has only non-negated }
+    else
+      Result := -2 { has neither ??? this is just an dummy error code! }
+end;
 
 {------------------------------------------------------------------------------
  ------------------------------------------------------------------------------

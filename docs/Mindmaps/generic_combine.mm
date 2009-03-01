@@ -29,6 +29,13 @@
 <icon BUILTIN="info"/>
 </node>
 </node>
+<node CREATED="1232296307462" ID="ID_143904759" MODIFIED="1232299062362" TEXT="Exactly one negated and &#xa;one non-negated operand">
+<icon BUILTIN="help"/>
+<node CREATED="1232278927070" ID="ID_1305912220" MODIFIED="1232282696119" STYLE="bubble" TEXT="do nothing"/>
+<node CREATED="1232280396321" ID="ID_449123361" MODIFIED="1232296389688" STYLE="bubble" TEXT="even if the non-negated operand&#xa;is itself an AND!">
+<icon BUILTIN="idea"/>
+</node>
+</node>
 <node CREATED="1232280377407" ID="ID_461001348" MODIFIED="1232295878461" STYLE="bubble" TEXT="AND Term with exclusively negated &#xa;operands and one or more NATs">
 <icon BUILTIN="messagebox_warning"/>
 <node CREATED="1232279017130" ID="ID_995859436" MODIFIED="1232295914842" STYLE="bubble" TEXT="Flatten NATs into main term">
@@ -39,20 +46,9 @@
 <icon BUILTIN="messagebox_warning"/>
 <node CREATED="1232296172869" ID="ID_1184996975" MODIFIED="1232296495920" TEXT="one or more operands of type AND which &#xa;themselves are without negated operands.">
 <icon BUILTIN="messagebox_warning"/>
-<node CREATED="1232296481614" ID="ID_1572520792" MODIFIED="1232296495919" TEXT="flatten term">
+<node CREATED="1232296481614" ID="ID_1572520792" MODIFIED="1232309467558" TEXT="flatten those AND terms and&#xa;skip all AND terms with negated events">
 <icon BUILTIN="messagebox_warning"/>
 </node>
-</node>
-<node CREATED="1232279626963" ID="ID_1570060791" MODIFIED="1232296582663" STYLE="bubble" TEXT="at least one of the operands of&#xa;type AND has itself negated operands">
-<icon BUILTIN="help"/>
-<node CREATED="1232278927070" ID="ID_114728925" MODIFIED="1232296591530" STYLE="bubble" TEXT="do nothing"/>
-</node>
-</node>
-<node CREATED="1232296307462" ID="ID_143904759" MODIFIED="1232299062362" TEXT="Exactly one negated and &#xa;one non-negated operand">
-<icon BUILTIN="help"/>
-<node CREATED="1232278927070" ID="ID_1305912220" MODIFIED="1232282696119" STYLE="bubble" TEXT="do nothing"/>
-<node CREATED="1232280396321" ID="ID_449123361" MODIFIED="1232296389688" STYLE="bubble" TEXT="even if the non-negated operand&#xa;is itself an AND!">
-<icon BUILTIN="idea"/>
 </node>
 </node>
 <node CREATED="1232296307462" ID="ID_581068149" MODIFIED="1232299090772" TEXT="More than one negated and / or&#xa;more than one non-negated operand">

@@ -197,31 +197,31 @@ type
 
   private
 
-    VChildren : TTFTAList;        { list of all my descendants (children) }
+    VChildren                : TTFTAList;        { list of all my descendants (children) }
     {$IfDef TESTMODE}VDEBUGMemo : TMemo;{$EndIf}
-    VEventLookupList : TTFTAEventLookuplist;
-    VExpr : ansistring;           { if I'm a BasicEvent, I have to carry my event name }
+    VEventLookupList         : TTFTAEventLookuplist;
+    VExpr                    : ansistring;           { if I'm a BasicEvent, I have to carry my event name }
 
-    VIsBAT         : boolean;
-    VIsCE          : boolean;
-    VIsDisjunct    : boolean;
-    VIsES          : boolean;
-    VIsXS          : boolean;
-    VIsMCSS        : boolean;
-    VIsNAT         : boolean;
-    VIsNCE         : boolean;
+    VIsBAT                   : boolean;
+    VIsCE                    : boolean;
+    VIsDisjunct              : boolean;
+    VIsES                    : boolean;
+    VIsXS                    : boolean;
+    VIsMCSS                  : boolean;
+    VIsNAT                   : boolean;
+    VIsNCE                   : boolean;
 
-    VIsMasked : boolean;
-    VIsMinimal : boolean;
-    VIsNegated : boolean;
+    VIsMasked                : boolean;
+    VIsMinimal               : boolean;
+    VIsNegated               : boolean;
     VIsNotCompletelyBuildYet : boolean; { during built-up of an object (from InputString) no TempExpr checking must be performed }
-    VIsSorted : boolean;
-    VIsTrueFalse : integer;
-    VNeedsToBeUpdated : boolean;  { true, if before an identical event was modified, then a update to this identical object is needed }
-    VPointerToUpdateObject : TTFTAObject; { this points to the object the current object shall be updated to }
-    VPosInEventList : Integer;   { allows to reference to my own pointer (within eventlist) }
-    VSpeedSearch : boolean;
-    VType: TTFTAOperatorType;     { what type am I? }
+    VIsSorted                : boolean;
+    VIsTrueFalse             : integer;
+    VNeedsToBeUpdated        : boolean;  { true, if before an identical event was modified, then a update to this identical object is needed }
+    VPointerToUpdateObject   : TTFTAObject; { this points to the object the current object shall be updated to }
+    VPosInEventList          : Integer;   { allows to reference to my own pointer (within eventlist) }
+    VSpeedSearch             : boolean;
+    VType                    : TTFTAOperatorType;     { what type am I? }
 
     function  CheckIsBasicEvent                          : boolean;
     function  CheckIsCommutative                         : boolean;
@@ -242,9 +242,10 @@ type
     function  CheckIsTypeTOP                             : boolean;
     function  CheckIsTypeNOT                             : boolean;
 
-    function  GetPointerToUpdateObject : TTFTAObject;
-    function  GetTempExpr : ansistring;
-    function  GetTempExprDEBUG : ansistring;
+    function  GetChildrenMixedState                      : integer;
+    function  GetPointerToUpdateObject                   : TTFTAObject;
+    function  GetTempExpr                                : ansistring;
+    function  GetTempExprDEBUG                           : ansistring;
 
     procedure CheckForDisjunctEvent;                     { TBD }
     procedure CheckForIsBasicANDTerm;
@@ -262,16 +263,16 @@ type
     constructor Create;
     destructor  Destroy;
 
-    function  AddChild(Item : TTFTAObject) : Integer;
-    function  Clone(list : TTFTAEventLookupList) : TTFTAObject;
-    function  Count : Integer;
-    function  EventTypeToString : string;
-    function  ExtractChild(Item: TTFTAObject):TTFTAObject;
-    function  GetChild(Index: Integer): TTFTAObject;
+    function  AddChild(Item : TTFTAObject)                       : Integer;
+    function  Clone(list : TTFTAEventLookupList)                 : TTFTAObject;
+    function  Count                                              : Integer;
+    function  EventTypeToString                                  : string;
+    function  ExtractChild(Item: TTFTAObject)                    : TTFTAObject;
+    function  GetChild(Index: Integer)                           : TTFTAObject;
     function  GetChildrenBasicState(handleNegated : integer = 0) : boolean;
-    function  HasChildren : boolean;
-    function  RemoveChild(Item : TTFTAObject) : Integer;
-    function  WriteStatus(indent:integer = 0)  : ansistring;
+    function  HasChildren                                        : boolean;
+    function  RemoveChild(Item : TTFTAObject)                    : Integer;
+    function  WriteStatus(indent:integer = 0)                    : ansistring;
 
     procedure AssignChildren(Obj: TTFTAList);
     procedure CheckTermProperties;
@@ -294,6 +295,8 @@ type
     {$EndIf}
     property  EventType       : TTFTAOperatorType    read VType                 write SetVType;
     property  EventLookupList : TTFTAEventLookuplist read VEventLookupList      write VEventLookupList;
+
+    property  HasMixedChildren      : integer        read GetChildrenMixedState;
     property  IsAllChildrenAreBasic : boolean        read GetChildrenBasicState;
 
     property  IsCommutative                 : boolean read CheckIsCommutative;
@@ -314,28 +317,27 @@ type
     property  IsFalse                       : boolean read CheckLogicFalse;
     property  IsTrue                        : boolean read CheckLogicTrue;
 
+    property  IsNotCompletelyBuildYet : boolean     read VIsNotCompletelyBuildYet  write VIsNotCompletelyBuildYet;
+    property  IsSorted                : boolean     read VIsSorted                 write VIsSorted;
 
-    property  IsNotCompletelyBuildYet : boolean  read VIsNotCompletelyBuildYet  write VIsNotCompletelyBuildYet;
-    property  IsSorted                : boolean  read VIsSorted                 write VIsSorted;
-
-    property  IsTypeAND               : boolean  read CheckIsTypeAND;
-    property  IsTypeBASIC             : boolean  read CheckIsTypeBASIC;
-    property  IsTypePAND              : boolean  read CheckIsTypePAND;
-    property  IsTypeSAND              : boolean  read CheckIsTypeSAND;
-    property  IsTypeOR                : boolean  read CheckIsTypeOR;
-    property  IsTypeOTHER             : boolean  read CheckIsTypeOTHER;
-    property  IsTypeTOP               : boolean  read CheckIsTypeTOP;
-    property  IsTypeXOR               : boolean  read CheckIsTypeXOR;
-    property  IsTypeNOT               : boolean  read CheckIsTypeNOT;
-    property  Items[Index: Integer]: TTFTAObject read GetChild                  write SetChild; default;
-    property  LogicLevel              : integer  read VIsTrueFalse;
-    property  NeedsToBeUpdated        : boolean  read VNeedsToBeUpdated         write VNeedsToBeUpdated;
-    property  PlainTemporalExpr    : ansistring  read VExpr;
-    property  PointerToUpdateObject: TTFTAObject read GetPointerToUpdateObject  write VPointerToUpdateObject;
-    property  PosInEventList          : Integer  read VPosInEventList           write VPosInEventList;
-    property  SpeedSearchIsSet        : boolean  read VSpeedSearch              write VSpeedSearch;
-    property  TemporalExpr         : ansistring  read GetTempExpr               write SetTempExpr;
-    property  TemporalExprDEBUG    : ansistring  read GetTempExprDEBUG;
+    property  IsTypeAND               : boolean     read CheckIsTypeAND;
+    property  IsTypeBASIC             : boolean     read CheckIsTypeBASIC;
+    property  IsTypePAND              : boolean     read CheckIsTypePAND;
+    property  IsTypeSAND              : boolean     read CheckIsTypeSAND;
+    property  IsTypeOR                : boolean     read CheckIsTypeOR;
+    property  IsTypeOTHER             : boolean     read CheckIsTypeOTHER;
+    property  IsTypeTOP               : boolean     read CheckIsTypeTOP;
+    property  IsTypeXOR               : boolean     read CheckIsTypeXOR;
+    property  IsTypeNOT               : boolean     read CheckIsTypeNOT;
+    property  Items[Index: Integer]   : TTFTAObject read GetChild                  write SetChild; default;
+    property  LogicLevel              : integer     read VIsTrueFalse;
+    property  NeedsToBeUpdated        : boolean     read VNeedsToBeUpdated         write VNeedsToBeUpdated;
+    property  PlainTemporalExpr       : ansistring  read VExpr;
+    property  PointerToUpdateObject   : TTFTAObject read GetPointerToUpdateObject  write VPointerToUpdateObject;
+    property  PosInEventList          : Integer     read VPosInEventList           write VPosInEventList;
+    property  SpeedSearchIsSet        : boolean     read VSpeedSearch              write VSpeedSearch;
+    property  TemporalExpr            : ansistring  read GetTempExpr               write SetTempExpr;
+    property  TemporalExprDEBUG       : ansistring  read GetTempExprDEBUG;
 
 
   end;
