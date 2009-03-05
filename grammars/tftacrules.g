@@ -52,17 +52,6 @@ tt 	:	andterm
 			-> $a1
     	;
   	
-  	
-//tdnf	:	(es|nes)
-////	|	^(OR tdnf tdnf)
-//	|	^(XOR tdnf tdnf)
-//	;
-
-//es	:	ce
-//	|	^(PAND es ce);
-	
-//nes	:	^(AND nce es);
-
 ce	:	ae 
 	|	^(SAND ce ce)
 	;
@@ -74,20 +63,15 @@ notterm	:	^(NOT ^(AND x=tt y=tt) )
 	|	^(NOT ^(XOR x=tt y=tt) )
 			-> ^(AND ^(NOT $x) ^(NOT $y))
 	|	^(NOT ^(PAND x=tt y=tt) )
-			-> ^(XOR ^(AND ^(NOT $x) ^(NOT $y)) ^(AND ^(NOT $x) $y) )
-			//-> ^(XOR ^(AND ^(NOT $x) ^(NOT $y)) ^(XOR ^(AND ^(NOT $x) $y) ^(XOR ^(AND ^(NOT $y) $x) ^(XOR ^(PAND $y $x) ^(XOR ^(SAND $x $y) )))))		
+			-> ^(XOR ^(XOR ^(XOR ^(XOR ^(AND ^(NOT $x) ^(NOT $y)) ^(AND ^(NOT $x) $y)) ^(AND ^(NOT $y) $x)) ^(PAND $y $x)) ^(SAND $x $y) )	
 	|	^(NOT ^(SAND x=tt y=tt) )
-			-> ^(XOR ^(AND ^(NOT $x) ^(NOT $y)) ^(XOR ^(AND ^(NOT $x) $y) ^(XOR ^(AND ^(NOT $y) $x) ^(XOR ^(PAND $y $x) ^(XOR ^(PAND $x $y) )))))		
+			-> ^(XOR ^(XOR ^(XOR ^(XOR ^(AND ^(NOT $x) ^(NOT $y)) ^(AND ^(NOT $x) $y)) ^(AND ^(NOT $y) $x)) ^(PAND $y $x)) ^(PAND $x $y) )		
 	|	^(OR notterm notterm)
 	|	^(XOR notterm notterm)
 	|	^(AND notterm notterm)
 	|	^(NOT tt)
 	;
-
-//nce	:	nae 
-//	|	^(AND nce nce)
-//	;
-
+	
 andterm	:	^(AND . FALSE)
 		 	-> FALSE
 	|	^(AND FALSE .)
@@ -103,9 +87,9 @@ andterm	:	^(AND . FALSE)
 	|	^(AND z=tt ^(OR x=tt y=tt))
 			-> ^(OR ^(AND $x $z) ^(AND $y $z) ) 
 	|	^(AND ^(AND n1=notterm m1=metaPandSandAE) z=tt)
-			-> ^(XOR ^(AND $n1 ^(AND $m1 $z)) ^(XOR ^(PAND ^(PAND $m1 ^(NOT $n1)) $z) ^(PAND $m1 ^(SAND ^(NOT $n1) $z))))
+			-> ^(XOR ^(XOR ^(AND $n1 ^(AND $m1 $z)) ^(PAND ^(PAND $m1 ^(NOT $n1)) $z ) ) ^(PAND $m1 ^(SAND ^(NOT $n1) $z)) )
 	|	^(AND x=tt y=tt)
-			-> ^(XOR ^(PAND $x $y) ^(XOR ^(PAND $y $x) ^(SAND $x $y) ) )
+			-> ^(XOR ^(XOR ^(PAND $y $x) ^(PAND $x $y)) ^(SAND $x $y) )
 	|	^(AND tt tt)
 	;
 	
@@ -180,13 +164,13 @@ pandterm:	^(PAND ae FALSE)
 	|	^(PAND ^(OR x=tt y=tt) z=tt)
 			-> ^(OR ^(PAND $x $z) ^(PAND $y $z) )
 	|	^(PAND z=tt ^(OR x=tt y=tt))
-			-> ^(XOR ^( AND ^(NOT $y) ^(PAND $z $x) ) ^(XOR ^( AND ^(NOT $x) ^(PAND $z $y)) ^(PAND $x ^(SAND $y $z))) )
+			-> ^(XOR ^(XOR ^(AND ^(NOT $x) ^(PAND $z $y)) ^(AND ^(NOT $y) ^(PAND $z $x) ) )  ^(PAND $x ^(SAND $y $z))) 
 	|	^(PAND z=tt ^(PAND x=tt y=tt))
 			-> ^(PAND ^(AND $x $z) $y)
 	|	^(PAND x=tt ^(AND b=notterm z=tt))
 			-> ^(AND $b ^(PAND $x $z))
 	|	^(PAND ^(AND n1=notterm m1=metaPandSandAE) z=tt)
-			-> ^(XOR ^(AND $n1 ^(PAND $m1 $z)) ^(XOR ^(PAND ^(PAND $m1 ^(NOT $n1)) $z) ^(PAND $m1 ^(SAND ^(NOT $n1) $z))))
+			-> ^(XOR ^(XOR ^(PAND ^(PAND $m1 ^(NOT $n1)) $z) ^(AND $n1 ^(PAND $m1 $z)) ) ^(PAND $m1 ^(SAND ^(NOT $n1) $z)))
 	|	^(PAND tt tt)
 	;
 	
@@ -205,9 +189,9 @@ sandterm:	^(SAND ae FALSE)
 	|	^(SAND z=tt ^(XOR x=tt y=tt))
 			-> ^(XOR ^(SAND $x $z) ^(SAND $y $z) )
 	|	^(SAND z=tt ^(OR x=tt y=tt))
-			-> ^(XOR ^( AND ^(NOT $y) ^(SAND $z $x) ) ^(XOR ^( AND ^(NOT $x) ^(SAND $y $z)) ^(SAND $x ^(SAND $y $z))) )
+			-> ^(XOR ^(XOR ^( AND ^(NOT $x) ^(SAND $y $z)) ^( AND ^(NOT $y) ^(SAND $z $x) ) ) ^(SAND $x ^(SAND $y $z))) 
 	|	^(SAND ^(OR x=tt y=tt) z=tt)
-			-> ^(XOR ^( AND ^(NOT $y) ^(SAND $x $z) ) ^(XOR ^( AND ^(NOT $x) ^(SAND $y $z)) ^(SAND $x ^(SAND $y $z))) )
+			-> ^(XOR ^(XOR ^( AND ^(NOT $x) ^(SAND $y $z)) ^( AND ^(NOT $y) ^(SAND $x $z) ) ) ^(SAND $x ^(SAND $y $z))) 
 	|	^(SAND ^(PAND x=tt y=tt) z=tt)
 			-> ^(PAND $x ^(SAND $y $z))
 	|	^(SAND z=tt ^(PAND x=tt y=tt))
@@ -223,9 +207,3 @@ ae 		:   	ID
 		|	TRUE
 		|	FALSE
 		;
-	
-//nae	:	^(NOT ae)
-//	;
-
-
-

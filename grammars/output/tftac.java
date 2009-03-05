@@ -32,9 +32,10 @@ import org.antlr.stringtemplate.*;
 public class tftac { 
     public static void main(String[] args) throws Exception {
         CharStream input = null;
-	boolean statusSilent = false; // show or noshow of short description of tftac program
-	boolean statusPure   = false; // show or noshow of intermediate transformation steps
-	boolean statusSAND   = false; // remove / not remove SANDs from result
+	boolean statusSilent = false; // (not) show the short description of tftac program
+	boolean statusPure   = false; // (not) show the intermediate transformation steps
+	boolean statusSAND   = false; // (not) remove SANDs from result
+	boolean statusFlat   = false; // (not) flatten the results (= untangle nested terms)
 
         if ( args.length>0 ) {
 		for ( int i = 0; i < args.length; i++ ) 
@@ -44,6 +45,10 @@ public class tftac {
 		for ( int i = 0; i < args.length; i++ ) 
 		{ 
  			if (args[i].equals("-w") || args[i].equals("--withSAND")) { statusSAND = true; } 
+		}
+		for ( int i = 0; i < args.length; i++ ) 
+		{ 
+ 			if (args[i].equals("--noflat")) { statusFlat = true; } 
 		}
 		for ( int i = 0; i < args.length; i++ ) 
 		{ 
@@ -126,7 +131,7 @@ public class tftac {
 		System.out.println("VVG = "+oldExpr);
 	}
 	
-	Tree tempTree = (Tree)r2.tree;
+	nodes = new CommonTreeNodeStream((Tree)r2.tree);
 	
 	// Remove all SANDs until no more changes recognized
 	if (statusSAND == false) {
@@ -157,23 +162,43 @@ public class tftac {
 		}
 		nodes = new CommonTreeNodeStream((Tree)r3.tree);
 	} 
-	if (statusSAND == true) {
-		nodes = new CommonTreeNodeStream((Tree)r2.tree);	
-	}
 
-	// FLATTEN NESTED STRUCTURES
-	/*nodes.setTokenStream(tokens);
-	tftacflattener flattener = new tftacflattener(nodes);
-	tftacflattener.tdnf_return r4 = flattener.tdnf();
-	if (!statusPure) {
-		System.out.println("flat= "+((Tree)r4.tree).toStringTree());
-	}*/
+	// FLATTEN NESTED STRUCTURES UNTIL NO MORE CHANGES RECOGNIZED
+	if (statusFlat == false) {
+		oldExpr = "";
+		newExpr = "";
+		loopNr = 0;	
+		nodes.setTokenStream(tokens);
+		tftacflattener flatform = new tftacflattener(nodes);
+		tftacflattener.tdnf_return r4 = flatform.tdnf();
+		newExpr = ((Tree)r4.tree).toStringTree();	
+
+		do {	
+			loopNr = loopNr + 1;		
+			oldExpr = newExpr;
+			if (!statusPure) {
+				System.out.println(String.valueOf(loopNr)+": "+newExpr);
+			}
+			nodes = new CommonTreeNodeStream((Tree)r4.tree);
+			nodes.setTokenStream(tokens);
+			flatform = new tftacflattener(nodes);
+			r4 = flatform.tdnf();
+			newExpr = ((Tree)r4.tree).toStringTree();	
+		} while ( !( oldExpr.equals( newExpr ) ) );
+
+		if (!statusPure) {
+			System.out.println("FLAT= "+oldExpr);
+		}
+		nodes = new CommonTreeNodeStream((Tree)r4.tree);
+	} 
+	
 
 	// CONVERT BACK TO INFIX-FORM
-        nodes.setTokenStream(tokens);
+        /*nodes = new CommonTreeNodeStream((Tree)r4.tree);
+	nodes.setTokenStream(tokens);
         tftacprinter printer = new tftacprinter(nodes);
         tftacprinter.infixform_return r5 = printer.infixform();
-        System.out.println(r5.st.toString());
+        System.out.println(r5.st.toString());*/
 	
     }
 }
