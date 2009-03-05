@@ -22,28 +22,69 @@
     along with TFTASolver.  If not, see <http://www.gnu.org/licenses/>.
 
   ############################################################################ */
-tree grammar tftacprinter;
+
+tree grammar tftacSANDremover;
 
 options {      
  tokenVocab=tftac; 
- output=template;
- ASTLabelType=CommonTree;
+ output=AST;
+ backtrack=true;
+ memoize=true;
 }
 
-infixform
-	:   	^(OR a=infixform b=infixform)   
-			-> template(a={$a.st},b={$c.st}) "(<a> OR <b>)"
-	|   	^(XOR a=infixform b=infixform)   
-			-> template(a={$a.st},b={$b.st}) "(<a> XOR <b>)"
-	|	^(PAND a=infixform c=infixform)   
-			-> template(a={$a.st},b={$c.st}) "(<a> PAND <b>)"
-	|  	^(AND  a=infixform b=infixform)   
-			-> template(a={$a.st},b={$b.st}) "(<a> AND <b>)"   
-	|   	^(SAND  a=infixform b=infixform)   
-			-> template(a={$a.st},b={$b.st}) "(<a> SAND <b>)"
-	|   	^(NOT  a=infixform)   
-			-> template(a={$a.st}) "(NOT <a>)"
-    	|   	ID	-> template(a={$ID.text}) "<a>"
-	|	TRUE	-> {%{"TRUE"}}
-	|	FALSE	-> {%{"FALSE"}}		
-    	;
+@header {
+import java.util.HashMap;
+}
+
+@members {
+/** Map variable name to Integer object holding value */
+HashMap memory = new HashMap();
+}
+
+expr	:	orterm
+	|	andterm
+	|	pandterm
+	|	core
+	|	atom
+	;
+	
+atom	:	ID
+	|	FALSE
+	;
+	
+core	:	ID
+	|	^(SAND . .)
+			-> FALSE
+	;
+
+andterm	:	^(AND expr FALSE)
+			-> FALSE
+	|	^(AND FALSE expr)
+			-> FALSE
+	|	^(AND negterm expr)
+	|	^(AND (andterm|core) (andterm|core))
+	;
+	
+negterm
+	:	^(NOT ID)
+	|	^(AND negterm negterm)
+	;
+		
+orterm	:	^(OR FALSE a=expr)
+			-> $a
+	|	^(OR a=expr FALSE)
+			-> $a
+	|	^(XOR FALSE a=expr)
+			-> $a
+	|	^(XOR a=expr FALSE)
+			-> $a
+	|	^(OR expr expr)
+	|	^(XOR expr expr)	
+	;
+	
+pandterm:	^(PAND expr FALSE)
+		 	-> FALSE
+	|	^(PAND FALSE expr)
+			-> FALSE
+	|	^(PAND expr expr)
+	;
