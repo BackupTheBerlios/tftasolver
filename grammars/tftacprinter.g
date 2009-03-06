@@ -31,18 +31,18 @@ options {
 }
 
 infixform
-	:   	^(OR a=infixform b=infixform)   
-			-> template(a={$a.st},b={$c.st}) "(<a> OR <b>)"
-	|   	^(XOR a=infixform b=infixform)   
-			-> template(a={$a.st},b={$b.st}) "(<a> XOR <b>)"
-	|	^(PAND a=infixform c=infixform)   
-			-> template(a={$a.st},b={$c.st}) "(<a> PAND <b>)"
-	|  	^(AND  a=infixform b=infixform)   
-			-> template(a={$a.st},b={$b.st}) "(<a> AND <b>)"   
-	|   	^(SAND  a=infixform b=infixform)   
-			-> template(a={$a.st},b={$b.st}) "(<a> SAND <b>)"
+	:   	^(OR (targets+=infixform)*)   
+			-> template(b={$targets}) <<(<b; separator=" OR ">)>>
+	|   	^(XOR (targets+=infixform)*)   
+			-> template(b={$targets}) <<(<b; separator=" XOR ">)>>
+	|	^(PAND (targets+=infixform)*)   
+			-> template(b={$targets}) <<(<b; separator=" PAND ">)>>
+	|  	^(AND  (targets+=infixform)*)   
+			-> template(b={$targets}) <<(<b; separator=" AND ">)>>
+	|   	^(SAND  (targets+=infixform)*)   
+			-> template(b={$targets}) <<(<b; separator=" SAND ">)>>
 	|   	^(NOT  a=infixform)   
-			-> template(a={$a.st}) "(NOT <a>)"
+			-> template(a={$a.st}) "NOT <a>"
     	|   	ID	-> template(a={$ID.text}) "<a>"
 	|	TRUE	-> {%{"TRUE"}}
 	|	FALSE	-> {%{"FALSE"}}		

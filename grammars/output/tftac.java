@@ -100,7 +100,8 @@ public class tftac {
         tftacParser parser = new tftacParser(tokens);
         tftacParser.expression_return r = parser.expression();
         if (!statusPure) {
-		System.out.println("tree="+((Tree)r.tree).toStringTree());
+		System.out.println("(1) TREEFORM OF INPUT\n"+((Tree)r.tree).toStringTree());
+		System.out.println("");
 	}
         
         String oldExpr = "";
@@ -128,7 +129,8 @@ public class tftac {
 	} while ( !( oldExpr.equals( newExpr ) ) );
 
 	if (!statusPure) {
-		System.out.println("VVG = "+oldExpr);
+		System.out.println("(2) SIMPLIFIED FORM\n"+oldExpr);
+		System.out.println("");
 	}
 	
 	nodes = new CommonTreeNodeStream((Tree)r2.tree);
@@ -158,7 +160,8 @@ public class tftac {
 		} while ( !( oldExpr.equals( newExpr ) ) );
 
 		if (!statusPure) {
-			System.out.println("WOS = "+oldExpr);
+			System.out.println("(3) WITHOUT SANDS\n"+oldExpr);
+			System.out.println("");
 		}
 		nodes = new CommonTreeNodeStream((Tree)r3.tree);
 	} 
@@ -187,18 +190,18 @@ public class tftac {
 		} while ( !( oldExpr.equals( newExpr ) ) );
 
 		if (!statusPure) {
-			System.out.println("FLAT= "+oldExpr);
+			System.out.println("(4) FLATTENED OUT FORM\n"+oldExpr);
+			System.out.println("");
 		}
 		nodes = new CommonTreeNodeStream((Tree)r4.tree);
 	} 
 	
 
 	// CONVERT BACK TO INFIX-FORM
-        /*nodes = new CommonTreeNodeStream((Tree)r4.tree);
 	nodes.setTokenStream(tokens);
-        tftacprinter printer = new tftacprinter(nodes);
+	tftacprinter printer = new tftacprinter(nodes);
         tftacprinter.infixform_return r5 = printer.infixform();
-        System.out.println(r5.st.toString());*/
+        System.out.println(r5.st.toString());
 	
     }
 }

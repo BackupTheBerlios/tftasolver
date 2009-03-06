@@ -56,27 +56,55 @@ pandterm:	^(PAND ^(PAND tdnf+) tdnf+)
 	;
 
 nestedterm
-	:	^(AND ^(AND tdnf+) tdnf+)
+	:	nestand | nestor | nestxor | nestsand ;
+	
+otherthanand
+	:	nestor | nestxor | nestsand | atom | pandterm ;
+	
+otherthanor
+	:	nestand | nestxor | nestsand | atom | pandterm ;
+	
+otherthanxor
+	:	nestand | nestor | nestsand | atom | pandterm ;
+	
+otherthansand
+	:	nestand | nestor | nestxor | atom | pandterm ;
+	
+nestand	:	^(AND ^(AND tdnf+) tdnf+)
 			->	^(AND tdnf+)
-	|	^(AND tdnf+ ^(AND tdnf+) tdnf*)
-			->	^(AND tdnf+)
-	|	^(SAND ^(SAND tdnf+) tdnf+)
-			->	^(SAND tdnf+)
-	|	^(SAND tdnf+ ^(SAND tdnf+) tdnf*)
-			->	^(SAND tdnf+)
-	|	^(OR ^(OR tdnf+) tdnf+)
-			->	^(OR tdnf+)
-	|	^(OR (tdnf)+ ^(OR tdnf+))
-			->	^(OR tdnf+)
-	|	^(XOR ^(XOR tdnf+) tdnf+)
-			->	^(XOR tdnf+)
-	|	^(XOR (tdnf)+ (^(XOR tdnf))+)
-			->	^(XOR tdnf+)
-	|	^(AND tdnf+)
-	|	^(SAND tdnf+)
-	|	^(OR tdnf+)
-	|	^(XOR tdnf+)		
+	|	^(AND otherthanand+ ^(AND tdnf+))
+			->	^(AND otherthanand+ tdnf+)
+	|	^(AND otherthanand+ ^(AND tdnf+) tdnf+)
+			->	^(AND otherthanand+ tdnf+)
+	|	^(AND tdnf+)	
 	;
+
+nestsand:	^(SAND ^(SAND tdnf+) tdnf+)
+			->	^(SAND tdnf+)
+	|	^(SAND otherthansand+ ^(SAND tdnf+))
+			->	^(SAND otherthansand+ tdnf+)
+	|	^(SAND otherthansand+ ^(SAND tdnf+) tdnf+)
+			->	^(SAND otherthansand+ tdnf+)
+	|	^(SAND tdnf+)
+	;
+	
+nestor	:	^(OR ^(OR tdnf+) tdnf+)
+			->	^(OR tdnf+)
+	|	^(OR otherthanor+ ^(OR tdnf+))
+			->	^(OR otherthanor+ tdnf+)
+	|	^(OR otherthanor+ ^(OR tdnf+) tdnf+)
+			->	^(OR otherthanor+ tdnf+)
+	|	^(OR tdnf+)
+	;			
+			
+nestxor	:	^(XOR ^(XOR tdnf+) tdnf+)
+			->	^(XOR tdnf+)
+	|	^(XOR otherthanxor+ ^(XOR tdnf+))
+			->	^(XOR otherthanxor+ tdnf+)
+	|	^(XOR otherthanxor+ ^(XOR tdnf+) tdnf+)
+			->	^(XOR otherthanxor+ tdnf+)
+	|	^(XOR tdnf+)
+	;			
 
 
 
