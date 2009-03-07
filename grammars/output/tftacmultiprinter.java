@@ -1,4 +1,4 @@
-// $ANTLR 3.1.1 /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacmultiprinter.g 2009-03-07 13:16:15
+// $ANTLR 3.1.1 /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacmultiprinter.g 2009-03-07 13:40:40
 
 import org.antlr.runtime.*;
 import org.antlr.runtime.tree.*;import java.util.Stack;
@@ -73,7 +73,7 @@ public class tftacmultiprinter extends TreeParser {
     };
 
     // $ANTLR start "infixform"
-    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacmultiprinter.g:33:1: infixform : ( ^( OR (targets+= infixform )* ) -> template(b=$targets) << <b; separator=\"\\n\"> >> | ^( XOR (targets+= infixform )* ) -> template(b=$targets) << <b; separator=\"\\n\"> >> | ^( PAND (targets+= infixform )* ) -> template(b=$targets) <<(<b; separator=\" PAND \">)>> | ^( AND (targets+= infixform )* ) -> template(b=$targets) <<(<b; separator=\" AND \">)>> | ^( SAND (targets+= infixform )* ) -> template(b=$targets) <<(<b; separator=\" SAND \">)>> | ^( NOT a= infixform ) -> template(a=$a.st) \"NOT <a>\" | ID -> template(a=$ID.text) \"<a>\" | TRUE -> {%{\"TRUE\"}} | FALSE -> {%{\"FALSE\"}});
+    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacmultiprinter.g:33:1: infixform : ( ^( OR (targets+= infixform )* ) -> template(b=$targets) <<<b; separator=\"\\n\" > >> | ^( XOR (targets+= infixform )* ) -> template(b=$targets) <<<b; separator=\"\\n\" > >> | ^( PAND (targets+= infixform )* ) -> template(b=$targets) <<(<b; separator=\" PAND \">)>> | ^( AND (targets+= infixform )* ) -> template(b=$targets) <<(<b; separator=\" AND \">)>> | ^( SAND (targets+= infixform )* ) -> template(b=$targets) <<(<b; separator=\" SAND \">)>> | ^( NOT a= infixform ) -> template(a=$a.st) \"NOT <a>\" | ID -> template(a=$ID.text) \"<a>\" | TRUE -> {%{\"TRUE\"}} | FALSE -> {%{\"FALSE\"}});
     public final tftacmultiprinter.infixform_return infixform() throws RecognitionException {
         tftacmultiprinter.infixform_return retval = new tftacmultiprinter.infixform_return();
         retval.start = input.LT(1);
@@ -84,7 +84,7 @@ public class tftacmultiprinter extends TreeParser {
 
         RuleReturnScope targets = null;
         try {
-            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacmultiprinter.g:34:2: ( ^( OR (targets+= infixform )* ) -> template(b=$targets) << <b; separator=\"\\n\"> >> | ^( XOR (targets+= infixform )* ) -> template(b=$targets) << <b; separator=\"\\n\"> >> | ^( PAND (targets+= infixform )* ) -> template(b=$targets) <<(<b; separator=\" PAND \">)>> | ^( AND (targets+= infixform )* ) -> template(b=$targets) <<(<b; separator=\" AND \">)>> | ^( SAND (targets+= infixform )* ) -> template(b=$targets) <<(<b; separator=\" SAND \">)>> | ^( NOT a= infixform ) -> template(a=$a.st) \"NOT <a>\" | ID -> template(a=$ID.text) \"<a>\" | TRUE -> {%{\"TRUE\"}} | FALSE -> {%{\"FALSE\"}})
+            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacmultiprinter.g:34:2: ( ^( OR (targets+= infixform )* ) -> template(b=$targets) <<<b; separator=\"\\n\" > >> | ^( XOR (targets+= infixform )* ) -> template(b=$targets) <<<b; separator=\"\\n\" > >> | ^( PAND (targets+= infixform )* ) -> template(b=$targets) <<(<b; separator=\" PAND \">)>> | ^( AND (targets+= infixform )* ) -> template(b=$targets) <<(<b; separator=\" AND \">)>> | ^( SAND (targets+= infixform )* ) -> template(b=$targets) <<(<b; separator=\" SAND \">)>> | ^( NOT a= infixform ) -> template(a=$a.st) \"NOT <a>\" | ID -> template(a=$ID.text) \"<a>\" | TRUE -> {%{\"TRUE\"}} | FALSE -> {%{\"FALSE\"}})
             int alt6=9;
             switch ( input.LA(1) ) {
             case OR:
@@ -185,9 +185,9 @@ public class tftacmultiprinter extends TreeParser {
 
 
                     // TEMPLATE REWRITE
-                    // 35:4: -> template(b=$targets) << <b; separator=\"\\n\"> >>
+                    // 35:4: -> template(b=$targets) <<<b; separator=\"\\n\" > >>
                     {
-                        retval.st = new StringTemplate(templateLib, " <b; separator=\"\\n\"> ",
+                        retval.st = new StringTemplate(templateLib, "<b; separator=\"\\n\" > ",
                       new STAttrMap().put("b", list_targets));
                     }
 
@@ -239,9 +239,9 @@ public class tftacmultiprinter extends TreeParser {
 
 
                     // TEMPLATE REWRITE
-                    // 37:4: -> template(b=$targets) << <b; separator=\"\\n\"> >>
+                    // 37:4: -> template(b=$targets) <<<b; separator=\"\\n\" > >>
                     {
-                        retval.st = new StringTemplate(templateLib, " <b; separator=\"\\n\"> ",
+                        retval.st = new StringTemplate(templateLib, "<b; separator=\"\\n\" > ",
                       new STAttrMap().put("b", list_targets));
                     }
 

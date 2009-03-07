@@ -32,9 +32,9 @@ options {
 
 infixform
 	:   	^(OR (targets+=infixform)*)   
-			-> template(b={$targets}) << <b; separator="\n"> >>
+			-> template(b={$targets}) <<<b; separator="\n" > >>
 	|   	^(XOR (targets+=infixform)*)   
-			-> template(b={$targets}) << <b; separator="\n"> >>
+			-> template(b={$targets}) <<<b; separator="\n" > >>
 	|	^(PAND (targets+=infixform)*)   
 			-> template(b={$targets}) <<(<b; separator=" PAND ">)>>
 	|  	^(AND  (targets+=infixform)*)   
