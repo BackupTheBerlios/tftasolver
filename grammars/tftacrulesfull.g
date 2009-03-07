@@ -23,7 +23,7 @@
 
   ############################################################################ */
 
-tree grammar tftacrules;
+tree grammar tftacrulesfull;
 
 options {      
  tokenVocab=tftac; 
@@ -88,7 +88,7 @@ andterm	:	^(AND . FALSE)
 			-> ^(OR ^(AND $x $z) ^(AND $y $z) ) 
 	|	^(AND ^(AND n1=notterm m1=metaPandSandAE) z=tt)
 			-> ^(XOR ^(XOR ^(AND $n1 ^(AND $m1 $z)) ^(PAND ^(PAND $m1 ^(NOT $n1)) $z ) ) ^(PAND $m1 ^(SAND ^(NOT $n1) $z)) )
-	|	pureand
+	//|	pureand
 	|	^(AND x=tt y=tt)
 			-> ^(XOR ^(XOR ^(PAND $y $x) ^(PAND $x $y)) ^(SAND $x $y) )
 	|	^(AND tt tt)

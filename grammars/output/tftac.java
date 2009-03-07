@@ -32,10 +32,12 @@ import org.antlr.stringtemplate.*;
 public class tftac { 
     public static void main(String[] args) throws Exception {
         CharStream input = null;
+	// for the following, the defaults are shown.
 	boolean statusSilent = false; // (not) show the short description of tftac program
 	boolean statusPure   = false; // (not) show the intermediate transformation steps
 	boolean statusSAND   = false; // (not) remove SANDs from result
 	boolean statusFlat   = false; // (not) flatten the results (= untangle nested terms)
+	boolean statusEXPAND = false; // (not) expand all ANDs
 
         if ( args.length>0 ) {
 		for ( int i = 0; i < args.length; i++ ) 
@@ -53,6 +55,10 @@ public class tftac {
 		for ( int i = 0; i < args.length; i++ ) 
 		{ 
  			if (args[i].equals("-p") || args[i].equals("--pure")) { statusPure = true; } 
+		}
+		for ( int i = 0; i < args.length; i++ ) 
+		{ 
+ 			if (args[i].equals("-e") || args[i].equals("--expand")) { statusEXPAND = true; } 
 		}
 		for ( int i = 0; i < args.length; i++ ) 
 		{ 
@@ -108,39 +114,62 @@ public class tftac {
 	String newExpr = "";
 	int loopNr = 0;
 
-	// Simplify until no more changes possible
 	CommonTreeNodeStream nodes = new CommonTreeNodeStream((Tree)r.tree);
-	nodes.setTokenStream(tokens);
-	tftacrules theRules = new tftacrules(nodes);
-	tftacrules.tt_return r2 = theRules.tt();
-	newExpr = ((Tree)r2.tree).toStringTree();	
 
-	do {	
-		loopNr = loopNr + 1;		
-		oldExpr = newExpr;
-		if (!statusPure) {
-			System.out.println(String.valueOf(loopNr)+": "+newExpr);
-		}
-		nodes = new CommonTreeNodeStream((Tree)r2.tree);
+	// Simplify until no more changes possible
+	// if option "-e" is set, then use tftacrulesfull (i.e. expand all ANDs totally)
+	// otherwise use tftacrules (default, i.e. do not expand ANDs with only basic events)
+	// the default *really* reduces the time needed for simplification!
+	if (statusEXPAND == false) {
 		nodes.setTokenStream(tokens);
-		theRules = new tftacrules(nodes);
-		r2 = theRules.tt();
+		tftacrules theRules = new tftacrules(nodes);
+		tftacrules.tt_return r2 = theRules.tt();
 		newExpr = ((Tree)r2.tree).toStringTree();	
-	} while ( !( oldExpr.equals( newExpr ) ) );
 
+		do {	
+			loopNr = loopNr + 1;		
+			oldExpr = newExpr;
+			if (!statusPure) {
+				System.out.println(String.valueOf(loopNr)+": "+newExpr);
+			}
+			nodes = new CommonTreeNodeStream((Tree)r2.tree);
+			nodes.setTokenStream(tokens);
+			theRules = new tftacrules(nodes);
+			r2 = theRules.tt();
+			newExpr = ((Tree)r2.tree).toStringTree();	
+		} while ( !( oldExpr.equals( newExpr ) ) );
+		nodes = new CommonTreeNodeStream((Tree)r2.tree);
+	}
+	if (statusEXPAND == true) {
+		nodes.setTokenStream(tokens);
+		tftacrulesfull theRules = new tftacrulesfull(nodes);
+		tftacrulesfull.tt_return r2 = theRules.tt();
+		newExpr = ((Tree)r2.tree).toStringTree();	
+
+		do {	
+			loopNr = loopNr + 1;		
+			oldExpr = newExpr;
+			if (!statusPure) {
+				System.out.println(String.valueOf(loopNr)+": "+newExpr);
+			}
+			nodes = new CommonTreeNodeStream((Tree)r2.tree);
+			nodes.setTokenStream(tokens);
+			theRules = new tftacrulesfull(nodes);
+			r2 = theRules.tt();
+			newExpr = ((Tree)r2.tree).toStringTree();	
+		} while ( !( oldExpr.equals( newExpr ) ) );
+		nodes = new CommonTreeNodeStream((Tree)r2.tree);
+	}
 	if (!statusPure) {
 		System.out.println("(2) SIMPLIFIED FORM\n"+oldExpr);
 		System.out.println("");
 	}
-	
-	nodes = new CommonTreeNodeStream((Tree)r2.tree);
 	
 	// Remove all SANDs until no more changes recognized
 	if (statusSAND == false) {
 		oldExpr = "";
 		newExpr = "";
 		loopNr = 0;	
-		nodes = new CommonTreeNodeStream((Tree)r2.tree);
 		nodes.setTokenStream(tokens);
 		tftacSANDremover removeSAND = new tftacSANDremover(nodes);
 		tftacSANDremover.expr_return r3 = removeSAND.expr();
