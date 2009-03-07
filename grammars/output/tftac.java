@@ -38,6 +38,7 @@ public class tftac {
 	boolean statusSAND   = false; // (not) remove SANDs from result
 	boolean statusFlat   = false; // (not) flatten the results (= untangle nested terms)
 	boolean statusEXPAND = false; // (not) expand all ANDs
+	boolean	statusMultiLine = true; // output is multilined by default
 
         if ( args.length>0 ) {
 		for ( int i = 0; i < args.length; i++ ) 
@@ -59,6 +60,10 @@ public class tftac {
 		for ( int i = 0; i < args.length; i++ ) 
 		{ 
  			if (args[i].equals("-e") || args[i].equals("--expand")) { statusEXPAND = true; } 
+		}
+		for ( int i = 0; i < args.length; i++ ) 
+		{ 
+ 			if (args[i].equals("-m") || args[i].equals("--nomultiline")) { statusMultiLine = false; } 
 		}
 		for ( int i = 0; i < args.length; i++ ) 
 		{ 
@@ -225,12 +230,22 @@ public class tftac {
 		nodes = new CommonTreeNodeStream((Tree)r4.tree);
 	} 
 	
-
-	// CONVERT BACK TO INFIX-FORM
 	nodes.setTokenStream(tokens);
-	tftacprinter printer = new tftacprinter(nodes);
-        tftacprinter.infixform_return r5 = printer.infixform();
-        System.out.println(r5.st.toString());
+	
+	// CONVERT BACK TO INFIX-FORM
+	// if "-m" option is not set (default) , then output is multiline with breaks at every OR or XOR
+	// otherwise output is single line with explicit OR / XOR operators and braces set accordingly
+	if (statusMultiLine == true) {
+		tftacmultiprinter printer = new tftacmultiprinter(nodes);
+		tftacmultiprinter.infixform_return r5 = printer.infixform();
+		System.out.println(r5.st.toString());
+	}
+	if (statusMultiLine == false) {
+		tftacprinter printer = new tftacprinter(nodes);
+		tftacprinter.infixform_return r5 = printer.infixform();
+		System.out.println(r5.st.toString());
+	}
+	
 	
     }
 }
