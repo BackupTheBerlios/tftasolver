@@ -43,6 +43,7 @@ HashMap memory = new HashMap();
 tdnf	:   	nestedterm
 	|	atom
 	|	pandterm
+	|	negatedterm
 	;
 	
 atom 	:	ID	
@@ -52,7 +53,7 @@ atom 	:	ID
 	
 pandterm:	^(PAND ^(PAND tdnf+) tdnf+)
 			->	^(PAND tdnf+)
-	|	^(PAND tdnf+)
+	|	^(PAND tdnf+) 
 	;
 
 nestedterm
@@ -62,13 +63,13 @@ otherthanand
 	:	nestor | nestxor | nestsand | atom | pandterm ;
 	
 otherthanor
-	:	nestand | nestxor | nestsand | atom | pandterm ;
+	:	nestand | nestxor | nestsand | atom | pandterm | negatedterm;
 	
 otherthanxor
-	:	nestand | nestor | nestsand | atom | pandterm ;
+	:	nestand | nestor | nestsand | atom | pandterm | negatedterm;
 	
 otherthansand
-	:	nestand | nestor | nestxor | atom | pandterm ;
+	:	nestand | nestor | nestxor | atom | pandterm | negatedterm;
 	
 nestand	:	^(AND ^(AND tdnf+) tdnf+)
 			->	^(AND tdnf+)
@@ -104,7 +105,12 @@ nestxor	:	^(XOR ^(XOR tdnf+) tdnf+)
 	|	^(XOR otherthanxor+ ^(XOR tdnf+) tdnf+)
 			->	^(XOR otherthanxor+ tdnf+)
 	|	^(XOR tdnf+)
-	;			
+	;	
+	
+negatedterm
+	:	^(NOT ID)
+	|	^(AND negatedterm+)
+	;		
 
 
 

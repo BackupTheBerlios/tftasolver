@@ -37,7 +37,7 @@ public class tftac {
 	boolean statusPure   = false; // (not) show the intermediate transformation steps
 	boolean statusSAND   = false; // (not) remove SANDs from result
 	boolean statusFlat   = false; // (not) flatten the results (= untangle nested terms)
-	boolean statusEXPAND = false; // (not) expand all ANDs
+	boolean statusEXPAND = true; // (not) expand all ANDs
 	boolean	statusMultiLine = true; // output is multilined by default
 
         if ( args.length>0 ) {
@@ -58,8 +58,8 @@ public class tftac {
  			if (args[i].equals("-p") || args[i].equals("--pure")) { statusPure = true; } 
 		}
 		for ( int i = 0; i < args.length; i++ ) 
-		{ 
- 			if (args[i].equals("-e") || args[i].equals("--expand")) { statusEXPAND = true; } 
+		{ 	// ATTENTION: changed default from "not expanded to expanded due to errors in tftacrules... (tbd)
+ 			if (args[i].equals("-e") || args[i].equals("--expand")) { statusEXPAND = false; } 
 		}
 		for ( int i = 0; i < args.length; i++ ) 
 		{ 
@@ -230,6 +230,43 @@ public class tftac {
 		nodes = new CommonTreeNodeStream((Tree)r4.tree);
 	} 
 	
+	nodes.setTokenStream(tokens);
+
+	// remove "doubles" in AND and SAND terms
+	tftaccommutat commutatform = new tftaccommutat(nodes);
+	tftaccommutat.expression_return commutatresult = commutatform.expression();
+	nodes = new CommonTreeNodeStream((Tree)commutatresult.tree);
+	nodes.setTokenStream(tokens);
+	tftacremovesingles singlelessform = new tftacremovesingles(nodes);
+	tftacremovesingles.expression_return singlelessresult = singlelessform.expression();
+	nodes = new CommonTreeNodeStream((Tree)singlelessresult.tree);
+	
+	newExpr = ((Tree)singlelessresult.tree).toStringTree();
+	if (!statusPure) {
+		System.out.println("(5) NO DOUBLES FORM AND/SAND\n"+newExpr);
+		System.out.println("");
+	}	
+
+	nodes.setTokenStream(tokens);
+
+	// CHECK WHETHER EVENTS OCCUR AFTER THEMSELVES --> FALSE
+	tftacplausi plausiform = new tftacplausi(nodes);
+	tftacplausi.expression_return plausiresult = plausiform.expression();
+	newExpr = ((Tree)plausiresult.tree).toStringTree();
+
+	nodes = new CommonTreeNodeStream((Tree)plausiresult.tree);
+	nodes.setTokenStream(tokens);
+
+	tftaccleanpands cleanpandform = new tftaccleanpands(nodes);
+	tftaccleanpands.expression_return cleanpandresult = cleanpandform.expression();
+	nodes = new CommonTreeNodeStream((Tree)cleanpandresult.tree);
+	
+	newExpr = ((Tree)cleanpandresult.tree).toStringTree();
+	if (!statusPure) {
+		System.out.println("(6) NO FALSE PANDs\n"+newExpr);
+		System.out.println("");
+	}
+
 	nodes.setTokenStream(tokens);
 	
 	// CONVERT BACK TO INFIX-FORM

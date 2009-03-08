@@ -1,4 +1,4 @@
-// $ANTLR 3.1.1 /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g 2009-03-06 17:27:31
+// $ANTLR 3.1.1 /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g 2009-03-08 11:53:26
 
 import java.util.HashMap;
 
@@ -38,7 +38,7 @@ public class tftacflattener extends TreeParser {
         }
         public tftacflattener(TreeNodeStream input, RecognizerSharedState state) {
             super(input, state);
-            this.state.ruleMemo = new HashMap[83+1];
+            this.state.ruleMemo = new HashMap[90+1];
              
              
         }
@@ -66,7 +66,7 @@ public class tftacflattener extends TreeParser {
     };
 
     // $ANTLR start "tdnf"
-    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:43:1: tdnf : ( nestedterm | atom | pandterm );
+    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:43:1: tdnf : ( nestedterm | atom | pandterm | negatedterm );
     public final tftacflattener.tdnf_return tdnf() throws RecognitionException {
         tftacflattener.tdnf_return retval = new tftacflattener.tdnf_return();
         retval.start = input.LT(1);
@@ -82,16 +82,36 @@ public class tftacflattener extends TreeParser {
 
         tftacflattener.pandterm_return pandterm3 = null;
 
+        tftacflattener.negatedterm_return negatedterm4 = null;
+
 
 
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 1) ) { return retval; }
-            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:43:6: ( nestedterm | atom | pandterm )
-            int alt1=3;
+            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:43:6: ( nestedterm | atom | pandterm | negatedterm )
+            int alt1=4;
             switch ( input.LA(1) ) {
+            case AND:
+                {
+                int LA1_1 = input.LA(2);
+
+                if ( (synpred1_tftacflattener()) ) {
+                    alt1=1;
+                }
+                else if ( (true) ) {
+                    alt1=4;
+                }
+                else {
+                    if (state.backtracking>0) {state.failed=true; return retval;}
+                    NoViableAltException nvae =
+                        new NoViableAltException("", 1, 1, input);
+
+                    throw nvae;
+                }
+                }
+                break;
             case OR:
             case XOR:
-            case AND:
             case SAND:
                 {
                 alt1=1;
@@ -107,6 +127,11 @@ public class tftacflattener extends TreeParser {
             case PAND:
                 {
                 alt1=3;
+                }
+                break;
+            case NOT:
+                {
+                alt1=4;
                 }
                 break;
             default:
@@ -172,6 +197,24 @@ public class tftacflattener extends TreeParser {
                     }
                     }
                     break;
+                case 4 :
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:46:4: negatedterm
+                    {
+                    root_0 = (Object)adaptor.nil();
+
+                    _last = (Object)input.LT(1);
+                    pushFollow(FOLLOW_negatedterm_in_tdnf80);
+                    negatedterm4=negatedterm();
+
+                    state._fsp--;
+                    if (state.failed) return retval;
+                    if ( state.backtracking==0 ) 
+                    adaptor.addChild(root_0, negatedterm4.getTree());
+
+                    if ( state.backtracking==0 ) {
+                    }
+                    }
+                    break;
 
             }
             if ( state.backtracking==0 ) {
@@ -196,7 +239,7 @@ public class tftacflattener extends TreeParser {
     };
 
     // $ANTLR start "atom"
-    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:48:1: atom : ( ID | TRUE | FALSE );
+    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:49:1: atom : ( ID | TRUE | FALSE );
     public final tftacflattener.atom_return atom() throws RecognitionException {
         tftacflattener.atom_return retval = new tftacflattener.atom_return();
         retval.start = input.LT(1);
@@ -206,26 +249,26 @@ public class tftacflattener extends TreeParser {
         Object _first_0 = null;
         Object _last = null;
 
-        Object set4=null;
+        Object set5=null;
 
-        Object set4_tree=null;
+        Object set5_tree=null;
 
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 2) ) { return retval; }
-            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:48:7: ( ID | TRUE | FALSE )
+            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:49:7: ( ID | TRUE | FALSE )
             // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:
             {
             root_0 = (Object)adaptor.nil();
 
             _last = (Object)input.LT(1);
-            set4=(Object)input.LT(1);
+            set5=(Object)input.LT(1);
             if ( input.LA(1)==ID||(input.LA(1)>=TRUE && input.LA(1)<=FALSE) ) {
                 input.consume();
 
                 if ( state.backtracking==0 ) {
-                set4_tree = (Object)adaptor.dupNode(set4);
+                set5_tree = (Object)adaptor.dupNode(set5);
 
-                adaptor.addChild(root_0, set4_tree);
+                adaptor.addChild(root_0, set5_tree);
                 }
                 state.errorRecovery=false;state.failed=false;
             }
@@ -262,7 +305,7 @@ public class tftacflattener extends TreeParser {
     };
 
     // $ANTLR start "pandterm"
-    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:53:1: pandterm : ( ^( PAND ^( PAND ( tdnf )+ ) ( tdnf )+ ) -> ^( PAND ( tdnf )+ ) | ^( PAND ( tdnf )+ ) );
+    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:54:1: pandterm : ( ^( PAND ^( PAND ( tdnf )+ ) ( tdnf )+ ) -> ^( PAND ( tdnf )+ ) | ^( PAND ( tdnf )+ ) );
     public final tftacflattener.pandterm_return pandterm() throws RecognitionException {
         tftacflattener.pandterm_return retval = new tftacflattener.pandterm_return();
         retval.start = input.LT(1);
@@ -272,31 +315,31 @@ public class tftacflattener extends TreeParser {
         Object _first_0 = null;
         Object _last = null;
 
-        Object PAND5=null;
         Object PAND6=null;
-        Object PAND9=null;
-        tftacflattener.tdnf_return tdnf7 = null;
-
+        Object PAND7=null;
+        Object PAND10=null;
         tftacflattener.tdnf_return tdnf8 = null;
 
-        tftacflattener.tdnf_return tdnf10 = null;
+        tftacflattener.tdnf_return tdnf9 = null;
+
+        tftacflattener.tdnf_return tdnf11 = null;
 
 
-        Object PAND5_tree=null;
         Object PAND6_tree=null;
-        Object PAND9_tree=null;
+        Object PAND7_tree=null;
+        Object PAND10_tree=null;
         RewriteRuleNodeStream stream_PAND=new RewriteRuleNodeStream(adaptor,"token PAND");
         RewriteRuleSubtreeStream stream_tdnf=new RewriteRuleSubtreeStream(adaptor,"rule tdnf");
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 3) ) { return retval; }
-            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:53:9: ( ^( PAND ^( PAND ( tdnf )+ ) ( tdnf )+ ) -> ^( PAND ( tdnf )+ ) | ^( PAND ( tdnf )+ ) )
+            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:54:9: ( ^( PAND ^( PAND ( tdnf )+ ) ( tdnf )+ ) -> ^( PAND ( tdnf )+ ) | ^( PAND ( tdnf )+ ) )
             int alt5=2;
             int LA5_0 = input.LA(1);
 
             if ( (LA5_0==PAND) ) {
                 int LA5_1 = input.LA(2);
 
-                if ( (synpred7_tftacflattener()) ) {
+                if ( (synpred8_tftacflattener()) ) {
                     alt5=1;
                 }
                 else if ( (true) ) {
@@ -319,15 +362,15 @@ public class tftacflattener extends TreeParser {
             }
             switch (alt5) {
                 case 1 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:53:11: ^( PAND ^( PAND ( tdnf )+ ) ( tdnf )+ )
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:54:11: ^( PAND ^( PAND ( tdnf )+ ) ( tdnf )+ )
                     {
                     _last = (Object)input.LT(1);
                     {
                     Object _save_last_1 = _last;
                     Object _first_1 = null;
                     Object root_1 = (Object)adaptor.nil();_last = (Object)input.LT(1);
-                    PAND5=(Object)match(input,PAND,FOLLOW_PAND_in_pandterm110); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_PAND.add(PAND5);
+                    PAND6=(Object)match(input,PAND,FOLLOW_PAND_in_pandterm115); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_PAND.add(PAND6);
 
 
 
@@ -337,20 +380,20 @@ public class tftacflattener extends TreeParser {
                     Object _save_last_2 = _last;
                     Object _first_2 = null;
                     Object root_2 = (Object)adaptor.nil();_last = (Object)input.LT(1);
-                    PAND6=(Object)match(input,PAND,FOLLOW_PAND_in_pandterm113); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_PAND.add(PAND6);
+                    PAND7=(Object)match(input,PAND,FOLLOW_PAND_in_pandterm118); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_PAND.add(PAND7);
 
 
 
                     match(input, Token.DOWN, null); if (state.failed) return retval;
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:53:25: ( tdnf )+
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:54:25: ( tdnf )+
                     int cnt2=0;
                     loop2:
                     do {
                         int alt2=2;
                         int LA2_0 = input.LA(1);
 
-                        if ( ((LA2_0>=OR && LA2_0<=ID)||(LA2_0>=TRUE && LA2_0<=FALSE)) ) {
+                        if ( ((LA2_0>=OR && LA2_0<=ID)||(LA2_0>=NOT && LA2_0<=FALSE)) ) {
                             alt2=1;
                         }
 
@@ -360,12 +403,12 @@ public class tftacflattener extends TreeParser {
                     	    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:0:0: tdnf
                     	    {
                     	    _last = (Object)input.LT(1);
-                    	    pushFollow(FOLLOW_tdnf_in_pandterm115);
-                    	    tdnf7=tdnf();
+                    	    pushFollow(FOLLOW_tdnf_in_pandterm120);
+                    	    tdnf8=tdnf();
 
                     	    state._fsp--;
                     	    if (state.failed) return retval;
-                    	    if ( state.backtracking==0 ) stream_tdnf.add(tdnf7.getTree());
+                    	    if ( state.backtracking==0 ) stream_tdnf.add(tdnf8.getTree());
 
                     	    if ( state.backtracking==0 ) {
                     	    }
@@ -386,14 +429,14 @@ public class tftacflattener extends TreeParser {
                     match(input, Token.UP, null); if (state.failed) return retval;adaptor.addChild(root_1, root_2);_last = _save_last_2;
                     }
 
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:53:32: ( tdnf )+
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:54:32: ( tdnf )+
                     int cnt3=0;
                     loop3:
                     do {
                         int alt3=2;
                         int LA3_0 = input.LA(1);
 
-                        if ( ((LA3_0>=OR && LA3_0<=ID)||(LA3_0>=TRUE && LA3_0<=FALSE)) ) {
+                        if ( ((LA3_0>=OR && LA3_0<=ID)||(LA3_0>=NOT && LA3_0<=FALSE)) ) {
                             alt3=1;
                         }
 
@@ -403,12 +446,12 @@ public class tftacflattener extends TreeParser {
                     	    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:0:0: tdnf
                     	    {
                     	    _last = (Object)input.LT(1);
-                    	    pushFollow(FOLLOW_tdnf_in_pandterm119);
-                    	    tdnf8=tdnf();
+                    	    pushFollow(FOLLOW_tdnf_in_pandterm124);
+                    	    tdnf9=tdnf();
 
                     	    state._fsp--;
                     	    if (state.failed) return retval;
-                    	    if ( state.backtracking==0 ) stream_tdnf.add(tdnf8.getTree());
+                    	    if ( state.backtracking==0 ) stream_tdnf.add(tdnf9.getTree());
 
                     	    if ( state.backtracking==0 ) {
                     	    }
@@ -432,7 +475,7 @@ public class tftacflattener extends TreeParser {
 
 
                     // AST REWRITE
-                    // elements: PAND, tdnf
+                    // elements: tdnf, PAND
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -442,9 +485,9 @@ public class tftacflattener extends TreeParser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"token retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 54:4: -> ^( PAND ( tdnf )+ )
+                    // 55:4: -> ^( PAND ( tdnf )+ )
                     {
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:54:7: ^( PAND ( tdnf )+ )
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:55:7: ^( PAND ( tdnf )+ )
                         {
                         Object root_1 = (Object)adaptor.nil();
                         root_1 = (Object)adaptor.becomeRoot(stream_PAND.nextNode(), root_1);
@@ -467,7 +510,7 @@ public class tftacflattener extends TreeParser {
                     }
                     break;
                 case 2 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:55:4: ^( PAND ( tdnf )+ )
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:56:4: ^( PAND ( tdnf )+ )
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -476,23 +519,23 @@ public class tftacflattener extends TreeParser {
                     Object _save_last_1 = _last;
                     Object _first_1 = null;
                     Object root_1 = (Object)adaptor.nil();_last = (Object)input.LT(1);
-                    PAND9=(Object)match(input,PAND,FOLLOW_PAND_in_pandterm139); if (state.failed) return retval;
+                    PAND10=(Object)match(input,PAND,FOLLOW_PAND_in_pandterm144); if (state.failed) return retval;
                     if ( state.backtracking==0 ) {
-                    PAND9_tree = (Object)adaptor.dupNode(PAND9);
+                    PAND10_tree = (Object)adaptor.dupNode(PAND10);
 
-                    root_1 = (Object)adaptor.becomeRoot(PAND9_tree, root_1);
+                    root_1 = (Object)adaptor.becomeRoot(PAND10_tree, root_1);
                     }
 
 
                     match(input, Token.DOWN, null); if (state.failed) return retval;
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:55:11: ( tdnf )+
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:56:11: ( tdnf )+
                     int cnt4=0;
                     loop4:
                     do {
                         int alt4=2;
                         int LA4_0 = input.LA(1);
 
-                        if ( ((LA4_0>=OR && LA4_0<=ID)||(LA4_0>=TRUE && LA4_0<=FALSE)) ) {
+                        if ( ((LA4_0>=OR && LA4_0<=ID)||(LA4_0>=NOT && LA4_0<=FALSE)) ) {
                             alt4=1;
                         }
 
@@ -502,13 +545,13 @@ public class tftacflattener extends TreeParser {
                     	    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:0:0: tdnf
                     	    {
                     	    _last = (Object)input.LT(1);
-                    	    pushFollow(FOLLOW_tdnf_in_pandterm141);
-                    	    tdnf10=tdnf();
+                    	    pushFollow(FOLLOW_tdnf_in_pandterm146);
+                    	    tdnf11=tdnf();
 
                     	    state._fsp--;
                     	    if (state.failed) return retval;
                     	    if ( state.backtracking==0 ) 
-                    	    adaptor.addChild(root_1, tdnf10.getTree());
+                    	    adaptor.addChild(root_1, tdnf11.getTree());
 
                     	    if ( state.backtracking==0 ) {
                     	    }
@@ -558,7 +601,7 @@ public class tftacflattener extends TreeParser {
     };
 
     // $ANTLR start "nestedterm"
-    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:58:1: nestedterm : ( nestand | nestor | nestxor | nestsand );
+    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:59:1: nestedterm : ( nestand | nestor | nestxor | nestsand );
     public final tftacflattener.nestedterm_return nestedterm() throws RecognitionException {
         tftacflattener.nestedterm_return retval = new tftacflattener.nestedterm_return();
         retval.start = input.LT(1);
@@ -568,19 +611,19 @@ public class tftacflattener extends TreeParser {
         Object _first_0 = null;
         Object _last = null;
 
-        tftacflattener.nestand_return nestand11 = null;
+        tftacflattener.nestand_return nestand12 = null;
 
-        tftacflattener.nestor_return nestor12 = null;
+        tftacflattener.nestor_return nestor13 = null;
 
-        tftacflattener.nestxor_return nestxor13 = null;
+        tftacflattener.nestxor_return nestxor14 = null;
 
-        tftacflattener.nestsand_return nestsand14 = null;
+        tftacflattener.nestsand_return nestsand15 = null;
 
 
 
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 4) ) { return retval; }
-            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:59:2: ( nestand | nestor | nestxor | nestsand )
+            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:60:2: ( nestand | nestor | nestxor | nestsand )
             int alt6=4;
             switch ( input.LA(1) ) {
             case AND:
@@ -613,72 +656,72 @@ public class tftacflattener extends TreeParser {
 
             switch (alt6) {
                 case 1 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:59:4: nestand
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:60:4: nestand
                     {
                     root_0 = (Object)adaptor.nil();
 
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_nestand_in_nestedterm154);
-                    nestand11=nestand();
+                    pushFollow(FOLLOW_nestand_in_nestedterm160);
+                    nestand12=nestand();
 
                     state._fsp--;
                     if (state.failed) return retval;
                     if ( state.backtracking==0 ) 
-                    adaptor.addChild(root_0, nestand11.getTree());
+                    adaptor.addChild(root_0, nestand12.getTree());
 
                     if ( state.backtracking==0 ) {
                     }
                     }
                     break;
                 case 2 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:59:14: nestor
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:60:14: nestor
                     {
                     root_0 = (Object)adaptor.nil();
 
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_nestor_in_nestedterm158);
-                    nestor12=nestor();
+                    pushFollow(FOLLOW_nestor_in_nestedterm164);
+                    nestor13=nestor();
 
                     state._fsp--;
                     if (state.failed) return retval;
                     if ( state.backtracking==0 ) 
-                    adaptor.addChild(root_0, nestor12.getTree());
+                    adaptor.addChild(root_0, nestor13.getTree());
 
                     if ( state.backtracking==0 ) {
                     }
                     }
                     break;
                 case 3 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:59:23: nestxor
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:60:23: nestxor
                     {
                     root_0 = (Object)adaptor.nil();
 
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_nestxor_in_nestedterm162);
-                    nestxor13=nestxor();
+                    pushFollow(FOLLOW_nestxor_in_nestedterm168);
+                    nestxor14=nestxor();
 
                     state._fsp--;
                     if (state.failed) return retval;
                     if ( state.backtracking==0 ) 
-                    adaptor.addChild(root_0, nestxor13.getTree());
+                    adaptor.addChild(root_0, nestxor14.getTree());
 
                     if ( state.backtracking==0 ) {
                     }
                     }
                     break;
                 case 4 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:59:33: nestsand
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:60:33: nestsand
                     {
                     root_0 = (Object)adaptor.nil();
 
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_nestsand_in_nestedterm166);
-                    nestsand14=nestsand();
+                    pushFollow(FOLLOW_nestsand_in_nestedterm172);
+                    nestsand15=nestsand();
 
                     state._fsp--;
                     if (state.failed) return retval;
                     if ( state.backtracking==0 ) 
-                    adaptor.addChild(root_0, nestsand14.getTree());
+                    adaptor.addChild(root_0, nestsand15.getTree());
 
                     if ( state.backtracking==0 ) {
                     }
@@ -708,7 +751,7 @@ public class tftacflattener extends TreeParser {
     };
 
     // $ANTLR start "otherthanand"
-    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:61:1: otherthanand : ( nestor | nestxor | nestsand | atom | pandterm );
+    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:62:1: otherthanand : ( nestor | nestxor | nestsand | atom | pandterm );
     public final tftacflattener.otherthanand_return otherthanand() throws RecognitionException {
         tftacflattener.otherthanand_return retval = new tftacflattener.otherthanand_return();
         retval.start = input.LT(1);
@@ -718,21 +761,21 @@ public class tftacflattener extends TreeParser {
         Object _first_0 = null;
         Object _last = null;
 
-        tftacflattener.nestor_return nestor15 = null;
+        tftacflattener.nestor_return nestor16 = null;
 
-        tftacflattener.nestxor_return nestxor16 = null;
+        tftacflattener.nestxor_return nestxor17 = null;
 
-        tftacflattener.nestsand_return nestsand17 = null;
+        tftacflattener.nestsand_return nestsand18 = null;
 
-        tftacflattener.atom_return atom18 = null;
+        tftacflattener.atom_return atom19 = null;
 
-        tftacflattener.pandterm_return pandterm19 = null;
+        tftacflattener.pandterm_return pandterm20 = null;
 
 
 
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 5) ) { return retval; }
-            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:62:2: ( nestor | nestxor | nestsand | atom | pandterm )
+            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:63:2: ( nestor | nestxor | nestsand | atom | pandterm )
             int alt7=5;
             switch ( input.LA(1) ) {
             case OR:
@@ -772,90 +815,90 @@ public class tftacflattener extends TreeParser {
 
             switch (alt7) {
                 case 1 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:62:4: nestor
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:63:4: nestor
                     {
                     root_0 = (Object)adaptor.nil();
 
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_nestor_in_otherthanand177);
-                    nestor15=nestor();
+                    pushFollow(FOLLOW_nestor_in_otherthanand183);
+                    nestor16=nestor();
 
                     state._fsp--;
                     if (state.failed) return retval;
                     if ( state.backtracking==0 ) 
-                    adaptor.addChild(root_0, nestor15.getTree());
+                    adaptor.addChild(root_0, nestor16.getTree());
 
                     if ( state.backtracking==0 ) {
                     }
                     }
                     break;
                 case 2 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:62:13: nestxor
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:63:13: nestxor
                     {
                     root_0 = (Object)adaptor.nil();
 
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_nestxor_in_otherthanand181);
-                    nestxor16=nestxor();
+                    pushFollow(FOLLOW_nestxor_in_otherthanand187);
+                    nestxor17=nestxor();
 
                     state._fsp--;
                     if (state.failed) return retval;
                     if ( state.backtracking==0 ) 
-                    adaptor.addChild(root_0, nestxor16.getTree());
+                    adaptor.addChild(root_0, nestxor17.getTree());
 
                     if ( state.backtracking==0 ) {
                     }
                     }
                     break;
                 case 3 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:62:23: nestsand
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:63:23: nestsand
                     {
                     root_0 = (Object)adaptor.nil();
 
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_nestsand_in_otherthanand185);
-                    nestsand17=nestsand();
+                    pushFollow(FOLLOW_nestsand_in_otherthanand191);
+                    nestsand18=nestsand();
 
                     state._fsp--;
                     if (state.failed) return retval;
                     if ( state.backtracking==0 ) 
-                    adaptor.addChild(root_0, nestsand17.getTree());
+                    adaptor.addChild(root_0, nestsand18.getTree());
 
                     if ( state.backtracking==0 ) {
                     }
                     }
                     break;
                 case 4 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:62:34: atom
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:63:34: atom
                     {
                     root_0 = (Object)adaptor.nil();
 
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_atom_in_otherthanand189);
-                    atom18=atom();
+                    pushFollow(FOLLOW_atom_in_otherthanand195);
+                    atom19=atom();
 
                     state._fsp--;
                     if (state.failed) return retval;
                     if ( state.backtracking==0 ) 
-                    adaptor.addChild(root_0, atom18.getTree());
+                    adaptor.addChild(root_0, atom19.getTree());
 
                     if ( state.backtracking==0 ) {
                     }
                     }
                     break;
                 case 5 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:62:41: pandterm
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:63:41: pandterm
                     {
                     root_0 = (Object)adaptor.nil();
 
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_pandterm_in_otherthanand193);
-                    pandterm19=pandterm();
+                    pushFollow(FOLLOW_pandterm_in_otherthanand199);
+                    pandterm20=pandterm();
 
                     state._fsp--;
                     if (state.failed) return retval;
                     if ( state.backtracking==0 ) 
-                    adaptor.addChild(root_0, pandterm19.getTree());
+                    adaptor.addChild(root_0, pandterm20.getTree());
 
                     if ( state.backtracking==0 ) {
                     }
@@ -885,7 +928,7 @@ public class tftacflattener extends TreeParser {
     };
 
     // $ANTLR start "otherthanor"
-    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:64:1: otherthanor : ( nestand | nestxor | nestsand | atom | pandterm );
+    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:65:1: otherthanor : ( nestand | nestxor | nestsand | atom | pandterm | negatedterm );
     public final tftacflattener.otherthanor_return otherthanor() throws RecognitionException {
         tftacflattener.otherthanor_return retval = new tftacflattener.otherthanor_return();
         retval.start = input.LT(1);
@@ -895,26 +938,42 @@ public class tftacflattener extends TreeParser {
         Object _first_0 = null;
         Object _last = null;
 
-        tftacflattener.nestand_return nestand20 = null;
+        tftacflattener.nestand_return nestand21 = null;
 
-        tftacflattener.nestxor_return nestxor21 = null;
+        tftacflattener.nestxor_return nestxor22 = null;
 
-        tftacflattener.nestsand_return nestsand22 = null;
+        tftacflattener.nestsand_return nestsand23 = null;
 
-        tftacflattener.atom_return atom23 = null;
+        tftacflattener.atom_return atom24 = null;
 
-        tftacflattener.pandterm_return pandterm24 = null;
+        tftacflattener.pandterm_return pandterm25 = null;
+
+        tftacflattener.negatedterm_return negatedterm26 = null;
 
 
 
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 6) ) { return retval; }
-            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:65:2: ( nestand | nestxor | nestsand | atom | pandterm )
-            int alt8=5;
+            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:66:2: ( nestand | nestxor | nestsand | atom | pandterm | negatedterm )
+            int alt8=6;
             switch ( input.LA(1) ) {
             case AND:
                 {
-                alt8=1;
+                int LA8_1 = input.LA(2);
+
+                if ( (synpred17_tftacflattener()) ) {
+                    alt8=1;
+                }
+                else if ( (true) ) {
+                    alt8=6;
+                }
+                else {
+                    if (state.backtracking>0) {state.failed=true; return retval;}
+                    NoViableAltException nvae =
+                        new NoViableAltException("", 8, 1, input);
+
+                    throw nvae;
+                }
                 }
                 break;
             case XOR:
@@ -939,6 +998,11 @@ public class tftacflattener extends TreeParser {
                 alt8=5;
                 }
                 break;
+            case NOT:
+                {
+                alt8=6;
+                }
+                break;
             default:
                 if (state.backtracking>0) {state.failed=true; return retval;}
                 NoViableAltException nvae =
@@ -949,90 +1013,108 @@ public class tftacflattener extends TreeParser {
 
             switch (alt8) {
                 case 1 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:65:4: nestand
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:66:4: nestand
                     {
                     root_0 = (Object)adaptor.nil();
 
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_nestand_in_otherthanor204);
-                    nestand20=nestand();
+                    pushFollow(FOLLOW_nestand_in_otherthanor210);
+                    nestand21=nestand();
 
                     state._fsp--;
                     if (state.failed) return retval;
                     if ( state.backtracking==0 ) 
-                    adaptor.addChild(root_0, nestand20.getTree());
+                    adaptor.addChild(root_0, nestand21.getTree());
 
                     if ( state.backtracking==0 ) {
                     }
                     }
                     break;
                 case 2 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:65:14: nestxor
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:66:14: nestxor
                     {
                     root_0 = (Object)adaptor.nil();
 
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_nestxor_in_otherthanor208);
-                    nestxor21=nestxor();
+                    pushFollow(FOLLOW_nestxor_in_otherthanor214);
+                    nestxor22=nestxor();
 
                     state._fsp--;
                     if (state.failed) return retval;
                     if ( state.backtracking==0 ) 
-                    adaptor.addChild(root_0, nestxor21.getTree());
+                    adaptor.addChild(root_0, nestxor22.getTree());
 
                     if ( state.backtracking==0 ) {
                     }
                     }
                     break;
                 case 3 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:65:24: nestsand
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:66:24: nestsand
                     {
                     root_0 = (Object)adaptor.nil();
 
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_nestsand_in_otherthanor212);
-                    nestsand22=nestsand();
+                    pushFollow(FOLLOW_nestsand_in_otherthanor218);
+                    nestsand23=nestsand();
 
                     state._fsp--;
                     if (state.failed) return retval;
                     if ( state.backtracking==0 ) 
-                    adaptor.addChild(root_0, nestsand22.getTree());
+                    adaptor.addChild(root_0, nestsand23.getTree());
 
                     if ( state.backtracking==0 ) {
                     }
                     }
                     break;
                 case 4 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:65:35: atom
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:66:35: atom
                     {
                     root_0 = (Object)adaptor.nil();
 
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_atom_in_otherthanor216);
-                    atom23=atom();
+                    pushFollow(FOLLOW_atom_in_otherthanor222);
+                    atom24=atom();
 
                     state._fsp--;
                     if (state.failed) return retval;
                     if ( state.backtracking==0 ) 
-                    adaptor.addChild(root_0, atom23.getTree());
+                    adaptor.addChild(root_0, atom24.getTree());
 
                     if ( state.backtracking==0 ) {
                     }
                     }
                     break;
                 case 5 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:65:42: pandterm
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:66:42: pandterm
                     {
                     root_0 = (Object)adaptor.nil();
 
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_pandterm_in_otherthanor220);
-                    pandterm24=pandterm();
+                    pushFollow(FOLLOW_pandterm_in_otherthanor226);
+                    pandterm25=pandterm();
 
                     state._fsp--;
                     if (state.failed) return retval;
                     if ( state.backtracking==0 ) 
-                    adaptor.addChild(root_0, pandterm24.getTree());
+                    adaptor.addChild(root_0, pandterm25.getTree());
+
+                    if ( state.backtracking==0 ) {
+                    }
+                    }
+                    break;
+                case 6 :
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:66:53: negatedterm
+                    {
+                    root_0 = (Object)adaptor.nil();
+
+                    _last = (Object)input.LT(1);
+                    pushFollow(FOLLOW_negatedterm_in_otherthanor230);
+                    negatedterm26=negatedterm();
+
+                    state._fsp--;
+                    if (state.failed) return retval;
+                    if ( state.backtracking==0 ) 
+                    adaptor.addChild(root_0, negatedterm26.getTree());
 
                     if ( state.backtracking==0 ) {
                     }
@@ -1062,7 +1144,7 @@ public class tftacflattener extends TreeParser {
     };
 
     // $ANTLR start "otherthanxor"
-    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:67:1: otherthanxor : ( nestand | nestor | nestsand | atom | pandterm );
+    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:68:1: otherthanxor : ( nestand | nestor | nestsand | atom | pandterm | negatedterm );
     public final tftacflattener.otherthanxor_return otherthanxor() throws RecognitionException {
         tftacflattener.otherthanxor_return retval = new tftacflattener.otherthanxor_return();
         retval.start = input.LT(1);
@@ -1072,26 +1154,42 @@ public class tftacflattener extends TreeParser {
         Object _first_0 = null;
         Object _last = null;
 
-        tftacflattener.nestand_return nestand25 = null;
+        tftacflattener.nestand_return nestand27 = null;
 
-        tftacflattener.nestor_return nestor26 = null;
+        tftacflattener.nestor_return nestor28 = null;
 
-        tftacflattener.nestsand_return nestsand27 = null;
+        tftacflattener.nestsand_return nestsand29 = null;
 
-        tftacflattener.atom_return atom28 = null;
+        tftacflattener.atom_return atom30 = null;
 
-        tftacflattener.pandterm_return pandterm29 = null;
+        tftacflattener.pandterm_return pandterm31 = null;
+
+        tftacflattener.negatedterm_return negatedterm32 = null;
 
 
 
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 7) ) { return retval; }
-            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:68:2: ( nestand | nestor | nestsand | atom | pandterm )
-            int alt9=5;
+            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:69:2: ( nestand | nestor | nestsand | atom | pandterm | negatedterm )
+            int alt9=6;
             switch ( input.LA(1) ) {
             case AND:
                 {
-                alt9=1;
+                int LA9_1 = input.LA(2);
+
+                if ( (synpred22_tftacflattener()) ) {
+                    alt9=1;
+                }
+                else if ( (true) ) {
+                    alt9=6;
+                }
+                else {
+                    if (state.backtracking>0) {state.failed=true; return retval;}
+                    NoViableAltException nvae =
+                        new NoViableAltException("", 9, 1, input);
+
+                    throw nvae;
+                }
                 }
                 break;
             case OR:
@@ -1116,6 +1214,11 @@ public class tftacflattener extends TreeParser {
                 alt9=5;
                 }
                 break;
+            case NOT:
+                {
+                alt9=6;
+                }
+                break;
             default:
                 if (state.backtracking>0) {state.failed=true; return retval;}
                 NoViableAltException nvae =
@@ -1126,90 +1229,108 @@ public class tftacflattener extends TreeParser {
 
             switch (alt9) {
                 case 1 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:68:4: nestand
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:69:4: nestand
                     {
                     root_0 = (Object)adaptor.nil();
 
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_nestand_in_otherthanxor231);
-                    nestand25=nestand();
+                    pushFollow(FOLLOW_nestand_in_otherthanxor240);
+                    nestand27=nestand();
 
                     state._fsp--;
                     if (state.failed) return retval;
                     if ( state.backtracking==0 ) 
-                    adaptor.addChild(root_0, nestand25.getTree());
+                    adaptor.addChild(root_0, nestand27.getTree());
 
                     if ( state.backtracking==0 ) {
                     }
                     }
                     break;
                 case 2 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:68:14: nestor
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:69:14: nestor
                     {
                     root_0 = (Object)adaptor.nil();
 
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_nestor_in_otherthanxor235);
-                    nestor26=nestor();
+                    pushFollow(FOLLOW_nestor_in_otherthanxor244);
+                    nestor28=nestor();
 
                     state._fsp--;
                     if (state.failed) return retval;
                     if ( state.backtracking==0 ) 
-                    adaptor.addChild(root_0, nestor26.getTree());
+                    adaptor.addChild(root_0, nestor28.getTree());
 
                     if ( state.backtracking==0 ) {
                     }
                     }
                     break;
                 case 3 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:68:23: nestsand
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:69:23: nestsand
                     {
                     root_0 = (Object)adaptor.nil();
 
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_nestsand_in_otherthanxor239);
-                    nestsand27=nestsand();
+                    pushFollow(FOLLOW_nestsand_in_otherthanxor248);
+                    nestsand29=nestsand();
 
                     state._fsp--;
                     if (state.failed) return retval;
                     if ( state.backtracking==0 ) 
-                    adaptor.addChild(root_0, nestsand27.getTree());
+                    adaptor.addChild(root_0, nestsand29.getTree());
 
                     if ( state.backtracking==0 ) {
                     }
                     }
                     break;
                 case 4 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:68:34: atom
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:69:34: atom
                     {
                     root_0 = (Object)adaptor.nil();
 
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_atom_in_otherthanxor243);
-                    atom28=atom();
+                    pushFollow(FOLLOW_atom_in_otherthanxor252);
+                    atom30=atom();
 
                     state._fsp--;
                     if (state.failed) return retval;
                     if ( state.backtracking==0 ) 
-                    adaptor.addChild(root_0, atom28.getTree());
+                    adaptor.addChild(root_0, atom30.getTree());
 
                     if ( state.backtracking==0 ) {
                     }
                     }
                     break;
                 case 5 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:68:41: pandterm
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:69:41: pandterm
                     {
                     root_0 = (Object)adaptor.nil();
 
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_pandterm_in_otherthanxor247);
-                    pandterm29=pandterm();
+                    pushFollow(FOLLOW_pandterm_in_otherthanxor256);
+                    pandterm31=pandterm();
 
                     state._fsp--;
                     if (state.failed) return retval;
                     if ( state.backtracking==0 ) 
-                    adaptor.addChild(root_0, pandterm29.getTree());
+                    adaptor.addChild(root_0, pandterm31.getTree());
+
+                    if ( state.backtracking==0 ) {
+                    }
+                    }
+                    break;
+                case 6 :
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:69:52: negatedterm
+                    {
+                    root_0 = (Object)adaptor.nil();
+
+                    _last = (Object)input.LT(1);
+                    pushFollow(FOLLOW_negatedterm_in_otherthanxor260);
+                    negatedterm32=negatedterm();
+
+                    state._fsp--;
+                    if (state.failed) return retval;
+                    if ( state.backtracking==0 ) 
+                    adaptor.addChild(root_0, negatedterm32.getTree());
 
                     if ( state.backtracking==0 ) {
                     }
@@ -1239,7 +1360,7 @@ public class tftacflattener extends TreeParser {
     };
 
     // $ANTLR start "otherthansand"
-    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:70:1: otherthansand : ( nestand | nestor | nestxor | atom | pandterm );
+    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:71:1: otherthansand : ( nestand | nestor | nestxor | atom | pandterm | negatedterm );
     public final tftacflattener.otherthansand_return otherthansand() throws RecognitionException {
         tftacflattener.otherthansand_return retval = new tftacflattener.otherthansand_return();
         retval.start = input.LT(1);
@@ -1249,26 +1370,42 @@ public class tftacflattener extends TreeParser {
         Object _first_0 = null;
         Object _last = null;
 
-        tftacflattener.nestand_return nestand30 = null;
+        tftacflattener.nestand_return nestand33 = null;
 
-        tftacflattener.nestor_return nestor31 = null;
+        tftacflattener.nestor_return nestor34 = null;
 
-        tftacflattener.nestxor_return nestxor32 = null;
+        tftacflattener.nestxor_return nestxor35 = null;
 
-        tftacflattener.atom_return atom33 = null;
+        tftacflattener.atom_return atom36 = null;
 
-        tftacflattener.pandterm_return pandterm34 = null;
+        tftacflattener.pandterm_return pandterm37 = null;
+
+        tftacflattener.negatedterm_return negatedterm38 = null;
 
 
 
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 8) ) { return retval; }
-            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:71:2: ( nestand | nestor | nestxor | atom | pandterm )
-            int alt10=5;
+            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:72:2: ( nestand | nestor | nestxor | atom | pandterm | negatedterm )
+            int alt10=6;
             switch ( input.LA(1) ) {
             case AND:
                 {
-                alt10=1;
+                int LA10_1 = input.LA(2);
+
+                if ( (synpred27_tftacflattener()) ) {
+                    alt10=1;
+                }
+                else if ( (true) ) {
+                    alt10=6;
+                }
+                else {
+                    if (state.backtracking>0) {state.failed=true; return retval;}
+                    NoViableAltException nvae =
+                        new NoViableAltException("", 10, 1, input);
+
+                    throw nvae;
+                }
                 }
                 break;
             case OR:
@@ -1293,6 +1430,11 @@ public class tftacflattener extends TreeParser {
                 alt10=5;
                 }
                 break;
+            case NOT:
+                {
+                alt10=6;
+                }
+                break;
             default:
                 if (state.backtracking>0) {state.failed=true; return retval;}
                 NoViableAltException nvae =
@@ -1303,90 +1445,108 @@ public class tftacflattener extends TreeParser {
 
             switch (alt10) {
                 case 1 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:71:4: nestand
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:72:4: nestand
                     {
                     root_0 = (Object)adaptor.nil();
 
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_nestand_in_otherthansand258);
-                    nestand30=nestand();
+                    pushFollow(FOLLOW_nestand_in_otherthansand270);
+                    nestand33=nestand();
 
                     state._fsp--;
                     if (state.failed) return retval;
                     if ( state.backtracking==0 ) 
-                    adaptor.addChild(root_0, nestand30.getTree());
+                    adaptor.addChild(root_0, nestand33.getTree());
 
                     if ( state.backtracking==0 ) {
                     }
                     }
                     break;
                 case 2 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:71:14: nestor
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:72:14: nestor
                     {
                     root_0 = (Object)adaptor.nil();
 
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_nestor_in_otherthansand262);
-                    nestor31=nestor();
+                    pushFollow(FOLLOW_nestor_in_otherthansand274);
+                    nestor34=nestor();
 
                     state._fsp--;
                     if (state.failed) return retval;
                     if ( state.backtracking==0 ) 
-                    adaptor.addChild(root_0, nestor31.getTree());
+                    adaptor.addChild(root_0, nestor34.getTree());
 
                     if ( state.backtracking==0 ) {
                     }
                     }
                     break;
                 case 3 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:71:23: nestxor
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:72:23: nestxor
                     {
                     root_0 = (Object)adaptor.nil();
 
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_nestxor_in_otherthansand266);
-                    nestxor32=nestxor();
+                    pushFollow(FOLLOW_nestxor_in_otherthansand278);
+                    nestxor35=nestxor();
 
                     state._fsp--;
                     if (state.failed) return retval;
                     if ( state.backtracking==0 ) 
-                    adaptor.addChild(root_0, nestxor32.getTree());
+                    adaptor.addChild(root_0, nestxor35.getTree());
 
                     if ( state.backtracking==0 ) {
                     }
                     }
                     break;
                 case 4 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:71:33: atom
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:72:33: atom
                     {
                     root_0 = (Object)adaptor.nil();
 
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_atom_in_otherthansand270);
-                    atom33=atom();
+                    pushFollow(FOLLOW_atom_in_otherthansand282);
+                    atom36=atom();
 
                     state._fsp--;
                     if (state.failed) return retval;
                     if ( state.backtracking==0 ) 
-                    adaptor.addChild(root_0, atom33.getTree());
+                    adaptor.addChild(root_0, atom36.getTree());
 
                     if ( state.backtracking==0 ) {
                     }
                     }
                     break;
                 case 5 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:71:40: pandterm
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:72:40: pandterm
                     {
                     root_0 = (Object)adaptor.nil();
 
                     _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_pandterm_in_otherthansand274);
-                    pandterm34=pandterm();
+                    pushFollow(FOLLOW_pandterm_in_otherthansand286);
+                    pandterm37=pandterm();
 
                     state._fsp--;
                     if (state.failed) return retval;
                     if ( state.backtracking==0 ) 
-                    adaptor.addChild(root_0, pandterm34.getTree());
+                    adaptor.addChild(root_0, pandterm37.getTree());
+
+                    if ( state.backtracking==0 ) {
+                    }
+                    }
+                    break;
+                case 6 :
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:72:51: negatedterm
+                    {
+                    root_0 = (Object)adaptor.nil();
+
+                    _last = (Object)input.LT(1);
+                    pushFollow(FOLLOW_negatedterm_in_otherthansand290);
+                    negatedterm38=negatedterm();
+
+                    state._fsp--;
+                    if (state.failed) return retval;
+                    if ( state.backtracking==0 ) 
+                    adaptor.addChild(root_0, negatedterm38.getTree());
 
                     if ( state.backtracking==0 ) {
                     }
@@ -1416,7 +1576,7 @@ public class tftacflattener extends TreeParser {
     };
 
     // $ANTLR start "nestand"
-    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:73:1: nestand : ( ^( AND ^( AND ( tdnf )+ ) ( tdnf )+ ) -> ^( AND ( tdnf )+ ) | ^( AND ( otherthanand )+ ^( AND ( tdnf )+ ) ) -> ^( AND ( otherthanand )+ ( tdnf )+ ) | ^( AND ( otherthanand )+ ^( AND ( tdnf )+ ) ( tdnf )+ ) -> ^( AND ( otherthanand )+ ( tdnf )+ ) | ^( AND ( tdnf )+ ) );
+    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:74:1: nestand : ( ^( AND ^( AND ( tdnf )+ ) ( tdnf )+ ) -> ^( AND ( tdnf )+ ) | ^( AND ( otherthanand )+ ^( AND ( tdnf )+ ) ) -> ^( AND ( otherthanand )+ ( tdnf )+ ) | ^( AND ( otherthanand )+ ^( AND ( tdnf )+ ) ( tdnf )+ ) -> ^( AND ( otherthanand )+ ( tdnf )+ ) | ^( AND ( tdnf )+ ) );
     public final tftacflattener.nestand_return nestand() throws RecognitionException {
         tftacflattener.nestand_return retval = new tftacflattener.nestand_return();
         retval.start = input.LT(1);
@@ -1426,18 +1586,14 @@ public class tftacflattener extends TreeParser {
         Object _first_0 = null;
         Object _last = null;
 
-        Object AND35=null;
-        Object AND36=null;
         Object AND39=null;
-        Object AND41=null;
+        Object AND40=null;
         Object AND43=null;
         Object AND45=null;
-        Object AND48=null;
-        tftacflattener.tdnf_return tdnf37 = null;
-
-        tftacflattener.tdnf_return tdnf38 = null;
-
-        tftacflattener.otherthanand_return otherthanand40 = null;
+        Object AND47=null;
+        Object AND49=null;
+        Object AND52=null;
+        tftacflattener.tdnf_return tdnf41 = null;
 
         tftacflattener.tdnf_return tdnf42 = null;
 
@@ -1445,37 +1601,41 @@ public class tftacflattener extends TreeParser {
 
         tftacflattener.tdnf_return tdnf46 = null;
 
-        tftacflattener.tdnf_return tdnf47 = null;
+        tftacflattener.otherthanand_return otherthanand48 = null;
 
-        tftacflattener.tdnf_return tdnf49 = null;
+        tftacflattener.tdnf_return tdnf50 = null;
+
+        tftacflattener.tdnf_return tdnf51 = null;
+
+        tftacflattener.tdnf_return tdnf53 = null;
 
 
-        Object AND35_tree=null;
-        Object AND36_tree=null;
         Object AND39_tree=null;
-        Object AND41_tree=null;
+        Object AND40_tree=null;
         Object AND43_tree=null;
         Object AND45_tree=null;
-        Object AND48_tree=null;
+        Object AND47_tree=null;
+        Object AND49_tree=null;
+        Object AND52_tree=null;
         RewriteRuleNodeStream stream_AND=new RewriteRuleNodeStream(adaptor,"token AND");
         RewriteRuleSubtreeStream stream_otherthanand=new RewriteRuleSubtreeStream(adaptor,"rule otherthanand");
         RewriteRuleSubtreeStream stream_tdnf=new RewriteRuleSubtreeStream(adaptor,"rule tdnf");
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 9) ) { return retval; }
-            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:73:9: ( ^( AND ^( AND ( tdnf )+ ) ( tdnf )+ ) -> ^( AND ( tdnf )+ ) | ^( AND ( otherthanand )+ ^( AND ( tdnf )+ ) ) -> ^( AND ( otherthanand )+ ( tdnf )+ ) | ^( AND ( otherthanand )+ ^( AND ( tdnf )+ ) ( tdnf )+ ) -> ^( AND ( otherthanand )+ ( tdnf )+ ) | ^( AND ( tdnf )+ ) )
+            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:74:9: ( ^( AND ^( AND ( tdnf )+ ) ( tdnf )+ ) -> ^( AND ( tdnf )+ ) | ^( AND ( otherthanand )+ ^( AND ( tdnf )+ ) ) -> ^( AND ( otherthanand )+ ( tdnf )+ ) | ^( AND ( otherthanand )+ ^( AND ( tdnf )+ ) ( tdnf )+ ) -> ^( AND ( otherthanand )+ ( tdnf )+ ) | ^( AND ( tdnf )+ ) )
             int alt19=4;
             int LA19_0 = input.LA(1);
 
             if ( (LA19_0==AND) ) {
                 int LA19_1 = input.LA(2);
 
-                if ( (synpred30_tftacflattener()) ) {
+                if ( (synpred34_tftacflattener()) ) {
                     alt19=1;
                 }
-                else if ( (synpred33_tftacflattener()) ) {
+                else if ( (synpred37_tftacflattener()) ) {
                     alt19=2;
                 }
-                else if ( (synpred37_tftacflattener()) ) {
+                else if ( (synpred41_tftacflattener()) ) {
                     alt19=3;
                 }
                 else if ( (true) ) {
@@ -1498,15 +1658,15 @@ public class tftacflattener extends TreeParser {
             }
             switch (alt19) {
                 case 1 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:73:11: ^( AND ^( AND ( tdnf )+ ) ( tdnf )+ )
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:74:11: ^( AND ^( AND ( tdnf )+ ) ( tdnf )+ )
                     {
                     _last = (Object)input.LT(1);
                     {
                     Object _save_last_1 = _last;
                     Object _first_1 = null;
                     Object root_1 = (Object)adaptor.nil();_last = (Object)input.LT(1);
-                    AND35=(Object)match(input,AND,FOLLOW_AND_in_nestand285); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_AND.add(AND35);
+                    AND39=(Object)match(input,AND,FOLLOW_AND_in_nestand300); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_AND.add(AND39);
 
 
 
@@ -1516,20 +1676,20 @@ public class tftacflattener extends TreeParser {
                     Object _save_last_2 = _last;
                     Object _first_2 = null;
                     Object root_2 = (Object)adaptor.nil();_last = (Object)input.LT(1);
-                    AND36=(Object)match(input,AND,FOLLOW_AND_in_nestand288); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_AND.add(AND36);
+                    AND40=(Object)match(input,AND,FOLLOW_AND_in_nestand303); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_AND.add(AND40);
 
 
 
                     match(input, Token.DOWN, null); if (state.failed) return retval;
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:73:23: ( tdnf )+
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:74:23: ( tdnf )+
                     int cnt11=0;
                     loop11:
                     do {
                         int alt11=2;
                         int LA11_0 = input.LA(1);
 
-                        if ( ((LA11_0>=OR && LA11_0<=ID)||(LA11_0>=TRUE && LA11_0<=FALSE)) ) {
+                        if ( ((LA11_0>=OR && LA11_0<=ID)||(LA11_0>=NOT && LA11_0<=FALSE)) ) {
                             alt11=1;
                         }
 
@@ -1539,12 +1699,12 @@ public class tftacflattener extends TreeParser {
                     	    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:0:0: tdnf
                     	    {
                     	    _last = (Object)input.LT(1);
-                    	    pushFollow(FOLLOW_tdnf_in_nestand290);
-                    	    tdnf37=tdnf();
+                    	    pushFollow(FOLLOW_tdnf_in_nestand305);
+                    	    tdnf41=tdnf();
 
                     	    state._fsp--;
                     	    if (state.failed) return retval;
-                    	    if ( state.backtracking==0 ) stream_tdnf.add(tdnf37.getTree());
+                    	    if ( state.backtracking==0 ) stream_tdnf.add(tdnf41.getTree());
 
                     	    if ( state.backtracking==0 ) {
                     	    }
@@ -1565,14 +1725,14 @@ public class tftacflattener extends TreeParser {
                     match(input, Token.UP, null); if (state.failed) return retval;adaptor.addChild(root_1, root_2);_last = _save_last_2;
                     }
 
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:73:30: ( tdnf )+
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:74:30: ( tdnf )+
                     int cnt12=0;
                     loop12:
                     do {
                         int alt12=2;
                         int LA12_0 = input.LA(1);
 
-                        if ( ((LA12_0>=OR && LA12_0<=ID)||(LA12_0>=TRUE && LA12_0<=FALSE)) ) {
+                        if ( ((LA12_0>=OR && LA12_0<=ID)||(LA12_0>=NOT && LA12_0<=FALSE)) ) {
                             alt12=1;
                         }
 
@@ -1582,12 +1742,12 @@ public class tftacflattener extends TreeParser {
                     	    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:0:0: tdnf
                     	    {
                     	    _last = (Object)input.LT(1);
-                    	    pushFollow(FOLLOW_tdnf_in_nestand294);
-                    	    tdnf38=tdnf();
+                    	    pushFollow(FOLLOW_tdnf_in_nestand309);
+                    	    tdnf42=tdnf();
 
                     	    state._fsp--;
                     	    if (state.failed) return retval;
-                    	    if ( state.backtracking==0 ) stream_tdnf.add(tdnf38.getTree());
+                    	    if ( state.backtracking==0 ) stream_tdnf.add(tdnf42.getTree());
 
                     	    if ( state.backtracking==0 ) {
                     	    }
@@ -1621,9 +1781,9 @@ public class tftacflattener extends TreeParser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"token retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 74:4: -> ^( AND ( tdnf )+ )
+                    // 75:4: -> ^( AND ( tdnf )+ )
                     {
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:74:7: ^( AND ( tdnf )+ )
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:75:7: ^( AND ( tdnf )+ )
                         {
                         Object root_1 = (Object)adaptor.nil();
                         root_1 = (Object)adaptor.becomeRoot(stream_AND.nextNode(), root_1);
@@ -1646,20 +1806,20 @@ public class tftacflattener extends TreeParser {
                     }
                     break;
                 case 2 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:75:4: ^( AND ( otherthanand )+ ^( AND ( tdnf )+ ) )
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:76:4: ^( AND ( otherthanand )+ ^( AND ( tdnf )+ ) )
                     {
                     _last = (Object)input.LT(1);
                     {
                     Object _save_last_1 = _last;
                     Object _first_1 = null;
                     Object root_1 = (Object)adaptor.nil();_last = (Object)input.LT(1);
-                    AND39=(Object)match(input,AND,FOLLOW_AND_in_nestand314); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_AND.add(AND39);
+                    AND43=(Object)match(input,AND,FOLLOW_AND_in_nestand329); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_AND.add(AND43);
 
 
 
                     match(input, Token.DOWN, null); if (state.failed) return retval;
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:75:10: ( otherthanand )+
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:76:10: ( otherthanand )+
                     int cnt13=0;
                     loop13:
                     do {
@@ -1676,12 +1836,12 @@ public class tftacflattener extends TreeParser {
                     	    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:0:0: otherthanand
                     	    {
                     	    _last = (Object)input.LT(1);
-                    	    pushFollow(FOLLOW_otherthanand_in_nestand316);
-                    	    otherthanand40=otherthanand();
+                    	    pushFollow(FOLLOW_otherthanand_in_nestand331);
+                    	    otherthanand44=otherthanand();
 
                     	    state._fsp--;
                     	    if (state.failed) return retval;
-                    	    if ( state.backtracking==0 ) stream_otherthanand.add(otherthanand40.getTree());
+                    	    if ( state.backtracking==0 ) stream_otherthanand.add(otherthanand44.getTree());
 
                     	    if ( state.backtracking==0 ) {
                     	    }
@@ -1703,20 +1863,20 @@ public class tftacflattener extends TreeParser {
                     Object _save_last_2 = _last;
                     Object _first_2 = null;
                     Object root_2 = (Object)adaptor.nil();_last = (Object)input.LT(1);
-                    AND41=(Object)match(input,AND,FOLLOW_AND_in_nestand320); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_AND.add(AND41);
+                    AND45=(Object)match(input,AND,FOLLOW_AND_in_nestand335); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_AND.add(AND45);
 
 
 
                     match(input, Token.DOWN, null); if (state.failed) return retval;
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:75:30: ( tdnf )+
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:76:30: ( tdnf )+
                     int cnt14=0;
                     loop14:
                     do {
                         int alt14=2;
                         int LA14_0 = input.LA(1);
 
-                        if ( ((LA14_0>=OR && LA14_0<=ID)||(LA14_0>=TRUE && LA14_0<=FALSE)) ) {
+                        if ( ((LA14_0>=OR && LA14_0<=ID)||(LA14_0>=NOT && LA14_0<=FALSE)) ) {
                             alt14=1;
                         }
 
@@ -1726,12 +1886,12 @@ public class tftacflattener extends TreeParser {
                     	    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:0:0: tdnf
                     	    {
                     	    _last = (Object)input.LT(1);
-                    	    pushFollow(FOLLOW_tdnf_in_nestand322);
-                    	    tdnf42=tdnf();
+                    	    pushFollow(FOLLOW_tdnf_in_nestand337);
+                    	    tdnf46=tdnf();
 
                     	    state._fsp--;
                     	    if (state.failed) return retval;
-                    	    if ( state.backtracking==0 ) stream_tdnf.add(tdnf42.getTree());
+                    	    if ( state.backtracking==0 ) stream_tdnf.add(tdnf46.getTree());
 
                     	    if ( state.backtracking==0 ) {
                     	    }
@@ -1759,7 +1919,7 @@ public class tftacflattener extends TreeParser {
 
 
                     // AST REWRITE
-                    // elements: otherthanand, AND, tdnf
+                    // elements: tdnf, AND, otherthanand
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -1769,9 +1929,9 @@ public class tftacflattener extends TreeParser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"token retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 76:4: -> ^( AND ( otherthanand )+ ( tdnf )+ )
+                    // 77:4: -> ^( AND ( otherthanand )+ ( tdnf )+ )
                     {
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:76:7: ^( AND ( otherthanand )+ ( tdnf )+ )
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:77:7: ^( AND ( otherthanand )+ ( tdnf )+ )
                         {
                         Object root_1 = (Object)adaptor.nil();
                         root_1 = (Object)adaptor.becomeRoot(stream_AND.nextNode(), root_1);
@@ -1802,20 +1962,20 @@ public class tftacflattener extends TreeParser {
                     }
                     break;
                 case 3 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:77:4: ^( AND ( otherthanand )+ ^( AND ( tdnf )+ ) ( tdnf )+ )
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:78:4: ^( AND ( otherthanand )+ ^( AND ( tdnf )+ ) ( tdnf )+ )
                     {
                     _last = (Object)input.LT(1);
                     {
                     Object _save_last_1 = _last;
                     Object _first_1 = null;
                     Object root_1 = (Object)adaptor.nil();_last = (Object)input.LT(1);
-                    AND43=(Object)match(input,AND,FOLLOW_AND_in_nestand346); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_AND.add(AND43);
+                    AND47=(Object)match(input,AND,FOLLOW_AND_in_nestand361); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_AND.add(AND47);
 
 
 
                     match(input, Token.DOWN, null); if (state.failed) return retval;
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:77:10: ( otherthanand )+
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:78:10: ( otherthanand )+
                     int cnt15=0;
                     loop15:
                     do {
@@ -1832,12 +1992,12 @@ public class tftacflattener extends TreeParser {
                     	    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:0:0: otherthanand
                     	    {
                     	    _last = (Object)input.LT(1);
-                    	    pushFollow(FOLLOW_otherthanand_in_nestand348);
-                    	    otherthanand44=otherthanand();
+                    	    pushFollow(FOLLOW_otherthanand_in_nestand363);
+                    	    otherthanand48=otherthanand();
 
                     	    state._fsp--;
                     	    if (state.failed) return retval;
-                    	    if ( state.backtracking==0 ) stream_otherthanand.add(otherthanand44.getTree());
+                    	    if ( state.backtracking==0 ) stream_otherthanand.add(otherthanand48.getTree());
 
                     	    if ( state.backtracking==0 ) {
                     	    }
@@ -1859,20 +2019,20 @@ public class tftacflattener extends TreeParser {
                     Object _save_last_2 = _last;
                     Object _first_2 = null;
                     Object root_2 = (Object)adaptor.nil();_last = (Object)input.LT(1);
-                    AND45=(Object)match(input,AND,FOLLOW_AND_in_nestand352); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_AND.add(AND45);
+                    AND49=(Object)match(input,AND,FOLLOW_AND_in_nestand367); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_AND.add(AND49);
 
 
 
                     match(input, Token.DOWN, null); if (state.failed) return retval;
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:77:30: ( tdnf )+
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:78:30: ( tdnf )+
                     int cnt16=0;
                     loop16:
                     do {
                         int alt16=2;
                         int LA16_0 = input.LA(1);
 
-                        if ( ((LA16_0>=OR && LA16_0<=ID)||(LA16_0>=TRUE && LA16_0<=FALSE)) ) {
+                        if ( ((LA16_0>=OR && LA16_0<=ID)||(LA16_0>=NOT && LA16_0<=FALSE)) ) {
                             alt16=1;
                         }
 
@@ -1882,12 +2042,12 @@ public class tftacflattener extends TreeParser {
                     	    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:0:0: tdnf
                     	    {
                     	    _last = (Object)input.LT(1);
-                    	    pushFollow(FOLLOW_tdnf_in_nestand354);
-                    	    tdnf46=tdnf();
+                    	    pushFollow(FOLLOW_tdnf_in_nestand369);
+                    	    tdnf50=tdnf();
 
                     	    state._fsp--;
                     	    if (state.failed) return retval;
-                    	    if ( state.backtracking==0 ) stream_tdnf.add(tdnf46.getTree());
+                    	    if ( state.backtracking==0 ) stream_tdnf.add(tdnf50.getTree());
 
                     	    if ( state.backtracking==0 ) {
                     	    }
@@ -1908,14 +2068,14 @@ public class tftacflattener extends TreeParser {
                     match(input, Token.UP, null); if (state.failed) return retval;adaptor.addChild(root_1, root_2);_last = _save_last_2;
                     }
 
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:77:37: ( tdnf )+
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:78:37: ( tdnf )+
                     int cnt17=0;
                     loop17:
                     do {
                         int alt17=2;
                         int LA17_0 = input.LA(1);
 
-                        if ( ((LA17_0>=OR && LA17_0<=ID)||(LA17_0>=TRUE && LA17_0<=FALSE)) ) {
+                        if ( ((LA17_0>=OR && LA17_0<=ID)||(LA17_0>=NOT && LA17_0<=FALSE)) ) {
                             alt17=1;
                         }
 
@@ -1925,12 +2085,12 @@ public class tftacflattener extends TreeParser {
                     	    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:0:0: tdnf
                     	    {
                     	    _last = (Object)input.LT(1);
-                    	    pushFollow(FOLLOW_tdnf_in_nestand358);
-                    	    tdnf47=tdnf();
+                    	    pushFollow(FOLLOW_tdnf_in_nestand373);
+                    	    tdnf51=tdnf();
 
                     	    state._fsp--;
                     	    if (state.failed) return retval;
-                    	    if ( state.backtracking==0 ) stream_tdnf.add(tdnf47.getTree());
+                    	    if ( state.backtracking==0 ) stream_tdnf.add(tdnf51.getTree());
 
                     	    if ( state.backtracking==0 ) {
                     	    }
@@ -1954,7 +2114,7 @@ public class tftacflattener extends TreeParser {
 
 
                     // AST REWRITE
-                    // elements: tdnf, AND, otherthanand
+                    // elements: AND, tdnf, otherthanand
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -1964,9 +2124,9 @@ public class tftacflattener extends TreeParser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"token retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 78:4: -> ^( AND ( otherthanand )+ ( tdnf )+ )
+                    // 79:4: -> ^( AND ( otherthanand )+ ( tdnf )+ )
                     {
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:78:7: ^( AND ( otherthanand )+ ( tdnf )+ )
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:79:7: ^( AND ( otherthanand )+ ( tdnf )+ )
                         {
                         Object root_1 = (Object)adaptor.nil();
                         root_1 = (Object)adaptor.becomeRoot(stream_AND.nextNode(), root_1);
@@ -1997,7 +2157,7 @@ public class tftacflattener extends TreeParser {
                     }
                     break;
                 case 4 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:79:4: ^( AND ( tdnf )+ )
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:80:4: ^( AND ( tdnf )+ )
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -2006,23 +2166,23 @@ public class tftacflattener extends TreeParser {
                     Object _save_last_1 = _last;
                     Object _first_1 = null;
                     Object root_1 = (Object)adaptor.nil();_last = (Object)input.LT(1);
-                    AND48=(Object)match(input,AND,FOLLOW_AND_in_nestand381); if (state.failed) return retval;
+                    AND52=(Object)match(input,AND,FOLLOW_AND_in_nestand396); if (state.failed) return retval;
                     if ( state.backtracking==0 ) {
-                    AND48_tree = (Object)adaptor.dupNode(AND48);
+                    AND52_tree = (Object)adaptor.dupNode(AND52);
 
-                    root_1 = (Object)adaptor.becomeRoot(AND48_tree, root_1);
+                    root_1 = (Object)adaptor.becomeRoot(AND52_tree, root_1);
                     }
 
 
                     match(input, Token.DOWN, null); if (state.failed) return retval;
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:79:10: ( tdnf )+
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:80:10: ( tdnf )+
                     int cnt18=0;
                     loop18:
                     do {
                         int alt18=2;
                         int LA18_0 = input.LA(1);
 
-                        if ( ((LA18_0>=OR && LA18_0<=ID)||(LA18_0>=TRUE && LA18_0<=FALSE)) ) {
+                        if ( ((LA18_0>=OR && LA18_0<=ID)||(LA18_0>=NOT && LA18_0<=FALSE)) ) {
                             alt18=1;
                         }
 
@@ -2032,13 +2192,13 @@ public class tftacflattener extends TreeParser {
                     	    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:0:0: tdnf
                     	    {
                     	    _last = (Object)input.LT(1);
-                    	    pushFollow(FOLLOW_tdnf_in_nestand383);
-                    	    tdnf49=tdnf();
+                    	    pushFollow(FOLLOW_tdnf_in_nestand398);
+                    	    tdnf53=tdnf();
 
                     	    state._fsp--;
                     	    if (state.failed) return retval;
                     	    if ( state.backtracking==0 ) 
-                    	    adaptor.addChild(root_1, tdnf49.getTree());
+                    	    adaptor.addChild(root_1, tdnf53.getTree());
 
                     	    if ( state.backtracking==0 ) {
                     	    }
@@ -2088,7 +2248,7 @@ public class tftacflattener extends TreeParser {
     };
 
     // $ANTLR start "nestsand"
-    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:82:1: nestsand : ( ^( SAND ^( SAND ( tdnf )+ ) ( tdnf )+ ) -> ^( SAND ( tdnf )+ ) | ^( SAND ( otherthansand )+ ^( SAND ( tdnf )+ ) ) -> ^( SAND ( otherthansand )+ ( tdnf )+ ) | ^( SAND ( otherthansand )+ ^( SAND ( tdnf )+ ) ( tdnf )+ ) -> ^( SAND ( otherthansand )+ ( tdnf )+ ) | ^( SAND ( tdnf )+ ) );
+    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:83:1: nestsand : ( ^( SAND ^( SAND ( tdnf )+ ) ( tdnf )+ ) -> ^( SAND ( tdnf )+ ) | ^( SAND ( otherthansand )+ ^( SAND ( tdnf )+ ) ) -> ^( SAND ( otherthansand )+ ( tdnf )+ ) | ^( SAND ( otherthansand )+ ^( SAND ( tdnf )+ ) ( tdnf )+ ) -> ^( SAND ( otherthansand )+ ( tdnf )+ ) | ^( SAND ( tdnf )+ ) );
     public final tftacflattener.nestsand_return nestsand() throws RecognitionException {
         tftacflattener.nestsand_return retval = new tftacflattener.nestsand_return();
         retval.start = input.LT(1);
@@ -2098,18 +2258,14 @@ public class tftacflattener extends TreeParser {
         Object _first_0 = null;
         Object _last = null;
 
-        Object SAND50=null;
-        Object SAND51=null;
         Object SAND54=null;
-        Object SAND56=null;
+        Object SAND55=null;
         Object SAND58=null;
         Object SAND60=null;
-        Object SAND63=null;
-        tftacflattener.tdnf_return tdnf52 = null;
-
-        tftacflattener.tdnf_return tdnf53 = null;
-
-        tftacflattener.otherthansand_return otherthansand55 = null;
+        Object SAND62=null;
+        Object SAND64=null;
+        Object SAND67=null;
+        tftacflattener.tdnf_return tdnf56 = null;
 
         tftacflattener.tdnf_return tdnf57 = null;
 
@@ -2117,37 +2273,41 @@ public class tftacflattener extends TreeParser {
 
         tftacflattener.tdnf_return tdnf61 = null;
 
-        tftacflattener.tdnf_return tdnf62 = null;
+        tftacflattener.otherthansand_return otherthansand63 = null;
 
-        tftacflattener.tdnf_return tdnf64 = null;
+        tftacflattener.tdnf_return tdnf65 = null;
+
+        tftacflattener.tdnf_return tdnf66 = null;
+
+        tftacflattener.tdnf_return tdnf68 = null;
 
 
-        Object SAND50_tree=null;
-        Object SAND51_tree=null;
         Object SAND54_tree=null;
-        Object SAND56_tree=null;
+        Object SAND55_tree=null;
         Object SAND58_tree=null;
         Object SAND60_tree=null;
-        Object SAND63_tree=null;
+        Object SAND62_tree=null;
+        Object SAND64_tree=null;
+        Object SAND67_tree=null;
         RewriteRuleNodeStream stream_SAND=new RewriteRuleNodeStream(adaptor,"token SAND");
         RewriteRuleSubtreeStream stream_otherthansand=new RewriteRuleSubtreeStream(adaptor,"rule otherthansand");
         RewriteRuleSubtreeStream stream_tdnf=new RewriteRuleSubtreeStream(adaptor,"rule tdnf");
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 10) ) { return retval; }
-            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:82:9: ( ^( SAND ^( SAND ( tdnf )+ ) ( tdnf )+ ) -> ^( SAND ( tdnf )+ ) | ^( SAND ( otherthansand )+ ^( SAND ( tdnf )+ ) ) -> ^( SAND ( otherthansand )+ ( tdnf )+ ) | ^( SAND ( otherthansand )+ ^( SAND ( tdnf )+ ) ( tdnf )+ ) -> ^( SAND ( otherthansand )+ ( tdnf )+ ) | ^( SAND ( tdnf )+ ) )
+            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:83:9: ( ^( SAND ^( SAND ( tdnf )+ ) ( tdnf )+ ) -> ^( SAND ( tdnf )+ ) | ^( SAND ( otherthansand )+ ^( SAND ( tdnf )+ ) ) -> ^( SAND ( otherthansand )+ ( tdnf )+ ) | ^( SAND ( otherthansand )+ ^( SAND ( tdnf )+ ) ( tdnf )+ ) -> ^( SAND ( otherthansand )+ ( tdnf )+ ) | ^( SAND ( tdnf )+ ) )
             int alt28=4;
             int LA28_0 = input.LA(1);
 
             if ( (LA28_0==SAND) ) {
                 int LA28_1 = input.LA(2);
 
-                if ( (synpred41_tftacflattener()) ) {
+                if ( (synpred45_tftacflattener()) ) {
                     alt28=1;
                 }
-                else if ( (synpred44_tftacflattener()) ) {
+                else if ( (synpred48_tftacflattener()) ) {
                     alt28=2;
                 }
-                else if ( (synpred48_tftacflattener()) ) {
+                else if ( (synpred52_tftacflattener()) ) {
                     alt28=3;
                 }
                 else if ( (true) ) {
@@ -2170,15 +2330,15 @@ public class tftacflattener extends TreeParser {
             }
             switch (alt28) {
                 case 1 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:82:11: ^( SAND ^( SAND ( tdnf )+ ) ( tdnf )+ )
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:83:11: ^( SAND ^( SAND ( tdnf )+ ) ( tdnf )+ )
                     {
                     _last = (Object)input.LT(1);
                     {
                     Object _save_last_1 = _last;
                     Object _first_1 = null;
                     Object root_1 = (Object)adaptor.nil();_last = (Object)input.LT(1);
-                    SAND50=(Object)match(input,SAND,FOLLOW_SAND_in_nestsand396); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_SAND.add(SAND50);
+                    SAND54=(Object)match(input,SAND,FOLLOW_SAND_in_nestsand411); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_SAND.add(SAND54);
 
 
 
@@ -2188,20 +2348,20 @@ public class tftacflattener extends TreeParser {
                     Object _save_last_2 = _last;
                     Object _first_2 = null;
                     Object root_2 = (Object)adaptor.nil();_last = (Object)input.LT(1);
-                    SAND51=(Object)match(input,SAND,FOLLOW_SAND_in_nestsand399); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_SAND.add(SAND51);
+                    SAND55=(Object)match(input,SAND,FOLLOW_SAND_in_nestsand414); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_SAND.add(SAND55);
 
 
 
                     match(input, Token.DOWN, null); if (state.failed) return retval;
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:82:25: ( tdnf )+
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:83:25: ( tdnf )+
                     int cnt20=0;
                     loop20:
                     do {
                         int alt20=2;
                         int LA20_0 = input.LA(1);
 
-                        if ( ((LA20_0>=OR && LA20_0<=ID)||(LA20_0>=TRUE && LA20_0<=FALSE)) ) {
+                        if ( ((LA20_0>=OR && LA20_0<=ID)||(LA20_0>=NOT && LA20_0<=FALSE)) ) {
                             alt20=1;
                         }
 
@@ -2211,12 +2371,12 @@ public class tftacflattener extends TreeParser {
                     	    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:0:0: tdnf
                     	    {
                     	    _last = (Object)input.LT(1);
-                    	    pushFollow(FOLLOW_tdnf_in_nestsand401);
-                    	    tdnf52=tdnf();
+                    	    pushFollow(FOLLOW_tdnf_in_nestsand416);
+                    	    tdnf56=tdnf();
 
                     	    state._fsp--;
                     	    if (state.failed) return retval;
-                    	    if ( state.backtracking==0 ) stream_tdnf.add(tdnf52.getTree());
+                    	    if ( state.backtracking==0 ) stream_tdnf.add(tdnf56.getTree());
 
                     	    if ( state.backtracking==0 ) {
                     	    }
@@ -2237,14 +2397,14 @@ public class tftacflattener extends TreeParser {
                     match(input, Token.UP, null); if (state.failed) return retval;adaptor.addChild(root_1, root_2);_last = _save_last_2;
                     }
 
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:82:32: ( tdnf )+
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:83:32: ( tdnf )+
                     int cnt21=0;
                     loop21:
                     do {
                         int alt21=2;
                         int LA21_0 = input.LA(1);
 
-                        if ( ((LA21_0>=OR && LA21_0<=ID)||(LA21_0>=TRUE && LA21_0<=FALSE)) ) {
+                        if ( ((LA21_0>=OR && LA21_0<=ID)||(LA21_0>=NOT && LA21_0<=FALSE)) ) {
                             alt21=1;
                         }
 
@@ -2254,12 +2414,12 @@ public class tftacflattener extends TreeParser {
                     	    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:0:0: tdnf
                     	    {
                     	    _last = (Object)input.LT(1);
-                    	    pushFollow(FOLLOW_tdnf_in_nestsand405);
-                    	    tdnf53=tdnf();
+                    	    pushFollow(FOLLOW_tdnf_in_nestsand420);
+                    	    tdnf57=tdnf();
 
                     	    state._fsp--;
                     	    if (state.failed) return retval;
-                    	    if ( state.backtracking==0 ) stream_tdnf.add(tdnf53.getTree());
+                    	    if ( state.backtracking==0 ) stream_tdnf.add(tdnf57.getTree());
 
                     	    if ( state.backtracking==0 ) {
                     	    }
@@ -2293,9 +2453,9 @@ public class tftacflattener extends TreeParser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"token retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 83:4: -> ^( SAND ( tdnf )+ )
+                    // 84:4: -> ^( SAND ( tdnf )+ )
                     {
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:83:7: ^( SAND ( tdnf )+ )
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:84:7: ^( SAND ( tdnf )+ )
                         {
                         Object root_1 = (Object)adaptor.nil();
                         root_1 = (Object)adaptor.becomeRoot(stream_SAND.nextNode(), root_1);
@@ -2318,27 +2478,27 @@ public class tftacflattener extends TreeParser {
                     }
                     break;
                 case 2 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:84:4: ^( SAND ( otherthansand )+ ^( SAND ( tdnf )+ ) )
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:85:4: ^( SAND ( otherthansand )+ ^( SAND ( tdnf )+ ) )
                     {
                     _last = (Object)input.LT(1);
                     {
                     Object _save_last_1 = _last;
                     Object _first_1 = null;
                     Object root_1 = (Object)adaptor.nil();_last = (Object)input.LT(1);
-                    SAND54=(Object)match(input,SAND,FOLLOW_SAND_in_nestsand425); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_SAND.add(SAND54);
+                    SAND58=(Object)match(input,SAND,FOLLOW_SAND_in_nestsand440); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_SAND.add(SAND58);
 
 
 
                     match(input, Token.DOWN, null); if (state.failed) return retval;
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:84:11: ( otherthansand )+
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:85:11: ( otherthansand )+
                     int cnt22=0;
                     loop22:
                     do {
                         int alt22=2;
                         int LA22_0 = input.LA(1);
 
-                        if ( ((LA22_0>=OR && LA22_0<=PAND)||LA22_0==ID||(LA22_0>=TRUE && LA22_0<=FALSE)) ) {
+                        if ( ((LA22_0>=OR && LA22_0<=PAND)||LA22_0==ID||(LA22_0>=NOT && LA22_0<=FALSE)) ) {
                             alt22=1;
                         }
 
@@ -2348,12 +2508,12 @@ public class tftacflattener extends TreeParser {
                     	    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:0:0: otherthansand
                     	    {
                     	    _last = (Object)input.LT(1);
-                    	    pushFollow(FOLLOW_otherthansand_in_nestsand427);
-                    	    otherthansand55=otherthansand();
+                    	    pushFollow(FOLLOW_otherthansand_in_nestsand442);
+                    	    otherthansand59=otherthansand();
 
                     	    state._fsp--;
                     	    if (state.failed) return retval;
-                    	    if ( state.backtracking==0 ) stream_otherthansand.add(otherthansand55.getTree());
+                    	    if ( state.backtracking==0 ) stream_otherthansand.add(otherthansand59.getTree());
 
                     	    if ( state.backtracking==0 ) {
                     	    }
@@ -2375,20 +2535,20 @@ public class tftacflattener extends TreeParser {
                     Object _save_last_2 = _last;
                     Object _first_2 = null;
                     Object root_2 = (Object)adaptor.nil();_last = (Object)input.LT(1);
-                    SAND56=(Object)match(input,SAND,FOLLOW_SAND_in_nestsand431); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_SAND.add(SAND56);
+                    SAND60=(Object)match(input,SAND,FOLLOW_SAND_in_nestsand446); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_SAND.add(SAND60);
 
 
 
                     match(input, Token.DOWN, null); if (state.failed) return retval;
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:84:33: ( tdnf )+
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:85:33: ( tdnf )+
                     int cnt23=0;
                     loop23:
                     do {
                         int alt23=2;
                         int LA23_0 = input.LA(1);
 
-                        if ( ((LA23_0>=OR && LA23_0<=ID)||(LA23_0>=TRUE && LA23_0<=FALSE)) ) {
+                        if ( ((LA23_0>=OR && LA23_0<=ID)||(LA23_0>=NOT && LA23_0<=FALSE)) ) {
                             alt23=1;
                         }
 
@@ -2398,12 +2558,12 @@ public class tftacflattener extends TreeParser {
                     	    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:0:0: tdnf
                     	    {
                     	    _last = (Object)input.LT(1);
-                    	    pushFollow(FOLLOW_tdnf_in_nestsand433);
-                    	    tdnf57=tdnf();
+                    	    pushFollow(FOLLOW_tdnf_in_nestsand448);
+                    	    tdnf61=tdnf();
 
                     	    state._fsp--;
                     	    if (state.failed) return retval;
-                    	    if ( state.backtracking==0 ) stream_tdnf.add(tdnf57.getTree());
+                    	    if ( state.backtracking==0 ) stream_tdnf.add(tdnf61.getTree());
 
                     	    if ( state.backtracking==0 ) {
                     	    }
@@ -2431,7 +2591,7 @@ public class tftacflattener extends TreeParser {
 
 
                     // AST REWRITE
-                    // elements: otherthansand, SAND, tdnf
+                    // elements: tdnf, otherthansand, SAND
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -2441,9 +2601,9 @@ public class tftacflattener extends TreeParser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"token retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 85:4: -> ^( SAND ( otherthansand )+ ( tdnf )+ )
+                    // 86:4: -> ^( SAND ( otherthansand )+ ( tdnf )+ )
                     {
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:85:7: ^( SAND ( otherthansand )+ ( tdnf )+ )
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:86:7: ^( SAND ( otherthansand )+ ( tdnf )+ )
                         {
                         Object root_1 = (Object)adaptor.nil();
                         root_1 = (Object)adaptor.becomeRoot(stream_SAND.nextNode(), root_1);
@@ -2474,27 +2634,27 @@ public class tftacflattener extends TreeParser {
                     }
                     break;
                 case 3 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:86:4: ^( SAND ( otherthansand )+ ^( SAND ( tdnf )+ ) ( tdnf )+ )
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:87:4: ^( SAND ( otherthansand )+ ^( SAND ( tdnf )+ ) ( tdnf )+ )
                     {
                     _last = (Object)input.LT(1);
                     {
                     Object _save_last_1 = _last;
                     Object _first_1 = null;
                     Object root_1 = (Object)adaptor.nil();_last = (Object)input.LT(1);
-                    SAND58=(Object)match(input,SAND,FOLLOW_SAND_in_nestsand457); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_SAND.add(SAND58);
+                    SAND62=(Object)match(input,SAND,FOLLOW_SAND_in_nestsand472); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_SAND.add(SAND62);
 
 
 
                     match(input, Token.DOWN, null); if (state.failed) return retval;
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:86:11: ( otherthansand )+
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:87:11: ( otherthansand )+
                     int cnt24=0;
                     loop24:
                     do {
                         int alt24=2;
                         int LA24_0 = input.LA(1);
 
-                        if ( ((LA24_0>=OR && LA24_0<=PAND)||LA24_0==ID||(LA24_0>=TRUE && LA24_0<=FALSE)) ) {
+                        if ( ((LA24_0>=OR && LA24_0<=PAND)||LA24_0==ID||(LA24_0>=NOT && LA24_0<=FALSE)) ) {
                             alt24=1;
                         }
 
@@ -2504,12 +2664,12 @@ public class tftacflattener extends TreeParser {
                     	    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:0:0: otherthansand
                     	    {
                     	    _last = (Object)input.LT(1);
-                    	    pushFollow(FOLLOW_otherthansand_in_nestsand459);
-                    	    otherthansand59=otherthansand();
+                    	    pushFollow(FOLLOW_otherthansand_in_nestsand474);
+                    	    otherthansand63=otherthansand();
 
                     	    state._fsp--;
                     	    if (state.failed) return retval;
-                    	    if ( state.backtracking==0 ) stream_otherthansand.add(otherthansand59.getTree());
+                    	    if ( state.backtracking==0 ) stream_otherthansand.add(otherthansand63.getTree());
 
                     	    if ( state.backtracking==0 ) {
                     	    }
@@ -2531,20 +2691,20 @@ public class tftacflattener extends TreeParser {
                     Object _save_last_2 = _last;
                     Object _first_2 = null;
                     Object root_2 = (Object)adaptor.nil();_last = (Object)input.LT(1);
-                    SAND60=(Object)match(input,SAND,FOLLOW_SAND_in_nestsand463); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_SAND.add(SAND60);
+                    SAND64=(Object)match(input,SAND,FOLLOW_SAND_in_nestsand478); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_SAND.add(SAND64);
 
 
 
                     match(input, Token.DOWN, null); if (state.failed) return retval;
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:86:33: ( tdnf )+
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:87:33: ( tdnf )+
                     int cnt25=0;
                     loop25:
                     do {
                         int alt25=2;
                         int LA25_0 = input.LA(1);
 
-                        if ( ((LA25_0>=OR && LA25_0<=ID)||(LA25_0>=TRUE && LA25_0<=FALSE)) ) {
+                        if ( ((LA25_0>=OR && LA25_0<=ID)||(LA25_0>=NOT && LA25_0<=FALSE)) ) {
                             alt25=1;
                         }
 
@@ -2554,12 +2714,12 @@ public class tftacflattener extends TreeParser {
                     	    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:0:0: tdnf
                     	    {
                     	    _last = (Object)input.LT(1);
-                    	    pushFollow(FOLLOW_tdnf_in_nestsand465);
-                    	    tdnf61=tdnf();
+                    	    pushFollow(FOLLOW_tdnf_in_nestsand480);
+                    	    tdnf65=tdnf();
 
                     	    state._fsp--;
                     	    if (state.failed) return retval;
-                    	    if ( state.backtracking==0 ) stream_tdnf.add(tdnf61.getTree());
+                    	    if ( state.backtracking==0 ) stream_tdnf.add(tdnf65.getTree());
 
                     	    if ( state.backtracking==0 ) {
                     	    }
@@ -2580,14 +2740,14 @@ public class tftacflattener extends TreeParser {
                     match(input, Token.UP, null); if (state.failed) return retval;adaptor.addChild(root_1, root_2);_last = _save_last_2;
                     }
 
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:86:40: ( tdnf )+
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:87:40: ( tdnf )+
                     int cnt26=0;
                     loop26:
                     do {
                         int alt26=2;
                         int LA26_0 = input.LA(1);
 
-                        if ( ((LA26_0>=OR && LA26_0<=ID)||(LA26_0>=TRUE && LA26_0<=FALSE)) ) {
+                        if ( ((LA26_0>=OR && LA26_0<=ID)||(LA26_0>=NOT && LA26_0<=FALSE)) ) {
                             alt26=1;
                         }
 
@@ -2597,12 +2757,12 @@ public class tftacflattener extends TreeParser {
                     	    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:0:0: tdnf
                     	    {
                     	    _last = (Object)input.LT(1);
-                    	    pushFollow(FOLLOW_tdnf_in_nestsand469);
-                    	    tdnf62=tdnf();
+                    	    pushFollow(FOLLOW_tdnf_in_nestsand484);
+                    	    tdnf66=tdnf();
 
                     	    state._fsp--;
                     	    if (state.failed) return retval;
-                    	    if ( state.backtracking==0 ) stream_tdnf.add(tdnf62.getTree());
+                    	    if ( state.backtracking==0 ) stream_tdnf.add(tdnf66.getTree());
 
                     	    if ( state.backtracking==0 ) {
                     	    }
@@ -2626,7 +2786,7 @@ public class tftacflattener extends TreeParser {
 
 
                     // AST REWRITE
-                    // elements: SAND, tdnf, otherthansand
+                    // elements: tdnf, otherthansand, SAND
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -2636,9 +2796,9 @@ public class tftacflattener extends TreeParser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"token retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 87:4: -> ^( SAND ( otherthansand )+ ( tdnf )+ )
+                    // 88:4: -> ^( SAND ( otherthansand )+ ( tdnf )+ )
                     {
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:87:7: ^( SAND ( otherthansand )+ ( tdnf )+ )
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:88:7: ^( SAND ( otherthansand )+ ( tdnf )+ )
                         {
                         Object root_1 = (Object)adaptor.nil();
                         root_1 = (Object)adaptor.becomeRoot(stream_SAND.nextNode(), root_1);
@@ -2669,7 +2829,7 @@ public class tftacflattener extends TreeParser {
                     }
                     break;
                 case 4 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:88:4: ^( SAND ( tdnf )+ )
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:89:4: ^( SAND ( tdnf )+ )
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -2678,23 +2838,23 @@ public class tftacflattener extends TreeParser {
                     Object _save_last_1 = _last;
                     Object _first_1 = null;
                     Object root_1 = (Object)adaptor.nil();_last = (Object)input.LT(1);
-                    SAND63=(Object)match(input,SAND,FOLLOW_SAND_in_nestsand492); if (state.failed) return retval;
+                    SAND67=(Object)match(input,SAND,FOLLOW_SAND_in_nestsand507); if (state.failed) return retval;
                     if ( state.backtracking==0 ) {
-                    SAND63_tree = (Object)adaptor.dupNode(SAND63);
+                    SAND67_tree = (Object)adaptor.dupNode(SAND67);
 
-                    root_1 = (Object)adaptor.becomeRoot(SAND63_tree, root_1);
+                    root_1 = (Object)adaptor.becomeRoot(SAND67_tree, root_1);
                     }
 
 
                     match(input, Token.DOWN, null); if (state.failed) return retval;
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:88:11: ( tdnf )+
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:89:11: ( tdnf )+
                     int cnt27=0;
                     loop27:
                     do {
                         int alt27=2;
                         int LA27_0 = input.LA(1);
 
-                        if ( ((LA27_0>=OR && LA27_0<=ID)||(LA27_0>=TRUE && LA27_0<=FALSE)) ) {
+                        if ( ((LA27_0>=OR && LA27_0<=ID)||(LA27_0>=NOT && LA27_0<=FALSE)) ) {
                             alt27=1;
                         }
 
@@ -2704,13 +2864,13 @@ public class tftacflattener extends TreeParser {
                     	    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:0:0: tdnf
                     	    {
                     	    _last = (Object)input.LT(1);
-                    	    pushFollow(FOLLOW_tdnf_in_nestsand494);
-                    	    tdnf64=tdnf();
+                    	    pushFollow(FOLLOW_tdnf_in_nestsand509);
+                    	    tdnf68=tdnf();
 
                     	    state._fsp--;
                     	    if (state.failed) return retval;
                     	    if ( state.backtracking==0 ) 
-                    	    adaptor.addChild(root_1, tdnf64.getTree());
+                    	    adaptor.addChild(root_1, tdnf68.getTree());
 
                     	    if ( state.backtracking==0 ) {
                     	    }
@@ -2760,7 +2920,7 @@ public class tftacflattener extends TreeParser {
     };
 
     // $ANTLR start "nestor"
-    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:91:1: nestor : ( ^( OR ^( OR ( tdnf )+ ) ( tdnf )+ ) -> ^( OR ( tdnf )+ ) | ^( OR ( otherthanor )+ ^( OR ( tdnf )+ ) ) -> ^( OR ( otherthanor )+ ( tdnf )+ ) | ^( OR ( otherthanor )+ ^( OR ( tdnf )+ ) ( tdnf )+ ) -> ^( OR ( otherthanor )+ ( tdnf )+ ) | ^( OR ( tdnf )+ ) );
+    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:92:1: nestor : ( ^( OR ^( OR ( tdnf )+ ) ( tdnf )+ ) -> ^( OR ( tdnf )+ ) | ^( OR ( otherthanor )+ ^( OR ( tdnf )+ ) ) -> ^( OR ( otherthanor )+ ( tdnf )+ ) | ^( OR ( otherthanor )+ ^( OR ( tdnf )+ ) ( tdnf )+ ) -> ^( OR ( otherthanor )+ ( tdnf )+ ) | ^( OR ( tdnf )+ ) );
     public final tftacflattener.nestor_return nestor() throws RecognitionException {
         tftacflattener.nestor_return retval = new tftacflattener.nestor_return();
         retval.start = input.LT(1);
@@ -2770,18 +2930,14 @@ public class tftacflattener extends TreeParser {
         Object _first_0 = null;
         Object _last = null;
 
-        Object OR65=null;
-        Object OR66=null;
         Object OR69=null;
-        Object OR71=null;
+        Object OR70=null;
         Object OR73=null;
         Object OR75=null;
-        Object OR78=null;
-        tftacflattener.tdnf_return tdnf67 = null;
-
-        tftacflattener.tdnf_return tdnf68 = null;
-
-        tftacflattener.otherthanor_return otherthanor70 = null;
+        Object OR77=null;
+        Object OR79=null;
+        Object OR82=null;
+        tftacflattener.tdnf_return tdnf71 = null;
 
         tftacflattener.tdnf_return tdnf72 = null;
 
@@ -2789,37 +2945,41 @@ public class tftacflattener extends TreeParser {
 
         tftacflattener.tdnf_return tdnf76 = null;
 
-        tftacflattener.tdnf_return tdnf77 = null;
+        tftacflattener.otherthanor_return otherthanor78 = null;
 
-        tftacflattener.tdnf_return tdnf79 = null;
+        tftacflattener.tdnf_return tdnf80 = null;
+
+        tftacflattener.tdnf_return tdnf81 = null;
+
+        tftacflattener.tdnf_return tdnf83 = null;
 
 
-        Object OR65_tree=null;
-        Object OR66_tree=null;
         Object OR69_tree=null;
-        Object OR71_tree=null;
+        Object OR70_tree=null;
         Object OR73_tree=null;
         Object OR75_tree=null;
-        Object OR78_tree=null;
+        Object OR77_tree=null;
+        Object OR79_tree=null;
+        Object OR82_tree=null;
         RewriteRuleNodeStream stream_OR=new RewriteRuleNodeStream(adaptor,"token OR");
         RewriteRuleSubtreeStream stream_otherthanor=new RewriteRuleSubtreeStream(adaptor,"rule otherthanor");
         RewriteRuleSubtreeStream stream_tdnf=new RewriteRuleSubtreeStream(adaptor,"rule tdnf");
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 11) ) { return retval; }
-            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:91:8: ( ^( OR ^( OR ( tdnf )+ ) ( tdnf )+ ) -> ^( OR ( tdnf )+ ) | ^( OR ( otherthanor )+ ^( OR ( tdnf )+ ) ) -> ^( OR ( otherthanor )+ ( tdnf )+ ) | ^( OR ( otherthanor )+ ^( OR ( tdnf )+ ) ( tdnf )+ ) -> ^( OR ( otherthanor )+ ( tdnf )+ ) | ^( OR ( tdnf )+ ) )
+            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:92:8: ( ^( OR ^( OR ( tdnf )+ ) ( tdnf )+ ) -> ^( OR ( tdnf )+ ) | ^( OR ( otherthanor )+ ^( OR ( tdnf )+ ) ) -> ^( OR ( otherthanor )+ ( tdnf )+ ) | ^( OR ( otherthanor )+ ^( OR ( tdnf )+ ) ( tdnf )+ ) -> ^( OR ( otherthanor )+ ( tdnf )+ ) | ^( OR ( tdnf )+ ) )
             int alt37=4;
             int LA37_0 = input.LA(1);
 
             if ( (LA37_0==OR) ) {
                 int LA37_1 = input.LA(2);
 
-                if ( (synpred52_tftacflattener()) ) {
+                if ( (synpred56_tftacflattener()) ) {
                     alt37=1;
                 }
-                else if ( (synpred55_tftacflattener()) ) {
+                else if ( (synpred59_tftacflattener()) ) {
                     alt37=2;
                 }
-                else if ( (synpred59_tftacflattener()) ) {
+                else if ( (synpred63_tftacflattener()) ) {
                     alt37=3;
                 }
                 else if ( (true) ) {
@@ -2842,15 +3002,15 @@ public class tftacflattener extends TreeParser {
             }
             switch (alt37) {
                 case 1 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:91:10: ^( OR ^( OR ( tdnf )+ ) ( tdnf )+ )
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:92:10: ^( OR ^( OR ( tdnf )+ ) ( tdnf )+ )
                     {
                     _last = (Object)input.LT(1);
                     {
                     Object _save_last_1 = _last;
                     Object _first_1 = null;
                     Object root_1 = (Object)adaptor.nil();_last = (Object)input.LT(1);
-                    OR65=(Object)match(input,OR,FOLLOW_OR_in_nestor508); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_OR.add(OR65);
+                    OR69=(Object)match(input,OR,FOLLOW_OR_in_nestor523); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_OR.add(OR69);
 
 
 
@@ -2860,20 +3020,20 @@ public class tftacflattener extends TreeParser {
                     Object _save_last_2 = _last;
                     Object _first_2 = null;
                     Object root_2 = (Object)adaptor.nil();_last = (Object)input.LT(1);
-                    OR66=(Object)match(input,OR,FOLLOW_OR_in_nestor511); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_OR.add(OR66);
+                    OR70=(Object)match(input,OR,FOLLOW_OR_in_nestor526); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_OR.add(OR70);
 
 
 
                     match(input, Token.DOWN, null); if (state.failed) return retval;
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:91:20: ( tdnf )+
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:92:20: ( tdnf )+
                     int cnt29=0;
                     loop29:
                     do {
                         int alt29=2;
                         int LA29_0 = input.LA(1);
 
-                        if ( ((LA29_0>=OR && LA29_0<=ID)||(LA29_0>=TRUE && LA29_0<=FALSE)) ) {
+                        if ( ((LA29_0>=OR && LA29_0<=ID)||(LA29_0>=NOT && LA29_0<=FALSE)) ) {
                             alt29=1;
                         }
 
@@ -2883,12 +3043,12 @@ public class tftacflattener extends TreeParser {
                     	    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:0:0: tdnf
                     	    {
                     	    _last = (Object)input.LT(1);
-                    	    pushFollow(FOLLOW_tdnf_in_nestor513);
-                    	    tdnf67=tdnf();
+                    	    pushFollow(FOLLOW_tdnf_in_nestor528);
+                    	    tdnf71=tdnf();
 
                     	    state._fsp--;
                     	    if (state.failed) return retval;
-                    	    if ( state.backtracking==0 ) stream_tdnf.add(tdnf67.getTree());
+                    	    if ( state.backtracking==0 ) stream_tdnf.add(tdnf71.getTree());
 
                     	    if ( state.backtracking==0 ) {
                     	    }
@@ -2909,14 +3069,14 @@ public class tftacflattener extends TreeParser {
                     match(input, Token.UP, null); if (state.failed) return retval;adaptor.addChild(root_1, root_2);_last = _save_last_2;
                     }
 
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:91:27: ( tdnf )+
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:92:27: ( tdnf )+
                     int cnt30=0;
                     loop30:
                     do {
                         int alt30=2;
                         int LA30_0 = input.LA(1);
 
-                        if ( ((LA30_0>=OR && LA30_0<=ID)||(LA30_0>=TRUE && LA30_0<=FALSE)) ) {
+                        if ( ((LA30_0>=OR && LA30_0<=ID)||(LA30_0>=NOT && LA30_0<=FALSE)) ) {
                             alt30=1;
                         }
 
@@ -2926,12 +3086,12 @@ public class tftacflattener extends TreeParser {
                     	    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:0:0: tdnf
                     	    {
                     	    _last = (Object)input.LT(1);
-                    	    pushFollow(FOLLOW_tdnf_in_nestor517);
-                    	    tdnf68=tdnf();
+                    	    pushFollow(FOLLOW_tdnf_in_nestor532);
+                    	    tdnf72=tdnf();
 
                     	    state._fsp--;
                     	    if (state.failed) return retval;
-                    	    if ( state.backtracking==0 ) stream_tdnf.add(tdnf68.getTree());
+                    	    if ( state.backtracking==0 ) stream_tdnf.add(tdnf72.getTree());
 
                     	    if ( state.backtracking==0 ) {
                     	    }
@@ -2965,9 +3125,9 @@ public class tftacflattener extends TreeParser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"token retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 92:4: -> ^( OR ( tdnf )+ )
+                    // 93:4: -> ^( OR ( tdnf )+ )
                     {
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:92:7: ^( OR ( tdnf )+ )
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:93:7: ^( OR ( tdnf )+ )
                         {
                         Object root_1 = (Object)adaptor.nil();
                         root_1 = (Object)adaptor.becomeRoot(stream_OR.nextNode(), root_1);
@@ -2990,27 +3150,27 @@ public class tftacflattener extends TreeParser {
                     }
                     break;
                 case 2 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:93:4: ^( OR ( otherthanor )+ ^( OR ( tdnf )+ ) )
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:94:4: ^( OR ( otherthanor )+ ^( OR ( tdnf )+ ) )
                     {
                     _last = (Object)input.LT(1);
                     {
                     Object _save_last_1 = _last;
                     Object _first_1 = null;
                     Object root_1 = (Object)adaptor.nil();_last = (Object)input.LT(1);
-                    OR69=(Object)match(input,OR,FOLLOW_OR_in_nestor537); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_OR.add(OR69);
+                    OR73=(Object)match(input,OR,FOLLOW_OR_in_nestor552); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_OR.add(OR73);
 
 
 
                     match(input, Token.DOWN, null); if (state.failed) return retval;
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:93:9: ( otherthanor )+
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:94:9: ( otherthanor )+
                     int cnt31=0;
                     loop31:
                     do {
                         int alt31=2;
                         int LA31_0 = input.LA(1);
 
-                        if ( ((LA31_0>=XOR && LA31_0<=ID)||(LA31_0>=TRUE && LA31_0<=FALSE)) ) {
+                        if ( ((LA31_0>=XOR && LA31_0<=ID)||(LA31_0>=NOT && LA31_0<=FALSE)) ) {
                             alt31=1;
                         }
 
@@ -3020,12 +3180,12 @@ public class tftacflattener extends TreeParser {
                     	    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:0:0: otherthanor
                     	    {
                     	    _last = (Object)input.LT(1);
-                    	    pushFollow(FOLLOW_otherthanor_in_nestor539);
-                    	    otherthanor70=otherthanor();
+                    	    pushFollow(FOLLOW_otherthanor_in_nestor554);
+                    	    otherthanor74=otherthanor();
 
                     	    state._fsp--;
                     	    if (state.failed) return retval;
-                    	    if ( state.backtracking==0 ) stream_otherthanor.add(otherthanor70.getTree());
+                    	    if ( state.backtracking==0 ) stream_otherthanor.add(otherthanor74.getTree());
 
                     	    if ( state.backtracking==0 ) {
                     	    }
@@ -3047,20 +3207,20 @@ public class tftacflattener extends TreeParser {
                     Object _save_last_2 = _last;
                     Object _first_2 = null;
                     Object root_2 = (Object)adaptor.nil();_last = (Object)input.LT(1);
-                    OR71=(Object)match(input,OR,FOLLOW_OR_in_nestor543); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_OR.add(OR71);
+                    OR75=(Object)match(input,OR,FOLLOW_OR_in_nestor558); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_OR.add(OR75);
 
 
 
                     match(input, Token.DOWN, null); if (state.failed) return retval;
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:93:27: ( tdnf )+
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:94:27: ( tdnf )+
                     int cnt32=0;
                     loop32:
                     do {
                         int alt32=2;
                         int LA32_0 = input.LA(1);
 
-                        if ( ((LA32_0>=OR && LA32_0<=ID)||(LA32_0>=TRUE && LA32_0<=FALSE)) ) {
+                        if ( ((LA32_0>=OR && LA32_0<=ID)||(LA32_0>=NOT && LA32_0<=FALSE)) ) {
                             alt32=1;
                         }
 
@@ -3070,12 +3230,12 @@ public class tftacflattener extends TreeParser {
                     	    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:0:0: tdnf
                     	    {
                     	    _last = (Object)input.LT(1);
-                    	    pushFollow(FOLLOW_tdnf_in_nestor545);
-                    	    tdnf72=tdnf();
+                    	    pushFollow(FOLLOW_tdnf_in_nestor560);
+                    	    tdnf76=tdnf();
 
                     	    state._fsp--;
                     	    if (state.failed) return retval;
-                    	    if ( state.backtracking==0 ) stream_tdnf.add(tdnf72.getTree());
+                    	    if ( state.backtracking==0 ) stream_tdnf.add(tdnf76.getTree());
 
                     	    if ( state.backtracking==0 ) {
                     	    }
@@ -3103,7 +3263,7 @@ public class tftacflattener extends TreeParser {
 
 
                     // AST REWRITE
-                    // elements: OR, otherthanor, tdnf
+                    // elements: otherthanor, OR, tdnf
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -3113,9 +3273,9 @@ public class tftacflattener extends TreeParser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"token retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 94:4: -> ^( OR ( otherthanor )+ ( tdnf )+ )
+                    // 95:4: -> ^( OR ( otherthanor )+ ( tdnf )+ )
                     {
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:94:7: ^( OR ( otherthanor )+ ( tdnf )+ )
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:95:7: ^( OR ( otherthanor )+ ( tdnf )+ )
                         {
                         Object root_1 = (Object)adaptor.nil();
                         root_1 = (Object)adaptor.becomeRoot(stream_OR.nextNode(), root_1);
@@ -3146,27 +3306,27 @@ public class tftacflattener extends TreeParser {
                     }
                     break;
                 case 3 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:95:4: ^( OR ( otherthanor )+ ^( OR ( tdnf )+ ) ( tdnf )+ )
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:96:4: ^( OR ( otherthanor )+ ^( OR ( tdnf )+ ) ( tdnf )+ )
                     {
                     _last = (Object)input.LT(1);
                     {
                     Object _save_last_1 = _last;
                     Object _first_1 = null;
                     Object root_1 = (Object)adaptor.nil();_last = (Object)input.LT(1);
-                    OR73=(Object)match(input,OR,FOLLOW_OR_in_nestor569); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_OR.add(OR73);
+                    OR77=(Object)match(input,OR,FOLLOW_OR_in_nestor584); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_OR.add(OR77);
 
 
 
                     match(input, Token.DOWN, null); if (state.failed) return retval;
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:95:9: ( otherthanor )+
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:96:9: ( otherthanor )+
                     int cnt33=0;
                     loop33:
                     do {
                         int alt33=2;
                         int LA33_0 = input.LA(1);
 
-                        if ( ((LA33_0>=XOR && LA33_0<=ID)||(LA33_0>=TRUE && LA33_0<=FALSE)) ) {
+                        if ( ((LA33_0>=XOR && LA33_0<=ID)||(LA33_0>=NOT && LA33_0<=FALSE)) ) {
                             alt33=1;
                         }
 
@@ -3176,12 +3336,12 @@ public class tftacflattener extends TreeParser {
                     	    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:0:0: otherthanor
                     	    {
                     	    _last = (Object)input.LT(1);
-                    	    pushFollow(FOLLOW_otherthanor_in_nestor571);
-                    	    otherthanor74=otherthanor();
+                    	    pushFollow(FOLLOW_otherthanor_in_nestor586);
+                    	    otherthanor78=otherthanor();
 
                     	    state._fsp--;
                     	    if (state.failed) return retval;
-                    	    if ( state.backtracking==0 ) stream_otherthanor.add(otherthanor74.getTree());
+                    	    if ( state.backtracking==0 ) stream_otherthanor.add(otherthanor78.getTree());
 
                     	    if ( state.backtracking==0 ) {
                     	    }
@@ -3203,20 +3363,20 @@ public class tftacflattener extends TreeParser {
                     Object _save_last_2 = _last;
                     Object _first_2 = null;
                     Object root_2 = (Object)adaptor.nil();_last = (Object)input.LT(1);
-                    OR75=(Object)match(input,OR,FOLLOW_OR_in_nestor575); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_OR.add(OR75);
+                    OR79=(Object)match(input,OR,FOLLOW_OR_in_nestor590); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_OR.add(OR79);
 
 
 
                     match(input, Token.DOWN, null); if (state.failed) return retval;
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:95:27: ( tdnf )+
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:96:27: ( tdnf )+
                     int cnt34=0;
                     loop34:
                     do {
                         int alt34=2;
                         int LA34_0 = input.LA(1);
 
-                        if ( ((LA34_0>=OR && LA34_0<=ID)||(LA34_0>=TRUE && LA34_0<=FALSE)) ) {
+                        if ( ((LA34_0>=OR && LA34_0<=ID)||(LA34_0>=NOT && LA34_0<=FALSE)) ) {
                             alt34=1;
                         }
 
@@ -3226,12 +3386,12 @@ public class tftacflattener extends TreeParser {
                     	    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:0:0: tdnf
                     	    {
                     	    _last = (Object)input.LT(1);
-                    	    pushFollow(FOLLOW_tdnf_in_nestor577);
-                    	    tdnf76=tdnf();
+                    	    pushFollow(FOLLOW_tdnf_in_nestor592);
+                    	    tdnf80=tdnf();
 
                     	    state._fsp--;
                     	    if (state.failed) return retval;
-                    	    if ( state.backtracking==0 ) stream_tdnf.add(tdnf76.getTree());
+                    	    if ( state.backtracking==0 ) stream_tdnf.add(tdnf80.getTree());
 
                     	    if ( state.backtracking==0 ) {
                     	    }
@@ -3252,14 +3412,14 @@ public class tftacflattener extends TreeParser {
                     match(input, Token.UP, null); if (state.failed) return retval;adaptor.addChild(root_1, root_2);_last = _save_last_2;
                     }
 
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:95:34: ( tdnf )+
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:96:34: ( tdnf )+
                     int cnt35=0;
                     loop35:
                     do {
                         int alt35=2;
                         int LA35_0 = input.LA(1);
 
-                        if ( ((LA35_0>=OR && LA35_0<=ID)||(LA35_0>=TRUE && LA35_0<=FALSE)) ) {
+                        if ( ((LA35_0>=OR && LA35_0<=ID)||(LA35_0>=NOT && LA35_0<=FALSE)) ) {
                             alt35=1;
                         }
 
@@ -3269,12 +3429,12 @@ public class tftacflattener extends TreeParser {
                     	    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:0:0: tdnf
                     	    {
                     	    _last = (Object)input.LT(1);
-                    	    pushFollow(FOLLOW_tdnf_in_nestor581);
-                    	    tdnf77=tdnf();
+                    	    pushFollow(FOLLOW_tdnf_in_nestor596);
+                    	    tdnf81=tdnf();
 
                     	    state._fsp--;
                     	    if (state.failed) return retval;
-                    	    if ( state.backtracking==0 ) stream_tdnf.add(tdnf77.getTree());
+                    	    if ( state.backtracking==0 ) stream_tdnf.add(tdnf81.getTree());
 
                     	    if ( state.backtracking==0 ) {
                     	    }
@@ -3298,7 +3458,7 @@ public class tftacflattener extends TreeParser {
 
 
                     // AST REWRITE
-                    // elements: tdnf, otherthanor, OR
+                    // elements: otherthanor, tdnf, OR
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -3308,9 +3468,9 @@ public class tftacflattener extends TreeParser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"token retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 96:4: -> ^( OR ( otherthanor )+ ( tdnf )+ )
+                    // 97:4: -> ^( OR ( otherthanor )+ ( tdnf )+ )
                     {
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:96:7: ^( OR ( otherthanor )+ ( tdnf )+ )
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:97:7: ^( OR ( otherthanor )+ ( tdnf )+ )
                         {
                         Object root_1 = (Object)adaptor.nil();
                         root_1 = (Object)adaptor.becomeRoot(stream_OR.nextNode(), root_1);
@@ -3341,7 +3501,7 @@ public class tftacflattener extends TreeParser {
                     }
                     break;
                 case 4 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:97:4: ^( OR ( tdnf )+ )
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:98:4: ^( OR ( tdnf )+ )
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -3350,23 +3510,23 @@ public class tftacflattener extends TreeParser {
                     Object _save_last_1 = _last;
                     Object _first_1 = null;
                     Object root_1 = (Object)adaptor.nil();_last = (Object)input.LT(1);
-                    OR78=(Object)match(input,OR,FOLLOW_OR_in_nestor604); if (state.failed) return retval;
+                    OR82=(Object)match(input,OR,FOLLOW_OR_in_nestor619); if (state.failed) return retval;
                     if ( state.backtracking==0 ) {
-                    OR78_tree = (Object)adaptor.dupNode(OR78);
+                    OR82_tree = (Object)adaptor.dupNode(OR82);
 
-                    root_1 = (Object)adaptor.becomeRoot(OR78_tree, root_1);
+                    root_1 = (Object)adaptor.becomeRoot(OR82_tree, root_1);
                     }
 
 
                     match(input, Token.DOWN, null); if (state.failed) return retval;
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:97:9: ( tdnf )+
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:98:9: ( tdnf )+
                     int cnt36=0;
                     loop36:
                     do {
                         int alt36=2;
                         int LA36_0 = input.LA(1);
 
-                        if ( ((LA36_0>=OR && LA36_0<=ID)||(LA36_0>=TRUE && LA36_0<=FALSE)) ) {
+                        if ( ((LA36_0>=OR && LA36_0<=ID)||(LA36_0>=NOT && LA36_0<=FALSE)) ) {
                             alt36=1;
                         }
 
@@ -3376,13 +3536,13 @@ public class tftacflattener extends TreeParser {
                     	    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:0:0: tdnf
                     	    {
                     	    _last = (Object)input.LT(1);
-                    	    pushFollow(FOLLOW_tdnf_in_nestor606);
-                    	    tdnf79=tdnf();
+                    	    pushFollow(FOLLOW_tdnf_in_nestor621);
+                    	    tdnf83=tdnf();
 
                     	    state._fsp--;
                     	    if (state.failed) return retval;
                     	    if ( state.backtracking==0 ) 
-                    	    adaptor.addChild(root_1, tdnf79.getTree());
+                    	    adaptor.addChild(root_1, tdnf83.getTree());
 
                     	    if ( state.backtracking==0 ) {
                     	    }
@@ -3432,7 +3592,7 @@ public class tftacflattener extends TreeParser {
     };
 
     // $ANTLR start "nestxor"
-    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:100:1: nestxor : ( ^( XOR ^( XOR ( tdnf )+ ) ( tdnf )+ ) -> ^( XOR ( tdnf )+ ) | ^( XOR ( otherthanxor )+ ^( XOR ( tdnf )+ ) ) -> ^( XOR ( otherthanxor )+ ( tdnf )+ ) | ^( XOR ( otherthanxor )+ ^( XOR ( tdnf )+ ) ( tdnf )+ ) -> ^( XOR ( otherthanxor )+ ( tdnf )+ ) | ^( XOR ( tdnf )+ ) );
+    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:101:1: nestxor : ( ^( XOR ^( XOR ( tdnf )+ ) ( tdnf )+ ) -> ^( XOR ( tdnf )+ ) | ^( XOR ( otherthanxor )+ ^( XOR ( tdnf )+ ) ) -> ^( XOR ( otherthanxor )+ ( tdnf )+ ) | ^( XOR ( otherthanxor )+ ^( XOR ( tdnf )+ ) ( tdnf )+ ) -> ^( XOR ( otherthanxor )+ ( tdnf )+ ) | ^( XOR ( tdnf )+ ) );
     public final tftacflattener.nestxor_return nestxor() throws RecognitionException {
         tftacflattener.nestxor_return retval = new tftacflattener.nestxor_return();
         retval.start = input.LT(1);
@@ -3442,18 +3602,14 @@ public class tftacflattener extends TreeParser {
         Object _first_0 = null;
         Object _last = null;
 
-        Object XOR80=null;
-        Object XOR81=null;
         Object XOR84=null;
-        Object XOR86=null;
+        Object XOR85=null;
         Object XOR88=null;
         Object XOR90=null;
-        Object XOR93=null;
-        tftacflattener.tdnf_return tdnf82 = null;
-
-        tftacflattener.tdnf_return tdnf83 = null;
-
-        tftacflattener.otherthanxor_return otherthanxor85 = null;
+        Object XOR92=null;
+        Object XOR94=null;
+        Object XOR97=null;
+        tftacflattener.tdnf_return tdnf86 = null;
 
         tftacflattener.tdnf_return tdnf87 = null;
 
@@ -3461,37 +3617,41 @@ public class tftacflattener extends TreeParser {
 
         tftacflattener.tdnf_return tdnf91 = null;
 
-        tftacflattener.tdnf_return tdnf92 = null;
+        tftacflattener.otherthanxor_return otherthanxor93 = null;
 
-        tftacflattener.tdnf_return tdnf94 = null;
+        tftacflattener.tdnf_return tdnf95 = null;
+
+        tftacflattener.tdnf_return tdnf96 = null;
+
+        tftacflattener.tdnf_return tdnf98 = null;
 
 
-        Object XOR80_tree=null;
-        Object XOR81_tree=null;
         Object XOR84_tree=null;
-        Object XOR86_tree=null;
+        Object XOR85_tree=null;
         Object XOR88_tree=null;
         Object XOR90_tree=null;
-        Object XOR93_tree=null;
+        Object XOR92_tree=null;
+        Object XOR94_tree=null;
+        Object XOR97_tree=null;
         RewriteRuleNodeStream stream_XOR=new RewriteRuleNodeStream(adaptor,"token XOR");
         RewriteRuleSubtreeStream stream_otherthanxor=new RewriteRuleSubtreeStream(adaptor,"rule otherthanxor");
         RewriteRuleSubtreeStream stream_tdnf=new RewriteRuleSubtreeStream(adaptor,"rule tdnf");
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 12) ) { return retval; }
-            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:100:9: ( ^( XOR ^( XOR ( tdnf )+ ) ( tdnf )+ ) -> ^( XOR ( tdnf )+ ) | ^( XOR ( otherthanxor )+ ^( XOR ( tdnf )+ ) ) -> ^( XOR ( otherthanxor )+ ( tdnf )+ ) | ^( XOR ( otherthanxor )+ ^( XOR ( tdnf )+ ) ( tdnf )+ ) -> ^( XOR ( otherthanxor )+ ( tdnf )+ ) | ^( XOR ( tdnf )+ ) )
+            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:101:9: ( ^( XOR ^( XOR ( tdnf )+ ) ( tdnf )+ ) -> ^( XOR ( tdnf )+ ) | ^( XOR ( otherthanxor )+ ^( XOR ( tdnf )+ ) ) -> ^( XOR ( otherthanxor )+ ( tdnf )+ ) | ^( XOR ( otherthanxor )+ ^( XOR ( tdnf )+ ) ( tdnf )+ ) -> ^( XOR ( otherthanxor )+ ( tdnf )+ ) | ^( XOR ( tdnf )+ ) )
             int alt46=4;
             int LA46_0 = input.LA(1);
 
             if ( (LA46_0==XOR) ) {
                 int LA46_1 = input.LA(2);
 
-                if ( (synpred63_tftacflattener()) ) {
+                if ( (synpred67_tftacflattener()) ) {
                     alt46=1;
                 }
-                else if ( (synpred66_tftacflattener()) ) {
+                else if ( (synpred70_tftacflattener()) ) {
                     alt46=2;
                 }
-                else if ( (synpred70_tftacflattener()) ) {
+                else if ( (synpred74_tftacflattener()) ) {
                     alt46=3;
                 }
                 else if ( (true) ) {
@@ -3514,15 +3674,15 @@ public class tftacflattener extends TreeParser {
             }
             switch (alt46) {
                 case 1 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:100:11: ^( XOR ^( XOR ( tdnf )+ ) ( tdnf )+ )
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:101:11: ^( XOR ^( XOR ( tdnf )+ ) ( tdnf )+ )
                     {
                     _last = (Object)input.LT(1);
                     {
                     Object _save_last_1 = _last;
                     Object _first_1 = null;
                     Object root_1 = (Object)adaptor.nil();_last = (Object)input.LT(1);
-                    XOR80=(Object)match(input,XOR,FOLLOW_XOR_in_nestxor625); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_XOR.add(XOR80);
+                    XOR84=(Object)match(input,XOR,FOLLOW_XOR_in_nestxor640); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_XOR.add(XOR84);
 
 
 
@@ -3532,20 +3692,20 @@ public class tftacflattener extends TreeParser {
                     Object _save_last_2 = _last;
                     Object _first_2 = null;
                     Object root_2 = (Object)adaptor.nil();_last = (Object)input.LT(1);
-                    XOR81=(Object)match(input,XOR,FOLLOW_XOR_in_nestxor628); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_XOR.add(XOR81);
+                    XOR85=(Object)match(input,XOR,FOLLOW_XOR_in_nestxor643); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_XOR.add(XOR85);
 
 
 
                     match(input, Token.DOWN, null); if (state.failed) return retval;
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:100:23: ( tdnf )+
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:101:23: ( tdnf )+
                     int cnt38=0;
                     loop38:
                     do {
                         int alt38=2;
                         int LA38_0 = input.LA(1);
 
-                        if ( ((LA38_0>=OR && LA38_0<=ID)||(LA38_0>=TRUE && LA38_0<=FALSE)) ) {
+                        if ( ((LA38_0>=OR && LA38_0<=ID)||(LA38_0>=NOT && LA38_0<=FALSE)) ) {
                             alt38=1;
                         }
 
@@ -3555,12 +3715,12 @@ public class tftacflattener extends TreeParser {
                     	    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:0:0: tdnf
                     	    {
                     	    _last = (Object)input.LT(1);
-                    	    pushFollow(FOLLOW_tdnf_in_nestxor630);
-                    	    tdnf82=tdnf();
+                    	    pushFollow(FOLLOW_tdnf_in_nestxor645);
+                    	    tdnf86=tdnf();
 
                     	    state._fsp--;
                     	    if (state.failed) return retval;
-                    	    if ( state.backtracking==0 ) stream_tdnf.add(tdnf82.getTree());
+                    	    if ( state.backtracking==0 ) stream_tdnf.add(tdnf86.getTree());
 
                     	    if ( state.backtracking==0 ) {
                     	    }
@@ -3581,14 +3741,14 @@ public class tftacflattener extends TreeParser {
                     match(input, Token.UP, null); if (state.failed) return retval;adaptor.addChild(root_1, root_2);_last = _save_last_2;
                     }
 
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:100:30: ( tdnf )+
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:101:30: ( tdnf )+
                     int cnt39=0;
                     loop39:
                     do {
                         int alt39=2;
                         int LA39_0 = input.LA(1);
 
-                        if ( ((LA39_0>=OR && LA39_0<=ID)||(LA39_0>=TRUE && LA39_0<=FALSE)) ) {
+                        if ( ((LA39_0>=OR && LA39_0<=ID)||(LA39_0>=NOT && LA39_0<=FALSE)) ) {
                             alt39=1;
                         }
 
@@ -3598,12 +3758,12 @@ public class tftacflattener extends TreeParser {
                     	    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:0:0: tdnf
                     	    {
                     	    _last = (Object)input.LT(1);
-                    	    pushFollow(FOLLOW_tdnf_in_nestxor634);
-                    	    tdnf83=tdnf();
+                    	    pushFollow(FOLLOW_tdnf_in_nestxor649);
+                    	    tdnf87=tdnf();
 
                     	    state._fsp--;
                     	    if (state.failed) return retval;
-                    	    if ( state.backtracking==0 ) stream_tdnf.add(tdnf83.getTree());
+                    	    if ( state.backtracking==0 ) stream_tdnf.add(tdnf87.getTree());
 
                     	    if ( state.backtracking==0 ) {
                     	    }
@@ -3627,7 +3787,7 @@ public class tftacflattener extends TreeParser {
 
 
                     // AST REWRITE
-                    // elements: XOR, tdnf
+                    // elements: tdnf, XOR
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -3637,9 +3797,9 @@ public class tftacflattener extends TreeParser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"token retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 101:4: -> ^( XOR ( tdnf )+ )
+                    // 102:4: -> ^( XOR ( tdnf )+ )
                     {
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:101:7: ^( XOR ( tdnf )+ )
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:102:7: ^( XOR ( tdnf )+ )
                         {
                         Object root_1 = (Object)adaptor.nil();
                         root_1 = (Object)adaptor.becomeRoot(stream_XOR.nextNode(), root_1);
@@ -3662,27 +3822,27 @@ public class tftacflattener extends TreeParser {
                     }
                     break;
                 case 2 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:102:4: ^( XOR ( otherthanxor )+ ^( XOR ( tdnf )+ ) )
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:103:4: ^( XOR ( otherthanxor )+ ^( XOR ( tdnf )+ ) )
                     {
                     _last = (Object)input.LT(1);
                     {
                     Object _save_last_1 = _last;
                     Object _first_1 = null;
                     Object root_1 = (Object)adaptor.nil();_last = (Object)input.LT(1);
-                    XOR84=(Object)match(input,XOR,FOLLOW_XOR_in_nestxor654); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_XOR.add(XOR84);
+                    XOR88=(Object)match(input,XOR,FOLLOW_XOR_in_nestxor669); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_XOR.add(XOR88);
 
 
 
                     match(input, Token.DOWN, null); if (state.failed) return retval;
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:102:10: ( otherthanxor )+
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:103:10: ( otherthanxor )+
                     int cnt40=0;
                     loop40:
                     do {
                         int alt40=2;
                         int LA40_0 = input.LA(1);
 
-                        if ( (LA40_0==OR||(LA40_0>=AND && LA40_0<=ID)||(LA40_0>=TRUE && LA40_0<=FALSE)) ) {
+                        if ( (LA40_0==OR||(LA40_0>=AND && LA40_0<=ID)||(LA40_0>=NOT && LA40_0<=FALSE)) ) {
                             alt40=1;
                         }
 
@@ -3692,12 +3852,12 @@ public class tftacflattener extends TreeParser {
                     	    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:0:0: otherthanxor
                     	    {
                     	    _last = (Object)input.LT(1);
-                    	    pushFollow(FOLLOW_otherthanxor_in_nestxor656);
-                    	    otherthanxor85=otherthanxor();
+                    	    pushFollow(FOLLOW_otherthanxor_in_nestxor671);
+                    	    otherthanxor89=otherthanxor();
 
                     	    state._fsp--;
                     	    if (state.failed) return retval;
-                    	    if ( state.backtracking==0 ) stream_otherthanxor.add(otherthanxor85.getTree());
+                    	    if ( state.backtracking==0 ) stream_otherthanxor.add(otherthanxor89.getTree());
 
                     	    if ( state.backtracking==0 ) {
                     	    }
@@ -3719,20 +3879,20 @@ public class tftacflattener extends TreeParser {
                     Object _save_last_2 = _last;
                     Object _first_2 = null;
                     Object root_2 = (Object)adaptor.nil();_last = (Object)input.LT(1);
-                    XOR86=(Object)match(input,XOR,FOLLOW_XOR_in_nestxor660); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_XOR.add(XOR86);
+                    XOR90=(Object)match(input,XOR,FOLLOW_XOR_in_nestxor675); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_XOR.add(XOR90);
 
 
 
                     match(input, Token.DOWN, null); if (state.failed) return retval;
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:102:30: ( tdnf )+
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:103:30: ( tdnf )+
                     int cnt41=0;
                     loop41:
                     do {
                         int alt41=2;
                         int LA41_0 = input.LA(1);
 
-                        if ( ((LA41_0>=OR && LA41_0<=ID)||(LA41_0>=TRUE && LA41_0<=FALSE)) ) {
+                        if ( ((LA41_0>=OR && LA41_0<=ID)||(LA41_0>=NOT && LA41_0<=FALSE)) ) {
                             alt41=1;
                         }
 
@@ -3742,12 +3902,12 @@ public class tftacflattener extends TreeParser {
                     	    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:0:0: tdnf
                     	    {
                     	    _last = (Object)input.LT(1);
-                    	    pushFollow(FOLLOW_tdnf_in_nestxor662);
-                    	    tdnf87=tdnf();
+                    	    pushFollow(FOLLOW_tdnf_in_nestxor677);
+                    	    tdnf91=tdnf();
 
                     	    state._fsp--;
                     	    if (state.failed) return retval;
-                    	    if ( state.backtracking==0 ) stream_tdnf.add(tdnf87.getTree());
+                    	    if ( state.backtracking==0 ) stream_tdnf.add(tdnf91.getTree());
 
                     	    if ( state.backtracking==0 ) {
                     	    }
@@ -3775,7 +3935,7 @@ public class tftacflattener extends TreeParser {
 
 
                     // AST REWRITE
-                    // elements: otherthanxor, XOR, tdnf
+                    // elements: XOR, otherthanxor, tdnf
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -3785,9 +3945,9 @@ public class tftacflattener extends TreeParser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"token retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 103:4: -> ^( XOR ( otherthanxor )+ ( tdnf )+ )
+                    // 104:4: -> ^( XOR ( otherthanxor )+ ( tdnf )+ )
                     {
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:103:7: ^( XOR ( otherthanxor )+ ( tdnf )+ )
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:104:7: ^( XOR ( otherthanxor )+ ( tdnf )+ )
                         {
                         Object root_1 = (Object)adaptor.nil();
                         root_1 = (Object)adaptor.becomeRoot(stream_XOR.nextNode(), root_1);
@@ -3818,27 +3978,27 @@ public class tftacflattener extends TreeParser {
                     }
                     break;
                 case 3 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:104:4: ^( XOR ( otherthanxor )+ ^( XOR ( tdnf )+ ) ( tdnf )+ )
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:105:4: ^( XOR ( otherthanxor )+ ^( XOR ( tdnf )+ ) ( tdnf )+ )
                     {
                     _last = (Object)input.LT(1);
                     {
                     Object _save_last_1 = _last;
                     Object _first_1 = null;
                     Object root_1 = (Object)adaptor.nil();_last = (Object)input.LT(1);
-                    XOR88=(Object)match(input,XOR,FOLLOW_XOR_in_nestxor686); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_XOR.add(XOR88);
+                    XOR92=(Object)match(input,XOR,FOLLOW_XOR_in_nestxor701); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_XOR.add(XOR92);
 
 
 
                     match(input, Token.DOWN, null); if (state.failed) return retval;
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:104:10: ( otherthanxor )+
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:105:10: ( otherthanxor )+
                     int cnt42=0;
                     loop42:
                     do {
                         int alt42=2;
                         int LA42_0 = input.LA(1);
 
-                        if ( (LA42_0==OR||(LA42_0>=AND && LA42_0<=ID)||(LA42_0>=TRUE && LA42_0<=FALSE)) ) {
+                        if ( (LA42_0==OR||(LA42_0>=AND && LA42_0<=ID)||(LA42_0>=NOT && LA42_0<=FALSE)) ) {
                             alt42=1;
                         }
 
@@ -3848,12 +4008,12 @@ public class tftacflattener extends TreeParser {
                     	    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:0:0: otherthanxor
                     	    {
                     	    _last = (Object)input.LT(1);
-                    	    pushFollow(FOLLOW_otherthanxor_in_nestxor688);
-                    	    otherthanxor89=otherthanxor();
+                    	    pushFollow(FOLLOW_otherthanxor_in_nestxor703);
+                    	    otherthanxor93=otherthanxor();
 
                     	    state._fsp--;
                     	    if (state.failed) return retval;
-                    	    if ( state.backtracking==0 ) stream_otherthanxor.add(otherthanxor89.getTree());
+                    	    if ( state.backtracking==0 ) stream_otherthanxor.add(otherthanxor93.getTree());
 
                     	    if ( state.backtracking==0 ) {
                     	    }
@@ -3875,20 +4035,20 @@ public class tftacflattener extends TreeParser {
                     Object _save_last_2 = _last;
                     Object _first_2 = null;
                     Object root_2 = (Object)adaptor.nil();_last = (Object)input.LT(1);
-                    XOR90=(Object)match(input,XOR,FOLLOW_XOR_in_nestxor692); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_XOR.add(XOR90);
+                    XOR94=(Object)match(input,XOR,FOLLOW_XOR_in_nestxor707); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_XOR.add(XOR94);
 
 
 
                     match(input, Token.DOWN, null); if (state.failed) return retval;
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:104:30: ( tdnf )+
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:105:30: ( tdnf )+
                     int cnt43=0;
                     loop43:
                     do {
                         int alt43=2;
                         int LA43_0 = input.LA(1);
 
-                        if ( ((LA43_0>=OR && LA43_0<=ID)||(LA43_0>=TRUE && LA43_0<=FALSE)) ) {
+                        if ( ((LA43_0>=OR && LA43_0<=ID)||(LA43_0>=NOT && LA43_0<=FALSE)) ) {
                             alt43=1;
                         }
 
@@ -3898,12 +4058,12 @@ public class tftacflattener extends TreeParser {
                     	    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:0:0: tdnf
                     	    {
                     	    _last = (Object)input.LT(1);
-                    	    pushFollow(FOLLOW_tdnf_in_nestxor694);
-                    	    tdnf91=tdnf();
+                    	    pushFollow(FOLLOW_tdnf_in_nestxor709);
+                    	    tdnf95=tdnf();
 
                     	    state._fsp--;
                     	    if (state.failed) return retval;
-                    	    if ( state.backtracking==0 ) stream_tdnf.add(tdnf91.getTree());
+                    	    if ( state.backtracking==0 ) stream_tdnf.add(tdnf95.getTree());
 
                     	    if ( state.backtracking==0 ) {
                     	    }
@@ -3924,14 +4084,14 @@ public class tftacflattener extends TreeParser {
                     match(input, Token.UP, null); if (state.failed) return retval;adaptor.addChild(root_1, root_2);_last = _save_last_2;
                     }
 
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:104:37: ( tdnf )+
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:105:37: ( tdnf )+
                     int cnt44=0;
                     loop44:
                     do {
                         int alt44=2;
                         int LA44_0 = input.LA(1);
 
-                        if ( ((LA44_0>=OR && LA44_0<=ID)||(LA44_0>=TRUE && LA44_0<=FALSE)) ) {
+                        if ( ((LA44_0>=OR && LA44_0<=ID)||(LA44_0>=NOT && LA44_0<=FALSE)) ) {
                             alt44=1;
                         }
 
@@ -3941,12 +4101,12 @@ public class tftacflattener extends TreeParser {
                     	    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:0:0: tdnf
                     	    {
                     	    _last = (Object)input.LT(1);
-                    	    pushFollow(FOLLOW_tdnf_in_nestxor698);
-                    	    tdnf92=tdnf();
+                    	    pushFollow(FOLLOW_tdnf_in_nestxor713);
+                    	    tdnf96=tdnf();
 
                     	    state._fsp--;
                     	    if (state.failed) return retval;
-                    	    if ( state.backtracking==0 ) stream_tdnf.add(tdnf92.getTree());
+                    	    if ( state.backtracking==0 ) stream_tdnf.add(tdnf96.getTree());
 
                     	    if ( state.backtracking==0 ) {
                     	    }
@@ -3970,7 +4130,7 @@ public class tftacflattener extends TreeParser {
 
 
                     // AST REWRITE
-                    // elements: XOR, otherthanxor, tdnf
+                    // elements: tdnf, XOR, otherthanxor
                     // token labels: 
                     // rule labels: retval
                     // token list labels: 
@@ -3980,9 +4140,9 @@ public class tftacflattener extends TreeParser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"token retval",retval!=null?retval.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 105:4: -> ^( XOR ( otherthanxor )+ ( tdnf )+ )
+                    // 106:4: -> ^( XOR ( otherthanxor )+ ( tdnf )+ )
                     {
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:105:7: ^( XOR ( otherthanxor )+ ( tdnf )+ )
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:106:7: ^( XOR ( otherthanxor )+ ( tdnf )+ )
                         {
                         Object root_1 = (Object)adaptor.nil();
                         root_1 = (Object)adaptor.becomeRoot(stream_XOR.nextNode(), root_1);
@@ -4013,7 +4173,7 @@ public class tftacflattener extends TreeParser {
                     }
                     break;
                 case 4 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:106:4: ^( XOR ( tdnf )+ )
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:107:4: ^( XOR ( tdnf )+ )
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -4022,23 +4182,23 @@ public class tftacflattener extends TreeParser {
                     Object _save_last_1 = _last;
                     Object _first_1 = null;
                     Object root_1 = (Object)adaptor.nil();_last = (Object)input.LT(1);
-                    XOR93=(Object)match(input,XOR,FOLLOW_XOR_in_nestxor721); if (state.failed) return retval;
+                    XOR97=(Object)match(input,XOR,FOLLOW_XOR_in_nestxor736); if (state.failed) return retval;
                     if ( state.backtracking==0 ) {
-                    XOR93_tree = (Object)adaptor.dupNode(XOR93);
+                    XOR97_tree = (Object)adaptor.dupNode(XOR97);
 
-                    root_1 = (Object)adaptor.becomeRoot(XOR93_tree, root_1);
+                    root_1 = (Object)adaptor.becomeRoot(XOR97_tree, root_1);
                     }
 
 
                     match(input, Token.DOWN, null); if (state.failed) return retval;
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:106:10: ( tdnf )+
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:107:10: ( tdnf )+
                     int cnt45=0;
                     loop45:
                     do {
                         int alt45=2;
                         int LA45_0 = input.LA(1);
 
-                        if ( ((LA45_0>=OR && LA45_0<=ID)||(LA45_0>=TRUE && LA45_0<=FALSE)) ) {
+                        if ( ((LA45_0>=OR && LA45_0<=ID)||(LA45_0>=NOT && LA45_0<=FALSE)) ) {
                             alt45=1;
                         }
 
@@ -4048,13 +4208,13 @@ public class tftacflattener extends TreeParser {
                     	    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:0:0: tdnf
                     	    {
                     	    _last = (Object)input.LT(1);
-                    	    pushFollow(FOLLOW_tdnf_in_nestxor723);
-                    	    tdnf94=tdnf();
+                    	    pushFollow(FOLLOW_tdnf_in_nestxor738);
+                    	    tdnf98=tdnf();
 
                     	    state._fsp--;
                     	    if (state.failed) return retval;
                     	    if ( state.backtracking==0 ) 
-                    	    adaptor.addChild(root_1, tdnf94.getTree());
+                    	    adaptor.addChild(root_1, tdnf98.getTree());
 
                     	    if ( state.backtracking==0 ) {
                     	    }
@@ -4098,115 +4258,207 @@ public class tftacflattener extends TreeParser {
     }
     // $ANTLR end "nestxor"
 
-    // $ANTLR start synpred7_tftacflattener
-    public final void synpred7_tftacflattener_fragment() throws RecognitionException {   
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:53:11: ( ^( PAND ^( PAND ( tdnf )+ ) ( tdnf )+ ) )
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:53:11: ^( PAND ^( PAND ( tdnf )+ ) ( tdnf )+ )
-        {
-        match(input,PAND,FOLLOW_PAND_in_synpred7_tftacflattener110); if (state.failed) return ;
+    public static class negatedterm_return extends TreeRuleReturnScope {
+        Object tree;
+        public Object getTree() { return tree; }
+    };
 
-        match(input, Token.DOWN, null); if (state.failed) return ;
-        match(input,PAND,FOLLOW_PAND_in_synpred7_tftacflattener113); if (state.failed) return ;
+    // $ANTLR start "negatedterm"
+    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:110:1: negatedterm : ( ^( NOT ID ) | ^( AND ( negatedterm )+ ) );
+    public final tftacflattener.negatedterm_return negatedterm() throws RecognitionException {
+        tftacflattener.negatedterm_return retval = new tftacflattener.negatedterm_return();
+        retval.start = input.LT(1);
+        int negatedterm_StartIndex = input.index();
+        Object root_0 = null;
 
-        match(input, Token.DOWN, null); if (state.failed) return ;
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:53:25: ( tdnf )+
-        int cnt47=0;
-        loop47:
-        do {
-            int alt47=2;
-            int LA47_0 = input.LA(1);
+        Object _first_0 = null;
+        Object _last = null;
 
-            if ( ((LA47_0>=OR && LA47_0<=ID)||(LA47_0>=TRUE && LA47_0<=FALSE)) ) {
-                alt47=1;
-            }
-
-
-            switch (alt47) {
-        	case 1 :
-        	    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:0:0: tdnf
-        	    {
-        	    pushFollow(FOLLOW_tdnf_in_synpred7_tftacflattener115);
-        	    tdnf();
-
-        	    state._fsp--;
-        	    if (state.failed) return ;
-
-        	    }
-        	    break;
-
-        	default :
-        	    if ( cnt47 >= 1 ) break loop47;
-        	    if (state.backtracking>0) {state.failed=true; return ;}
-                    EarlyExitException eee =
-                        new EarlyExitException(47, input);
-                    throw eee;
-            }
-            cnt47++;
-        } while (true);
+        Object NOT99=null;
+        Object ID100=null;
+        Object AND101=null;
+        tftacflattener.negatedterm_return negatedterm102 = null;
 
 
-        match(input, Token.UP, null); if (state.failed) return ;
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:53:32: ( tdnf )+
-        int cnt48=0;
-        loop48:
-        do {
+        Object NOT99_tree=null;
+        Object ID100_tree=null;
+        Object AND101_tree=null;
+
+        try {
+            if ( state.backtracking>0 && alreadyParsedRule(input, 13) ) { return retval; }
+            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:111:2: ( ^( NOT ID ) | ^( AND ( negatedterm )+ ) )
             int alt48=2;
             int LA48_0 = input.LA(1);
 
-            if ( ((LA48_0>=OR && LA48_0<=ID)||(LA48_0>=TRUE && LA48_0<=FALSE)) ) {
+            if ( (LA48_0==NOT) ) {
                 alt48=1;
             }
-
-
-            switch (alt48) {
-        	case 1 :
-        	    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:0:0: tdnf
-        	    {
-        	    pushFollow(FOLLOW_tdnf_in_synpred7_tftacflattener119);
-        	    tdnf();
-
-        	    state._fsp--;
-        	    if (state.failed) return ;
-
-        	    }
-        	    break;
-
-        	default :
-        	    if ( cnt48 >= 1 ) break loop48;
-        	    if (state.backtracking>0) {state.failed=true; return ;}
-                    EarlyExitException eee =
-                        new EarlyExitException(48, input);
-                    throw eee;
+            else if ( (LA48_0==AND) ) {
+                alt48=2;
             }
-            cnt48++;
-        } while (true);
+            else {
+                if (state.backtracking>0) {state.failed=true; return retval;}
+                NoViableAltException nvae =
+                    new NoViableAltException("", 48, 0, input);
+
+                throw nvae;
+            }
+            switch (alt48) {
+                case 1 :
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:111:4: ^( NOT ID )
+                    {
+                    root_0 = (Object)adaptor.nil();
+
+                    _last = (Object)input.LT(1);
+                    {
+                    Object _save_last_1 = _last;
+                    Object _first_1 = null;
+                    Object root_1 = (Object)adaptor.nil();_last = (Object)input.LT(1);
+                    NOT99=(Object)match(input,NOT,FOLLOW_NOT_in_negatedterm754); if (state.failed) return retval;
+                    if ( state.backtracking==0 ) {
+                    NOT99_tree = (Object)adaptor.dupNode(NOT99);
+
+                    root_1 = (Object)adaptor.becomeRoot(NOT99_tree, root_1);
+                    }
 
 
-        match(input, Token.UP, null); if (state.failed) return ;
+                    match(input, Token.DOWN, null); if (state.failed) return retval;
+                    _last = (Object)input.LT(1);
+                    ID100=(Object)match(input,ID,FOLLOW_ID_in_negatedterm756); if (state.failed) return retval;
+                    if ( state.backtracking==0 ) {
+                    ID100_tree = (Object)adaptor.dupNode(ID100);
+
+                    adaptor.addChild(root_1, ID100_tree);
+                    }
+
+                    match(input, Token.UP, null); if (state.failed) return retval;adaptor.addChild(root_0, root_1);_last = _save_last_1;
+                    }
+
+
+                    if ( state.backtracking==0 ) {
+                    }
+                    }
+                    break;
+                case 2 :
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:112:4: ^( AND ( negatedterm )+ )
+                    {
+                    root_0 = (Object)adaptor.nil();
+
+                    _last = (Object)input.LT(1);
+                    {
+                    Object _save_last_1 = _last;
+                    Object _first_1 = null;
+                    Object root_1 = (Object)adaptor.nil();_last = (Object)input.LT(1);
+                    AND101=(Object)match(input,AND,FOLLOW_AND_in_negatedterm763); if (state.failed) return retval;
+                    if ( state.backtracking==0 ) {
+                    AND101_tree = (Object)adaptor.dupNode(AND101);
+
+                    root_1 = (Object)adaptor.becomeRoot(AND101_tree, root_1);
+                    }
+
+
+                    match(input, Token.DOWN, null); if (state.failed) return retval;
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:112:10: ( negatedterm )+
+                    int cnt47=0;
+                    loop47:
+                    do {
+                        int alt47=2;
+                        int LA47_0 = input.LA(1);
+
+                        if ( (LA47_0==AND||LA47_0==NOT) ) {
+                            alt47=1;
+                        }
+
+
+                        switch (alt47) {
+                    	case 1 :
+                    	    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:0:0: negatedterm
+                    	    {
+                    	    _last = (Object)input.LT(1);
+                    	    pushFollow(FOLLOW_negatedterm_in_negatedterm765);
+                    	    negatedterm102=negatedterm();
+
+                    	    state._fsp--;
+                    	    if (state.failed) return retval;
+                    	    if ( state.backtracking==0 ) 
+                    	    adaptor.addChild(root_1, negatedterm102.getTree());
+
+                    	    if ( state.backtracking==0 ) {
+                    	    }
+                    	    }
+                    	    break;
+
+                    	default :
+                    	    if ( cnt47 >= 1 ) break loop47;
+                    	    if (state.backtracking>0) {state.failed=true; return retval;}
+                                EarlyExitException eee =
+                                    new EarlyExitException(47, input);
+                                throw eee;
+                        }
+                        cnt47++;
+                    } while (true);
+
+
+                    match(input, Token.UP, null); if (state.failed) return retval;adaptor.addChild(root_0, root_1);_last = _save_last_1;
+                    }
+
+
+                    if ( state.backtracking==0 ) {
+                    }
+                    }
+                    break;
+
+            }
+            if ( state.backtracking==0 ) {
+
+            retval.tree = (Object)adaptor.rulePostProcessing(root_0);
+            }
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+            if ( state.backtracking>0 ) { memoize(input, 13, negatedterm_StartIndex); }
+        }
+        return retval;
+    }
+    // $ANTLR end "negatedterm"
+
+    // $ANTLR start synpred1_tftacflattener
+    public final void synpred1_tftacflattener_fragment() throws RecognitionException {   
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:43:11: ( nestedterm )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:43:11: nestedterm
+        {
+        pushFollow(FOLLOW_nestedterm_in_synpred1_tftacflattener65);
+        nestedterm();
+
+        state._fsp--;
+        if (state.failed) return ;
 
         }
     }
-    // $ANTLR end synpred7_tftacflattener
+    // $ANTLR end synpred1_tftacflattener
 
-    // $ANTLR start synpred30_tftacflattener
-    public final void synpred30_tftacflattener_fragment() throws RecognitionException {   
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:73:11: ( ^( AND ^( AND ( tdnf )+ ) ( tdnf )+ ) )
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:73:11: ^( AND ^( AND ( tdnf )+ ) ( tdnf )+ )
+    // $ANTLR start synpred8_tftacflattener
+    public final void synpred8_tftacflattener_fragment() throws RecognitionException {   
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:54:11: ( ^( PAND ^( PAND ( tdnf )+ ) ( tdnf )+ ) )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:54:11: ^( PAND ^( PAND ( tdnf )+ ) ( tdnf )+ )
         {
-        match(input,AND,FOLLOW_AND_in_synpred30_tftacflattener285); if (state.failed) return ;
+        match(input,PAND,FOLLOW_PAND_in_synpred8_tftacflattener115); if (state.failed) return ;
 
         match(input, Token.DOWN, null); if (state.failed) return ;
-        match(input,AND,FOLLOW_AND_in_synpred30_tftacflattener288); if (state.failed) return ;
+        match(input,PAND,FOLLOW_PAND_in_synpred8_tftacflattener118); if (state.failed) return ;
 
         match(input, Token.DOWN, null); if (state.failed) return ;
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:73:23: ( tdnf )+
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:54:25: ( tdnf )+
         int cnt49=0;
         loop49:
         do {
             int alt49=2;
             int LA49_0 = input.LA(1);
 
-            if ( ((LA49_0>=OR && LA49_0<=ID)||(LA49_0>=TRUE && LA49_0<=FALSE)) ) {
+            if ( ((LA49_0>=OR && LA49_0<=ID)||(LA49_0>=NOT && LA49_0<=FALSE)) ) {
                 alt49=1;
             }
 
@@ -4215,7 +4467,7 @@ public class tftacflattener extends TreeParser {
         	case 1 :
         	    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:0:0: tdnf
         	    {
-        	    pushFollow(FOLLOW_tdnf_in_synpred30_tftacflattener290);
+        	    pushFollow(FOLLOW_tdnf_in_synpred8_tftacflattener120);
         	    tdnf();
 
         	    state._fsp--;
@@ -4236,14 +4488,14 @@ public class tftacflattener extends TreeParser {
 
 
         match(input, Token.UP, null); if (state.failed) return ;
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:73:30: ( tdnf )+
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:54:32: ( tdnf )+
         int cnt50=0;
         loop50:
         do {
             int alt50=2;
             int LA50_0 = input.LA(1);
 
-            if ( ((LA50_0>=OR && LA50_0<=ID)||(LA50_0>=TRUE && LA50_0<=FALSE)) ) {
+            if ( ((LA50_0>=OR && LA50_0<=ID)||(LA50_0>=NOT && LA50_0<=FALSE)) ) {
                 alt50=1;
             }
 
@@ -4252,7 +4504,7 @@ public class tftacflattener extends TreeParser {
         	case 1 :
         	    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:0:0: tdnf
         	    {
-        	    pushFollow(FOLLOW_tdnf_in_synpred30_tftacflattener294);
+        	    pushFollow(FOLLOW_tdnf_in_synpred8_tftacflattener124);
         	    tdnf();
 
         	    state._fsp--;
@@ -4276,34 +4528,82 @@ public class tftacflattener extends TreeParser {
 
         }
     }
-    // $ANTLR end synpred30_tftacflattener
+    // $ANTLR end synpred8_tftacflattener
 
-    // $ANTLR start synpred33_tftacflattener
-    public final void synpred33_tftacflattener_fragment() throws RecognitionException {   
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:75:4: ( ^( AND ( otherthanand )+ ^( AND ( tdnf )+ ) ) )
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:75:4: ^( AND ( otherthanand )+ ^( AND ( tdnf )+ ) )
+    // $ANTLR start synpred17_tftacflattener
+    public final void synpred17_tftacflattener_fragment() throws RecognitionException {   
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:66:4: ( nestand )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:66:4: nestand
         {
-        match(input,AND,FOLLOW_AND_in_synpred33_tftacflattener314); if (state.failed) return ;
+        pushFollow(FOLLOW_nestand_in_synpred17_tftacflattener210);
+        nestand();
+
+        state._fsp--;
+        if (state.failed) return ;
+
+        }
+    }
+    // $ANTLR end synpred17_tftacflattener
+
+    // $ANTLR start synpred22_tftacflattener
+    public final void synpred22_tftacflattener_fragment() throws RecognitionException {   
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:69:4: ( nestand )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:69:4: nestand
+        {
+        pushFollow(FOLLOW_nestand_in_synpred22_tftacflattener240);
+        nestand();
+
+        state._fsp--;
+        if (state.failed) return ;
+
+        }
+    }
+    // $ANTLR end synpred22_tftacflattener
+
+    // $ANTLR start synpred27_tftacflattener
+    public final void synpred27_tftacflattener_fragment() throws RecognitionException {   
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:72:4: ( nestand )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:72:4: nestand
+        {
+        pushFollow(FOLLOW_nestand_in_synpred27_tftacflattener270);
+        nestand();
+
+        state._fsp--;
+        if (state.failed) return ;
+
+        }
+    }
+    // $ANTLR end synpred27_tftacflattener
+
+    // $ANTLR start synpred34_tftacflattener
+    public final void synpred34_tftacflattener_fragment() throws RecognitionException {   
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:74:11: ( ^( AND ^( AND ( tdnf )+ ) ( tdnf )+ ) )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:74:11: ^( AND ^( AND ( tdnf )+ ) ( tdnf )+ )
+        {
+        match(input,AND,FOLLOW_AND_in_synpred34_tftacflattener300); if (state.failed) return ;
 
         match(input, Token.DOWN, null); if (state.failed) return ;
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:75:10: ( otherthanand )+
+        match(input,AND,FOLLOW_AND_in_synpred34_tftacflattener303); if (state.failed) return ;
+
+        match(input, Token.DOWN, null); if (state.failed) return ;
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:74:23: ( tdnf )+
         int cnt51=0;
         loop51:
         do {
             int alt51=2;
             int LA51_0 = input.LA(1);
 
-            if ( ((LA51_0>=OR && LA51_0<=XOR)||(LA51_0>=PAND && LA51_0<=ID)||(LA51_0>=TRUE && LA51_0<=FALSE)) ) {
+            if ( ((LA51_0>=OR && LA51_0<=ID)||(LA51_0>=NOT && LA51_0<=FALSE)) ) {
                 alt51=1;
             }
 
 
             switch (alt51) {
         	case 1 :
-        	    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:0:0: otherthanand
+        	    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:0:0: tdnf
         	    {
-        	    pushFollow(FOLLOW_otherthanand_in_synpred33_tftacflattener316);
-        	    otherthanand();
+        	    pushFollow(FOLLOW_tdnf_in_synpred34_tftacflattener305);
+        	    tdnf();
 
         	    state._fsp--;
         	    if (state.failed) return ;
@@ -4321,17 +4621,16 @@ public class tftacflattener extends TreeParser {
             cnt51++;
         } while (true);
 
-        match(input,AND,FOLLOW_AND_in_synpred33_tftacflattener320); if (state.failed) return ;
 
-        match(input, Token.DOWN, null); if (state.failed) return ;
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:75:30: ( tdnf )+
+        match(input, Token.UP, null); if (state.failed) return ;
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:74:30: ( tdnf )+
         int cnt52=0;
         loop52:
         do {
             int alt52=2;
             int LA52_0 = input.LA(1);
 
-            if ( ((LA52_0>=OR && LA52_0<=ID)||(LA52_0>=TRUE && LA52_0<=FALSE)) ) {
+            if ( ((LA52_0>=OR && LA52_0<=ID)||(LA52_0>=NOT && LA52_0<=FALSE)) ) {
                 alt52=1;
             }
 
@@ -4340,7 +4639,7 @@ public class tftacflattener extends TreeParser {
         	case 1 :
         	    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:0:0: tdnf
         	    {
-        	    pushFollow(FOLLOW_tdnf_in_synpred33_tftacflattener322);
+        	    pushFollow(FOLLOW_tdnf_in_synpred34_tftacflattener309);
         	    tdnf();
 
         	    state._fsp--;
@@ -4362,21 +4661,19 @@ public class tftacflattener extends TreeParser {
 
         match(input, Token.UP, null); if (state.failed) return ;
 
-        match(input, Token.UP, null); if (state.failed) return ;
-
         }
     }
-    // $ANTLR end synpred33_tftacflattener
+    // $ANTLR end synpred34_tftacflattener
 
     // $ANTLR start synpred37_tftacflattener
     public final void synpred37_tftacflattener_fragment() throws RecognitionException {   
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:77:4: ( ^( AND ( otherthanand )+ ^( AND ( tdnf )+ ) ( tdnf )+ ) )
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:77:4: ^( AND ( otherthanand )+ ^( AND ( tdnf )+ ) ( tdnf )+ )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:76:4: ( ^( AND ( otherthanand )+ ^( AND ( tdnf )+ ) ) )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:76:4: ^( AND ( otherthanand )+ ^( AND ( tdnf )+ ) )
         {
-        match(input,AND,FOLLOW_AND_in_synpred37_tftacflattener346); if (state.failed) return ;
+        match(input,AND,FOLLOW_AND_in_synpred37_tftacflattener329); if (state.failed) return ;
 
         match(input, Token.DOWN, null); if (state.failed) return ;
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:77:10: ( otherthanand )+
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:76:10: ( otherthanand )+
         int cnt53=0;
         loop53:
         do {
@@ -4392,7 +4689,7 @@ public class tftacflattener extends TreeParser {
         	case 1 :
         	    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:0:0: otherthanand
         	    {
-        	    pushFollow(FOLLOW_otherthanand_in_synpred37_tftacflattener348);
+        	    pushFollow(FOLLOW_otherthanand_in_synpred37_tftacflattener331);
         	    otherthanand();
 
         	    state._fsp--;
@@ -4411,17 +4708,17 @@ public class tftacflattener extends TreeParser {
             cnt53++;
         } while (true);
 
-        match(input,AND,FOLLOW_AND_in_synpred37_tftacflattener352); if (state.failed) return ;
+        match(input,AND,FOLLOW_AND_in_synpred37_tftacflattener335); if (state.failed) return ;
 
         match(input, Token.DOWN, null); if (state.failed) return ;
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:77:30: ( tdnf )+
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:76:30: ( tdnf )+
         int cnt54=0;
         loop54:
         do {
             int alt54=2;
             int LA54_0 = input.LA(1);
 
-            if ( ((LA54_0>=OR && LA54_0<=ID)||(LA54_0>=TRUE && LA54_0<=FALSE)) ) {
+            if ( ((LA54_0>=OR && LA54_0<=ID)||(LA54_0>=NOT && LA54_0<=FALSE)) ) {
                 alt54=1;
             }
 
@@ -4430,7 +4727,7 @@ public class tftacflattener extends TreeParser {
         	case 1 :
         	    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:0:0: tdnf
         	    {
-        	    pushFollow(FOLLOW_tdnf_in_synpred37_tftacflattener354);
+        	    pushFollow(FOLLOW_tdnf_in_synpred37_tftacflattener337);
         	    tdnf();
 
         	    state._fsp--;
@@ -4451,24 +4748,39 @@ public class tftacflattener extends TreeParser {
 
 
         match(input, Token.UP, null); if (state.failed) return ;
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:77:37: ( tdnf )+
+
+        match(input, Token.UP, null); if (state.failed) return ;
+
+        }
+    }
+    // $ANTLR end synpred37_tftacflattener
+
+    // $ANTLR start synpred41_tftacflattener
+    public final void synpred41_tftacflattener_fragment() throws RecognitionException {   
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:78:4: ( ^( AND ( otherthanand )+ ^( AND ( tdnf )+ ) ( tdnf )+ ) )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:78:4: ^( AND ( otherthanand )+ ^( AND ( tdnf )+ ) ( tdnf )+ )
+        {
+        match(input,AND,FOLLOW_AND_in_synpred41_tftacflattener361); if (state.failed) return ;
+
+        match(input, Token.DOWN, null); if (state.failed) return ;
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:78:10: ( otherthanand )+
         int cnt55=0;
         loop55:
         do {
             int alt55=2;
             int LA55_0 = input.LA(1);
 
-            if ( ((LA55_0>=OR && LA55_0<=ID)||(LA55_0>=TRUE && LA55_0<=FALSE)) ) {
+            if ( ((LA55_0>=OR && LA55_0<=XOR)||(LA55_0>=PAND && LA55_0<=ID)||(LA55_0>=TRUE && LA55_0<=FALSE)) ) {
                 alt55=1;
             }
 
 
             switch (alt55) {
         	case 1 :
-        	    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:0:0: tdnf
+        	    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:0:0: otherthanand
         	    {
-        	    pushFollow(FOLLOW_tdnf_in_synpred37_tftacflattener358);
-        	    tdnf();
+        	    pushFollow(FOLLOW_otherthanand_in_synpred41_tftacflattener363);
+        	    otherthanand();
 
         	    state._fsp--;
         	    if (state.failed) return ;
@@ -4486,32 +4798,17 @@ public class tftacflattener extends TreeParser {
             cnt55++;
         } while (true);
 
-
-        match(input, Token.UP, null); if (state.failed) return ;
-
-        }
-    }
-    // $ANTLR end synpred37_tftacflattener
-
-    // $ANTLR start synpred41_tftacflattener
-    public final void synpred41_tftacflattener_fragment() throws RecognitionException {   
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:82:11: ( ^( SAND ^( SAND ( tdnf )+ ) ( tdnf )+ ) )
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:82:11: ^( SAND ^( SAND ( tdnf )+ ) ( tdnf )+ )
-        {
-        match(input,SAND,FOLLOW_SAND_in_synpred41_tftacflattener396); if (state.failed) return ;
+        match(input,AND,FOLLOW_AND_in_synpred41_tftacflattener367); if (state.failed) return ;
 
         match(input, Token.DOWN, null); if (state.failed) return ;
-        match(input,SAND,FOLLOW_SAND_in_synpred41_tftacflattener399); if (state.failed) return ;
-
-        match(input, Token.DOWN, null); if (state.failed) return ;
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:82:25: ( tdnf )+
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:78:30: ( tdnf )+
         int cnt56=0;
         loop56:
         do {
             int alt56=2;
             int LA56_0 = input.LA(1);
 
-            if ( ((LA56_0>=OR && LA56_0<=ID)||(LA56_0>=TRUE && LA56_0<=FALSE)) ) {
+            if ( ((LA56_0>=OR && LA56_0<=ID)||(LA56_0>=NOT && LA56_0<=FALSE)) ) {
                 alt56=1;
             }
 
@@ -4520,7 +4817,7 @@ public class tftacflattener extends TreeParser {
         	case 1 :
         	    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:0:0: tdnf
         	    {
-        	    pushFollow(FOLLOW_tdnf_in_synpred41_tftacflattener401);
+        	    pushFollow(FOLLOW_tdnf_in_synpred41_tftacflattener369);
         	    tdnf();
 
         	    state._fsp--;
@@ -4541,14 +4838,14 @@ public class tftacflattener extends TreeParser {
 
 
         match(input, Token.UP, null); if (state.failed) return ;
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:82:32: ( tdnf )+
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:78:37: ( tdnf )+
         int cnt57=0;
         loop57:
         do {
             int alt57=2;
             int LA57_0 = input.LA(1);
 
-            if ( ((LA57_0>=OR && LA57_0<=ID)||(LA57_0>=TRUE && LA57_0<=FALSE)) ) {
+            if ( ((LA57_0>=OR && LA57_0<=ID)||(LA57_0>=NOT && LA57_0<=FALSE)) ) {
                 alt57=1;
             }
 
@@ -4557,7 +4854,7 @@ public class tftacflattener extends TreeParser {
         	case 1 :
         	    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:0:0: tdnf
         	    {
-        	    pushFollow(FOLLOW_tdnf_in_synpred41_tftacflattener405);
+        	    pushFollow(FOLLOW_tdnf_in_synpred41_tftacflattener373);
         	    tdnf();
 
         	    state._fsp--;
@@ -4583,32 +4880,35 @@ public class tftacflattener extends TreeParser {
     }
     // $ANTLR end synpred41_tftacflattener
 
-    // $ANTLR start synpred44_tftacflattener
-    public final void synpred44_tftacflattener_fragment() throws RecognitionException {   
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:84:4: ( ^( SAND ( otherthansand )+ ^( SAND ( tdnf )+ ) ) )
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:84:4: ^( SAND ( otherthansand )+ ^( SAND ( tdnf )+ ) )
+    // $ANTLR start synpred45_tftacflattener
+    public final void synpred45_tftacflattener_fragment() throws RecognitionException {   
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:83:11: ( ^( SAND ^( SAND ( tdnf )+ ) ( tdnf )+ ) )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:83:11: ^( SAND ^( SAND ( tdnf )+ ) ( tdnf )+ )
         {
-        match(input,SAND,FOLLOW_SAND_in_synpred44_tftacflattener425); if (state.failed) return ;
+        match(input,SAND,FOLLOW_SAND_in_synpred45_tftacflattener411); if (state.failed) return ;
 
         match(input, Token.DOWN, null); if (state.failed) return ;
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:84:11: ( otherthansand )+
+        match(input,SAND,FOLLOW_SAND_in_synpred45_tftacflattener414); if (state.failed) return ;
+
+        match(input, Token.DOWN, null); if (state.failed) return ;
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:83:25: ( tdnf )+
         int cnt58=0;
         loop58:
         do {
             int alt58=2;
             int LA58_0 = input.LA(1);
 
-            if ( ((LA58_0>=OR && LA58_0<=PAND)||LA58_0==ID||(LA58_0>=TRUE && LA58_0<=FALSE)) ) {
+            if ( ((LA58_0>=OR && LA58_0<=ID)||(LA58_0>=NOT && LA58_0<=FALSE)) ) {
                 alt58=1;
             }
 
 
             switch (alt58) {
         	case 1 :
-        	    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:0:0: otherthansand
+        	    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:0:0: tdnf
         	    {
-        	    pushFollow(FOLLOW_otherthansand_in_synpred44_tftacflattener427);
-        	    otherthansand();
+        	    pushFollow(FOLLOW_tdnf_in_synpred45_tftacflattener416);
+        	    tdnf();
 
         	    state._fsp--;
         	    if (state.failed) return ;
@@ -4626,17 +4926,16 @@ public class tftacflattener extends TreeParser {
             cnt58++;
         } while (true);
 
-        match(input,SAND,FOLLOW_SAND_in_synpred44_tftacflattener431); if (state.failed) return ;
 
-        match(input, Token.DOWN, null); if (state.failed) return ;
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:84:33: ( tdnf )+
+        match(input, Token.UP, null); if (state.failed) return ;
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:83:32: ( tdnf )+
         int cnt59=0;
         loop59:
         do {
             int alt59=2;
             int LA59_0 = input.LA(1);
 
-            if ( ((LA59_0>=OR && LA59_0<=ID)||(LA59_0>=TRUE && LA59_0<=FALSE)) ) {
+            if ( ((LA59_0>=OR && LA59_0<=ID)||(LA59_0>=NOT && LA59_0<=FALSE)) ) {
                 alt59=1;
             }
 
@@ -4645,7 +4944,7 @@ public class tftacflattener extends TreeParser {
         	case 1 :
         	    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:0:0: tdnf
         	    {
-        	    pushFollow(FOLLOW_tdnf_in_synpred44_tftacflattener433);
+        	    pushFollow(FOLLOW_tdnf_in_synpred45_tftacflattener420);
         	    tdnf();
 
         	    state._fsp--;
@@ -4667,28 +4966,26 @@ public class tftacflattener extends TreeParser {
 
         match(input, Token.UP, null); if (state.failed) return ;
 
-        match(input, Token.UP, null); if (state.failed) return ;
-
         }
     }
-    // $ANTLR end synpred44_tftacflattener
+    // $ANTLR end synpred45_tftacflattener
 
     // $ANTLR start synpred48_tftacflattener
     public final void synpred48_tftacflattener_fragment() throws RecognitionException {   
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:86:4: ( ^( SAND ( otherthansand )+ ^( SAND ( tdnf )+ ) ( tdnf )+ ) )
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:86:4: ^( SAND ( otherthansand )+ ^( SAND ( tdnf )+ ) ( tdnf )+ )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:85:4: ( ^( SAND ( otherthansand )+ ^( SAND ( tdnf )+ ) ) )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:85:4: ^( SAND ( otherthansand )+ ^( SAND ( tdnf )+ ) )
         {
-        match(input,SAND,FOLLOW_SAND_in_synpred48_tftacflattener457); if (state.failed) return ;
+        match(input,SAND,FOLLOW_SAND_in_synpred48_tftacflattener440); if (state.failed) return ;
 
         match(input, Token.DOWN, null); if (state.failed) return ;
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:86:11: ( otherthansand )+
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:85:11: ( otherthansand )+
         int cnt60=0;
         loop60:
         do {
             int alt60=2;
             int LA60_0 = input.LA(1);
 
-            if ( ((LA60_0>=OR && LA60_0<=PAND)||LA60_0==ID||(LA60_0>=TRUE && LA60_0<=FALSE)) ) {
+            if ( ((LA60_0>=OR && LA60_0<=PAND)||LA60_0==ID||(LA60_0>=NOT && LA60_0<=FALSE)) ) {
                 alt60=1;
             }
 
@@ -4697,7 +4994,7 @@ public class tftacflattener extends TreeParser {
         	case 1 :
         	    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:0:0: otherthansand
         	    {
-        	    pushFollow(FOLLOW_otherthansand_in_synpred48_tftacflattener459);
+        	    pushFollow(FOLLOW_otherthansand_in_synpred48_tftacflattener442);
         	    otherthansand();
 
         	    state._fsp--;
@@ -4716,17 +5013,17 @@ public class tftacflattener extends TreeParser {
             cnt60++;
         } while (true);
 
-        match(input,SAND,FOLLOW_SAND_in_synpred48_tftacflattener463); if (state.failed) return ;
+        match(input,SAND,FOLLOW_SAND_in_synpred48_tftacflattener446); if (state.failed) return ;
 
         match(input, Token.DOWN, null); if (state.failed) return ;
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:86:33: ( tdnf )+
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:85:33: ( tdnf )+
         int cnt61=0;
         loop61:
         do {
             int alt61=2;
             int LA61_0 = input.LA(1);
 
-            if ( ((LA61_0>=OR && LA61_0<=ID)||(LA61_0>=TRUE && LA61_0<=FALSE)) ) {
+            if ( ((LA61_0>=OR && LA61_0<=ID)||(LA61_0>=NOT && LA61_0<=FALSE)) ) {
                 alt61=1;
             }
 
@@ -4735,7 +5032,7 @@ public class tftacflattener extends TreeParser {
         	case 1 :
         	    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:0:0: tdnf
         	    {
-        	    pushFollow(FOLLOW_tdnf_in_synpred48_tftacflattener465);
+        	    pushFollow(FOLLOW_tdnf_in_synpred48_tftacflattener448);
         	    tdnf();
 
         	    state._fsp--;
@@ -4756,24 +5053,39 @@ public class tftacflattener extends TreeParser {
 
 
         match(input, Token.UP, null); if (state.failed) return ;
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:86:40: ( tdnf )+
+
+        match(input, Token.UP, null); if (state.failed) return ;
+
+        }
+    }
+    // $ANTLR end synpred48_tftacflattener
+
+    // $ANTLR start synpred52_tftacflattener
+    public final void synpred52_tftacflattener_fragment() throws RecognitionException {   
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:87:4: ( ^( SAND ( otherthansand )+ ^( SAND ( tdnf )+ ) ( tdnf )+ ) )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:87:4: ^( SAND ( otherthansand )+ ^( SAND ( tdnf )+ ) ( tdnf )+ )
+        {
+        match(input,SAND,FOLLOW_SAND_in_synpred52_tftacflattener472); if (state.failed) return ;
+
+        match(input, Token.DOWN, null); if (state.failed) return ;
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:87:11: ( otherthansand )+
         int cnt62=0;
         loop62:
         do {
             int alt62=2;
             int LA62_0 = input.LA(1);
 
-            if ( ((LA62_0>=OR && LA62_0<=ID)||(LA62_0>=TRUE && LA62_0<=FALSE)) ) {
+            if ( ((LA62_0>=OR && LA62_0<=PAND)||LA62_0==ID||(LA62_0>=NOT && LA62_0<=FALSE)) ) {
                 alt62=1;
             }
 
 
             switch (alt62) {
         	case 1 :
-        	    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:0:0: tdnf
+        	    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:0:0: otherthansand
         	    {
-        	    pushFollow(FOLLOW_tdnf_in_synpred48_tftacflattener469);
-        	    tdnf();
+        	    pushFollow(FOLLOW_otherthansand_in_synpred52_tftacflattener474);
+        	    otherthansand();
 
         	    state._fsp--;
         	    if (state.failed) return ;
@@ -4791,32 +5103,17 @@ public class tftacflattener extends TreeParser {
             cnt62++;
         } while (true);
 
-
-        match(input, Token.UP, null); if (state.failed) return ;
-
-        }
-    }
-    // $ANTLR end synpred48_tftacflattener
-
-    // $ANTLR start synpred52_tftacflattener
-    public final void synpred52_tftacflattener_fragment() throws RecognitionException {   
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:91:10: ( ^( OR ^( OR ( tdnf )+ ) ( tdnf )+ ) )
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:91:10: ^( OR ^( OR ( tdnf )+ ) ( tdnf )+ )
-        {
-        match(input,OR,FOLLOW_OR_in_synpred52_tftacflattener508); if (state.failed) return ;
+        match(input,SAND,FOLLOW_SAND_in_synpred52_tftacflattener478); if (state.failed) return ;
 
         match(input, Token.DOWN, null); if (state.failed) return ;
-        match(input,OR,FOLLOW_OR_in_synpred52_tftacflattener511); if (state.failed) return ;
-
-        match(input, Token.DOWN, null); if (state.failed) return ;
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:91:20: ( tdnf )+
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:87:33: ( tdnf )+
         int cnt63=0;
         loop63:
         do {
             int alt63=2;
             int LA63_0 = input.LA(1);
 
-            if ( ((LA63_0>=OR && LA63_0<=ID)||(LA63_0>=TRUE && LA63_0<=FALSE)) ) {
+            if ( ((LA63_0>=OR && LA63_0<=ID)||(LA63_0>=NOT && LA63_0<=FALSE)) ) {
                 alt63=1;
             }
 
@@ -4825,7 +5122,7 @@ public class tftacflattener extends TreeParser {
         	case 1 :
         	    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:0:0: tdnf
         	    {
-        	    pushFollow(FOLLOW_tdnf_in_synpred52_tftacflattener513);
+        	    pushFollow(FOLLOW_tdnf_in_synpred52_tftacflattener480);
         	    tdnf();
 
         	    state._fsp--;
@@ -4846,14 +5143,14 @@ public class tftacflattener extends TreeParser {
 
 
         match(input, Token.UP, null); if (state.failed) return ;
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:91:27: ( tdnf )+
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:87:40: ( tdnf )+
         int cnt64=0;
         loop64:
         do {
             int alt64=2;
             int LA64_0 = input.LA(1);
 
-            if ( ((LA64_0>=OR && LA64_0<=ID)||(LA64_0>=TRUE && LA64_0<=FALSE)) ) {
+            if ( ((LA64_0>=OR && LA64_0<=ID)||(LA64_0>=NOT && LA64_0<=FALSE)) ) {
                 alt64=1;
             }
 
@@ -4862,7 +5159,7 @@ public class tftacflattener extends TreeParser {
         	case 1 :
         	    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:0:0: tdnf
         	    {
-        	    pushFollow(FOLLOW_tdnf_in_synpred52_tftacflattener517);
+        	    pushFollow(FOLLOW_tdnf_in_synpred52_tftacflattener484);
         	    tdnf();
 
         	    state._fsp--;
@@ -4888,32 +5185,35 @@ public class tftacflattener extends TreeParser {
     }
     // $ANTLR end synpred52_tftacflattener
 
-    // $ANTLR start synpred55_tftacflattener
-    public final void synpred55_tftacflattener_fragment() throws RecognitionException {   
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:93:4: ( ^( OR ( otherthanor )+ ^( OR ( tdnf )+ ) ) )
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:93:4: ^( OR ( otherthanor )+ ^( OR ( tdnf )+ ) )
+    // $ANTLR start synpred56_tftacflattener
+    public final void synpred56_tftacflattener_fragment() throws RecognitionException {   
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:92:10: ( ^( OR ^( OR ( tdnf )+ ) ( tdnf )+ ) )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:92:10: ^( OR ^( OR ( tdnf )+ ) ( tdnf )+ )
         {
-        match(input,OR,FOLLOW_OR_in_synpred55_tftacflattener537); if (state.failed) return ;
+        match(input,OR,FOLLOW_OR_in_synpred56_tftacflattener523); if (state.failed) return ;
 
         match(input, Token.DOWN, null); if (state.failed) return ;
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:93:9: ( otherthanor )+
+        match(input,OR,FOLLOW_OR_in_synpred56_tftacflattener526); if (state.failed) return ;
+
+        match(input, Token.DOWN, null); if (state.failed) return ;
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:92:20: ( tdnf )+
         int cnt65=0;
         loop65:
         do {
             int alt65=2;
             int LA65_0 = input.LA(1);
 
-            if ( ((LA65_0>=XOR && LA65_0<=ID)||(LA65_0>=TRUE && LA65_0<=FALSE)) ) {
+            if ( ((LA65_0>=OR && LA65_0<=ID)||(LA65_0>=NOT && LA65_0<=FALSE)) ) {
                 alt65=1;
             }
 
 
             switch (alt65) {
         	case 1 :
-        	    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:0:0: otherthanor
+        	    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:0:0: tdnf
         	    {
-        	    pushFollow(FOLLOW_otherthanor_in_synpred55_tftacflattener539);
-        	    otherthanor();
+        	    pushFollow(FOLLOW_tdnf_in_synpred56_tftacflattener528);
+        	    tdnf();
 
         	    state._fsp--;
         	    if (state.failed) return ;
@@ -4931,17 +5231,16 @@ public class tftacflattener extends TreeParser {
             cnt65++;
         } while (true);
 
-        match(input,OR,FOLLOW_OR_in_synpred55_tftacflattener543); if (state.failed) return ;
 
-        match(input, Token.DOWN, null); if (state.failed) return ;
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:93:27: ( tdnf )+
+        match(input, Token.UP, null); if (state.failed) return ;
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:92:27: ( tdnf )+
         int cnt66=0;
         loop66:
         do {
             int alt66=2;
             int LA66_0 = input.LA(1);
 
-            if ( ((LA66_0>=OR && LA66_0<=ID)||(LA66_0>=TRUE && LA66_0<=FALSE)) ) {
+            if ( ((LA66_0>=OR && LA66_0<=ID)||(LA66_0>=NOT && LA66_0<=FALSE)) ) {
                 alt66=1;
             }
 
@@ -4950,7 +5249,7 @@ public class tftacflattener extends TreeParser {
         	case 1 :
         	    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:0:0: tdnf
         	    {
-        	    pushFollow(FOLLOW_tdnf_in_synpred55_tftacflattener545);
+        	    pushFollow(FOLLOW_tdnf_in_synpred56_tftacflattener532);
         	    tdnf();
 
         	    state._fsp--;
@@ -4972,28 +5271,26 @@ public class tftacflattener extends TreeParser {
 
         match(input, Token.UP, null); if (state.failed) return ;
 
-        match(input, Token.UP, null); if (state.failed) return ;
-
         }
     }
-    // $ANTLR end synpred55_tftacflattener
+    // $ANTLR end synpred56_tftacflattener
 
     // $ANTLR start synpred59_tftacflattener
     public final void synpred59_tftacflattener_fragment() throws RecognitionException {   
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:95:4: ( ^( OR ( otherthanor )+ ^( OR ( tdnf )+ ) ( tdnf )+ ) )
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:95:4: ^( OR ( otherthanor )+ ^( OR ( tdnf )+ ) ( tdnf )+ )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:94:4: ( ^( OR ( otherthanor )+ ^( OR ( tdnf )+ ) ) )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:94:4: ^( OR ( otherthanor )+ ^( OR ( tdnf )+ ) )
         {
-        match(input,OR,FOLLOW_OR_in_synpred59_tftacflattener569); if (state.failed) return ;
+        match(input,OR,FOLLOW_OR_in_synpred59_tftacflattener552); if (state.failed) return ;
 
         match(input, Token.DOWN, null); if (state.failed) return ;
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:95:9: ( otherthanor )+
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:94:9: ( otherthanor )+
         int cnt67=0;
         loop67:
         do {
             int alt67=2;
             int LA67_0 = input.LA(1);
 
-            if ( ((LA67_0>=XOR && LA67_0<=ID)||(LA67_0>=TRUE && LA67_0<=FALSE)) ) {
+            if ( ((LA67_0>=XOR && LA67_0<=ID)||(LA67_0>=NOT && LA67_0<=FALSE)) ) {
                 alt67=1;
             }
 
@@ -5002,7 +5299,7 @@ public class tftacflattener extends TreeParser {
         	case 1 :
         	    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:0:0: otherthanor
         	    {
-        	    pushFollow(FOLLOW_otherthanor_in_synpred59_tftacflattener571);
+        	    pushFollow(FOLLOW_otherthanor_in_synpred59_tftacflattener554);
         	    otherthanor();
 
         	    state._fsp--;
@@ -5021,17 +5318,17 @@ public class tftacflattener extends TreeParser {
             cnt67++;
         } while (true);
 
-        match(input,OR,FOLLOW_OR_in_synpred59_tftacflattener575); if (state.failed) return ;
+        match(input,OR,FOLLOW_OR_in_synpred59_tftacflattener558); if (state.failed) return ;
 
         match(input, Token.DOWN, null); if (state.failed) return ;
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:95:27: ( tdnf )+
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:94:27: ( tdnf )+
         int cnt68=0;
         loop68:
         do {
             int alt68=2;
             int LA68_0 = input.LA(1);
 
-            if ( ((LA68_0>=OR && LA68_0<=ID)||(LA68_0>=TRUE && LA68_0<=FALSE)) ) {
+            if ( ((LA68_0>=OR && LA68_0<=ID)||(LA68_0>=NOT && LA68_0<=FALSE)) ) {
                 alt68=1;
             }
 
@@ -5040,7 +5337,7 @@ public class tftacflattener extends TreeParser {
         	case 1 :
         	    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:0:0: tdnf
         	    {
-        	    pushFollow(FOLLOW_tdnf_in_synpred59_tftacflattener577);
+        	    pushFollow(FOLLOW_tdnf_in_synpred59_tftacflattener560);
         	    tdnf();
 
         	    state._fsp--;
@@ -5061,24 +5358,39 @@ public class tftacflattener extends TreeParser {
 
 
         match(input, Token.UP, null); if (state.failed) return ;
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:95:34: ( tdnf )+
+
+        match(input, Token.UP, null); if (state.failed) return ;
+
+        }
+    }
+    // $ANTLR end synpred59_tftacflattener
+
+    // $ANTLR start synpred63_tftacflattener
+    public final void synpred63_tftacflattener_fragment() throws RecognitionException {   
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:96:4: ( ^( OR ( otherthanor )+ ^( OR ( tdnf )+ ) ( tdnf )+ ) )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:96:4: ^( OR ( otherthanor )+ ^( OR ( tdnf )+ ) ( tdnf )+ )
+        {
+        match(input,OR,FOLLOW_OR_in_synpred63_tftacflattener584); if (state.failed) return ;
+
+        match(input, Token.DOWN, null); if (state.failed) return ;
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:96:9: ( otherthanor )+
         int cnt69=0;
         loop69:
         do {
             int alt69=2;
             int LA69_0 = input.LA(1);
 
-            if ( ((LA69_0>=OR && LA69_0<=ID)||(LA69_0>=TRUE && LA69_0<=FALSE)) ) {
+            if ( ((LA69_0>=XOR && LA69_0<=ID)||(LA69_0>=NOT && LA69_0<=FALSE)) ) {
                 alt69=1;
             }
 
 
             switch (alt69) {
         	case 1 :
-        	    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:0:0: tdnf
+        	    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:0:0: otherthanor
         	    {
-        	    pushFollow(FOLLOW_tdnf_in_synpred59_tftacflattener581);
-        	    tdnf();
+        	    pushFollow(FOLLOW_otherthanor_in_synpred63_tftacflattener586);
+        	    otherthanor();
 
         	    state._fsp--;
         	    if (state.failed) return ;
@@ -5096,32 +5408,17 @@ public class tftacflattener extends TreeParser {
             cnt69++;
         } while (true);
 
-
-        match(input, Token.UP, null); if (state.failed) return ;
-
-        }
-    }
-    // $ANTLR end synpred59_tftacflattener
-
-    // $ANTLR start synpred63_tftacflattener
-    public final void synpred63_tftacflattener_fragment() throws RecognitionException {   
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:100:11: ( ^( XOR ^( XOR ( tdnf )+ ) ( tdnf )+ ) )
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:100:11: ^( XOR ^( XOR ( tdnf )+ ) ( tdnf )+ )
-        {
-        match(input,XOR,FOLLOW_XOR_in_synpred63_tftacflattener625); if (state.failed) return ;
+        match(input,OR,FOLLOW_OR_in_synpred63_tftacflattener590); if (state.failed) return ;
 
         match(input, Token.DOWN, null); if (state.failed) return ;
-        match(input,XOR,FOLLOW_XOR_in_synpred63_tftacflattener628); if (state.failed) return ;
-
-        match(input, Token.DOWN, null); if (state.failed) return ;
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:100:23: ( tdnf )+
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:96:27: ( tdnf )+
         int cnt70=0;
         loop70:
         do {
             int alt70=2;
             int LA70_0 = input.LA(1);
 
-            if ( ((LA70_0>=OR && LA70_0<=ID)||(LA70_0>=TRUE && LA70_0<=FALSE)) ) {
+            if ( ((LA70_0>=OR && LA70_0<=ID)||(LA70_0>=NOT && LA70_0<=FALSE)) ) {
                 alt70=1;
             }
 
@@ -5130,7 +5427,7 @@ public class tftacflattener extends TreeParser {
         	case 1 :
         	    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:0:0: tdnf
         	    {
-        	    pushFollow(FOLLOW_tdnf_in_synpred63_tftacflattener630);
+        	    pushFollow(FOLLOW_tdnf_in_synpred63_tftacflattener592);
         	    tdnf();
 
         	    state._fsp--;
@@ -5151,14 +5448,14 @@ public class tftacflattener extends TreeParser {
 
 
         match(input, Token.UP, null); if (state.failed) return ;
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:100:30: ( tdnf )+
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:96:34: ( tdnf )+
         int cnt71=0;
         loop71:
         do {
             int alt71=2;
             int LA71_0 = input.LA(1);
 
-            if ( ((LA71_0>=OR && LA71_0<=ID)||(LA71_0>=TRUE && LA71_0<=FALSE)) ) {
+            if ( ((LA71_0>=OR && LA71_0<=ID)||(LA71_0>=NOT && LA71_0<=FALSE)) ) {
                 alt71=1;
             }
 
@@ -5167,7 +5464,7 @@ public class tftacflattener extends TreeParser {
         	case 1 :
         	    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:0:0: tdnf
         	    {
-        	    pushFollow(FOLLOW_tdnf_in_synpred63_tftacflattener634);
+        	    pushFollow(FOLLOW_tdnf_in_synpred63_tftacflattener596);
         	    tdnf();
 
         	    state._fsp--;
@@ -5193,32 +5490,35 @@ public class tftacflattener extends TreeParser {
     }
     // $ANTLR end synpred63_tftacflattener
 
-    // $ANTLR start synpred66_tftacflattener
-    public final void synpred66_tftacflattener_fragment() throws RecognitionException {   
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:102:4: ( ^( XOR ( otherthanxor )+ ^( XOR ( tdnf )+ ) ) )
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:102:4: ^( XOR ( otherthanxor )+ ^( XOR ( tdnf )+ ) )
+    // $ANTLR start synpred67_tftacflattener
+    public final void synpred67_tftacflattener_fragment() throws RecognitionException {   
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:101:11: ( ^( XOR ^( XOR ( tdnf )+ ) ( tdnf )+ ) )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:101:11: ^( XOR ^( XOR ( tdnf )+ ) ( tdnf )+ )
         {
-        match(input,XOR,FOLLOW_XOR_in_synpred66_tftacflattener654); if (state.failed) return ;
+        match(input,XOR,FOLLOW_XOR_in_synpred67_tftacflattener640); if (state.failed) return ;
 
         match(input, Token.DOWN, null); if (state.failed) return ;
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:102:10: ( otherthanxor )+
+        match(input,XOR,FOLLOW_XOR_in_synpred67_tftacflattener643); if (state.failed) return ;
+
+        match(input, Token.DOWN, null); if (state.failed) return ;
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:101:23: ( tdnf )+
         int cnt72=0;
         loop72:
         do {
             int alt72=2;
             int LA72_0 = input.LA(1);
 
-            if ( (LA72_0==OR||(LA72_0>=AND && LA72_0<=ID)||(LA72_0>=TRUE && LA72_0<=FALSE)) ) {
+            if ( ((LA72_0>=OR && LA72_0<=ID)||(LA72_0>=NOT && LA72_0<=FALSE)) ) {
                 alt72=1;
             }
 
 
             switch (alt72) {
         	case 1 :
-        	    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:0:0: otherthanxor
+        	    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:0:0: tdnf
         	    {
-        	    pushFollow(FOLLOW_otherthanxor_in_synpred66_tftacflattener656);
-        	    otherthanxor();
+        	    pushFollow(FOLLOW_tdnf_in_synpred67_tftacflattener645);
+        	    tdnf();
 
         	    state._fsp--;
         	    if (state.failed) return ;
@@ -5236,17 +5536,16 @@ public class tftacflattener extends TreeParser {
             cnt72++;
         } while (true);
 
-        match(input,XOR,FOLLOW_XOR_in_synpred66_tftacflattener660); if (state.failed) return ;
 
-        match(input, Token.DOWN, null); if (state.failed) return ;
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:102:30: ( tdnf )+
+        match(input, Token.UP, null); if (state.failed) return ;
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:101:30: ( tdnf )+
         int cnt73=0;
         loop73:
         do {
             int alt73=2;
             int LA73_0 = input.LA(1);
 
-            if ( ((LA73_0>=OR && LA73_0<=ID)||(LA73_0>=TRUE && LA73_0<=FALSE)) ) {
+            if ( ((LA73_0>=OR && LA73_0<=ID)||(LA73_0>=NOT && LA73_0<=FALSE)) ) {
                 alt73=1;
             }
 
@@ -5255,7 +5554,7 @@ public class tftacflattener extends TreeParser {
         	case 1 :
         	    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:0:0: tdnf
         	    {
-        	    pushFollow(FOLLOW_tdnf_in_synpred66_tftacflattener662);
+        	    pushFollow(FOLLOW_tdnf_in_synpred67_tftacflattener649);
         	    tdnf();
 
         	    state._fsp--;
@@ -5277,28 +5576,26 @@ public class tftacflattener extends TreeParser {
 
         match(input, Token.UP, null); if (state.failed) return ;
 
-        match(input, Token.UP, null); if (state.failed) return ;
-
         }
     }
-    // $ANTLR end synpred66_tftacflattener
+    // $ANTLR end synpred67_tftacflattener
 
     // $ANTLR start synpred70_tftacflattener
     public final void synpred70_tftacflattener_fragment() throws RecognitionException {   
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:104:4: ( ^( XOR ( otherthanxor )+ ^( XOR ( tdnf )+ ) ( tdnf )+ ) )
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:104:4: ^( XOR ( otherthanxor )+ ^( XOR ( tdnf )+ ) ( tdnf )+ )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:103:4: ( ^( XOR ( otherthanxor )+ ^( XOR ( tdnf )+ ) ) )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:103:4: ^( XOR ( otherthanxor )+ ^( XOR ( tdnf )+ ) )
         {
-        match(input,XOR,FOLLOW_XOR_in_synpred70_tftacflattener686); if (state.failed) return ;
+        match(input,XOR,FOLLOW_XOR_in_synpred70_tftacflattener669); if (state.failed) return ;
 
         match(input, Token.DOWN, null); if (state.failed) return ;
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:104:10: ( otherthanxor )+
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:103:10: ( otherthanxor )+
         int cnt74=0;
         loop74:
         do {
             int alt74=2;
             int LA74_0 = input.LA(1);
 
-            if ( (LA74_0==OR||(LA74_0>=AND && LA74_0<=ID)||(LA74_0>=TRUE && LA74_0<=FALSE)) ) {
+            if ( (LA74_0==OR||(LA74_0>=AND && LA74_0<=ID)||(LA74_0>=NOT && LA74_0<=FALSE)) ) {
                 alt74=1;
             }
 
@@ -5307,7 +5604,7 @@ public class tftacflattener extends TreeParser {
         	case 1 :
         	    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:0:0: otherthanxor
         	    {
-        	    pushFollow(FOLLOW_otherthanxor_in_synpred70_tftacflattener688);
+        	    pushFollow(FOLLOW_otherthanxor_in_synpred70_tftacflattener671);
         	    otherthanxor();
 
         	    state._fsp--;
@@ -5326,17 +5623,17 @@ public class tftacflattener extends TreeParser {
             cnt74++;
         } while (true);
 
-        match(input,XOR,FOLLOW_XOR_in_synpred70_tftacflattener692); if (state.failed) return ;
+        match(input,XOR,FOLLOW_XOR_in_synpred70_tftacflattener675); if (state.failed) return ;
 
         match(input, Token.DOWN, null); if (state.failed) return ;
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:104:30: ( tdnf )+
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:103:30: ( tdnf )+
         int cnt75=0;
         loop75:
         do {
             int alt75=2;
             int LA75_0 = input.LA(1);
 
-            if ( ((LA75_0>=OR && LA75_0<=ID)||(LA75_0>=TRUE && LA75_0<=FALSE)) ) {
+            if ( ((LA75_0>=OR && LA75_0<=ID)||(LA75_0>=NOT && LA75_0<=FALSE)) ) {
                 alt75=1;
             }
 
@@ -5345,7 +5642,7 @@ public class tftacflattener extends TreeParser {
         	case 1 :
         	    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:0:0: tdnf
         	    {
-        	    pushFollow(FOLLOW_tdnf_in_synpred70_tftacflattener694);
+        	    pushFollow(FOLLOW_tdnf_in_synpred70_tftacflattener677);
         	    tdnf();
 
         	    state._fsp--;
@@ -5366,24 +5663,39 @@ public class tftacflattener extends TreeParser {
 
 
         match(input, Token.UP, null); if (state.failed) return ;
-        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:104:37: ( tdnf )+
+
+        match(input, Token.UP, null); if (state.failed) return ;
+
+        }
+    }
+    // $ANTLR end synpred70_tftacflattener
+
+    // $ANTLR start synpred74_tftacflattener
+    public final void synpred74_tftacflattener_fragment() throws RecognitionException {   
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:105:4: ( ^( XOR ( otherthanxor )+ ^( XOR ( tdnf )+ ) ( tdnf )+ ) )
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:105:4: ^( XOR ( otherthanxor )+ ^( XOR ( tdnf )+ ) ( tdnf )+ )
+        {
+        match(input,XOR,FOLLOW_XOR_in_synpred74_tftacflattener701); if (state.failed) return ;
+
+        match(input, Token.DOWN, null); if (state.failed) return ;
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:105:10: ( otherthanxor )+
         int cnt76=0;
         loop76:
         do {
             int alt76=2;
             int LA76_0 = input.LA(1);
 
-            if ( ((LA76_0>=OR && LA76_0<=ID)||(LA76_0>=TRUE && LA76_0<=FALSE)) ) {
+            if ( (LA76_0==OR||(LA76_0>=AND && LA76_0<=ID)||(LA76_0>=NOT && LA76_0<=FALSE)) ) {
                 alt76=1;
             }
 
 
             switch (alt76) {
         	case 1 :
-        	    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:0:0: tdnf
+        	    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:0:0: otherthanxor
         	    {
-        	    pushFollow(FOLLOW_tdnf_in_synpred70_tftacflattener698);
-        	    tdnf();
+        	    pushFollow(FOLLOW_otherthanxor_in_synpred74_tftacflattener703);
+        	    otherthanxor();
 
         	    state._fsp--;
         	    if (state.failed) return ;
@@ -5401,12 +5713,87 @@ public class tftacflattener extends TreeParser {
             cnt76++;
         } while (true);
 
+        match(input,XOR,FOLLOW_XOR_in_synpred74_tftacflattener707); if (state.failed) return ;
+
+        match(input, Token.DOWN, null); if (state.failed) return ;
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:105:30: ( tdnf )+
+        int cnt77=0;
+        loop77:
+        do {
+            int alt77=2;
+            int LA77_0 = input.LA(1);
+
+            if ( ((LA77_0>=OR && LA77_0<=ID)||(LA77_0>=NOT && LA77_0<=FALSE)) ) {
+                alt77=1;
+            }
+
+
+            switch (alt77) {
+        	case 1 :
+        	    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:0:0: tdnf
+        	    {
+        	    pushFollow(FOLLOW_tdnf_in_synpred74_tftacflattener709);
+        	    tdnf();
+
+        	    state._fsp--;
+        	    if (state.failed) return ;
+
+        	    }
+        	    break;
+
+        	default :
+        	    if ( cnt77 >= 1 ) break loop77;
+        	    if (state.backtracking>0) {state.failed=true; return ;}
+                    EarlyExitException eee =
+                        new EarlyExitException(77, input);
+                    throw eee;
+            }
+            cnt77++;
+        } while (true);
+
+
+        match(input, Token.UP, null); if (state.failed) return ;
+        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:105:37: ( tdnf )+
+        int cnt78=0;
+        loop78:
+        do {
+            int alt78=2;
+            int LA78_0 = input.LA(1);
+
+            if ( ((LA78_0>=OR && LA78_0<=ID)||(LA78_0>=NOT && LA78_0<=FALSE)) ) {
+                alt78=1;
+            }
+
+
+            switch (alt78) {
+        	case 1 :
+        	    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacflattener.g:0:0: tdnf
+        	    {
+        	    pushFollow(FOLLOW_tdnf_in_synpred74_tftacflattener713);
+        	    tdnf();
+
+        	    state._fsp--;
+        	    if (state.failed) return ;
+
+        	    }
+        	    break;
+
+        	default :
+        	    if ( cnt78 >= 1 ) break loop78;
+        	    if (state.backtracking>0) {state.failed=true; return ;}
+                    EarlyExitException eee =
+                        new EarlyExitException(78, input);
+                    throw eee;
+            }
+            cnt78++;
+        } while (true);
+
 
         match(input, Token.UP, null); if (state.failed) return ;
 
         }
     }
-    // $ANTLR end synpred70_tftacflattener
+    // $ANTLR end synpred74_tftacflattener
 
     // Delegated rules
 
@@ -5424,11 +5811,25 @@ public class tftacflattener extends TreeParser {
         state.failed=false;
         return success;
     }
-    public final boolean synpred30_tftacflattener() {
+    public final boolean synpred67_tftacflattener() {
         state.backtracking++;
         int start = input.mark();
         try {
-            synpred30_tftacflattener_fragment(); // can never throw exception
+            synpred67_tftacflattener_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred17_tftacflattener() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred17_tftacflattener_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -5452,20 +5853,6 @@ public class tftacflattener extends TreeParser {
         state.failed=false;
         return success;
     }
-    public final boolean synpred33_tftacflattener() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred33_tftacflattener_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
     public final boolean synpred59_tftacflattener() {
         state.backtracking++;
         int start = input.mark();
@@ -5480,11 +5867,25 @@ public class tftacflattener extends TreeParser {
         state.failed=false;
         return success;
     }
-    public final boolean synpred66_tftacflattener() {
+    public final boolean synpred8_tftacflattener() {
         state.backtracking++;
         int start = input.mark();
         try {
-            synpred66_tftacflattener_fragment(); // can never throw exception
+            synpred8_tftacflattener_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred1_tftacflattener() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred1_tftacflattener_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -5508,11 +5909,25 @@ public class tftacflattener extends TreeParser {
         state.failed=false;
         return success;
     }
-    public final boolean synpred41_tftacflattener() {
+    public final boolean synpred27_tftacflattener() {
         state.backtracking++;
         int start = input.mark();
         try {
-            synpred41_tftacflattener_fragment(); // can never throw exception
+            synpred27_tftacflattener_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred74_tftacflattener() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred74_tftacflattener_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -5536,11 +5951,53 @@ public class tftacflattener extends TreeParser {
         state.failed=false;
         return success;
     }
-    public final boolean synpred55_tftacflattener() {
+    public final boolean synpred41_tftacflattener() {
         state.backtracking++;
         int start = input.mark();
         try {
-            synpred55_tftacflattener_fragment(); // can never throw exception
+            synpred41_tftacflattener_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred56_tftacflattener() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred56_tftacflattener_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred45_tftacflattener() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred45_tftacflattener_fragment(); // can never throw exception
+        } catch (RecognitionException re) {
+            System.err.println("impossible: "+re);
+        }
+        boolean success = !state.failed;
+        input.rewind(start);
+        state.backtracking--;
+        state.failed=false;
+        return success;
+    }
+    public final boolean synpred22_tftacflattener() {
+        state.backtracking++;
+        int start = input.mark();
+        try {
+            synpred22_tftacflattener_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -5564,25 +6021,11 @@ public class tftacflattener extends TreeParser {
         state.failed=false;
         return success;
     }
-    public final boolean synpred44_tftacflattener() {
+    public final boolean synpred34_tftacflattener() {
         state.backtracking++;
         int start = input.mark();
         try {
-            synpred44_tftacflattener_fragment(); // can never throw exception
-        } catch (RecognitionException re) {
-            System.err.println("impossible: "+re);
-        }
-        boolean success = !state.failed;
-        input.rewind(start);
-        state.backtracking--;
-        state.failed=false;
-        return success;
-    }
-    public final boolean synpred7_tftacflattener() {
-        state.backtracking++;
-        int start = input.mark();
-        try {
-            synpred7_tftacflattener_fragment(); // can never throw exception
+            synpred34_tftacflattener_fragment(); // can never throw exception
         } catch (RecognitionException re) {
             System.err.println("impossible: "+re);
         }
@@ -5599,152 +6042,164 @@ public class tftacflattener extends TreeParser {
     public static final BitSet FOLLOW_nestedterm_in_tdnf65 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_atom_in_tdnf70 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_pandterm_in_tdnf75 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_negatedterm_in_tdnf80 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_set_in_atom0 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_PAND_in_pandterm110 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_PAND_in_pandterm113 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_tdnf_in_pandterm115 = new BitSet(new long[]{0x00000000000063F8L});
-    public static final BitSet FOLLOW_tdnf_in_pandterm119 = new BitSet(new long[]{0x00000000000063F8L});
-    public static final BitSet FOLLOW_PAND_in_pandterm139 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_tdnf_in_pandterm141 = new BitSet(new long[]{0x00000000000063F8L});
-    public static final BitSet FOLLOW_nestand_in_nestedterm154 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_nestor_in_nestedterm158 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_nestxor_in_nestedterm162 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_nestsand_in_nestedterm166 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_nestor_in_otherthanand177 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_nestxor_in_otherthanand181 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_nestsand_in_otherthanand185 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_atom_in_otherthanand189 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_pandterm_in_otherthanand193 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_nestand_in_otherthanor204 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_nestxor_in_otherthanor208 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_nestsand_in_otherthanor212 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_atom_in_otherthanor216 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_pandterm_in_otherthanor220 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_nestand_in_otherthanxor231 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_nestor_in_otherthanxor235 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_nestsand_in_otherthanxor239 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_atom_in_otherthanxor243 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_pandterm_in_otherthanxor247 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_nestand_in_otherthansand258 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_nestor_in_otherthansand262 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_nestxor_in_otherthansand266 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_atom_in_otherthansand270 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_pandterm_in_otherthansand274 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_AND_in_nestand285 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_AND_in_nestand288 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_tdnf_in_nestand290 = new BitSet(new long[]{0x00000000000063F8L});
-    public static final BitSet FOLLOW_tdnf_in_nestand294 = new BitSet(new long[]{0x00000000000063F8L});
-    public static final BitSet FOLLOW_AND_in_nestand314 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_otherthanand_in_nestand316 = new BitSet(new long[]{0x00000000000063F8L});
-    public static final BitSet FOLLOW_AND_in_nestand320 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_tdnf_in_nestand322 = new BitSet(new long[]{0x00000000000063F8L});
-    public static final BitSet FOLLOW_AND_in_nestand346 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_otherthanand_in_nestand348 = new BitSet(new long[]{0x00000000000063F8L});
-    public static final BitSet FOLLOW_AND_in_nestand352 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_tdnf_in_nestand354 = new BitSet(new long[]{0x00000000000063F8L});
-    public static final BitSet FOLLOW_tdnf_in_nestand358 = new BitSet(new long[]{0x00000000000063F8L});
-    public static final BitSet FOLLOW_AND_in_nestand381 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_tdnf_in_nestand383 = new BitSet(new long[]{0x00000000000063F8L});
-    public static final BitSet FOLLOW_SAND_in_nestsand396 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_SAND_in_nestsand399 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_tdnf_in_nestsand401 = new BitSet(new long[]{0x00000000000063F8L});
-    public static final BitSet FOLLOW_tdnf_in_nestsand405 = new BitSet(new long[]{0x00000000000063F8L});
-    public static final BitSet FOLLOW_SAND_in_nestsand425 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_otherthansand_in_nestsand427 = new BitSet(new long[]{0x00000000000063F8L});
-    public static final BitSet FOLLOW_SAND_in_nestsand431 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_tdnf_in_nestsand433 = new BitSet(new long[]{0x00000000000063F8L});
-    public static final BitSet FOLLOW_SAND_in_nestsand457 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_otherthansand_in_nestsand459 = new BitSet(new long[]{0x00000000000063F8L});
-    public static final BitSet FOLLOW_SAND_in_nestsand463 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_tdnf_in_nestsand465 = new BitSet(new long[]{0x00000000000063F8L});
-    public static final BitSet FOLLOW_tdnf_in_nestsand469 = new BitSet(new long[]{0x00000000000063F8L});
-    public static final BitSet FOLLOW_SAND_in_nestsand492 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_tdnf_in_nestsand494 = new BitSet(new long[]{0x00000000000063F8L});
-    public static final BitSet FOLLOW_OR_in_nestor508 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_OR_in_nestor511 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_tdnf_in_nestor513 = new BitSet(new long[]{0x00000000000063F8L});
-    public static final BitSet FOLLOW_tdnf_in_nestor517 = new BitSet(new long[]{0x00000000000063F8L});
-    public static final BitSet FOLLOW_OR_in_nestor537 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_otherthanor_in_nestor539 = new BitSet(new long[]{0x00000000000063F8L});
-    public static final BitSet FOLLOW_OR_in_nestor543 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_tdnf_in_nestor545 = new BitSet(new long[]{0x00000000000063F8L});
-    public static final BitSet FOLLOW_OR_in_nestor569 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_otherthanor_in_nestor571 = new BitSet(new long[]{0x00000000000063F8L});
-    public static final BitSet FOLLOW_OR_in_nestor575 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_tdnf_in_nestor577 = new BitSet(new long[]{0x00000000000063F8L});
-    public static final BitSet FOLLOW_tdnf_in_nestor581 = new BitSet(new long[]{0x00000000000063F8L});
-    public static final BitSet FOLLOW_OR_in_nestor604 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_tdnf_in_nestor606 = new BitSet(new long[]{0x00000000000063F8L});
-    public static final BitSet FOLLOW_XOR_in_nestxor625 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_XOR_in_nestxor628 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_tdnf_in_nestxor630 = new BitSet(new long[]{0x00000000000063F8L});
-    public static final BitSet FOLLOW_tdnf_in_nestxor634 = new BitSet(new long[]{0x00000000000063F8L});
-    public static final BitSet FOLLOW_XOR_in_nestxor654 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_otherthanxor_in_nestxor656 = new BitSet(new long[]{0x00000000000063F8L});
-    public static final BitSet FOLLOW_XOR_in_nestxor660 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_tdnf_in_nestxor662 = new BitSet(new long[]{0x00000000000063F8L});
-    public static final BitSet FOLLOW_XOR_in_nestxor686 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_otherthanxor_in_nestxor688 = new BitSet(new long[]{0x00000000000063F8L});
-    public static final BitSet FOLLOW_XOR_in_nestxor692 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_tdnf_in_nestxor694 = new BitSet(new long[]{0x00000000000063F8L});
-    public static final BitSet FOLLOW_tdnf_in_nestxor698 = new BitSet(new long[]{0x00000000000063F8L});
-    public static final BitSet FOLLOW_XOR_in_nestxor721 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_tdnf_in_nestxor723 = new BitSet(new long[]{0x00000000000063F8L});
-    public static final BitSet FOLLOW_PAND_in_synpred7_tftacflattener110 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_PAND_in_synpred7_tftacflattener113 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_tdnf_in_synpred7_tftacflattener115 = new BitSet(new long[]{0x00000000000063F8L});
-    public static final BitSet FOLLOW_tdnf_in_synpred7_tftacflattener119 = new BitSet(new long[]{0x00000000000063F8L});
-    public static final BitSet FOLLOW_AND_in_synpred30_tftacflattener285 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_AND_in_synpred30_tftacflattener288 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_tdnf_in_synpred30_tftacflattener290 = new BitSet(new long[]{0x00000000000063F8L});
-    public static final BitSet FOLLOW_tdnf_in_synpred30_tftacflattener294 = new BitSet(new long[]{0x00000000000063F8L});
-    public static final BitSet FOLLOW_AND_in_synpred33_tftacflattener314 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_otherthanand_in_synpred33_tftacflattener316 = new BitSet(new long[]{0x00000000000063F8L});
-    public static final BitSet FOLLOW_AND_in_synpred33_tftacflattener320 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_tdnf_in_synpred33_tftacflattener322 = new BitSet(new long[]{0x00000000000063F8L});
-    public static final BitSet FOLLOW_AND_in_synpred37_tftacflattener346 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_otherthanand_in_synpred37_tftacflattener348 = new BitSet(new long[]{0x00000000000063F8L});
-    public static final BitSet FOLLOW_AND_in_synpred37_tftacflattener352 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_tdnf_in_synpred37_tftacflattener354 = new BitSet(new long[]{0x00000000000063F8L});
-    public static final BitSet FOLLOW_tdnf_in_synpred37_tftacflattener358 = new BitSet(new long[]{0x00000000000063F8L});
-    public static final BitSet FOLLOW_SAND_in_synpred41_tftacflattener396 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_SAND_in_synpred41_tftacflattener399 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_tdnf_in_synpred41_tftacflattener401 = new BitSet(new long[]{0x00000000000063F8L});
-    public static final BitSet FOLLOW_tdnf_in_synpred41_tftacflattener405 = new BitSet(new long[]{0x00000000000063F8L});
-    public static final BitSet FOLLOW_SAND_in_synpred44_tftacflattener425 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_otherthansand_in_synpred44_tftacflattener427 = new BitSet(new long[]{0x00000000000063F8L});
-    public static final BitSet FOLLOW_SAND_in_synpred44_tftacflattener431 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_tdnf_in_synpred44_tftacflattener433 = new BitSet(new long[]{0x00000000000063F8L});
-    public static final BitSet FOLLOW_SAND_in_synpred48_tftacflattener457 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_otherthansand_in_synpred48_tftacflattener459 = new BitSet(new long[]{0x00000000000063F8L});
-    public static final BitSet FOLLOW_SAND_in_synpred48_tftacflattener463 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_tdnf_in_synpred48_tftacflattener465 = new BitSet(new long[]{0x00000000000063F8L});
-    public static final BitSet FOLLOW_tdnf_in_synpred48_tftacflattener469 = new BitSet(new long[]{0x00000000000063F8L});
-    public static final BitSet FOLLOW_OR_in_synpred52_tftacflattener508 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_OR_in_synpred52_tftacflattener511 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_tdnf_in_synpred52_tftacflattener513 = new BitSet(new long[]{0x00000000000063F8L});
-    public static final BitSet FOLLOW_tdnf_in_synpred52_tftacflattener517 = new BitSet(new long[]{0x00000000000063F8L});
-    public static final BitSet FOLLOW_OR_in_synpred55_tftacflattener537 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_otherthanor_in_synpred55_tftacflattener539 = new BitSet(new long[]{0x00000000000063F8L});
-    public static final BitSet FOLLOW_OR_in_synpred55_tftacflattener543 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_tdnf_in_synpred55_tftacflattener545 = new BitSet(new long[]{0x00000000000063F8L});
-    public static final BitSet FOLLOW_OR_in_synpred59_tftacflattener569 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_otherthanor_in_synpred59_tftacflattener571 = new BitSet(new long[]{0x00000000000063F8L});
-    public static final BitSet FOLLOW_OR_in_synpred59_tftacflattener575 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_tdnf_in_synpred59_tftacflattener577 = new BitSet(new long[]{0x00000000000063F8L});
-    public static final BitSet FOLLOW_tdnf_in_synpred59_tftacflattener581 = new BitSet(new long[]{0x00000000000063F8L});
-    public static final BitSet FOLLOW_XOR_in_synpred63_tftacflattener625 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_XOR_in_synpred63_tftacflattener628 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_tdnf_in_synpred63_tftacflattener630 = new BitSet(new long[]{0x00000000000063F8L});
-    public static final BitSet FOLLOW_tdnf_in_synpred63_tftacflattener634 = new BitSet(new long[]{0x00000000000063F8L});
-    public static final BitSet FOLLOW_XOR_in_synpred66_tftacflattener654 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_otherthanxor_in_synpred66_tftacflattener656 = new BitSet(new long[]{0x00000000000063F8L});
-    public static final BitSet FOLLOW_XOR_in_synpred66_tftacflattener660 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_tdnf_in_synpred66_tftacflattener662 = new BitSet(new long[]{0x00000000000063F8L});
-    public static final BitSet FOLLOW_XOR_in_synpred70_tftacflattener686 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_otherthanxor_in_synpred70_tftacflattener688 = new BitSet(new long[]{0x00000000000063F8L});
-    public static final BitSet FOLLOW_XOR_in_synpred70_tftacflattener692 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_tdnf_in_synpred70_tftacflattener694 = new BitSet(new long[]{0x00000000000063F8L});
-    public static final BitSet FOLLOW_tdnf_in_synpred70_tftacflattener698 = new BitSet(new long[]{0x00000000000063F8L});
+    public static final BitSet FOLLOW_PAND_in_pandterm115 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_PAND_in_pandterm118 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_tdnf_in_pandterm120 = new BitSet(new long[]{0x00000000000073F8L});
+    public static final BitSet FOLLOW_tdnf_in_pandterm124 = new BitSet(new long[]{0x00000000000073F8L});
+    public static final BitSet FOLLOW_PAND_in_pandterm144 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_tdnf_in_pandterm146 = new BitSet(new long[]{0x00000000000073F8L});
+    public static final BitSet FOLLOW_nestand_in_nestedterm160 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_nestor_in_nestedterm164 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_nestxor_in_nestedterm168 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_nestsand_in_nestedterm172 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_nestor_in_otherthanand183 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_nestxor_in_otherthanand187 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_nestsand_in_otherthanand191 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_atom_in_otherthanand195 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_pandterm_in_otherthanand199 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_nestand_in_otherthanor210 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_nestxor_in_otherthanor214 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_nestsand_in_otherthanor218 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_atom_in_otherthanor222 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_pandterm_in_otherthanor226 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_negatedterm_in_otherthanor230 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_nestand_in_otherthanxor240 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_nestor_in_otherthanxor244 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_nestsand_in_otherthanxor248 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_atom_in_otherthanxor252 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_pandterm_in_otherthanxor256 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_negatedterm_in_otherthanxor260 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_nestand_in_otherthansand270 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_nestor_in_otherthansand274 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_nestxor_in_otherthansand278 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_atom_in_otherthansand282 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_pandterm_in_otherthansand286 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_negatedterm_in_otherthansand290 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_AND_in_nestand300 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_AND_in_nestand303 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_tdnf_in_nestand305 = new BitSet(new long[]{0x00000000000073F8L});
+    public static final BitSet FOLLOW_tdnf_in_nestand309 = new BitSet(new long[]{0x00000000000073F8L});
+    public static final BitSet FOLLOW_AND_in_nestand329 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_otherthanand_in_nestand331 = new BitSet(new long[]{0x00000000000063F0L});
+    public static final BitSet FOLLOW_AND_in_nestand335 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_tdnf_in_nestand337 = new BitSet(new long[]{0x00000000000073F8L});
+    public static final BitSet FOLLOW_AND_in_nestand361 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_otherthanand_in_nestand363 = new BitSet(new long[]{0x00000000000063F0L});
+    public static final BitSet FOLLOW_AND_in_nestand367 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_tdnf_in_nestand369 = new BitSet(new long[]{0x00000000000073F8L});
+    public static final BitSet FOLLOW_tdnf_in_nestand373 = new BitSet(new long[]{0x00000000000073F8L});
+    public static final BitSet FOLLOW_AND_in_nestand396 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_tdnf_in_nestand398 = new BitSet(new long[]{0x00000000000073F8L});
+    public static final BitSet FOLLOW_SAND_in_nestsand411 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_SAND_in_nestsand414 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_tdnf_in_nestsand416 = new BitSet(new long[]{0x00000000000073F8L});
+    public static final BitSet FOLLOW_tdnf_in_nestsand420 = new BitSet(new long[]{0x00000000000073F8L});
+    public static final BitSet FOLLOW_SAND_in_nestsand440 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_otherthansand_in_nestsand442 = new BitSet(new long[]{0x00000000000073F8L});
+    public static final BitSet FOLLOW_SAND_in_nestsand446 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_tdnf_in_nestsand448 = new BitSet(new long[]{0x00000000000073F8L});
+    public static final BitSet FOLLOW_SAND_in_nestsand472 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_otherthansand_in_nestsand474 = new BitSet(new long[]{0x00000000000073F8L});
+    public static final BitSet FOLLOW_SAND_in_nestsand478 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_tdnf_in_nestsand480 = new BitSet(new long[]{0x00000000000073F8L});
+    public static final BitSet FOLLOW_tdnf_in_nestsand484 = new BitSet(new long[]{0x00000000000073F8L});
+    public static final BitSet FOLLOW_SAND_in_nestsand507 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_tdnf_in_nestsand509 = new BitSet(new long[]{0x00000000000073F8L});
+    public static final BitSet FOLLOW_OR_in_nestor523 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_OR_in_nestor526 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_tdnf_in_nestor528 = new BitSet(new long[]{0x00000000000073F8L});
+    public static final BitSet FOLLOW_tdnf_in_nestor532 = new BitSet(new long[]{0x00000000000073F8L});
+    public static final BitSet FOLLOW_OR_in_nestor552 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_otherthanor_in_nestor554 = new BitSet(new long[]{0x00000000000073F8L});
+    public static final BitSet FOLLOW_OR_in_nestor558 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_tdnf_in_nestor560 = new BitSet(new long[]{0x00000000000073F8L});
+    public static final BitSet FOLLOW_OR_in_nestor584 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_otherthanor_in_nestor586 = new BitSet(new long[]{0x00000000000073F8L});
+    public static final BitSet FOLLOW_OR_in_nestor590 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_tdnf_in_nestor592 = new BitSet(new long[]{0x00000000000073F8L});
+    public static final BitSet FOLLOW_tdnf_in_nestor596 = new BitSet(new long[]{0x00000000000073F8L});
+    public static final BitSet FOLLOW_OR_in_nestor619 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_tdnf_in_nestor621 = new BitSet(new long[]{0x00000000000073F8L});
+    public static final BitSet FOLLOW_XOR_in_nestxor640 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_XOR_in_nestxor643 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_tdnf_in_nestxor645 = new BitSet(new long[]{0x00000000000073F8L});
+    public static final BitSet FOLLOW_tdnf_in_nestxor649 = new BitSet(new long[]{0x00000000000073F8L});
+    public static final BitSet FOLLOW_XOR_in_nestxor669 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_otherthanxor_in_nestxor671 = new BitSet(new long[]{0x00000000000073F8L});
+    public static final BitSet FOLLOW_XOR_in_nestxor675 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_tdnf_in_nestxor677 = new BitSet(new long[]{0x00000000000073F8L});
+    public static final BitSet FOLLOW_XOR_in_nestxor701 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_otherthanxor_in_nestxor703 = new BitSet(new long[]{0x00000000000073F8L});
+    public static final BitSet FOLLOW_XOR_in_nestxor707 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_tdnf_in_nestxor709 = new BitSet(new long[]{0x00000000000073F8L});
+    public static final BitSet FOLLOW_tdnf_in_nestxor713 = new BitSet(new long[]{0x00000000000073F8L});
+    public static final BitSet FOLLOW_XOR_in_nestxor736 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_tdnf_in_nestxor738 = new BitSet(new long[]{0x00000000000073F8L});
+    public static final BitSet FOLLOW_NOT_in_negatedterm754 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_ID_in_negatedterm756 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_AND_in_negatedterm763 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_negatedterm_in_negatedterm765 = new BitSet(new long[]{0x00000000000073F8L});
+    public static final BitSet FOLLOW_nestedterm_in_synpred1_tftacflattener65 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_PAND_in_synpred8_tftacflattener115 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_PAND_in_synpred8_tftacflattener118 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_tdnf_in_synpred8_tftacflattener120 = new BitSet(new long[]{0x00000000000073F8L});
+    public static final BitSet FOLLOW_tdnf_in_synpred8_tftacflattener124 = new BitSet(new long[]{0x00000000000073F8L});
+    public static final BitSet FOLLOW_nestand_in_synpred17_tftacflattener210 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_nestand_in_synpred22_tftacflattener240 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_nestand_in_synpred27_tftacflattener270 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_AND_in_synpred34_tftacflattener300 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_AND_in_synpred34_tftacflattener303 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_tdnf_in_synpred34_tftacflattener305 = new BitSet(new long[]{0x00000000000073F8L});
+    public static final BitSet FOLLOW_tdnf_in_synpred34_tftacflattener309 = new BitSet(new long[]{0x00000000000073F8L});
+    public static final BitSet FOLLOW_AND_in_synpred37_tftacflattener329 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_otherthanand_in_synpred37_tftacflattener331 = new BitSet(new long[]{0x00000000000063F0L});
+    public static final BitSet FOLLOW_AND_in_synpred37_tftacflattener335 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_tdnf_in_synpred37_tftacflattener337 = new BitSet(new long[]{0x00000000000073F8L});
+    public static final BitSet FOLLOW_AND_in_synpred41_tftacflattener361 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_otherthanand_in_synpred41_tftacflattener363 = new BitSet(new long[]{0x00000000000063F0L});
+    public static final BitSet FOLLOW_AND_in_synpred41_tftacflattener367 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_tdnf_in_synpred41_tftacflattener369 = new BitSet(new long[]{0x00000000000073F8L});
+    public static final BitSet FOLLOW_tdnf_in_synpred41_tftacflattener373 = new BitSet(new long[]{0x00000000000073F8L});
+    public static final BitSet FOLLOW_SAND_in_synpred45_tftacflattener411 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_SAND_in_synpred45_tftacflattener414 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_tdnf_in_synpred45_tftacflattener416 = new BitSet(new long[]{0x00000000000073F8L});
+    public static final BitSet FOLLOW_tdnf_in_synpred45_tftacflattener420 = new BitSet(new long[]{0x00000000000073F8L});
+    public static final BitSet FOLLOW_SAND_in_synpred48_tftacflattener440 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_otherthansand_in_synpred48_tftacflattener442 = new BitSet(new long[]{0x00000000000073F8L});
+    public static final BitSet FOLLOW_SAND_in_synpred48_tftacflattener446 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_tdnf_in_synpred48_tftacflattener448 = new BitSet(new long[]{0x00000000000073F8L});
+    public static final BitSet FOLLOW_SAND_in_synpred52_tftacflattener472 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_otherthansand_in_synpred52_tftacflattener474 = new BitSet(new long[]{0x00000000000073F8L});
+    public static final BitSet FOLLOW_SAND_in_synpred52_tftacflattener478 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_tdnf_in_synpred52_tftacflattener480 = new BitSet(new long[]{0x00000000000073F8L});
+    public static final BitSet FOLLOW_tdnf_in_synpred52_tftacflattener484 = new BitSet(new long[]{0x00000000000073F8L});
+    public static final BitSet FOLLOW_OR_in_synpred56_tftacflattener523 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_OR_in_synpred56_tftacflattener526 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_tdnf_in_synpred56_tftacflattener528 = new BitSet(new long[]{0x00000000000073F8L});
+    public static final BitSet FOLLOW_tdnf_in_synpred56_tftacflattener532 = new BitSet(new long[]{0x00000000000073F8L});
+    public static final BitSet FOLLOW_OR_in_synpred59_tftacflattener552 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_otherthanor_in_synpred59_tftacflattener554 = new BitSet(new long[]{0x00000000000073F8L});
+    public static final BitSet FOLLOW_OR_in_synpred59_tftacflattener558 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_tdnf_in_synpred59_tftacflattener560 = new BitSet(new long[]{0x00000000000073F8L});
+    public static final BitSet FOLLOW_OR_in_synpred63_tftacflattener584 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_otherthanor_in_synpred63_tftacflattener586 = new BitSet(new long[]{0x00000000000073F8L});
+    public static final BitSet FOLLOW_OR_in_synpred63_tftacflattener590 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_tdnf_in_synpred63_tftacflattener592 = new BitSet(new long[]{0x00000000000073F8L});
+    public static final BitSet FOLLOW_tdnf_in_synpred63_tftacflattener596 = new BitSet(new long[]{0x00000000000073F8L});
+    public static final BitSet FOLLOW_XOR_in_synpred67_tftacflattener640 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_XOR_in_synpred67_tftacflattener643 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_tdnf_in_synpred67_tftacflattener645 = new BitSet(new long[]{0x00000000000073F8L});
+    public static final BitSet FOLLOW_tdnf_in_synpred67_tftacflattener649 = new BitSet(new long[]{0x00000000000073F8L});
+    public static final BitSet FOLLOW_XOR_in_synpred70_tftacflattener669 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_otherthanxor_in_synpred70_tftacflattener671 = new BitSet(new long[]{0x00000000000073F8L});
+    public static final BitSet FOLLOW_XOR_in_synpred70_tftacflattener675 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_tdnf_in_synpred70_tftacflattener677 = new BitSet(new long[]{0x00000000000073F8L});
+    public static final BitSet FOLLOW_XOR_in_synpred74_tftacflattener701 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_otherthanxor_in_synpred74_tftacflattener703 = new BitSet(new long[]{0x00000000000073F8L});
+    public static final BitSet FOLLOW_XOR_in_synpred74_tftacflattener707 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_tdnf_in_synpred74_tftacflattener709 = new BitSet(new long[]{0x00000000000073F8L});
+    public static final BitSet FOLLOW_tdnf_in_synpred74_tftacflattener713 = new BitSet(new long[]{0x00000000000073F8L});
 
 }
