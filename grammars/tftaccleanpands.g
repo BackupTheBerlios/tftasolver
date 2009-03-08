@@ -48,7 +48,9 @@ expression
 	|	^(PAND   FALSE) -> FALSE
 	|   	^(PAND  (a+=expression)*)
 	|	^(AND   negterm+ FALSE) -> FALSE
+	|	^(AND   FALSE) -> FALSE
 	|  	^(AND   (a+=expression)*)
+	|	^(SAND   FALSE) -> FALSE
 	|	^(SAND  (a+=expression)*)
 	|   	^(NOT   c=expression) 
 	|   	ID	

@@ -45,59 +45,40 @@ HashMap memory = new HashMap();
 
 StringTemplate query = new StringTemplate("\$b; separator=\";\"\$");
 
-List valuelist = new ArrayList();
+List valuelistPAND = new ArrayList();
+List valuelistAND  = new ArrayList();
 
 }
 
 expression
-	:	^(OR    (a+=expression)*)
-	|   	^(XOR   (a+=expression)*)
-	|  	^(AND   (a+=expression)*)
-			{
-				int listsize = $a.size();
-				for ( int i = 0; i<= listsize -1; i++ )
-				{
-					valuelist.add($a.get(i).toString());
-				}	
-			} 
-	|	^(SAND   (a+=expression)*)
-			{
-				int listsize = $a.size();
-				for ( int i = 0; i<= listsize -1; i++ )
-				{
-					valuelist.add($a.get(i).toString());
-				}	
-			} 
-	|   	^(NOT  (a+=expression)*)
-			{
-				int listsize = $a.size();
-				for ( int i = 0; i<= listsize -1; i++ )
-				{
-					valuelist.add($a.get(i).toString());
-				}	
-			}  
-	|   	ID	
+	:   	ID	
 	|	TRUE	
 	|	FALSE	
-	|	^(PAND (a+=expression)*)  
+	|	^(OR    {
+				valuelistPAND.clear();	
+				valuelistAND.clear();	
+			}
+			 expression+)
+			
+	|   	^(XOR   {
+				valuelistPAND.clear();	
+				valuelistAND.clear();	
+			}
+			 expression+)
+	|	^(SAND  {
+				valuelistPAND.clear();	
+				valuelistAND.clear();	
+			}
+			 expression+)
+	|  	^(AND   (a+=andexpression)*)
 			{
 				// add the "real" events to the list (not the ones characterizing the operators!)
-				int listsize = $a.size();
-				
-				for ( int i = 0; i<= listsize -1; i++ )
-				{
-					if ( !( $a.get(i).toString().equals("SAND") || $a.get(i).toString().equals("AND") ) )
-					{
-						valuelist.add($a.get(i).toString());
-					}
-				}
-				// now check for duplicates
-				listsize = valuelist.size();
+				int listsize = valuelistAND.size();
 				for ( int i = 0; i < listsize-1; i++ )            // last element of list need not be checked 
   				{
   					for ( int j = i+1; j < listsize; j++ )
   					{
-	  					if ( valuelist.get(i).equals(valuelist.get(j)) )
+	  					if ( valuelistAND.get(i).equals(valuelistAND.get(j)) )
 	  					{	  						
 	  						$a.clear();
 	  						$a.add((Object)adaptor.create(FALSE, "FALSE"));
@@ -105,9 +86,50 @@ expression
 	  					}
 	  				}
 				}
-				valuelist.clear();			
+				valuelistAND.clear();	
 			} 
-			-> ^(PAND $a+)
+			->	^(AND $a+)
+//
+//	
+	|	^(PAND (c+=pandexpression)*)  
+			{
+				// add the "real" events to the list (not the ones characterizing the operators!)
+				int listsize = valuelistPAND.size();
+				for ( int i = 0; i < listsize-1; i++ )            // last element of list need not be checked 
+  				{
+  					for ( int j = i+1; j < listsize; j++ )
+  					{
+	  					if ( valuelistPAND.get(i).equals(valuelistPAND.get(j)) )
+	  					{	  						
+	  						$c.clear();
+	  						$c.add((Object)adaptor.create(FALSE, "FALSE"));
+	  						listsize = 0;
+	  					}
+	  				}
+				}
+				valuelistPAND.clear();			
+			} 
+			-> ^(PAND $c+)
    	;
 
+pandexpression
+	:	x=ID	{
+				valuelistPAND.add($x.toString());
+			}	
+	|	TRUE	
+	|	FALSE
+	|	^(AND   pandexpression+)
+	|	^(SAND  pandexpression+)
+	;
 
+andexpression
+	:	x=ID	{
+				valuelistAND.add($x.toString());
+			}	
+	|	TRUE	
+	|	FALSE
+	|	^(AND   andexpression+)
+	|	^(SAND  andexpression+)
+	|	^(PAND  andexpression+)
+	|	^(NOT   andexpression)
+	;
