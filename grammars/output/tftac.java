@@ -34,7 +34,7 @@ public class tftac {
         CharStream input = null;
 	// for the following, the defaults are shown.
 	boolean statusSilent = false; // (not) show the short description of tftac program
-	boolean statusPure   = false; // (not) show the intermediate transformation steps
+	boolean statusPure   = true ; // (not) show the intermediate transformation steps
 	boolean statusSAND   = false; // (not) remove SANDs from result
 	boolean statusFlat   = false; // (not) flatten the results (= untangle nested terms)
 	boolean statusEXPAND = true; // (not) expand all ANDs
@@ -55,7 +55,7 @@ public class tftac {
 		}
 		for ( int i = 0; i < args.length; i++ ) 
 		{ 
- 			if (args[i].equals("-p") || args[i].equals("--pure")) { statusPure = true; } 
+ 			if (args[i].equals("-p") || args[i].equals("--pure")) { statusPure = false; } 
 		}
 		for ( int i = 0; i < args.length; i++ ) 
 		{ 	// ATTENTION: changed default from "not expanded to expanded due to errors in tftacrules... (tbd)
@@ -86,8 +86,12 @@ public class tftac {
 				System.out.println("|                                                                            |"); 
 				System.out.println("| Command line options:                                                      |");
 				System.out.println("| -h | --help | -?      show this help screen                                |");  
-				System.out.println("| -p | --pure           do not show intermediate results of transformations  |");
-				System.out.println("| -s | --silent         do not show copyright message at program start       |");  
+				System.out.println("| -p | --pure           do show intermediate results of transformations      |");
+				System.out.println("| -s | --silent         do not show copyright message at program start       |"); 
+				System.out.println("| -w | --withSAND       do show terms containing SANDs                       |");  
+				System.out.println("|      --noflat         do not flatten nested terms (eg. \"AND (AND ...) ... \") |"); 
+				System.out.println("| -e | --expand         do not expand all AND terms (currently buggy!)       |");
+				System.out.println("| -m | --nomultiline    do not print each event sequence in own line         |");  
 				System.out.println("------------------------------------------------------------------------------");
 				System.exit(0); 
 			} 
