@@ -22,7 +22,7 @@
     along with TFTASolver.  If not, see <http://www.gnu.org/licenses/>.
 
   ############################################################################ */
-tree grammar tftaccleanpands;
+tree grammar tftacFALSEremover;
 
 options {      
  tokenVocab=tftac; 
@@ -43,19 +43,49 @@ HashMap memory = new HashMap();
 
 expression
 	:	FALSE
-	|	^(OR    (a+=expression)*)
-	|   	^(XOR   (a+=expression)*)
-	|	^(PAND   FALSE) -> FALSE
-	|   	^(PAND  (a+=expression)*)
-	|	^(AND   negterm+ FALSE) -> FALSE
-	|  	^(AND   (a+=expression)*)
-	|	^(SAND  (a+=expression)*)
-	|   	^(NOT   c=expression) 
+	|	^(OR	FALSE)	->	FALSE
+	|	^(XOR	FALSE)	->	FALSE
+	|	^(OR    (targets+=expression)* )
+			{
+				int listsize = $targets.size();
+				
+				for ( int i = 0; i<= listsize -1; i++ )
+				{
+					if ( $targets.get(i).toString().equals("FALSE") )
+					{
+						$targets.remove(i);
+						listsize--;
+					}
+				}
+				if ( $targets.size()==0 )
+				{
+					$targets.add((Object)adaptor.create(FALSE, "FALSE"));
+				}
+			}   
+			->	^(OR $targets+)
+	|   	^(XOR   (targets+=expression)* )
+			{
+				int listsize = $targets.size();
+				
+				for ( int i = 0; i<= listsize -1; i++ )
+				{
+					if ( $targets.get(i).toString().equals("FALSE") )
+					{
+						$targets.remove(i);
+						listsize--;
+					}
+				}
+				if ( $targets.size()==0 )
+				{
+					$targets.add((Object)adaptor.create(FALSE, "FALSE"));
+				}
+			} 
+			->	^(XOR $targets+)
+	|   	^(PAND  expression+)
+	|  	^(AND   expression+)
+	|	^(SAND  expression+)
+	|   	^(NOT   expression+) 
 	|   	ID	
 	|	TRUE		
    	;	 
-   	
-negterm	:	^(NOT ID)
-	;
-
 

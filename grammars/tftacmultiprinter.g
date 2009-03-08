@@ -31,9 +31,10 @@ options {
 }
 
 infixform
-	:   	^(OR (targets+=infixform)*)   
+	:	FALSE	-> {%{"FALSE"}}	
+	|	^(OR (targets+=infixform)*) 
 			-> template(b={$targets}) <<<b; separator="\n" > >>
-	|   	^(XOR (targets+=infixform)*)   
+	|   	^(XOR (targets+=infixform)*)  
 			-> template(b={$targets}) <<<b; separator="\n" > >>
 	|	^(PAND (targets+=infixform)*)   
 			-> template(b={$targets}) <<(<b; separator=" PAND ">)>>
@@ -45,5 +46,4 @@ infixform
 			-> template(a={$a.st}) "NOT <a>"
     	|   	ID	-> template(a={$ID.text}) "<a>"
 	|	TRUE	-> {%{"TRUE"}}
-	|	FALSE	-> {%{"FALSE"}}		
-    	;
+	;

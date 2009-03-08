@@ -257,17 +257,66 @@ public class tftac {
 	nodes = new CommonTreeNodeStream((Tree)plausiresult.tree);
 	nodes.setTokenStream(tokens);
 
+	// REMOVE ALL THE PAND TERMS WHICH RESULTED TO FALSE
+	oldExpr = "";
+	newExpr = "";
+	loopNr = 0;	
+	nodes.setTokenStream(tokens);
 	tftaccleanpands cleanpandform = new tftaccleanpands(nodes);
-	tftaccleanpands.expression_return cleanpandresult = cleanpandform.expression();
+        tftaccleanpands.expression_return cleanpandresult = cleanpandform.expression();
+	newExpr = ((Tree)cleanpandresult.tree).toStringTree();	
+
+	do {	
+		loopNr = loopNr + 1;		
+		oldExpr = newExpr;
+		if (!statusPure) {
+			System.out.println(String.valueOf(loopNr)+": "+newExpr);
+		}
+		nodes = new CommonTreeNodeStream((Tree)cleanpandresult.tree);
+		nodes.setTokenStream(tokens);
+		cleanpandform = new tftaccleanpands(nodes);
+		cleanpandresult = cleanpandform.expression();
+		newExpr = ((Tree)cleanpandresult.tree).toStringTree();	
+	} while ( !( oldExpr.equals( newExpr ) ) );
+
 	nodes = new CommonTreeNodeStream((Tree)cleanpandresult.tree);
+	nodes.setTokenStream(tokens);
 	
-	newExpr = ((Tree)cleanpandresult.tree).toStringTree();
 	if (!statusPure) {
 		System.out.println("(6) NO FALSE PANDs\n"+newExpr);
 		System.out.println("");
 	}
 
+	// REMOVE ALL FALSE TERMS FROM OR / XOR 
+	oldExpr = "";
+	newExpr = "";
+	loopNr = 0;	
 	nodes.setTokenStream(tokens);
+	tftacFALSEremover nofalseform = new tftacFALSEremover(nodes);
+        tftacFALSEremover.expression_return nofalseresult = nofalseform.expression();
+	newExpr = ((Tree)nofalseresult.tree).toStringTree();	
+
+	do {	
+		loopNr = loopNr + 1;		
+		oldExpr = newExpr;
+		if (!statusPure) {
+			System.out.println(String.valueOf(loopNr)+": "+newExpr);
+		}
+		nodes = new CommonTreeNodeStream((Tree)nofalseresult.tree);
+		nodes.setTokenStream(tokens);
+		nofalseform = new tftacFALSEremover(nodes);
+		nofalseresult = nofalseform.expression();
+		newExpr = ((Tree)nofalseresult.tree).toStringTree();	
+	} while ( !( oldExpr.equals( newExpr ) ) );
+
+	nodes = new CommonTreeNodeStream((Tree)nofalseresult.tree);
+	nodes.setTokenStream(tokens);
+	
+	if (!statusPure) {
+		System.out.println("(7) NO FALSEs in OR / XOR\n"+newExpr);
+		System.out.println("");
+	}
+
 	
 	// CONVERT BACK TO INFIX-FORM
 	// if "-m" option is not set (default) , then output is multiline with breaks at every OR or XOR

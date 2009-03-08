@@ -1,4 +1,4 @@
-// $ANTLR 3.1.1 /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g 2009-03-07 11:57:40
+// $ANTLR 3.1.1 /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g 2009-03-08 15:27:01
 
 import java.util.HashMap;
 
@@ -660,7 +660,7 @@ public class tftacrules extends TreeParser {
 
 
                     // AST REWRITE
-                    // elements: NOT, y, NOT, x
+                    // elements: NOT, NOT, x, y
                     // token labels: 
                     // rule labels: retval, y, x
                     // token list labels: 
@@ -756,7 +756,7 @@ public class tftacrules extends TreeParser {
 
 
                     // AST REWRITE
-                    // elements: y, NOT, x, NOT
+                    // elements: NOT, NOT, x, y
                     // token labels: 
                     // rule labels: retval, y, x
                     // token list labels: 
@@ -852,7 +852,7 @@ public class tftacrules extends TreeParser {
 
 
                     // AST REWRITE
-                    // elements: y, y, y, NOT, NOT, x, x, PAND, NOT, NOT, y, x, x, y, x
+                    // elements: y, x, y, NOT, x, PAND, NOT, NOT, x, y, x, NOT, y, x, y
                     // token labels: 
                     // rule labels: retval, y, x
                     // token list labels: 
@@ -1036,7 +1036,7 @@ public class tftacrules extends TreeParser {
 
 
                     // AST REWRITE
-                    // elements: NOT, y, x, NOT, y, x, y, NOT, NOT, x, x, y, y, x
+                    // elements: NOT, y, x, y, x, NOT, x, NOT, y, y, y, x, NOT, x
                     // token labels: 
                     // rule labels: retval, y, x
                     // token list labels: 
@@ -1699,7 +1699,7 @@ public class tftacrules extends TreeParser {
 
 
                     // AST REWRITE
-                    // elements: AND, z, z, XOR, y, AND, x
+                    // elements: XOR, z, y, x, AND, AND, z
                     // token labels: 
                     // rule labels: retval, z, y, x
                     // token list labels: 
@@ -1805,7 +1805,7 @@ public class tftacrules extends TreeParser {
 
 
                     // AST REWRITE
-                    // elements: AND, AND, OR, z, x, y, z
+                    // elements: y, z, x, z, OR, AND, AND
                     // token labels: 
                     // rule labels: retval, z, y, x
                     // token list labels: 
@@ -1911,7 +1911,7 @@ public class tftacrules extends TreeParser {
 
 
                     // AST REWRITE
-                    // elements: OR, y, z, x, z, AND, AND
+                    // elements: z, AND, x, y, z, AND, OR
                     // token labels: 
                     // rule labels: retval, z, y, x
                     // token list labels: 
@@ -2017,7 +2017,7 @@ public class tftacrules extends TreeParser {
 
 
                     // AST REWRITE
-                    // elements: m1, AND, n1, n1, m1, m1, AND, n1, z, z, z
+                    // elements: m1, z, m1, n1, z, z, m1, n1, AND, AND, n1
                     // token labels: 
                     // rule labels: n1, retval, m1, z
                     // token list labels: 
@@ -2180,7 +2180,7 @@ public class tftacrules extends TreeParser {
 
 
                     // AST REWRITE
-                    // elements: y, x, x, y, x, y
+                    // elements: y, x, y, x, x, y
                     // token labels: 
                     // rule labels: retval, y, x
                     // token list labels: 
@@ -2635,7 +2635,7 @@ public class tftacrules extends TreeParser {
 
 
                     // AST REWRITE
-                    // elements: z1, OR, z1, x, y, AND, AND
+                    // elements: z1, AND, x, y, z1, OR, AND
                     // token labels: 
                     // rule labels: retval, z1, y, x
                     // token list labels: 
@@ -2741,7 +2741,7 @@ public class tftacrules extends TreeParser {
 
 
                     // AST REWRITE
-                    // elements: z1, y, z1, AND, XOR, AND, x
+                    // elements: AND, y, AND, x, XOR, z1, z1
                     // token labels: 
                     // rule labels: retval, z1, y, x
                     // token list labels: 
@@ -2847,7 +2847,7 @@ public class tftacrules extends TreeParser {
 
 
                     // AST REWRITE
-                    // elements: y, x, AND, AND, z2, OR, z2
+                    // elements: x, z2, AND, y, AND, z2, OR
                     // token labels: 
                     // rule labels: retval, z2, y, x
                     // token list labels: 
@@ -2953,7 +2953,7 @@ public class tftacrules extends TreeParser {
 
 
                     // AST REWRITE
-                    // elements: z2, x, XOR, AND, AND, z2, y
+                    // elements: AND, y, z2, XOR, AND, z2, x
                     // token labels: 
                     // rule labels: retval, z2, y, x
                     // token list labels: 
@@ -3059,7 +3059,7 @@ public class tftacrules extends TreeParser {
 
 
                     // AST REWRITE
-                    // elements: OR, z3, x, z3, AND, AND, y
+                    // elements: z3, x, y, AND, z3, AND, OR
                     // token labels: 
                     // rule labels: retval, z3, y, x
                     // token list labels: 
@@ -3165,7 +3165,7 @@ public class tftacrules extends TreeParser {
 
 
                     // AST REWRITE
-                    // elements: AND, XOR, z3, x, y, z3, AND
+                    // elements: XOR, z3, z3, x, AND, y, AND
                     // token labels: 
                     // rule labels: retval, z3, y, x
                     // token list labels: 
@@ -3271,7 +3271,7 @@ public class tftacrules extends TreeParser {
 
 
                     // AST REWRITE
-                    // elements: t2, t1, AND, AND, n1, OR, n1
+                    // elements: AND, n1, t2, OR, n1, t1, AND
                     // token labels: 
                     // rule labels: n1, t2, retval, t1
                     // token list labels: 
@@ -3377,7 +3377,7 @@ public class tftacrules extends TreeParser {
 
 
                     // AST REWRITE
-                    // elements: AND, t1, AND, n1, n1, t2, XOR
+                    // elements: XOR, AND, n1, t1, t2, AND, n1
                     // token labels: 
                     // rule labels: n1, t2, retval, t1
                     // token list labels: 
@@ -3483,7 +3483,7 @@ public class tftacrules extends TreeParser {
 
 
                     // AST REWRITE
-                    // elements: m1, n1, n2, AND, AND
+                    // elements: AND, n1, AND, n2, m1
                     // token labels: 
                     // rule labels: n1, retval, n2, m1
                     // token list labels: 
@@ -4557,7 +4557,7 @@ public class tftacrules extends TreeParser {
     };
 
     // $ANTLR start "pandterm"
-    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:157:1: pandterm : ( ^( PAND ae FALSE ) -> FALSE | ^( PAND FALSE . ) -> FALSE | ^( PAND ae TRUE ) -> FALSE | ^( PAND TRUE a= ae ) -> $a | ^( PAND ^( XOR x= tt y= tt ) z= tt ) -> ^( XOR ^( PAND $x $z) ^( PAND $y $z) ) | ^( PAND z= tt ^( XOR x= tt y= tt ) ) -> ^( XOR ^( PAND $z $x) ^( PAND $z $y) ) | ^( PAND ^( OR x= tt y= tt ) z= tt ) -> ^( OR ^( PAND $x $z) ^( PAND $y $z) ) | ^( PAND z= tt ^( OR x= tt y= tt ) ) -> ^( XOR ^( XOR ^( AND ^( NOT $x) ^( PAND $z $y) ) ^( AND ^( NOT $y) ^( PAND $z $x) ) ) ^( PAND $x ^( SAND $y $z) ) ) | ^( PAND z= tt ^( PAND x= tt y= tt ) ) -> ^( PAND ^( AND $x $z) $y) | ^( PAND x= tt ^( AND b= notterm z= tt ) ) -> ^( AND $b ^( PAND $x $z) ) | ^( PAND ^( AND n1= notterm m1= metaPandSandAE ) z= tt ) -> ^( XOR ^( XOR ^( PAND ^( PAND $m1 ^( NOT $n1) ) $z) ^( AND $n1 ^( PAND $m1 $z) ) ) ^( PAND $m1 ^( SAND ^( NOT $n1) $z) ) ) | ^( PAND tt tt ) );
+    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:157:1: pandterm : ( ^( PAND ae FALSE ) -> FALSE | ^( PAND FALSE . ) -> FALSE | ^( PAND ae TRUE ) -> FALSE | ^( PAND TRUE a= ae ) -> $a | ^( PAND ^( XOR x= tt y= tt ) z= tt ) -> ^( XOR ^( PAND $x $z) ^( PAND $y $z) ) | ^( PAND z= tt ^( XOR x= tt y= tt ) ) -> ^( XOR ^( PAND $z $x) ^( PAND $z $y) ) | ^( PAND ^( OR x= tt y= tt ) z= tt ) -> ^( OR ^( PAND $x $z) ^( PAND $y $z) ) | ^( PAND z= tt ^( OR x= tt y= tt ) ) -> ^( XOR ^( XOR ^( AND ^( NOT $x) ^( PAND $z $y) ) ^( AND ^( NOT $y) ^( PAND $z $x) ) ) ^( PAND $z ^( SAND $x $y) ) ) | ^( PAND z= tt ^( PAND x= tt y= tt ) ) -> ^( PAND ^( AND $x $z) $y) | ^( PAND x= tt ^( AND b= notterm z= tt ) ) -> ^( AND $b ^( PAND $x $z) ) | ^( PAND ^( AND n1= notterm m1= metaPandSandAE ) z= tt ) -> ^( XOR ^( XOR ^( PAND ^( PAND $m1 ^( NOT $n1) ) $z) ^( AND $n1 ^( PAND $m1 $z) ) ) ^( PAND $m1 ^( SAND ^( NOT $n1) $z) ) ) | ^( PAND tt tt ) );
     public final tftacrules.pandterm_return pandterm() throws RecognitionException {
         tftacrules.pandterm_return retval = new tftacrules.pandterm_return();
         retval.start = input.LT(1);
@@ -4650,7 +4650,7 @@ public class tftacrules extends TreeParser {
         RewriteRuleSubtreeStream stream_ae=new RewriteRuleSubtreeStream(adaptor,"rule ae");
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 11) ) { return retval; }
-            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:157:9: ( ^( PAND ae FALSE ) -> FALSE | ^( PAND FALSE . ) -> FALSE | ^( PAND ae TRUE ) -> FALSE | ^( PAND TRUE a= ae ) -> $a | ^( PAND ^( XOR x= tt y= tt ) z= tt ) -> ^( XOR ^( PAND $x $z) ^( PAND $y $z) ) | ^( PAND z= tt ^( XOR x= tt y= tt ) ) -> ^( XOR ^( PAND $z $x) ^( PAND $z $y) ) | ^( PAND ^( OR x= tt y= tt ) z= tt ) -> ^( OR ^( PAND $x $z) ^( PAND $y $z) ) | ^( PAND z= tt ^( OR x= tt y= tt ) ) -> ^( XOR ^( XOR ^( AND ^( NOT $x) ^( PAND $z $y) ) ^( AND ^( NOT $y) ^( PAND $z $x) ) ) ^( PAND $x ^( SAND $y $z) ) ) | ^( PAND z= tt ^( PAND x= tt y= tt ) ) -> ^( PAND ^( AND $x $z) $y) | ^( PAND x= tt ^( AND b= notterm z= tt ) ) -> ^( AND $b ^( PAND $x $z) ) | ^( PAND ^( AND n1= notterm m1= metaPandSandAE ) z= tt ) -> ^( XOR ^( XOR ^( PAND ^( PAND $m1 ^( NOT $n1) ) $z) ^( AND $n1 ^( PAND $m1 $z) ) ) ^( PAND $m1 ^( SAND ^( NOT $n1) $z) ) ) | ^( PAND tt tt ) )
+            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:157:9: ( ^( PAND ae FALSE ) -> FALSE | ^( PAND FALSE . ) -> FALSE | ^( PAND ae TRUE ) -> FALSE | ^( PAND TRUE a= ae ) -> $a | ^( PAND ^( XOR x= tt y= tt ) z= tt ) -> ^( XOR ^( PAND $x $z) ^( PAND $y $z) ) | ^( PAND z= tt ^( XOR x= tt y= tt ) ) -> ^( XOR ^( PAND $z $x) ^( PAND $z $y) ) | ^( PAND ^( OR x= tt y= tt ) z= tt ) -> ^( OR ^( PAND $x $z) ^( PAND $y $z) ) | ^( PAND z= tt ^( OR x= tt y= tt ) ) -> ^( XOR ^( XOR ^( AND ^( NOT $x) ^( PAND $z $y) ) ^( AND ^( NOT $y) ^( PAND $z $x) ) ) ^( PAND $z ^( SAND $x $y) ) ) | ^( PAND z= tt ^( PAND x= tt y= tt ) ) -> ^( PAND ^( AND $x $z) $y) | ^( PAND x= tt ^( AND b= notterm z= tt ) ) -> ^( AND $b ^( PAND $x $z) ) | ^( PAND ^( AND n1= notterm m1= metaPandSandAE ) z= tt ) -> ^( XOR ^( XOR ^( PAND ^( PAND $m1 ^( NOT $n1) ) $z) ^( AND $n1 ^( PAND $m1 $z) ) ) ^( PAND $m1 ^( SAND ^( NOT $n1) $z) ) ) | ^( PAND tt tt ) )
             int alt11=12;
             alt11 = dfa11.predict(input);
             switch (alt11) {
@@ -4911,7 +4911,7 @@ public class tftacrules extends TreeParser {
 
 
                     // AST REWRITE
-                    // elements: PAND, x, z, y, z, XOR, PAND
+                    // elements: PAND, PAND, z, x, z, XOR, y
                     // token labels: 
                     // rule labels: retval, z, y, x
                     // token list labels: 
@@ -5017,7 +5017,7 @@ public class tftacrules extends TreeParser {
 
 
                     // AST REWRITE
-                    // elements: PAND, XOR, PAND, x, z, z, y
+                    // elements: y, z, XOR, PAND, x, z, PAND
                     // token labels: 
                     // rule labels: retval, z, y, x
                     // token list labels: 
@@ -5123,7 +5123,7 @@ public class tftacrules extends TreeParser {
 
 
                     // AST REWRITE
-                    // elements: z, OR, z, y, PAND, x, PAND
+                    // elements: y, OR, x, z, PAND, PAND, z
                     // token labels: 
                     // rule labels: retval, z, y, x
                     // token list labels: 
@@ -5229,7 +5229,7 @@ public class tftacrules extends TreeParser {
 
 
                     // AST REWRITE
-                    // elements: z, z, PAND, x, y, PAND, y, z, y, x, x, PAND
+                    // elements: y, y, PAND, x, x, z, PAND, x, z, z, y, PAND
                     // token labels: 
                     // rule labels: retval, z, y, x
                     // token list labels: 
@@ -5242,9 +5242,9 @@ public class tftacrules extends TreeParser {
                     RewriteRuleSubtreeStream stream_x=new RewriteRuleSubtreeStream(adaptor,"token x",x!=null?x.tree:null);
 
                     root_0 = (Object)adaptor.nil();
-                    // 172:4: -> ^( XOR ^( XOR ^( AND ^( NOT $x) ^( PAND $z $y) ) ^( AND ^( NOT $y) ^( PAND $z $x) ) ) ^( PAND $x ^( SAND $y $z) ) )
+                    // 172:4: -> ^( XOR ^( XOR ^( AND ^( NOT $x) ^( PAND $z $y) ) ^( AND ^( NOT $y) ^( PAND $z $x) ) ) ^( PAND $z ^( SAND $x $y) ) )
                     {
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:172:7: ^( XOR ^( XOR ^( AND ^( NOT $x) ^( PAND $z $y) ) ^( AND ^( NOT $y) ^( PAND $z $x) ) ) ^( PAND $x ^( SAND $y $z) ) )
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:172:7: ^( XOR ^( XOR ^( AND ^( NOT $x) ^( PAND $z $y) ) ^( AND ^( NOT $y) ^( PAND $z $x) ) ) ^( PAND $z ^( SAND $x $y) ) )
                         {
                         Object root_1 = (Object)adaptor.nil();
                         root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(XOR, "XOR"), root_1);
@@ -5311,19 +5311,19 @@ public class tftacrules extends TreeParser {
 
                         adaptor.addChild(root_1, root_2);
                         }
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:172:85: ^( PAND $x ^( SAND $y $z) )
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:172:85: ^( PAND $z ^( SAND $x $y) )
                         {
                         Object root_2 = (Object)adaptor.nil();
                         root_2 = (Object)adaptor.becomeRoot(stream_PAND.nextNode(), root_2);
 
-                        adaptor.addChild(root_2, stream_x.nextTree());
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:172:95: ^( SAND $y $z)
+                        adaptor.addChild(root_2, stream_z.nextTree());
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacrules.g:172:95: ^( SAND $x $y)
                         {
                         Object root_3 = (Object)adaptor.nil();
                         root_3 = (Object)adaptor.becomeRoot((Object)adaptor.create(SAND, "SAND"), root_3);
 
+                        adaptor.addChild(root_3, stream_x.nextTree());
                         adaptor.addChild(root_3, stream_y.nextTree());
-                        adaptor.addChild(root_3, stream_z.nextTree());
 
                         adaptor.addChild(root_2, root_3);
                         }
@@ -5396,7 +5396,7 @@ public class tftacrules extends TreeParser {
 
 
                     // AST REWRITE
-                    // elements: z, y, PAND, x
+                    // elements: y, PAND, x, z
                     // token labels: 
                     // rule labels: retval, z, y, x
                     // token list labels: 
@@ -5493,7 +5493,7 @@ public class tftacrules extends TreeParser {
 
 
                     // AST REWRITE
-                    // elements: b, z, x, AND, PAND
+                    // elements: b, PAND, z, x, AND
                     // token labels: 
                     // rule labels: retval, b, z, x
                     // token list labels: 
@@ -5590,7 +5590,7 @@ public class tftacrules extends TreeParser {
 
 
                     // AST REWRITE
-                    // elements: PAND, PAND, n1, n1, n1, m1, PAND, m1, m1, AND, z, z, PAND, z
+                    // elements: AND, m1, z, n1, z, PAND, n1, z, n1, m1, m1, PAND, PAND, PAND
                     // token labels: 
                     // rule labels: n1, retval, m1, z
                     // token list labels: 
@@ -6170,7 +6170,7 @@ public class tftacrules extends TreeParser {
 
 
                     // AST REWRITE
-                    // elements: SAND, XOR, z, y, SAND, z, x
+                    // elements: y, XOR, z, x, SAND, z, SAND
                     // token labels: 
                     // rule labels: retval, z, y, x
                     // token list labels: 
@@ -6276,7 +6276,7 @@ public class tftacrules extends TreeParser {
 
 
                     // AST REWRITE
-                    // elements: y, SAND, XOR, z, x, SAND, z
+                    // elements: z, y, XOR, z, x, SAND, SAND
                     // token labels: 
                     // rule labels: retval, z, y, x
                     // token list labels: 
@@ -6382,7 +6382,7 @@ public class tftacrules extends TreeParser {
 
 
                     // AST REWRITE
-                    // elements: z, SAND, y, x, SAND, y, z, z, x, x, y, SAND, SAND
+                    // elements: x, x, x, z, SAND, y, y, SAND, y, z, SAND, SAND, z
                     // token labels: 
                     // rule labels: retval, z, y, x
                     // token list labels: 
@@ -6549,7 +6549,7 @@ public class tftacrules extends TreeParser {
 
 
                     // AST REWRITE
-                    // elements: SAND, z, z, x, y, y, x, SAND, x, SAND, z, y, SAND
+                    // elements: y, SAND, z, SAND, z, z, y, x, x, x, SAND, SAND, y
                     // token labels: 
                     // rule labels: retval, z, y, x
                     // token list labels: 
@@ -6716,7 +6716,7 @@ public class tftacrules extends TreeParser {
 
 
                     // AST REWRITE
-                    // elements: PAND, y, x, z, SAND
+                    // elements: z, x, SAND, PAND, y
                     // token labels: 
                     // rule labels: retval, z, y, x
                     // token list labels: 
@@ -6813,7 +6813,7 @@ public class tftacrules extends TreeParser {
 
 
                     // AST REWRITE
-                    // elements: y, x, PAND, z, SAND
+                    // elements: SAND, y, z, PAND, x
                     // token labels: 
                     // rule labels: retval, z, y, x
                     // token list labels: 
@@ -6910,7 +6910,7 @@ public class tftacrules extends TreeParser {
 
 
                     // AST REWRITE
-                    // elements: AND, z, x, a, SAND
+                    // elements: z, SAND, a, AND, x
                     // token labels: 
                     // rule labels: retval, a, z, x
                     // token list labels: 
@@ -7007,7 +7007,7 @@ public class tftacrules extends TreeParser {
 
 
                     // AST REWRITE
-                    // elements: SAND, x, z, AND, a
+                    // elements: AND, z, x, a, SAND
                     // token labels: 
                     // rule labels: retval, a, z, x
                     // token list labels: 
@@ -10325,7 +10325,7 @@ public class tftacrules extends TreeParser {
             this.transition = DFA11_transition;
         }
         public String getDescription() {
-            return "157:1: pandterm : ( ^( PAND ae FALSE ) -> FALSE | ^( PAND FALSE . ) -> FALSE | ^( PAND ae TRUE ) -> FALSE | ^( PAND TRUE a= ae ) -> $a | ^( PAND ^( XOR x= tt y= tt ) z= tt ) -> ^( XOR ^( PAND $x $z) ^( PAND $y $z) ) | ^( PAND z= tt ^( XOR x= tt y= tt ) ) -> ^( XOR ^( PAND $z $x) ^( PAND $z $y) ) | ^( PAND ^( OR x= tt y= tt ) z= tt ) -> ^( OR ^( PAND $x $z) ^( PAND $y $z) ) | ^( PAND z= tt ^( OR x= tt y= tt ) ) -> ^( XOR ^( XOR ^( AND ^( NOT $x) ^( PAND $z $y) ) ^( AND ^( NOT $y) ^( PAND $z $x) ) ) ^( PAND $x ^( SAND $y $z) ) ) | ^( PAND z= tt ^( PAND x= tt y= tt ) ) -> ^( PAND ^( AND $x $z) $y) | ^( PAND x= tt ^( AND b= notterm z= tt ) ) -> ^( AND $b ^( PAND $x $z) ) | ^( PAND ^( AND n1= notterm m1= metaPandSandAE ) z= tt ) -> ^( XOR ^( XOR ^( PAND ^( PAND $m1 ^( NOT $n1) ) $z) ^( AND $n1 ^( PAND $m1 $z) ) ) ^( PAND $m1 ^( SAND ^( NOT $n1) $z) ) ) | ^( PAND tt tt ) );";
+            return "157:1: pandterm : ( ^( PAND ae FALSE ) -> FALSE | ^( PAND FALSE . ) -> FALSE | ^( PAND ae TRUE ) -> FALSE | ^( PAND TRUE a= ae ) -> $a | ^( PAND ^( XOR x= tt y= tt ) z= tt ) -> ^( XOR ^( PAND $x $z) ^( PAND $y $z) ) | ^( PAND z= tt ^( XOR x= tt y= tt ) ) -> ^( XOR ^( PAND $z $x) ^( PAND $z $y) ) | ^( PAND ^( OR x= tt y= tt ) z= tt ) -> ^( OR ^( PAND $x $z) ^( PAND $y $z) ) | ^( PAND z= tt ^( OR x= tt y= tt ) ) -> ^( XOR ^( XOR ^( AND ^( NOT $x) ^( PAND $z $y) ) ^( AND ^( NOT $y) ^( PAND $z $x) ) ) ^( PAND $z ^( SAND $x $y) ) ) | ^( PAND z= tt ^( PAND x= tt y= tt ) ) -> ^( PAND ^( AND $x $z) $y) | ^( PAND x= tt ^( AND b= notterm z= tt ) ) -> ^( AND $b ^( PAND $x $z) ) | ^( PAND ^( AND n1= notterm m1= metaPandSandAE ) z= tt ) -> ^( XOR ^( XOR ^( PAND ^( PAND $m1 ^( NOT $n1) ) $z) ^( AND $n1 ^( PAND $m1 $z) ) ) ^( PAND $m1 ^( SAND ^( NOT $n1) $z) ) ) | ^( PAND tt tt ) );";
         }
         public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
             TreeNodeStream input = (TreeNodeStream)_input;
