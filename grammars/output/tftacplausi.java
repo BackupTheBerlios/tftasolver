@@ -1,4 +1,4 @@
-// $ANTLR 3.1.1 /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacplausi.g 2009-03-08 11:41:45
+// $ANTLR 3.1.1 /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacplausi.g 2009-03-08 15:35:49
 
 import java.util.HashMap;
 import java.util.ArrayList;
@@ -42,7 +42,7 @@ public class tftacplausi extends TreeParser {
         }
         public tftacplausi(TreeNodeStream input, RecognizerSharedState state) {
             super(input, state);
-            this.state.ruleMemo = new HashMap[14+1];
+            this.state.ruleMemo = new HashMap[15+1];
              
              
         }
@@ -75,7 +75,7 @@ public class tftacplausi extends TreeParser {
     };
 
     // $ANTLR start "expression"
-    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacplausi.g:52:1: expression : ( ^( OR (a+= expression )* ) | ^( XOR (a+= expression )* ) | ^( AND (a+= expression )* ) | ^( SAND (a+= expression )* ) | ^( NOT c= expression ) | ID | TRUE | FALSE | ^( PAND (a+= expression )* ) -> ^( PAND ( $a)+ ) );
+    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacplausi.g:52:1: expression : ( ^( OR (a+= expression )* ) | ^( XOR (a+= expression )* ) | ^( AND (a+= expression )* ) | ^( SAND (a+= expression )* ) | ^( NOT (a+= expression )* ) | ID | TRUE | FALSE | ^( PAND (a+= expression )* ) -> ^( PAND ( $a)+ ) );
     public final tftacplausi.expression_return expression() throws RecognitionException {
         tftacplausi.expression_return retval = new tftacplausi.expression_return();
         retval.start = input.LT(1);
@@ -95,8 +95,6 @@ public class tftacplausi extends TreeParser {
         Object FALSE8=null;
         Object PAND9=null;
         List list_a=null;
-        tftacplausi.expression_return c = null;
-
         RuleReturnScope a = null;
         Object OR1_tree=null;
         Object XOR2_tree=null;
@@ -111,63 +109,63 @@ public class tftacplausi extends TreeParser {
         RewriteRuleSubtreeStream stream_expression=new RewriteRuleSubtreeStream(adaptor,"rule expression");
         try {
             if ( state.backtracking>0 && alreadyParsedRule(input, 1) ) { return retval; }
-            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacplausi.g:53:2: ( ^( OR (a+= expression )* ) | ^( XOR (a+= expression )* ) | ^( AND (a+= expression )* ) | ^( SAND (a+= expression )* ) | ^( NOT c= expression ) | ID | TRUE | FALSE | ^( PAND (a+= expression )* ) -> ^( PAND ( $a)+ ) )
-            int alt6=9;
+            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacplausi.g:53:2: ( ^( OR (a+= expression )* ) | ^( XOR (a+= expression )* ) | ^( AND (a+= expression )* ) | ^( SAND (a+= expression )* ) | ^( NOT (a+= expression )* ) | ID | TRUE | FALSE | ^( PAND (a+= expression )* ) -> ^( PAND ( $a)+ ) )
+            int alt7=9;
             switch ( input.LA(1) ) {
             case OR:
                 {
-                alt6=1;
+                alt7=1;
                 }
                 break;
             case XOR:
                 {
-                alt6=2;
+                alt7=2;
                 }
                 break;
             case AND:
                 {
-                alt6=3;
+                alt7=3;
                 }
                 break;
             case SAND:
                 {
-                alt6=4;
+                alt7=4;
                 }
                 break;
             case NOT:
                 {
-                alt6=5;
+                alt7=5;
                 }
                 break;
             case ID:
                 {
-                alt6=6;
+                alt7=6;
                 }
                 break;
             case TRUE:
                 {
-                alt6=7;
+                alt7=7;
                 }
                 break;
             case FALSE:
                 {
-                alt6=8;
+                alt7=8;
                 }
                 break;
             case PAND:
                 {
-                alt6=9;
+                alt7=9;
                 }
                 break;
             default:
                 if (state.backtracking>0) {state.failed=true; return retval;}
                 NoViableAltException nvae =
-                    new NoViableAltException("", 6, 0, input);
+                    new NoViableAltException("", 7, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt6) {
+            switch (alt7) {
                 case 1 :
                     // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacplausi.g:53:4: ^( OR (a+= expression )* )
                     {
@@ -455,7 +453,7 @@ public class tftacplausi extends TreeParser {
                     }
                     break;
                 case 5 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacplausi.g:71:7: ^( NOT c= expression )
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacplausi.g:71:7: ^( NOT (a+= expression )* )
                     {
                     root_0 = (Object)adaptor.nil();
 
@@ -472,91 +470,9 @@ public class tftacplausi extends TreeParser {
                     }
 
 
-                    match(input, Token.DOWN, null); if (state.failed) return retval;
-                    _last = (Object)input.LT(1);
-                    pushFollow(FOLLOW_expression_in_expression154);
-                    c=expression();
-
-                    state._fsp--;
-                    if (state.failed) return retval;
-                    if ( state.backtracking==0 ) 
-                    adaptor.addChild(root_1, c.getTree());
-
-                    match(input, Token.UP, null); if (state.failed) return retval;adaptor.addChild(root_0, root_1);_last = _save_last_1;
-                    }
-
-
-                    if ( state.backtracking==0 ) {
-                    }
-                    }
-                    break;
-                case 6 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacplausi.g:72:7: ID
-                    {
-                    root_0 = (Object)adaptor.nil();
-
-                    _last = (Object)input.LT(1);
-                    ID6=(Object)match(input,ID,FOLLOW_ID_in_expression164); if (state.failed) return retval;
-                    if ( state.backtracking==0 ) {
-                    ID6_tree = (Object)adaptor.dupNode(ID6);
-
-                    adaptor.addChild(root_0, ID6_tree);
-                    }
-
-                    if ( state.backtracking==0 ) {
-                    }
-                    }
-                    break;
-                case 7 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacplausi.g:73:4: TRUE
-                    {
-                    root_0 = (Object)adaptor.nil();
-
-                    _last = (Object)input.LT(1);
-                    TRUE7=(Object)match(input,TRUE,FOLLOW_TRUE_in_expression170); if (state.failed) return retval;
-                    if ( state.backtracking==0 ) {
-                    TRUE7_tree = (Object)adaptor.dupNode(TRUE7);
-
-                    adaptor.addChild(root_0, TRUE7_tree);
-                    }
-
-                    if ( state.backtracking==0 ) {
-                    }
-                    }
-                    break;
-                case 8 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacplausi.g:74:4: FALSE
-                    {
-                    root_0 = (Object)adaptor.nil();
-
-                    _last = (Object)input.LT(1);
-                    FALSE8=(Object)match(input,FALSE,FOLLOW_FALSE_in_expression176); if (state.failed) return retval;
-                    if ( state.backtracking==0 ) {
-                    FALSE8_tree = (Object)adaptor.dupNode(FALSE8);
-
-                    adaptor.addChild(root_0, FALSE8_tree);
-                    }
-
-                    if ( state.backtracking==0 ) {
-                    }
-                    }
-                    break;
-                case 9 :
-                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacplausi.g:75:4: ^( PAND (a+= expression )* )
-                    {
-                    _last = (Object)input.LT(1);
-                    {
-                    Object _save_last_1 = _last;
-                    Object _first_1 = null;
-                    Object root_1 = (Object)adaptor.nil();_last = (Object)input.LT(1);
-                    PAND9=(Object)match(input,PAND,FOLLOW_PAND_in_expression183); if (state.failed) return retval; 
-                    if ( state.backtracking==0 ) stream_PAND.add(PAND9);
-
-
-
                     if ( input.LA(1)==Token.DOWN ) {
                         match(input, Token.DOWN, null); if (state.failed) return retval;
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacplausi.g:75:11: (a+= expression )*
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacplausi.g:71:14: (a+= expression )*
                         loop5:
                         do {
                             int alt5=2;
@@ -569,11 +485,133 @@ public class tftacplausi extends TreeParser {
 
                             switch (alt5) {
                         	case 1 :
-                        	    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacplausi.g:75:12: a+= expression
+                        	    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacplausi.g:71:15: a+= expression
+                        	    {
+                        	    _last = (Object)input.LT(1);
+                        	    pushFollow(FOLLOW_expression_in_expression155);
+                        	    a=expression();
+
+                        	    state._fsp--;
+                        	    if (state.failed) return retval;
+                        	    if ( state.backtracking==0 ) 
+                        	    adaptor.addChild(root_1, a.getTree());
+                        	    if (list_a==null) list_a=new ArrayList();
+                        	    list_a.add(a.getTree());
+
+
+                        	    if ( state.backtracking==0 ) {
+                        	    }
+                        	    }
+                        	    break;
+
+                        	default :
+                        	    break loop5;
+                            }
+                        } while (true);
+
+
+                        match(input, Token.UP, null); if (state.failed) return retval;
+                    }adaptor.addChild(root_0, root_1);_last = _save_last_1;
+                    }
+
+                    if ( state.backtracking==0 ) {
+
+                      				int listsize = list_a.size();
+                      				for ( int i = 0; i<= listsize -1; i++ )
+                      				{
+                      					valuelist.add(list_a.get(i).toString());
+                      				}	
+                      			
+                    }
+
+                    if ( state.backtracking==0 ) {
+                    }
+                    }
+                    break;
+                case 6 :
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacplausi.g:79:7: ID
+                    {
+                    root_0 = (Object)adaptor.nil();
+
+                    _last = (Object)input.LT(1);
+                    ID6=(Object)match(input,ID,FOLLOW_ID_in_expression173); if (state.failed) return retval;
+                    if ( state.backtracking==0 ) {
+                    ID6_tree = (Object)adaptor.dupNode(ID6);
+
+                    adaptor.addChild(root_0, ID6_tree);
+                    }
+
+                    if ( state.backtracking==0 ) {
+                    }
+                    }
+                    break;
+                case 7 :
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacplausi.g:80:4: TRUE
+                    {
+                    root_0 = (Object)adaptor.nil();
+
+                    _last = (Object)input.LT(1);
+                    TRUE7=(Object)match(input,TRUE,FOLLOW_TRUE_in_expression179); if (state.failed) return retval;
+                    if ( state.backtracking==0 ) {
+                    TRUE7_tree = (Object)adaptor.dupNode(TRUE7);
+
+                    adaptor.addChild(root_0, TRUE7_tree);
+                    }
+
+                    if ( state.backtracking==0 ) {
+                    }
+                    }
+                    break;
+                case 8 :
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacplausi.g:81:4: FALSE
+                    {
+                    root_0 = (Object)adaptor.nil();
+
+                    _last = (Object)input.LT(1);
+                    FALSE8=(Object)match(input,FALSE,FOLLOW_FALSE_in_expression185); if (state.failed) return retval;
+                    if ( state.backtracking==0 ) {
+                    FALSE8_tree = (Object)adaptor.dupNode(FALSE8);
+
+                    adaptor.addChild(root_0, FALSE8_tree);
+                    }
+
+                    if ( state.backtracking==0 ) {
+                    }
+                    }
+                    break;
+                case 9 :
+                    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacplausi.g:82:4: ^( PAND (a+= expression )* )
+                    {
+                    _last = (Object)input.LT(1);
+                    {
+                    Object _save_last_1 = _last;
+                    Object _first_1 = null;
+                    Object root_1 = (Object)adaptor.nil();_last = (Object)input.LT(1);
+                    PAND9=(Object)match(input,PAND,FOLLOW_PAND_in_expression192); if (state.failed) return retval; 
+                    if ( state.backtracking==0 ) stream_PAND.add(PAND9);
+
+
+
+                    if ( input.LA(1)==Token.DOWN ) {
+                        match(input, Token.DOWN, null); if (state.failed) return retval;
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacplausi.g:82:11: (a+= expression )*
+                        loop6:
+                        do {
+                            int alt6=2;
+                            int LA6_0 = input.LA(1);
+
+                            if ( ((LA6_0>=OR && LA6_0<=ID)||(LA6_0>=NOT && LA6_0<=FALSE)) ) {
+                                alt6=1;
+                            }
+
+
+                            switch (alt6) {
+                        	case 1 :
+                        	    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacplausi.g:82:12: a+= expression
                         	    {
                         	    _last = (Object)input.LT(1);
                         	    _last = (Object)input.LT(1);
-                        	    pushFollow(FOLLOW_expression_in_expression188);
+                        	    pushFollow(FOLLOW_expression_in_expression197);
                         	    a=expression();
 
                         	    state._fsp--;
@@ -589,7 +627,7 @@ public class tftacplausi extends TreeParser {
                         	    break;
 
                         	default :
-                        	    break loop5;
+                        	    break loop6;
                             }
                         } while (true);
 
@@ -640,9 +678,9 @@ public class tftacplausi extends TreeParser {
                     RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"token retval",retval!=null?retval.tree:null);
                     RewriteRuleSubtreeStream stream_a=new RewriteRuleSubtreeStream(adaptor,"token a",list_a);
                     root_0 = (Object)adaptor.nil();
-                    // 103:4: -> ^( PAND ( $a)+ )
+                    // 110:4: -> ^( PAND ( $a)+ )
                     {
-                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacplausi.g:103:7: ^( PAND ( $a)+ )
+                        // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftacplausi.g:110:7: ^( PAND ( $a)+ )
                         {
                         Object root_1 = (Object)adaptor.nil();
                         root_1 = (Object)adaptor.becomeRoot(stream_PAND.nextNode(), root_1);
@@ -696,11 +734,11 @@ public class tftacplausi extends TreeParser {
     public static final BitSet FOLLOW_SAND_in_expression124 = new BitSet(new long[]{0x0000000000000004L});
     public static final BitSet FOLLOW_expression_in_expression131 = new BitSet(new long[]{0x00000000000073F8L});
     public static final BitSet FOLLOW_NOT_in_expression149 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_expression_in_expression154 = new BitSet(new long[]{0x0000000000000008L});
-    public static final BitSet FOLLOW_ID_in_expression164 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_TRUE_in_expression170 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_FALSE_in_expression176 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_PAND_in_expression183 = new BitSet(new long[]{0x0000000000000004L});
-    public static final BitSet FOLLOW_expression_in_expression188 = new BitSet(new long[]{0x00000000000073F8L});
+    public static final BitSet FOLLOW_expression_in_expression155 = new BitSet(new long[]{0x00000000000073F8L});
+    public static final BitSet FOLLOW_ID_in_expression173 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_TRUE_in_expression179 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_FALSE_in_expression185 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_PAND_in_expression192 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_expression_in_expression197 = new BitSet(new long[]{0x00000000000073F8L});
 
 }

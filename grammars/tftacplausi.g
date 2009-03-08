@@ -68,7 +68,14 @@ expression
 					valuelist.add($a.get(i).toString());
 				}	
 			} 
-	|   	^(NOT  c=expression) 
+	|   	^(NOT  (a+=expression)*)
+			{
+				int listsize = $a.size();
+				for ( int i = 0; i<= listsize -1; i++ )
+				{
+					valuelist.add($a.get(i).toString());
+				}	
+			}  
 	|   	ID	
 	|	TRUE	
 	|	FALSE	
