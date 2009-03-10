@@ -48,24 +48,60 @@ term		:	factor ((AND^ | PAND^ | SAND^) factor)*
 factor		:	ID
 		|	LBRACE! expression RBRACE!
 		|	NOT^ factor
-		|	TRUE | FALSE
+		|	TRUE 
+		| 	FALSE
 		;
 
-AND	:	'AND' ;
-PAND	:	'PAND' ;
-SAND	:	'SAND' ;
-OR	:	'OR' ;
-XOR	:	'XOR' ;
-NOT	:	'NOT' ;
-TRUE	:	'TRUE' ;
-FALSE	:	'FALSE';
+AND	:	A N D ;
+PAND	:	P A N D ;
+SAND	:	S A N D ;
+OR	:	O R ;
+XOR	:	X O R ;
+NOT	:	N O T ;
+TRUE	:	T R U E ;
+FALSE	:	F A L S E;
 
 INT 	:   	('0'..'9')+ ;
 ID  	:   	('a'..'z'|'A'..'Z')('a'..'z'|'A'..'Z'|INT)* ;
 WS  	:   	(' '|'\t'|'\n'|'\f')+ {skip();} ;
 
-LBRACE  : 	('(') ;
-RBRACE  : 	(')') ;
+LBRACE  : 	'('
+	|	'['
+	|	'{' 
+	;
+	
+RBRACE  : 	')' 
+	|	']'
+	|	'}'
+	;
+	
+fragment A:('a'|'A');
+fragment B:('b'|'B');
+fragment C:('c'|'C');
+fragment D:('d'|'D');
+fragment E:('e'|'E');
+fragment F:('f'|'F');
+fragment G:('g'|'G');
+fragment H:('h'|'H');
+fragment I:('i'|'I');
+fragment J:('j'|'J');
+fragment K:('k'|'K');
+fragment L:('l'|'L');
+fragment M:('m'|'M');
+fragment N:('n'|'N');
+fragment O:('o'|'O');
+fragment P:('p'|'P');
+fragment Q:('q'|'Q');
+fragment R:('r'|'R');
+fragment S:('s'|'S');
+fragment T:('t'|'T');
+fragment U:('u'|'U');
+fragment V:('v'|'V');
+fragment W:('w'|'W');
+fragment X:('x'|'X');
+fragment Y:('y'|'Y');
+fragment Z:('z'|'Z');
+
 
 
 
