@@ -83,19 +83,27 @@ andterm	:	^(AND . FALSE)
 	|	^(AND ^(OR x=tt y=tt) z=tt)
 			-> ^(OR ^(AND $x $z) ^(AND $y $z) )  
 	|	^(AND z=tt ^(OR x=tt y=tt))
-			-> ^(OR ^(AND $x $z) ^(AND $y $z) ) 
-	|	^(AND ^(NOT ^(PAND x=tt y=tt) ) m1=metaPandSandAE )
-			-> ^(XOR ^(XOR ^(XOR ^(AND ^(AND ^(NOT $x) ^(NOT $y)) $m1) ^(AND ^(AND ^(NOT $x) $y) $m1)) ^(AND ^(NOT $y) ^(AND $x $m1) )) ^(XOR ^(AND ^(PAND $y $x) $m1) ^(AND ^(SAND $x $y) $m1) ) )	
+			-> ^(OR ^(AND $x $z) ^(AND $y $z) )
+	|	andTermWithNegatedPands 
 	|	^(AND ^(AND n1=notterm m1=metaPandSandAE) z=tt)
 			-> ^(XOR ^(XOR ^(AND $n1 ^(AND $m1 $z)) ^(PAND ^(PAND $m1 ^(NOT $n1)) $z ) ) ^(PAND $m1 ^(SAND ^(NOT $n1) $z)) )
 	|	^(AND x=tt y=tt)
 			-> ^(XOR ^(XOR ^(PAND $y $x) ^(PAND $x $y)) ^(SAND $x $y) )
 	|	^(AND tt tt)
 	;
-
-pureand	:	^(AND ID ID)
-	|	^(AND pureand ID)
-	;	
+	
+andTermWithNegatedPands
+	:	^(AND ^(NOT ^(PAND x=tt y=tt) ) m1=metaPandSandAE )
+			-> ^(XOR ^(XOR ^(XOR ^(AND ^(AND ^(NOT $x) ^(NOT $y)) $m1) ^(AND ^(AND ^(NOT $x) $y) $m1)) ^(AND ^(NOT $y) ^(AND $x $m1) )) ^(XOR ^(AND ^(PAND $y $x) $m1) ^(AND ^(SAND $x $y) $m1) ) )	
+	|	^(AND ^(AND a=termWithNegatedPands b=notterm) c=tt )
+		{ System.out.println("Hallo"); }
+			-> ^(AND ^(AND $a $c) ^(AND $b $c) )
+	;
+			
+termWithNegatedPands
+	:	^(NOT ^(PAND tt tt) )
+	|	^(AND termWithNegatedPands ^(NOT ^(PAND tt tt) ))
+	;
 
 negandterm
 	:	^(AND ^(OR x=negatedterm y=negatedterm) z1=pandterm)
@@ -110,11 +118,11 @@ negandterm
 			-> ^(OR ^(AND $x $z3) ^(AND $y $z3))
 	|	^(AND ^(XOR x=negatedterm y=negatedterm) z3=ae)
 			-> ^(XOR ^(AND $x $z3) ^(AND $y $z3))
-	|	^(AND n1=notterm ^(OR t1=tt t2=tt))
+	|	^(AND n1=negatedterm ^(OR t1=tt t2=tt))
 			-> ^(OR ^(AND $n1  $t1) ^(AND $n1  $t2)) 
-	|	^(AND n1=notterm ^(XOR t1=tt t2=tt))
+	|	^(AND n1=negatedterm ^(XOR t1=tt t2=tt))
 			-> ^(XOR ^(AND $n1  $t1) ^(AND $n1  $t2))
-	|	^(AND n1=notterm ^(AND n2=notterm m1=metaPandSandAE))
+	|	^(AND n1=negatedterm ^(AND n2=notterm m1=metaPandSandAE))
 			-> ^(AND ^(AND $n1 $n2) $m1)
 	|	^(AND negatedterm metaPandSandAE)
 	;

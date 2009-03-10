@@ -1,4 +1,4 @@
-// $ANTLR 3.1.1 /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g 2009-03-06 22:42:46
+// $ANTLR 3.1.2 /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g 2009-03-10 20:58:59
 
 import org.antlr.runtime.*;
 import java.util.Stack;
@@ -6,20 +6,46 @@ import java.util.List;
 import java.util.ArrayList;
 
 public class tftacLexer extends Lexer {
-    public static final int WS=16;
+    public static final int D=17;
+    public static final int E=25;
+    public static final int F=26;
+    public static final int G=32;
     public static final int XOR=5;
+    public static final int A=15;
+    public static final int B=30;
     public static final int RBRACE=11;
-    public static final int OR=4;
+    public static final int C=31;
+    public static final int L=27;
+    public static final int M=37;
+    public static final int N=16;
+    public static final int O=20;
+    public static final int H=33;
+    public static final int I=34;
     public static final int LBRACE=10;
+    public static final int J=35;
+    public static final int K=36;
+    public static final int U=24;
     public static final int PAND=7;
-    public static final int INT=15;
-    public static final int SAND=8;
+    public static final int T=23;
+    public static final int W=40;
+    public static final int V=39;
+    public static final int INT=28;
+    public static final int Q=38;
+    public static final int P=18;
+    public static final int S=19;
     public static final int NOT=12;
-    public static final int AND=6;
+    public static final int R=21;
     public static final int ID=9;
-    public static final int FALSE=14;
+    public static final int AND=6;
     public static final int EOF=-1;
     public static final int TRUE=13;
+    public static final int Y=41;
+    public static final int X=22;
+    public static final int Z=42;
+    public static final int WS=29;
+    public static final int OR=4;
+    public static final int SAND=8;
+    public static final int FALSE=14;
 
     // delegates
     // delegators
@@ -39,11 +65,12 @@ public class tftacLexer extends Lexer {
         try {
             int _type = AND;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:54:5: ( 'AND' )
-            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:54:7: 'AND'
+            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:55:5: ( A N D )
+            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:55:7: A N D
             {
-            match("AND"); 
-
+            mA(); 
+            mN(); 
+            mD(); 
 
             }
 
@@ -60,11 +87,13 @@ public class tftacLexer extends Lexer {
         try {
             int _type = PAND;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:55:6: ( 'PAND' )
-            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:55:8: 'PAND'
+            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:56:6: ( P A N D )
+            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:56:8: P A N D
             {
-            match("PAND"); 
-
+            mP(); 
+            mA(); 
+            mN(); 
+            mD(); 
 
             }
 
@@ -81,11 +110,13 @@ public class tftacLexer extends Lexer {
         try {
             int _type = SAND;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:56:6: ( 'SAND' )
-            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:56:8: 'SAND'
+            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:57:6: ( S A N D )
+            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:57:8: S A N D
             {
-            match("SAND"); 
-
+            mS(); 
+            mA(); 
+            mN(); 
+            mD(); 
 
             }
 
@@ -102,11 +133,11 @@ public class tftacLexer extends Lexer {
         try {
             int _type = OR;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:57:4: ( 'OR' )
-            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:57:6: 'OR'
+            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:58:4: ( O R )
+            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:58:6: O R
             {
-            match("OR"); 
-
+            mO(); 
+            mR(); 
 
             }
 
@@ -123,11 +154,12 @@ public class tftacLexer extends Lexer {
         try {
             int _type = XOR;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:58:5: ( 'XOR' )
-            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:58:7: 'XOR'
+            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:59:5: ( X O R )
+            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:59:7: X O R
             {
-            match("XOR"); 
-
+            mX(); 
+            mO(); 
+            mR(); 
 
             }
 
@@ -144,11 +176,12 @@ public class tftacLexer extends Lexer {
         try {
             int _type = NOT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:59:5: ( 'NOT' )
-            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:59:7: 'NOT'
+            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:60:5: ( N O T )
+            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:60:7: N O T
             {
-            match("NOT"); 
-
+            mN(); 
+            mO(); 
+            mT(); 
 
             }
 
@@ -165,11 +198,13 @@ public class tftacLexer extends Lexer {
         try {
             int _type = TRUE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:60:6: ( 'TRUE' )
-            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:60:8: 'TRUE'
+            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:61:6: ( T R U E )
+            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:61:8: T R U E
             {
-            match("TRUE"); 
-
+            mT(); 
+            mR(); 
+            mU(); 
+            mE(); 
 
             }
 
@@ -186,11 +221,14 @@ public class tftacLexer extends Lexer {
         try {
             int _type = FALSE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:61:7: ( 'FALSE' )
-            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:61:9: 'FALSE'
+            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:62:7: ( F A L S E )
+            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:62:9: F A L S E
             {
-            match("FALSE"); 
-
+            mF(); 
+            mA(); 
+            mL(); 
+            mS(); 
+            mE(); 
 
             }
 
@@ -207,10 +245,10 @@ public class tftacLexer extends Lexer {
         try {
             int _type = INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:63:6: ( ( '0' .. '9' )+ )
-            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:63:11: ( '0' .. '9' )+
+            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:64:6: ( ( '0' .. '9' )+ )
+            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:64:11: ( '0' .. '9' )+
             {
-            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:63:11: ( '0' .. '9' )+
+            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:64:11: ( '0' .. '9' )+
             int cnt1=0;
             loop1:
             do {
@@ -224,7 +262,7 @@ public class tftacLexer extends Lexer {
 
                 switch (alt1) {
             	case 1 :
-            	    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:63:12: '0' .. '9'
+            	    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:64:12: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -256,8 +294,8 @@ public class tftacLexer extends Lexer {
         try {
             int _type = ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:64:6: ( ( 'a' .. 'z' | 'A' .. 'Z' ) ( 'a' .. 'z' | 'A' .. 'Z' | INT )* )
-            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:64:11: ( 'a' .. 'z' | 'A' .. 'Z' ) ( 'a' .. 'z' | 'A' .. 'Z' | INT )*
+            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:65:6: ( ( 'a' .. 'z' | 'A' .. 'Z' ) ( 'a' .. 'z' | 'A' .. 'Z' | INT )* )
+            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:65:11: ( 'a' .. 'z' | 'A' .. 'Z' ) ( 'a' .. 'z' | 'A' .. 'Z' | INT )*
             {
             if ( (input.LA(1)>='A' && input.LA(1)<='Z')||(input.LA(1)>='a' && input.LA(1)<='z') ) {
                 input.consume();
@@ -268,7 +306,7 @@ public class tftacLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:64:30: ( 'a' .. 'z' | 'A' .. 'Z' | INT )*
+            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:65:30: ( 'a' .. 'z' | 'A' .. 'Z' | INT )*
             loop2:
             do {
                 int alt2=4;
@@ -352,21 +390,21 @@ public class tftacLexer extends Lexer {
 
                 switch (alt2) {
             	case 1 :
-            	    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:64:31: 'a' .. 'z'
+            	    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:65:31: 'a' .. 'z'
             	    {
             	    matchRange('a','z'); 
 
             	    }
             	    break;
             	case 2 :
-            	    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:64:40: 'A' .. 'Z'
+            	    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:65:40: 'A' .. 'Z'
             	    {
             	    matchRange('A','Z'); 
 
             	    }
             	    break;
             	case 3 :
-            	    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:64:49: INT
+            	    // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:65:49: INT
             	    {
             	    mINT(); 
 
@@ -394,10 +432,10 @@ public class tftacLexer extends Lexer {
         try {
             int _type = WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:65:6: ( ( ' ' | '\\t' | '\\n' | '\\f' )+ )
-            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:65:11: ( ' ' | '\\t' | '\\n' | '\\f' )+
+            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:66:6: ( ( ' ' | '\\t' | '\\n' | '\\f' )+ )
+            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:66:11: ( ' ' | '\\t' | '\\n' | '\\f' )+
             {
-            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:65:11: ( ' ' | '\\t' | '\\n' | '\\f' )+
+            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:66:11: ( ' ' | '\\t' | '\\n' | '\\f' )+
             int cnt3=0;
             loop3:
             do {
@@ -452,15 +490,17 @@ public class tftacLexer extends Lexer {
         try {
             int _type = LBRACE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:67:9: ( ( '(' ) )
-            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:67:12: ( '(' )
+            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:68:9: ( '(' | '[' | '{' )
+            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:
             {
-            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:67:12: ( '(' )
-            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:67:13: '('
-            {
-            match('('); 
+            if ( input.LA(1)=='('||input.LA(1)=='['||input.LA(1)=='{' ) {
+                input.consume();
 
             }
+            else {
+                MismatchedSetException mse = new MismatchedSetException(null,input);
+                recover(mse);
+                throw mse;}
 
 
             }
@@ -478,15 +518,17 @@ public class tftacLexer extends Lexer {
         try {
             int _type = RBRACE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:68:9: ( ( ')' ) )
-            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:68:12: ( ')' )
+            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:73:9: ( ')' | ']' | '}' )
+            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:
             {
-            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:68:12: ( ')' )
-            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:68:13: ')'
-            {
-            match(')'); 
+            if ( input.LA(1)==')'||input.LA(1)==']'||input.LA(1)=='}' ) {
+                input.consume();
 
             }
+            else {
+                MismatchedSetException mse = new MismatchedSetException(null,input);
+                recover(mse);
+                throw mse;}
 
 
             }
@@ -498,6 +540,630 @@ public class tftacLexer extends Lexer {
         }
     }
     // $ANTLR end "RBRACE"
+
+    // $ANTLR start "A"
+    public final void mA() throws RecognitionException {
+        try {
+            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:78:11: ( ( 'a' | 'A' ) )
+            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:78:12: ( 'a' | 'A' )
+            {
+            if ( input.LA(1)=='A'||input.LA(1)=='a' ) {
+                input.consume();
+
+            }
+            else {
+                MismatchedSetException mse = new MismatchedSetException(null,input);
+                recover(mse);
+                throw mse;}
+
+
+            }
+
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "A"
+
+    // $ANTLR start "B"
+    public final void mB() throws RecognitionException {
+        try {
+            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:79:11: ( ( 'b' | 'B' ) )
+            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:79:12: ( 'b' | 'B' )
+            {
+            if ( input.LA(1)=='B'||input.LA(1)=='b' ) {
+                input.consume();
+
+            }
+            else {
+                MismatchedSetException mse = new MismatchedSetException(null,input);
+                recover(mse);
+                throw mse;}
+
+
+            }
+
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "B"
+
+    // $ANTLR start "C"
+    public final void mC() throws RecognitionException {
+        try {
+            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:80:11: ( ( 'c' | 'C' ) )
+            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:80:12: ( 'c' | 'C' )
+            {
+            if ( input.LA(1)=='C'||input.LA(1)=='c' ) {
+                input.consume();
+
+            }
+            else {
+                MismatchedSetException mse = new MismatchedSetException(null,input);
+                recover(mse);
+                throw mse;}
+
+
+            }
+
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "C"
+
+    // $ANTLR start "D"
+    public final void mD() throws RecognitionException {
+        try {
+            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:81:11: ( ( 'd' | 'D' ) )
+            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:81:12: ( 'd' | 'D' )
+            {
+            if ( input.LA(1)=='D'||input.LA(1)=='d' ) {
+                input.consume();
+
+            }
+            else {
+                MismatchedSetException mse = new MismatchedSetException(null,input);
+                recover(mse);
+                throw mse;}
+
+
+            }
+
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "D"
+
+    // $ANTLR start "E"
+    public final void mE() throws RecognitionException {
+        try {
+            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:82:11: ( ( 'e' | 'E' ) )
+            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:82:12: ( 'e' | 'E' )
+            {
+            if ( input.LA(1)=='E'||input.LA(1)=='e' ) {
+                input.consume();
+
+            }
+            else {
+                MismatchedSetException mse = new MismatchedSetException(null,input);
+                recover(mse);
+                throw mse;}
+
+
+            }
+
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "E"
+
+    // $ANTLR start "F"
+    public final void mF() throws RecognitionException {
+        try {
+            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:83:11: ( ( 'f' | 'F' ) )
+            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:83:12: ( 'f' | 'F' )
+            {
+            if ( input.LA(1)=='F'||input.LA(1)=='f' ) {
+                input.consume();
+
+            }
+            else {
+                MismatchedSetException mse = new MismatchedSetException(null,input);
+                recover(mse);
+                throw mse;}
+
+
+            }
+
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "F"
+
+    // $ANTLR start "G"
+    public final void mG() throws RecognitionException {
+        try {
+            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:84:11: ( ( 'g' | 'G' ) )
+            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:84:12: ( 'g' | 'G' )
+            {
+            if ( input.LA(1)=='G'||input.LA(1)=='g' ) {
+                input.consume();
+
+            }
+            else {
+                MismatchedSetException mse = new MismatchedSetException(null,input);
+                recover(mse);
+                throw mse;}
+
+
+            }
+
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "G"
+
+    // $ANTLR start "H"
+    public final void mH() throws RecognitionException {
+        try {
+            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:85:11: ( ( 'h' | 'H' ) )
+            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:85:12: ( 'h' | 'H' )
+            {
+            if ( input.LA(1)=='H'||input.LA(1)=='h' ) {
+                input.consume();
+
+            }
+            else {
+                MismatchedSetException mse = new MismatchedSetException(null,input);
+                recover(mse);
+                throw mse;}
+
+
+            }
+
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "H"
+
+    // $ANTLR start "I"
+    public final void mI() throws RecognitionException {
+        try {
+            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:86:11: ( ( 'i' | 'I' ) )
+            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:86:12: ( 'i' | 'I' )
+            {
+            if ( input.LA(1)=='I'||input.LA(1)=='i' ) {
+                input.consume();
+
+            }
+            else {
+                MismatchedSetException mse = new MismatchedSetException(null,input);
+                recover(mse);
+                throw mse;}
+
+
+            }
+
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "I"
+
+    // $ANTLR start "J"
+    public final void mJ() throws RecognitionException {
+        try {
+            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:87:11: ( ( 'j' | 'J' ) )
+            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:87:12: ( 'j' | 'J' )
+            {
+            if ( input.LA(1)=='J'||input.LA(1)=='j' ) {
+                input.consume();
+
+            }
+            else {
+                MismatchedSetException mse = new MismatchedSetException(null,input);
+                recover(mse);
+                throw mse;}
+
+
+            }
+
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "J"
+
+    // $ANTLR start "K"
+    public final void mK() throws RecognitionException {
+        try {
+            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:88:11: ( ( 'k' | 'K' ) )
+            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:88:12: ( 'k' | 'K' )
+            {
+            if ( input.LA(1)=='K'||input.LA(1)=='k' ) {
+                input.consume();
+
+            }
+            else {
+                MismatchedSetException mse = new MismatchedSetException(null,input);
+                recover(mse);
+                throw mse;}
+
+
+            }
+
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "K"
+
+    // $ANTLR start "L"
+    public final void mL() throws RecognitionException {
+        try {
+            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:89:11: ( ( 'l' | 'L' ) )
+            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:89:12: ( 'l' | 'L' )
+            {
+            if ( input.LA(1)=='L'||input.LA(1)=='l' ) {
+                input.consume();
+
+            }
+            else {
+                MismatchedSetException mse = new MismatchedSetException(null,input);
+                recover(mse);
+                throw mse;}
+
+
+            }
+
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "L"
+
+    // $ANTLR start "M"
+    public final void mM() throws RecognitionException {
+        try {
+            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:90:11: ( ( 'm' | 'M' ) )
+            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:90:12: ( 'm' | 'M' )
+            {
+            if ( input.LA(1)=='M'||input.LA(1)=='m' ) {
+                input.consume();
+
+            }
+            else {
+                MismatchedSetException mse = new MismatchedSetException(null,input);
+                recover(mse);
+                throw mse;}
+
+
+            }
+
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "M"
+
+    // $ANTLR start "N"
+    public final void mN() throws RecognitionException {
+        try {
+            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:91:11: ( ( 'n' | 'N' ) )
+            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:91:12: ( 'n' | 'N' )
+            {
+            if ( input.LA(1)=='N'||input.LA(1)=='n' ) {
+                input.consume();
+
+            }
+            else {
+                MismatchedSetException mse = new MismatchedSetException(null,input);
+                recover(mse);
+                throw mse;}
+
+
+            }
+
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "N"
+
+    // $ANTLR start "O"
+    public final void mO() throws RecognitionException {
+        try {
+            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:92:11: ( ( 'o' | 'O' ) )
+            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:92:12: ( 'o' | 'O' )
+            {
+            if ( input.LA(1)=='O'||input.LA(1)=='o' ) {
+                input.consume();
+
+            }
+            else {
+                MismatchedSetException mse = new MismatchedSetException(null,input);
+                recover(mse);
+                throw mse;}
+
+
+            }
+
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "O"
+
+    // $ANTLR start "P"
+    public final void mP() throws RecognitionException {
+        try {
+            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:93:11: ( ( 'p' | 'P' ) )
+            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:93:12: ( 'p' | 'P' )
+            {
+            if ( input.LA(1)=='P'||input.LA(1)=='p' ) {
+                input.consume();
+
+            }
+            else {
+                MismatchedSetException mse = new MismatchedSetException(null,input);
+                recover(mse);
+                throw mse;}
+
+
+            }
+
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "P"
+
+    // $ANTLR start "Q"
+    public final void mQ() throws RecognitionException {
+        try {
+            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:94:11: ( ( 'q' | 'Q' ) )
+            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:94:12: ( 'q' | 'Q' )
+            {
+            if ( input.LA(1)=='Q'||input.LA(1)=='q' ) {
+                input.consume();
+
+            }
+            else {
+                MismatchedSetException mse = new MismatchedSetException(null,input);
+                recover(mse);
+                throw mse;}
+
+
+            }
+
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "Q"
+
+    // $ANTLR start "R"
+    public final void mR() throws RecognitionException {
+        try {
+            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:95:11: ( ( 'r' | 'R' ) )
+            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:95:12: ( 'r' | 'R' )
+            {
+            if ( input.LA(1)=='R'||input.LA(1)=='r' ) {
+                input.consume();
+
+            }
+            else {
+                MismatchedSetException mse = new MismatchedSetException(null,input);
+                recover(mse);
+                throw mse;}
+
+
+            }
+
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "R"
+
+    // $ANTLR start "S"
+    public final void mS() throws RecognitionException {
+        try {
+            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:96:11: ( ( 's' | 'S' ) )
+            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:96:12: ( 's' | 'S' )
+            {
+            if ( input.LA(1)=='S'||input.LA(1)=='s' ) {
+                input.consume();
+
+            }
+            else {
+                MismatchedSetException mse = new MismatchedSetException(null,input);
+                recover(mse);
+                throw mse;}
+
+
+            }
+
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "S"
+
+    // $ANTLR start "T"
+    public final void mT() throws RecognitionException {
+        try {
+            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:97:11: ( ( 't' | 'T' ) )
+            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:97:12: ( 't' | 'T' )
+            {
+            if ( input.LA(1)=='T'||input.LA(1)=='t' ) {
+                input.consume();
+
+            }
+            else {
+                MismatchedSetException mse = new MismatchedSetException(null,input);
+                recover(mse);
+                throw mse;}
+
+
+            }
+
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "T"
+
+    // $ANTLR start "U"
+    public final void mU() throws RecognitionException {
+        try {
+            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:98:11: ( ( 'u' | 'U' ) )
+            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:98:12: ( 'u' | 'U' )
+            {
+            if ( input.LA(1)=='U'||input.LA(1)=='u' ) {
+                input.consume();
+
+            }
+            else {
+                MismatchedSetException mse = new MismatchedSetException(null,input);
+                recover(mse);
+                throw mse;}
+
+
+            }
+
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "U"
+
+    // $ANTLR start "V"
+    public final void mV() throws RecognitionException {
+        try {
+            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:99:11: ( ( 'v' | 'V' ) )
+            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:99:12: ( 'v' | 'V' )
+            {
+            if ( input.LA(1)=='V'||input.LA(1)=='v' ) {
+                input.consume();
+
+            }
+            else {
+                MismatchedSetException mse = new MismatchedSetException(null,input);
+                recover(mse);
+                throw mse;}
+
+
+            }
+
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "V"
+
+    // $ANTLR start "W"
+    public final void mW() throws RecognitionException {
+        try {
+            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:100:11: ( ( 'w' | 'W' ) )
+            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:100:12: ( 'w' | 'W' )
+            {
+            if ( input.LA(1)=='W'||input.LA(1)=='w' ) {
+                input.consume();
+
+            }
+            else {
+                MismatchedSetException mse = new MismatchedSetException(null,input);
+                recover(mse);
+                throw mse;}
+
+
+            }
+
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "W"
+
+    // $ANTLR start "X"
+    public final void mX() throws RecognitionException {
+        try {
+            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:101:11: ( ( 'x' | 'X' ) )
+            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:101:12: ( 'x' | 'X' )
+            {
+            if ( input.LA(1)=='X'||input.LA(1)=='x' ) {
+                input.consume();
+
+            }
+            else {
+                MismatchedSetException mse = new MismatchedSetException(null,input);
+                recover(mse);
+                throw mse;}
+
+
+            }
+
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "X"
+
+    // $ANTLR start "Y"
+    public final void mY() throws RecognitionException {
+        try {
+            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:102:11: ( ( 'y' | 'Y' ) )
+            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:102:12: ( 'y' | 'Y' )
+            {
+            if ( input.LA(1)=='Y'||input.LA(1)=='y' ) {
+                input.consume();
+
+            }
+            else {
+                MismatchedSetException mse = new MismatchedSetException(null,input);
+                recover(mse);
+                throw mse;}
+
+
+            }
+
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "Y"
+
+    // $ANTLR start "Z"
+    public final void mZ() throws RecognitionException {
+        try {
+            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:103:11: ( ( 'z' | 'Z' ) )
+            // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:103:12: ( 'z' | 'Z' )
+            {
+            if ( input.LA(1)=='Z'||input.LA(1)=='z' ) {
+                input.consume();
+
+            }
+            else {
+                MismatchedSetException mse = new MismatchedSetException(null,input);
+                recover(mse);
+                throw mse;}
+
+
+            }
+
+        }
+        finally {
+        }
+    }
+    // $ANTLR end "Z"
 
     public void mTokens() throws RecognitionException {
         // /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g:1:8: ( AND | PAND | SAND | OR | XOR | NOT | TRUE | FALSE | INT | ID | WS | LBRACE | RBRACE )
@@ -603,66 +1269,87 @@ public class tftacLexer extends Lexer {
 
     protected DFA4 dfa4 = new DFA4(this);
     static final String DFA4_eotS =
-        "\1\uffff\10\12\5\uffff\3\12\1\31\4\12\1\36\2\12\1\uffff\1\41\1\42"+
-        "\2\12\1\uffff\1\45\1\46\2\uffff\1\47\1\12\3\uffff\1\51\1\uffff";
+        "\1\uffff\10\12\5\uffff\6\12\2\44\10\12\2\55\4\12\1\uffff\2\62\2"+
+        "\63\4\12\1\uffff\2\70\2\71\2\uffff\2\72\2\12\3\uffff\2\75\1\uffff";
     static final String DFA4_eofS =
-        "\52\uffff";
+        "\76\uffff";
     static final String DFA4_minS =
-        "\1\11\1\116\2\101\1\122\2\117\1\122\1\101\5\uffff\1\104\2\116\1"+
-        "\60\1\122\1\124\1\125\1\114\1\60\2\104\1\uffff\2\60\1\105\1\123"+
-        "\1\uffff\2\60\2\uffff\1\60\1\105\3\uffff\1\60\1\uffff";
+        "\1\11\1\116\2\101\1\122\2\117\1\122\1\101\5\uffff\2\104\4\116\2"+
+        "\60\2\122\2\124\2\125\2\114\2\60\4\104\1\uffff\4\60\2\105\2\123"+
+        "\1\uffff\4\60\2\uffff\2\60\2\105\3\uffff\2\60\1\uffff";
     static final String DFA4_maxS =
-        "\1\172\1\116\2\101\1\122\2\117\1\122\1\101\5\uffff\1\104\2\116\1"+
-        "\172\1\122\1\124\1\125\1\114\1\172\2\104\1\uffff\2\172\1\105\1\123"+
-        "\1\uffff\2\172\2\uffff\1\172\1\105\3\uffff\1\172\1\uffff";
+        "\1\175\1\156\2\141\1\162\2\157\1\162\1\141\5\uffff\2\144\4\156\2"+
+        "\172\2\162\2\164\2\165\2\154\2\172\4\144\1\uffff\4\172\2\145\2\163"+
+        "\1\uffff\4\172\2\uffff\2\172\2\145\3\uffff\2\172\1\uffff";
     static final String DFA4_acceptS =
-        "\11\uffff\1\11\1\12\1\13\1\14\1\15\13\uffff\1\4\4\uffff\1\1\2\uffff"+
-        "\1\5\1\6\2\uffff\1\2\1\3\1\7\1\uffff\1\10";
+        "\11\uffff\1\11\1\12\1\13\1\14\1\15\26\uffff\1\4\10\uffff\1\1\4\uffff"+
+        "\1\5\1\6\4\uffff\1\2\1\3\1\7\2\uffff\1\10";
     static final String DFA4_specialS =
-        "\52\uffff}>";
+        "\76\uffff}>";
     static final String[] DFA4_transitionS = {
             "\2\13\1\uffff\1\13\23\uffff\1\13\7\uffff\1\14\1\15\6\uffff\12"+
             "\11\7\uffff\1\1\4\12\1\10\7\12\1\6\1\4\1\2\2\12\1\3\1\7\3\12"+
-            "\1\5\2\12\6\uffff\32\12",
-            "\1\16",
-            "\1\17",
-            "\1\20",
-            "\1\21",
-            "\1\22",
-            "\1\23",
-            "\1\24",
-            "\1\25",
+            "\1\5\2\12\1\14\1\uffff\1\15\3\uffff\1\1\4\12\1\10\7\12\1\6\1"+
+            "\4\1\2\2\12\1\3\1\7\3\12\1\5\2\12\1\14\1\uffff\1\15",
+            "\1\17\37\uffff\1\16",
+            "\1\21\37\uffff\1\20",
+            "\1\23\37\uffff\1\22",
+            "\1\25\37\uffff\1\24",
+            "\1\27\37\uffff\1\26",
+            "\1\31\37\uffff\1\30",
+            "\1\33\37\uffff\1\32",
+            "\1\35\37\uffff\1\34",
             "",
             "",
             "",
             "",
             "",
-            "\1\26",
-            "\1\27",
-            "\1\30",
-            "\12\12\7\uffff\32\12\6\uffff\32\12",
-            "\1\32",
-            "\1\33",
-            "\1\34",
-            "\1\35",
-            "\12\12\7\uffff\32\12\6\uffff\32\12",
-            "\1\37",
-            "\1\40",
-            "",
+            "\1\37\37\uffff\1\36",
+            "\1\37\37\uffff\1\36",
+            "\1\41\37\uffff\1\40",
+            "\1\41\37\uffff\1\40",
+            "\1\43\37\uffff\1\42",
+            "\1\43\37\uffff\1\42",
             "\12\12\7\uffff\32\12\6\uffff\32\12",
             "\12\12\7\uffff\32\12\6\uffff\32\12",
-            "\1\43",
-            "\1\44",
+            "\1\46\37\uffff\1\45",
+            "\1\46\37\uffff\1\45",
+            "\1\50\37\uffff\1\47",
+            "\1\50\37\uffff\1\47",
+            "\1\52\37\uffff\1\51",
+            "\1\52\37\uffff\1\51",
+            "\1\54\37\uffff\1\53",
+            "\1\54\37\uffff\1\53",
+            "\12\12\7\uffff\32\12\6\uffff\32\12",
+            "\12\12\7\uffff\32\12\6\uffff\32\12",
+            "\1\57\37\uffff\1\56",
+            "\1\57\37\uffff\1\56",
+            "\1\61\37\uffff\1\60",
+            "\1\61\37\uffff\1\60",
             "",
+            "\12\12\7\uffff\32\12\6\uffff\32\12",
+            "\12\12\7\uffff\32\12\6\uffff\32\12",
+            "\12\12\7\uffff\32\12\6\uffff\32\12",
+            "\12\12\7\uffff\32\12\6\uffff\32\12",
+            "\1\65\37\uffff\1\64",
+            "\1\65\37\uffff\1\64",
+            "\1\67\37\uffff\1\66",
+            "\1\67\37\uffff\1\66",
+            "",
+            "\12\12\7\uffff\32\12\6\uffff\32\12",
+            "\12\12\7\uffff\32\12\6\uffff\32\12",
             "\12\12\7\uffff\32\12\6\uffff\32\12",
             "\12\12\7\uffff\32\12\6\uffff\32\12",
             "",
             "",
             "\12\12\7\uffff\32\12\6\uffff\32\12",
-            "\1\50",
+            "\12\12\7\uffff\32\12\6\uffff\32\12",
+            "\1\74\37\uffff\1\73",
+            "\1\74\37\uffff\1\73",
             "",
             "",
             "",
+            "\12\12\7\uffff\32\12\6\uffff\32\12",
             "\12\12\7\uffff\32\12\6\uffff\32\12",
             ""
     };
