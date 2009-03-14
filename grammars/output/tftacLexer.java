@@ -1,4 +1,4 @@
-// $ANTLR 3.1.2 /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g 2009-03-14 12:49:36
+// $ANTLR 3.1.2 /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g 2009-03-14 14:27:21
 
 import org.antlr.runtime.*;
 import java.util.Stack;
