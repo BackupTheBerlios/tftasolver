@@ -41,142 +41,130 @@ import java.util.HashMap;
 HashMap memory = new HashMap();
 }
 
-tt 	:	ae
-	|	andterm
-	|	negandterm
-	|	orterm
-	|	pandterm
-	|	sandterm
-	|	xorterm
-	|	^(NOT ^(NOT a1=tt) )
-			-> $a1
+//TARGET AND OUTPUT
+/* ############################################################################# */
+expression
+	:	tdnf	// no further changes needed, the output format
+	|	tt	// further changes needed
+	;
+
+// PURE TFTA FORM (need not be transformed)
+/* ############################################################################# */
+// ATOMIC EVENT
+ae 	:   	ID
+	|	TRUE
+	|	FALSE
+	;
+
+//CORE EVENT		
+ce	:	ae
+	|	^(SAND ce ae)
+	;
+
+//NEGATED ATOMIC EVENT	
+nae	:	^(NOT ae) ;
+
+//NEGATED CORE EVENT
+nce	:	nae
+	|	^(AND nce nae)
+	;
+
+//EVENT SEQUENCE
+es	:	ce
+	|	^(PAND es ce)
+	;
+
+//EVENT SEQUENCE WITH NEGATED ELEMENTS
+nes	:	^(AND nce es)
+	;
+	
+//TEMPORAL TERM IN TDNF
+tdnf	:	es
+	|	nes
+	|	^(OR tdnf tdnf)
+	|	^(XOR tdnf tdnf)
+	;
+
+// UNPURE FORMs (further transformation needed in order to produce new forms towards the tdnf form)	
+/* ############################################################################# */	
+
+
+//TEMPORAL TERM (the most general form)
+tt 	:	atom
+	|	andTerm
+	|	orTerm
+	|	xorTerm
+	|	pandTerm
+	|	sandTerm
+	|	notNotTerm
     	;
-  	
-ce	:	ae 
-	|	^(SAND ce ce)
+    	
+//AN ATOMIC EVENT
+atom	:	ae
 	;
-	
-notterm	:	^(NOT ^(AND x=tt y=tt) )
-			-> ^(OR ^(NOT $x) ^(NOT $y))
-	|	^(NOT ^(OR x=tt y=tt) )
-			-> ^(AND ^(NOT $x) ^(NOT $y))
-	|	^(NOT ^(XOR x=tt y=tt) )
-			-> ^(AND ^(NOT $x) ^(NOT $y))
-	|	^(NOT ^(SAND x=tt y=tt) )
-				-> ^(XOR ^(XOR ^(XOR ^(AND ^(NOT $x) ^(NOT $y)) ^(AND ^(NOT $x) $y)) ^(AND ^(NOT $y) $x)) ^(XOR ^(PAND $y $x) ^(PAND $x $y) ) )		
-	|	^(OR notterm notterm)
-	|	^(XOR notterm notterm)
-	|	^(AND notterm notterm)
-	|	^(NOT tt)
-	;
-	
-andterm	:	^(AND . FALSE)
+ 
+//ANY TERM WITH AN "AND" TREE
+andTerm	:	^(AND (.) FALSE)
 		 	-> FALSE
-	|	^(AND FALSE .)
+	|	^(AND FALSE (.))
 			-> FALSE
-	|	^(AND TRUE a=ae)
-			-> $a
-	|	^(AND a=ae TRUE)
-			-> $a
+	|	^(AND TRUE q=(.))
+			-> $q
+	|	^(AND q=(.) TRUE)
+			-> $q
 	|	^(AND ^(XOR x=tt y=tt) z=tt)
-			-> ^(XOR ^(AND $x $z) ^(AND $y $z) )  
+			-> ^(XOR ^(AND $x $z) ^(AND $y $z) ) 
+	|	^(AND z=tt ^(XOR x=tt y=tt))
+			-> ^(XOR ^(AND $x $z) ^(AND $y $z) ) 
 	|	^(AND ^(OR x=tt y=tt) z=tt)
 			-> ^(OR ^(AND $x $z) ^(AND $y $z) )  
 	|	^(AND z=tt ^(OR x=tt y=tt))
 			-> ^(OR ^(AND $x $z) ^(AND $y $z) )
-	|	andTermWithNegatedPands 
-	|	^(AND ^(AND n1=notterm m1=metaPandSandAE) z=tt)
-			-> ^(XOR ^(XOR ^(AND $n1 ^(AND $m1 $z)) ^(PAND ^(PAND $m1 ^(NOT $n1)) $z ) ) ^(PAND $m1 ^(SAND ^(NOT $n1) $z)) )
 	|	^(AND x=tt y=tt)
 			-> ^(XOR ^(XOR ^(PAND $y $x) ^(PAND $x $y)) ^(SAND $x $y) )
 	|	^(AND tt tt)
+	|	andTermWithNegated
+	|	^(AND ^(AND n1=notTerm m1=tt) z=tt)
+			-> ^(XOR ^(XOR ^(AND $n1 ^(AND $m1 $z)) ^(PAND ^(PAND $m1 ^(NOT $n1)) $z ) ) ^(PAND $m1 ^(SAND ^(NOT $n1) $z)) )
 	;
 	
-andTermWithNegatedPands
-	:	^(AND ^(NOT ^(PAND x=tt y=tt) ) m1=metaPandSandAE )
-			-> ^(XOR ^(XOR ^(XOR ^(AND ^(AND ^(NOT $x) ^(NOT $y)) $m1) ^(AND ^(AND ^(NOT $x) $y) $m1)) ^(AND ^(NOT $y) ^(AND $x $m1) )) ^(XOR ^(AND ^(PAND $y $x) $m1) ^(AND ^(SAND $x $y) $m1) ) )	
-	|	^(AND ^(AND a=termWithNegatedPands b=notterm) c=tt )
-		{ System.out.println("Hallo"); }
-			-> ^(AND ^(AND $a $c) ^(AND $b $c) )
-	;
-			
-termWithNegatedPands
-	:	^(NOT ^(PAND tt tt) )
-	|	^(AND termWithNegatedPands ^(NOT ^(PAND tt tt) ))
-	;
-
-negandterm
-	:	^(AND ^(OR x=negatedterm y=negatedterm) z1=pandterm)
-			-> ^(OR ^(AND $x $z1) ^(AND $y $z1))
-	|	^(AND ^(XOR x=negatedterm y=negatedterm) z1=pandterm)
-			-> ^(XOR ^(AND $x $z1) ^(AND $y $z1))
-	|	^(AND ^(OR x=negatedterm y=negatedterm) z2=sandterm)
-			-> ^(OR ^(AND $x $z2) ^(AND $y $z2))
-	|	^(AND ^(XOR x=negatedterm y=negatedterm) z2=sandterm)
-			-> ^(XOR ^(AND $x $z2) ^(AND $y $z2))
-	|	^(AND ^(OR x=negatedterm y=negatedterm) z3=ae)
-			-> ^(OR ^(AND $x $z3) ^(AND $y $z3))
-	|	^(AND ^(XOR x=negatedterm y=negatedterm) z3=ae)
-			-> ^(XOR ^(AND $x $z3) ^(AND $y $z3))
-	|	^(AND n1=negatedterm ^(OR t1=tt t2=tt))
-			-> ^(OR ^(AND $n1  $t1) ^(AND $n1  $t2)) 
-	|	^(AND n1=negatedterm ^(XOR t1=tt t2=tt))
-			-> ^(XOR ^(AND $n1  $t1) ^(AND $n1  $t2))
-	|	^(AND n1=negatedterm ^(AND n2=notterm m1=metaPandSandAE))
-			-> ^(AND ^(AND $n1 $n2) $m1)
-	|	^(AND negatedterm metaPandSandAE)
-	;
-	
-negatedterm 
-	:	negandterm
-	|	notterm
-	|	^(XOR negatedterm negatedterm)
-	|	^(XOR negatedterm tt)
-	|	^(XOR tt negatedterm)
-	|	^(XOR tt tt)
-	|	^(OR negatedterm negatedterm)
-	|	^(OR negatedterm tt)
-	|	^(OR tt negatedterm)
-	|	^(OR tt tt)	
-	;
-	
-metaPandSandAE
-	:	pandterm
-	|	sandterm
-	|	andterm
-	|	ae
-	;
-	
-orterm	:	^(OR ae TRUE)
+//ANY TERM WITH AN "OR" TREE
+orTerm	:	^(OR (.) TRUE)
 		 	-> TRUE
-	|	^(OR TRUE .)
+	|	^(OR TRUE (.))
 			-> TRUE
-	|	^(OR FALSE a=ae)
-			-> $a
-	|	^(OR a=ae FALSE)
-			-> $a
+	|	^(OR FALSE q=tt)
+			-> $q
+	|	^(OR q=tt FALSE)
+			-> $q
+	|	^(OR a=tt ^(OR b=tt c=tt))
+			-> ^(OR ^(OR $a $b) $c)
 	|	^(OR tt tt)
 	;
 	
-xorterm	:	^(XOR ae TRUE)
+//ANY TERM WITH AN "XOR" TREE
+xorTerm	:	^(XOR (.) TRUE)
 		 	-> TRUE
-	|	^(XOR TRUE .)
+	|	^(XOR TRUE (.))
 			-> TRUE
-	|	^(XOR FALSE a=ae)
-			-> $a
-	|	^(XOR a=ae FALSE)
-			-> $a
+	|	^(XOR FALSE q=tt)
+			-> $q
+	|	^(XOR q=tt FALSE)
+			-> $q
+	|	^(XOR a=tt ^(XOR b=tt c=tt))
+			-> ^(XOR ^(XOR $a $b) $c)
 	|	^(XOR tt tt)
 	;
 	
-pandterm:	^(PAND ae FALSE)
+//ANY TERM WITH AN "PAND" TREE
+pandTerm:	^(PAND (.) FALSE)
 		 	-> FALSE
-	|	^(PAND FALSE .)
+	|	^(PAND FALSE (.))
 			-> FALSE
-	|	^(PAND ae TRUE)
+	|	^(PAND (.) TRUE)
 		 	-> FALSE
-	|	^(PAND TRUE a=ae)
-			-> $a
+	|	^(PAND TRUE x=tt)
+			-> $x
 	|	^(PAND ^(XOR x=tt y=tt) z=tt)
 			-> ^(XOR ^(PAND $x $z) ^(PAND $y $z) )
 	|	^(PAND z=tt ^(XOR x=tt y=tt))
@@ -184,46 +172,159 @@ pandterm:	^(PAND ae FALSE)
 	|	^(PAND ^(OR x=tt y=tt) z=tt)
 			-> ^(OR ^(PAND $x $z) ^(PAND $y $z) )
 	|	^(PAND z=tt ^(OR x=tt y=tt))
-			-> ^(XOR ^(XOR ^(AND ^(NOT $x) ^(PAND $z $y)) ^(AND ^(NOT $y) ^(PAND $z $x) ) )  ^(PAND $z ^(SAND $x $y))) 
+			-> ^(XOR ^(XOR ^(AND ^(NOT $x) ^(PAND $z $y)) 
+			    	       ^(AND ^(NOT $y) ^(PAND $z $x)) )  
+			    	 ^(PAND $z ^(SAND $x $y)) ) 
 	|	^(PAND z=tt ^(PAND x=tt y=tt))
 			-> ^(PAND ^(AND $x $z) $y)
-	|	^(PAND x=tt ^(AND b=notterm z=tt))
+	|	^(PAND x=tt ^(AND b=notTerm z=tt))
 			-> ^(AND $b ^(PAND $x $z))
-	|	^(PAND ^(AND n1=notterm m1=metaPandSandAE) z=tt)
-			-> ^(XOR ^(XOR ^(PAND ^(PAND $m1 ^(NOT $n1)) $z) ^(AND $n1 ^(PAND $m1 $z)) ) ^(PAND $m1 ^(SAND ^(NOT $n1) $z)))
+	|	^(PAND ^(AND n1=notTerm m1=tt) z=tt)
+			-> ^(XOR ^(XOR ^(PAND ^(PAND $m1 ^(NOT $n1)) 
+					      $z) 
+				       ^(AND $n1 ^(PAND $m1 $z)) ) 
+				 ^(PAND $m1 ^(SAND ^(NOT $n1) $z)) )
 	|	^(PAND tt tt)
 	;
 	
-sandterm:	^(SAND ae FALSE)
+//ANY TERM WITH AN "SAND" TREE
+sandTerm:	^(SAND (.) FALSE)
 		 	-> FALSE
-	|	^(SAND FALSE .)
+	|	^(SAND FALSE (.))
 			-> FALSE
 	|	^(SAND TRUE TRUE)
 			-> TRUE
-	|	^(SAND ae TRUE)
+	|	^(SAND (.) TRUE)
 		 	-> FALSE
-	|	^(SAND TRUE .)
+	|	^(SAND TRUE (.))
 			-> FALSE
 	|	^(SAND ^(XOR x=tt y=tt) z=tt)
 			-> ^(XOR ^(SAND $x $z) ^(SAND $y $z) )
 	|	^(SAND z=tt ^(XOR x=tt y=tt))
 			-> ^(XOR ^(SAND $x $z) ^(SAND $y $z) )
 	|	^(SAND z=tt ^(OR x=tt y=tt))
-			-> ^(XOR ^(XOR ^( AND ^(NOT $x) ^(SAND $y $z)) ^( AND ^(NOT $y) ^(SAND $z $x) ) ) ^(SAND $x ^(SAND $y $z))) 
+			-> ^(XOR ^(XOR ^( AND ^(NOT $x) ^(SAND $y $z)) 
+				       ^( AND ^(NOT $y) ^(SAND $z $x)) ) 
+				 ^(SAND $x ^(SAND $y $z)) ) 
 	|	^(SAND ^(OR x=tt y=tt) z=tt)
-			-> ^(XOR ^(XOR ^( AND ^(NOT $x) ^(SAND $y $z)) ^( AND ^(NOT $y) ^(SAND $x $z) ) ) ^(SAND $x ^(SAND $y $z))) 
+			-> ^(XOR ^(XOR ^( AND ^(NOT $x) ^(SAND $y $z)) 
+				       ^( AND ^(NOT $y) ^(SAND $x $z)) ) 
+				 ^(SAND $x ^(SAND $y $z)) ) 
 	|	^(SAND ^(PAND x=tt y=tt) z=tt)
 			-> ^(PAND $x ^(SAND $y $z))
 	|	^(SAND z=tt ^(PAND x=tt y=tt))
 			-> ^(PAND $x ^(SAND $y $z))
-	|	^(SAND x=tt ^(AND a=notterm z=tt))
+	|	^(SAND x=tt ^(AND a=notTerm z=tt))
 			-> ^(AND $a ^(SAND $x $z))
-	|	^(SAND ^(AND a=notterm z=tt) x=tt )
+	|	^(SAND ^(AND a=notTerm z=tt) x=tt )
 			-> ^(AND $a ^(SAND $x $z))
 	|	^(SAND tt tt)
 	;
+
+// DOUBLE INVERTED TERMS	
+notNotTerm
+	:	^(NOT ^(NOT a=(.)) )
+			-> $a
+	;
+
+// CONJUNCTION OF NEGATED AND NON NEGATED	
+andTermWithNegated
+	:	^(AND ^(NOT ^(PAND x=tt y=tt) ) m1=tt )
+			-> ^(XOR ^(XOR ^(XOR ^(XOR ^(AND ^(AND ^(NOT $x) ^(NOT $y) ) 
+							 $m1 ) 
+					           ^(AND ^(AND ^(NOT $x) $y ) 
+					           	 $m1)  ) 
+				             ^(AND ^(NOT $y) ^(AND $x $m1))  ) 
+				       ^(AND ^(PAND $y $x) $m1)  ) 
+				 ^(AND ^(SAND $x $y) $m1)  )	
+	|	^(AND notTerm tt) 
+	;
 	
-ae 		:   	ID
-		|	TRUE
-		|	FALSE
-		;
+//ANY TERM WITH AN "NOT" TREE	
+notTerm :	^(NOT x=negTerm)
+			-> ^(NOTNOT $x)
+	|	^(NOTNOT ^(NOTNOT x=negTerm))
+			-> $x
+	|	^(NOTNOT ^(NOTAND x=negTerm y=negTerm) )
+			-> ^(NOTOR  ^(NOTNOT $x) ^(NOTNOT $y))
+	|	^(NOTNOT ^(NOTOR  x=negTerm y=negTerm) )
+			-> ^(NOTAND ^(NOTNOT $x) ^(NOTNOT $y))
+	|	^(NOTNOT ^(NOTXOR  x=negTerm y=negTerm) )
+			-> ^(NOTAND ^(NOTNOT $x) ^(NOTNOT $y))
+	|	^(NOTNOT ^(NOTSAND x=negTerm y=negTerm) )
+			-> ^(NOTXOR ^(NOTXOR ^(NOTXOR ^(NOTXOR ^(NOTAND ^(NOTNOT $x) ^(NOTNOT $y)) 
+					     	   ^(NOTAND ^(NOTNOT $x) $y) ) 
+				       	     ^(NOTAND ^(NOTNOT $y) $x) )
+				       ^(NOTPAND $y $x) ) 
+				 ^(NOTPAND $x $y) )
+	|	^(NOTNOT negTerm)
+	|	negAndTerm
+	|	negOrTerm
+	|	negXorTerm
+	|	negPandTerm
+	|	negSandTerm		
+	;
+
+// ANY TERM WITHIN A NEGATION (needs to get new Operator in order to discriminate)
+negTerm	:	^(AND x=negTerm y=negTerm)
+			-> ^(NOTAND $x $y)
+	|	^(OR x=negTerm y=negTerm)
+			-> ^(NOTOR $x $y)
+	|	^(XOR x=negTerm y=negTerm)
+			-> ^(NOTXOR $y)
+	|	^(PAND x=negTerm y=negTerm)
+			-> ^(NOTPAND $x $y)
+	|	^(SAND x=negTerm y=negTerm)
+			-> ^(NOTSAND $x $y)
+	|	^(NOT x=negTerm)
+			-> ^(NOTNOT $x)
+	|	atom
+	|	negAndTerm
+	|	negOrTerm
+	|	negXorTerm
+	|	negPandTerm
+	|	negSandTerm
+	;
+		
+	
+// WITHIN A NEGATED TERM, A TERM WITH AN AND
+negAndTerm
+	:	^(NOTAND ^(NOTXOR x=negTerm y=negTerm) z=negTerm)
+			-> ^(NOTXOR ^(NOTAND $x $z) ^(NOTAND $y $z) )
+	|	^(NOTAND z=negTerm ^(NOTXOR x=negTerm y=negTerm))
+			-> ^(NOTXOR ^(NOTAND $x $z) ^(NOTAND $y $z) )
+	|	^(NOTAND ^(NOTOR x=negTerm y=negTerm) z=negTerm)
+			-> ^(NOTOR ^(NOTAND $x $z) ^(NOTAND $y $z) )
+	|	^(NOTAND z=negTerm ^(NOTOR x=negTerm y=negTerm))
+			-> ^(NOTOR ^(NOTAND $x $z) ^(NOTAND $y $z) )
+	|	^(NOTAND z=negTerm ^(NOTAND x=negTerm y=negTerm))
+			-> ^(NOTAND ^(NOTAND $z $x) $y) 
+	|	^(NOTAND negTerm negTerm)
+	;
+	
+negOrTerm
+	:	^(NOTOR z=negTerm ^(NOTXOR x=negTerm y=negTerm))
+			-> ^(NOTOR ^(NOTOR $z $x) $y) 
+	|	^(NOTOR z=negTerm ^(NOTOR x=negTerm y=negTerm))
+			-> ^(NOTOR ^(NOTOR $z $x) $y) 
+	|	^(NOTOR negTerm negTerm)
+	;
+	
+negXorTerm
+	:	^(NOTXOR z=negTerm ^(NOTXOR x=negTerm y=negTerm))
+			-> ^(NOTXOR ^(NOTXOR $z $x) $y) 
+	|	^(NOTXOR z=negTerm ^(NOTOR x=negTerm y=negTerm))
+			-> ^(NOTOR ^(NOTOR $z $x) $y) 
+	|	^(NOTXOR negTerm negTerm)
+	;
+	
+negPandTerm
+	:	^(NOTPAND negTerm negTerm)
+	;
+
+negSandTerm
+	:	^(NOTSAND negTerm negTerm)
+	;	
+		
+		
+//[EOF]

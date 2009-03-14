@@ -1,4 +1,4 @@
-// $ANTLR 3.1.2 /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g 2009-03-10 20:58:58
+// $ANTLR 3.1.2 /home/simon/99_publikationen/15_FPC/01_TFTA_Solver/tftasolver/grammars/tftac.g 2009-03-13 18:16:01
 
 import java.util.HashMap;
 
@@ -13,47 +13,53 @@ import org.antlr.runtime.tree.*;
 
 public class tftacParser extends Parser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "OR", "XOR", "AND", "PAND", "SAND", "ID", "LBRACE", "RBRACE", "NOT", "TRUE", "FALSE", "A", "N", "D", "P", "S", "O", "R", "X", "T", "U", "E", "F", "L", "INT", "WS", "B", "C", "G", "H", "I", "J", "K", "M", "Q", "V", "W", "Y", "Z"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "OR", "XOR", "AND", "PAND", "SAND", "ID", "LBRACE", "RBRACE", "NOT", "TRUE", "FALSE", "A", "N", "D", "P", "S", "O", "R", "X", "T", "U", "E", "F", "L", "NOTAND", "NOTPAND", "NOTSAND", "NOTOR", "NOTXOR", "NOTNOT", "INT", "WS", "B", "C", "G", "H", "I", "J", "K", "M", "Q", "V", "W", "Y", "Z"
     };
+    public static final int LBRACE=10;
+    public static final int PAND=7;
+    public static final int NOTAND=28;
+    public static final int NOT=12;
+    public static final int ID=9;
+    public static final int AND=6;
+    public static final int EOF=-1;
+    public static final int SAND=8;
+    public static final int NOTOR=31;
     public static final int D=17;
     public static final int E=25;
     public static final int F=26;
-    public static final int G=32;
+    public static final int G=38;
     public static final int XOR=5;
     public static final int A=15;
-    public static final int B=30;
     public static final int RBRACE=11;
-    public static final int C=31;
+    public static final int B=36;
+    public static final int C=37;
     public static final int L=27;
-    public static final int M=37;
+    public static final int M=43;
     public static final int N=16;
     public static final int O=20;
-    public static final int H=33;
-    public static final int I=34;
-    public static final int J=35;
-    public static final int LBRACE=10;
-    public static final int K=36;
+    public static final int H=39;
+    public static final int I=40;
+    public static final int J=41;
+    public static final int K=42;
     public static final int U=24;
     public static final int T=23;
-    public static final int PAND=7;
-    public static final int W=40;
-    public static final int V=39;
-    public static final int Q=38;
-    public static final int INT=28;
+    public static final int W=46;
+    public static final int V=45;
+    public static final int Q=44;
+    public static final int NOTPAND=29;
+    public static final int INT=34;
     public static final int P=18;
-    public static final int NOT=12;
     public static final int S=19;
     public static final int R=21;
-    public static final int AND=6;
-    public static final int ID=9;
-    public static final int EOF=-1;
+    public static final int NOTSAND=30;
     public static final int TRUE=13;
-    public static final int Y=41;
+    public static final int Y=47;
     public static final int X=22;
-    public static final int Z=42;
-    public static final int WS=29;
+    public static final int Z=48;
+    public static final int WS=35;
+    public static final int NOTNOT=33;
     public static final int OR=4;
-    public static final int SAND=8;
+    public static final int NOTXOR=32;
     public static final int FALSE=14;
 
     // delegates

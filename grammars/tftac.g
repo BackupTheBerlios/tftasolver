@@ -61,6 +61,13 @@ NOT	:	N O T ;
 TRUE	:	T R U E ;
 FALSE	:	F A L S E;
 
+NOTAND	:	N A N D ;
+NOTPAND	:	N P A N D ;
+NOTSAND	:	N S A N D ;
+NOTOR	:	N O R ;
+NOTXOR	:	N X O R ;
+NOTNOT	:	N N O T ;
+
 INT 	:   	('0'..'9')+ ;
 ID  	:   	('a'..'z'|'A'..'Z')('a'..'z'|'A'..'Z'|INT)* ;
 WS  	:   	(' '|'\t'|'\n'|'\f')+ {skip();} ;
