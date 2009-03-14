@@ -96,7 +96,7 @@ tt 	:	atom
 	|	xorTerm
 	|	pandTerm
 	|	sandTerm
-	|	notNotTerm
+	|	notNOTTerm
     	;
     	
 //AN ATOMIC EVENT
@@ -222,8 +222,8 @@ sandTerm:	^(SAND (.) FALSE)
 	;
 
 // DOUBLE INVERTED TERMS	
-notNotTerm
-	:	^(NOT ^(NOT a=(.)) )
+notNOTTerm
+	:	^(NOT ^(NOT a=tt) )
 			-> $a
 	;
 
@@ -242,22 +242,22 @@ andTermWithNegated
 	
 //ANY TERM WITH AN "NOT" TREE	
 notTerm :	^(NOT x=negTerm)
-			-> ^(NOTNOT $x)
-	|	^(NOTNOT ^(NOTNOT x=negTerm))
+			-> ^(NOT $x)
+	|	^(NOT ^(NOT x=negTerm))
 			-> $x
-	|	^(NOTNOT ^(NOTAND x=negTerm y=negTerm) )
-			-> ^(NOTOR  ^(NOTNOT $x) ^(NOTNOT $y))
-	|	^(NOTNOT ^(NOTOR  x=negTerm y=negTerm) )
-			-> ^(NOTAND ^(NOTNOT $x) ^(NOTNOT $y))
-	|	^(NOTNOT ^(NOTXOR  x=negTerm y=negTerm) )
-			-> ^(NOTAND ^(NOTNOT $x) ^(NOTNOT $y))
-	|	^(NOTNOT ^(NOTSAND x=negTerm y=negTerm) )
-			-> ^(NOTXOR ^(NOTXOR ^(NOTXOR ^(NOTXOR ^(NOTAND ^(NOTNOT $x) ^(NOTNOT $y)) 
-					     	   ^(NOTAND ^(NOTNOT $x) $y) ) 
-				       	     ^(NOTAND ^(NOTNOT $y) $x) )
-				       ^(NOTPAND $y $x) ) 
-				 ^(NOTPAND $x $y) )
-	|	^(NOTNOT negTerm)
+	|	^(NOT ^(AND x=negTerm y=negTerm) )
+			-> ^(OR  ^(NOT $x) ^(NOT $y))
+	|	^(NOT ^(OR  x=negTerm y=negTerm) )
+			-> ^(AND ^(NOT $x) ^(NOT $y))
+	|	^(NOT ^(XOR  x=negTerm y=negTerm) )
+			-> ^(AND ^(NOT $x) ^(NOT $y))
+	|	^(NOT ^(SAND x=negTerm y=negTerm) )
+			-> ^(XOR ^(XOR ^(XOR ^(XOR ^(AND ^(NOT $x) ^(NOT $y)) 
+					     	   ^(AND ^(NOT $x) $y) ) 
+				       	     ^(AND ^(NOT $y) $x) )
+				       ^(PAND $y $x) ) 
+				 ^(PAND $x $y) )
+	|	^(NOT negTerm)
 	|	negAndTerm
 	|	negOrTerm
 	|	negXorTerm
@@ -267,17 +267,17 @@ notTerm :	^(NOT x=negTerm)
 
 // ANY TERM WITHIN A NEGATION (needs to get new Operator in order to discriminate)
 negTerm	:	^(AND x=negTerm y=negTerm)
-			-> ^(NOTAND $x $y)
+			-> ^(AND $x $y)
 	|	^(OR x=negTerm y=negTerm)
-			-> ^(NOTOR $x $y)
+			-> ^(OR $x $y)
 	|	^(XOR x=negTerm y=negTerm)
-			-> ^(NOTXOR $y)
+			-> ^(XOR $y)
 	|	^(PAND x=negTerm y=negTerm)
-			-> ^(NOTPAND $x $y)
+			-> ^(PAND $x $y)
 	|	^(SAND x=negTerm y=negTerm)
-			-> ^(NOTSAND $x $y)
+			-> ^(SAND $x $y)
 	|	^(NOT x=negTerm)
-			-> ^(NOTNOT $x)
+			-> ^(NOT $x)
 	|	atom
 	|	negAndTerm
 	|	negOrTerm
@@ -289,41 +289,41 @@ negTerm	:	^(AND x=negTerm y=negTerm)
 	
 // WITHIN A NEGATED TERM, A TERM WITH AN AND
 negAndTerm
-	:	^(NOTAND ^(NOTXOR x=negTerm y=negTerm) z=negTerm)
-			-> ^(NOTXOR ^(NOTAND $x $z) ^(NOTAND $y $z) )
-	|	^(NOTAND z=negTerm ^(NOTXOR x=negTerm y=negTerm))
-			-> ^(NOTXOR ^(NOTAND $x $z) ^(NOTAND $y $z) )
-	|	^(NOTAND ^(NOTOR x=negTerm y=negTerm) z=negTerm)
-			-> ^(NOTOR ^(NOTAND $x $z) ^(NOTAND $y $z) )
-	|	^(NOTAND z=negTerm ^(NOTOR x=negTerm y=negTerm))
-			-> ^(NOTOR ^(NOTAND $x $z) ^(NOTAND $y $z) )
-	|	^(NOTAND z=negTerm ^(NOTAND x=negTerm y=negTerm))
-			-> ^(NOTAND ^(NOTAND $z $x) $y) 
-	|	^(NOTAND negTerm negTerm)
+	:	^(AND ^(XOR x=negTerm y=negTerm) z=negTerm)
+			-> ^(XOR ^(AND $x $z) ^(AND $y $z) )
+	|	^(AND z=negTerm ^(XOR x=negTerm y=negTerm))
+			-> ^(XOR ^(AND $x $z) ^(AND $y $z) )
+	|	^(AND ^(OR x=negTerm y=negTerm) z=negTerm)
+			-> ^(OR ^(AND $x $z) ^(AND $y $z) )
+	|	^(AND z=negTerm ^(OR x=negTerm y=negTerm))
+			-> ^(OR ^(AND $x $z) ^(AND $y $z) )
+	|	^(AND z=negTerm ^(AND x=negTerm y=negTerm))
+			-> ^(AND ^(AND $z $x) $y) 
+	|	^(AND negTerm negTerm)
 	;
 	
 negOrTerm
-	:	^(NOTOR z=negTerm ^(NOTXOR x=negTerm y=negTerm))
-			-> ^(NOTOR ^(NOTOR $z $x) $y) 
-	|	^(NOTOR z=negTerm ^(NOTOR x=negTerm y=negTerm))
-			-> ^(NOTOR ^(NOTOR $z $x) $y) 
-	|	^(NOTOR negTerm negTerm)
+	:	^(OR z=negTerm ^(XOR x=negTerm y=negTerm))
+			-> ^(OR ^(OR $z $x) $y) 
+	|	^(OR z=negTerm ^(OR x=negTerm y=negTerm))
+			-> ^(OR ^(OR $z $x) $y) 
+	|	^(OR negTerm negTerm)
 	;
 	
 negXorTerm
-	:	^(NOTXOR z=negTerm ^(NOTXOR x=negTerm y=negTerm))
-			-> ^(NOTXOR ^(NOTXOR $z $x) $y) 
-	|	^(NOTXOR z=negTerm ^(NOTOR x=negTerm y=negTerm))
-			-> ^(NOTOR ^(NOTOR $z $x) $y) 
-	|	^(NOTXOR negTerm negTerm)
+	:	^(XOR z=negTerm ^(XOR x=negTerm y=negTerm))
+			-> ^(XOR ^(XOR $z $x) $y) 
+	|	^(XOR z=negTerm ^(OR x=negTerm y=negTerm))
+			-> ^(OR ^(OR $z $x) $y) 
+	|	^(XOR negTerm negTerm)
 	;
 	
 negPandTerm
-	:	^(NOTPAND negTerm negTerm)
+	:	^(PAND negTerm negTerm)
 	;
 
 negSandTerm
-	:	^(NOTSAND negTerm negTerm)
+	:	^(SAND negTerm negTerm)
 	;	
 		
 		
