@@ -91,9 +91,9 @@ tdnf	:	es
 
 //TEMPORAL TERM (the most general form)
 tt 	:	atom
-	|	andTerm
 	|	orTerm
 	|	xorTerm
+	|	andTerm
 	|	pandTerm
 	|	sandTerm
 	|	notNOTTerm
@@ -120,10 +120,10 @@ andTerm	:	^(AND (.) FALSE)
 			-> ^(OR ^(AND $x $z) ^(AND $y $z) )  
 	|	^(AND z=tt ^(OR x=tt y=tt))
 			-> ^(OR ^(AND $x $z) ^(AND $y $z) )
+	|	andTermWithNegated
 	|	^(AND x=tt y=tt)
 			-> ^(XOR ^(XOR ^(PAND $y $x) ^(PAND $x $y)) ^(SAND $x $y) )
 	|	^(AND tt tt)
-	|	andTermWithNegated
 	;
 	
 //ANY TERM WITH AN "OR" TREE
@@ -302,6 +302,8 @@ negTerm
 			-> ^(AND ^(NOT $x) ^(NOT $y))
 	|	^(NOT ^(XOR  x=negTerm y=negTerm) )
 			-> ^(AND ^(NOT $x) ^(NOT $y))
+	|	^(NOT ^(NOT x=negTerm))
+			-> $x
 	|	^(NOT negTerm)
 	;
 		
@@ -346,16 +348,29 @@ negSandTerm
 	;	
 	
 pureNegTerm
-	:	
-	|	^(NOT ^(AND a=pureNegTerm b=pureNegTerm))
+	:	^(NOT ^(AND a=naeOrPureNegTerm b=naeOrPureNegTerm))
 			-> ^(OR ^(NOT $a) ^(NOT $b))
-	|	^(NOT ^(OR a=pureNegTerm b=pureNegTerm))
+	|	^(NOT ^(OR a=naeOrPureNegTerm b=naeOrPureNegTerm))
 			-> ^(AND ^(NOT $a) ^(NOT $b))
-	|	^(NOT ^(XOR a=pureNegTerm b=pureNegTerm))
+	|	^(NOT ^(XOR a=naeOrPureNegTerm b=naeOrPureNegTerm))
 			-> ^(AND ^(NOT $a) ^(NOT $b))
-	|	^(NOT ^(PAND a=pureNegTerm b=pureNegTerm))
-	|	^(NOT ^(SAND a=pureNegTerm b=pureNegTerm))
+	|	^(NOT ^(PAND a=naeOrPureNegTerm b=naeOrPureNegTerm))
+	|	^(NOT ^(SAND a=naeOrPureNegTerm b=naeOrPureNegTerm))
 	;
-		
+	
+naeOrPureNegTerm
+	:	nae
+	|	pureNegTerm
+	|	^(AND  naeOrPureNegTerm naeOrPureNegTerm)
+	|	^(OR   naeOrPureNegTerm naeOrPureNegTerm)
+	|	^(XOR  naeOrPureNegTerm naeOrPureNegTerm)
+	|	^(SAND naeOrPureNegTerm naeOrPureNegTerm)
+	|	^(PAND naeOrPureNegTerm naeOrPureNegTerm)
+	|	^(NOT ^(AND tt tt))
+	|	^(NOT ^(OR tt tt))
+	|	^(NOT ^(XOR tt tt))
+	|	^(NOT ^(PAND tt tt))
+	|	^(NOT ^(SAND tt tt))
+	;
 		
 //[EOF]

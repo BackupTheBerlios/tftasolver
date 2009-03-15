@@ -119,7 +119,7 @@ public class tftac {
 		System.out.println("");
 	}
         
-        String oldExpr = "";
+    String oldExpr = "";
 	String newExpr = "";
 	int loopNr = 0;
 
@@ -152,7 +152,8 @@ public class tftac {
 	if (statusEXPAND == true) {
 		nodes.setTokenStream(tokens);
 		tftacrulesfull theRules = new tftacrulesfull(nodes);
-		tftacrulesfull.tt_return r2 = theRules.tt();
+		tftacrulesfull.expression_return r2 = theRules.expression();
+		tftacrulesfull.expression_return temp2 = r2;
 		newExpr = ((Tree)r2.tree).toStringTree();	
 
 		do {	
@@ -164,7 +165,7 @@ public class tftac {
 			nodes = new CommonTreeNodeStream((Tree)r2.tree);
 			nodes.setTokenStream(tokens);
 			theRules = new tftacrulesfull(nodes);
-			r2 = theRules.tt();
+			r2 = theRules.expression();
 			newExpr = ((Tree)r2.tree).toStringTree();	
 		} while ( !( oldExpr.equals( newExpr ) ) );
 		nodes = new CommonTreeNodeStream((Tree)r2.tree);
